@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             mc:Ignorable="d"
+             x:Class="CallJSFromXamarin.MainPage">
+    <ScrollView>
+        <StackLayout x:Name="stack">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="str1: "
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="str1"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="str2: "
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="str2"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="dec1: "
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="dec1"
+                       Keyboard="Numeric"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="dec2: "
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="dec2"
+                       Keyboard="Numeric"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <Button x:Name="callService"
+                    Text="Call service"
+                    Clicked="MultiplyBtnClicked"/>
+            <Label x:Name="resultLabel"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
