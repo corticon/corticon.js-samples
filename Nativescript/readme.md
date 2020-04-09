@@ -1,4 +1,4 @@
-#NativeScript Mobile Sample - Car Rental Insurance 
+# NativeScript Mobile Sample - Car Rental Insurance 
 
 Example of a car rental application. Select a car, to then get a quote on the additional insurance rate depending on driver details. 
 
