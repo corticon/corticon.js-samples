@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="1" buildNumber="8017" updateStamp="_q0JIwnXAEeqvKaQJciDJpA" externalChecksum="7824986:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_fbo_cHXAEeqvKaQJciDJpA" vocabulary="CarRentalVocab.ecore#/">
+    <rule>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age in 18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="18..25"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (Applicant.Gender = 'male' or Applicant.Gender = null) or Applicant.Gender = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Gender" rhs="other"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 40" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age in 18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="18..25"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (Applicant.Gender = 'male' or Applicant.Gender = null) or Applicant.Gender = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Gender" rhs="other"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age in 18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="18..25"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.Gender = 'male'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Gender = 'male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Gender" rhs="'male'"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 60">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 60" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age in 18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="18..25"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.Gender = 'male'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Gender = 'male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Gender" rhs="'male'"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age > 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="> 25"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.YearsDriving &lt; 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving &lt; 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.YearsDriving" rhs="&lt; 20"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age > 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="> 25"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.YearsDriving &lt; 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving &lt; 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.YearsDriving" rhs="&lt; 20"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age > 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="> 25"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.YearsDriving >= 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving >= 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.YearsDriving" rhs=">= 20"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age > 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="> 25"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Applicant.YearsDriving >= 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving >= 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.YearsDriving" rhs=">= 20"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 10" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age &lt; 18 or Applicant.Age = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age &lt; 18 or Applicant.Age = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (Applicant.Gender = 'male' or Applicant.Gender = null) or Applicant.Gender = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Gender" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.YearsDriving = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.YearsDriving" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Applicant.Age &lt; 18 or Applicant.Age = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age &lt; 18 or Applicant.Age = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Age" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (Applicant.Gender = 'male' or Applicant.Gender = null) or Applicant.Gender = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.Gender" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.YearsDriving = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.YearsDriving" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Applicant.Premium = 15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="CarRentalVocab.ecore#//Applicant">
+      <referencedAttributes attribute="CarRentalVocab.ecore#//Applicant/Age"/>
+      <referencedAttributes attribute="CarRentalVocab.ecore#//Applicant/Premium"/>
+      <referencedAttributes attribute="CarRentalVocab.ecore#//Applicant/Gender"/>
+      <referencedAttributes attribute="CarRentalVocab.ecore#//Applicant/YearsDriving"/>
+      <referencedAttributes attribute="CarRentalVocab.ecore#//Applicant/DamageWaiver"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightConditionsIf="17">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Applicant.Premium">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Applicant.Age">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Applicant.Gender">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Gender" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Applicant.YearsDriving">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Applicant.DamageWaiver">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 40" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'male'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Gender = 'male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="60">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 60" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'male'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Gender = 'male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="> 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="&lt; 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving &lt; 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="> 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="&lt; 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving &lt; 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="> 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet=">= 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving >= 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="> 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet=">= 20">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving >= 20" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 10" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age &lt; 18 or Applicant.Age = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Full'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Age &lt; 18 or Applicant.Age = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Age">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Applicant.Gender = 'male' or Applicant.Gender = null ) or Applicant.Gender = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Gender" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.Gender">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.YearsDriving = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="YearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.YearsDriving">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Limited'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+                <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
