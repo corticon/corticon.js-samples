@@ -52,6 +52,9 @@ namespace CallJSFromXamarin
 
         private async void MultiplyBtnClicked(System.Object sender, System.EventArgs e)
         {
+            this.resultLabelHeader.Text = "Decision service call processing...";
+            this.resultLabel.Text = "";
+
             payload.Objects[0].str1 = this.str1.Text;
             payload.Objects[0].str2 = this.str2.Text;
 
@@ -77,6 +80,7 @@ namespace CallJSFromXamarin
 
             /* dynamic is because we don't kow the type of returned data */
             dynamic result = await this.EvaluateJavaScriptAsync();
+            this.resultLabelHeader.Text = "Result of calling Decision Service";
             this.resultLabel.Text = this.OutputResults(result);
         }
 
@@ -94,13 +98,24 @@ namespace CallJSFromXamarin
             return JsonConvert.DeserializeObject<object>(result);
         }
 
-        private string OutputResults(dynamic result)
+        private string OutputResultsOld(dynamic result)
         {
             dynamic multiplyResult = result.Objects[1];
             string multiplyStr = "\nDecimal multiplication: " + multiplyResult.dec1 + " * " + multiplyResult.dec2 + " = " + multiplyResult.dec3;
-            var outputString = "Result of calling Decision Service: ";
+            var outputString = "";
             var stringOperationsResult = result.Objects[0];
-            outputString += "\n\nConcatenation Test: " + stringOperationsResult.str1 + " + " + stringOperationsResult.str2 + " = " + stringOperationsResult.str3;
+            outputString += "\nConcatenation Test: " + stringOperationsResult.str1 + " + " + stringOperationsResult.str2 + " = " + stringOperationsResult.str3;
+            outputString += multiplyStr;
+
+            return outputString;
+        }
+        private string OutputResults(dynamic result)
+        {
+            dynamic multiplyResult = result.Objects[1];
+            string multiplyStr = "\nDecimal multiplication: " + multiplyResult.dec3;
+            var outputString = "";
+            var stringOperationsResult = result.Objects[0];
+            outputString += "\nConcatenation Test: " + stringOperationsResult.str3;
             outputString += multiplyStr;
 
             return outputString;
