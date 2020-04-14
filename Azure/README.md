@@ -33,7 +33,7 @@ The guide below is roughly based on [this MS doc]( https://docs.microsoft.com/en
 
 	`choco install curl`
 
-* Install latest LTS node, if not installed:
+* (Optional) Install latest LTS node, if not installed:
 
 	`choco install nodejs-lts`
 
