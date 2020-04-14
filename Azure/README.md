@@ -3,10 +3,10 @@
 This is a guide to deploy a CorticonJS Decision Service bundle on Azure Functions, making it available for HTTP POST/GET invokations [from the internet](https://i.kym-cdn.com/photos/images/original/000/009/985/internet-serious-business.jpg).
 The actual CorticonJS DS bundle is provided as a node dependency to the service.
 
-It is fully scripted and ~automated~ automatable, ie this should serve also as a guide to CI/CD setups. The only Azure web portal interaction necessary is signing up for Azure!
+It is fully scripted and ~automated~ automatable, so it's also a good starter for CI/CD setups. The only Azure web portal interaction necessary is signing up for Azure!
 It's currently Windows based and assumes a free/trial Azure plan. Please Bring-Your-Own-Plan.
 
-You may of course opt to forgot the shell-fun and retrace the step in the Azure console. Essentially you will have to follow [this guide](https://docs.microsoft.com/en-us/azure/azure-functions/deployment-zip-push) placing the contents of everything under the _CarsDecisionService_ directory in the deployment.zip file.
+You may of course opt to forgo the shell-fun and retrace the step in the Azure console. Essentially you will have to follow [this guide](https://docs.microsoft.com/en-us/azure/azure-functions/deployment-zip-push) placing the contents of everything under the _CarsDecisionService_ directory in the deployment.zip file.
 You may also use Visual Studio Code with the Azure extension and follow [this guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code).
 If you went ahead and downloaded the several hundred Terabytes of Visual Studio - unfortunately it can only be used for deploying .NET/C# based projects.
 
