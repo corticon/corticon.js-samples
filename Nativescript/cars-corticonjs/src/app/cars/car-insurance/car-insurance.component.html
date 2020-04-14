@@ -1,13 +1,14 @@
-<ActionBar class="action-bar">
-    <NavigationButton android.systemIcon="ic_menu_back" (tap)="onBackButtonTap()">
-    </NavigationButton>
-    <Label class="action-bar-title" [text]="'Driver Details - ' + car.name" horizontalAlignment="center"></Label>
-    <ActionItem ios.position="right" android.position="right" (tap)="onEditButtonTap()">
-    </ActionItem>
-</ActionBar>
 
-<Stacklayout class="page page-content">
-    <RadDataForm [source]="driver">
+<Stacklayout>
+    <RadDataForm (propertyCommitted)="formChanged($event)" [source]="driver">
+        <TKEntityProperty tkDataFormProperty name="insurancePremium" ignore="true" hidden="true">
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="coverage" displayName="Damage Coverage" index="0" valuesProvider="Full, Limited">
+            <TKPropertyEditor tkEntityPropertyEditor type="Picker"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="gender" displayName="Gender" index="0" valuesProvider="male, other">
+            <TKPropertyEditor tkEntityPropertyEditor type="Picker"></TKPropertyEditor>
+        </TKEntityProperty>
         <TKEntityProperty tkDataFormProperty name="age" displayName="Age">
             <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
         </TKEntityProperty>
@@ -15,6 +16,4 @@
             <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
         </TKEntityProperty>
     </RadDataForm>
-
-    <Button text="Calculate Premium" (tap)="onCalculateTap($event)"></Button>
 </Stacklayout>

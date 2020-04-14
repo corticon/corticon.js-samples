@@ -16,12 +16,15 @@ import { CarService } from "../shared/car.service";
 })
 export class CarDetailComponent implements OnInit {
     private _car: Car;
+    private _totalPrice;
+    private _insurancePremium:Number;
 
     constructor(
         private _carService: CarService,
         private _pageRoute: PageRoute,
         private _routerExtensions: RouterExtensions
     ) { }
+
 
     /* ***********************************************************
     * Use the "ngOnInit" handler to get the data item id parameter passed through navigation.
@@ -39,13 +42,25 @@ export class CarDetailComponent implements OnInit {
                 const carId = params.id;
 
                 this._car = this._carService.getCarById(carId);
+                //this._totalPrice 
             });
     }
 
     get car(): Car {
         return this._car;
     }
-
+    get totalPrice(): Number {
+        return this._totalPrice;
+    }
+    get insurancePremium(): Number {
+        return this._insurancePremium;
+    }
+    insurancePremiumChanged(newPremium) {
+        this._insurancePremium = newPremium;
+        if(this._car && newPremium){
+            this._totalPrice = newPremium + this._car.price;
+        } 
+    }
     /* ***********************************************************
     * The back button is essential for a master-detail feature.
     *************************************************************/
@@ -53,19 +68,4 @@ export class CarDetailComponent implements OnInit {
         this._routerExtensions.backToPreviousPage();
     }
 
-    /* ***********************************************************
-    * The master-detail template comes with an example of an item edit page.
-    * Check out the edit page in the /cars/car-detail-edit folder.
-    *************************************************************/
-    onEditButtonTap(): void {
-        this._routerExtensions.navigate(["/cars/car-detail-edit", this._car.id],
-            {
-                animated: true,
-                transition: {
-                    name: "slideTop",
-                    duration: 200,
-                    curve: "ease"
-                }
-            });
-    }
 }

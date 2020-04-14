@@ -5,7 +5,8 @@ export class Driver {
     public age: number;
     public licenceYears: number;
     public coverage: string;
-
+    public insurancePremium: number;
+    
     constructor(name:string="",gender:string="",age:number = 18,licenceYears:number=1,coverage:string="Full"){
         this.name = name;
         this.gender = gender;

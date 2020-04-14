@@ -33,6 +33,7 @@ export class CarService {
 
     private _allCars: Array<Car> = [];
     private _carsStore = null;
+    private _currentDriver: Driver;
 
     constructor(
         dataStoreService: DataStoreService,
@@ -71,13 +72,20 @@ export class CarService {
         }
         //const configuration = { logLevel: 0 };
         const configuration = { logLevel: 1, logIsOn: true, logFunction: function(logData){console.log(logData);return;}};
-
         const result = RentalDecisionService.execute(corticonPayload, configuration);
 
         let data = JSON.stringify(result);
-        console.log("the DS says: ",data);
 
-        alert("The insurance premium will be: $"+ result.Objects[0].Premium);
+        if(result.Objects[0]) {
+            //Create a new driver object instance, bc immutability and we don't which values coming back from Corticon have changed
+            this._currentDriver = new Driver(driver.name, result.Objects[0].Gender, result.Objects[0].Age, result.Objects[0].YearsDriving,result.Objects[0].DamageWaiver );
+            this._currentDriver.insurancePremium = result.Objects[0].Premium;
+        } else {
+            this._currentDriver = driver;
+        }
+         
+        return this._currentDriver;
+        //alert("The insurance premium will be: $"+ result.Objects[0].Premium);
     }
 
     load(): Promise<any> {
