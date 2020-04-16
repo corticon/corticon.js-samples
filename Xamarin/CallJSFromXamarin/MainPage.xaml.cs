@@ -52,7 +52,7 @@ namespace CallJSFromXamarin
 
         private async void MultiplyBtnClicked(System.Object sender, System.EventArgs e)
         {
-            this.resultLabelHeader.Text = "Decision service call processing...";
+            this.resultLabelHeader.Text = "\nDecision service call processing...";
             this.resultLabel.Text = "";
 
             payload.Objects[0].str1 = this.str1.Text;
@@ -78,9 +78,22 @@ namespace CallJSFromXamarin
                 payload.Objects[1].dec2 = 0;
             }
 
+            payload.Objects[2].datetime1 = this.date1.Text;
+
+            decimal days;
+            if (decimal.TryParse(this.days.Text, out days))
+            {
+                payload.Objects[2].days= days;
+            }
+            else
+            {
+                payload.Objects[2].days = 0;
+            }
+
+
             /* dynamic is because we don't kow the type of returned data */
             dynamic result = await this.EvaluateJavaScriptAsync();
-            this.resultLabelHeader.Text = "Result of calling Decision Service";
+            this.resultLabelHeader.Text = "\nResult of calling Decision Service";
             this.resultLabel.Text = this.OutputResults(result);
         }
 
@@ -98,17 +111,6 @@ namespace CallJSFromXamarin
             return JsonConvert.DeserializeObject<object>(result);
         }
 
-        private string OutputResultsOld(dynamic result)
-        {
-            dynamic multiplyResult = result.Objects[1];
-            string multiplyStr = "\nDecimal multiplication: " + multiplyResult.dec1 + " * " + multiplyResult.dec2 + " = " + multiplyResult.dec3;
-            var outputString = "";
-            var stringOperationsResult = result.Objects[0];
-            outputString += "\nConcatenation Test: " + stringOperationsResult.str1 + " + " + stringOperationsResult.str2 + " = " + stringOperationsResult.str3;
-            outputString += multiplyStr;
-
-            return outputString;
-        }
         private string OutputResults(dynamic result)
         {
             dynamic multiplyResult = result.Objects[1];
@@ -118,7 +120,11 @@ namespace CallJSFromXamarin
             outputString += "\nConcatenation Test: " + stringOperationsResult.str3;
             outputString += multiplyStr;
 
+            var dateTimeOperationsResult = result.Objects[2];
+            outputString += "\nAdd Days to Date: " + dateTimeOperationsResult.datetime3;
+
             return outputString;
         }
+
     }
 }
