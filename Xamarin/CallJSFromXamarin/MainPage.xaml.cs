@@ -113,15 +113,23 @@ namespace CallJSFromXamarin
 
         private string OutputResults(dynamic result)
         {
-            dynamic multiplyResult = result.Objects[1];
-            string multiplyStr = "\nDecimal multiplication: " + multiplyResult.dec3;
             var outputString = "";
-            var stringOperationsResult = result.Objects[0];
-            outputString += "\nConcatenation Test: " + stringOperationsResult.str3;
-            outputString += multiplyStr;
+            string status = result.status;
+            if ( status == "success" )
+            {
+                dynamic multiplyResult = result.Objects[1];
+                string multiplyStr = "\nDecimal multiplication: " + multiplyResult.dec3;
+                var stringOperationsResult = result.Objects[0];
+                outputString += "\nConcatenation Test: " + stringOperationsResult.str3;
+                outputString += multiplyStr;
 
-            var dateTimeOperationsResult = result.Objects[2];
-            outputString += "\nAdd Days to Date: " + dateTimeOperationsResult.datetime3;
+                var dateTimeOperationsResult = result.Objects[2];
+                outputString += "\nAdd Days to Date: " + dateTimeOperationsResult.datetime3;
+            }
+            else
+            {
+                outputString = "Error in decision service: " + result.description;
+            }
 
             return outputString;
         }
