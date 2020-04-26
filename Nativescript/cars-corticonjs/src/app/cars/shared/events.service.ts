@@ -7,7 +7,7 @@ import { action } from "tns-core-modules/ui/dialogs";
 import { AppEvent } from "./app-event.model";
 
 @Injectable({
-    providedIn: "root" //CarsModule
+    providedIn: "root" 
 })
 
 export class EventsService {

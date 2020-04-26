@@ -1,10 +1,8 @@
-<ActionBar>
-    <!-- Should remove the navigation button -->
-    <NavigationButton ios:visibility="collapsed"></NavigationButton>
-    <Label text="Browse" horizontalAlignment="center"></Label>
-</ActionBar>
 
-<GridLayout>
+<CarsActionBar title="Browse Cars" back="false"></CarsActionBar>
+<StackLayout>
+<TopBar></TopBar>
+<GridLayout iosOverflowSafeArea="false">
     <RadListView [items]="cars" (itemTap)="onCarItemTap($event)" class="cars-list">
     <!--
     RadListView is a UI component part of the Progress NativeScript UI set of components.
@@ -58,3 +56,4 @@
 
     <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
 </GridLayout>
+</StackLayout>

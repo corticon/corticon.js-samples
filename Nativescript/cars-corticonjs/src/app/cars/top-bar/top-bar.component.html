@@ -1,18 +1,18 @@
-<ActionBar [ngStyle]="{'background-color': getBackgroundColour()}">
+<!-- <ActionBar [ngStyle]="{'background-color': getBackgroundColour()}">
     <NavigationButton android.systemIcon="ic_menu_back" (tap)="onBackButtonTap()">
     </NavigationButton>
     <StackLayout>
         <Label class="h2" [text]="title" horizontalAlignment="center"></Label>
-        <StackLayout [ngStyle]="{'background-color': getBackgroundColourLight()}">
-            <!-- <Label [text]="'Using '+ decisionService.currentBackend" horizontalAlignment="center" (tap)="toggleEventLog($event)"></Label>-->
-            <Label [text]="this.events.events[0]" horizontalAlignment="center" (tap)="toggleEventLog($event)"></Label>-->
-            <StackLayout [visibility]="eventLogVisible?'visible':'collapsed'">
-                <Label *ngFor="let event of events.events | slice:1" [text]="event" horizontalAlignment="center"></Label>
-            </StackLayout>
-        </StackLayout>
     </StackLayout>
-  
     <ActionItem ios.position="right" android.position="right" (tap)="onSettingsButtonTap()">
-        <Label text="Settings"></Label>
+        <Label text="Decision Service"></Label>
     </ActionItem>
-</ActionBar>
+</ActionBar>-->
+
+<StackLayout iosOverflowSafeArea="false" [ngStyle]="{'background-color': getBackgroundColour()}">
+    <!-- <Label [text]="'Using '+ decisionService.currentBackend" horizontalAlignment="center" (tap)="toggleEventLog($event)"></Label>-->
+    <Label [text]="this.events.events[0]" horizontalAlignment="center" (tap)="toggleEventLog($event)"></Label>-->
+    <StackLayout [visibility]="eventLogVisible?'visible':'collapsed'">
+        <Label *ngFor="let event of events.events | slice:1" [text]="event" horizontalAlignment="center"></Label>
+    </StackLayout>
+</StackLayout>

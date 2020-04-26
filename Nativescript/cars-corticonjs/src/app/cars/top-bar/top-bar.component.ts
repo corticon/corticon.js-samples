@@ -12,7 +12,6 @@ import { DecisionService } from "../shared/decision.service";
 })
 
 export class TopBarComponent implements OnInit {
-    @Input('title') title: string;
 
     constructor(
         private _carService: CarService,

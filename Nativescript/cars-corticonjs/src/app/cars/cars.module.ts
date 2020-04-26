@@ -9,6 +9,7 @@ import { CarsRoutingModule } from "./cars-routing.module";
 import { CarInsuranceComponent } from "./car-insurance/car-insurance.component";
 import { HttpClientModule } from "@angular/common/http";
 import { TopBarComponent } from "./top-bar/top-bar.component";
+import { CarsActionBarComponent } from "./cars-action-bar/cars-action-bar.component";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import { TopBarComponent } from "./top-bar/top-bar.component";
         CarListComponent,
         CarDetailComponent,
         CarInsuranceComponent,
+        CarsActionBarComponent,
         TopBarComponent
     ],
     providers: [],

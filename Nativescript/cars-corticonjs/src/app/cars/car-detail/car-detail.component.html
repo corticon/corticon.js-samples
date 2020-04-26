@@ -1,45 +1,47 @@
+<CarsActionBar [title]="car.name + ' - &euro;' + totalPrice + '/day'" back="true"></CarsActionBar>
+<StackLayout>
+    <TopBar></TopBar>
+    <GridLayout>
+        <ScrollView>
+            <GridLayout rows="auto, auto, auto, auto">
+                <Image [src]="car.imageUrl" stretch="aspectFill" height="160" class="m-b-15"></Image>
 
-<TopBar [title]="car.name + ' - &euro;' + totalPrice + '/day'"></TopBar>
-<GridLayout>
-    <ScrollView>
-        <GridLayout rows="auto, auto, auto, auto">
-            <Image [src]="car.imageUrl" stretch="aspectFill" height="160" class="m-b-15"></Image>
+                <StackLayout row="1" class="hr m-y-15"></StackLayout>
 
-            <StackLayout row="1" class="hr m-y-15"></StackLayout>
+                <GridLayout row="2" rows="*,*,*,*,*" columns="100, *, 100, *">
 
-            <GridLayout row="2" rows="*,*,*,*,*" columns="100, *, 100, *">
+                    <Label text="Price / day" class="p-l-15 p-b-10 m-r-20"></Label>
+                    <Label col="1" class="p-b-10">
+                        <FormattedString>
+                            <Span text="&euro;"></Span>
+                            <Span [text]="car.price"></Span>
+                            <Span *ngIf="driver" style="font-weight:bold;color:red;" [text]="' + &euro;' + driver.insurancePremium"></Span>
+                        </FormattedString>
+                    </Label>
 
-                <Label text="Price / day" class="p-l-15 p-b-10 m-r-20"></Label>
-                <Label col="1" class="p-b-10">
-                    <FormattedString>
-                        <Span text="&euro;"></Span>
-                        <Span [text]="car.price"></Span>
-                        <Span *ngIf="driver" style="font-weight:bold;color:red;" [text]="' + &euro;' + driver.insurancePremium"></Span>
-                    </FormattedString>
-                </Label>
+                    <Label text="Doors" class="p-l-15 p-b-10 m-r-20" row="0" col="2"></Label>
+                    <Label [text]="car.doors" row="0" col="3" class="p-b-10"></Label>
 
-                <Label text="Doors" class="p-l-15 p-b-10 m-r-20" row="0" col="2"></Label>
-                <Label [text]="car.doors" row="0" col="3" class="p-b-10"></Label>
+                    <Label text="Class" class="p-l-15 p-b-10 m-r-20" row="1"></Label>
+                    <Label [text]="car.class" row="1" col="1" class="p-b-10"></Label>
 
-                <Label text="Class" class="p-l-15 p-b-10 m-r-20" row="1"></Label>
-                <Label [text]="car.class" row="1" col="1" class="p-b-10"></Label>
+                    <Label text="Seats" class="p-l-15 p-b-10 m-r-20" row="1" col="2"></Label>
+                    <Label [text]="car.seats" row="1" col="3" class="p-b-10"></Label>
 
-                <Label text="Seats" class="p-l-15 p-b-10 m-r-20" row="1" col="2"></Label>
-                <Label [text]="car.seats" row="1" col="3" class="p-b-10"></Label>
+                    <Label text="Transmission" class="p-l-15 m-r-20 p-b-10" row="2" ></Label>
+                    <Label [text]="car.transmission" row="2" col="1" class="p-b-10"></Label>
 
-                <Label text="Transmission" class="p-l-15 m-r-20 p-b-10" row="2" ></Label>
-                <Label [text]="car.transmission" row="2" col="1" class="p-b-10"></Label>
+                    <Label text="Luggage" class="p-l-15 p-b-10 m-r-20" row="2" col="2"></Label>
+                    <Label [text]="car.luggage" row="2" col="3" class="p-b-10"></Label>
+                </GridLayout>
+                <StackLayout row="3">
+                    <StackLayout class="hr m-y-15"></StackLayout>
 
-                <Label text="Luggage" class="p-l-15 p-b-10 m-r-20" row="2" col="2"></Label>
-                <Label [text]="car.luggage" row="2" col="3" class="p-b-10"></Label>
+                    <CarInsurance (currentDriver)="insurancePremiumChanged($event)"></CarInsurance>
+                    <!--<Button text="Get Quote" [nsRouterLink]="['/cars/car-insurance', car.id]" pageTransition="slide" clearHistory="false"></Button>-->
+
+                </StackLayout>
             </GridLayout>
-            <StackLayout row="3">
-                <StackLayout class="hr m-y-15"></StackLayout>
-
-                <CarInsurance (currentDriver)="insurancePremiumChanged($event)"></CarInsurance>
-                <!--<Button text="Get Quote" [nsRouterLink]="['/cars/car-insurance', car.id]" pageTransition="slide" clearHistory="false"></Button>-->
-
-            </StackLayout>
-        </GridLayout>
-    </ScrollView>
-</GridLayout>
+        </ScrollView>
+    </GridLayout>
+</StackLayout>
