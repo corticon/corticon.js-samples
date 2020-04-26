@@ -9,7 +9,7 @@
     </ActionItem>
 </ActionBar>-->
 
-<StackLayout iosOverflowSafeArea="false" [ngStyle]="{'background-color': getBackgroundColour()}">
+<StackLayout iosOverflowSafeArea="false" [ngStyle]="{'background-color': getBackgroundColourLight()}">
     <!-- <Label [text]="'Using '+ decisionService.currentBackend" horizontalAlignment="center" (tap)="toggleEventLog($event)"></Label>-->
     <Label [text]="this.events.events[0]" horizontalAlignment="center" (tap)="toggleEventLog($event)"></Label>-->
     <StackLayout [visibility]="eventLogVisible?'visible':'collapsed'">

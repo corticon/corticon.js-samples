@@ -74,7 +74,6 @@ export class CarDetailComponent implements OnInit {
   
 
     insurancePremiumChanged(newDriver:Driver) {
-        console.log('ON INSURANCE PREMIUM CHANGED');
         this._driver = newDriver;
     }
 

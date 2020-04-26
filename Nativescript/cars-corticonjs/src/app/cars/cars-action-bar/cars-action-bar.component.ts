@@ -22,12 +22,7 @@ export class CarsActionBarComponent implements OnInit {
     }
 
     getBackgroundColour(){
-        if(this.decisionService.currentBackend == "Azure"){
-            return "rgba(0, 136, 214, 1)"
-            //return "#0089D6";
-        } else {
-            return "#5CE501";
-        }
+        return this.decisionService.currentBackend.bgcolor;
     }
 
     /* ***********************************************************

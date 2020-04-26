@@ -7,6 +7,8 @@ import { Config } from "../../shared/config";
 import { DecisionService } from "./decision.service";
 import { Car } from "./car.model";
 import { Driver } from "./driver.model";
+import { EventsService } from "./events.service";
+import { AppEvent } from "./app-event.model";
 
 
 
@@ -34,6 +36,7 @@ export class CarService {
     constructor(
         dataStoreService: DataStoreService,
         decisionService: DecisionService,
+        protected events: EventsService,
         private _userService: UserService) 
         {
             this._decisionService = decisionService;
@@ -69,16 +72,20 @@ export class CarService {
         }
         return this._decisionService.callDecisionService(corticonPayload).pipe(map((result:any) => {
             let newDriver:Driver;
-            
+
+            //TODO: asynch issue, what if an event is unshifted inbetween...
+            let endTime = Math.round((EventsService.now() - this.events.events[0].timestamp) * 100) / 100 ;    
+
+            this.events.events.unshift(new AppEvent("Finished DS round-trip on " + this._decisionService.currentBackend + " in "+ endTime + "ms","","info", endTime));
+
             if(result.Objects[0]) {
                 //Create a new driver object instance, bc immutability and we don't know which values coming back from Corticon have changed
                 newDriver = new Driver(driver.name, result.Objects[0].Gender, result.Objects[0].Age, result.Objects[0].YearsDriving,result.Objects[0].DamageWaiver );
                 newDriver.insurancePremium = result.Objects[0].Premium;
+                this.events.events.unshift(new AppEvent("The resulting driver premium was €" + newDriver.insurancePremium , "","info", null));
             } 
             return newDriver;
         }));
-     
-        //alert("The insurance premium will be: $"+ result.Objects[0].Premium);
     }
 
     load(): Promise<any> {
