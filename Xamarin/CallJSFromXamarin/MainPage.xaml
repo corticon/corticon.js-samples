@@ -8,7 +8,8 @@
              mc:Ignorable="d"
              x:Class="CallJSFromXamarin.MainPage">
     <ScrollView>
-        <StackLayout x:Name="stack">
+        <StackLayout x:Name="stack" Margin="10">
+                <Label Text="Corticon.js Xamarin Integration Demo " Font="Bold,22" HorizontalOptions="Fill" VerticalTextAlignment="Center"/>
             <StackLayout Orientation="Horizontal">
                 <Label Text="str1: "
                        VerticalTextAlignment="Center"/>
@@ -36,6 +37,21 @@
                        Keyboard="Numeric"
                        HorizontalOptions="FillAndExpand"/>
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Date: "
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="date1"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Days: "
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="days"
+                       Keyboard="Numeric"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <!--
+            -->
             <Button x:Name="callService"
                     Text="Call service"
                     Clicked="MultiplyBtnClicked"/>
