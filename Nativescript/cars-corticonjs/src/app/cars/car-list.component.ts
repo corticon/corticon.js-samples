@@ -33,7 +33,7 @@ export class CarListComponent implements OnInit {
         this._isLoading = true;
 
         /* ***********************************************************
-        * The data is retrieved remotely from FireBase.
+        * The data is retrieved remotely from Kinvey.
         * The actual data retrieval code is wrapped in a data service.
         * Check out the service in cars/shared/car.service.ts
         *************************************************************/

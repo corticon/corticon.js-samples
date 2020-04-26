@@ -1,6 +1,6 @@
-
-<Stacklayout>
-    <RadDataForm (propertyCommitted)="formChanged($event)" [source]="driver">
+<GridLayout rows="auto, auto">
+    <ActivityIndicator row="0" rowSpan="2" [busy]="isLoading"></ActivityIndicator>
+    <RadDataForm row="1" commitMode="OnLostFocus" (propertyCommitted)="formChanged($event)" [source]="driver">
         <TKEntityProperty tkDataFormProperty name="insurancePremium" ignore="true" hidden="true">
         </TKEntityProperty>
         <TKEntityProperty tkDataFormProperty name="coverage" displayName="Damage Coverage" index="0" valuesProvider="Full, Limited">
@@ -16,4 +16,4 @@
             <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
         </TKEntityProperty>
     </RadDataForm>
-</Stacklayout>
+</GridLayout>

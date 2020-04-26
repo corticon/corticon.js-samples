@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { PageRoute, RouterExtensions } from "nativescript-angular/router";
-import { switchMap } from "rxjs/operators";
 
 import { Car } from "../shared/car.model";
 import { CarService } from "../shared/car.service";
@@ -18,19 +17,23 @@ import { Driver } from "../shared/driver.model";
 })
 export class CarInsuranceComponent implements OnInit {
 
-    @Output() insurancePremium = new EventEmitter<Number>();
+    @Output() currentDriver = new EventEmitter<Driver>();
     private _car: Car;
     private _driver: Driver;
+    public isLoading = false;
 
     constructor(
         private _carService: CarService,
-        private _routerExtensions: RouterExtensions
-    ) { }
-
-    ngOnInit(): void {
+    ) {            
         this._driver = new Driver("Bob", "male", 22, 3, "Full");
+        //this._driver = this._carService.calculateInsurancePremium(this._driver).insurancePremium;
     }
 
+    ngOnInit(): void {
+        //validateAndCommitAll():
+        this.formChanged(null);
+        //this._driver = this._carService.calculateInsurancePremium(this._driver);
+    }
     get car(): Car {
         return this._car;
     }
@@ -40,6 +43,12 @@ export class CarInsuranceComponent implements OnInit {
     }
 
     formChanged($event):void {
-        this.insurancePremium.emit(this._carService.calculateInsurancePremium(this._driver).insurancePremium);
+        this.isLoading = true;
+        this._carService.calculateInsurancePremium(this._driver).subscribe((newDriver) => {
+            this.isLoading = false;
+            this._driver.insurancePremium = newDriver.insurancePremium;
+            this.currentDriver.emit(newDriver);
+        });
+        
     }
 }

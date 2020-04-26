@@ -6,6 +6,7 @@ import { KinveyModule } from "kinvey-nativescript-sdk/lib/angular";
 import { Config } from "./shared/config";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 @NgModule({
     bootstrap: [
@@ -14,6 +15,7 @@ import { AppComponent } from "./app.component";
     imports: [
         NativeScriptModule,
         AppRoutingModule,
+        NativeScriptHttpClientModule,
 
         /* ***********************************************************
         * The {N} Kinvey plugin initialization is explained in the plugin readme here:
@@ -25,6 +27,9 @@ import { AppComponent } from "./app.component";
             appKey: Config.kinveyAppKey,
             appSecret: Config.kinveyAppSecret
         })
+    ],
+    providers: [
+        NativeScriptHttpClientModule
     ],
     declarations: [
         AppComponent

@@ -1,12 +1,5 @@
-<ActionBar>
-    <NavigationButton android.systemIcon="ic_menu_back" (tap)="onBackButtonTap()">
-    </NavigationButton>
-    <Label [text]="car.name + ' - &euro;' + totalPrice + '/day'" horizontalAlignment="center"></Label>
-    <ActionItem ios.position="right" android.position="right" (tap)="onEditButtonTap()">
-        <Label text="Edit"></Label>
-    </ActionItem>
-</ActionBar>
 
+<TopBar [title]="car.name + ' - &euro;' + totalPrice + '/day'"></TopBar>
 <GridLayout>
     <ScrollView>
         <GridLayout rows="auto, auto, auto, auto">
@@ -21,7 +14,7 @@
                     <FormattedString>
                         <Span text="&euro;"></Span>
                         <Span [text]="car.price"></Span>
-                        <Span *ngIf="insurancePremium" style="font-weight:bold;color:red;" [text]="' + &euro;' + insurancePremium"></Span>
+                        <Span *ngIf="driver" style="font-weight:bold;color:red;" [text]="' + &euro;' + driver.insurancePremium"></Span>
                     </FormattedString>
                 </Label>
 
@@ -43,7 +36,7 @@
             <StackLayout row="3">
                 <StackLayout class="hr m-y-15"></StackLayout>
 
-                <CarInsurance (insurancePremium)="insurancePremiumChanged($event)"></CarInsurance>
+                <CarInsurance (currentDriver)="insurancePremiumChanged($event)"></CarInsurance>
                 <!--<Button text="Get Quote" [nsRouterLink]="['/cars/car-insurance', car.id]" pageTransition="slide" clearHistory="false"></Button>-->
 
             </StackLayout>

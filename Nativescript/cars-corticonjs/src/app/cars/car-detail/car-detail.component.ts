@@ -4,6 +4,9 @@ import { switchMap } from "rxjs/operators";
 
 import { Car } from "../shared/car.model";
 import { CarService } from "../shared/car.service";
+import { Driver } from "../shared/driver.model";
+import { DecisionService } from "../shared/decision.service";
+import { EventsService } from "../shared/events.service";
 
 /* ***********************************************************
 * This is the item details component in the master-detail structure.
@@ -16,13 +19,14 @@ import { CarService } from "../shared/car.service";
 })
 export class CarDetailComponent implements OnInit {
     private _car: Car;
-    private _totalPrice;
-    private _insurancePremium:Number;
-
+    private _driver: Driver;
+    
     constructor(
         private _carService: CarService,
         private _pageRoute: PageRoute,
-        private _routerExtensions: RouterExtensions
+        private _routerExtensions: RouterExtensions,
+        public events: EventsService,
+        public decisionService: DecisionService
     ) { }
 
 
@@ -42,30 +46,36 @@ export class CarDetailComponent implements OnInit {
                 const carId = params.id;
 
                 this._car = this._carService.getCarById(carId);
-                //this._totalPrice 
             });
     }
-
+    
     get car(): Car {
         return this._car;
     }
-    get totalPrice(): Number {
-        return this._totalPrice;
+    get driver() {
+        return this._driver;
     }
-    get insurancePremium(): Number {
-        return this._insurancePremium;
+
+    get totalPrice(): number {
+        if(this._driver && this._driver.insurancePremium){
+            return this.car.price + this.driver.insurancePremium;
+        } else {
+            return this.car.price;
+        }
+       
     }
-    insurancePremiumChanged(newPremium) {
-        this._insurancePremium = newPremium;
-        if(this._car && newPremium){
-            this._totalPrice = newPremium + this._car.price;
-        } 
-    }
-    /* ***********************************************************
-    * The back button is essential for a master-detail feature.
-    *************************************************************/
-    onBackButtonTap(): void {
-        this._routerExtensions.backToPreviousPage();
+    /*get insurancePremiumText(): string {
+        if(this._driver && this._driver.insurancePremium){
+            return this.car.price + " +" + this.driver.insurancePremium;
+        } else {
+            return this.car.price;
+        }
+    }*/
+  
+
+    insurancePremiumChanged(newDriver:Driver) {
+        console.log('ON INSURANCE PREMIUM CHANGED');
+        this._driver = newDriver;
     }
 
 }

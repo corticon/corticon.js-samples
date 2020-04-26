@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 // TODO: should be imported from kinvey-nativescript-sdk/angular but declaration file is currently missing
-import { DataStoreService, FilesService, UserService, Query } from "kinvey-nativescript-sdk/lib/angular";
-import { File } from "tns-core-modules/file-system";
+import { DataStoreService, UserService, Query } from "kinvey-nativescript-sdk/lib/angular";
+import { map } from 'rxjs/operators';
 
 import { Config } from "../../shared/config";
+import { DecisionService } from "./decision.service";
 import { Car } from "./car.model";
 import { Driver } from "./driver.model";
 
-import  * as RentalDecisionService from "rental-insurance";
 
 
 const editableProperties = [
@@ -26,19 +26,17 @@ const editableProperties = [
     providedIn: "root"
 })
 export class CarService {
-    private static cloneUpdateModel(car: Car): object {
-        // tslint:disable-next-line:ban-comma-operator
-        return editableProperties.reduce((a, e) => (a[e] = car[e], a), { _id: car.id });
-    }
 
     private _allCars: Array<Car> = [];
     private _carsStore = null;
-    private _currentDriver: Driver;
+    private _decisionService;
 
     constructor(
         dataStoreService: DataStoreService,
-        private _filesService: FilesService,
-        private _userService: UserService) {
+        decisionService: DecisionService,
+        private _userService: UserService) 
+        {
+            this._decisionService = decisionService;
             this._carsStore = dataStoreService.collection("cars");
         }
 
@@ -53,13 +51,12 @@ export class CarService {
     }
 
     calculateInsurancePremium(driver:Driver){
-        console.log("Driver age ", JSON.stringify(driver));
         let corticonPayload = {
             "__metadataRoot": { "#locale": "" },
             "Objects": [
                 {
                 "Age": driver.age,
-                "Gender": driver.gender,
+                "Gender": driver.gender ,
                 "YearsDriving": driver.licenceYears,
                 "DamageWaiver": driver.coverage,
                 "Premium": 0,
@@ -70,21 +67,17 @@ export class CarService {
                 }
             ]   
         }
-        //const configuration = { logLevel: 0 };
-        const configuration = { logLevel: 1, logIsOn: true, logFunction: function(logData){console.log(logData);return;}};
-        const result = RentalDecisionService.execute(corticonPayload, configuration);
-
-        let data = JSON.stringify(result);
-
-        if(result.Objects[0]) {
-            //Create a new driver object instance, bc immutability and we don't which values coming back from Corticon have changed
-            this._currentDriver = new Driver(driver.name, result.Objects[0].Gender, result.Objects[0].Age, result.Objects[0].YearsDriving,result.Objects[0].DamageWaiver );
-            this._currentDriver.insurancePremium = result.Objects[0].Premium;
-        } else {
-            this._currentDriver = driver;
-        }
-         
-        return this._currentDriver;
+        return this._decisionService.callDecisionService(corticonPayload).pipe(map((result:any) => {
+            let newDriver:Driver;
+            
+            if(result.Objects[0]) {
+                //Create a new driver object instance, bc immutability and we don't know which values coming back from Corticon have changed
+                newDriver = new Driver(driver.name, result.Objects[0].Gender, result.Objects[0].Age, result.Objects[0].YearsDriving,result.Objects[0].DamageWaiver );
+                newDriver.insurancePremium = result.Objects[0].Premium;
+            } 
+            return newDriver;
+        }));
+     
         //alert("The insurance premium will be: $"+ result.Objects[0].Premium);
     }
 
@@ -110,42 +103,6 @@ export class CarService {
         });
     }
 
-    update(carModel: Car): Promise<any> {
-        const updateModel = CarService.cloneUpdateModel(carModel);
-
-        return this._carsStore.save(updateModel);
-    }
-
-    uploadImage(remoteFullPath: string, localFullPath: string): Promise<any> {
-        const imageFile = File.fromPath(localFullPath);
-        const imageContent = imageFile.readSync();
-
-        const metadata = {
-            filename: imageFile.name,
-            mimeType: this.getMimeType(imageFile.extension),
-            size: imageContent.length,
-            public: true
-        };
-
-        return this._filesService.upload(imageFile, metadata, { timeout: 2147483647 })
-            .then((uploadedFile: any) => {
-                const query = new Query();
-                query.equalTo("_id", uploadedFile._id);
-
-                return this._filesService.find(query);
-            })
-            .then((files: Array<any>) => {
-                if (files && files.length) {
-                    const file = files[0];
-                    file.url = file._downloadURL;
-
-                    return file;
-                } else {
-                    Promise.reject(new Error("No items with the given ID could be found."));
-                }
-            });
-    }
-
     private login(): Promise<any> {
         if (!!this._userService.getActiveUser()) {
             return Promise.resolve();
@@ -154,9 +111,4 @@ export class CarService {
         }
     }
 
-    private getMimeType(imageExtension: string): string {
-        const extension = imageExtension === "jpg" ? "jpeg" : imageExtension;
-
-        return "image/" + extension.replace(/\./g, "");
-    }
 }
