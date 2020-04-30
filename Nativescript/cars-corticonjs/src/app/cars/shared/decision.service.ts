@@ -36,11 +36,16 @@ export class DecisionService {
             const configuration = { logLevel: 0 };
             //Enable for detailed console logging!
             //const configuration = { logLevel: 1, logIsOn: true, logFunction: function(logData){console.log(logData);return;}};
-    
+            
+            //corticonPayload.Objects[0].Age = "FOO";
+
             let result;
             try {
                 result = RentalDecisionService.execute(corticonPayload, configuration)
+                //console.log('Args no error', result);
+
             } catch (e){
+                console.log('ARGS ERROR');
                 this.events.events.unshift(new AppEvent(e.toString(),"","error",null));
                 alert(e);
             }
@@ -67,6 +72,7 @@ export class DecisionService {
 
     public callDecisionService(corticonPayload:Object){
         this.events.events.unshift(new AppEvent("Calling DS on " + this.currentBackend ,"","info", null));
+        this.events.eventCurrentlyProcessing = true;
         return this.currentBackend.callDS(corticonPayload);
     }
 

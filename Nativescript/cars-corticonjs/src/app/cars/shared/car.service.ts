@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 // TODO: should be imported from kinvey-nativescript-sdk/angular but declaration file is currently missing
 import { DataStoreService, UserService, Query } from "kinvey-nativescript-sdk/lib/angular";
-import { map } from 'rxjs/operators';
+import { map, retry, catchError } from 'rxjs/operators';
 
 import { Config } from "../../shared/config";
 import { DecisionService } from "./decision.service";
@@ -9,6 +9,8 @@ import { Car } from "./car.model";
 import { Driver } from "./driver.model";
 import { EventsService } from "./events.service";
 import { AppEvent } from "./app-event.model";
+import { HttpErrorResponse } from "@angular/common/http";
+import { throwError } from "rxjs";
 
 
 
@@ -70,22 +72,33 @@ export class CarService {
                 }
             ]   
         }
-        return this._decisionService.callDecisionService(corticonPayload).pipe(map((result:any) => {
-            let newDriver:Driver;
+        return this._decisionService.callDecisionService(corticonPayload).pipe(
+            catchError((error: HttpErrorResponse)=>{
+                this.events.events.unshift(new AppEvent("ERROR calling DS (device offline?) " + this._decisionService.currentBackend,"","error", null));
+                this.events.eventCurrentlyProcessing = false;
+                return throwError(error);
+            }),
+            map((result:any) => {
+                let newDriver:Driver;
 
-            //TODO: asynch issue, what if an event is unshifted inbetween...
-            let endTime = Math.round((EventsService.now() - this.events.events[0].timestamp) * 100) / 100 ;    
+                //TODO: asynch issue, what if an event is unshifted inbetween...
+                let endTime = Math.round((EventsService.now() - this.events.events[0].timestamp) * 100) / 100 ;    
 
-            this.events.events.unshift(new AppEvent("Finished DS round-trip on " + this._decisionService.currentBackend + " in "+ endTime + "ms","","info", endTime));
+                this.events.events.unshift(new AppEvent("Finished DS round-trip on " + this._decisionService.currentBackend + " in "+ endTime + "ms","","info", endTime));
+                this.events.events.unshift(new AppEvent("DS Status: " +  result.status,"","info", null));
+                this.events.eventCurrentlyProcessing = false;
 
-            if(result.Objects[0]) {
-                //Create a new driver object instance, bc immutability and we don't know which values coming back from Corticon have changed
-                newDriver = new Driver(driver.name, result.Objects[0].Gender, result.Objects[0].Age, result.Objects[0].YearsDriving,result.Objects[0].DamageWaiver );
-                newDriver.insurancePremium = result.Objects[0].Premium;
-                this.events.events.unshift(new AppEvent("The resulting driver premium was €" + newDriver.insurancePremium , "","info", null));
-            } 
-            return newDriver;
-        }));
+                if(result.status == "success") {
+                    //Create a new driver object instance, bc immutability and we don't know which values coming back from Corticon have changed
+                    newDriver = new Driver(driver.name, result.Objects[0].Gender, result.Objects[0].Age, result.Objects[0].YearsDriving,result.Objects[0].DamageWaiver );
+                    newDriver.insurancePremium = result.Objects[0].Premium;
+                    this.events.events.unshift(new AppEvent("The resulting driver premium was €" + newDriver.insurancePremium , "","info", null));
+                } else {
+                    this.events.events.unshift(new AppEvent("DS " +  result.description,"","error", null));
+                }
+                return newDriver;
+            })
+        );
     }
 
     load(): Promise<any> {
