@@ -32,6 +32,8 @@ If you wish to enable local building, e.g. for emulator deployment, adb building
 Have fun. The CorticonJS DS is added as a dependency in the [package.json](https://github.com/corticon/corticon.js-samples/blob/master/Nativescript/cars-corticonjs/package.json) of the NativeScript project. The DS is imported and used in the [cars service class](https://github.com/corticon/corticon.js-samples/blob/master/Nativescript/cars-corticonjs/src/app/cars/shared/car.service.ts)
 
 __This is a reasonable example of using a CorticonJS bundle decision service in a JS/TS project. The external dependency management approach should be valid for any NativeScript/ReactNative app and any web application using node dependency management (e.g. Angular et al.). This should allow for decent CI/CD setups, webpacking etc. It would facilitate decoupling development of the web/mobile project from modelling the Corticon Rules.__
+![Preview New](/Nativescript/previewnew.png)
+![Preview New2](/Nativescript/previewnew2.png)
 
 ![Preview 1](/Nativescript/preview1.jpg)
 ![Preview 2](/Nativescript/preview2.jpg)
