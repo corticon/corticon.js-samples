@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.canonicalvocabularymodel="http:///com/corticon/rulesemf/canonicalvocabularymodel.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="root" nsURI="http://root/1.0" nsPrefix="root">
   <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="1" buildNumber="8017" updateStamp="_fbo_cHXAEeqvKaQJciDJpA" externalChecksum="7824986:507989954" studioType="Javascript" customDataTypeDisplayCount="50">
+    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="1" minorVersionNumber="1" buildNumber="8017" updateStamp="_DhjNEKUpEeqW3YAudWA46g" externalChecksum="1964018669:1395357490" studioType="Javascript" customDataTypeDisplayCount="50">
       <languageCode>en_US</languageCode>
       <databaseAccess databasePropertyDisplayCount="50"/>
+      <customDataTypeList enumerationDisplayCount="50" eDataType="#//DamageWaiverLevel">
+        <dataTypeName manuallyCreated="true" value="DamageWaiverLevel"/>
+        <baseDataType manuallyCreated="true" value="String"/>
+        <enumeration value="true"/>
+        <enumerationElements>
+          <label manuallyCreated="true" value="Full"/>
+          <value manuallyCreated="true" value="'Full'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <label manuallyCreated="true" value="Limited"/>
+          <value manuallyCreated="true" value="'Limited'"/>
+        </enumerationElements>
+      </customDataTypeList>
     </contents>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Applicant">
@@ -22,7 +35,7 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Premium" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Premium" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
         <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
           <name manuallyCreated="true" value="Premium"/>
@@ -30,9 +43,9 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DamageWaiver" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DamageWaiver" lowerBound="1" eType="#//DamageWaiverLevel">
       <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension" customDataType="#//%http:%2F%2F%2Fcom%2Fcorticon%2Frulesemf%2Fcanonicalvocabularymodel%2FVocabularyExtension%/@contents.0/@customDataTypeList.0">
           <name manuallyCreated="true" value="DamageWaiver"/>
           <mode manuallyCreated="true" value="Base"/>
         </contents>
@@ -54,5 +67,9 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DamageWaiverLevel">
+    <eLiterals name="Full" literal="'Full'"/>
+    <eLiterals name="Limited" value="1" literal="'Limited'"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="1" buildNumber="8017" updateStamp="_q0JIwnXAEeqvKaQJciDJpA" externalChecksum="7824986:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="1" buildNumber="8017" updateStamp="_NDW6gaUpEeqW3YAudWA46g" externalChecksum="1964018669:1395357490:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_fbo_cHXAEeqvKaQJciDJpA" vocabulary="CarRentalVocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_DhjNEKUpEeqW3YAudWA46g" vocabulary="CarRentalVocab.ecore#/">
     <rule>
       <action/>
     </rule>
@@ -32,8 +32,8 @@
       </condition>
       <condition/>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -41,13 +41,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Full"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 40">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 40" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 40" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -85,8 +85,8 @@
       </condition>
       <condition/>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -94,13 +94,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Limited"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 20">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -138,8 +138,8 @@
       </condition>
       <condition/>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -147,13 +147,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Full"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 60">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 60" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 60" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -191,8 +191,8 @@
       </condition>
       <condition/>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -200,13 +200,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Limited"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 35">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -244,8 +244,8 @@
         <viewExpressions lhs="Applicant.YearsDriving" rhs="&lt; 20"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -253,13 +253,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Full"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 35">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -297,8 +297,8 @@
         <viewExpressions lhs="Applicant.YearsDriving" rhs="&lt; 20"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -306,13 +306,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Limited"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 15">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -350,8 +350,8 @@
         <viewExpressions lhs="Applicant.YearsDriving" rhs=">= 20"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -359,13 +359,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Full"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 20">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -403,8 +403,8 @@
         <viewExpressions lhs="Applicant.YearsDriving" rhs=">= 20"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -412,13 +412,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Limited"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 10">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 10" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 10" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -467,8 +467,8 @@
         <viewExpressions lhs="Applicant.YearsDriving" rhs="other"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -476,13 +476,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Full'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Full"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 35">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -531,8 +531,8 @@
         <viewExpressions lhs="Applicant.YearsDriving" rhs="other"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Applicant.DamageWaiver = 'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Applicant.DamageWaiver = DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -540,13 +540,13 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Applicant.DamageWaiver" rhs="'Limited'"/>
+        <viewExpressions lhs="Applicant.DamageWaiver" rhs="DamageWaiverLevel#Limited"/>
       </condition>
       <action>
         <opaqueExpression expression="Applicant.Premium = 15">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -570,9 +570,9 @@
       <actionItemList>
         <valueSetCell/>
         <expressionCell external="Applicant.Premium">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </referencedTermList>
@@ -633,7 +633,7 @@
       <conditionItemList>
         <valueSetCell/>
         <expressionCell external="Applicant.DamageWaiver">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -667,8 +667,8 @@
           </parserOutput>
         </conditionValueSetCellList>
         <conditionValueSetCellList valueSet="-"/>
-        <conditionValueSetCellList valueSet="'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -677,9 +677,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="40">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 40" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 40" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -709,8 +709,8 @@
           </parserOutput>
         </conditionValueSetCellList>
         <conditionValueSetCellList valueSet="-"/>
-        <conditionValueSetCellList valueSet="'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -719,9 +719,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="20">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -751,8 +751,8 @@
           </parserOutput>
         </conditionValueSetCellList>
         <conditionValueSetCellList valueSet="-"/>
-        <conditionValueSetCellList valueSet="'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -761,9 +761,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="60">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 60" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 60" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -793,8 +793,8 @@
           </parserOutput>
         </conditionValueSetCellList>
         <conditionValueSetCellList valueSet="-"/>
-        <conditionValueSetCellList valueSet="'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -803,9 +803,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="35">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -835,8 +835,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -845,9 +845,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="35">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -877,8 +877,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -887,9 +887,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="15">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -919,8 +919,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -929,9 +929,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="20">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 20" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -961,8 +961,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -971,9 +971,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="10">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 10" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 10" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -1011,8 +1011,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="'Full'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Full">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Full'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -1021,9 +1021,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="35">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
@@ -1061,8 +1061,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="'Limited'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="DamageWaiverLevel#Limited">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.DamageWaiver = 'Limited'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="DamageWaiver" datatype="String" termtype="ATTRIBUTE" fulltext="Applicant.DamageWaiver">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant" variable="#//@ruleset/@logicalVariables.0"/>
@@ -1071,9 +1071,9 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList valueSet="15">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Applicant.Premium = 15" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
-              <terms text="Premium" datatype="Integer" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
+              <terms text="Premium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Applicant.Premium">
                 <parentTerm text="Applicant" datatype="Applicant" termtype="ENTITY" fulltext="Applicant"/>
               </terms>
             </modifiedTermList>
