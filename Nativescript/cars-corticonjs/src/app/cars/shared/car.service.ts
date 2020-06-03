@@ -90,8 +90,10 @@ export class CarService {
 
                 if(result.status == "success") {
                     //Create a new driver object instance, bc immutability and we don't know which values coming back from Corticon have changed
+
                     newDriver = new Driver(driver.name, result.Objects[0].Gender, result.Objects[0].Age, result.Objects[0].YearsDriving,result.Objects[0].DamageWaiver );
-                    newDriver.insurancePremium = result.Objects[0].Premium;
+                    //Corticon Decimals are output as strings - parseFloat should do for now, but not ideal for currency values :)
+                    newDriver.insurancePremium = Number.parseFloat(result.Objects[0].Premium);
                     this.events.events.unshift(new AppEvent("The resulting driver premium was €" + newDriver.insurancePremium , "","info", null));
                 } else {
                     this.events.events.unshift(new AppEvent("DS " +  result.description,"","error", null));

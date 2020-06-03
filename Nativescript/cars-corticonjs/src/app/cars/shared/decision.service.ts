@@ -37,12 +37,13 @@ export class DecisionService {
             //Enable for detailed console logging!
             //const configuration = { logLevel: 1, logIsOn: true, logFunction: function(logData){console.log(logData);return;}};
             
+            //Uncomment to test error handling :)
             //corticonPayload.Objects[0].Age = "FOO";
 
             let result;
             try {
-                result = RentalDecisionService.execute(corticonPayload, configuration)
-                //console.log('Args no error', result);
+                result = RentalDecisionService.execute(corticonPayload, configuration);
+                //console.log('Args no error', JSON.stringify(result));
 
             } catch (e){
                 console.log('ARGS ERROR');
