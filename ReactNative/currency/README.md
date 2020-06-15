@@ -4,6 +4,12 @@ Purpose of this application is to demonstrate
 	- Inputs that affect state
 	- Calling a Decision Service
 
+### Home Screen
+Shows a list of currencies with a colored indicator. The color of the indicator is based on a call to a decision service that checks how much the exchange rate has changed.
+
+### Exchange Screen
+Shows a form that allows you to select your Sell/Buy currency and input how much you want to exchange. The output changes automatically when you submit input.
+
 ## Getting Started
 See the react_native README.md for how to setup React Native
 
