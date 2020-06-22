@@ -13,6 +13,7 @@ const entityDefaults = {
   },
 };
 
+// TODO: AWS/Azure DS
 const azureDS = {
   name: "Azure",
   toString: () => { return this.azureDS.name },
@@ -45,6 +46,7 @@ const azureDS = {
   }
 }
 
+// local Decision Service 
 const clientDS = {
   name: "Client (offline)",
   toString: () => { return this.clientDS.name },
@@ -62,6 +64,7 @@ const clientDS = {
   }
 }
 
+// Helper function to add required metatdata and populate defaults
 function payload(entities) {
   const payload = { "__metadataRoot": {"#locale": ""} };
   const entityCount = {};
