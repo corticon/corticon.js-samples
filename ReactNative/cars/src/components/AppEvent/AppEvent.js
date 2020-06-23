@@ -26,7 +26,7 @@ class AppEvent extends Component {
               <ScrollView style={compStyles.eventList} ref={ref => {this.scrollView = ref}} onContentSizeChange={() => this.scrollView.scrollToEnd({animated: true})}>
                 {appEvents.map(appEvent => {
                   return (
-                    <View style={compStyles.eventTextListItem}>
+                    <View style={[compStyles.eventTextListItem, {backgroundColor: this.props.color}]}>
                       <Text style={compStyles.eventText}>{appEvent.text}</Text>
                     </View>
                   )

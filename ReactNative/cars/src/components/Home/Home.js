@@ -9,11 +9,11 @@ import {
 import Card from '../Containers/Card';
 import CarSummary from '../CarSummary/CarSummary';
 
+// Demo Data
 const data = require('../../../demo-data.json');
 const cars = data.cars['set-0'];
 
 const Home = (props) => {
- 
   return (
     <ScrollView>
       {cars && cars.map(car => {

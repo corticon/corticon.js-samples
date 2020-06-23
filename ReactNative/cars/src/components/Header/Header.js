@@ -11,14 +11,14 @@ import {
 } from 'react-native';
 
 import AppEvent from '../AppEvent/AppEvent';
-import { COLORS, SIZES} from '../../constants/Constants';
+import { COLORS, SIZES } from '../../constants/Constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Header = (props) => {
   const route = props.scene.route;
 
   return (
-    <View style={compStyles.header}>
+    <View style={[compStyles.header, props.backend == 'client' ? compStyles.headerOffline : compStyles.headerOnline]}>
       <View style={compStyles.headerLeft}>
         {props.previous &&
           <TouchableOpacity
@@ -40,14 +40,14 @@ const Header = (props) => {
         {(props.backend == 'client') && (<Text>Offline</Text>)}
         {(props.backend == 'azure') && (<Text>Azure</Text>)}
         <Switch
-          trackColor={{ false: COLORS.background.light, true: COLORS.accent }}
+          trackColor={{ false: COLORS.background.light, true: COLORS.secondary_accent }}
           thumbColor={props.backend == 'azure' ? "#f5dd4b" : "#f4f3f4"}
           onValueChange={()=>{props.toggleBackend()}}
           value={props.backend == 'azure'}
         />
       </View>
       <View style={compStyles.headerEventsList}>
-        <AppEvent collapsed={props.collapsed}/>
+        <AppEvent collapsed={props.collapsed} color={props.backend == 'client' ? COLORS.accent : COLORS.secondary_accent}/>
       </View>
     </View>
   );
@@ -63,10 +63,17 @@ const compStyles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
   },
+  headerOffline: {
+    backgroundColor: COLORS.primary,
+  },
+  headerOnline: {
+    backgroundColor: COLORS.secondary,
+  },
   headerLeft: {
     minWidth: 50,
   },
   headerRight: {
+    alignItems: 'center',
   },
   headerTitle: {
     color: COLORS.text.dark,

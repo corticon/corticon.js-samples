@@ -11,6 +11,7 @@ const COLORS = {
 	primary: '#64dd17',
 	accent: '#b2ff59',
 	secondary: '#0091ea',
+	secondary_accent: '#40c4ff',
 	background: {
 		light: '#fff',
 		dark: '#eee'

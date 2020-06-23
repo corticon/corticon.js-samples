@@ -11,8 +11,8 @@ import Card from '../Containers/Card';
 import CarInsurance from '../CarInsurance/CarInsurance';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {COLORS, SIZES} from '../../constants/Constants';
-import {images, styles} from '../../App';
+import { COLORS, SIZES } from '../../constants/Constants';
+import { images, styles } from '../../App';
 
 class CarDetails extends Component {
   constructor(props) {

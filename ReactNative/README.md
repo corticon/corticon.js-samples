@@ -1,5 +1,5 @@
 # Setup
-
+This is the setup documentation for ReactNative apps in general. For project specific additional requirements, see their respective documentation.
 
 ## React Native
 https://reactnative.dev/docs/environment-setup
@@ -8,7 +8,6 @@ https://reactnative.dev/docs/environment-setup
 ### Dependencies
 Node.js
 https://nodejs.org/en/download/
-64 bit, optional tools installed (not necessary, but I did)
 
 Python 2
 https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
@@ -31,8 +30,15 @@ Bundle/Start emulator
 
 `react-native run-android`
 
-### 3rd Parties Libraries
+View console logs
+
+`npx react-native log-android`
+
+### Optional 3rd Parties Libraries
+__The following are some of the third party libraries used in sample apps. These are for reference only and there is no need to pull the dependencies yourself.__
+
 Navigation (React Navigation)
+
 `npm install -s @react-navigation/native @react-navigation/stack`
 
 `npm install -s react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
@@ -52,5 +58,6 @@ Picker
 
 `npm install -s @react-native-community/picker`
 
+Picker-select (easier to use)
 
-## TODO: Organize
+`npm install -s @react-native-picker-select`

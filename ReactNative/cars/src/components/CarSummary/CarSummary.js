@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {COLORS, SIZES} from '../../constants/Constants';
-import {images, styles} from '../../App';
+import { COLORS, SIZES } from '../../constants/Constants';
+import { images, styles } from '../../App';
 
 const CarSummary = (props) => {
  
