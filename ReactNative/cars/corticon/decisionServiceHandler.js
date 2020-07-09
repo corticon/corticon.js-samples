@@ -13,36 +13,25 @@ const entityDefaults = {
   },
 };
 
-// TODO: AWS/Azure DS
-const azureDS = {
-  name: "Azure",
-  toString: () => { return this.azureDS.name },
+// TODO: AWS
+// AWS step functions invokes lambda that execude Decision Service
+const awsDS = {
+  name: "AWS Step Function",
+  toString: () => { return this.awsDS.name },
   callDS: (corticonPayload, options) => {
     let httpRequest = new XMLHttpRequest();
-    let azureUrl = "https://carsdecisionservice.azurewebsites.net/api/rentalinsurance?code=RY8cZxulCemeWzOar7PsLOKk2J2TSPQF54tHoXdFAMY2wQUeP3F5bQ==";
+    // AWS step function. Created by Thierry
+    let url = "https://77pucwt9j3.execute-api.us-east-2.amazonaws.com/prod/CarRental";
 
-    // // asynchronous request
-    // httpRequest.onreadystatechange = () => {
-    //   options.responseHandler();
-      
-    // }
-    // httpRequest.open('POST', azureUrl, true);
-    // httpRequest.setRequestHeader('Content-Type', 'application/json');
-    // httpRequest.send(corticonPayload); 
     console.log(JSON.stringify(corticonPayload));
-    fetch(azureUrl, {
+    fetch(url, {
       method: 'POST',
       headers: {
       },
       body: JSON.stringify(corticonPayload),
     }).then((response) => response.json())
-      .then((json) => console.log(JSON.stringify(json, {}, 2)))
+      .then((json) => options.responseHandler(json))
       .catch((error) => {console.log(JSON.stringify(error, {}, 2))});
-
-    // fetch('https://reactnative.dev/movies.json')
-    // .then((response) => response.json())
-    // .then((json) => console.log(json.movies))
-    // .catch((error) => console.error(error))
   }
 }
 
@@ -99,8 +88,8 @@ function runDecisionService(entities, configuration={}, backend='client', respon
 
   if (backend == 'client') {
     clientDS.callDS(payload(entities), {configuration: configuration, responseHandler: responseHandler});
-  } else if (backend == 'azure') {
-    azureDS.callDS(payload(entities), {configuration: configuration, responseHandler: responseHandler});
+  } else if (backend == 'aws') {
+    awsDS.callDS(payload(entities), {configuration: configuration, responseHandler: responseHandler});
   } else {
     alert('Not a valid backend service');
   }

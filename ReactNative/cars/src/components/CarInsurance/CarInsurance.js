@@ -23,10 +23,10 @@ class CarInsurance extends Component {
     super(props);
     this.state = {
       name: '',
-      age: '25',
-      licenseYears: '7',
-      gender: 'male',
-      coverage: 'Limited',
+      age: '',
+      licenseYears: '',
+      gender: '',
+      coverage: '',
     };
   }
 
@@ -46,7 +46,7 @@ class CarInsurance extends Component {
       },
     ]
 
-    let startTime = Date.now;
+    let startTime = new Date();
     this.context.sendAppEvent({
       text: 'Calling DS on ' + this.context.backend,
       timestamp: Date(startTime),
@@ -54,25 +54,34 @@ class CarInsurance extends Component {
     
     // handler function to handle asynchronous response
     let responseHandler = (result) => {
-      //alert(JSON.stringify(result, {}, 2));
-      let endTime = Date.now() - startTime()
+      alert(JSON.stringify(result, {}, 2));
+      let endTime = new Date();
+      let elapsedTime = endTime - startTime;
       this.context.sendAppEvent({
-        text: 'Finished DS round-trip on ' + this.context.backend + ' in ' + endTime + 'ms',
-        duration: endTime,
+        text: 'Finished DS round-trip on ' + this.context.backend + ' in ' + elapsedTime + 'ms',
+        duration: elapsedTime,
       });
       
       this.context.sendAppEvent({
         text: 'DS Status: ' + result.status
       });
-   
-      let insurancePremium = Number.parseFloat(result.Objects[0].Premium);
 
       // Check Decision Service status
       // if not 'success', then handle error
-      if (result.status == 'success' && insurancePremium && insurancePremium != 0) {
-        this.context.sendAppEvent({
-          text: 'The resulting driver premium was €' + insurancePremium});
-        this.props.updateRate(insurancePremium);
+      if (result.status == 'success') {
+        if (result.Objects.length && result.Objects[0].Premium) {
+          let insurancePremium = Number.parseFloat(result.Objects[0].Premium);
+          if (insurancePremium != 0) {
+            this.context.sendAppEvent({
+            text: 'The resulting driver premium was €' + insurancePremium});
+            this.props.updateRate(insurancePremium);
+          }
+        } else {
+          this.context.sendAppEvent({
+            text: 'Invalid Insurance Premium',
+            type: 'error',
+          })
+        }
       } else {
         this.context.sendAppEvent({
           text: 'DS ' + result.description,

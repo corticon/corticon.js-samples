@@ -48,7 +48,7 @@ class App extends Component {
 
   toggleBackend() {
     this.setState((prevState) => {
-      return { backend: (prevState.backend == 'client' ? 'azure' : 'client') };
+      return { backend: (prevState.backend == 'client' ? 'aws' : 'client') };
     });
   }
 

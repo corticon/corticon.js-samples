@@ -38,12 +38,12 @@ const Header = (props) => {
       </TouchableWithoutFeedback>
       <View style={compStyles.headerRight}>
         {(props.backend == 'client') && (<Text>Offline</Text>)}
-        {(props.backend == 'azure') && (<Text>Azure</Text>)}
+        {(props.backend == 'aws') && (<Text>Aws Step Function</Text>)}
         <Switch
           trackColor={{ false: COLORS.background.light, true: COLORS.secondary_accent }}
-          thumbColor={props.backend == 'azure' ? "#f5dd4b" : "#f4f3f4"}
+          thumbColor={props.backend == 'aws' ? "#f5dd4b" : "#f4f3f4"}
           onValueChange={()=>{props.toggleBackend()}}
-          value={props.backend == 'azure'}
+          value={props.backend == 'aws'}
         />
       </View>
       <View style={compStyles.headerEventsList}>
