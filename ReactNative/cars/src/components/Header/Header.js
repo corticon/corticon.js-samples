@@ -38,7 +38,7 @@ const Header = (props) => {
       </TouchableWithoutFeedback>
       <View style={compStyles.headerRight}>
         {(props.backend == 'client') && (<Text>Offline</Text>)}
-        {(props.backend == 'aws') && (<Text>Aws Step Function</Text>)}
+        {(props.backend == 'aws') && (<Text>AWS</Text>)}
         <Switch
           trackColor={{ false: COLORS.background.light, true: COLORS.secondary_accent }}
           thumbColor={props.backend == 'aws' ? "#f5dd4b" : "#f4f3f4"}

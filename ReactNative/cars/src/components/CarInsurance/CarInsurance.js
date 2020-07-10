@@ -54,7 +54,6 @@ class CarInsurance extends Component {
     
     // handler function to handle asynchronous response
     let responseHandler = (result) => {
-      alert(JSON.stringify(result, {}, 2));
       let endTime = new Date();
       let elapsedTime = endTime - startTime;
       this.context.sendAppEvent({
@@ -82,7 +81,7 @@ class CarInsurance extends Component {
             type: 'error',
           })
         }
-      } else {
+      } else { // there's an error
         this.context.sendAppEvent({
           text: 'DS ' + result.description,
           type: 'error', 

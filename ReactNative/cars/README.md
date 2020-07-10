@@ -15,7 +15,11 @@ You can switch from offline to online mode with a simple toggle - no need to tur
 To see how to call the decisions service from code, see 
 
 [decisionServiceHandler.js](corticon/decisionServiceHandler.js) - a wrapper that handles calling the DS
+
 [CarInsurance.js](src/components/CarInsurance/CarInsurance.js) - the component that is calling the DS / handling the response
+
+For an example on how to check the status / handle the response out of the decision service,
+see [CarInsurance.js](src/components/CarInsurance/CarInsurance.js) inside CalculateInsurancePremium.
 
 ## Usage - Windows/Mac/Linux
 
