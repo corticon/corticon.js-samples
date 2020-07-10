@@ -1,11 +1,16 @@
 # ReactNative Port of [cars-corticonjs (NativeScript)](https://github.com/corticon/corticon.js-samples/tree/master/Nativescript)
 
-__The purpose of this Demo is to demonstrate invoking two different Decision Services (offline local and AWS Step Function) inside of a ReactNative mobile application. In this Demo, the insurance premium on the car detail screen (click on any car from the homescreen) is modified based on the information the user provides.__
+The purposes of this Demo are multi-fold:
+ 1) To demonstrate how easy it is to call from ReactNative mobile application a Corticon.js Decision Services directly from the app - this is to illustrate working offline 
+ 2) To demonstrate how to call the same decision service deployed as a Lambda function in AWS via a REST endpoint.
+ 3) Show dynamic screen prompting: in this demo, the insurance premium on the car detail screen (click on any car from the home screen) is modified based on the information the user provides.
 
-__Clicking on the Header/Title Bar will open up a list showing some of the things happening under the hood. Of note, this demo shows the potential difference in response times between local and cloud deployed Decision Services.__
+Note: Clicking on the Header/Title Bar will open up a list showing some of the things happening under the hood. Of note, this demo shows the potential difference in response times between local and cloud deployed Decision Services.
 
+## How to use the app:
 
 To test the CorticonJS Decision Service, please select a car. You can then get a quote on the additional damage waiver. The decision service is meant to model a typical car rental damage waiver insurance programme. It expects driver details such as age, gender, driving experience and the collision damage waiver plan ('Full' or 'Limited'). Its expected output is a calculated premium based on the driver details. To this end, it's highly discriminatory to younger drivers and to drivers identifying as male in particular. All other genders are fine and it's not a binary spectrum.
+You can switch from offline to online mode with a simple toggle - no need to turn network off :)
 
 To see how to call the decisions service from code, see 
 
