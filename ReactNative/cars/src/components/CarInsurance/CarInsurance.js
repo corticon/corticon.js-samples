@@ -57,7 +57,8 @@ class CarInsurance extends Component {
       let endTime = new Date();
       let elapsedTime = endTime - startTime;
       this.context.sendAppEvent({
-        text: 'Finished DS round-trip on ' + this.context.backend + ' in ' + elapsedTime + 'ms',
+        text: 'Finished DS round-trip on ' + this.context.backend,
+        //text: 'Finished DS round-trip on ' + this.context.backend + ' in ' + elapsedTime + 'ms',
         duration: elapsedTime,
       });
       
