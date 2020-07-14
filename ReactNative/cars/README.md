@@ -46,6 +46,6 @@ Bundle/Start emulator
 This port does not keep the Kinvey functionality which includes fetching the car data. Instead the data is sourced from [demo-data.json](./demo-data.json)
 
 ### AWS
-Instead of an Azure Server, this demo instead calls an AWS step function when toggled from offline.
+Instead of an Azure Server, this demo instead calls an AWS Lambda function when toggled from offline.
 
 
