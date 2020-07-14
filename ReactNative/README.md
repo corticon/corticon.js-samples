@@ -19,7 +19,8 @@ Android Studio (+ Android SDK)
 ### CLI
 `npm install -g react-native-cli`
 
-`react-native-cli init somename` will create a sample react native application (some dependencies may be fetched)
+`react-native init somename` will create a sample react native application (some dependencies may be fetched)
+This command actually runs `npm install react-native` behind the scenes into the new project directory.
 
 ### Viewing your application
 Start React Native Server
