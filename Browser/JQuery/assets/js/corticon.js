@@ -220,8 +220,7 @@ function nextStep() {
 
     $('#steps-nav-back').removeClass('display-none');
 
-    // if there is not a step after the upcoming one, change to submit
-    if (steps.length > 1 && steps.eq(1).is("#user-quote-step")) {
+    if (steps.eq(0).is("#user-submit-quote-step")) {
       $('#steps-nav-continue').addClass('display-none');
       $('#steps-nav-submit').removeClass('display-none');
     }
@@ -234,7 +233,7 @@ function getQuote() {
   runDecisionService(entities, {}, function(result) {
     console.log(result);
     let user = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'User' })[0]
-    $('user-quote-display').text(user.priceQuote);
+    $('#user-quote-display').text("$" + user.priceQuote);
     nextStep();
   }, window.corticonEngineServer);
 }
