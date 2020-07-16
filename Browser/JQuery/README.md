@@ -1,9 +1,11 @@
 # Dynamic Form
-This Corticon.js browser sample aims to illustrate the common use case of a dynamic user questionnaire. This sample shows off a number of different uses of Corticon.js inside of a form:
-	- Storing Configurable Data (that some business analyst could change on the fly)
-	- Conditionally showing a field/step that is already part of the form
-	- Conditionally generating a field in the view based on the Decision Service output
-	- Separating your Decisions Service into local and server so users do not have access to certain information
+This Corticon.js browser sample aims to illustrate the common use case of a dynamic user questionnaire. 
+
+This sample shows off a number of different uses of Corticon.js inside of a form:
+- Storing Configurable Data (that some business analyst could change on the fly)
+- Conditionally showing a field/step that is already part of the form
+- Conditionally generating a field in the view based on the Decision Service output
+- Separating your Decisions Service into local and server so users do not have access to certain information
 
 ## Setup
 If you have all the files, all you have to do to run it is open up home.html, preferrably in Chrome as that is where this was tested.
@@ -17,19 +19,24 @@ In a demo you can choose to either show or skip the small text sections on Corti
 
 For the dynamic form there are 6 steps in total
 Step 1) User selects car from a selection of cars that are fetched from the Decision Service
-	- This means that some business department could modify which cars are shown whenever they want to
-	- This paradigm applies to any kind of configurable data
+- This means that some business department could modify which cars are shown whenever they want to
+- This paradigm applies to any kind of configurable data
+
 Step 2) User is asked for First Name/Last Name + DoB. The User's age may affect eventual price quote
+
 Step 3) User is asked for Address/City/Profession
-	- City may affect price quote
-	- Profession is the key field. Depending on the selection, the next couple steps will be affected
+- City may affect price quote
+- Profession is the key field. Depending on the selection, the next couple steps will be affected
+
 Step 4) A call is made to the Decision Service. If the Decision Service decides so (based on the profession), a step asking for more detailed information about the profession is shown to the user
-	- This step is already part of the application and is shown or hidden based on the Decision Service
-	- Similarly specific fields could be shown/hidden in the same manner
-	- If the User picked 'Other' as profession, this step will be hidden
+- This step is already part of the application and is shown or hidden based on the Decision Service
+- Similarly specific fields could be shown/hidden in the same manner
+- If the User picked 'Other' as profession, this step will be hidden
+
 Step 5) Similar to step 4, however in this case the form fields itself are configured by the Decision Service
-	- in this case, the Decision Service told the application that it should show the user a text field called 'Employee ID Number' as well as a select dropdown named 'Employer' with specified selection options
-	- the application then uses JQuery to create these fields
+- in this case, the Decision Service told the application that it should show the user a text field called 'Employee ID Number' as well as a select dropdown named 'Employer' with specified selection options
+- the application then uses JQuery to create these fields
+
 Step 6) The actual price quote. This uses a separate Decision Service to illustrate the fact that you may want the flexibility to hide certain confidential methodologies like pricing for example in a server Decision Service.
 
 ## JQuery
