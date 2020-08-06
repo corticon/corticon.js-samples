@@ -18,6 +18,7 @@ This sample aims to be very accessible. It is not only very easy to setup, but t
 In a demo you can choose to either show or skip the small text sections on Cortion.js by clicking straight on the 'View Your Quote' button in the very top section. Most of those text sections are there to add context in case of an unguided demo.
 
 For the dynamic form there are 6 steps in total
+
 Step 1) User selects car from a selection of cars that are fetched from the Decision Service
 - This means that some business department could modify which cars are shown whenever they want to
 - This paradigm applies to any kind of configurable data
@@ -50,6 +51,10 @@ JQuery is used in place of any heavyweight JavaScript framework because we wante
 [corticon.js](assets/js/corticon.js) - All of the dynamic form JavaScript happens here
 
 [main.css](assets/css/main.css) - There's a lot of css here. Most of the form specific css is at the bottom.
+
+[decisionServiceBundle.js](corticon/decisionServiceBundle.js) - The local Decision Service that contains teh configured cars and handles the conditional fields
+
+[decisionServiceBundle.server.js](corticion/decisionServiceBundle.server.js) - The "server" Decision Service that handles the price quote. This is seperated to illustrate the point that you could host this file however you want.
 
 ## Attribution
 This sample is based off of HTML5UP Zerofour by @ajlkn
