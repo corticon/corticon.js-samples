@@ -127,11 +127,11 @@ function professionDiscountStep() {
     console.log(result);
     let user = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'User' })[0];
     if (user.showProfessionDiscount) {
-      $('#conditional-user-step-1').addClass('step');
-      $('#conditional-user-step-1-header').addClass('step');
+      $('#conditional-user-step-1').removeClass('hide-step');
+      $('#conditional-user-step-1-header').removeClass('hide-step');
     } else {
-      $('#conditional-user-step-1').removeClass('step');
-      $('#conditional-user-step-1-header').removeClass('step');
+      $('#conditional-user-step-1').addClass('hide-step');
+      $('#conditional-user-step-1-header').addClass('hide-step');
     }
   }, window.corticonEngine);
 }
@@ -143,11 +143,11 @@ function professionDiscountOptionsStep() {
     console.log(result);
     let user = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'User' })[0];
     if (user.showProfessionDiscount) {
-      $('#conditional-user-step-2').addClass('step');
-      $('#conditional-user-step-2-header').addClass('step');
+      $('#conditional-user-step-2').removeClass('hide-step');
+      $('#conditional-user-step-2-header').removeClass('hide-step');
     } else {
-      $('#conditional-user-step-2').removeClass('step');
-      $('#conditional-user-step-2-header').removeClass('step');
+      $('#conditional-user-step-2').addClass('hide-step');
+      $('#conditional-user-step-2-header').addClass('hide-step');
     }
     
     // Type 2 - Some or All Form fields/options reside in Decision Service
@@ -187,12 +187,13 @@ function prevStep() {
   let curr_step = $('#steps .step.curr-step');
   let curr_step_header = $('#steps-header .step.curr-step');
 
-  if (curr_step.prevAll('#steps .step').length) {
+  let steps = curr_step.prevAll('#steps .step:not(.hide-step)');
+  if (steps.length) {
     curr_step.fadeOut().removeClass('curr-step');
-    curr_step.prevAll('#steps .step').eq(0).addClass('curr-step').fadeIn();
+    steps.eq(0).addClass('curr-step').fadeIn();
 
     curr_step_header.fadeOut().removeClass('curr-step');
-    curr_step_header.prevAll('#steps-header .step').eq(0).addClass('curr-step').fadeIn();
+    curr_step_header.prevAll('#steps-header .step:not(.hide-step)').eq(0).addClass('curr-step').fadeIn();
 
     // re-hide submit button
     $('#steps-nav-continue').removeClass('display-none');
@@ -210,13 +211,13 @@ function nextStep() {
     professionDiscountOptionsStep();
   }
 
-  let steps = curr_step.nextAll('#steps .step');
+  let steps = curr_step.nextAll('#steps .step:not(.hide-step)');
   if (steps.length) {
     curr_step.fadeOut().removeClass('curr-step');
     steps.eq(0).addClass('curr-step').fadeIn();
 
     curr_step_header.fadeOut().removeClass('curr-step');
-    curr_step_header.nextAll('#steps-header .step').eq(0).addClass('curr-step').fadeIn();
+    curr_step_header.nextAll('#steps-header .step:not(.hide-step)').eq(0).addClass('curr-step').fadeIn();
 
     $('#steps-nav-back').removeClass('display-none');
 
