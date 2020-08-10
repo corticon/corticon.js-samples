@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" buildNumber="8017" updateStamp="_KYab88BsEeqwirQ8TvvqnQ" externalChecksum="3641963118:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="__oUskcBiEeqwirQ8TvvqnQ" vocabulary="structure.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="user.priceQuote = car.price / 500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = car.price / 500" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="price" datatype="Integer" termtype="ATTRIBUTE" fulltext="car.price">
+                <parentTerm text="car" datatype="Cars.Car" termtype="ENTITY" fulltext="car" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="(user.city = 'JunkTown')=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.city = 'JunkTown' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="city" datatype="String" termtype="ATTRIBUTE" fulltext="user.city">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.city = 'JunkTown'" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote + 300">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 300" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="(user.city = 'JunkTown')=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.city = 'JunkTown' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="city" datatype="String" termtype="ATTRIBUTE" fulltext="user.city">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.city = 'JunkTown'" rhs="F"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote + user.city.size * 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + user.city.size * 10" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="size" datatype="Integer" termtype="METHOD" fulltext="user.city.size">
+                <parentTerm text="city" datatype="String" termtype="ATTRIBUTE" fulltext="user.city">
+                  <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(user.birthDate &lt;= '01/01/1980')=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/1980' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.birthDate &lt;= '01/01/1980'" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote + 50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.4">
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(user.birthDate &lt;= '01/01/1980')=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/1980' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.birthDate &lt;= '01/01/1980'" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(user.birthDate &lt;= '01/01/2000')=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/2000' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.birthDate &lt;= '01/01/2000'" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote + 100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.5">
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(user.birthDate &lt;= '01/01/2000')=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/2000' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.birthDate &lt;= '01/01/2000'" rhs="F"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote + 150">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 150" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.6">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(user.profession = 'Automotive Technician')=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.profession = 'Automotive Technician' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.profession = 'Automotive Technician'" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote - 300">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote - 300" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.7">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(user.profession = 'Nurse')=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.profession = 'Nurse' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.profession = 'Nurse'" rhs="T"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote - 200">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote - 200" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.8">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(user.profession = 'Teacher')=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.profession = 'Teacher' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="user.profession = 'Teacher'" rhs="T"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="user.priceQuote = user.priceQuote - 100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote - 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="JunkTown is notorious for Damaged Cars (+$300)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="JunkTown is notorious for Damaged Cars (+$300)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Price Quote increases with City Size (It's $10 per letter =D)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Price Quote increases with City Size (It's $10 per letter =D)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement/>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.4" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Older People have lower Premiums (+$50/+$100/+$150)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Older People have lower Premiums (+$50/+$100/+$150)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.5" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Older People have lower Premiums (+$50/+$100/+$150)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Older People have lower Premiums (+$50/+$100/+$150)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.6" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Older People have lower Premiums (+$50/+$100/+$150)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Older People have lower Premiums (+$50/+$100/+$150)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.7" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Automotive Technicians tend to keep good care of their car (-$300)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Automotive Technicians tend to keep good care of their car (-$300)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.8" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Government Decided to give a subsidy on insurance to Nurses (-$200)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Government Decided to give a subsidy on insurance to Nurses (-$200)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.9" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Teachers tend to live close to work. On average they are less likely to get in accidents (-$100)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Teachers tend to live close to work. On average they are less likely to get in accidents (-$100)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="structure.ecore#//User" ruleStatements="#//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.4 #//@ruleset/@ruleStatements.5 #//@ruleset/@ruleStatements.6 #//@ruleset/@ruleStatements.7 #//@ruleset/@ruleStatements.8 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.0">
+      <alias value="user"/>
+      <extension explicit="true" association="true" entity="structure.ecore#//Cars/Car" traversedAssocRole="structure.ecore#//User/car">
+        <alias value="car"/>
+        <referencedAttributes attribute="structure.ecore#//Cars/Car/price"/>
+      </extension>
+      <referencedAttributes attribute="structure.ecore#//User/profession"/>
+      <referencedAttributes attribute="structure.ecore#//User/birthDate"/>
+      <referencedAttributes attribute="structure.ecore#//User/city"/>
+      <referencedAttributes attribute="structure.ecore#//User/priceQuote"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true">
+    <actionSection rowCount="51" scrollRowTop="3" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = car.price / 500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = car.price / 500" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="price" datatype="Integer" termtype="ATTRIBUTE" fulltext="car.price">
+                <parentTerm text="car" datatype="Cars.Car" termtype="ENTITY" fulltext="car" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote + user.city.size * 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + user.city.size * 10" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="size" datatype="Integer" termtype="METHOD" fulltext="user.city.size">
+                <parentTerm text="city" datatype="String" termtype="ATTRIBUTE" fulltext="user.city">
+                  <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote + 300">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 300" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote + 50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote + 100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote + 150">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote + 150" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote - 300">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote - 300" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote - 200">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote - 200" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.priceQuote = user.priceQuote - 100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.priceQuote = user.priceQuote - 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="priceQuote" datatype="Decimal" termtype="ATTRIBUTE" fulltext="user.priceQuote">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" scrollRowTop="3" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="JunkTown is notorious for Damaged Cars (+$300)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="JunkTown is notorious for Damaged Cars (+$300)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="Price Quote increases with City Size (It's $10 per letter =D)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Price Quote increases with City Size (It's $10 per letter =D)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference/>
+        <text/>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="4"/>
+        <text external="Older People have lower Premiums (+$50/+$100/+$150)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Older People have lower Premiums (+$50/+$100/+$150)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.4">
+        <reference external="5"/>
+        <text external="Older People have lower Premiums (+$50/+$100/+$150)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Older People have lower Premiums (+$50/+$100/+$150)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.5">
+        <reference external="6"/>
+        <text external="Older People have lower Premiums (+$50/+$100/+$150)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Older People have lower Premiums (+$50/+$100/+$150)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.6">
+        <reference external="7"/>
+        <text external="Automotive Technicians tend to keep good care of their car (-$300)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Automotive Technicians tend to keep good care of their car (-$300)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.7">
+        <reference external="8"/>
+        <text external="Government Decided to give a subsidy on insurance to Nurses (-$200)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Government Decided to give a subsidy on insurance to Nurses (-$200)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.8">
+        <reference external="9"/>
+        <text external="Teachers tend to live close to work. On average they are less likely to get in accidents (-$100)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Teachers tend to live close to work. On average they are less likely to get in accidents (-$100)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="49" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.city = 'JunkTown'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.city = 'JunkTown'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="city" datatype="String" termtype="ATTRIBUTE" fulltext="user.city">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.birthDate &lt;= '01/01/1980'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.birthDate &lt;= '01/01/1980'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.birthDate &lt;= '01/01/2000'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.birthDate &lt;= '01/01/2000'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.profession = 'Automotive Technician'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.profession = 'Automotive Technician'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.profession = 'Nurse'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.profession = 'Nurse'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="user.profession = 'Teacher'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="user.profession = 'Teacher'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20" scrollColumnLeft="6">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.city = 'JunkTown' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="city" datatype="String" termtype="ATTRIBUTE" fulltext="user.city">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.city = 'JunkTown' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="city" datatype="String" termtype="ATTRIBUTE" fulltext="user.city">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/1980' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/1980' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/2000' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.birthDate &lt;= '01/01/2000' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="birthDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="user.birthDate">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.profession = 'Automotive Technician' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.profession = 'Nurse' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( user.profession = 'Teacher' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="profession" datatype="String" termtype="ATTRIBUTE" fulltext="user.profession">
+                <parentTerm text="user" datatype="User" termtype="ENTITY" fulltext="user" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
