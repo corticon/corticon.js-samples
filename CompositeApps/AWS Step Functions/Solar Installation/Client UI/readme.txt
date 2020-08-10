@@ -1,1 +1,0 @@
-This directory contains all the necessary files to run the demo in a browser.

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	</head>
+  <body>
+    <div class="left-panel">
+      <div id="site-title">
+        <header>
+          <h2>Solar Rebate</h2>
+        </header>
+      </div>
+      <div class="step-progress-bar">
+        <ul>
+          <li id="property-step-title" class="step-item complete">
+            <div class="step-title">
+              <strong>Configure Property</strong>
+            </div>
+          </li>
+          <li id="additional-step-title" class="step-item">
+            <div class="step-title">
+              <strong>Additional Information</strong>
+            </div>
+          </li>
+          <li id="aws-step-title" class="step-item">
+            <div class="step-title">
+              <strong>Getting Your Rebate</strong>
+            </div>
+            <div class="step-progress-bar nested">
+              <ul>
+                <li class="step-item">Starting Step Function</li>
+                <li class="step-item">Calculating Rebate</li>
+                <li class="step-item">Estimating Savings</li>
+                <li class="step-item">Preparing Price Quote</li>
+                <li class="step-item">Gathering Loan Options</li>
+                <li class="step-item">All Set</li>
+              </ul>
+            </div>
+          </li>
+          <li id="quote-step-title" class="step-item">
+            <div class="step-title">
+              <strong>See Your Quote</strong>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="form-steps">
+      <div class="form-container">
+        <div class="form-prev">
+          <a class="icon solid fa-angle-double-left"></a>
+        </div>
+        <div class="form-content">
+          <div id="property-step" class="form-step selected">
+            <header>
+              <h2>Configure Property</h2>
+              <p class="header">Some Description</p>
+            </header>
+            <div class="form-fields">
+              <div class="form-group">
+                <div class="form-label">Street Address</div>
+                <input type="text" id="property-address"/>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <div class="form-label">City</div>
+                  <input type="text" id="property-city"/>
+                </div>
+                <div class="form-group">
+                  <div class="form-label">State</div>
+                  <input type="text" id="property-state"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label">Shade</div>
+                <select id="property-shade">
+                  <option value="1">No Shade</option>
+                  <option value=".95">Partial Shade (Morning/Afternoon)</option>
+                  <option value=".85">Partial Shade (All Day)</option>
+                  <option value=".8">Heavy Shade (Morning/Afternoon)</option>
+                  <option value=".75">Heavy Shade (All Day)</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <div class="form-label">Roof Size(square meter)</div>
+                  <input type="text" id="property-roof-size"/>
+                </div>
+                <div class="form-group">
+                  <div class="form-label">Type of Property</div>
+                  <select id="property-type">
+                    <option value="Residential">Residential</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="additional-step" class="form-step">
+            <header>
+              <h2>Additional Info</h2>
+              <p class="header">Second Step</p>
+            </header>
+            <div class="form-fields">
+              <div class="form-group">
+                <div class="form-label">Please choose the Orientation of your Roof</div>
+                <select id="property-orientation">
+                  <option value="S">South</option>
+                  <option value="SE">South East</option>
+                  <option value="SW">South West</option>
+                  <option value="E">East</option>
+                  <option value="W">West</option>
+                  <option value="NE">North East</option>
+                  <option value="NW">North West</option>
+                  <option value="N">North</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <div class="form-label">Average Monthly Electric Bill</div>
+                <input type="number" id="monthly-electric-bill"/>
+              </div>
+              <div class="form-group">
+                <div class="form-label">Estimated Value of Your Property</div>
+                <input type="number" id="property-value"/>
+              </div>
+              <div class="form-group">
+                <div class="form-label">Would you like to see eligible loan plans?</div>
+                <input type="checkbox" id="require-loan" name="require-loan" checked/>
+              </div>
+            </div>
+          </div>
+          <div id="aws-step" class="form-step">
+            <header>
+              <h2>AWS Step Function</h2>
+              <p id="form-complete-msg" class="header">Now calling Step Function!</p>
+              <p id="form-incomplete-msg" class="header">You have not filled out the last two steps!</p>
+            </header>
+          </div>
+          <div id="quote-step" class="form-step">
+            <header>
+              <h2>Your Quote</h2>
+              <p class="header">and some loan options</p>
+            </header>
+            <h3 id="quote-value">Please Wait</h3>
+          </div>
+        </div>
+        <div class="form-next">
+          <a class="icon solid fa-angle-double-right"></a>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/corticon.js"></script>
+  </body>
+</html>
