@@ -1,0 +1,1 @@
+This folder contains the Javascript code that implements the REST services used in the demo.
