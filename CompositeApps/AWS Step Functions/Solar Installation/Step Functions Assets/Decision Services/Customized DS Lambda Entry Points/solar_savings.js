@@ -35,10 +35,5 @@ exports.handler = async (event, context) => {
     
     result.data = body.data;
     
-    //TODO: temp data
-    result.data = {
-        "requireLoan": false
-    }
-    
     return result;
 }

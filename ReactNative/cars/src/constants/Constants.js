@@ -14,7 +14,8 @@ const COLORS = {
 	secondary_accent: '#40c4ff',
 	background: {
 		light: '#fff',
-		dark: '#eee'
+		dark: '#eee',
+		dark_accent: "#bbb",
 	},
 	text: {
 		light: '#fafafa',

@@ -14,7 +14,7 @@ import { COLORS, SIZES } from '../../constants/Constants';
 import { images, styles } from '../../App';
 
 const CarSummary = (props) => {
- 
+  const curr_symbol = require('../../../demo-data.json')["curr-symbol"];
   return (
     <TouchableWithoutFeedback
       onPress={props.onPress}
@@ -22,7 +22,7 @@ const CarSummary = (props) => {
       <View>
         <View style={compStyles.carSummaryHeader}>
           <Text style={compStyles.carName}>{props.name}</Text>
-          <Text style={[compStyles.infoText]}>&euro;{props.price} / day base</Text>
+          <Text style={[compStyles.infoText]}>{curr_symbol + props.price} / day base</Text>
         </View>
         <View style={compStyles.carSummaryBody}>
           <Image

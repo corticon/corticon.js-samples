@@ -20,7 +20,7 @@ const awsDS = {
   toString: () => { return this.awsDS.name },
   callDS: (corticonPayload, options) => {
     let httpRequest = new XMLHttpRequest();
-    // AWS step function. Created by Thierry
+    // AWS lambda function. Created by Thierry
     let url = "https://77pucwt9j3.execute-api.us-east-2.amazonaws.com/prod/CarRental";
 
     console.log(JSON.stringify(corticonPayload));
@@ -45,6 +45,7 @@ const clientDS = {
 
     let result;
     try {
+      // call the Decision Service
       result = decisionService.execute(corticonPayload, options.configuration);
     } catch (e){
       console.log('ARGS ERROR');
@@ -53,7 +54,7 @@ const clientDS = {
   }
 }
 
-// Helper function to add required metatdata and populate defaults
+// Helper function to add required metadata and populate defaults
 function payload(entities) {
   const payload = { "__metadataRoot": {"#locale": ""} };
   const entityCount = {};

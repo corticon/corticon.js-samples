@@ -53,8 +53,10 @@ function validateForm() {
 // create payload JSON from form data for consumption by Decision Services
 function payload() {
   let payload = {
+    //TODO: loan lambda, loan ui, loan rest
     "data": {
-      "requireLoan": $('#require-loan').prop('checked')
+      //"requireLoan": $('#require-loan').prop('checked')
+      "requireLoan": false
     },
     "__metadataRoot": {},
     "Objects": [{
@@ -96,7 +98,8 @@ function resultHandler(result) {
 
 // Start an execution of the configured State Machine, see config at top of file to change state machine arn
 function callStepFunction() {
-  if (!validateForm()) { return; }
+  return false; // TODO: remove me, working on form dont want a million executions
+  //if (!validateForm()) { return; }
   const data = {
       "name":  config["execution-prefix"] + Date.now(),
       "input": JSON.stringify(payload()),
@@ -164,6 +167,9 @@ function onAwsStep(jQueryObj, resubmit = false) {
 
 // Left-side Nav 
 function changeStep() {
+  $('.step-item.selected').removeClass('selected');
+  $(this).addClass('selected')
+
   $('.form-step.selected').fadeOut().removeClass('selected');
   let target = $('#' + $(this).attr('id').replace(/-title/g,''))
   
@@ -186,6 +192,14 @@ function prevStep() {
   }
 }
 
+function showModal() {
+  $('.modal').fadeIn(200);
+}
+
+function hideModal() {
+  $('.modal').fadeOut(200);
+}
+
 $(document).ready(function() {
   window.finishedExecution = false; // flag for step function
 
@@ -193,6 +207,9 @@ $(document).ready(function() {
   $('.step-progress-bar .step-item').click(changeStep);
   $('.form-next').click(nextStep);
   $('.form-prev').click(prevStep);
+
+  $('#aws-step-graph').click(showModal);
+  $('.modal').click(hideModal);
 
   //Pre-populate some form values for demo/testing purposes
   populateDemoData();

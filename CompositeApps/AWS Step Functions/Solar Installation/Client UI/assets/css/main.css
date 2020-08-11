@@ -144,10 +144,6 @@ p, ul, ol, dl, table {
 	margin-bottom: 2em;
 }
 
-header {
-  flex-grow: 1;
-}
-
 header p {
   display: block;
   text-transform: uppercase;
@@ -305,10 +301,10 @@ header p {
   counter-increment: list;
 }
 .step-item:not(:last-child) {
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 .step-progress-bar.nested .step-item:not(:last-child) {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .step-item::before {
@@ -388,7 +384,7 @@ header p {
 }
 
 .step-item .step-title {
-  transition: transform 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .step-item:hover .step-title {
@@ -400,6 +396,14 @@ header p {
 }
 .step-item.complete:hover::after {
   background-color: #0DF383;
+}
+
+.step-item.selected {
+}
+.step-item.selected .step-title{
+  transform: translateX(4px);
+  border-left: 8px solid #81c784;
+  padding-left: 8px;
 }
 
 
@@ -423,7 +427,8 @@ header p {
   margin: 0 auto
 }
 .form-step.selected {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 400px;
 }
 
@@ -510,4 +515,94 @@ header p {
   display: flex;
   flex-grow: 15;
   padding: 60px 0px;
+}
+
+
+/* AWS Steps */
+.aws-step-img {
+  flex-grow: 1;
+  background-size: contain !important;
+}
+#aws-step-graph {
+  background-origin: content-box !important;
+  padding: 5px 40px 5px 40px;
+  margin: 5px 0;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+.aws-step-1-img {
+  background: url("../../images/step_1_graph.png") no-repeat center;
+}
+
+.aws-step-2-img {
+  background: url("../../images/solar_background.jpg");
+}
+
+.aws-step-3-img {
+  background: url("../../images/solar_background.jpg");
+}
+
+.aws-step-4-img {
+  background: url("../../images/solar_background.jpg");
+}
+
+.aws-step-5-img {
+  background: url("../../images/solar_background.jpg");
+}
+
+.aws-step-6-img {
+  background: url("../../images/solar_background.jpg");
+}
+
+#aws-step-graph a {
+  font-size: 14px;
+  transition: all .2s ease-in-out;
+  float: right;
+  line-height: 20px;
+  margin-right: 40px;
+}
+#aws-step-graph:hover a, #aws-step-graph a:hover {
+  transform: translateX(1px) translateY(-1px);
+  font-size: 15px;
+  line-height: 21px;
+}
+#aws-step-graph:hover {
+  border-color: #ddd;
+}
+
+.fa-plus-border {
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 0px 4px;
+}
+
+
+.modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.modal-backdrop {
+  content: '';
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: .8;
+  z-index: 10;
+}
+
+.modal-container {
+  position: relative;
+  background-color: white;
+  width: 50%;
+  min-width: 400px;
+  height: 100%;
+  z-index: 11;
+  margin: 0 auto;
 }
