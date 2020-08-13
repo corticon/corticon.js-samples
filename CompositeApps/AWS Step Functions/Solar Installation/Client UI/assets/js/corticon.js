@@ -179,8 +179,8 @@ function resultHandler(result) {
 
 // Start an execution of the configured State Machine, see config at top of file to change state machine arn
 function callStepFunction() {
-  return false; // TODO: remove me, working on form dont want a million executions
-  //if (!validateForm()) { return; }
+  //return false; // TODO: remove me, working on form dont want a million executions
+  if (!validateForm()) { return; }
   const data = {
       "name":  config["execution-prefix"] + Date.now(),
       "input": JSON.stringify(payload()),
