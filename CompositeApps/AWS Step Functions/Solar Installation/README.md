@@ -23,7 +23,7 @@ Once you have all the files, open up index.html (preferrably in Chrome) in the '
 This section is for recreating the AWS step function and related components on your own AWS account.
 
 
-There are Four different AWS Services you will need to recreate:
+There are four different AWS Services you will need to recreate:
 - Roles for StepFunction and APIGateway
 - Step Function
 - Lambda Functions
@@ -44,7 +44,7 @@ If there is no existing APIGatewayToStepFunctionsRole or if you want your own co
 - Add whatever Role Name you would like and corresponding description.
 - Find your newly created role on the **Roles** page
 - Go to the **Permission** tab and select **Attach Policy**
-- Search for `AWSStepFunctionsFullAccess` and click *Attach Policy**
+- Search for `AWSStepFunctionsFullAccess` and click **Attach Policy** 
 
 ### Creating your Step Function
 If you haven't already, go ahead and create your Step Function.
@@ -54,12 +54,12 @@ If you haven't already, go ahead and create your Step Function.
 - Click **Next** to move to the **Specify Detail** screen
 	- Enter your **State machine name**
 	- Under **Permissions**, select **Choose an existing role** and choose StepFunctionsLambdaRole or the role you created earlier
-- Go ahead and finish up and click **Create state machine**
+- Go ahead and finish up and click **Create State Machine**
 
 ### Defining your Step Function
 Now that you have your Step Function you have to define the states using a special JSON-based syntax. If you want more detail or are stuck on something, please refer to `https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html`
 
-For now, just paste the contents of [statemachine_definition.json]('./Step Functions Assets/statemachine_definition.json') into the definition text editor.
+For now, just paste the contents of [statemachine_definition.json](./Step%20Functions%20Assets/statemachine_definition.json) into the definition text editor.
 
 ### Creating the Decision Service Lambdas / REST Services
 You've seen how to create a task state, but you don't have the lambdas you want to invoke yet.
