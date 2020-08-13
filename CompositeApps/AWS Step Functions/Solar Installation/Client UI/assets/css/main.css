@@ -18,6 +18,13 @@ section, summary, time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
 }
 
 article, aside, details, figcaption, figure,
@@ -159,8 +166,15 @@ header p {
 }
 
 #site-title {
-  padding: 25px 0px 20px 40px;
+  padding: 25px 0px 10px 40px;
   text-align: left;
+  color: black;
+}
+#site-title .title {
+  text-decoration: underline;
+}
+#site-title .sub-title {
+  margin-left: 20px;
 }
 
 /* Container */
@@ -270,7 +284,7 @@ header p {
   position: relative;
   min-height: 400px;
   padding-left: 100px;
-  padding-top: 30px;
+  padding-top: 10px;
   list-style: none;
 }
 .step-progress-bar::before {
@@ -288,6 +302,7 @@ header p {
   min-height: 0;
   padding-left: 40px;
   padding-top: 0;
+  margin-bottom: 20px;
 }
 .step-progress-bar.nested ul {
   margin-bottom: 0;
@@ -299,11 +314,12 @@ header p {
 .step-item {
   position: relative;
   counter-increment: list;
+  padding-bottom: 5px;
 }
-.step-item:not(:last-child) {
-  margin-bottom: 30px;
+.step-item:not(:last-child) .step-title {
+  margin-bottom: 20px;
 }
-.step-progress-bar.nested .step-item:not(:last-child) {
+.step-progress-bar.nested .step-item:not(:last-child) .step-title {
   margin-bottom: 10px;
 }
 
@@ -327,6 +343,8 @@ header p {
   border-radius: 50%;
   background-color: #FFF;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color: rgba(0,0,0,0);
+  transition: color 0.5s ease-out 0.25s, background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
 .step-progress-bar.nested .step-item::after {
   width: 20px;
@@ -381,6 +399,12 @@ header p {
   font-size: 1.0em;
   line-height: 1.2em;
   color: #404248;
+  transition: padding 0.3s ease-out;
+  padding-right: 4px;
+}
+.step-progress-bar.nested .step-item:hover {
+  padding-left: 4px;
+  padding-right: 0px;
 }
 
 .step-item .step-title {
@@ -522,6 +546,7 @@ header p {
 .aws-step-img {
   flex-grow: 1;
   background-size: contain !important;
+  transition: background 0.3s ease-out;
 }
 #aws-step-graph {
   background-origin: content-box !important;
@@ -535,23 +560,23 @@ header p {
 }
 
 .aws-step-2-img {
-  background: url("../../images/solar_background.jpg");
+  background: url("../../images/step_2_graph.png") no-repeat center;
 }
 
 .aws-step-3-img {
-  background: url("../../images/solar_background.jpg");
+  background: url("../../images/step_3_graph.png") no-repeat center;
 }
 
 .aws-step-4-img {
-  background: url("../../images/solar_background.jpg");
+  background: url("../../images/step_4_graph.png") no-repeat center;
 }
 
 .aws-step-5-img {
-  background: url("../../images/solar_background.jpg");
+  background: url("../../images/step_5_graph.png") no-repeat center;
 }
 
 .aws-step-6-img {
-  background: url("../../images/solar_background.jpg");
+  background: url("../../images/step_6_graph.png") no-repeat center;
 }
 
 #aws-step-graph a {
@@ -605,4 +630,46 @@ header p {
   height: 100%;
   z-index: 11;
   margin: 0 auto;
+}
+
+/* Quote Step */
+#quote {
+  display: flex;
+  padding-top: 30px;
+}
+#quote-content {
+  flex-grow: 1;
+}
+.pre-bar {
+  display: flex;
+  flex-grow: 1;
+  border-bottom: 2px solid;
+}
+
+
+#quote-label {
+  flex-grow: 1;
+  font-weight: 600;
+}
+
+#quote-breakdown {
+  flex-grow: 1;
+  text-align: right;
+}
+
+#quote-value {
+  flex-grow: 1;
+  text-align: right;
+  font-weight: 600;
+}
+
+#quote-label p:last-child, #quote-breakdown p:last-child, #quote-value p:last-child {
+  margin-bottom: 1em;
+}
+
+#quote-final {
+  font-size: 1.2em;
+  text-align: right;
+  font-weight: 600;
+  margin-top: 10px;
 }

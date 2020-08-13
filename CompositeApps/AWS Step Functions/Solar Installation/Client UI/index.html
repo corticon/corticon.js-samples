@@ -10,12 +10,13 @@
     <div class="left-panel">
       <div id="site-title">
         <header>
-          <h2>Solar Rebate</h2>
+          <h2 class="title">Solar Rebate</h2>
+          <h4 class="sub-title">Powered by Corticon.js</h4>
         </header>
       </div>
       <div class="step-progress-bar">
         <ul>
-          <li id="property-step-title" class="step-item complete selected">
+          <li id="property-step-title" class="step-item selected">
             <div class="step-title">
               <strong>Configure Property</strong>
             </div>
@@ -31,18 +32,23 @@
             </div>
             <div class="step-progress-bar nested">
               <ul>
-                <li class="step-item">Starting Step Function</li>
-                <li class="step-item">Calculating Rebate</li>
-                <li class="step-item">Estimating Savings</li>
-                <li class="step-item">Preparing Price Quote</li>
-                <li class="step-item">Gathering Loan Options</li>
-                <li class="step-item">All Set</li>
+                <li class="step-item nested">Starting Step Function</li>
+                <li class="step-item nested">Calculating Rebate</li>
+                <li class="step-item nested">Estimating Savings</li>
+                <li class="step-item nested">Preparing Price Quote</li>
+                <li class="step-item nested">Gathering Loan Options</li>
+                <li class="step-item nested">All Set</li>
               </ul>
             </div>
           </li>
           <li id="quote-step-title" class="step-item">
             <div class="step-title">
               <strong>See Your Quote</strong>
+            </div>
+          </li>
+          <li id="loan-step-title" class="step-item">
+            <div class="step-title">
+              <strong>Loan Options</strong>
             </div>
           </li>
         </ul>
@@ -57,7 +63,7 @@
           <div id="property-step" class="form-step selected">
             <header>
               <h2>Configure Property</h2>
-              <p class="header">Some Description</p>
+              <p class="header">Where are You Looking to Install?</p>
             </header>
             <div class="form-fields">
               <div class="form-group">
@@ -103,11 +109,11 @@
           <div id="additional-step" class="form-step">
             <header>
               <h2>Additional Info</h2>
-              <p class="header">Second Step</p>
+              <p class="header">You're almost there!</p>
             </header>
             <div class="form-fields">
               <div class="form-group">
-                <div class="form-label">Please choose the Orientation of your Roof</div>
+                <div class="form-label">Please select the Orientation of your Roof</div>
                 <select id="property-orientation">
                   <option value="S">South</option>
                   <option value="SE">South East</option>
@@ -152,9 +158,64 @@
           <div id="quote-step" class="form-step">
             <header>
               <h2>Your Quote</h2>
-              <p class="header">and some loan options</p>
+              <p class="header">Here's a Breakdown</p>
             </header>
-            <h3 id="quote-value">Please Wait</h3>
+            <div id="quote">
+              <div id="quote-label">
+                <p>Initial Estimate</p>
+                <p>Percent Rebate</p>
+                <p>Additional Discounts</p>
+              </div>
+              <div id="quote-content">
+                <div class="pre-bar">
+                  <div id="quote-breakdown">
+                    <p id="quote-estimate-breakdown">5000W * $3.10 =</p>
+                    <p id="quote-percent-rebate-breakdown">$15500 * 31% =</p>
+                    <p id="quote-flat-rebate-breakdown"></p>
+                  </div>
+                  <div id="quote-value">
+                    <p id="quote-estimate">$15500</p>
+                    <p id="quote-percent-rebate">$4805</p>
+                    <p id="quote-flat-rebate">$1000</p>
+                  </div>
+                </div>
+                <div>
+                  <p id="quote-final">$9695</p>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+          <div id="loan-step" class="form-step">
+            <header>
+              <h2>Loan Options</h2>
+              <p id="loan-msg" class="header">Finance your Solar Installation</p>
+              <p id="no-loan-msg" class="header">You did not request Loan Options</p>
+            </header>
+            <div id="loan-option-1">
+              <div class="loan-option-labels">
+                <p>Loan Term</p>
+                <p>Initial Down Payment</p>
+                <p>Interest Rate</p>
+                <p>Amortized Monthly Payment</p>
+              </div>
+              <div class="loan-option-values">
+                <p>2 years</p>
+                <p>$0</p>
+                <p>2%</p>
+                <p>$412.43</p>
+              </div>
+            </div>
+            <div id="loan-option-2">
+              <div class="loan-option-labels">
+              </div>
+              <div class="loan-option-values">
+                <p>5 years</p>
+                <p>$0</p>
+                <p>3%</p>
+                <p>$174.21</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="form-next">
