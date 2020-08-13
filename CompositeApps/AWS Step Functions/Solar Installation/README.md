@@ -73,6 +73,6 @@ You've seen how to create a task state, but you don't have the lambdas you want 
 Once you have setup your Decision Service and REST Lambdas, find the **arn** located in the upper right on their respective page. Then replace the arn inside your Step Function definition with your new arn!
 
 ### APIGateway to StepFunction
-Please follow the provided documentation at `https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-api-gateway.html`
+Please follow the [provided documentation](https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-api-gateway.html)
 
 ## Demoing
