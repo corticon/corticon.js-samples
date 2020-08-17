@@ -435,7 +435,7 @@ header p {
 #form-steps {
   display: flex;
   flex-grow: 2;
-  margin: 0px 50px;
+  /*margin: 0px 50px;*/
   padding: 40px 50px 40px 50px;
 }
 
@@ -444,6 +444,8 @@ header p {
   flex-grow: 1;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .form-step {
@@ -554,6 +556,7 @@ header p {
   margin: 5px 0;
   border: 1px solid #eee;
   border-radius: 4px;
+  min-height: 400px;
 }
 .aws-step-1-img {
   background: url("../../images/step_1_graph.png") no-repeat center;
@@ -672,4 +675,43 @@ header p {
   text-align: right;
   font-weight: 600;
   margin-top: 10px;
+}
+
+/* Savings */
+#savings {
+  display: flex;
+}
+#savings-label, #savings-content {
+  flex-grow: 1;
+}
+#savings-content p {
+  text-align: right;
+}
+
+/* Loan Options */
+#loan-options {
+  display: flex;
+  margin-top: 30px;
+}
+.loan-option-labels {
+  flex-grow: 1;
+}
+.loan-option {
+  text-align: right;
+  padding: 0 8px;
+  flex-grow: 1;
+}
+
+/* Minimal Mobile/Tablet Support */
+/* Hide Left Bar for now*/
+@media (max-width: 960px) {
+  body {
+    overflow: scroll;
+    height: unset;
+    background-size: auto;
+  }
+  #aws-step-graph {
+    height: 200%;
+  }
+  .left-panel {display: none;}
 }

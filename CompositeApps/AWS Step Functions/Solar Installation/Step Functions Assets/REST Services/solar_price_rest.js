@@ -54,7 +54,7 @@ exports.handler = async (event) => {
         };
         event.Objects.push(constants);
     } else {
-        event.Objects[constantsIndex]["PricePerWatt"] = panelPricePerWatt;
+        event.Objects[constantsIndex]["PanelPricePerWatt"] = panelPricePerWatt;
         event.Objects[constantsIndex]["Cost_kWhr"] = costKiloWhatHour;
     }
     

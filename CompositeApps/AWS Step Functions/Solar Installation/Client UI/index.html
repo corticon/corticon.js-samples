@@ -129,9 +129,15 @@
                 <div class="form-label">Average Monthly Electric Bill</div>
                 <input type="number" id="monthly-electric-bill"/>
               </div>
-              <div class="form-group">
-                <div class="form-label">Estimated Value of Your Property</div>
-                <input type="number" id="property-value"/>
+              <div class="form-row">
+                <div class="form-group">
+                  <div class="form-label">Estimated Property Value</div>
+                  <input type="number" id="property-value"/>
+                </div>
+                <div class="form-group">
+                  <div class="form-label">Property Age</div>
+                  <input type="number" id="property-age"/>
+                </div>
               </div>
               <div class="form-group">
                 <div class="form-label">Would you like to see eligible loan plans?</div>
@@ -184,7 +190,16 @@
                 </div>
               </div>
             </div>
-              
+            <div id="savings">
+              <div id="savings-label">
+                <p>Monthly Electricity Savings</p>
+                <p>Estimated Lifetime Savings (20yr)</p>
+              </div>
+              <div id="savings-content">
+                <p id="savings-monthly-electric-bill">$172.66</p>
+                <p id="savings-net-20">$41438.52</p>
+              </div>
+            </div>
           </div>
           <div id="loan-step" class="form-step">
             <header>
@@ -192,28 +207,28 @@
               <p id="loan-msg" class="header">Finance your Solar Installation</p>
               <p id="no-loan-msg" class="header">You did not request Loan Options</p>
             </header>
-            <div id="loan-option-1">
+            <div id="loan-options">
               <div class="loan-option-labels">
                 <p>Loan Term</p>
                 <p>Initial Down Payment</p>
                 <p>Interest Rate</p>
-                <p>Amortized Monthly Payment</p>
+                <p>Monthly Payment</br>(Amortized)</p>
               </div>
-              <div class="loan-option-values">
-                <p>2 years</p>
-                <p>$0</p>
-                <p>2%</p>
-                <p>$412.43</p>
+              <div id="loan-option-1" class="loan-option">
+                <div class="loan-option-values">
+                  <p class="loan-term">24 months</p>
+                  <p class="loan-down-payment">$0</p>
+                  <p class="loan-interest">2%</p>
+                  <p class="loan-monthly-payment">$412.43</p>
+                </div>
               </div>
-            </div>
-            <div id="loan-option-2">
-              <div class="loan-option-labels">
-              </div>
-              <div class="loan-option-values">
-                <p>5 years</p>
-                <p>$0</p>
-                <p>3%</p>
-                <p>$174.21</p>
+              <div id="loan-option-2" class="loan-option">
+                <div class="loan-option-values">
+                  <p class="loan-term">60 months</p>
+                  <p class="loan-down-payment">$0</p>
+                  <p class="loan-interest">3%</p>
+                  <p class="loan-monthly-payment">$174.21</p>
+                </div>
               </div>
             </div>
           </div>

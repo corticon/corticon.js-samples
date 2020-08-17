@@ -29,7 +29,8 @@ const fieldIds = ['#property-address',
                   '#property-orientation',
                   '#monthly-electric-bill',
                   '#property-type',
-                  '#property-value'];
+                  '#property-value',
+                  '#property-age'];
 
 function validateForm() {
   // check all fields non empty
@@ -50,16 +51,24 @@ function validateForm() {
     $('#form-incomplete-msg').show();
   }
 
+  if($('#require-loan').prop('checked')) {
+    $('#loan-msg').show();
+    $('#no-loan-msg').hide();
+    $('#loan-options').show();
+  } else {
+    $('#loan-msg').hide();
+    $('#no-loan-msg').show();
+    $('#loan-options').hide();
+  }
+
   return valid;
 }
 
 // create payload JSON from form data for consumption by Decision Services
 function payload() {
   let payload = {
-    //TODO: loan lambda, loan ui, loan rest
     "data": {
-      //"requireLoan": $('#require-loan').prop('checked')
-      "requireLoan": false
+      "requireLoan": $('#require-loan').prop('checked')
     },
     "__metadataRoot": {},
     "Objects": [{
@@ -79,7 +88,7 @@ function payload() {
             "#id": "Property_id_1"
         },
         "EstimatedInstallationCost": null,
-        "Age": null,
+        "Age": parseInt($("#property-age").val()),
         "MonthlyElectricConsumption": null
     },
     {
@@ -99,6 +108,7 @@ function findDSObject(json, type) {
 
 // result handler for step function output
 function resultHandler(result) {
+  // TODO: remove me, here for reference
   let tmp = {
     "__metadataRoot": {},
     "Objects": [
@@ -129,7 +139,7 @@ function resultHandler(result) {
         },
         "DefaultInstallationSize": "5000",
         "DefaultRequiredRoofSpace": "33",
-        "PricePerWatt": "3.1",
+        "PanelPricePerWatt": "3.1",
         "Cost_kWhr": "0.2257"
       },
       {
@@ -165,8 +175,10 @@ function resultHandler(result) {
   let constants = findDSObject(result, 'Constants');
   let rebate = findDSObject(result, 'Rebate');
   let quote = findDSObject(result, 'Quote');
+  let savings = findDSObject(result, 'Savings');
 
-  let estimateBreakdown = constants["DefaultInstallationSize"] + 'W * $' + parseFloat(constants["PricePerWatt"]).toFixed(2) + ' ='
+  // Update Quote UI
+  let estimateBreakdown = constants["DefaultInstallationSize"] + 'W * $' + parseFloat(constants["PanelPricePerWatt"]).toFixed(2) + ' ='
   $('#quote-estimate-breakdown').text(estimateBreakdown);
   $('#quote-percent-breakdown').text('$' + property["EstimatedInstallationCost"] + ' * ' + rebate["Percent"] + ' =');
 
@@ -174,13 +186,51 @@ function resultHandler(result) {
   $('#quote-percent-rebate').text('$' + (parseInt(property["EstimatedInstallationCost"]) * parseFloat(rebate["Percent"])).toFixed(2));
   $('#quote-flat-rebate').text('$' + rebate["Flat"]);
 
-  $('#quote-final').text(quote["Value"]);
+  $('#quote-final').text('$' + quote["Value"]);
+
+  // Update Savings UI
+  $('#savings-monthly-electric-bill').text('$' + parseFloat(savings["MonthlyElectricBill"]).toFixed(2));
+  $('#savings-net-20').text('$' + parseFloat(savings["NetSavings_20"]).toFixed(2));
+
+  // Update Loan UI
+  let qualifiedLoanOptions = result.Objects.filter(function(object) {
+    return object.__metadata["#type"] == 'LoanOption' && object["Qualified"]
+  });
+  /*
+  {
+      "DurationMonths": 24,
+      "DownPaymentPercent": "0",
+      "Interest": "4.5",
+      "Tier": 3,
+      "AmortizedMonthlyPayment": "423.1655329974577",
+      "__metadata": {
+        "#type": "LoanOption",
+        "#id": "LoanOption_id_6"
+      },
+      "Qualified": false
+    }
+    */
+  if (qualifiedLoanOptions.length > 0) {
+    $('#loan-option-1 .loan-term').text(qualifiedLoanOptions[0]["DurationMonths"] + ' Months');
+    $('#loan-option-1 .loan-down-payment').text('$' + (parseFloat(qualifiedLoanOptions[0]["DownPaymentPercent"]) / 100 * quote["Value"]) + 
+      ' (' + qualifiedLoanOptions[0]["DownPaymentPercent"] + '%)');
+    $('#loan-option-1 .loan-interest').text(qualifiedLoanOptions[0]["Interest"] + '%');
+    $('#loan-option-1 .loan-monthly-payment').text('$' + parseFloat(qualifiedLoanOptions[0]["AmortizedMonthlyPayment"]).toFixed(2));
+  }
+  if (qualifiedLoanOptions.length > 1) {
+    $('#loan-option-2 .loan-term').text(qualifiedLoanOptions[1]["DurationMonths"] + ' Months');
+    $('#loan-option-2 .loan-down-payment').text('$' + (parseFloat(qualifiedLoanOptions[1]["DownPaymentPercent"]) / 100 * quote["Value"]) + 
+      ' (' + qualifiedLoanOptions[1]["DownPaymentPercent"] + '%)');
+    $('#loan-option-2 .loan-interest').text(qualifiedLoanOptions[1]["Interest"] + '%');
+    $('#loan-option-2 .loan-monthly-payment').text('$' + parseFloat(qualifiedLoanOptions[1]["AmortizedMonthlyPayment"]).toFixed(2));
+  }
+
 }
 
 // Start an execution of the configured State Machine, see config at top of file to change state machine arn
 function callStepFunction() {
-  //return false; // TODO: remove me, working on form dont want a million executions
   if (!validateForm()) { return; }
+  //return false; // TODO: remove me, working on form dont want a million executions
   const data = {
       "name":  config["execution-prefix"] + Date.now(),
       "input": JSON.stringify(payload()),
@@ -217,7 +267,7 @@ function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000
       } else if (data['status'] == 'FAILED') {
         console.log('Step Function Failed: See Execution page for more details');
       } else {
-        if (pollCount < 10) {
+        if (pollCount < 30) {
           window.setTimeout(pollForResult(executionArn, responseHandler, pollCount + 1), interval);
         }
       }
@@ -236,6 +286,7 @@ function populateDemoData() {
   $('#monthly-electric-bill').val(200);
   $('#property-type').val('Residential');
   $('#property-value').val(1000000);
+  $('#property-age').val(5);
 }
 
 function onAwsStep(jQueryObj, resubmit = false) {

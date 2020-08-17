@@ -111,14 +111,41 @@ This table shows the mapping of state machine names, the applicable Rule flows n
 ### REST Services
 
 There are 2 REST services:
-- solar_price_rest.js: provides electricity cost in the state and solar panel cost.  See file for details.
-- solar_loan_rest.js: TBD. See file for details.
+- solar_price_rest.js: provides electricity cost in the state and solar panel cost.  See file for more details.
+- solar_loan_rest.js: provides 4 different loan types with 3 tiers for each type. See file for more details.
 
 ## Demo Points
+### Inputs to the Step Function
+Every field except **Street Address**, **City**, and **Roof Size** affect the output in some way. See the section below on Outputs to what each input affects
 
-TODO: 
+### Step Function
+The data in the first two steps of the form are sent via HTTP Post to and APIGateway that is configured to execute step functions. The Post request contains the **ARN** (Amazon Resource Number) of the **AWS Step Function** we configured and this triggers a new execution of the Step Function.
 
-What can be changed to show different results.
+The structure of the Step Function's **State Machine** can be seen on the **Getting Your Rebate** form step. As soon as you enter this step, the diagram will be updated as each step completes. Note: This is not actually tied with the Step Function's execution as the real step function executes too quickly. To simulate a reasonably large workflow there is a configurable delay located at the top of `Client UI/corticon.js`
+
+### Outputs from the Step Function / Decision Services
+There are four main outputs in this demo: the Rebate, Quote, Savings and Loan Options.
+
+Rebate: How much you save upfront, or immediately via tax rebates
+	- The main factors are the **State** and **Type**
+	- "Residential" type properties qualify for better rebates
+	- "Commercial" and "Other" type properties only qualify for the base Federal rebate
+
+Quote: The net cost after factoring in rebate
+	- Currently only changeable indirectly by modifying the Rebate
+
+Savings: How much you save on monthly electric bill, and cumulatively over a 20 year period
+	- The savings is capped by your **Monthly Electric Bill** (you can't save more electricity than you consume)
+	- Lower your **Monthly Electric Bill** to see the savings drop
+	- The **Orientation** and **Shade** affect how much electricity we predict your system will generate
+	- Southerly facing **Orientations** and less **Shade** increases generation and vice versa
+
+Loan Options: The two Financing Options provided
+	- Each pair of loan options has a 2 year and 5 year option
+	- If your Property **Value** is <=500000, we recommend a 0% down option
+	- If your Property **Value** is >500000, we recommend a 50% down option
+	- In addition, the  **Age** affects the loan tier / the interest rate on the loan marginally (<5, 5..10, >10)
+	- "Commercial" **Type** Properties are locked into Tier 2 50% down options only
 
 
 ## Setup
@@ -171,8 +198,6 @@ Now that you have your Step Function you have to define the states using a speci
 For now, just paste the contents of [statemachine_definition.json](./Step%20Functions%20Assets/statemachine_definition.json) into the definition text editor.
 
 ### Creating the Decision Service Lambdas / REST Services
-You've seen how to create a task state, but you don't have the lambdas you want to invoke yet.
-
 - First create a new AWS lambda function from **Services** > **Lambda** > **Create Function** 
 - Give your new function a name (eg. 'Solar_Constants_Lambda')
 - Click **Create Function**
