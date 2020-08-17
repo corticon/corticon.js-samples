@@ -6,16 +6,24 @@ This demo illustrates computing a solar installation cost estimate, the rebate t
 and get some loan offers to finance the installation.
  
 It is a Web and Cloud Serverless application that integrates Corticon.js with AWS Step Functions. 
-The aim of this sample is to show composite applications.  By composite applications we mean applications that mesh 
+The aim of this sample is to show composite applications.  By composite applications, we mean applications that mesh 
 together various services to compose a main application. 
-To demonstrate these concepts, our demo app links together discrete Corticon Decision Services and Rest Services in an AWS Step 
+Additionally, we aim to demonstrate composing the application using several discrete (more atomistic) decision services that do 
+a specific job well; as opposed to having a single, much larger decision service that gathers data and compute all the results.
+
+To demonstrate these concepts, our demo app links together several Corticon.js Decision Services and Rest Services in an AWS Step 
 functions workflow using a non-trivial use case.
 
 Limitations: The application is programmed for a couple of US states, namely CA, MA and NY.
 
 ## How does the application work?
 
-Explain how app is decomposed (what is each part) - architecture top level view
+The application has the following architecture:
+- The UI is a Web Browser application
+- An AWS API Gateway entry point to kick start the workflow.
+- An AWS Step functions state machine to execute Corticon.js decision services and REST services.
+
+### A bit about each component
 
 - A bit about the client: it is an HTML/Browser based application.  It lets users enter some data about their residence.  
 It triggers the workflow (AWS step functions) via an HTTP call to an AWS/API Gateway entry point. It shows progress of the state machine
@@ -27,7 +35,7 @@ coming from different sources.
 - A bit about the cloud side state machine: the demo include an example of each key feature of Step functions, 
     - we have sequential steps, to show how to decompose the application into discrete decision services
     - we have a parallel step to show 2 independent execution happening at the same time.  It is interesting to see how to data is passed in and out of that step.
-    - we have a conditional step to compute loand offers if user selected that option.
+    - we have a conditional step to compute loan offers if user selected that option.
 
 This project is broken up into two directories.
 - The "Client UI" directory contains the HTML client.  You can simply use that to see it in action (no need to create a separate state machine)
@@ -47,6 +55,7 @@ TODO: Explain what is computed and where
 #### Solar Constants
 
 TBD
+
 
 #### Solar Price Constants
 
