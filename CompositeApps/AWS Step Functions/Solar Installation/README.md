@@ -73,34 +73,40 @@ And it will compute:
 From then on, these are used in various decision services.
 
 
-#### Solar Quote
+#### Rebate_US.ers  (Solar Rebate)
+
+The rule flow only executes the rebate for the USA (Rebate_US.ers).  This rule sheet computes a flat rebate and an additional rebate 
+based on residence state and type of residence.
+
+#### Quote.ers (Solar Quote)
+
+Very simple rule sheet - see rule sheet for the single formula. It outputs a new quote based on various rebates and estimated cost.
+
+#### Savings.erf (Solar Savings)
 
 TBD
 
-#### Solar Rebate
-
-TBD
-
-#### Solar Savings
-
-TBD
-
-#### Solar Loan
+#### xxx.erf (Solar Loan)
 
 TBD
 
 
-### Mapping of Decision Services Names to Lambda Function Names
+### Mapping of State Machine Names, Decision Services Names and Lambda Function Names
 
-This table shows the mapping of Rule flows names to Lambda functions used in state machine
+This table shows the mapping of state machine names, the applicable Rule flows names and the Lambda functions (and rest files when applicable).
 
-
-| Rule Flow Name | Associated Lambda Function Name|
-| ----------- | ----------- |
-| Constants.erf | "Solar Constants" and "Solar Price Constants" |
-| Quote.erf | |
-| Rebate.erf | |
-| Savings.erf | |
+| State Machine Name | Rule Flow Name | Associated Lambda Function Name|
+| ----------- | ----------- | ------ |
+| DS_Solar_Constants | Constants.erf | solar_price_constants |
+| DS_Solar_PriceConstants | Constants.erf | solar_price_constants |
+| Rest_Solar_Price | n/a | REST Services/solar_price_rest.js |
+| DS_Solar_Rebate | Rebate.erf | solar_rebate |
+| DS_Solar_Savings | Savings.erf | solar_savings |
+| DS_Solar_PriceQuote | Quote.erf | solar_quote |
+| DS_Solar_Rebate | Rebate.erf | solar_rebate |
+| Rest_Solar_Loan | n/a | REST Services/solar_loan_rest.js |
+| DS_Solar_Loan | ???? | solar_loan |
+| SuccessState | n/a | n/a This is just a Succeed state as we cannot go to end directly from the branch |
 
 ### REST Services
 
@@ -178,4 +184,6 @@ Once you have setup your Decision Service and REST Lambdas, find the **arn** loc
 ### APIGateway to StepFunction
 Please follow the [provided documentation](https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-api-gateway.html)
 
-## Demoing
+## Testing Your Setup
+
+Use the postman assets.  More details at CompositeApps/AWS Step Functions/Solar Installation/Unit Tests/readme.md
