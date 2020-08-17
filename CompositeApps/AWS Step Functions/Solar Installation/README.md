@@ -21,15 +21,17 @@ Limitations: The application is programmed for a couple of US states, namely CA,
 The application has the following architecture:
 - The UI is a Web Browser application
 - An AWS API Gateway entry point to kick start the workflow.
-- An AWS Step functions state machine to execute Corticon.js decision services and REST services.
+- An AWS Step functions state machine to execute various Corticon.js decision services and REST services, mesh and compute data (rebate, savings, loans...) and return the results.  This workflow runs in the background asynchronously.  
+The client will poll to find when the execution has completed and display the results. 
 
 ### A bit about each component
 
 - A bit about the client: it is an HTML/Browser based application.  It lets users enter some data about their residence.  
 It triggers the workflow (AWS step functions) via an HTTP call to an AWS/API Gateway entry point. It shows progress of the state machine
- and finally shows the various computed metrics. 
+ and finally shows the various computed metrics. The progress is shown for illustrative purposes when one does not have access to the AWS console to see the 
+ state machine executing.  In reality, the state machine executes pretty fast as the REST services are simulated in Lambda functions and have no wait time.
 - A bit about the decision services: they do complex logic analysis and computations based on state of residence and various other input parameters.  See section below for details on what each rule sheet does
-- a bit about REST services: the provide additional data required for computing the cost, rebate and savings.  Even though they are implemented as
+- a bit about REST services: they provide additional data required for computing the cost, rebate and savings.  Even though they are implemented as
 simple JavaScript Lambda functions to keep the demo manageable, they illustrate very well composite applications and in particular how to integrate data 
 coming from different sources.   
 - A bit about the cloud side state machine: the demo include an example of each key feature of Step functions, 
