@@ -52,14 +52,24 @@ This section describes what each Rulesheet role and the kind of computation it d
  
 TODO: Explain what is computed and where
 
-#### Solar Constants
+#### Constants.ers
 
-TBD
+The same decision service is used in both "Solar Constants" step and in "Solar Price Constants" step.
 
+In first call it will set some default values:
+- Constants.DefaultInstallationSize 
+- Constants.DefaultRequiredRoofSpace 
 
-#### Solar Price Constants
+In second call, it requires input data from the REST service.  Namely, it needs, 
+- Constants.PanelPricePerWatt
+- Constants.Cost_kWhr
 
-TBD
+And it will compute:
+- Property.EstimatedInstallationCost
+- Property.MonthlyElectricConsumption
+
+From then on, these are used in various decision services.
+
 
 #### Solar Quote
 
@@ -85,7 +95,7 @@ This table shows the mapping of Rule flows names to Lambda functions used in sta
 
 | Rule Flow Name | Associated Lambda Function Name|
 | ----------- | ----------- |
-| Constants.erf | |
+| Constants.erf | "Solar Constants" and "Solar Price Constants" |
 | Quote.erf | |
 | Rebate.erf | |
 | Savings.erf | |

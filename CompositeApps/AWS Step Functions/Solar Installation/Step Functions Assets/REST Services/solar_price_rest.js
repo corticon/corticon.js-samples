@@ -45,7 +45,7 @@ exports.handler = async (event) => {
     if (constantsIndex === -1) {
         // create constants object
         const constants = {
-            "PricePerWatt": panelPricePerWatt,
+            "PanelPricePerWatt": panelPricePerWatt,
             "Cost_kWhr": costKiloWhatHour,
             "__metadata": {
                 "#type": "Constants",
