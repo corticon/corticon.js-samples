@@ -21,20 +21,20 @@ Limitations: The application is programmed for a couple of US states, namely CA,
 The application has the following architecture:
 - The UI is a Web Browser application
 - An AWS API Gateway entry point to kick start the workflow.
-- An AWS Step functions state machine to execute various Corticon.js decision services and REST services, mesh and compute data (rebate, savings, loans...) and return the results.  This workflow runs in the background asynchronously.  
+- An AWS Step functions state machine to execute various Corticon.js decision services and REST services inside AWS Lambda, mesh and compute data (rebate, savings, loans...) and return the results.  This workflow runs in the background asynchronously.  
 The client will poll to find when the execution has completed and display the results. 
 
 ### A bit about each component
 
-- A bit about the client: it is an HTML/Browser based application.  It lets users enter some data about their residence.  
-It triggers the workflow (AWS step functions) via an HTTP call to an AWS/API Gateway entry point. It shows progress of the state machine
- and finally shows the various computed metrics. The progress is shown for illustrative purposes when one does not have access to the AWS console to see the 
+- A bit about the client: it is a typical HTML/JS(JQuery) application.  It contains a form where users enter some data about their residence.  
+It then triggers the workflow (AWS step functions) via an HTTP call to an AWS/API Gateway entry point. In the left side-panel, the application shows the progress of the state machine
+ and various computed metrics after the step function has completed. The progress is shown for illustrative purposes when one does not have access to the AWS console to see the 
  state machine executing.  In reality, the state machine executes pretty fast as the REST services are simulated in Lambda functions and have no wait time.
 - A bit about the decision services: they do complex logic analysis and computations based on state of residence and various other input parameters.  See section below for details on what each rule sheet does
 - a bit about REST services: they provide additional data required for computing the cost, rebate and savings.  Even though they are implemented as
 simple JavaScript Lambda functions to keep the demo manageable, they illustrate very well composite applications and in particular how to integrate data 
 coming from different sources.   
-- A bit about the cloud side state machine: the demo include an example of each key feature of Step functions, 
+- A bit about the cloud side state machine: the demo includes an example of each key feature of Step functions, 
     - we have sequential steps, to show how to decompose the application into discrete decision services
     - we have a parallel step to show 2 independent execution happening at the same time.  It is interesting to see how to data is passed in and out of that step.
     - we have a conditional step to compute loan offers if user selected that option.
@@ -51,8 +51,6 @@ please be sure to only upload the decision service bundle file (decisionServiceB
 
 ### Decision Services Documentation
 This section describes what each Rulesheet role and the kind of computation it does.
- 
-TODO: Explain what is computed and where
 
 #### Constants.ers
 
@@ -76,19 +74,21 @@ From then on, these are used in various decision services.
 #### Rebate_US.ers  (Solar Rebate)
 
 The rule flow only executes the rebate for the USA (Rebate_US.ers).  This rule sheet computes a flat rebate and an additional rebate 
-based on residence state and type of residence.
+based on residence **State** and **Type** of residence.
 
 #### Quote.ers (Solar Quote)
 
 Very simple rule sheet - see rule sheet for the single formula. It outputs a new quote based on various rebates and estimated cost.
 
-#### Savings.erf (Solar Savings)
+#### Savings.ers (Solar Savings)
+Calculates the estimated savings each month by determining how much electricity we anticipate the user's system generates based on **Shade** and **Orientation** and empirical data. This savings can be a maximum of up to the **Monthly Electric Bill**
 
-TBD
 
-#### xxx.erf (Solar Loan)
+#### Loan.ers (Solar Loan)
 
-TBD
+Determines which loan options the user qualifies for based on **Property Value**, **Property Age**, and **Property Type**. Specifically in conjunction with the provided Solar Loan Rest, this Decision Service will select two out of the twelve loan options.
+
+The Loans come in two types (0% and 50% down), each with 2 yr and 5 yr timeframes. Additionally there are 3 tiers with increasing interest rates that we select based on the **Property Age**
 
 
 ### Mapping of State Machine Names, Decision Services Names and Lambda Function Names
