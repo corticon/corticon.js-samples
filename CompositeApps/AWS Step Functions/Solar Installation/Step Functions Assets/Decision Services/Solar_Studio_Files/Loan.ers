@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" buildNumber="8017" updateStamp="_qh92E-CcEeqLXYzOkiAnjw" externalChecksum="3641963118:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" buildNumber="8017" updateStamp="_HhZLQuDIEeqAY8hCrnd_Lw" externalChecksum="3641963118:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_H9VkYOCcEeqLXYzOkiAnjw" vocabulary="Solar.ecore#/">
+  <ruleset vocabularyUpdateStamp="_1ZGDweC0EeqAY8hCrnd_Lw" vocabulary="Solar.ecore#/">
     <rule>
       <condition/>
       <action>
@@ -45,8 +45,8 @@
         <viewExpressions lhs="Property.Type" rhs="'Residential'"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Property.Value &lt;500000">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt; 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Property.Value &lt;=500000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt;= 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.Value">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -54,7 +54,7 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Property.Value" rhs="&lt;500000"/>
+        <viewExpressions lhs="Property.Value" rhs="&lt;=500000"/>
       </condition>
       <condition>
         <opaqueExpression expression="LoanOption.Tier = 1">
@@ -199,8 +199,8 @@
         <viewExpressions lhs="Property.Type" rhs="'Residential'"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Property.Value &lt;500000">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt; 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Property.Value &lt;=500000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt;= 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.Value">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -208,7 +208,7 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Property.Value" rhs="&lt;500000"/>
+        <viewExpressions lhs="Property.Value" rhs="&lt;=500000"/>
       </condition>
       <condition>
         <opaqueExpression expression="LoanOption.Tier = 2">
@@ -353,8 +353,8 @@
         <viewExpressions lhs="Property.Type" rhs="'Residential'"/>
       </condition>
       <condition>
-        <opaqueExpression expression="Property.Value &lt;500000">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt; 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Property.Value &lt;=500000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt;= 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.Value">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -362,7 +362,7 @@
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
-        <viewExpressions lhs="Property.Value" rhs="&lt;500000"/>
+        <viewExpressions lhs="Property.Value" rhs="&lt;=500000"/>
       </condition>
       <condition>
         <opaqueExpression expression="LoanOption.Tier = 3">
@@ -673,8 +673,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="&lt;500000">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt; 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="&lt;=500000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt;= 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.Value">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -771,8 +771,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="&lt;500000">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt; 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="&lt;=500000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt;= 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.Value">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -869,8 +869,8 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
-        <conditionValueSetCellList valueSet="&lt;500000">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt; 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <conditionValueSetCellList valueSet="&lt;=500000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Value &lt;= 500000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.Value">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>

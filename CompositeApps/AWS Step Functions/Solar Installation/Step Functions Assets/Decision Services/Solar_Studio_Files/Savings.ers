@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="1" buildNumber="8018" updateStamp="_YSFXjOCXEeqU3_KRTnPOqg" externalChecksum="3641963118:507989954:2662416334" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" buildNumber="8017" updateStamp="_x-PDMuF0EeqAY8hCrnd_Lw" externalChecksum="3641963118:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_YNGw4OCXEeqU3_KRTnPOqg" vocabulary="Solar.ecore#/">
+  <ruleset vocabularyUpdateStamp="_1ZGDweC0EeqAY8hCrnd_Lw" vocabulary="Solar.ecore#/">
     <rule>
       <condition/>
       <condition/>
@@ -83,8 +83,8 @@
       </action>
       <action/>
       <action>
-        <opaqueExpression expression="Savings.MonthlyElectricBill += Property.EstimatedMonthlyGenerated_kWhr.min(Property.MonthlyElectricConsumption) * Constants.Cost_kWhr">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.MonthlyElectricBill = Savings.MonthlyElectricBill + Property.EstimatedMonthlyGenerated_kWhr.min ( Property.MonthlyElectricConsumption ) * Constants.Cost_kWhr" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Savings.MonthlyElectricBill = Property.EstimatedMonthlyGenerated_kWhr.min(Property.MonthlyElectricConsumption) * Constants.Cost_kWhr">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.MonthlyElectricBill = Property.EstimatedMonthlyGenerated_kWhr.min ( Property.MonthlyElectricConsumption ) * Constants.Cost_kWhr" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="MonthlyElectricBill" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.MonthlyElectricBill">
                 <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
@@ -92,9 +92,6 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
-              <terms text="MonthlyElectricBill" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.MonthlyElectricBill">
-                <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
-              </terms>
               <terms text="MonthlyElectricConsumption" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.MonthlyElectricConsumption">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
               </terms>
@@ -112,8 +109,8 @@
       </action>
       <action/>
       <action>
-        <opaqueExpression expression="Savings.NetSavings_20 += Savings.MonthlyElectricBill * 20 * 12">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.NetSavings_20 = Savings.NetSavings_20 + Savings.MonthlyElectricBill * 20 * 12" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="Savings.NetSavings_20 = Savings.MonthlyElectricBill * 20 * 12">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.NetSavings_20 = Savings.MonthlyElectricBill * 20 * 12" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="NetSavings_20" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.NetSavings_20">
                 <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
@@ -122,9 +119,6 @@
             <referencedTermList>
               <terms text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="MonthlyElectricBill" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.MonthlyElectricBill">
-                <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
-              </terms>
-              <terms text="NetSavings_20" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.NetSavings_20">
                 <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
@@ -890,8 +884,8 @@
       <referencedAttributes attribute="Solar.ecore#//Savings/NetSavings_20"/>
     </logicalVariable>
   </ruleset>
-  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="37">
-    <actionSection rowCount="50" columnWidthFactor="0.5">
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="83">
+    <actionSection rowCount="50" scrollRowTop="9" columnWidthFactor="0.5">
       <actionItemList>
         <valueSetCell/>
         <expressionCell external="Savings.new">
@@ -1166,8 +1160,8 @@
       </actionItemList>
       <actionItemList>
         <valueSetCell/>
-        <expressionCell external="Savings.MonthlyElectricBill += Property.EstimatedMonthlyGenerated_kWhr.min(Property.MonthlyElectricConsumption) * Constants.Cost_kWhr">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.MonthlyElectricBill = Savings.MonthlyElectricBill + Property.EstimatedMonthlyGenerated_kWhr.min ( Property.MonthlyElectricConsumption ) * Constants.Cost_kWhr" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="Savings.MonthlyElectricBill = Property.EstimatedMonthlyGenerated_kWhr.min(Property.MonthlyElectricConsumption) * Constants.Cost_kWhr">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.MonthlyElectricBill = Property.EstimatedMonthlyGenerated_kWhr.min ( Property.MonthlyElectricConsumption ) * Constants.Cost_kWhr" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="MonthlyElectricBill" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.MonthlyElectricBill">
                 <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
@@ -1175,9 +1169,6 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
-              <terms text="MonthlyElectricBill" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.MonthlyElectricBill">
-                <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
-              </terms>
               <terms text="MonthlyElectricConsumption" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.MonthlyElectricConsumption">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
               </terms>
@@ -1199,8 +1190,8 @@
       </actionItemList>
       <actionItemList>
         <valueSetCell/>
-        <expressionCell external="Savings.NetSavings_20 += Savings.MonthlyElectricBill * 20 * 12">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.NetSavings_20 = Savings.NetSavings_20 + Savings.MonthlyElectricBill * 20 * 12" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="Savings.NetSavings_20 = Savings.MonthlyElectricBill * 20 * 12">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Savings.NetSavings_20 = Savings.MonthlyElectricBill * 20 * 12" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="NetSavings_20" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.NetSavings_20">
                 <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
@@ -1209,9 +1200,6 @@
             <referencedTermList>
               <terms text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="MonthlyElectricBill" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.MonthlyElectricBill">
-                <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
-              </terms>
-              <terms text="NetSavings_20" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Savings.NetSavings_20">
                 <parentTerm text="Savings" datatype="Savings" termtype="ENTITY" fulltext="Savings" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
