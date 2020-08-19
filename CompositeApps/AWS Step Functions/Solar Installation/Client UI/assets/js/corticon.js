@@ -246,12 +246,18 @@ function callStepFunction() {
       data: JSON.stringify(data),
       success: data => {
           pollForResult(data["executionArn"], resultHandler);
-      }
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+    }
   });
 }
 
 // Poll 'describe-execution' endpoint until completed, call responseHandler when done
 function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000) {
+    const errorMsgPostfix = 'See Execution page for more details on the AWS step function console';
+
   const data = {
       "executionArn": executionArn
   };
@@ -268,10 +274,12 @@ function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000
         console.log(data['output']);
         responseHandler(JSON.parse(data['output']));
       } else if (data['status'] === 'FAILED') {
-        console.log('Step Function Failed: See Execution page for more details');
+        console.log('ERROR: Step Function Failed. ' + errorMsgPostfix);
       } else {
         if (pollCount < 30) {
           window.setTimeout(pollForResult(executionArn, responseHandler, pollCount + 1), interval);
+        } else {
+            console.log('ERROR: Could not get status of state machine execution. ' + errorMsgPostfix);
         }
       }
     }
@@ -294,7 +302,7 @@ function populateDemoData() {
 
 function onAwsStep(jQueryObj, resubmit = false) {
   //only call if manual trigger or first execution
-  if (jQueryObj.is('#aws-step') && (resubmit || window.finishedExecution == false)) {
+  if (jQueryObj.is('#aws-step') && (resubmit || window.finishedExecution === false)) {
     callStepFunction();
     cycleAwsStep();
   }
@@ -316,10 +324,12 @@ function changeStep() {
 
 function changeNestedStep(index) {
   if (index < 1 || index > 6) { return; }
+
+  const awsStepImgEl = $('.aws-step-img');
   //$('#aws-step-title .step-progress-bar.nested .selected').removeClass('selected').addClass('complete');
   $('#aws-step-title .step-progress-bar.nested li:nth-child(' + index + ')').addClass('selected').addClass('complete');
-  $('.aws-step-img').removeClass('aws-step-1-img aws-step-2-img aws-step-3-img aws-step-4-img aws-step-5-img aws-step-6-img');
-  $('.aws-step-img').addClass('aws-step-' + index + '-img');
+    awsStepImgEl.removeClass('aws-step-1-img aws-step-2-img aws-step-3-img aws-step-4-img aws-step-5-img aws-step-6-img');
+    awsStepImgEl.addClass('aws-step-' + index + '-img');
 }
 function changeNestedStepClickHandler() {
   changeNestedStep($(this).index() + 1);
@@ -338,22 +348,24 @@ function cycleAwsStep(index=1) {
 
 // Form Controls
 function nextStep() {
-  let steps = $('.form-step.selected').nextAll('.form-step');
+    const formStepSelectedEl = $('.form-step.selected');
+  const steps = formStepSelectedEl.nextAll('.form-step');
   if (steps.length) {
-    let stepItem = $('.step-item.selected').removeClass('selected').addClass('complete');
+      const stepItem = $('.step-item.selected').removeClass('selected').addClass('complete');
     stepItem.next().addClass('selected');
 
-    $('.form-step.selected').fadeOut().removeClass('selected');
+      formStepSelectedEl.fadeOut().removeClass('selected');
     onAwsStep(steps.eq(0).addClass('selected').fadeIn());
   }
 }
 function prevStep() {
-  let steps = $('.form-step.selected').prevAll('.form-step');
+    const formStepSelectedEl = $('.form-step.selected');
+  const steps = formStepSelectedEl.prevAll('.form-step');
   if (steps.length) {
-    let stepItem = $('.step-item.selected').removeClass('selected');
+      const stepItem = $('.step-item.selected').removeClass('selected');
     stepItem.prev().addClass('selected');
 
-    $('.form-step.selected').fadeOut().removeClass('selected');
+      formStepSelectedEl.fadeOut().removeClass('selected');
     onAwsStep(steps.eq(0).addClass('selected').fadeIn());
   }
 }
