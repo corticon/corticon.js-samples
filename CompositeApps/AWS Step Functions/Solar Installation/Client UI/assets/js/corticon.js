@@ -1,5 +1,5 @@
-// Main js file for Solar Application
-// requires jQuery
+// Main js file for Solar Application.  All the JS code is kept in a single file for simplicity.
+// It is dependent on jQuery.
 
 const config = {
   // Prefixes Execution Name inside AWS
@@ -21,18 +21,19 @@ const config = {
   // UI step delay in ms
   "step-delay": 1500,
 };
-const fieldIds = ['#property-address', 
-                  '#property-city',
-                  '#property-state',
-                  '#property-roof-size',
-                  '#property-shade',
-                  '#property-orientation',
-                  '#monthly-electric-bill',
-                  '#property-type',
-                  '#property-value',
-                  '#property-age'];
 
 function validateForm() {
+  const fieldIds = ['#property-address',
+    '#property-city',
+    '#property-state',
+    '#property-roof-size',
+    '#property-shade',
+    '#property-orientation',
+    '#monthly-electric-bill',
+    '#property-type',
+    '#property-value',
+    '#property-age'];
+
   // check all fields non empty
   let valid = true;
   for (let i = 0; i < fieldIds.length; i++) {
@@ -65,8 +66,8 @@ function validateForm() {
 }
 
 // create payload JSON from form data for consumption by Decision Services
-function payload() {
-  let payload = {
+function createStepFunctionInitialPayload() {
+  return {
     "data": {
       "requireLoan": $('#require-loan').prop('checked')
     },
@@ -98,18 +99,17 @@ function payload() {
         }
     }]
   };
-  return payload;
 }
 
 // helper to find object from DS output
 function findDSObject(json, type) {
-  return json.Objects.find(function(object) { return object.__metadata["#type"] == type });
+  return json.Objects.find(function(object) { return object.__metadata["#type"] === type });
 }
 
 // result handler for step function output
 function resultHandler(result) {
-  // TODO: remove me, here for reference
-  let tmp = {
+  /* Here is an example of what the returned data would be
+  const example = {
     "__metadataRoot": {},
     "Objects": [
       {
@@ -170,15 +170,17 @@ function resultHandler(result) {
     "data": {
       "requireLoan": false
     }
-  }
-  let property = findDSObject(result, 'Property');
-  let constants = findDSObject(result, 'Constants');
-  let rebate = findDSObject(result, 'Rebate');
-  let quote = findDSObject(result, 'Quote');
-  let savings = findDSObject(result, 'Savings');
+  };
+  */
+
+  const property = findDSObject(result, 'Property');
+  const constants = findDSObject(result, 'Constants');
+  const rebate = findDSObject(result, 'Rebate');
+  const quote = findDSObject(result, 'Quote');
+  const savings = findDSObject(result, 'Savings');
 
   // Update Quote UI
-  let estimateBreakdown = constants["DefaultInstallationSize"] + 'W * $' + parseFloat(constants["PanelPricePerWatt"]).toFixed(2) + ' ='
+  const estimateBreakdown = constants["DefaultInstallationSize"] + 'W * $' + parseFloat(constants["PanelPricePerWatt"]).toFixed(2) + ' ='
   $('#quote-estimate-breakdown').text(estimateBreakdown);
   $('#quote-percent-breakdown').text('$' + property["EstimatedInstallationCost"] + ' * ' + rebate["Percent"] + ' =');
 
@@ -194,9 +196,10 @@ function resultHandler(result) {
 
   // Update Loan UI
   let qualifiedLoanOptions = result.Objects.filter(function(object) {
-    return object.__metadata["#type"] == 'LoanOption' && object["Qualified"]
+    return object.__metadata["#type"] === 'LoanOption' && object["Qualified"]
   });
   /*
+  An example of returned data
   {
       "DurationMonths": 24,
       "DownPaymentPercent": "0",
@@ -224,18 +227,18 @@ function resultHandler(result) {
     $('#loan-option-2 .loan-interest').text(qualifiedLoanOptions[1]["Interest"] + '%');
     $('#loan-option-2 .loan-monthly-payment').text('$' + parseFloat(qualifiedLoanOptions[1]["AmortizedMonthlyPayment"]).toFixed(2));
   }
-
 }
 
 // Start an execution of the configured State Machine, see config at top of file to change state machine arn
 function callStepFunction() {
   if (!validateForm()) { return; }
-  //return false; // TODO: remove me, working on form dont want a million executions
+
   const data = {
       "name":  config["execution-prefix"] + Date.now(),
-      "input": JSON.stringify(payload()),
+      "input": JSON.stringify(createStepFunctionInitialPayload()),
       "stateMachineArn": config["state-machine-arn"]
-  }
+  };
+
   $.ajax({
       type: 'Post',
       url: config["api-gateway-execution"],
@@ -251,7 +254,7 @@ function callStepFunction() {
 function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000) {
   const data = {
       "executionArn": executionArn
-  }
+  };
   $.ajax({
     type: 'Post',
     url: config["api-gateway-describe-execution"],
@@ -261,10 +264,10 @@ function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000
       window.finishedExecution = true;
       //$('#status').text(data['status']); //RUNNING, SUCCEEDED, FAILED
       console.log(data['status']);
-      if (data['status'] == 'SUCCEEDED') {
+      if (data['status'] === 'SUCCEEDED') {
         console.log(data['output']);
         responseHandler(JSON.parse(data['output']));
-      } else if (data['status'] == 'FAILED') {
+      } else if (data['status'] === 'FAILED') {
         console.log('Step Function Failed: See Execution page for more details');
       } else {
         if (pollCount < 30) {
@@ -306,7 +309,7 @@ function changeStep() {
   $(this).addClass('selected');
 
   $('.form-step.selected').fadeOut().removeClass('selected');
-  let target = $('#' + $(this).attr('id').replace(/-title/g,''))
+  let target = $('#' + $(this).attr('id').replace(/-title/g,''));
   
   onAwsStep(target.addClass('selected').fadeIn());
 }
