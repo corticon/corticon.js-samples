@@ -29,7 +29,7 @@ exports.handler = async (event, context) => {
         // custom code 1: Modified from default sample
         // Save a reference to the additional client data between DS calls as the DS will
         // not return data that does not belong to the DS.
-        const data = body.data;
+        const data = body["additional-data"];
 
         // This is where you specify various configuration attributes
         // Note: Errors are always logged no matter what configuration you specify
@@ -60,7 +60,7 @@ exports.handler = async (event, context) => {
         httpCode = 200;
 
         // custom code 2: return the additional client ui data as part of the payload as these will be necessary in other steps.
-        result.data = data;
+        result["additional-data"] = data;
 
         if ( callFromGatewayApi )
             result = JSON.stringify(result);

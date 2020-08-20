@@ -1,3 +1,12 @@
+/*
+This Decison Service Lambda calculates the potential savings on electricity
+
+In this demo this lambda is directly called after a Parallel Step, where the output is an
+array of valid Decision Service Payloads
+
+This file does not contain a lot of the auto-generated code out of corticon.js for readabiliy sake.
+*/
+
 const decisionService = require('./decisionServiceBundle');
 
 // This lambda expects an array of valid corticon rules objects, see step function for more details
@@ -19,7 +28,7 @@ exports.handler = async (event, context) => {
     body = event[1];
     body.Objects.push(event[0].Objects[2]);
 
-    let data = body.data;
+    const data = body["additional-data"];
 
     // This is where you specify various configuration attributes
     // Note: Errors are always logged no matter what configuration you specify
@@ -33,7 +42,7 @@ exports.handler = async (event, context) => {
     // This is how we invoke the Corticon rules
     result = decisionService.execute(body, configuration);
     
-    result.data = body.data;
+    result["additional-data"] = data;
     
     return result;
 }

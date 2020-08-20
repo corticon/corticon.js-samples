@@ -68,7 +68,7 @@ function validateForm() {
 // create payload JSON from form data for consumption by Decision Services
 function createStepFunctionInitialPayload() {
   return {
-    "data": {
+    "additional-data": {
       "requireLoan": $('#require-loan').prop('checked')
     },
     "__metadataRoot": {},
@@ -245,12 +245,15 @@ function callStepFunction() {
       crossDomain: true,
       data: JSON.stringify(data),
       success: data => {
-          pollForResult(data["executionArn"], resultHandler);
+          if (data["executionArn"]) {
+            pollForResult(data["executionArn"], resultHandler);
+          } else if (data["__type"] && data["message"]) {
+            errorHandler(200, data["__type"] + '(' + data["message"] + ')');
+          } else {
+            errorHandler(200, "Expected an ExecutionArn in Response Body (verify your configuration)")
+          }
+          
       },
-      error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
-    }
   });
 }
 
@@ -279,11 +282,40 @@ function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000
         if (pollCount < 30) {
           window.setTimeout(pollForResult(executionArn, responseHandler, pollCount + 1), interval);
         } else {
-            console.log('ERROR: Could not get status of state machine execution. ' + errorMsgPostfix);
+            errorHandler('', 'Could not get status of state machine execution. ' + errorMsgPostfix);
         }
       }
     }
   });
+}
+
+// Handle Request Errors
+function ajaxErrorHandler(event, jqxhr, settings, thrownError) {
+  errorHandler(jqxhr.status);
+}
+function errorHandler(status, msg="") {
+  msg = 'Error (' + status  + '): ' + msg;
+  if (!msg) {
+    let statusRange = Math.floor(status / 100);
+    if (status === 0) {
+      msg += "URL Unreachable (check your network and ensure the url <" + settings.url + "> is reachable)";
+    } else if (status === 400) {
+      msg += "Bad Request (check your payload is well formed <" + settings.url +">)";
+    } else if (statusRange === 4) {
+      msg += "Client Error (Endpoint not found or not accessible <" + settings.url +">)";
+    } else if (status === 500) {
+      msg += "Internal Server Error (AWS <" + settings.url +">)";
+    } else if (status === 504) {
+      msg += "Request Timed Out (AWS <" + settings.url +">)";
+    } else if (statusRange === 5) {
+      msg += "Other Server Error (AWS <" + settings.url +">)";
+    } else {
+      msg += "AJAX Error <" + settings.url +">)";
+    }
+  }
+  
+  alert(msg);
+  console.log(msg);
 }
 
 // sets some form values ahead of time
@@ -348,24 +380,24 @@ function cycleAwsStep(index=1) {
 
 // Form Controls
 function nextStep() {
-    const formStepSelectedEl = $('.form-step.selected');
+  const formStepSelectedEl = $('.form-step.selected');
   const steps = formStepSelectedEl.nextAll('.form-step');
   if (steps.length) {
-      const stepItem = $('.step-item.selected').removeClass('selected').addClass('complete');
+    const stepItem = $('.step-item.selected').removeClass('selected').addClass('complete');
     stepItem.next().addClass('selected');
 
-      formStepSelectedEl.fadeOut().removeClass('selected');
+    formStepSelectedEl.fadeOut().removeClass('selected');
     onAwsStep(steps.eq(0).addClass('selected').fadeIn());
   }
 }
 function prevStep() {
-    const formStepSelectedEl = $('.form-step.selected');
+  const formStepSelectedEl = $('.form-step.selected');
   const steps = formStepSelectedEl.prevAll('.form-step');
   if (steps.length) {
-      const stepItem = $('.step-item.selected').removeClass('selected');
+    const stepItem = $('.step-item.selected').removeClass('selected');
     stepItem.prev().addClass('selected');
 
-      formStepSelectedEl.fadeOut().removeClass('selected');
+    formStepSelectedEl.fadeOut().removeClass('selected');
     onAwsStep(steps.eq(0).addClass('selected').fadeIn());
   }
 }
@@ -389,6 +421,11 @@ $(document).ready(function() {
 
   $('#aws-step-graph').click(showModal);
   $('.modal').click(hideModal);
+
+
+  // Global Ajax error handler
+  $(document).bind("ajaxError", ajaxErrorHandler);
+  $(document).ajaxError(ajaxErrorHandler);
 
   //Pre-populate some form values for demo/testing purposes
   populateDemoData();
