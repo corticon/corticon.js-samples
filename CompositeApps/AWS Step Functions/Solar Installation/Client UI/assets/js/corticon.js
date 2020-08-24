@@ -20,6 +20,9 @@ const config = {
 
   // UI step delay in ms
   "step-delay": 1500,
+
+  // Alert on error
+  "error-alert": true,
 };
 
 function validateForm() {
@@ -221,7 +224,7 @@ function resultHandler(result) {
     $('#loan-option-1 .loan-monthly-payment').text('$' + parseFloat(qualifiedLoanOptions[0]["AmortizedMonthlyPayment"]).toFixed(2));
   }
   if (qualifiedLoanOptions.length > 1) {
-    $('#loan-option-2 .loan-term').text(qualifiedLoanOptions[1]["DurationMonths"] + ' Months');
+    $('#loan-option-2 .loan-term').text(qualifiedLoanOptions[1]["DateurationMonths"] + ' Months');
     $('#loan-option-2 .loan-down-payment').text('$' + (parseFloat(qualifiedLoanOptions[1]["DownPaymentPercent"]) / 100 * quote["Value"]) + 
       ' (' + qualifiedLoanOptions[1]["DownPaymentPercent"] + '%)');
     $('#loan-option-2 .loan-interest').text(qualifiedLoanOptions[1]["Interest"] + '%');
@@ -230,12 +233,13 @@ function resultHandler(result) {
 }
 
 // Start an execution of the configured State Machine, see config at top of file to change state machine arn
-function callStepFunction() {
-  if (!validateForm()) { return; }
+// Optional parameter payload to bypass form validation
+function callStepFunction(payload=null) {
+  if (payload || !validateForm()) { return; }
 
   const data = {
       "name":  config["execution-prefix"] + Date.now(),
-      "input": JSON.stringify(createStepFunctionInitialPayload()),
+      "input": JSON.stringify(payload || createStepFunctionInitialPayload()),
       "stateMachineArn": config["state-machine-arn"]
   };
 
@@ -244,13 +248,13 @@ function callStepFunction() {
       url: config["api-gateway-execution"],
       crossDomain: true,
       data: JSON.stringify(data),
-      success: data => {
+      success: res => {
           if (data["executionArn"]) {
             pollForResult(data["executionArn"], resultHandler);
-          } else if (data["__type"] && data["message"]) {
-            errorHandler(200, data["__type"] + '(' + data["message"] + ')');
+          } else if (res["__type"] && res["message"]) {
+            errorHandler(200, data["name"], res["__type"] + '(' + res["message"] + ')');
           } else {
-            errorHandler(200, "Expected an ExecutionArn in Response Body (verify your configuration)")
+            errorHandler(200, data["name"], "Expected an ExecutionArn in Response Body (verify your configuration)")
           }
           
       },
@@ -269,20 +273,20 @@ function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000
     url: config["api-gateway-describe-execution"],
     crossDomain: true,
     data: JSON.stringify(data),
-    success: data => {
+    success: res => {
       window.finishedExecution = true;
-      //$('#status').text(data['status']); //RUNNING, SUCCEEDED, FAILED
-      console.log(data['status']);
-      if (data['status'] === 'SUCCEEDED') {
-        console.log(data['output']);
-        responseHandler(JSON.parse(data['output']));
-      } else if (data['status'] === 'FAILED') {
+      //$('#status').text(res['status']); //RUNNING, SUCCEEDED, FAILED
+      console.log(res['status']);
+      if (res['status'] === 'SUCCEEDED') {
+        console.log(res['output']);
+        responseHandler(JSON.parse(res['output']));
+      } else if (res['status'] === 'FAILED') {
         console.log('ERROR: Step Function Failed. ' + errorMsgPostfix);
       } else {
         if (pollCount < 30) {
           window.setTimeout(pollForResult(executionArn, responseHandler, pollCount + 1), interval);
         } else {
-            errorHandler('', 'Could not get status of state machine execution. ' + errorMsgPostfix);
+          errorHandler('', data["executionArn"], 'Could not get status of state machine execution. ' + errorMsgPostfix);
         }
       }
     }
@@ -291,9 +295,10 @@ function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000
 
 // Handle Request Errors
 function ajaxErrorHandler(event, jqxhr, settings, thrownError) {
-  errorHandler(jqxhr.status);
+  let data = JSON.parse(settings.data);
+  errorHandler(jqxhr.status, data["name"] || data["executionArn"]);
 }
-function errorHandler(status, msg="") {
+function errorHandler(status, id, msg="", alert=window.alert) {
   msg = 'Error (' + status  + '): ' + msg;
   if (!msg) {
     let statusRange = Math.floor(status / 100);
@@ -314,7 +319,13 @@ function errorHandler(status, msg="") {
     }
   }
   
-  alert(msg);
+  if (!window.errors) { window.errors = []; }
+  window.errors.push({
+    "id": id,
+    "error": msg
+  })
+
+  if (alert) { alert(msg) };
   console.log(msg);
 }
 
@@ -412,6 +423,7 @@ function hideModal() {
 
 $(document).ready(function() {
   window.finishedExecution = false; // flag for step function
+  window.alert = config["error-alert"]; // see config
 
   // Click Handlers
   $('.step-progress-bar .step-item:not(.nested)').click(changeStep);
