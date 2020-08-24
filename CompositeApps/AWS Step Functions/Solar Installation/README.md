@@ -201,6 +201,7 @@ For now, just paste the contents of [statemachine_definition.json](./Step%20Func
 - First create a new AWS lambda function from **Services** > **Lambda** > **Create Function** 
 - Give your new function a name (eg. 'Solar_Constants_Lambda')
 - Click **Create Function**
+- For Role: Select the default role LambdaRole 
 - Under the Function Code section, open the **Actions** dropdown in the upper right and select **Upload a .zip file**
 - Upload the zip file for the corresponding Lambda Function / REST Service under `Decision Services/Customized DS Lambda Entry Points` and `RestServices`
 
