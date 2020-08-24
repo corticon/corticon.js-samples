@@ -3,10 +3,11 @@
 
 const config = {
   // Prefixes Execution Name inside AWS
-  "execution-prefix": "JQuery_Solar_",
+  "execution-prefix": "SolarDemo_testProd_",
 
   // ARN found on State Machine page
   "state-machine-arn": "arn:aws:states:us-east-2:825395728724:stateMachine:DX_JavaScript_Solar",
+  //  "state-machine-arn": "arn:aws:states:us-east-2:825395728724:stateMachine:Prod_JavaScript_Solar",
 
   // API Gateway to StepFunction Endpoints, unlikely you should need to touch these
   "api-gateway-execution": "https://ezruukcqbk.execute-api.us-east-2.amazonaws.com/Development/execution",
@@ -20,9 +21,6 @@ const config = {
 
   // UI step delay in ms
   "step-delay": 1500,
-
-  // Alert on error
-  "error-alert": true,
 };
 
 function validateForm() {
@@ -249,20 +247,19 @@ function callStepFunction(payload=null) {
       crossDomain: true,
       data: JSON.stringify(data),
       success: res => {
-          if (data["executionArn"]) {
-            pollForResult(data["executionArn"], resultHandler);
+          if (res["executionArn"]) {
+            pollForResult(res["executionArn"], resultHandler, 0, 1000, data["name"]);
           } else if (res["__type"] && res["message"]) {
             errorHandler(200, data["name"], res["__type"] + '(' + res["message"] + ')');
           } else {
             errorHandler(200, data["name"], "Expected an ExecutionArn in Response Body (verify your configuration)")
           }
-          
       },
   });
 }
 
 // Poll 'describe-execution' endpoint until completed, call responseHandler when done
-function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000) {
+function pollForResult(executionArn, responseHandler, pollCount, interval, executionName) {
     const errorMsgPostfix = 'See Execution page for more details on the AWS step function console';
 
   const data = {
@@ -281,12 +278,12 @@ function pollForResult(executionArn, responseHandler, pollCount=0, interval=1000
         console.log(res['output']);
         responseHandler(JSON.parse(res['output']));
       } else if (res['status'] === 'FAILED') {
-        console.log('ERROR: Step Function Failed. ' + errorMsgPostfix);
+        errorHandler('', executionName, 'ERROR: Step Function Failed. ' + errorMsgPostfix);
       } else {
         if (pollCount < 30) {
           window.setTimeout(pollForResult(executionArn, responseHandler, pollCount + 1), interval);
         } else {
-          errorHandler('', data["executionArn"], 'Could not get status of state machine execution. ' + errorMsgPostfix);
+          errorHandler('', executionName, 'Could not get status of state machine execution after polling 30 times. ' + errorMsgPostfix);
         }
       }
     }
@@ -298,8 +295,11 @@ function ajaxErrorHandler(event, jqxhr, settings, thrownError) {
   let data = JSON.parse(settings.data);
   errorHandler(jqxhr.status, data["name"] || data["executionArn"]);
 }
-function errorHandler(status, id, msg="", alert=window.alert) {
-  msg = 'Error (' + status  + '): ' + msg;
+
+function errorHandler(status, id, msg="") {
+  if ( status !== '' )
+    msg = 'Error (' + status  + '): ' + msg;
+
   if (!msg) {
     let statusRange = Math.floor(status / 100);
     if (status === 0) {
@@ -318,14 +318,17 @@ function errorHandler(status, id, msg="", alert=window.alert) {
       msg += "AJAX Error <" + settings.url +">)";
     }
   }
-  
-  if (!window.errors) { window.errors = []; }
+
+  // store all errors into an array for the tester
+  if (!window.errors) {
+    window.errors = [];
+  }
   window.errors.push({
     "id": id,
     "error": msg
-  })
+  });
 
-  if (alert) { alert(msg) };
+  alert(msg);
   console.log(msg);
 }
 
@@ -423,7 +426,6 @@ function hideModal() {
 
 $(document).ready(function() {
   window.finishedExecution = false; // flag for step function
-  window.alert = config["error-alert"]; // see config
 
   // Click Handlers
   $('.step-progress-bar .step-item:not(.nested)').click(changeStep);
