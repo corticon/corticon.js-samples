@@ -1,6 +1,7 @@
 import React from 'react';
 
 const decisionService = require('./decisionServiceBundle');
+const multipleNodeTest = require('./decisionServiceBundle_Multiple_Node_Test');
 
 //TODO: move me to json file
 const entityDefaults = {
@@ -51,6 +52,15 @@ const clientDS = {
       console.log('ARGS ERROR');
     }
     options.responseHandler(result);
+
+    let multipleNodeResult = multipleNodeTest.execute(corticonPayload, options.configuration);
+    let msg = multipleNodeResult.Objects.find(function(object) { return object.__metadata["#type"] === "Message" });
+    
+    if (msg) {
+      //alert(msg["Text"]);
+      console.log(msg["Text"]);
+    }
+
   }
 }
 
