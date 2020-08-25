@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" buildNumber="8017" updateStamp="_Wx4Z8OCgEeqU3_KRTnPOqg" externalChecksum="3641963118:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" buildNumber="8018" updateStamp="_Eby9submEeqPttyfwpEqdw" externalChecksum="3641963118:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
   <comments timestamp="2020-08-17T10:08:14.395-0400" username="tciot" text="This is the price of solar panel per watt of production." objects="#//@rulesheetViewList.0/@scopeSection/@rootNode/@children.0/@children.2" type="Note" ruleSheetSelectionType="Scope Attribute" ruleSheetSelectionReference="Constants.PricePerWatt"/>
   <comments timestamp="2020-08-17T10:09:03.915-0400" username="tciot" text="This is the price of solar panel per watt of electricity produced." objects="#//@rulesheetViewList.0/@scopeSection/@rootNode/@children.0/@children.2" type="Note" ruleSheetSelectionType="Scope Attribute" ruleSheetSelectionReference="Constants.PricePerWatt"/>
   <comments timestamp="2020-08-17T11:42:49.771-0400" username="tciot" text="This will work from the REST data input." objects="#//@rulesheetViewList.0/@actionSection/@actionItemList.3" type="Note" ruleSheetSelectionType="Action" ruleSheetSelectionReference="3,1,0,3,0,3"/>
   <comments timestamp="2020-08-17T11:43:11.630-0400" username="tciot" text="This will work from the REST data input." objects="#//@rulesheetViewList.0/@actionSection/@actionItemList.4" type="Note" ruleSheetSelectionType="Action" ruleSheetSelectionReference="3,1,0,4,0,4"/>
-  <ruleset vocabularyUpdateStamp="_1ZGDweC0EeqAY8hCrnd_Lw" vocabulary="Solar.ecore#/">
+  <ruleset vocabularyUpdateStamp="_roQJcOYSEeqAY8hCrnd_Lw" vocabulary="Solar.ecore#/">
     <rule>
       <action>
         <opaqueExpression expression="Constants.DefaultInstallationSize = 5000">
@@ -92,7 +92,7 @@
       </condition>
       <condition>
         <opaqueExpression expression="(Property.State = 'MA')=true">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'MA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'MA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -121,7 +121,7 @@
       <condition/>
       <condition>
         <opaqueExpression expression="(Property.State = 'CA')=true">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'CA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'CA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -150,7 +150,7 @@
       <condition/>
       <condition>
         <opaqueExpression expression="(Property.State = 'NY')=true">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'NY' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'NY' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -295,7 +295,7 @@
       <conditionItemList>
         <valueSetCell/>
         <expressionCell external="Property.State = 'MA'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -307,7 +307,7 @@
       <conditionItemList>
         <valueSetCell/>
         <expressionCell external="Property.State = 'CA'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'CA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'CA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -319,7 +319,7 @@
       <conditionItemList>
         <valueSetCell/>
         <expressionCell external="Property.State = 'NY'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -348,7 +348,7 @@
           </parserOutput>
         </conditionValueSetCellList>
         <conditionValueSetCellList valueSet="T">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'MA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'MA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -371,7 +371,7 @@
         </conditionValueSetCellList>
         <conditionValueSetCellList valueSet="-"/>
         <conditionValueSetCellList valueSet="T">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'CA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'CA' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
@@ -394,7 +394,7 @@
         <conditionValueSetCellList valueSet="-"/>
         <conditionValueSetCellList valueSet="-"/>
         <conditionValueSetCellList valueSet="T">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'NY' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.State = 'NY' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
                 <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.1"/>
