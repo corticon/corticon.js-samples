@@ -3,11 +3,13 @@
 
 const config = {
   // Prefixes Execution Name inside AWS
-  "execution-prefix": "SolarDemo_testProd_",
+  "execution-prefix": "SolarDemo_testQA_",
 
   // ARN found on State Machine page
-  "state-machine-arn": "arn:aws:states:us-east-2:825395728724:stateMachine:DX_JavaScript_Solar",
-  //  "state-machine-arn": "arn:aws:states:us-east-2:825395728724:stateMachine:Prod_JavaScript_Solar",
+  // "state-machine-arn": "arn:aws:states:us-east-2:825395728724:stateMachine:DX_JavaScript_Solar",
+   //"state-machine-arn": "arn:aws:states:us-east-2:825395728724:stateMachine:Prod_JavaScript_Solar",
+   "state-machine-arn": "arn:aws:states:us-east-2:825395728724:stateMachine:QA_JavaScript_Solar",
+
 
   // API Gateway to StepFunction Endpoints, unlikely you should need to touch these
   "api-gateway-execution": "https://ezruukcqbk.execute-api.us-east-2.amazonaws.com/Development/execution",
