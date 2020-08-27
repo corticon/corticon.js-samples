@@ -1,4 +1,4 @@
-/* This file handles application logic regarding the decision servic*/
+/* This file handles application logic regarding the decision service*/
 // requires jQuery
 
 

@@ -716,3 +716,63 @@ header p {
   }
   .left-panel {display: none;}
 }
+
+/* Tester */
+.tester-wrapper {
+  display: flex;
+  flex-grow: 1;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 1em 5em;
+  padding: 1em;
+}
+.scrollable {
+  /*width: 100%;*/
+  flex-grow: 9;
+  overflow-y: scroll;
+}
+.test-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.test-container.success .test-title, .tester-sidebar .entry.success {
+  color: #66bb6a;
+}
+.test-container.error .test-title, .tester-sidebar .entry.error {
+  color: #f44336;
+}
+
+.test-header {
+  flex-basis: 100%;
+  margin-left: 0.5em;
+}
+.test-header h3 {
+  margin: 0;
+  display: inline-block;
+}
+.test-io {
+  flex-basis: 100%;
+  display: flex;
+}
+.input, .output {
+  width: 50%;
+  margin: 0.5em;
+  height: 20em;
+  padding-left: 0.5em;
+}
+
+#run-all, .run {
+  margin: 0.5em;
+}
+
+.tester-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.tester-sidebar .entry {
+  padding-left: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}

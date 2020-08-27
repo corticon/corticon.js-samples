@@ -21,6 +21,9 @@ const config = {
 
   // UI step delay in ms
   "step-delay": 1500,
+
+  // Hide Aws Substeps, move to quote upon completion
+  "hide-aws-substeps": true,
 };
 
 function validateForm() {
@@ -228,12 +231,17 @@ function resultHandler(result) {
     $('#loan-option-2 .loan-interest').text(qualifiedLoanOptions[1]["Interest"] + '%');
     $('#loan-option-2 .loan-monthly-payment').text('$' + parseFloat(qualifiedLoanOptions[1]["AmortizedMonthlyPayment"]).toFixed(2));
   }
+
+  // move to quote step if hiding substeps
+  if (config["hide-aws-substeps"]) {
+    $('#quote-step-title').trigger('click');
+  }
 }
 
 // Start an execution of the configured State Machine, see config at top of file to change state machine arn
 // Optional parameter payload to bypass form validation
-function callStepFunction(payload=null) {
-  if (payload || !validateForm()) { return; }
+function callStepFunction(payload=null, responseHandler=resultHandler) {
+  if (!payload && !validateForm()) { return; }
 
   const data = {
       "name":  config["execution-prefix"] + Date.now(),
@@ -242,13 +250,13 @@ function callStepFunction(payload=null) {
   };
 
   $.ajax({
-      type: 'Post',
+      type: 'Post', 
       url: config["api-gateway-execution"],
       crossDomain: true,
       data: JSON.stringify(data),
       success: res => {
           if (res["executionArn"]) {
-            pollForResult(res["executionArn"], resultHandler, 0, 1000, data["name"]);
+            pollForResult(res["executionArn"], responseHandler, 0, 1000, data["name"]);
           } else if (res["__type"] && res["message"]) {
             errorHandler(200, data["name"], res["__type"] + '(' + res["message"] + ')');
           } else {
@@ -273,7 +281,7 @@ function pollForResult(executionArn, responseHandler, pollCount, interval, execu
     success: res => {
       window.finishedExecution = true;
       //$('#status').text(res['status']); //RUNNING, SUCCEEDED, FAILED
-      console.log(res['status']);
+      console.log(res['status'] + '[ ' + executionArn + ' ]');
       if (res['status'] === 'SUCCEEDED') {
         console.log(res['output']);
         responseHandler(JSON.parse(res['output']));
@@ -293,10 +301,10 @@ function pollForResult(executionArn, responseHandler, pollCount, interval, execu
 // Handle Request Errors
 function ajaxErrorHandler(event, jqxhr, settings, thrownError) {
   let data = JSON.parse(settings.data);
-  errorHandler(jqxhr.status, data["name"] || data["executionArn"]);
+  errorHandler(jqxhr.status, data["name"] || data["executionArn"], "Ajax Error. Potential an error with headers / request configuration", {"silent": true});
 }
 
-function errorHandler(status, id, msg="") {
+function errorHandler(status, id, msg="", options={}) {
   if ( status !== '' )
     msg = 'Error (' + status  + '): ' + msg;
 
@@ -328,7 +336,9 @@ function errorHandler(status, id, msg="") {
     "error": msg
   });
 
-  alert(msg);
+  if (!options["silent"]) {
+    alert(msg);
+  }
   console.log(msg);
 }
 
@@ -443,4 +453,7 @@ $(document).ready(function() {
 
   //Pre-populate some form values for demo/testing purposes
   populateDemoData();
+  if (config["hide-aws-substeps"]) {
+    $('#aws-step-title .step-progress-bar.nested').hide();
+  }
 });

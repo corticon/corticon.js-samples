@@ -3,7 +3,6 @@ import React from 'react';
 const decisionService = require('./decisionServiceBundle');
 const multipleNodeTest = require('./decisionServiceBundle_Multiple_Node_Test');
 
-//TODO: move me to json file
 const entityDefaults = {
   "Applicant": {
     "Age": null,
@@ -14,7 +13,6 @@ const entityDefaults = {
   },
 };
 
-// TODO: AWS
 // AWS step functions invokes lambda that execude Decision Service
 const awsDS = {
   name: "AWS Step Function",
