@@ -1,0 +1,84 @@
+{
+  "Comment": "Step Function for JavaScript Solar Application",
+  "StartAt": "DS_Solar_Constants",
+  "States": {
+    "DS_Solar_Constants": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_Constants",
+      "Next": "DS_Solar_PreQuote_Group"
+    },
+    "DS_Solar_PreQuote_Group": {
+      "Type": "Parallel",
+      "Next": "DS_Solar_Savings",
+      "Branches": [
+        {
+          "StartAt": "DS_Solar_Rebate",
+          "States": {
+            "DS_Solar_Rebate": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_Rebate",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Rest_Solar_Price",
+          "States": {
+            "Rest_Solar_Price": {
+              "Comment": "Fetch Price of Solar Panel / Watt and Energy Price at User's location",
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_Price_Rest",
+              "Next": "DS_Solar_PriceConstants"
+            },
+            "DS_Solar_PriceConstants": {
+              "Comment": "Perform calculations on the just fetched Prices for later consumption",
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_PriceConstants",
+              "End": true
+            }
+          }
+        }
+      ]
+    },
+    "DS_Solar_Savings": {
+      "Comment": "Determine Savings",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_Savings",
+      "Next": "DS_Solar_PriceQuote"
+    },
+    "DS_Solar_PriceQuote": {
+      "Comment": "Final Price Quote",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_Quote",
+      "Next": "Choice_Solar_Loan"
+    },
+    "Choice_Solar_Loan": {
+      "Comment": "Conditional Loan Step Based on Form Field",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.additional-data.requireLoan",
+          "BooleanEquals": true,
+          "Next": "Rest_Solar_Loan"
+        }
+      ],
+      "Default": "SuccessState"
+    },
+    "SuccessState": {
+      "Comment": "Ends Execution",
+      "Type": "Succeed"
+    },
+    "Rest_Solar_Loan": {
+      "Comment": "Fetch current loan options",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_Loan_Rest",
+      "Next": "DS_Solar_Loan"
+    },
+    "DS_Solar_Loan": {
+      "Comment": "Determine qualified loan options",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:825395728724:function:QA_JavaScript_Solar_Loan",
+      "End": true
+    }
+  }
+}

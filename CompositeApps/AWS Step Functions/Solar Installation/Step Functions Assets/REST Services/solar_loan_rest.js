@@ -1,20 +1,25 @@
+/**
+ * Return an array of various loan offers given a requested amount.
+ * The amount is read from the Quote object in the payload (event).
+ */
 exports.handler = async (event) => {
-    let quote = event.Objects.find(obj => {
-        return obj.__metadata["#type"] == "Quote";
+    // Find the quote object in payload.
+    const quote = event.Objects.find(obj => {
+        return obj.__metadata["#type"] === "Quote";
     });
-    let amount = parseFloat(quote["Value"]);
-    
-    let calcMonthlyPayment = function(amount, interest, duration) {
+    const amount = parseFloat(quote["Value"]);
+
+    const calcMonthlyPayment = function(amount, interest, duration) {
         let i = interest / 100 / 12;
         return amount * (i + i/((1 + i)**duration - 1));
-    }
+    };
     
-    let n = 1
-    let id = function() {
+    let n = 1;
+    const id = function() {
         return "LoanOption_id_" + n++;
-    }
+    };
     
-    let LoanOptions = [
+    const LoanOptions = [
     {
         "DurationMonths": 24,
         "DownPaymentPercent": 50,
@@ -147,7 +152,7 @@ exports.handler = async (event) => {
             "#id": id()
         }
     }
-    ]
+    ];
     
     event.Objects = event.Objects.concat(LoanOptions);
     
