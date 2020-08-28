@@ -22,7 +22,7 @@ const config = {
   "step-delay": 900,
 
   // Hide Aws Substeps, move to quote upon completion
-  "hide-aws-substeps": true,
+  "hide-aws-substeps": false,
 };
 
 function validateForm() {
