@@ -16,9 +16,11 @@ const testConfig = {
     "loan-high-age",
     "loan-low-value-low-age",
     "loan-low-value-med-age",
-    "loan-low-value-high-age"
+    "loan-low-value-high-age",
+    "required-loan-false",
   ],
 };
+
 
 // Set text areas and links to tests
 function initiateTester() {
@@ -49,7 +51,8 @@ function initiateTester() {
 
 // Asserts an object of objType exists, and optionally that each instance has non-empty properties
 // with names in propertyNames ["propName1", "propName2"]
-function assertExists(res, errors, objType, propertyNames=undefined) {
+// if isFalse flag is true, then check such an objType does not exist
+function assertExists(res, errors, objType, isFalse, propertyNames=undefined) {
   if (!res.Objects) {
     errors.push("Malformed Response. Expected to find Decision Service Object array.");
     return false;
@@ -57,8 +60,14 @@ function assertExists(res, errors, objType, propertyNames=undefined) {
 
   let passes = true;
 	let matches = res.Objects.filter(function(object) { return object.__metadata["#type"] === objType });
-  if (!matches) {
+  if (!matches.length) {
+    if (isFalse) {
+      return true;
+    }
     errors.push("Expected to find an Object of type [" + objType + "]");
+    return false;
+  } else if (isFalse) {
+    errors.push("Did not expect to find an Object of type [" + objType + "]");
     return false;
   }
 
@@ -79,8 +88,8 @@ function assertExists(res, errors, objType, propertyNames=undefined) {
 // add further validation to specific test ids
 function testResponseHandler(res, inputObj) {
   let errors = [];
-
-  switch($(inputObj).id) {
+  let id = $(inputObj).parents('.test-container').attr('id');
+  switch(id) {
     case "test-1":
       break;
     case "test-2":
@@ -91,7 +100,7 @@ function testResponseHandler(res, inputObj) {
       //
   }
   
-  assertExists(res, errors, "Property", [
+  assertExists(res, errors, "Property", false, [
       "EstimatedMonthlyGenerated_kWhr",
       "MonthlyElectricBill",
       "Orientation",
@@ -104,29 +113,31 @@ function testResponseHandler(res, inputObj) {
       "MonthlyElectricConsumption"
   ]);
 
-  assertExists(res, errors, "Constants", [
+  assertExists(res, errors, "Constants", false,  [
       "DefaultInstallationSize",
       "DefaultRequiredRoofSpace",
       "PanelPricePerWatt",
       "Cost_kWhr"
   ]);
 
-  assertExists(res, errors, "Rebate", [
+  assertExists(res, errors, "Rebate", false, [
       "Flat",
       "Percent"
   ]);
 
-  assertExists(res, errors, "Savings", [
+  assertExists(res, errors, "Savings", false, [
       "Resell_kWhr",
       "MonthlyElectricBill",
       "NetSavings_20"
   ]);
 
-  assertExists(res, errors, "Quote", [
+  assertExists(res, errors, "Quote", false, [
       "Value"
   ]);
 
-  assertExists(res, errors, "LoanOption", [
+
+  let noLoan = (id === "no-required-loan" || id ==="required-loan-false");
+  assertExists(res, errors, "LoanOption", noLoan, [
       "DurationMonths",
       "DownPaymentPercent",
       "Interest",
@@ -153,6 +164,7 @@ function runAllTests() {
   let id = setInterval(function() {
     if (i >= inputs.length) {
       clearInterval(id);
+      return;
     }
     let input =  $(inputs)[i];
     runTest($(input).text(), input);
@@ -718,6 +730,76 @@ payloads["loan-commercial"] = {
       "Orientation": "S",
       "Shade": "1",
       "Type": "Commercial",
+      "State": "MA",
+      "RoofSize": "100",
+      "Value": "1000000",
+      "Country": "US",
+      "__metadata": {
+        "#type": "Property",
+        "#id": "Property_id_1"
+      },
+      "EstimatedInstallationCost": null,
+      "Age": 5,
+      "MonthlyElectricConsumption": null
+    },
+    {
+      "__metadata": {
+        "#type": "Constants",
+        "#id": "Constants_id_1"
+      }
+    }
+  ]
+}
+
+// aws step function doesn't handle this despite default state transition set.
+descriptions["no-required-loan"] = "Verify no loan options are returned when flag not present"
+payloads["no-required-loan"] = {
+  "__metadataRoot": {},
+  "Objects": [
+    {
+      "Address": "10 Sunny Lane",
+      "EstimatedMonthlyGenerated_kWhr": null,
+      "MonthlyElectricBill": "200",
+      "City": "The Future",
+      "Orientation": "S",
+      "Shade": "1",
+      "Type": "Residential",
+      "State": "MA",
+      "RoofSize": "100",
+      "Value": "1000000",
+      "Country": "US",
+      "__metadata": {
+        "#type": "Property",
+        "#id": "Property_id_1"
+      },
+      "EstimatedInstallationCost": null,
+      "Age": 5,
+      "MonthlyElectricConsumption": null
+    },
+    {
+      "__metadata": {
+        "#type": "Constants",
+        "#id": "Constants_id_1"
+      }
+    }
+  ]
+}
+
+descriptions["required-loan-false"] = "Verify no loan options are returned with flag is false"
+payloads["required-loan-false"] = {
+  "additional-data": {
+    "requireLoan": false
+  },
+  "__metadataRoot": {},
+  "Objects": [
+    {
+      "Address": "10 Sunny Lane",
+      "EstimatedMonthlyGenerated_kWhr": null,
+      "MonthlyElectricBill": "200",
+      "City": "The Future",
+      "Orientation": "S",
+      "Shade": "1",
+      "Type": "Residential",
       "State": "MA",
       "RoofSize": "100",
       "Value": "1000000",
