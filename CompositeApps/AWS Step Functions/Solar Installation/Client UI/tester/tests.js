@@ -138,24 +138,24 @@ function testResponseHandler(res, inputObj) {
 }
 
 function runAllTests() {
-	$(".test-container .input").each(function(index, input) {
-		runTest($(input).text(), input);
-	});
+	// $(".test-container .input").each(function(index, input) {
+	// 	runTest($(input).text(), input);
+	// });
 
-  // // reset all status indicators
-  // $('.success, .error').removeClass('success error');
+  // reset all status indicators
+  $('.success, .error').removeClass('success error');
 
-  // // add an interval to calls to prevent ajax errors from running 20 requests a second
-  // let i = 0;
-  // let inputs = $(".test-container .input");
-  // let id = setInterval(function() {
-  //   if (i >= inputs.length) {
-  //     clearInterval(id);
-  //   }
-  //   let input =  $(inputs)[i];
-  //   runTest($(input).text(), input);
-  //   i++;
-  // }, 5000)
+  // add an interval to calls to prevent ajax errors from running 20 requests a second
+  let i = 0;
+  let inputs = $(".test-container .input");
+  let id = setInterval(function() {
+    if (i >= inputs.length) {
+      clearInterval(id);
+    }
+    let input =  $(inputs)[i];
+    runTest($(input).text(), input);
+    i++;
+  }, 5000)
 }
 function runClickHandler() {
   let inputObj = $(this).parents('.test-container').find('.input')
@@ -169,7 +169,7 @@ function runTest(jsonInput, inputObj) {
   callStepFunction(JSON.parse(jsonInput),
     function(res) {
       testResponseHandler(res, inputObj);
-    }
+    }, 2000
   );
 }
 

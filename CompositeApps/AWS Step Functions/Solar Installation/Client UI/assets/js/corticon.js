@@ -239,7 +239,7 @@ function resultHandler(result) {
 
 // Start an execution of the configured State Machine, see config at top of file to change state machine arn
 // Optional parameter payload to bypass form validation
-function callStepFunction(payload=null, responseHandler=resultHandler) {
+function callStepFunction(payload=null, responseHandler=resultHandler, pollInterval=1000) {
   if (!payload && !validateForm()) { return; }
 
   const data = {
@@ -255,7 +255,7 @@ function callStepFunction(payload=null, responseHandler=resultHandler) {
       data: JSON.stringify(data),
       success: res => {
           if (res["executionArn"]) {
-            pollForResult(res["executionArn"], responseHandler, 0, 1000, data["name"]);
+            pollForResult(res["executionArn"], responseHandler, 0, pollInterval, data["name"]);
           } else if (res["__type"] && res["message"]) {
             errorHandler(200, data["name"], res["__type"] + '(' + res["message"] + ')');
           } else {
@@ -288,7 +288,7 @@ function pollForResult(executionArn, responseHandler, pollCount, interval, execu
         errorHandler('', executionName, 'ERROR: Step Function Failed. ' + errorMsgPostfix);
       } else {
         if (pollCount < 30) {
-          window.setTimeout(pollForResult(executionArn, responseHandler, pollCount + 1), interval);
+          window.setTimeout(pollForResult(executionArn, responseHandler, pollCount + 1, interval), interval);
         } else {
           errorHandler('', executionName, 'Could not get status of state machine execution after polling 30 times. ' + errorMsgPostfix);
         }
