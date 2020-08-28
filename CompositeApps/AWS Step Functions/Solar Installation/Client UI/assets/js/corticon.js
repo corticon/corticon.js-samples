@@ -19,7 +19,7 @@ const config = {
   "enable-randomize-delay": true,
 
   // UI step delay in ms
-  "step-delay": 1500,
+  "step-delay": 900,
 
   // Hide Aws Substeps, move to quote upon completion
   "hide-aws-substeps": true,
@@ -255,7 +255,7 @@ function callStepFunction(payload=null, responseHandler=resultHandler) {
       data: JSON.stringify(data),
       success: res => {
           if (res["executionArn"]) {
-            pollForResult(res["executionArn"], responseHandler, 0, 1000, data["name"]);
+            pollForResult(res["executionArn"], responseHandler, 0, 2000, data["name"]);
           } else if (res["__type"] && res["message"]) {
             errorHandler(200, data["name"], res["__type"] + '(' + res["message"] + ')');
           } else {
