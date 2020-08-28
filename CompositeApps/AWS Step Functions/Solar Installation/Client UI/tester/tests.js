@@ -18,28 +18,30 @@ const testConfig = {
     "loan-low-value-med-age",
     "loan-low-value-high-age"
   ],
-}
+};
 
 // Set text areas and links to tests
 function initiateTester() {
   let testSidebarEntry = $('.tester-sidebar .entry');
   let testContainer = $('.test-container').first();
 
-  testConfig["enabled-test-ids"].forEach(function(id) {
+  config["execution-prefix"] = "SolarDemo_Tester_";
+
+    testConfig["enabled-test-ids"].forEach(function(id) {
     let newContainer = testContainer.clone();
     newContainer.find('.test-title').text(id);
     newContainer.find('.test-description').text(descriptions[id]);
     newContainer.find('.input').text(JSON.stringify(payloads[id], null, 2)).attr("id", "input-" + id);
-    newContainer.attr("id", id)
+    newContainer.attr("id", id);
 
     let newSidebarEntry = testSidebarEntry.clone();
     newSidebarEntry.text(id);
     newSidebarEntry.attr("href", "#" + id);
     newSidebarEntry.attr("id", "link-" + id);
 
-    newSidebarEntry.insertAfter($('.tester-sidebar .entry').last())
+    newSidebarEntry.insertAfter($('.tester-sidebar .entry').last());
     newContainer.insertAfter($('.test-container').last());
-  })
+  });
 
   testSidebarEntry.remove();
   testContainer.remove();
