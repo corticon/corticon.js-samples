@@ -13,6 +13,7 @@ Verbose guides to Kinvey Flex here:
 ```
 <Create account, app, Flex Service in Kinvey>
 npm install -g kinvey-cli
+npm install
 kinvey init
 kinvey profile use <PROFILENAME>
 kinvey flex init
