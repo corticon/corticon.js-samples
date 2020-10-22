@@ -11,7 +11,7 @@ app.use(bodyParser())
 
 router.post('/', async ctx => {
 	const body = ctx.request.body;
-	const configuration = { logLevel: 1, logIsOn: corticonLogEntry => console.log(corticonLogEntry)};
+	const configuration = { logLevel: 1, logFunction: corticonLogEntry => console.log(corticonLogEntry) }; //Verbose logging, probably don't use in production
 	const result = decisionService.execute(body, configuration);	
 	ctx.status = 200;
 	ctx.body = result;

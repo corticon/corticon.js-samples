@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.json());
 
 app.post('/', (req, res) => {
-	const configuration = { logLevel: 1, logIsOn: corticonLogEntry => console.log(corticonLogEntry)};
+	const configuration = { logLevel: 1, logFunction: corticonLogEntry => console.log(corticonLogEntry) }; //Verbose logging, probably don't use in production
     const result = decisionService.execute(req.body, configuration);
     res.status(200).json(result);
 });
