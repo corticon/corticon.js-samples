@@ -1,5 +1,3 @@
-import React from 'react';
-
 const decisionService = require('./decisionServiceBundle');
 const multipleNodeTest = require('./decisionServiceBundle_Multiple_Node_Test');
 
@@ -13,26 +11,24 @@ const entityDefaults = {
   },
 };
 
-// AWS step functions invokes lambda that execude Decision Service
+// AWS Lambda function invokes lambda that execude Decision Service
 const awsDS = {
-  name: "AWS Step Function",
+  name: "AWS Lambda Function",
   toString: () => { return this.awsDS.name },
   callDS: (corticonPayload, options) => {
-    let httpRequest = new XMLHttpRequest();
-    // AWS lambda function. Created by Thierry
-    let url = "https://77pucwt9j3.execute-api.us-east-2.amazonaws.com/prod/CarRental";
-
+    new XMLHttpRequest();
+    // AWS API Gateway entry point to lambda function.
+    const url = "https://77pucwt9j3.execute-api.us-east-2.amazonaws.com/prod/CarRental";
     console.log(JSON.stringify(corticonPayload));
     fetch(url, {
       method: 'POST',
-      headers: {
-      },
+      headers: {},
       body: JSON.stringify(corticonPayload),
     }).then((response) => response.json())
       .then((json) => options.responseHandler(json))
       .catch((error) => {console.log(JSON.stringify(error, {}, 2))});
   }
-}
+};
 
 // local Decision Service 
 const clientDS = {
@@ -58,9 +54,8 @@ const clientDS = {
       //alert(msg["Text"]);
       console.log(msg["Text"]);
     }
-
   }
-}
+};
 
 // Helper function to add required metadata and populate defaults
 function payload(entities) {
@@ -77,14 +72,14 @@ function payload(entities) {
     entityObject["__metadata"] = {
       "#type": entityName,
       "#id": `${entityName}_id_${entityCount[entityName]}`
-    }
+    };
 
     // shallow merge object into defaults
     return {...entityDefaults[entityName], ...entityObject};
-  })
+  });
   
   return payload;
-};
+}
 
 function runDecisionService(entities, configuration={}, backend='client', responseHandler) {
 
@@ -95,13 +90,13 @@ function runDecisionService(entities, configuration={}, backend='client', respon
   // logPerfData: when true, will log performance data
   // logRulesStatements: when true, will write rule statements to the log
 
-  if (backend == 'client') {
+  if (backend === 'client') {
     clientDS.callDS(payload(entities), {configuration: configuration, responseHandler: responseHandler});
-  } else if (backend == 'aws') {
+  } else if (backend === 'aws') {
     awsDS.callDS(payload(entities), {configuration: configuration, responseHandler: responseHandler});
   } else {
     alert('Not a valid backend service');
   }
-};
+}
 
 export { runDecisionService };
