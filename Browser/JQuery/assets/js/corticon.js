@@ -9,7 +9,7 @@ const entityDefaults = {
 };
 
 
-// Helper function to add required metatdata and populate defaults
+// Helper function to add required metadata and populate defaults
 function payload(entities) {
   const payload = { "__metadataRoot": {"#locale": ""} };
   const entityCount = {};
@@ -25,14 +25,14 @@ function payload(entities) {
     entityObject["__metadata"] = {
       "#type": entityName,
       "#id": `${entityName}_id_${entityCount[entityName]}`
-    }
+    };
 
     // shallow merge object into defaults
     return {...entityDefaults[entityName], ...entityObject};
-  })
+  });
   
   return payload;
-};
+}
 
 function runDecisionService(entities, configuration={}, responseHandler, service=window.corticonEngine) {
   const result = service.execute(payload(entities), configuration);
@@ -41,7 +41,7 @@ function runDecisionService(entities, configuration={}, responseHandler, service
   } else {
     console.error('There was an error executing the rules.\n' + JSON.stringify(result, null, 2));
   }
-};
+}
 
 // sets array of strings as options to the jQuery select object
 function selectAppendOptions(select, arr) {
@@ -66,7 +66,7 @@ function populateCars() {
         manufacturers.push(car.manufacturer);
       }
       // other processing
-    })
+    });
 
     selectAppendOptions($('select#car-manufacturer'), manufacturers);
 
@@ -81,10 +81,10 @@ function populateCars() {
 
 // update Model options based on current manufacturer
 function updateModels() {
-  let manufacturer = $('select#car-manufacturer').val()
+  let manufacturer = $('select#car-manufacturer').val();
   let models = window.cars.reduce(function(arr, car) {
-    if (car.manufacturer == manufacturer) {
-      arr.push(car.name)
+    if (car.manufacturer === manufacturer) {
+      arr.push(car.name);
     }
     return arr;
   }, []);
@@ -94,10 +94,10 @@ function updateModels() {
 // create entities JSON from form data
 function formEntities() {
   let car = window.cars.find(function(car) {
-    return car.name == $('#car-model').val();
+    return car.name === $('#car-model').val();
   });
 
-  let entities = [
+  return [
     { "User": {
       "firstName": $('#user-first-name').val(),
       "lastName": $('#user-last-name').val(),
@@ -118,14 +118,13 @@ function formEntities() {
       },
     }},
   ];
-  return entities;
 }
 
 // call client Decision Service to decide whether to show next step
 function professionDiscountStep() {
   runDecisionService(formEntities(), {}, function(result) {
     console.log(result);
-    let user = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'User' })[0];
+    let user = result.Objects.filter(function(object) { return object.__metadata["#type"] === 'User' })[0];
     if (user.showProfessionDiscount) {
       $('#conditional-user-step-1').removeClass('hide-step');
       $('#conditional-user-step-1-header').removeClass('hide-step');
@@ -136,12 +135,12 @@ function professionDiscountStep() {
   }, window.corticonEngine);
 }
 
-// call client Decision Service to decide whether ot show next step
+// call client Decision Service to decide whether to show next step
 // also fetch what fields to present to user
 function professionDiscountOptionsStep() {
   runDecisionService(formEntities(), {}, function(result) {
     console.log(result);
-    let user = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'User' })[0];
+    let user = result.Objects.filter(function(object) { return object.__metadata["#type"] === 'User' })[0];
     if (user.showProfessionDiscount) {
       $('#conditional-user-step-2').removeClass('hide-step');
       $('#conditional-user-step-2-header').removeClass('hide-step');
@@ -152,21 +151,21 @@ function professionDiscountOptionsStep() {
     
     // Type 2 - Some or All Form fields/options reside in Decision Service
     // Data passed down along with the decision to render the step
-    let newStep = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'ConditionalFormStep' })[0];
+    let newStep = result.Objects.filter(function(object) { return object.__metadata["#type"] === 'ConditionalFormStep' })[0];
     
     // TODO: Replace with association
-    let newFields = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'ConditionalFormField' });
-    let selectOptions = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'ConditionalFormFieldOption' });
+    let newFields = result.Objects.filter(function(object) { return object.__metadata["#type"] === 'ConditionalFormField' });
+    let selectOptions = result.Objects.filter(function(object) { return object.__metadata["#type"] === 'ConditionalFormFieldOption' });
 
     // construct and append the new fields
     $('#conditional-user-step-2').empty();
     newFields.forEach(function(field) {
       let fieldHtml = '<div class="form-label">' + field.label + '</div>';
-      if (field.type == 'text') {
+      if (field.type === 'text') {
         fieldHtml += '<input id="alt-' + field.name + '" type="text" class="form-control">';
         fieldHtml = '<div class="form-group form-row">' + fieldHtml + '</div>';
         $('#conditional-user-step-2').append(fieldHtml);
-      } else if (field.type == 'select') {
+      } else if (field.type === 'select') {
         fieldHtml += '<select id="alt-' + field.name + '" class="form-control"></select>';
         fieldHtml = '<div class="form-group form-row">' + fieldHtml + '</div>';
         $('#conditional-user-step-2').append(fieldHtml);
@@ -175,9 +174,7 @@ function professionDiscountOptionsStep() {
         selectOptions.forEach(function(option) {
           select.append('<option value="' + option.value + '">' + option.text + '</option>')
         })
-
       }
-      
     })
 
   }, window.corticonEngine);
@@ -233,18 +230,20 @@ function getQuote() {
   let entities = formEntities();
   runDecisionService(entities, {}, function(result) {
     console.log(result);
-    let user = result.Objects.filter(function(object) { return object.__metadata["#type"] == 'User' })[0]
-    $('#user-quote-display').text("$" + user.priceQuote);
+    let user = result.Objects.filter(function(object) { return object.__metadata["#type"] === 'User' })[0]
+    $('#user-quote-display').text("Thank you " + user.firstName + "! Here is our absolutely unbeatable insurance offer. Your yearly insurance premium inclusive of tax is " + user.priceQuote +"!");
     nextStep();
   }, window.corticonEngineServer);
+  //hide quote button
+  $('#steps-nav-submit').addClass('display-none');
 }
 
 // sets some form values ahead of time
 function populateDemoData() {
-  $('#user-first-name').val('Rex');
-  $('#user-last-name').val('Cars');
-  $('#user-date-of-birth').val('2011-11-11')
-  $('#user-address').val('4 Car Salvage Yard');
+  $('#user-first-name').val('Tony');
+  $('#user-last-name').val('Smith');
+  $('#user-date-of-birth').val('1991-11-07');
+  $('#user-address').val('4 Main Street');
   $('#user-city').val('JunkTown');
   $('#user-profession').val('Automotive Technician');
   $('#user-employer').val('');

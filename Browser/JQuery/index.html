@@ -23,7 +23,7 @@
 								<div class="inner">
 
 									<!-- Logo -->
-										<h1><a href="index.html" id="logo">Sieve<strong> by Progress</strong></a></h1>
+										<h1><a href="index.html" id="logo">Insurance done diffently<strong> by Progress</strong></a></h1>
 
 									<!-- Nav -->
 										<nav id="nav">
@@ -54,9 +54,9 @@
 
 						<!-- Banner -->
 							<div id="banner">
-								<h2><strong>Progress Sieve</strong> - Auto Insurance
+								<h2><strong>Rules driving frontend user experiences</strong> 
 								<br />
-								Now backed by Corticon.js</h2>
+								Auto Insurance backed by Corticon.js</h2>
 								<p>Insure your vehicle today!</p>
 								<a href="#steps-header" class="button large icon solid fa-check-circle">View your quote</a>
 							</div>
@@ -160,25 +160,29 @@
                       </div>
                       <div class="step">
                         <h2>Configure Data</h2>
-                        <p>These Cars are stored in a <strong>Decision Service</strong></p>
-                        <p>See corticon/decisionServiceBundle.js</p>
+                        <p>These cars are dynamically retrieved and stored in a <strong>Decision Service</strong></p>
+                        <p>You can change them in the rules in Studio and regenerate the corticon/decisionServiceBundle.js</p>
                       </div>
                       <div class="step">
                         <h2>Gather Data</h2>
-                        <p>Use User inputs to <strong>Dynamically Change your Form</strong></p>
+                        <p>Use user inputs to <strong>Dynamically Change your Quote</strong> </p>
+						<p>(e.g. a different age input, changes the insurance quote at the end)</p>
                       </div>
                       <div class="step">
                         <h2>Decision Service</h2>
-                        <p>The next step is <strong>based on your Profession</strong></p>
+                        <p>More user inputs. The next step after input of your profession is <strong>being conditionally driven by this choice!</strong></p>
                       </div>
                       <div id="conditional-user-step-1-header" class="step">
                         <h2>Toggled Step</h2>
-                        <p><strong>Decision Service</strong> decided to show this step</p>
+                        <p><strong>The Decision Service (rules)</strong> decided to show this intermediary step </p>
+						<p> to ask for additional Employer information. The Profession choice made on the </p>
+						<p>previous page entitled the user to a professional discount. But first more </p>
+						<p>detailed Employer info is needed to calculate a proper quote.</p>
                       </div>
                       <div id="conditional-user-step-2-header" class="step">
                         <h2>Conditional Fields</h2>
-                        <p>All these Fields were <strong>Generated in a Decision Service</strong></p>
-                        <p>Also try choosing a different Profession!</p>
+                        <p>All these Fields were <strong>generated in the Decision Service.</strong></p>
+                        <p>Nothing is hard-coded! Also try choosing a different Profession and observe the differences!</p>
                       </div>
                       <div class="step">
                         <h2>Get Your Quote!</h2>
@@ -186,7 +190,9 @@
                       </div>
                       <div class="step">
                         <h2>Your Price Quote</h2>
-                        <p>Here's the output of the <strong>corticon/decisionServiceBundle.server.js</strong></p>
+                        <p>Here's the output of the <strong>corticon/decisionServiceBundle.server.js.</strong></p>
+						<p>(= Server side execution)</p>
+						<p>Note: the JavaScript rules are NOT embedded in the browser to ensure the confidentiallity of your pricing rules! 
                       </div>
                     </header>
                     <div id="steps">
@@ -244,7 +250,7 @@
                           </div>
                           <!-- TODO: change me to Date Input -->
                           <div class="form-group form-row">
-                            <div class="form-label">Date of Birth (MM/DD/YYYY)</div>
+                            <div class="form-label">Date of Birth (YYYY/MM/DD)</div>
                             <input id="user-date-of-birth" type="text" class="form-control">
                           </div>
                         </div>
@@ -271,7 +277,7 @@
                         </div>
 
                         <!-- Step 4/5: Conditional Step (only required if call to DS says so) -->
-                        <!-- Various Discounts that apply (.ie based on profession)-->
+                        <!-- Various Discounts that apply (e.g. based on profession)-->
 
                         <!-- Type 1 - All Form fields/options reside in application -->
                         <div id="conditional-user-step-1" class="step">
@@ -281,7 +287,7 @@
                               <input id="user-employer" type="text" class="form-control">
                             </div>
                             <div class="form-group form-row">
-                              <div class="form-label">Employee ID</div>
+                              <div class="form-label">Employer ID</div>
                               <input id="user-employee-id" type="text" class="form-control">
                             </div>
                           </div>
@@ -300,7 +306,7 @@
                         <!-- Once all information is filled out, call Server-side DS for final price quote -->
                         <div id="user-quote-step" class="step">
                           <div class="form-row">
-                            <h2 id="user-quote-display">$300</h2>
+                            <h2 id="user-quote-display">300</h2>
                           </div>
                         </div>
                       </form>
@@ -308,7 +314,7 @@
                     <div id="steps-nav">
                       <a id="steps-nav-back" class="display-none button alt small icon solid fa-arrow-circle-left">Back</a>
                       <a id="steps-nav-continue" class="button small icon solid fa-arrow-circle-right">Continue</a>
-                      <a id="steps-nav-submit" class="display-none button small icon solid fa-paper-plane">Get Quote</a>
+                      <a id="steps-nav-submit" class="display-none button small icon solid fa-paper-plane">Get Your Quote!</a>
                     </div>
 									</div>
 								</div>
