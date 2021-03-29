@@ -1,4 +1,4 @@
-These folders contain demo for composite applications.
+These folders contain demos for composite applications.
 
 Composite applications are applications that are composed by meshing various services together.
 For example, for a solar panels installation an application driven by an AWS step function that meshes Corticon.js
