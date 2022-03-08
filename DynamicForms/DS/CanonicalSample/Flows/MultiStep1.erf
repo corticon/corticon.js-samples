@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_RN_CgZSxEeyiE7XTUQqMfQ" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="../Step4.ers#/ ../Step1.ers#/ ../Step2.ers#/ ../Step3.ers#/ ../Step5.ers#/" ruleflowAssets="LastStep.erf#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_4NaBwZQzEeyiE7XTUQqMfQ" vocabulary="../../Vocabulary/Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Triage on Stage" order="1" ruleActivityUpdateStamp="_RN90YJSxEeyiE7XTUQqMfQ" invokes="#//@ruleflow/@flowControlList.0">
+      <condition expression="UI.currentStageNumber">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Step3" order="2" ruleActivityUpdateStamp="_ytpiIpSvEeyiE7XTUQqMfQ" invokes="../Step3.ers#//@ruleset"/>
+        <label expression="3"/>
+        <viewExpressions lhs="UI.currentStageNumber" rhs="3"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Step2" order="3" ruleActivityUpdateStamp="_bmP9kpNWEeyiE7XTUQqMfQ" invokes="../Step2.ers#//@ruleset"/>
+        <label expression="2"/>
+        <viewExpressions lhs="UI.currentStageNumber" rhs="2"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Step1" order="4" ruleActivityUpdateStamp="_Cv9IIZSwEeyiE7XTUQqMfQ" invokes="../Step1.ers#//@ruleset"/>
+        <label expression="1"/>
+        <label expression="null"/>
+        <viewExpressions lhs="UI.currentStageNumber" rhs="null"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Step5" order="5" ruleActivityUpdateStamp="_Mm7XVI6cEeyBir-XHCg-oA" invokes="../Step5.ers#//@ruleset"/>
+        <label expression="5"/>
+        <viewExpressions lhs="UI.currentStageNumber" rhs="5"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Step4" order="6" ruleActivityUpdateStamp="_JbxC5I6cEeyBir-XHCg-oA" invokes="../Step4.ers#//@ruleset"/>
+        <label expression="4"/>
+        <viewExpressions lhs="UI.currentStageNumber" rhs="4"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="LastStep" order="7" ruleActivityUpdateStamp="_OX7L8JDuEeyiE7XTUQqMfQ" invokes="LastStep.erf#//@ruleflow"/>
+        <label expression="6"/>
+        <viewExpressions lhs="UI.currentStageNumber" rhs="6"/>
+      </branches>
+    </flowControlList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="195" y="60" width="856" height="391" activityNode="#//@ruleflow/@flowControlList.0" valid="true" branchContainer="#//@ruleflow/@flowControlList.0">
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="88" y="231" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.4" activityNode="#//@ruleflow/@flowControlList.0/@branches.4/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="88" y="-9" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.2" activityNode="#//@ruleflow/@flowControlList.0/@branches.2/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="88" y="71" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.1" activityNode="#//@ruleflow/@flowControlList.0/@branches.1/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="340" y="45" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.5" activityNode="#//@ruleflow/@flowControlList.0/@branches.5/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="88" y="151" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="370" y="180" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.3" activityNode="#//@ruleflow/@flowControlList.0/@branches.3/@nextStep.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.4" branch="#//@ruleflow/@flowControlList.0/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.2" branch="#//@ruleflow/@flowControlList.0/@branches.1"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.1" branch="#//@ruleflow/@flowControlList.0/@branches.2"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.5" branch="#//@ruleflow/@flowControlList.0/@branches.3"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.0" branch="#//@ruleflow/@flowControlList.0/@branches.4"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.3" branch="#//@ruleflow/@flowControlList.0/@branches.5"/>
+    </flowShapeList>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

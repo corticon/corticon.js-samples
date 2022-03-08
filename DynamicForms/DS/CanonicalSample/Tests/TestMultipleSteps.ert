@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_z_kZ0Zv-Eeyyt4q0-bYHhA" externalChecksum="547642878:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_oRiI4Y5qEeyU_JjoORLPjA" externalChecksum="547642878:507989954">
+    <testsheet ruleActivityUpdateStamp="_oRYX4I5qEeyU_JjoORLPjA" ruleActivity="../Flows/MultipleSteps2.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="This is the message."/>
+        <PostedMessage severity="Info" text="Msg with form data aaa"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../Vocabulary/Vocab.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../../Vocabulary/Vocab.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../Vocabulary/Vocab.ecore#//FormData">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="aaa" eAttribute="../../Vocabulary/Vocab.ecore#//FormData/Step1Field1"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="bbb" eAttribute="../../Vocabulary/Vocab.ecore#//FormData/Step1Field2"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="ccc" eAttribute="../../Vocabulary/Vocab.ecore#//FormData/Step2Field1"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../Vocabulary/Vocab.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" eReference="../../Vocabulary/Vocab.ecore#//UI/containers" eClass="../../Vocabulary/Vocab.ecore#//Container">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="firstContainerId" eAttribute="../../Vocabulary/Vocab.ecore#//Container/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" newOrModified="true" eReference="../../Vocabulary/Vocab.ecore#//Container/uiControls" eClass="../../Vocabulary/Vocab.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Step1Field1" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="crtl1" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Question 1" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Text" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" newOrModified="true" eReference="../../Vocabulary/Vocab.ecore#//Container/uiControls" eClass="../../Vocabulary/Vocab.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Step1Field2" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="crtl2" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Question 2" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Text" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Questions with Free Text Fields" eAttribute="../../Vocabulary/Vocab.ecore#//Container/title"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2" eAttribute="../../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eClass="../../Vocabulary/Vocab.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" newOrModified="true" eReference="../../Vocabulary/Vocab.ecore#//UI/containers" eClass="../../Vocabulary/Vocab.ecore#//Container">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="secondContainerId" eAttribute="../../Vocabulary/Vocab.ecore#//Container/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" newOrModified="true" eReference="../../Vocabulary/Vocab.ecore#//Container/uiControls" eClass="../../Vocabulary/Vocab.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="crtl4" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="ReadOnlyText" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="This is the readonly text message" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/value"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="6" newOrModified="true" eReference="../../Vocabulary/Vocab.ecore#//Container/uiControls" eClass="../../Vocabulary/Vocab.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Step2Field1" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="10.000000" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/min"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="20.000000" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/max"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="crtl3" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Question 3" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Number" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Question with Number between 10 and 20" eAttribute="../../Vocabulary/Vocab.ecore#//Container/title"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3" eAttribute="../../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="true" eAttribute="../../Vocabulary/Vocab.ecore#//UI/done"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eClass="../../Vocabulary/Vocab.ecore#//FormData">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="aaa" eAttribute="../../Vocabulary/Vocab.ecore#//FormData/Step1Field1"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="bbb" eAttribute="../../Vocabulary/Vocab.ecore#//FormData/Step1Field2"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="ccc" eAttribute="../../Vocabulary/Vocab.ecore#//FormData/Step2Field1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" eClass="../../Vocabulary/Vocab.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="firstContainerId" eAttribute="../../Vocabulary/Vocab.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../Vocabulary/Vocab.ecore#//Container/uiControls" eClass="../../Vocabulary/Vocab.ecore#//UIControl">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="crtl1" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Question 1" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Text" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Q1 value" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/value"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../Vocabulary/Vocab.ecore#//Container/uiControls" eClass="../../Vocabulary/Vocab.ecore#//UIControl">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="crtl2" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Question 2" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Text" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Q2 value" eAttribute="../../Vocabulary/Vocab.ecore#//UIControl/value"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Container 1" eAttribute="../../Vocabulary/Vocab.ecore#//Container/title"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+      </outputMessageSection>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_CMnh4ZtQEeyyt4q0-bYHhA" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="../../Vocabulary/Vocab.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
