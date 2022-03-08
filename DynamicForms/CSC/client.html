@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Dynamic Questions Demo</title>
+	<link rel="stylesheet" href="DynUIStyles.css">
+	<script type="text/javascript" src="trace.js"></script>
+	<script type="text/javascript" src="uiControlsRenderers.js"></script>
+	<script type="text/javascript" src="stepsController.js"></script>
+
+	<script type="text/javascript" src="MultipleSteps2/browser/decisionServiceBundle.js"></script>
+<!--	<script type="text/javascript" src="submitClaim/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="ReusingSubflows/browser/decisionServiceBundle.js"></script>-->
+
+	<!-- From https://releases.jquery.com/ -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script>
+		let inputData = {}; // TODO: Create one per decision service
+		inputData.claim = {};
+		inputData.claim.policyType = 'Individual';
+		// inputData.claim.policyType = 'Multiple';
+
+		// $( document ).ready(function() {
+		// });
+	</script>
+</head>
+<body>
+    <h2>Test Driver for Rules Driven Form UI with Corticon.js</h2>
+
+	<div id="dynUIContainerId" class="dynUIContainer">
+		<div style="margin: 2em;">
+		This sample shows an example of dynamic form where the form prompts are based on rules from Corticon.js decision services.
+		It shows how the rules can drive a UI component to render various prompts or questions in a generic fashion.
+		</div>
+	</div>
+
+	<div class="commandBar">
+    <a class="command" accesskey="n" title="Shortcut: Alt N (Windows)" style="display: none;" href="#" id="nextActionId" onclick="processNextStep(); return false;">Next Step</a>
+    <a class="command" accesskey="s" title="Shortcut: Alt S (Windows)" href="#" id="startActionId" onclick="startDynUI(inputData); return false;">Start Dynamic UI</a>
+	</div>
+
+	<hr/>
+
+    <h3>Trace Panel</h3>
+
+	<div style="margin: 1em;" id="traceHistoryId">Stages: </div>
+	<table width="100%">
+		<tr>
+			<td>
+				Input to Decision Service Call
+			</td>
+			<td>
+				Results From Decision Service Call
+			</td>
+			<td>
+				Accrued Form Data
+			</td>
+		</tr>
+		<tr>
+			<td width="40%">
+				<textarea style="width: 100%; height: 300px;" id="decisionServiceInputId"></textarea>
+			</td>
+			<td width="40%">
+				<textarea style="width: 100%; height: 300px;" id="decisionServiceResultId"></textarea>
+			</td>
+			<td width="20%">
+				<textarea style="width: 100%; height: 300px;" id="formDataId"></textarea>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
