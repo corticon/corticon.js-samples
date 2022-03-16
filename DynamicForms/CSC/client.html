@@ -2,71 +2,242 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Dynamic Questions Demo</title>
+
 	<link rel="stylesheet" href="DynUIStyles.css">
+	<link rel="stylesheet" href="UIControlsStyles.css">
+	<link rel="stylesheet" href="TraceStyles.css">
+
+	<script type="text/javascript" src="customEvents.js"></script>
 	<script type="text/javascript" src="trace.js"></script>
 	<script type="text/javascript" src="uiControlsRenderers.js"></script>
 	<script type="text/javascript" src="stepsController.js"></script>
 
+	<!-- To see these icons or search for some see: https://icons.getbootstrap.com/ -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+	<!--
+	The order of inclusion is critical. It defines the order in which the decision services are indexed and must correspond to the order
+	of the options in the switch sample Select dropdown
+	-->
 	<script type="text/javascript" src="MultipleSteps2/browser/decisionServiceBundle.js"></script>
-<!--	<script type="text/javascript" src="submitClaim/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="ReusingSubflows/browser/decisionServiceBundle.js"></script>-->
+	<script type="text/javascript" src="submitClaim/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="ReusingSubflows/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="JobApplication/browser/decisionServiceBundle.js"></script>
 
 	<!-- From https://releases.jquery.com/ -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 	<script>
-		let inputData = {}; // TODO: Create one per decision service
-		inputData.claim = {};
-		inputData.claim.policyType = 'Individual';
-		// inputData.claim.policyType = 'Multiple';
+		let currentDecisionServiceEngine;
+		let allInputData = [];
+		let inputData; // per decision service set of data to pass all along
+		let currentLanguage = 'english';
 
-		// $( document ).ready(function() {
-		// });
+		function processSwitchSample(selectObject) {
+			const index = selectObject.value;
+			currentDecisionServiceEngine = window.corticonEngines[index];
+			inputData = allInputData[index];
+
+			if ( index === "3" )
+				$("#languageContainerId").show();
+			else
+				$("#languageContainerId").hide();
+		}
+		function processSwitchLanguage(selectObject) {
+			currentLanguage = selectObject.value;
+		}
+		function processClickStart() {
+			const baseDynamicUIEl = $('#dynUIContainerId');
+			startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, currentLanguage);
+		}
+		function processClickNext() {
+			const baseDynamicUIEl = $('#dynUIContainerId');
+			processNextStep(baseDynamicUIEl, currentDecisionServiceEngine, currentLanguage);
+		}
+
+		function saveStateButton(show) {
+			// save it in local storage for restore  on reload
+			try {
+				window.localStorage.setItem('CorticonShowDSTrace', show);
+			} catch (e) {
+				// Some browser in private mode may throw exception when using local storage
+			}
+		}
+
+		function processShowTrace() {
+			const traceEl = $('.allTracesContainer');
+			traceEl.show();
+			$("#hideTraceId").show();
+			$("#showTraceId").hide();
+			saveStateButton(true);
+		}
+		function processHideTrace() {
+			const traceEl = $('.allTracesContainer');
+			traceEl.hide();
+			$("#showTraceId").show();
+			$("#hideTraceId").hide();
+			saveStateButton(false);
+		}
+		function setupInitialInputData() {
+			const inDataEmpty = {};
+			const inDataCanonical = inDataEmpty;
+			const inJobApplication = inDataEmpty;
+
+			const inDataReuseSubflow = {};
+			inDataReuseSubflow.reusingSubflows = {};
+			inDataReuseSubflow.reusingSubflows.SubflowField2 = '0';
+
+			const inDataClaim = {};
+			inDataClaim.claim = {};
+			inDataClaim.claim.policyType = 'Individual';
+
+			// Must correspond with the order of the DS inclusion
+			allInputData.push(inDataCanonical);
+			allInputData.push(inDataClaim);
+			allInputData.push(inDataReuseSubflow);
+			allInputData.push(inJobApplication);
+
+			inputData = allInputData[0];
+		}
+
+		function restoreUIState() {
+			const show = window.localStorage.getItem('CorticonShowDSTrace');
+			if ( show !== null  ) {
+				if ( show === 'true' )
+					processShowTrace();
+				else if ( show === 'false' )
+					processHideTrace();
+			}
+		}
+
+		$( document ).ready(function() {
+			currentDecisionServiceEngine = window.corticonEngines[0];
+
+			setupInitialInputData();
+
+			setupTracing();
+
+			restoreUIState();
+
+			// addCustomEventHandler( BEFORE_START, () =>  );
+			addCustomEventHandler( AFTER_START, () => {
+				$("#nextActionId").show();
+				$("#startActionId").hide();
+				$("#sampleSelectId").attr('disabled', true);
+			});
+
+			addCustomEventHandler( AFTER_DONE, () => {
+				$("#nextActionId").hide();
+				$("#startActionId").show();
+				$('#dynUIContainerId').html('<div style="margin: 2em; font-size: larger;">&nbsp;<i class="bi bi-check-circle"></i>All Done</div>');
+				$("#sampleSelectId").attr('disabled', false);
+			});
+
+			// addCustomEventHandler( NEW_STEP, () =>  );
+		});
 	</script>
 </head>
 <body>
-    <h2>Test Driver for Rules Driven Form UI with Corticon.js</h2>
+    <div class="sampleTitle"><i class="bi bi-file-earmark-ruled"></i>&nbsp;Test Driver for Rules Driven Dynamic Forms</div>
 
-	<div id="dynUIContainerId" class="dynUIContainer">
-		<div style="margin: 2em;">
-		This sample shows an example of dynamic form where the form prompts are based on rules from Corticon.js decision services.
-		It shows how the rules can drive a UI component to render various prompts or questions in a generic fashion.
-		</div>
+	<table width="100%">
+		<tr>
+			<td valign="top">
+				<div class="commandBar">
+					<div class="commandContainer">
+						<div class="sampleSelectLabel">Select Sample:</div>
+						<select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
+							<option value="0">Canonical</option>
+							<option value="1">Travel Claim</option>
+							<option value="2">Reusing Subflow</option>
+							<option value="3">Job Application</option>
+						</select>
+					</div>
+
+					<div style="display: none;" id="languageContainerId">
+						<div class="commandVerticalSpacer">&nbsp;</div>
+						<div class="commandContainer">
+							<select class="sampleSelect" id="languageSelectId" onchange="processSwitchLanguage(this)">
+								<option value="english">English</option>
+								<option value="italian">Italiano</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="commandVerticalSpacer">&nbsp;</div>
+
+					<div class="commandContainer">
+					<span class="commandButton" id="startActionId">
+						<a class="command" accesskey="s" title="Start Dynamic Form - Shortcut: Alt S (Windows) - CRTL Option S (Mac)" href="#" onclick="processClickStart(); return false;" >
+							<i style="padding-left: .3rem;" class="bi bi-box-arrow-in-right"></i>&nbsp;<span style="text-decoration: underline">S</span>tart
+						</a>
+					</span>
+					<span class="commandButton commandButtonHidden" id="nextActionId">
+						<a class="command" accesskey="n" title="Next Step - Shortcut: Alt N (Windows) - CRTL Option N (Mac)" href="#" onclick="processClickNext(); return false;">
+							<i style="padding-left: .3rem;" class="bi bi-arrow-right-square"></i>&nbsp;<span style="text-decoration: underline">N</span>ext
+						</a>
+					</span>
+					</div>
+
+					<div class="commandContainer showTraceContainer">
+					<span class="commandButton" id="showTraceId">
+						<a class="command" accesskey="t" title="Start Dynamic Form - Shortcut: Alt T (Windows) - CRTL Option T (Mac)" href="#" onclick="processShowTrace(); return false;" >
+							&nbsp;Show <span style="text-decoration: underline">T</span>race
+						</a>
+					</span>
+					<span class="commandButton commandButtonHidden" id="hideTraceId">
+						<a class="command" accesskey="h" title="Hide Trace - Shortcut: Alt H (Windows) - CRTL Option H (Mac)" href="#" onclick="processHideTrace(); return false;">
+							&nbsp;<span style="text-decoration: underline">H</span>ide Trace
+						</a>
+					</span>
+					</div>
+				</div>
+			</td>
+			<!--				<td width="98%">&nbsp;</td>-->
+			<td width="100%">
+				<div id="dynUIContainerId" class="dynUIContainer">
+					<div>Dynamic Form component</div>
+					<div style="margin: 2rem;">
+						These samples show dynamic form (forms content is generated on the fly) where the form prompts are based on rules from Corticon.js decision services.
+						It shows how the rules can drive a generic UI component to render all sorts of prompts or questions.
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div class="allTracesContainer">
+<!--    <h3><i class="bi bi-layout-three-columns"></i>&nbsp;Decision Service (Rules) Trace Panel</h3>-->
+    <div class="tracePanelTitle">Decision Service (Rules) Trace Panel</div>
+
+	<div class="stageTraceHistory" style="overflow-x: auto; overflow-y: hidden; padding: 0.8rem;">
+		<span style="width: 20px;"><i title="Stages History" class="bi bi-journal-text"></i></span>
+		<span style="margin-left: 0.6rem;" id="traceHistoryId"></span>
 	</div>
-
-	<div class="commandBar">
-    <a class="command" accesskey="n" title="Shortcut: Alt N (Windows)" style="display: none;" href="#" id="nextActionId" onclick="processNextStep(); return false;">Next Step</a>
-    <a class="command" accesskey="s" title="Shortcut: Alt S (Windows)" href="#" id="startActionId" onclick="startDynUI(inputData); return false;">Start Dynamic UI</a>
-	</div>
-
-	<hr/>
-
-    <h3>Trace Panel</h3>
-
-	<div style="margin: 1em;" id="traceHistoryId">Stages: </div>
 	<table width="100%">
 		<tr>
 			<td>
-				Input to Decision Service Call
+				<i class="bi bi-arrow-down-right-square"></i>&nbsp;Input to Decision Service Call <a href="#" title="Copy to clipboard" class="copyToClip" onclick="copyToClipboard('#decisionServiceInputId'); return false;">&nbsp;<i class="bi bi-clipboard-plus"></i></a>
 			</td>
 			<td>
-				Results From Decision Service Call
+				<i class="bi bi-arrow-up-left-square"></i>&nbsp;Results From Decision Service Call <span id="execTimeId"></span>  <a href="#" title="Copy to clipboard" class="copyToClip" onclick="copyToClipboard('#decisionServiceResultId'); return false;">&nbsp;<i class="bi bi-clipboard-plus"></i></a>
 			</td>
 			<td>
-				Accrued Form Data
+				<i class="bi bi-clipboard-data"></i>&nbsp;Accrued Form Data <a href="#" title="Copy to clipboard" class="copyToClip" onclick="copyToClipboard('#formDataId'); return false;">&nbsp;<i class="bi bi-clipboard-plus"></i></a>
 			</td>
 		</tr>
 		<tr>
-			<td width="40%">
+			<td width="20%">
 				<textarea style="width: 100%; height: 300px;" id="decisionServiceInputId"></textarea>
 			</td>
 			<td width="40%">
 				<textarea style="width: 100%; height: 300px;" id="decisionServiceResultId"></textarea>
 			</td>
-			<td width="20%">
+			<td width="40%">
 				<textarea style="width: 100%; height: 300px;" id="formDataId"></textarea>
 			</td>
 		</tr>
 	</table>
+	</div>
 </body>
 </html>
