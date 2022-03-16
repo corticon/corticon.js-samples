@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_Kj_EEJV_EeyX_OkRg3tSyQ" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_VUjqkqDLEey8Zv0keitg2Q" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_C-He4JV_EeyX_OkRg3tSyQ" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_QX3HIaAHEeynYcbYBLy0bg" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action>
-        <opaqueExpression expression="UI.containers = Container.new[id='secondContainerId', title='Question with Number between 10 and 20']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Question with Number between 10 and 20' , Container.id = 'secondContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers = Container.new[id='secondContainerId', title='Question with Number between 10 and 20 - Reference: Step2.ers']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Question with Number between 10 and 20 - Reference: Step2.ers' , Container.id = 'secondContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
@@ -119,11 +119,11 @@
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="25" sashWeightConditionsActions="37" sashWeightConditionsIf="75">
-    <actionSection rowCount="44" columnWidthFactor="0.5">
-      <actionItemList>
+    <actionSection rowCount="43" columnWidthFactor="0.5">
+      <actionItemList rowHeight="66">
         <valueSetCell/>
-        <expressionCell external="UI.containers = Container.new[id='secondContainerId', title='Question with Number between 10 and 20']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Question with Number between 10 and 20' , Container.id = 'secondContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers = Container.new[id='secondContainerId', title='Question with Number between 10 and 20 - Reference: Step2.ers']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Question with Number between 10 and 20 - Reference: Step2.ers' , Container.id = 'secondContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
@@ -149,7 +149,7 @@
         <valueSetCell/>
         <expressionCell/>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="63">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls += UIControl.new[type='Number', min=10, max=20, label='Question 3', id='crtl2_2', fieldName='Step2Field1']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'Number' , UIControl.min = 10 , UIControl.max = 20 , UIControl.label = 'Question 3' , UIControl.id = 'crtl2_2' , UIControl.fieldName = 'Step2Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
