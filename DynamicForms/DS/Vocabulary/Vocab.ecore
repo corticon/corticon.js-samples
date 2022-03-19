@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.canonicalvocabularymodel="http:///com/corticon/rulesemf/canonicalvocabularymodel.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="root" nsURI="http://root/1.0" nsPrefix="root">
   <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_xeCWEaIxEeyFlOFwRsldSA" externalChecksum="547642878:507989954" studioType="Javascript" customDataTypeDisplayCount="37">
+    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_MCS3caeOEeyCxPBNdjP98A" externalChecksum="547642878:507989954" studioType="Javascript" customDataTypeDisplayCount="37">
       <languageCode>en_US</languageCode>
       <databaseAccess databasePropertyDisplayCount="50"/>
       <customDataTypeList enumerationDisplayCount="50" eDataType="#//UIControlType">
@@ -39,7 +39,7 @@
           <value manuallyCreated="true" value="'MultiExpenses'"/>
         </enumerationElements>
       </customDataTypeList>
-      <customDataTypeList enumerationDisplayCount="51">
+      <customDataTypeList enumerationDisplayCount="51" eDataType="#//StageList">
         <dataTypeName manuallyCreated="true" value="StageList"/>
         <baseDataType manuallyCreated="true" value="Integer"/>
         <enumeration value="true"/>
@@ -105,6 +105,9 @@
         </enumerationElements>
         <enumerationElements>
           <value manuallyCreated="true" value="20"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="21"/>
         </enumerationElements>
         <enumerationElements>
           <value manuallyCreated="true" value="999"/>
@@ -367,6 +370,14 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="dataSource"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container">
     <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
@@ -431,7 +442,7 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentStageNumber">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentStageNumber" eType="#//StageList">
       <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
         <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension" customDataType="#//%http:%2F%2F%2Fcom%2Fcorticon%2Frulesemf%2Fcanonicalvocabularymodel%2FVocabularyExtension%/@contents.0/@customDataTypeList.1">
           <name manuallyCreated="true" value="currentStageNumber"/>
@@ -439,7 +450,7 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextStageNumber">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextStageNumber" eType="#//StageList">
       <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
         <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension" customDataType="#//%http:%2F%2F%2Fcom%2Fcorticon%2Frulesemf%2Fcanonicalvocabularymodel%2FVocabularyExtension%/@contents.0/@customDataTypeList.1">
           <name manuallyCreated="true" value="nextStageNumber"/>
@@ -511,7 +522,7 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stageOnExit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stageOnExit" eType="#//StageList">
       <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
         <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension" customDataType="#//%http:%2F%2F%2Fcom%2Fcorticon%2Frulesemf%2Fcanonicalvocabularymodel%2FVocabularyExtension%/@contents.0/@customDataTypeList.1">
           <name manuallyCreated="true" value="stageOnExit"/>
@@ -598,6 +609,31 @@
   <eClassifiers xsi:type="ecore:EEnum" name="WhoIsSick">
     <eLiterals name="Me" literal="'Me'"/>
     <eLiterals name="SomeoneElse" value="1" literal="'SomeoneElse'"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StageList">
+    <eLiterals name="V0" literal="0"/>
+    <eLiterals name="V1" value="1" literal="1"/>
+    <eLiterals name="V2" value="2" literal="2"/>
+    <eLiterals name="V3" value="3" literal="3"/>
+    <eLiterals name="V4" value="4" literal="4"/>
+    <eLiterals name="V5" value="5" literal="5"/>
+    <eLiterals name="V6" value="6" literal="6"/>
+    <eLiterals name="V7" value="7" literal="7"/>
+    <eLiterals name="V8" value="8" literal="8"/>
+    <eLiterals name="V9" value="9" literal="9"/>
+    <eLiterals name="V10" value="10" literal="10"/>
+    <eLiterals name="V11" value="11" literal="11"/>
+    <eLiterals name="V12" value="12" literal="12"/>
+    <eLiterals name="V13" value="13" literal="13"/>
+    <eLiterals name="V14" value="14" literal="14"/>
+    <eLiterals name="V15" value="15" literal="15"/>
+    <eLiterals name="V16" value="16" literal="16"/>
+    <eLiterals name="V17" value="17" literal="17"/>
+    <eLiterals name="V18" value="18" literal="18"/>
+    <eLiterals name="V19" value="19" literal="19"/>
+    <eLiterals name="V20" value="20" literal="20"/>
+    <eLiterals name="V21" value="21" literal="21"/>
+    <eLiterals name="V22" value="22" literal="999"/>
   </eClassifiers>
   <eSubpackages name="ProjectsData" nsURI="http://root/ProjectsData/1.0" nsPrefix="root.ProjectsData">
     <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
