@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.canonicalvocabularymodel="http:///com/corticon/rulesemf/canonicalvocabularymodel.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="root" nsURI="http://root/1.0" nsPrefix="root">
   <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_Em5Ukau6EeyCrcI7dm-VtA" externalChecksum="547642878:507989954" studioType="Javascript" customDataTypeDisplayCount="37">
+    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_juejoqyWEeyFMsQMU_MYzQ" externalChecksum="547642878:507989954" studioType="Javascript" customDataTypeDisplayCount="37">
       <languageCode>en_US</languageCode>
       <databaseAccess databasePropertyDisplayCount="50"/>
       <customDataTypeList enumerationDisplayCount="50" eDataType="#//UIControlType">
@@ -222,6 +222,44 @@
         <enumerationElements>
           <label manuallyCreated="true" value="Multiple"/>
           <value manuallyCreated="true" value="'Multiple'"/>
+        </enumerationElements>
+      </customDataTypeList>
+      <customDataTypeList enumerationDisplayCount="50" eDataType="#//ClaimPath">
+        <dataTypeName manuallyCreated="true" value="ClaimPath"/>
+        <baseDataType manuallyCreated="true" value="String"/>
+        <enumeration value="true"/>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Sickness - indiv'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Sickness - mult'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Injury - indiv'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Injury - mult'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Death - indiv'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Death - mult'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Weather - either'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Job Related - indiv'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Job Related - mult'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Other - indiv'"/>
+        </enumerationElements>
+        <enumerationElements>
+          <value manuallyCreated="true" value="'Other - mult'"/>
         </enumerationElements>
       </customDataTypeList>
       <vocabularyMappings name="JSON" ID="JSON" mappingType="JSON"/>
@@ -675,6 +713,19 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ClaimPath">
+    <eLiterals name="V0" literal="'Sickness - indiv'"/>
+    <eLiterals name="V1" value="1" literal="'Sickness - mult'"/>
+    <eLiterals name="V2" value="2" literal="'Injury - indiv'"/>
+    <eLiterals name="V3" value="3" literal="'Injury - mult'"/>
+    <eLiterals name="V4" value="4" literal="'Death - indiv'"/>
+    <eLiterals name="V5" value="5" literal="'Death - mult'"/>
+    <eLiterals name="V6" value="6" literal="'Weather - either'"/>
+    <eLiterals name="V7" value="7" literal="'Job Related - indiv'"/>
+    <eLiterals name="V8" value="8" literal="'Job Related - mult'"/>
+    <eLiterals name="V9" value="9" literal="'Other - indiv'"/>
+    <eLiterals name="V10" value="10" literal="'Other - mult'"/>
+  </eClassifiers>
   <eSubpackages name="ProjectsData" nsURI="http://root/ProjectsData/1.0" nsPrefix="root.ProjectsData">
     <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
       <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:DomainExtension">
@@ -1034,6 +1085,14 @@
         <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
           <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
             <name manuallyCreated="true" value="haveContactedUs"/>
+            <mode manuallyCreated="true" value="Base"/>
+          </contents>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="claimPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+          <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+            <name manuallyCreated="true" value="claimPath"/>
             <mode manuallyCreated="true" value="Base"/>
           </contents>
         </eAnnotations>
