@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_V7QbEKw4EeyEBMROTpO_eg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="generate%20dropdowns%20for%20expense%20types.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_ZbFg4KyZEey3e8HTJFsgOA" vocabulary="../../../Vocabulary/Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="expA" order="3" ruleActivityUpdateStamp="_HHaMYKw4EeyEBMROTpO_eg" invokes="generate%20dropdowns%20for%20expense%20types.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="expB" order="1" ruleActivityUpdateStamp="_2602paw8EeyEBMROTpO_eg" nextStep="#//@ruleflow/@flowControlList.2" invokes="calculate%20expense%20totals%20by%20currency.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="expC" order="2" ruleActivityUpdateStamp="_U_WVAKxPEeyEBMROTpO_eg" invokes="generate%20UI%20summary%20of%20total%20expense%20totals.ers#//@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="337" y="379" width="96" height="36" activityNode="#//@ruleflow/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="337" y="459" width="96" height="36" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="337" y="539" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

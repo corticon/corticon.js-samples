@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_fj6-cKw4EeyEBMROTpO_eg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="if%20also%20using%20other%20insurance,%20answer%20these%20questions.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_MGLyhaq7EeyvnpJtRxYCpw" vocabulary="../../../Vocabulary/Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="claimantHasOtherInsurance" order="3" ruleActivityUpdateStamp="_agSslaw4EeyEBMROTpO_eg" invokes="if%20also%20using%20other%20insurance,%20answer%20these%20questions.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="OtherInsurance" order="2" ruleActivityUpdateStamp="_dPmygaw4EeyEBMROTpO_eg" invokes="generate%20question%20about%20having%20other%20insurance%20for%20this%20incident.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="TriageOtherInsurance" order="1" ruleActivityUpdateStamp="_fiKD-aw4EeyEBMROTpO_eg" invokes="triage%20based%20upon%20Y%20or%20N%20to%20using%20other%20insurance.ers#//@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="360" y="390" width="202" height="36" activityNode="#//@ruleflow/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="360" y="300" width="202" height="36" activityNode="#//@ruleflow/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="360" y="345" width="202" height="36" activityNode="#//@ruleflow/@flowControlList.2"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

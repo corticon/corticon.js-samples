@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_QpUtwqxAEeyEBMROTpO_eg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_1XqhcK1SEeyYDL1RwIbSqg" vocabulary="../../../../Vocabulary/Vocab.ecore#/">
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.stageOnExit = 4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.stageOnExit = 4" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Individual"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#Sick">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Sick'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#Sick"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 100" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Sickness - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Sickness - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Multiple"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#Sick">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Sick'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#Sick"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 200">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 200" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Sickness - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Sickness - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Individual"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#Injury">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Injury'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#Injury"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 300">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 300" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Injury - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Injury - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Multiple"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#Injury">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Injury'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#Injury"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 400">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 400" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Injury - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Injury - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Individual"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#UnexpDeath">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'UnexpDeath'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#UnexpDeath"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 500" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Death - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Death - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Multiple"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#UnexpDeath">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'UnexpDeath'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#UnexpDeath"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 600">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 600" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Death - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Death - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Individual or Data.claim.policyType = ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual' or Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="{ClaimPolicyType#Individual, ClaimPolicyType#Multiple}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#Weather">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Weather'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#Weather"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 700">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 700" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Weather - either'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Weather - either'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Individual"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#JobRel">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'JobRel'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#JobRel"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 800">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 800" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Job Related - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Job Related - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Multiple"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#JobRel">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'JobRel'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#JobRel"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 900">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 900" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Job Related - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Job Related - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Individual"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#OtherReason">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'OtherReason'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#OtherReason"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Other - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Other - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Data.claim.policyType = ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.policyType" rhs="ClaimPolicyType#Multiple"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Data.claim.reasonCancel = ClaimReasonCancel#OtherReason">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'OtherReason'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Data.claim.reasonCancel" rhs="ClaimReasonCancel#OtherReason"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 1100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 1100" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Claim.claimPath = 'Other - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Other - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber = 3">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="IN Step Triage -">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="IN Step Triage -" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1 #//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="IN Individual - Sick - next stage:{UI.nextStageNumber}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="IN Individual - Sick - next stage: + UI.nextStageNumber" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="IN multiple - Sick - next stage:{UI.nextStageNumber}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="IN multiple - Sick - next stage: + UI.nextStageNumber" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../../../Vocabulary/Vocab.ecore#//UI" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="../../../../Vocabulary/Vocab.ecore#//Container" traversedAssocRole="../../../../Vocabulary/Vocab.ecore#//UI/containers">
+        <extension association="true" entity="../../../../Vocabulary/Vocab.ecore#//UIControl" traversedAssocRole="../../../../Vocabulary/Vocab.ecore#//Container/uiControls">
+          <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UIControl/value"/>
+        </extension>
+      </extension>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UI/done"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UI/noUiToRenderContinue"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UI/stageOnExit"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../../Vocabulary/Vocab.ecore#//Container">
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//Container/id"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//Container/title"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../../Vocabulary/Vocab.ecore#//UIControl">
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Data">
+      <extension association="true" entity="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim" traversedAssocRole="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Data/claim">
+        <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim/policyType"/>
+        <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim/reasonCancel"/>
+        <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim/reason"/>
+      </extension>
+    </logicalVariable>
+    <logicalVariable entity="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim">
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim/policyType"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim/reason"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim/reasonCancel"/>
+      <referencedAttributes attribute="../../../../Vocabulary/Vocab.ecore#//ProjectsData/Claim/claimPath"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="26" sashWeightConditionsActions="45" sashWeightConditionsIf="24">
+    <actionSection rowCount="44" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.nextStageNumber">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.stageOnExit">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.stageOnExit" datatype="Integer" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Claim.claimPath">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber = 3" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.3/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@extension.0/@referencedAttributes.2"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.4">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber = 3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="49" scrollRowTop="3" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="0"/>
+        <text external="IN Step Triage -">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="IN Step Triage -" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="1:2"/>
+        <text external="IN Individual - Sick - next stage:{UI.nextStageNumber}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="IN Individual - Sick - next stage: + UI.nextStageNumber" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference/>
+        <text external="IN multiple - Sick - next stage:{UI.nextStageNumber}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="IN multiple - Sick - next stage: + UI.nextStageNumber" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Data.claim.policyType">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Data.claim.reasonCancel">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="27">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.stageOnExit = 4" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#Sick">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Sick'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 100" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Sickness - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Sickness - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#Sick">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Sick'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="200">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 200" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Sickness - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Sickness - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#Injury">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Injury'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="300">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 300" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Injury - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Injury - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#Injury">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Injury'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="400">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 400" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Injury - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Injury - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#UnexpDeath">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'UnexpDeath'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 500" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Death - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Death - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#UnexpDeath">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'UnexpDeath'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="600">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 600" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Death - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Death - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="{ClaimPolicyType#Individual, ClaimPolicyType#Multiple}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual' or Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#Weather">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'Weather'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="700">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 700" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Weather - either'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Weather - either'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#JobRel">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'JobRel'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="800">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 800" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Job Related - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Job Related - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#JobRel">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'JobRel'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="900">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 900" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Job Related - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Job Related - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Individual">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Individual'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#OtherReason">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'OtherReason'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Other - indiv'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Other - indiv'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="ClaimPolicyType#Multiple">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.policyType = 'Multiple'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="policyType" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.policyType">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="ClaimReasonCancel#OtherReason">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.claim.reasonCancel = 'OtherReason'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="reasonCancel" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.claim.reasonCancel">
+                <parentTerm text="claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Data.claim" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="1100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 1100" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'Other - mult'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Claim.claimPath = 'Other - mult'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="claimPath" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Claim.claimPath">
+                <parentTerm text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.Claim" datatype="ProjectsData.Claim" termtype="ENTITY" fulltext="ProjectsData.Claim"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
