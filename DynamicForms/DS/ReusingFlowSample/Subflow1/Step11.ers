@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_6y0SIqS4EeyAM5GJYSL5LA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_2PWlEa4bEeyYDL1RwIbSqg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_xeCWEaIxEeyFlOFwRsldSA" vocabulary="../../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_1XqhcK1SEeyYDL1RwIbSqg" vocabulary="../../Vocabulary/Vocab.ecore#/">
     <rule>
       <action>
-        <opaqueExpression expression="UI.containers = Container.new[id='summaryContainerId', title='Sum of Entered Numbers']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Sum of Entered Numbers' , Container.id = 'summaryContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers = Container.new[id='summaryContainerId', title='In Subflow1 - Sum of Entered Numbers']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'In Subflow1 - Sum of Entered Numbers' , Container.id = 'summaryContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
@@ -57,8 +57,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls.value = 'We are adding the number from the step before entering the subflow with the number entered in the subflow and accruing the sum in SubflowField2.&lt;br/>&lt;br/>The subflow is about to return to the main flow.&lt;br/>&lt;br/>The data added from the subflow is visible in the accrued form data panel below.'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = 'We are adding the number from the step before entering the subflow with the number entered in the subflow and accruing the sum in SubflowField2.&lt;br/>&lt;br/>The subflow is about to return to the main flow.&lt;br/>&lt;br/>The data added from the subflow is visible in the accrued form data panel below.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls.value = 'We are adding the 2 numbers entered in previous step&lt;br/>&lt;br/>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = 'We are adding the 2 numbers entered in previous step&lt;br/>&lt;br/>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
@@ -78,19 +78,70 @@
           </parserOutput>
         </opaqueExpression>
       </action>
-      <action/>
-      <action/>
       <action>
-        <opaqueExpression expression="Data.reusingSubflows.SubflowField2 = (Data.reusingSubflows.SubflowField2.toInteger() + Data.reusingSubflows.SubflowField1.toInteger() + Data.reusingSubflows.Step1Field1.toInteger()).toString()">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.reusingSubflows.SubflowField2 = ( Data.reusingSubflows.SubflowField2.toInteger + Data.reusingSubflows.SubflowField1.toInteger + Data.reusingSubflows.Step1Field1.toInteger ).toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls.value +=  Data.reusingSubflows.SubflowField1 + ' + ' + Data.reusingSubflows.SubflowField2 + ' = '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = UI.containers.uiControls.value + Data.reusingSubflows.SubflowField1 + ' + ' + Data.reusingSubflows.SubflowField2 + ' = '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
               <terms text="SubflowField2" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField2">
                 <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
                   <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
                 </parentTerm>
               </terms>
+              <terms text="SubflowField1" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField1">
+                <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls.value +=  (Data.reusingSubflows.SubflowField2.toInteger() + Data.reusingSubflows.SubflowField1.toInteger()).toString()">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = UI.containers.uiControls.value + ( Data.reusingSubflows.SubflowField2.toInteger + Data.reusingSubflows.SubflowField1.toInteger ).toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
             </modifiedTermList>
             <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
               <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="ProjectsData.Data.reusingSubflows.SubflowField2.toInteger">
                 <parentTerm text="SubflowField2" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField2">
                   <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
@@ -98,18 +149,8 @@
                   </parentTerm>
                 </parentTerm>
               </terms>
-              <terms text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
-                <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
-              </terms>
               <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="ProjectsData.Data.reusingSubflows.SubflowField1.toInteger">
                 <parentTerm text="SubflowField1" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField1">
-                  <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
-                    <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
-                  </parentTerm>
-                </parentTerm>
-              </terms>
-              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="ProjectsData.Data.reusingSubflows.Step1Field1.toInteger">
-                <parentTerm text="Step1Field1" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.Step1Field1">
                   <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
                     <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
                   </parentTerm>
@@ -136,24 +177,6 @@
           </parserOutput>
         </opaqueExpression>
       </action>
-      <action/>
-    </rule>
-    <rule>
-      <action/>
-      <action/>
-      <action/>
-      <action/>
-      <action/>
-      <action/>
-    </rule>
-    <rule>
-      <action/>
-      <action/>
-      <action/>
-      <action/>
-      <action/>
-      <action/>
-      <action/>
     </rule>
     <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.1">
       <opaqueExpression expression="UI.currentStageNumber = 11">
@@ -180,6 +203,7 @@
       <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
       <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/done"/>
       <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/stageOnExit"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/comments"/>
     </logicalVariable>
     <logicalVariable entity="../../Vocabulary/Vocab.ecore#//UIControl">
       <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
@@ -193,12 +217,12 @@
       </extension>
     </logicalVariable>
   </ruleset>
-  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="17" sashWeightConditionsActions="21" sashWeightConditionsIf="70">
-    <actionSection rowCount="49" columnWidthFactor="0.5">
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="20" sashWeightConditionsActions="21" sashWeightConditionsIf="70">
+    <actionSection rowCount="48" columnWidthFactor="0.5">
       <actionItemList>
         <valueSetCell/>
-        <expressionCell external="UI.containers = Container.new[id='summaryContainerId', title='Sum of Entered Numbers']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Sum of Entered Numbers' , Container.id = 'summaryContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers = Container.new[id='summaryContainerId', title='In Subflow1 - Sum of Entered Numbers']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'In Subflow1 - Sum of Entered Numbers' , Container.id = 'summaryContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
@@ -255,8 +279,8 @@
       </actionItemList>
       <actionItemList rowHeight="74">
         <valueSetCell valueSet=""/>
-        <expressionCell external="UI.containers.uiControls.value = 'We are adding the number from the step before entering the subflow with the number entered in the subflow and accruing the sum in SubflowField2.&lt;br/>&lt;br/>The subflow is about to return to the main flow.&lt;br/>&lt;br/>The data added from the subflow is visible in the accrued form data panel below.'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = 'We are adding the number from the step before entering the subflow with the number entered in the subflow and accruing the sum in SubflowField2.&lt;br/>&lt;br/>The subflow is about to return to the main flow.&lt;br/>&lt;br/>The data added from the subflow is visible in the accrued form data panel below.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls.value = 'We are adding the 2 numbers entered in previous step&lt;br/>&lt;br/>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = 'We are adding the 2 numbers entered in previous step&lt;br/>&lt;br/>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
@@ -276,26 +300,72 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="73">
         <valueSetCell valueSet=""/>
-        <expressionCell/>
-      </actionItemList>
-      <actionItemList>
-        <valueSetCell/>
-        <expressionCell/>
-      </actionItemList>
-      <actionItemList rowHeight="82">
-        <valueSetCell/>
-        <expressionCell external="Data.reusingSubflows.SubflowField2 = (Data.reusingSubflows.SubflowField2.toInteger() + Data.reusingSubflows.SubflowField1.toInteger() + Data.reusingSubflows.Step1Field1.toInteger()).toString()">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.reusingSubflows.SubflowField2 = ( Data.reusingSubflows.SubflowField2.toInteger + Data.reusingSubflows.SubflowField1.toInteger + Data.reusingSubflows.Step1Field1.toInteger ).toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls.value +=  Data.reusingSubflows.SubflowField1 + ' + ' + Data.reusingSubflows.SubflowField2 + ' = '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = UI.containers.uiControls.value + Data.reusingSubflows.SubflowField1 + ' + ' + Data.reusingSubflows.SubflowField2 + ' = '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
               <terms text="SubflowField2" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField2">
                 <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
                   <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
                 </parentTerm>
               </terms>
+              <terms text="SubflowField1" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField1">
+                <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="82">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="UI.containers.uiControls.value +=  (Data.reusingSubflows.SubflowField2.toInteger() + Data.reusingSubflows.SubflowField1.toInteger()).toString()">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.value = UI.containers.uiControls.value + ( Data.reusingSubflows.SubflowField2.toInteger + Data.reusingSubflows.SubflowField1.toInteger ).toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
             </modifiedTermList>
             <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.uiControls.value">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
               <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="ProjectsData.Data.reusingSubflows.SubflowField2.toInteger">
                 <parentTerm text="SubflowField2" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField2">
                   <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
@@ -303,18 +373,8 @@
                   </parentTerm>
                 </parentTerm>
               </terms>
-              <terms text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
-                <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
-              </terms>
               <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="ProjectsData.Data.reusingSubflows.SubflowField1.toInteger">
                 <parentTerm text="SubflowField1" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.SubflowField1">
-                  <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
-                    <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
-                  </parentTerm>
-                </parentTerm>
-              </terms>
-              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="ProjectsData.Data.reusingSubflows.Step1Field1.toInteger">
-                <parentTerm text="Step1Field1" datatype="String" termtype="ATTRIBUTE" fulltext="ProjectsData.Data.reusingSubflows.Step1Field1">
                   <parentTerm text="reusingSubflows" datatype="ProjectsData.ReusingSubflows" termtype="ENTITY" fulltext="ProjectsData.Data.reusingSubflows" variable="#//@ruleset/@logicalVariables.3/@extension.0">
                     <parentTerm text="ProjectsData.Data" datatype="ProjectsData.Data" termtype="ENTITY" fulltext="ProjectsData.Data" variable="#//@ruleset/@logicalVariables.3"/>
                   </parentTerm>
@@ -342,10 +402,6 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
-        <valueSetCell/>
-        <expressionCell/>
-      </actionItemList>
     </actionSection>
     <scopeSection>
       <rootNode>
@@ -366,6 +422,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.4"/>
         </children>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
@@ -401,28 +458,9 @@
         <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList/>
-      </ruleColumnList>
-      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-      </ruleColumnList>
-      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
     </ruleSection>
   </rulesheetViewList>
