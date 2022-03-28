@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_agSslaw4EeyEBMROTpO_eg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_WjWF4K6VEeyUy8aPs7dzRA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_MGLyhaq7EeyvnpJtRxYCpw" vocabulary="../../../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_OKD2UK1OEeyYDL1RwIbSqg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
     <rule>
       <action>
         <opaqueExpression expression="UI.containers = Container.new[id='otherInsuranceInfo', title='Please provide the following information about the other insurer']">
@@ -165,20 +165,6 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.nextStageNumber = 14">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 14" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-            </referencedTermList>
-          </parserOutput>
-        </opaqueExpression>
-      </action>
-      <action>
         <opaqueExpression expression="UI.currentStageNumber=UI.stageOnExit">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = UI.stageOnExit" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
@@ -231,7 +217,7 @@
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsActions="12">
-    <actionSection rowCount="50" scrollRowTop="3" columnWidthFactor="0.5">
+    <actionSection rowCount="49" scrollRowTop="3" columnWidthFactor="0.5">
       <actionItemList rowHeight="149">
         <valueSetCell/>
         <expressionCell external="UI.containers = Container.new[id='otherInsuranceInfo', title='Please provide the following information about the other insurer']">
@@ -403,18 +389,6 @@
       </actionItemList>
       <actionItemList>
         <valueSetCell/>
-        <expressionCell external="UI.nextStageNumber">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
-            <referencedTermList>
-              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </expressionCell>
-      </actionItemList>
-      <actionItemList>
-        <valueSetCell/>
         <expressionCell external="UI.currentStageNumber=UI.stageOnExit">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = UI.stageOnExit" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
@@ -484,18 +458,6 @@
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList valueSet="14">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 14" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-            </referencedTermList>
-          </parserOutput>
-        </actionValueSetCellList>
         <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
     </ruleSection>

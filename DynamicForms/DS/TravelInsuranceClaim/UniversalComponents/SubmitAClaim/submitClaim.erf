@@ -1,41 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_3l2NEK1OEeyYDL1RwIbSqg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="rulesheets/landing%20page%20initial%20screen.ers#/ rulesheets/triage%20to%20claim%20path%20specific%20stages.ers#/" ruleflowAssets="initial%20questions%20about%20what%20happened.erf#/ ../Cancellation%20Details/cancelFlow.erf#/ ../Expenses/expenseFlow.erf#/ ../DocumentationUpload/DocumentationFlow.erf#/ ../OtherInsuranceDetails/otherInsuranceFlow.erf#/ ../PaymentOptions/paymentFlow.erf#/ ../AcknowledgeAndSign/AcknowledgeAndSignFlow.erf#/ ../../ClaimPaths/Sickness/Individual/clarifiers%20for%20indiv_sickness%20claimPath.erf#/ ../../ClaimPaths/Injury/Individual/clarifiers%20for%20indiv_injury%20claimPath.erf#/ ../../ClaimPaths/Death/Individual/clarifiers%20for%20indiv_death%20claimPath.erf#/ ../../ClaimPaths/Job/Individual/indiv%20job%20rel%20flow.erf#/">
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_BaE6MK6iEeyUy8aPs7dzRA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="rulesheets/landing%20page%20initial%20screen.ers#/ rulesheets/triage%20to%20claim%20path%20specific%20stages.ers#/ ../../Stage%20Exits/set%20stage%20on%20exit%20from%20cancellation.ers#/ ../../Stage%20Exits/set%20stage%20on%20exit%20from%20documentation.ers#/ ../../Stage%20Exits/set%20stage%20on%20exit%20from%20expenses.ers#/ ../../Stage%20Exits/set%20stage%20on%20exit%20from%20other%20insurance.ers#/ ../../Stage%20Exits/set%20stage%20on%20exit%20from%20payment.ers#/" ruleflowAssets="initial%20questions%20about%20what%20happened.erf#/ ../Cancellation%20Details/cancelFlow.erf#/ ../Expenses/expenseFlow.erf#/ ../DocumentationUpload/DocumentationFlow.erf#/ ../OtherInsuranceDetails/otherInsuranceFlow.erf#/ ../PaymentOptions/paymentFlow.erf#/ ../AcknowledgeAndSign/AcknowledgeAndSignFlow.erf#/ ../../ClaimPaths/Sickness/Individual/clarifiers%20for%20indiv_sickness%20claimPath.erf#/ ../../ClaimPaths/Injury/Individual/clarifiers%20for%20indiv_injury%20claimPath.erf#/ ../../ClaimPaths/Death/Individual/clarifiers%20for%20indiv_death%20claimPath.erf#/ ../../ClaimPaths/Job/Individual/clarifiers%20for%20indiv%20job%20rel%20flow.erf#/">
+  <comments timestamp="2022-03-28T10:19:03.905-0400" username="smeldon" text="Blue = Triaged Options (1 of N options for this step)" objects="#/" type="Note"/>
   <ruleflow majorVersion="1" vocabularyUpdateStamp="_OKD2UK1OEeyYDL1RwIbSqg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="landing page initial screen" order="13" ruleActivityUpdateStamp="_rKXdM6w4EeyEBMROTpO_eg" invokes="rulesheets/landing%20page%20initial%20screen.ers#//@ruleset"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="initial questions about what happened" order="12" ruleActivityUpdateStamp="_Xd7nkKxgEeyEBMROTpO_eg" invokes="initial%20questions%20about%20what%20happened.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="triage to claim path specific stages" order="11" ruleActivityUpdateStamp="_QpUtwqxAEeyEBMROTpO_eg" invokes="rulesheets/triage%20to%20claim%20path%20specific%20stages.ers#//@ruleset"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="cancelFlow" order="10" ruleActivityUpdateStamp="_3jcZUK1OEeyYDL1RwIbSqg" invokes="../Cancellation%20Details/cancelFlow.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="expenseFlow" order="9" ruleActivityUpdateStamp="_V7QbEKw4EeyEBMROTpO_eg" invokes="../Expenses/expenseFlow.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="DocumentationFlow" order="8" ruleActivityUpdateStamp="_oCdNIK1NEeyYDL1RwIbSqg" invokes="../DocumentationUpload/DocumentationFlow.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="otherInsuranceFlow" order="7" ruleActivityUpdateStamp="_fj6-cKw4EeyEBMROTpO_eg" invokes="../OtherInsuranceDetails/otherInsuranceFlow.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="paymentFlow" order="6" ruleActivityUpdateStamp="_nnEVgKw4EeyEBMROTpO_eg" invokes="../PaymentOptions/paymentFlow.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="AcknowledgeAndSignFlow" order="5" ruleActivityUpdateStamp="_IN0zUK1MEeyYDL1RwIbSqg" invokes="../AcknowledgeAndSign/AcknowledgeAndSignFlow.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="clarifiers for indiv_sickness claimPath" order="4" ruleActivityUpdateStamp="__gUI8KxAEeyEBMROTpO_eg" invokes="../../ClaimPaths/Sickness/Individual/clarifiers%20for%20indiv_sickness%20claimPath.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="clarifiers for indiv_injury claimPath" order="3" ruleActivityUpdateStamp="_o8skgKxgEeyEBMROTpO_eg" invokes="../../ClaimPaths/Injury/Individual/clarifiers%20for%20indiv_injury%20claimPath.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="clarifiers for indiv_death claimPath" order="2" ruleActivityUpdateStamp="_qypkMK1KEeyYDL1RwIbSqg" invokes="../../ClaimPaths/Death/Individual/clarifiers%20for%20indiv_death%20claimPath.erf#//@ruleflow"/>
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="indiv job rel flow" order="1" ruleActivityUpdateStamp="_dwrHcKyhEeyg5tpjAsP5yg" invokes="../../ClaimPaths/Job/Individual/indiv%20job%20rel%20flow.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="landing page initial screen" order="18" ruleActivityUpdateStamp="_91IH4K1QEeyYDL1RwIbSqg" invokes="rulesheets/landing%20page%20initial%20screen.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="initial questions about what happened" order="17" ruleActivityUpdateStamp="_Xd7nkKxgEeyEBMROTpO_eg" invokes="initial%20questions%20about%20what%20happened.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="triage to claim path specific stages" order="16" ruleActivityUpdateStamp="_QpUtwqxAEeyEBMROTpO_eg" invokes="rulesheets/triage%20to%20claim%20path%20specific%20stages.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="cancelFlow" order="15" ruleActivityUpdateStamp="_eOSh4K6hEeyUy8aPs7dzRA" invokes="../Cancellation%20Details/cancelFlow.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="expenseFlow" order="14" ruleActivityUpdateStamp="_is_h0K6hEeyUy8aPs7dzRA" invokes="../Expenses/expenseFlow.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="DocumentationFlow" order="13" ruleActivityUpdateStamp="_orPB4K6hEeyUy8aPs7dzRA" invokes="../DocumentationUpload/DocumentationFlow.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="otherInsuranceFlow" order="12" ruleActivityUpdateStamp="_v6IRgK6hEeyUy8aPs7dzRA" invokes="../OtherInsuranceDetails/otherInsuranceFlow.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="paymentFlow" order="11" ruleActivityUpdateStamp="_04tEUK6hEeyUy8aPs7dzRA" invokes="../PaymentOptions/paymentFlow.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="AcknowledgeAndSignFlow" order="10" ruleActivityUpdateStamp="_3x6tIK6hEeyUy8aPs7dzRA" invokes="../AcknowledgeAndSign/AcknowledgeAndSignFlow.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="clarifiers for indiv_sickness claimPath" order="9" ruleActivityUpdateStamp="_VAAmsa6cEeyUy8aPs7dzRA" invokes="../../ClaimPaths/Sickness/Individual/clarifiers%20for%20indiv_sickness%20claimPath.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="clarifiers for indiv_injury claimPath" order="8" ruleActivityUpdateStamp="_b0VaMa6cEeyUy8aPs7dzRA" invokes="../../ClaimPaths/Injury/Individual/clarifiers%20for%20indiv_injury%20claimPath.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="clarifiers for indiv_death claimPath" order="7" ruleActivityUpdateStamp="_Zal7oa6cEeyUy8aPs7dzRA" invokes="../../ClaimPaths/Death/Individual/clarifiers%20for%20indiv_death%20claimPath.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="set stage on exit from cancellation" order="6" ruleActivityUpdateStamp="_QwHz8K6eEeyUy8aPs7dzRA" invokes="../../Stage%20Exits/set%20stage%20on%20exit%20from%20cancellation.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="set stage on exit from documentation" order="5" ruleActivityUpdateStamp="_uRQ9oK6eEeyUy8aPs7dzRA" invokes="../../Stage%20Exits/set%20stage%20on%20exit%20from%20documentation.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="set stage on exit from expenses" order="4" ruleActivityUpdateStamp="_iser0K6eEeyUy8aPs7dzRA" invokes="../../Stage%20Exits/set%20stage%20on%20exit%20from%20expenses.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="set stage on exit from other insurance" order="3" ruleActivityUpdateStamp="_0uBlsa6eEeyUy8aPs7dzRA" invokes="../../Stage%20Exits/set%20stage%20on%20exit%20from%20other%20insurance.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="set stage on exit from payment" order="2" ruleActivityUpdateStamp="_7UPrwK6eEeyUy8aPs7dzRA" invokes="../../Stage%20Exits/set%20stage%20on%20exit%20from%20payment.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="clarifiers for indiv job rel flow" order="1" ruleActivityUpdateStamp="_gnEJYK6cEeyUy8aPs7dzRA" invokes="../../ClaimPaths/Job/Individual/clarifiers%20for%20indiv%20job%20rel%20flow.erf#//@ruleflow"/>
   </ruleflow>
   <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="167" y="19" width="344" height="36" activityNode="#//@ruleflow/@flowControlList.0"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="165" y="69" width="346" height="36" activityNode="#//@ruleflow/@flowControlList.1"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="165" y="116" width="344" height="36" activityNode="#//@ruleflow/@flowControlList.2"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="150" y="315" width="331" height="36" activityNode="#//@ruleflow/@flowControlList.3"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="375" width="208" height="36" activityNode="#//@ruleflow/@flowControlList.4"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="420" width="196" height="36" activityNode="#//@ruleflow/@flowControlList.5"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="465" width="191" height="36" activityNode="#//@ruleflow/@flowControlList.6"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="510" width="196" height="36" activityNode="#//@ruleflow/@flowControlList.7"/>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="555" width="196" height="36" activityNode="#//@ruleflow/@flowControlList.8"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="167" y="19" width="344" height="36" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="165" y="69" width="346" height="36" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8453888"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="165" y="116" width="344" height="36" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="330" y="315" width="331" height="36" activityNode="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="330" y="360" width="331" height="36" activityNode="#//@ruleflow/@flowControlList.4">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="330" y="405" width="331" height="36" activityNode="#//@ruleflow/@flowControlList.5">
+      <annotations name="Color" value="8453888"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="330" y="450" width="331" height="36" activityNode="#//@ruleflow/@flowControlList.6">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="330" y="495" width="331" height="36" activityNode="#//@ruleflow/@flowControlList.7">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="330" y="540" width="331" height="36" activityNode="#//@ruleflow/@flowControlList.8">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
     <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="15" y="165" width="333" height="36" activityNode="#//@ruleflow/@flowControlList.9">
-      <annotations name="Color" value="16744703"/>
+      <annotations name="Color" value="16777088"/>
     </flowShapeList>
     <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="15" y="225" width="346" height="36" activityNode="#//@ruleflow/@flowControlList.10">
-      <annotations name="Color" value="16744703"/>
+      <annotations name="Color" value="16777088"/>
     </flowShapeList>
     <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="375" y="165" width="301" height="36" activityNode="#//@ruleflow/@flowControlList.11">
-      <annotations name="Color" value="16744703"/>
+      <annotations name="Color" value="16777088"/>
     </flowShapeList>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="390" y="225" width="316" height="36" activityNode="#//@ruleflow/@flowControlList.12">
-      <annotations name="Color" value="16744703"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="-15" y="315" width="301" height="36" activityNode="#//@ruleflow/@flowControlList.12">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="-15" y="405" width="301" height="36" activityNode="#//@ruleflow/@flowControlList.13">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="-15" y="360" width="301" height="36" activityNode="#//@ruleflow/@flowControlList.14">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="-15" y="450" width="301" height="36" activityNode="#//@ruleflow/@flowControlList.15">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="-15" y="495" width="301" height="36" activityNode="#//@ruleflow/@flowControlList.16">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="390" y="223" width="286" height="36" activityNode="#//@ruleflow/@flowControlList.17">
+      <annotations name="Color" value="16777088"/>
     </flowShapeList>
   </ruleflowViewList>
 </com.corticon.rulesemf.assetmodel:RuleflowAsset>

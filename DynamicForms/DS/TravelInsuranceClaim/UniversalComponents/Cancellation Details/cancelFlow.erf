@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_k3adYa1hEeyYDL1RwIbSqg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="ask%20to%20explain%20incident.ers#/ triage%20based%20upon%20whether%20previous%20contact%20us.ers#/ add%20past%20contact%20us%20questions%20to%20container.ers#/ ask%20when%20did%20you%20cancel%20trip.ers#/ if%20more%20than%2020%20days%20since%20cancel,%20explain.ers#/">
-  <ruleflow majorVersion="1" vocabularyUpdateStamp="_1XqhcK1SEeyYDL1RwIbSqg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="ask to explain incident" order="5" ruleActivityUpdateStamp="_fVFCwK1MEeyYDL1RwIbSqg" invokes="ask%20to%20explain%20incident.ers#//@ruleset"/>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_eOSh4K6hEeyUy8aPs7dzRA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="ask%20to%20explain%20incident.ers#/ triage%20based%20upon%20whether%20previous%20contact%20us.ers#/ add%20past%20contact%20us%20questions%20to%20container.ers#/ ask%20when%20did%20you%20cancel%20trip.ers#/ if%20more%20than%2020%20days%20since%20cancel,%20explain.ers#/ ../setToNull.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_OKD2UK1OEeyYDL1RwIbSqg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="ask to explain incident" order="5" ruleActivityUpdateStamp="_0chcca6SEeyWrKvF6ezupw" nextStep="#//@ruleflow/@flowControlList.5" invokes="ask%20to%20explain%20incident.ers#//@ruleset"/>
     <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="triage based upon whether previous contact us" order="3" ruleActivityUpdateStamp="_7_6fcK1gEeyYDL1RwIbSqg" nextStep="#//@ruleflow/@flowControlList.2" invokes="triage%20based%20upon%20whether%20previous%20contact%20us.ers#//@ruleset"/>
     <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="add past contact us questions to container" order="4" ruleActivityUpdateStamp="_wAW9N61gEeyYDL1RwIbSqg" invokes="add%20past%20contact%20us%20questions%20to%20container.ers#//@ruleset"/>
     <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="ask when did you cancel trip" order="2" ruleActivityUpdateStamp="_bR4g0a1REeyYDL1RwIbSqg" invokes="ask%20when%20did%20you%20cancel%20trip.ers#//@ruleset"/>
     <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="if more than 20 days since cancel, explain" order="1" ruleActivityUpdateStamp="_cKmq0K1MEeyYDL1RwIbSqg" invokes="if%20more%20than%2020%20days%20since%20cancel,%20explain.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="setToNull" order="6" ruleActivityUpdateStamp="_QiOMxa6cEeyUy8aPs7dzRA" invokes="../setToNull.ers#//@ruleset"/>
   </ruleflow>
   <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="255" y="375" width="315" height="36" activityNode="#//@ruleflow/@flowControlList.0">
-      <annotations name="Color" value="16777088"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="255" y="375" width="315" height="36" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454016"/>
     </flowShapeList>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="204" width="406" height="36" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
-      <annotations name="Color" value="16777088"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="204" width="406" height="36" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454016"/>
     </flowShapeList>
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="735" y="210" width="331" height="36" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.2">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="735" y="210" width="331" height="36" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.2">
       <annotations name="Color" value="16777088"/>
     </flowShapeList>
     <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="120" width="345" height="36" activityNode="#//@ruleflow/@flowControlList.3">
-      <annotations name="Color" value="16777088"/>
+      <annotations name="Color" value="8454016"/>
     </flowShapeList>
     <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="240" y="285" width="391" height="36" activityNode="#//@ruleflow/@flowControlList.4">
       <annotations name="Color" value="16777088"/>
     </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="392" y="457" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.5">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.5"/>
     <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
   </ruleflowViewList>
 </com.corticon.rulesemf.assetmodel:RuleflowAsset>

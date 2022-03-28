@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_oCdNIK1NEeyYDL1RwIbSqg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="upload%20documents%20depending%20on%20answers%20and%20policy%20type.ers#/">
-  <ruleflow majorVersion="1" vocabularyUpdateStamp="_Ronu4K0BEeywwptTZrqFrQ" vocabulary="../../../Vocabulary/Vocab.ecore#/">
-    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="upload documents depending on answers and policy type" order="1" ruleActivityUpdateStamp="_V-bzcKxPEeyEBMROTpO_eg" invokes="upload%20documents%20depending%20on%20answers%20and%20policy%20type.ers#//@ruleset"/>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_orPB4K6hEeyUy8aPs7dzRA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript" rulesheetAssets="upload%20documents%20depending%20on%20answers%20and%20policy%20type.ers#/ ../setToNull.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_OKD2UK1OEeyYDL1RwIbSqg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="upload documents depending on answers and policy type" order="1" ruleActivityUpdateStamp="_eM5iIK6eEeyUy8aPs7dzRA" nextStep="#//@ruleflow/@flowControlList.1" invokes="upload%20documents%20depending%20on%20answers%20and%20policy%20type.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="setToNull" order="2" ruleActivityUpdateStamp="_QiOMxa6cEeyUy8aPs7dzRA" invokes="../setToNull.ers#//@ruleset"/>
   </ruleflow>
   <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
-    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="381" y="201" width="96" height="36" activityNode="#//@ruleflow/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="285" y="201" width="192" height="36" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="404" y="266" width="96" height="36" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
   </ruleflowViewList>
 </com.corticon.rulesemf.assetmodel:RuleflowAsset>

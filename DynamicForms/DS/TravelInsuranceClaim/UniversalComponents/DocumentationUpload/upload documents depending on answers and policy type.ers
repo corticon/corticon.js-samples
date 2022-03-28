@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_V-bzcKxPEeyEBMROTpO_eg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_eM5iIK6eEeyUy8aPs7dzRA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_wiiXgKw_EeyEBMROTpO_eg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_OKD2UK1OEeyYDL1RwIbSqg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
     <rule>
       <condition/>
       <condition/>
@@ -159,8 +159,8 @@
       </action>
       <action/>
       <action>
-        <opaqueExpression expression="UI.nextStageNumber = 11">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 11" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.nextStageNumber = UI.stageOnExit">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = UI.stageOnExit" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -168,6 +168,9 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
             </referencedTermList>
           </parserOutput>
         </opaqueExpression>
@@ -288,7 +291,6 @@
         </opaqueExpression>
       </action>
       <action/>
-      <action/>
     </rule>
     <rule>
       <condition/>
@@ -385,7 +387,6 @@
         </opaqueExpression>
       </action>
       <action/>
-      <action/>
     </rule>
     <rule>
       <condition/>
@@ -464,7 +465,6 @@
       <action/>
       <action/>
       <action disabled="true"/>
-      <action/>
       <action/>
     </rule>
     <rule>
@@ -545,7 +545,6 @@
       <action/>
       <action disabled="true"/>
       <action/>
-      <action/>
     </rule>
     <rule>
       <condition/>
@@ -612,9 +611,8 @@
       </action>
       <action disabled="true"/>
       <action/>
-      <action/>
     </rule>
-    <filter logicalVariables="#//@ruleset/@logicalVariables.0">
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
       <opaqueExpression expression="UI.currentStageNumber=10">
         <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
           <referencedTermList>
@@ -656,7 +654,7 @@
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightScope="70" sashWeightConditionsActions="25" sashWeightConditionsIf="41">
-    <actionSection rowCount="57" scrollRowTop="12" columnWidthFactor="0.5">
+    <actionSection rowCount="56" scrollRowTop="12" columnWidthFactor="0.5">
       <actionItemList rowHeight="132">
         <valueSetCell/>
         <expressionCell external="UI.comments = 'Here we demo how to create a question with Fileupload choice'">
@@ -1035,11 +1033,17 @@
         <expressionCell/>
       </actionItemList>
       <actionItemList>
-        <valueSetCell valueSet=""/>
-        <expressionCell external="UI.nextStageNumber">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
-            <referencedTermList>
+        <valueSetCell/>
+        <expressionCell external="UI.nextStageNumber = UI.stageOnExit">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = UI.stageOnExit" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
               <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </referencedTermList>
@@ -1188,18 +1192,7 @@
           </parserOutput>
         </actionValueSetCellList>
         <actionValueSetCellList/>
-        <actionValueSetCellList valueSet="11">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 11" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-            </referencedTermList>
-          </parserOutput>
-        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
       <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
         <conditionValueSetCellList valueSet="{null, F}">
@@ -1244,7 +1237,6 @@
             </referencedTermList>
           </parserOutput>
         </actionValueSetCellList>
-        <actionValueSetCellList/>
         <actionValueSetCellList/>
       </ruleColumnList>
       <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
@@ -1301,7 +1293,6 @@
           </parserOutput>
         </actionValueSetCellList>
         <actionValueSetCellList/>
-        <actionValueSetCellList/>
       </ruleColumnList>
       <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
         <conditionValueSetCellList valueSet="-"/>
@@ -1334,7 +1325,6 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -1383,7 +1373,6 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
-        <actionValueSetCellList/>
       </ruleColumnList>
       <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
         <conditionValueSetCellList valueSet="-"/>
@@ -1412,7 +1401,6 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
       </ruleColumnList>
