@@ -23,10 +23,10 @@
 	The order of inclusion is critical. It defines the order in which the decision services are indexed and must correspond to the order
 	of the options in the switch sample Select dropdown
 	-->
+	<script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/MultipleSteps2/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/validation/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/taxes/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/ReusingSubflows/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/JobApplication/browser/decisionServiceBundle.js"></script>
 
@@ -101,12 +101,13 @@
 			const inDataClaim = {};
 			inDataClaim.claim = {};
 			inDataClaim.claim.policyType = 'Individual';
+			inDataClaim.claim.firstName = 'Seth';
 
 			// Must correspond with the order of the DS inclusion
+			allInputData.push(inDataClaim);
 			allInputData.push(inDataCanonical);
 			allInputData.push(inDataValidation);
 			allInputData.push(inDataTaxes);
-			allInputData.push(inDataClaim);
 			allInputData.push(inDataReuseSubflow);
 			allInputData.push(inJobApplication);
 
@@ -158,10 +159,10 @@
 					<div class="commandContainer">
 						<div class="sampleSelectLabel">Select Sample:</div>
 						<select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
-							<option value="0">Canonical</option>
-							<option value="3">Travel Claim</option>
-							<option value="1">Validation</option>
-							<option value="2">Taxes</option>
+							<option value="0">Travel Claim</option>
+							<option value="1">Canonical</option>
+							<option value="2">Validation</option>
+							<option value="3">Taxes</option>
 							<option value="4">Reusing Subflow</option>
 							<option value="5">Job Application</option>
 						</select>
