@@ -1,5 +1,3 @@
-corticon.util.namespace( "corticon.tracer" );
-
 function Tracer () {
     // private section
     let itsStagesTrace = [];
@@ -9,7 +7,6 @@ function Tracer () {
         corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.NEW_FORM_DATA_SAVED, _traceFormData);
         corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.BEFORE_DS_EXECUTION, _traceDecisionServiceInputs);
         corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.NEW_DS_EXECUTION, _traceDecisionServiceResults);
-        corticon.dynForm.addCustomEventHandler( tracerCustomEvents.SWITCH_TO_SAVED_STAGE, _switchToSavedStage);
     }
 
     function _clearTraceData() {
@@ -45,6 +42,14 @@ function Tracer () {
         _showDecisionServiceResults ( itsStagesTrace[index].result, itsStagesTrace[index].timing );
     }
 
+    function _traceFormData(event) {
+        const theData = event.theData;
+        const index = itsStagesTrace.length - 1;
+        const x = JSON.stringify(theData, null, 2);
+        itsStagesTrace[index].formData = x;
+        _showSavedFormData(x);
+    }
+
     function _showDecisionServiceInputs ( newValue ) {
         document.getElementById("decisionServiceInputId").value = newValue;
     }
@@ -60,7 +65,8 @@ function Tracer () {
         if ( index !== 0 )
             html += `&rarr;`
 
-        html += `<a class="activeStageInTrace stageInTrace" href="#" onclick="tracerClickStage(${index}, this)">&nbsp;${stage}&nbsp;</a></span>`
+        // todo: should I emit a custom event when onClick - and process it in this object?
+        html += `<a class="activeStageInTrace stageInTrace" href="#" onclick="_switchToSavedStage(${index}, this)">&nbsp;${stage}&nbsp;</a></span>`
 
         $("#traceHistoryId").append(html);
 
@@ -68,17 +74,7 @@ function Tracer () {
         $("#traceHistorySummaryId").prop("title", newTitle);
     }
 
-    function _traceFormData(event) {
-        const theData = event.theData;
-        const index = itsStagesTrace.length - 1;
-        const x = JSON.stringify(theData, null, 2);
-        itsStagesTrace[index].formData = x;
-        _showSavedFormData(x);
-    }
-
-    function _switchToSavedStage(event) {
-        const index = event.theData.index;
-        const theEl = event.theData.el;
+    function _switchToSavedStage(index, theEl) {
         _removeHighlightedStage();
         $(theEl).addClass("activeStageInTrace");
         const oneTrace = itsStagesTrace[index];
@@ -100,15 +96,7 @@ function Tracer () {
     }
 
     return {
-        setupTracing: setupTracing
+        setupTracing: setupTracing,
+        switchToSavedStage: _switchToSavedStage
     }
 }
-
-const tracerCustomEvents = {
-    "SWITCH_TO_SAVED_STAGE": "switchToSavedStage",
-}
-
-function tracerClickStage ( index, theEl ) {
-    corticon.dynForm.raiseEvent(tracerCustomEvents.SWITCH_TO_SAVED_STAGE,{ "index": index, "el": theEl });
-}
-

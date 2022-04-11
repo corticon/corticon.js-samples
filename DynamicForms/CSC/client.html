@@ -33,8 +33,9 @@
 	<script>
 		let currentDecisionServiceEngine;
 		let allInputData = [];
-		let inputData; // per decision service set of data to pass all along
+		let inputData; // per decision service initial data set (external data)
 		let itsCurrentLanguage = 'english';
+		let itsQuestionnaireKey = '0';
 
 		const itsTracer = new Tracer();
 		const itsStepsController = new corticon.dynForm.StepsController();
@@ -43,6 +44,7 @@
 			const index = selectObject.value;
 			currentDecisionServiceEngine = window.corticonEngines[index];
 			inputData = allInputData[index];
+			itsQuestionnaireKey = index;
 
 			if ( index === "5" )
 				$("#languageContainerId").show();
@@ -56,7 +58,7 @@
 
 		function processClickStart() {
 			const baseDynamicUIEl = $('#dynUIContainerId');
-			itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage);
+			itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage, itsQuestionnaireKey);
 		}
 
 		function processClickNext() {
