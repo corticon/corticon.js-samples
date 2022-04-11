@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_eM5iIK6eEeyUy8aPs7dzRA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="__B5qcK64Eeyln_x8H652Jw" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
   <ruleset vocabularyUpdateStamp="_OKD2UK1OEeyYDL1RwIbSqg" vocabulary="../../../Vocabulary/Vocab.ecore#/">
     <rule>
       <condition/>
       <condition/>
-      <action/>
-      <action/>
       <action>
-        <opaqueExpression expression="UI.containers = Container.new[id='fileUploadContainerId', title='Document Upload (File upload control)']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Document Upload (File upload control)' , Container.id = 'fileUploadContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers = Container.new[id='fileUploadContainerId', title='Please upload the required documents below and any other documents that may be needed. If you do not have all the required documents, no worries, you may download the remaining documents at a later date.']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Please upload the required documents below and any other documents that may be needed. If you do not have all the required documents, no worries, you may download the remaining documents at a later date.' , Container.id = 'fileUploadContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -139,24 +137,6 @@
         </opaqueExpression>
       </action>
       <action/>
-      <action disabled="true">
-        <opaqueExpression expression="UI.containers.title = 'New Title'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = 'New Title'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
-                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-                </parentTerm>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </opaqueExpression>
-      </action>
       <action/>
       <action>
         <opaqueExpression expression="UI.nextStageNumber = UI.stageOnExit">
@@ -194,8 +174,6 @@
       <condition/>
       <condition/>
       <condition/>
-      <action/>
-      <action/>
       <action/>
       <action>
         <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='FileUpload', label='Please upload proof of incident document(s)', id='crtl10_1', fieldName='fileUpload']">
@@ -272,24 +250,6 @@
       <action/>
       <action/>
       <action/>
-      <action disabled="true">
-        <opaqueExpression expression="UI.containers.title = 'Title1'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = 'Title1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
-                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-                </parentTerm>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </opaqueExpression>
-      </action>
       <action/>
     </rule>
     <rule>
@@ -323,8 +283,6 @@
         <viewExpressions lhs="Data.claim.someoneElseIncidentSpecific" rhs="{'Service animal', 'Pet'}"/>
       </condition>
       <condition/>
-      <action/>
-      <action/>
       <action/>
       <action/>
       <action>
@@ -368,24 +326,6 @@
       <action/>
       <action/>
       <action/>
-      <action disabled="true">
-        <opaqueExpression expression="UI.containers.title = 'Titre 1'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = 'Titre 1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
-                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-                </parentTerm>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </opaqueExpression>
-      </action>
       <action/>
     </rule>
     <rule>
@@ -419,8 +359,6 @@
         <viewExpressions lhs="Data.claim.someoneElseIncidentSpecific" rhs="{'Family member', 'Traveling companion family member', 'Business partner', 'Business partner family member'}"/>
       </condition>
       <condition/>
-      <action/>
-      <action/>
       <action/>
       <action/>
       <action/>
@@ -464,7 +402,6 @@
       <action/>
       <action/>
       <action/>
-      <action disabled="true"/>
       <action/>
     </rule>
     <rule>
@@ -498,8 +435,6 @@
       </condition>
       <condition/>
       <condition/>
-      <action/>
-      <action/>
       <action/>
       <action/>
       <action/>
@@ -543,7 +478,6 @@
       <action/>
       <action/>
       <action/>
-      <action disabled="true"/>
       <action/>
     </rule>
     <rule>
@@ -564,8 +498,6 @@
         </opaqueExpression>
         <viewExpressions lhs="Data.claim.SumAllExp" rhs=">0"/>
       </condition>
-      <action/>
-      <action/>
       <action/>
       <action/>
       <action/>
@@ -609,7 +541,6 @@
           </parserOutput>
         </opaqueExpression>
       </action>
-      <action disabled="true"/>
       <action/>
     </rule>
     <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
@@ -653,31 +584,12 @@
       </extension>
     </logicalVariable>
   </ruleset>
-  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightScope="70" sashWeightConditionsActions="25" sashWeightConditionsIf="41">
-    <actionSection rowCount="56" scrollRowTop="12" columnWidthFactor="0.5">
-      <actionItemList rowHeight="132">
-        <valueSetCell/>
-        <expressionCell external="UI.comments = 'Here we demo how to create a question with Fileupload choice'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = 'Here we demo how to create a question with Fileupload choice'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-            </referencedTermList>
-          </parserOutput>
-        </expressionCell>
-      </actionItemList>
-      <actionItemList>
-        <valueSetCell/>
-        <expressionCell/>
-      </actionItemList>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightScope="70" sashWeightConditionsActions="25" sashWeightConditionsIf="41">
+    <actionSection rowCount="53" columnWidthFactor="0.5">
       <actionItemList rowHeight="89">
         <valueSetCell/>
-        <expressionCell external="UI.containers = Container.new[id='fileUploadContainerId', title='Document Upload (File upload control)']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Document Upload (File upload control)' , Container.id = 'fileUploadContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers = Container.new[id='fileUploadContainerId', title='Please upload the required documents below and any other documents that may be needed. If you do not have all the required documents, no worries, you may download the remaining documents at a later date.']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Please upload the required documents below and any other documents that may be needed. If you do not have all the required documents, no worries, you may download the remaining documents at a later date.' , Container.id = 'fileUploadContainerId' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -804,7 +716,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList rowHeight="77">
+      <actionItemList rowHeight="161">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls += UIControl.new[type='FileUpload', label='Please upload Doctor/Provider Statement', id='crtl10_4', fieldName='fileUpload4']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'FileUpload' , UIControl.label = 'Please upload Doctor/Provider Statement' , UIControl.id = 'crtl10_4' , UIControl.fieldName = 'fileUpload4' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -1014,20 +926,6 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList disabled="true">
-        <valueSetCell/>
-        <expressionCell external="UI.containers.title">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
-            <referencedTermList>
-              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
-                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
-                </parentTerm>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </expressionCell>
-      </actionItemList>
       <actionItemList>
         <valueSetCell/>
         <expressionCell/>
@@ -1163,8 +1061,6 @@
       <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
         <conditionValueSetCellList/>
         <conditionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet=""/>
         <actionValueSetCellList/>
@@ -1175,22 +1071,6 @@
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList/>
-        <actionValueSetCellList valueSet="'New Title'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = 'New Title'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
-                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
-                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-                </parentTerm>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </actionValueSetCellList>
         <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
@@ -1210,8 +1090,6 @@
         <conditionValueSetCellList valueSet="-"/>
         <conditionValueSetCellList valueSet="-"/>
         <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -1221,22 +1099,6 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
-        <actionValueSetCellList valueSet="'Title1'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = 'Title1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
-                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
-                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-                </parentTerm>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </actionValueSetCellList>
         <actionValueSetCellList/>
       </ruleColumnList>
       <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
@@ -1266,8 +1128,6 @@
         <conditionValueSetCellList valueSet="-"/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -1276,22 +1136,6 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
-        <actionValueSetCellList valueSet="'Titre 1'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = 'Titre 1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
-            <modifiedTermList>
-              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
-                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
-                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-                </parentTerm>
-              </terms>
-            </modifiedTermList>
-            <referencedTermList>
-              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </actionValueSetCellList>
         <actionValueSetCellList/>
       </ruleColumnList>
       <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
@@ -1322,10 +1166,7 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -1364,10 +1205,7 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -1398,10 +1236,7 @@
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
-        <actionValueSetCellList/>
-        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
-        <actionValueSetCellList/>
         <actionValueSetCellList/>
       </ruleColumnList>
     </ruleSection>
