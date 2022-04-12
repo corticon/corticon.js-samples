@@ -4,7 +4,7 @@ module.exports={"ruleMessages": []}
 "use strict";var _jsEngine=require("@corticon/js-engine"),_decisionservicerules=require("./decisionservicerules"),metadata=_interopRequireWildcard(require("./vocab.json")),ruleMessages=_interopRequireWildcard(require("./_ruleMessages.json"));function _getRequireWildcardCache(e){if("function"!=typeof WeakMap)return null;var i=new WeakMap,n=new WeakMap;return(_getRequireWildcardCache=function(e){return e?n:i})(e)}function _interopRequireWildcard(e,i){if(!i&&e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var n=_getRequireWildcardCache(i);if(n&&n.has(e))return n.get(e);var r={},t=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var c in e)if("default"!==c&&Object.prototype.hasOwnProperty.call(e,c)){var o=t?Object.getOwnPropertyDescriptor(e,c):null;o&&(o.get||o.set)?Object.defineProperty(r,c,o):r[c]=e[c]}return r.default=e,n&&n.set(e,r),r}void 0!==window.corticonEngine&&null!==window.corticonEngine||(window.corticonEngine={}),void 0!==window.corticonEngines&&null!==window.corticonEngines||(window.corticonEngines=[]);const decisionServiceFct=function(e,i){return new _jsEngine.CorticonEngine(metadata,ruleMessages,new _decisionservicerules.DecisionServiceRules).executeDecisionService(e,i)};window.corticonEngine.execute=decisionServiceFct,window.corticonEngines.push({execute:decisionServiceFct});
 
 },{"./_ruleMessages.json":1,"./decisionservicerules":3,"./vocab.json":4,"@corticon/js-engine":5}],3:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,n){if(_jsEngine.Utilities.checksum(1649179015618))throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 1.3.0.0.12018");const t=new _jsEngine.RuleContainer("NYI");e.addRule(t);const i=new _jsEngine.RuleContainer("Step1");t.addRule(i),this.addRulesheetContainer_js_Step1(i,n);const s=new _jsEngine.RuleContainer("Step0");t.addRule(s),this.addRulesheetContainer_js_Step0(s,n)}}addRulesheetContainer_js_Step1(e,n){const t=new _jsEngine.TupleOperator("js_Step1_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step1_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]]),l=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>e.get("UI").done=!0]]),r=new _jsEngine.Rule("C0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="introContainerId",e.title="Not Yet Implemented"}))]]),d=new _jsEngine.Rule("E0","T1",[],[[e=>s(e)&&a(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),u=new _jsEngine.Rule("F0","T2",[],[[e=>s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")))(e),e=>e.get("UI.containers.uiControls").value="There are no additional steps in this sample"]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(r),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(u)}addRulesheetContainer_js_Step0(e,n){const t=new _jsEngine.TupleOperator("js_Step0_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step0_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,0)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="introContainerId",e.title="Not Yet Implemented"}))]]),r=new _jsEngine.Rule("E0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=1]]),d=new _jsEngine.Rule("C0","T1",[],[[e=>s(e)&&a(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),u=new _jsEngine.Rule("D0","T2",[],[[e=>s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")))(e),e=>e.get("UI.containers.uiControls").value="This sample is not yet implemented"]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(r),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(u)}}exports.DecisionServiceRules=DecisionServiceRules;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,n){if(_jsEngine.Utilities.checksum())throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 1.3.0.0.12018");const t=new _jsEngine.RuleContainer("NYI");e.addRule(t);const i=new _jsEngine.RuleContainer("Step1");t.addRule(i),this.addRulesheetContainer_js_Step1(i,n);const s=new _jsEngine.RuleContainer("Step0");t.addRule(s),this.addRulesheetContainer_js_Step0(s,n)}}addRulesheetContainer_js_Step1(e,n){const t=new _jsEngine.TupleOperator("js_Step1_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step1_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]]),l=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>e.get("UI").done=!0]]),r=new _jsEngine.Rule("C0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="introContainerId",e.title="Not Yet Implemented"}))]]),d=new _jsEngine.Rule("E0","T1",[],[[e=>s(e)&&a(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),u=new _jsEngine.Rule("F0","T2",[],[[e=>s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")))(e),e=>e.get("UI.containers.uiControls").value="There are no additional steps in this sample"]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(r),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(u)}addRulesheetContainer_js_Step0(e,n){const t=new _jsEngine.TupleOperator("js_Step0_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step0_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,0)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="introContainerId",e.title="Not Yet Implemented"}))]]),r=new _jsEngine.Rule("E0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=1]]),d=new _jsEngine.Rule("C0","T1",[],[[e=>s(e)&&a(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),u=new _jsEngine.Rule("D0","T2",[],[[e=>s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")))(e),e=>e.get("UI.containers.uiControls").value="This sample is not yet implemented"]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(r),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(u)}}exports.DecisionServiceRules=DecisionServiceRules;
 
 },{"@corticon/js-engine":5}],4:[function(require,module,exports){
 module.exports={
@@ -126,23 +126,147 @@ module.exports={
             "id": "ProjectsData.CanonicalSample"
         },
         {
-            "associations": [],
+            "associations": [{
+                "targetEntity": "ProjectsData.Expense",
+                "roleName": "expense",
+                "navigability": "Claim->expense",
+                "mandatory": false,
+                "cardinality": "*"
+            }],
             "transientAttributesDefinition": [],
+            "associationsDefinition": ["expense"],
             "name": "ProjectsData.Claim",
             "attributesDefinition": [
+                "ACH_accountNo",
+                "ACH_bankName",
+                "ACH_nameOnAccount",
+                "ACH_routing",
+                "addressOnFile",
+                "addressOnFileIsUSA",
+                "addressOnFileNotPObox",
+                "authorizationChecked",
+                "checkSendToAddress",
+                "claimPath",
+                "contactDelayReason",
                 "duringTripIssue",
+                "eSignature",
+                "EurSum",
                 "hasDoctorAdvised",
+                "hasOtherInsurance",
+                "hasSeenDoctor",
                 "haveContactedUs",
+                "HotelUSDSum",
+                "howContactUs",
+                "incidentExplanation",
+                "isCFAR",
+                "jobRelatedIssue",
+                "otherInsuranceClaimNo",
+                "otherInsuranceCompanyName",
+                "otherInsuranceCompanyWebsite",
+                "otherInsurancePolicyNo",
+                "otherPersonName",
                 "policyType",
                 "reason",
                 "reasonCancel",
+                "reimbursementMethod",
+                "someoneElseIncidentSpecific",
+                "someoneElseRelation",
+                "SumAllExp",
+                "USDSum",
                 "whenCancel",
-                "whoSick"
+                "whenContactUs",
+                "whenFirstIll",
+                "whenPassAway",
+                "whoHasMilitaryDuty",
+                "whoHasRevokedLeave",
+                "whoInjured",
+                "whoSick",
+                "whoTerminatedJob",
+                "wire_IBAN",
+                "wire_SWIFT_code"
             ],
             "attributes": [
                 {
+                    "dataType": "Integer",
+                    "name": "ACH_accountNo",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "ACH_bankName",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "ACH_nameOnAccount",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "ACH_routing",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "addressOnFile",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "addressOnFileIsUSA",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "addressOnFileNotPObox",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "authorizationChecked",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "checkSendToAddress",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "claimPath",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "contactDelayReason",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
                     "dataType": "String",
                     "name": "duringTripIssue",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "eSignature",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "EurSum",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -154,7 +278,79 @@ module.exports={
                 },
                 {
                     "dataType": "String",
+                    "name": "hasOtherInsurance",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "hasSeenDoctor",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
                     "name": "haveContactedUs",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "HotelUSDSum",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "howContactUs",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "incidentExplanation",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "isCFAR",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "jobRelatedIssue",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "otherInsuranceClaimNo",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "otherInsuranceCompanyName",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "otherInsuranceCompanyWebsite",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "otherInsurancePolicyNo",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "otherPersonName",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -178,13 +374,97 @@ module.exports={
                 },
                 {
                     "dataType": "String",
+                    "name": "reimbursementMethod",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "someoneElseIncidentSpecific",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "someoneElseRelation",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "SumAllExp",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "USDSum",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "DateTime",
                     "name": "whenCancel",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "DateTime",
+                    "name": "whenContactUs",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "DateTime",
+                    "name": "whenFirstIll",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "DateTime",
+                    "name": "whenPassAway",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "whoHasMilitaryDuty",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "whoHasRevokedLeave",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "whoInjured",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
                     "name": "whoSick",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "whoTerminatedJob",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "wire_IBAN",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "wire_SWIFT_code",
                     "type": "Base",
                     "mandatory": false
                 }
@@ -484,6 +764,30 @@ module.exports={
         {
             "associations": [],
             "transientAttributesDefinition": [],
+            "name": "DataSourceOptions",
+            "attributesDefinition": [
+                "dataTextField",
+                "dataValueField"
+            ],
+            "attributes": [
+                {
+                    "dataType": "String",
+                    "name": "dataTextField",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "dataValueField",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "DataSourceOptions"
+        },
+        {
+            "associations": [],
+            "transientAttributesDefinition": [],
             "name": "Option",
             "attributesDefinition": [
                 "displayName",
@@ -523,6 +827,7 @@ module.exports={
             "name": "UI",
             "attributesDefinition": [
                 "comments",
+                "currentStageDescription",
                 "currentStageNumber",
                 "done",
                 "dt1",
@@ -540,6 +845,12 @@ module.exports={
                     "dataType": "String",
                     "name": "comments",
                     "type": "ExtendedTransient",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "currentStageDescription",
+                    "type": "Base",
                     "mandatory": false
                 },
                 {
@@ -612,15 +923,27 @@ module.exports={
             "id": "UI"
         },
         {
-            "associations": [{
-                "targetEntity": "Option",
-                "roleName": "option",
-                "navigability": "UIControl->option",
-                "mandatory": false,
-                "cardinality": "*"
-            }],
+            "associations": [
+                {
+                    "targetEntity": "DataSourceOptions",
+                    "roleName": "dataSourceOptions",
+                    "navigability": "UIControl->dataSourceOptions",
+                    "mandatory": false,
+                    "cardinality": "1"
+                },
+                {
+                    "targetEntity": "Option",
+                    "roleName": "option",
+                    "navigability": "UIControl->option",
+                    "mandatory": false,
+                    "cardinality": "*"
+                }
+            ],
             "transientAttributesDefinition": [],
-            "associationsDefinition": ["option"],
+            "associationsDefinition": [
+                "dataSourceOptions",
+                "option"
+            ],
             "name": "UIControl",
             "attributesDefinition": [
                 "cols",
