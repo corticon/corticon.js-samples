@@ -18,10 +18,19 @@ corticon.dynForm.UIControlsRenderer = function () {
         // Start with clean component - that is without any UI Controls from previous steps
         baseEl.empty();
 
-        const html = '<div id="' + containers[0].id + '"  title="' + containers[0].title + '"><h3>' + containers[0].title + '</h3></div>';
+        for ( let i=0; i<containers.length; i++ )
+            renderUIForOneContainer( containers[i], baseEl, labelPositionAtUILevel, language );
+
+        const allFormEls = $(baseEl).find(':input');
+        if ( allFormEls !== null && allFormEls.length > 0 )
+            allFormEls[0].focus();
+    }
+
+    function renderUIForOneContainer( container, baseEl, labelPositionAtUILevel, language ) {
+        const html = '<div id="' + container.id + '"  title="' + container.title + '"><h3>' + container.title + '</h3></div>';
         baseEl.append(html);
 
-        const uiControls = containers[0].uiControls;
+        const uiControls = container.uiControls;
         if ( uiControls === undefined || uiControls === null ) {
             alert('There are no UI Controls to render in this step');
             return;
@@ -53,11 +62,7 @@ corticon.dynForm.UIControlsRenderer = function () {
                 alert('This ui control is not yet supported: '+oneUIControl.type);
         }
 
-        renderContainerValidationMessage(containers[0].validationMsg, baseEl);
-
-        const allFormEls = $(baseEl).find(':input');
-        if ( allFormEls !== null && allFormEls.length > 0 )
-            allFormEls[0].focus();
+        renderContainerValidationMessage(container.validationMsg, baseEl);
     }
 
 // Begin expense
