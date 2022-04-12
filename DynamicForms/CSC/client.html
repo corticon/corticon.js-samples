@@ -36,35 +36,35 @@
         		let allInputData = [];
         		let inputData; // per decision service set of data to pass all along
         		let itsCurrentLanguage = 'english';
-        
+
         		const itsTracer = new Tracer();
         		const itsStepsController = new corticon.dynForm.StepsController();
-        
+
         		function processSwitchSample(selectObject) {
         			const index = selectObject.value;
         			currentDecisionServiceEngine = window.corticonEngines[index];
         			inputData = allInputData[index];
-        
+
         			if (index === "5")
         				$("#languageContainerId").show();
         			else
         				$("#languageContainerId").hide();
         		}
-        
+
         		function processSwitchLanguage(selectObject) {
         			itsCurrentLanguage = selectObject.value;
         		}
-        
+
         		function processClickStart() {
         			const baseDynamicUIEl = $('#dynUIContainerId');
         			itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage);
         		}
-        
+
         		function processClickNext() {
         			const baseDynamicUIEl = $('#dynUIContainerId');
         			itsStepsController.processNextStep(baseDynamicUIEl, currentDecisionServiceEngine, itsCurrentLanguage);
         		}
-        
+
         		function saveStateButton(show) {
         			// save it in local storage for restore  on reload
         			try {
@@ -73,7 +73,7 @@
         				// Some browser in private mode may throw exception when using local storage
         			}
         		}
-        
+
         		function processShowTrace() {
         			const traceEl = $('.allTracesContainer');
         			traceEl.show();
@@ -81,7 +81,7 @@
         			$("#showTraceId").hide();
         			saveStateButton(true);
         		}
-        
+
         		function processHideTrace() {
         			const traceEl = $('.allTracesContainer');
         			traceEl.hide();
@@ -89,7 +89,7 @@
         			$("#hideTraceId").hide();
         			saveStateButton(false);
         		}
-        
+
         		function setupInitialInputData() {
 							const inDataEmpty = {};
         			const inDataClaim1 = {};
@@ -99,34 +99,33 @@
         			inDataClaim1.claim.addressOnFileNotPObox = 'T';
         			inDataClaim1.claim.addressOnFileIsUSA = 'T';
         			inDataClaim1.claim.isCFAR = 'T';
-        
+
         			const inDataClaim2 = {};
         			inDataClaim2.claim = {};
         			inDataClaim2.claim.policyType = 'Multiple';
-        			inDataClaim2.claim.addressOnFile = '123 Main Street, Indianapolis, IN 46077';
+        			inDataClaim2.claim.addressOnFile = '79 Locust StreetGlen Cove, NY 11542';
         			inDataClaim2.claim.addressOnFileNotPObox = 'T';
         			inDataClaim2.claim.addressOnFileIsUSA = 'T';
         			inDataClaim2.claim.isCFAR = 'T';
-        
+
         			const inDataClaim3 = {};
         			inDataClaim3.claim = {};
         			inDataClaim3.claim.policyType = 'Individual';
         			inDataClaim3.claim.isCFAR = 'F';
-        
+
         			const inDataClaim4 = {};
         			inDataClaim4.claim = {};
         			inDataClaim4.claim.policyType = 'Multiple';
-        			inDataClaim4.claim.isCFAR = 'F';
-        			inDataClaim4.claim.addressOnFileNotPObox = 'F';
-        			inDataClaim4.claim.addressOnFileIsUSA = 'T';
-        
+        			inDataClaim4.claim.isCFAR = 'T';
+
         			const inDataClaim5 = {};
         			inDataClaim5.claim = {};
-        			inDataClaim5.claim.policyType = 'Multiple';
+        			inDataClaim5.claim.policyType = 'Individual';
         			inDataClaim5.claim.isCFAR = 'F';
+              inDataClaim5.claim.addressOnFile = '793 Mayflower Dr. Cartersville, GA 30120';
         			inDataClaim5.claim.addressOnFileNotPObox = 'F';
         			inDataClaim5.claim.addressOnFileIsUSA = 'T';
-        
+
         			// Must correspond with the order of the DS inclusion
         			allInputData.push(inDataClaim1);
         			allInputData.push(inDataClaim2);
@@ -135,7 +134,7 @@
         			allInputData.push(inDataClaim5);
         			inputData = allInputData[0];
         		}
-        
+
         		function restoreUIState() {
         			const show = window.localStorage.getItem('CorticonShowDSTrace');
         			if (show !== null) {
@@ -145,23 +144,23 @@
         					processHideTrace();
         			}
         		}
-        
+
         		$(document).ready(function() {
         			currentDecisionServiceEngine = window.corticonEngines[0];
-        
+
         			setupInitialInputData();
-        
+
         			itsTracer.setupTracing();
-        
+
         			restoreUIState();
-        
+
         			// addCustomEventHandler( BEFORE_START, () =>  );
         			corticon.dynForm.addCustomEventHandler(corticon.dynForm.customEvents.AFTER_START, () => {
         				$("#nextActionId").show();
         				$("#startActionId").hide();
         				$("#sampleSelectId").attr('disabled', true);
         			});
-        
+
         			corticon.dynForm.addCustomEventHandler(corticon.dynForm.customEvents.AFTER_DONE, () => {
         				$("#nextActionId").hide();
         				$("#startActionId").show();
@@ -180,13 +179,13 @@
             <td valign="top">
                 <div class="commandBar">
                     <div class="commandContainer">
-                        <div class="sampleSelectLabel">Select Sample:</div>
+                        <div class="sampleSelectLabel">Select Test Inputs:</div>
                         <select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
-							<option value="0">Test Case 1</option>
-							<option value="1">Test Case 2</option>
-							<option value="2">Test Case 3</option>
-							<option value="3">Test Case 4</option>
-							<option value="4">Test Case 5</option>
+                          <option value="0">Indiv, addressOnFile, notPOBox, addressInUSA, is CFAR</option>
+                          <option value="1">Multiple, addressOnFile, notPOBox, addressInUSA, is CFAR</option>
+                          <option value="2">Indiv, no CFAR</option>
+                          <option value="3">Multiple, is CFAR</option>
+                          <option value="4">Indiv, addressInUSA, is PO Box, addressInUSA, no CFAR</option>
 						</select>
                     </div>
 
