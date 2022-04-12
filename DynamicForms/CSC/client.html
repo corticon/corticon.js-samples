@@ -20,173 +20,154 @@
     <!-- To see these icons or search for some see: https://icons.getbootstrap.com/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-    <!--
+	<!--
 	The order of inclusion is critical. It defines the order in which the decision services are indexed and must correspond to the order
 	of the options in the switch sample Select dropdown
 	-->
-    <script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
-    <script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
-    <script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
-    <script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
-    <script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
-    <script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/MultipleSteps2/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/validation/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/taxes/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/ReusingSubflows/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/JobApplication/browser/decisionServiceBundle.js"></script>
 
-    <script>
-        let currentDecisionServiceEngine;
-        		let allInputData = [];
-        		let inputData; // per decision service set of data to pass all along
-        		let itsCurrentLanguage = 'english';
-        
-        		const itsTracer = new Tracer();
-        		const itsStepsController = new corticon.dynForm.StepsController();
-        
-        		function processSwitchSample(selectObject) {
-        			const index = selectObject.value;
-        			currentDecisionServiceEngine = window.corticonEngines[index];
-        			inputData = allInputData[index];
-        
-        			if (index === "5")
-        				$("#languageContainerId").show();
-        			else
-        				$("#languageContainerId").hide();
-        		}
-        
-        		function processSwitchLanguage(selectObject) {
-        			itsCurrentLanguage = selectObject.value;
-        		}
-        
-        		function processClickStart() {
-        			const baseDynamicUIEl = $('#dynUIContainerId');
-        			itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage);
-        		}
-        
-        		function processClickNext() {
-        			const baseDynamicUIEl = $('#dynUIContainerId');
-        			itsStepsController.processNextStep(baseDynamicUIEl, currentDecisionServiceEngine, itsCurrentLanguage);
-        		}
-        
-        		function saveStateButton(show) {
-        			// save it in local storage for restore  on reload
-        			try {
-        				window.localStorage.setItem('CorticonShowDSTrace', show);
-        			} catch (e) {
-        				// Some browser in private mode may throw exception when using local storage
-        			}
-        		}
-        
-        		function processShowTrace() {
-        			const traceEl = $('.allTracesContainer');
-        			traceEl.show();
-        			$("#hideTraceId").show();
-        			$("#showTraceId").hide();
-        			saveStateButton(true);
-        		}
-        
-        		function processHideTrace() {
-        			const traceEl = $('.allTracesContainer');
-        			traceEl.hide();
-        			$("#showTraceId").show();
-        			$("#hideTraceId").hide();
-        			saveStateButton(false);
-        		}
-        
-        		function setupInitialInputData() {
-							const inDataEmpty = {};
-        			const inDataClaim1 = {};
-        			inDataClaim1.claim = {};
-        			inDataClaim1.claim.policyType = 'Individual';
-        			inDataClaim1.claim.addressOnFile = '123 Main Street, Indianapolis, IN 46077';
-        			inDataClaim1.claim.addressOnFileNotPObox = 'T';
-        			inDataClaim1.claim.addressOnFileIsUSA = 'T';
-        			inDataClaim1.claim.isCFAR = 'T';
-        
-        			const inDataClaim2 = {};
-        			inDataClaim2.claim = {};
-        			inDataClaim2.claim.policyType = 'Multiple';
-        			inDataClaim2.claim.addressOnFile = '123 Main Street, Indianapolis, IN 46077';
-        			inDataClaim2.claim.addressOnFileNotPObox = 'T';
-        			inDataClaim2.claim.addressOnFileIsUSA = 'T';
-        			inDataClaim2.claim.isCFAR = 'T';
-        
-        			const inDataClaim3 = {};
-        			inDataClaim3.claim = {};
-        			inDataClaim3.claim.policyType = 'Individual';
-        			inDataClaim3.claim.isCFAR = 'F';
-        
-        			const inDataClaim4 = {};
-        			inDataClaim4.claim = {};
-        			inDataClaim4.claim.policyType = 'Multiple';
-        			inDataClaim4.claim.isCFAR = 'F';
-        			inDataClaim4.claim.addressOnFileNotPObox = 'F';
-        			inDataClaim4.claim.addressOnFileIsUSA = 'T';
-        
-        			const inDataClaim5 = {};
-        			inDataClaim5.claim = {};
-        			inDataClaim5.claim.policyType = 'Multiple';
-        			inDataClaim5.claim.isCFAR = 'F';
-        			inDataClaim5.claim.addressOnFileNotPObox = 'F';
-        			inDataClaim5.claim.addressOnFileIsUSA = 'T';
-        
-        			// Must correspond with the order of the DS inclusion
-        			allInputData.push(inDataClaim1);
-        			allInputData.push(inDataClaim2);
-        			allInputData.push(inDataClaim3);
-        			allInputData.push(inDataClaim4);
-        			allInputData.push(inDataClaim5);
-        			inputData = allInputData[0];
-        		}
-        
-        		function restoreUIState() {
-        			const show = window.localStorage.getItem('CorticonShowDSTrace');
-        			if (show !== null) {
-        				if (show === 'true')
-        					processShowTrace();
-        				else if (show === 'false')
-        					processHideTrace();
-        			}
-        		}
-        
-        		$(document).ready(function() {
-        			currentDecisionServiceEngine = window.corticonEngines[0];
-        
-        			setupInitialInputData();
-        
-        			itsTracer.setupTracing();
-        
-        			restoreUIState();
-        
-        			// addCustomEventHandler( BEFORE_START, () =>  );
-        			corticon.dynForm.addCustomEventHandler(corticon.dynForm.customEvents.AFTER_START, () => {
-        				$("#nextActionId").show();
-        				$("#startActionId").hide();
-        				$("#sampleSelectId").attr('disabled', true);
-        			});
-        
-        			corticon.dynForm.addCustomEventHandler(corticon.dynForm.customEvents.AFTER_DONE, () => {
-        				$("#nextActionId").hide();
-        				$("#startActionId").show();
-        				$('#dynUIContainerId').html('<div style="margin: 2em; font-size: larger;">&nbsp;<i class="bi bi-check-circle"></i>All Done</div>');
-        				$("#sampleSelectId").attr('disabled', false);
-        			});
-        		});
-    </script>
+	<script>
+		let currentDecisionServiceEngine;
+		let allInputData = [];
+		let inputData; // per decision service initial data set (external data)
+		let itsCurrentLanguage = 'english';
+		let itsQuestionnaireKey = '0';
+
+		const itsTracer = new Tracer();
+		const itsStepsController = new corticon.dynForm.StepsController();
+
+		function processSwitchSample(selectObject) {
+			const index = selectObject.value;
+			currentDecisionServiceEngine = window.corticonEngines[index];
+			inputData = allInputData[index];
+			itsQuestionnaireKey = index;
+
+			if ( index === "5" )
+				$("#languageContainerId").show();
+			else
+				$("#languageContainerId").hide();
+		}
+
+		function processSwitchLanguage(selectObject) {
+			itsCurrentLanguage = selectObject.value;
+		}
+
+		function processClickStart() {
+			const baseDynamicUIEl = $('#dynUIContainerId');
+			itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage, itsQuestionnaireKey);
+		}
+
+		function processClickNext() {
+			const baseDynamicUIEl = $('#dynUIContainerId');
+			itsStepsController.processNextStep(baseDynamicUIEl, currentDecisionServiceEngine, itsCurrentLanguage);
+		}
+
+		function saveStateButton(show) {
+			// save it in local storage for restore  on reload
+			try {
+				window.localStorage.setItem('CorticonShowDSTrace', show);
+			} catch (e) {
+				// Some browser in private mode may throw exception when using local storage
+			}
+		}
+
+		function processShowTrace() {
+			const traceEl = $('.allTracesContainer');
+			traceEl.show();
+			$("#hideTraceId").show();
+			$("#showTraceId").hide();
+			saveStateButton(true);
+		}
+		function processHideTrace() {
+			const traceEl = $('.allTracesContainer');
+			traceEl.hide();
+			$("#showTraceId").show();
+			$("#hideTraceId").hide();
+			saveStateButton(false);
+		}
+		function setupInitialInputData() {
+			const inDataEmpty = {};
+			const inDataCanonical = inDataEmpty;
+			const inDataTaxes = inDataEmpty;
+			const inDataValidation = inDataEmpty;
+			const inJobApplication = inDataEmpty;
+
+			const inDataReuseSubflow = {};
+			inDataReuseSubflow.reusingSubflows = {};
+			inDataReuseSubflow.reusingSubflows.SubflowField2 = '0';
+
+			const inDataClaim = {};
+			inDataClaim.claim = {};
+			inDataClaim.claim.policyType = 'Individual';
+
+			// Must correspond with the order of the DS inclusion
+			allInputData.push(inDataCanonical);
+			allInputData.push(inDataValidation);
+			allInputData.push(inDataTaxes);
+			allInputData.push(inDataClaim);
+			allInputData.push(inDataReuseSubflow);
+			allInputData.push(inJobApplication);
+
+			inputData = allInputData[0];
+		}
+
+		function restoreUIState() {
+			const show = window.localStorage.getItem('CorticonShowDSTrace');
+			if ( show !== null  ) {
+				if ( show === 'true' )
+					processShowTrace();
+				else if ( show === 'false' )
+					processHideTrace();
+			}
+		}
+
+		$( document ).ready(function() {
+			currentDecisionServiceEngine = window.corticonEngines[0];
+
+			setupInitialInputData();
+
+			itsTracer.setupTracing();
+
+			restoreUIState();
+
+			// addCustomEventHandler( BEFORE_START, () =>  );
+			corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.AFTER_START, () => {
+				$("#nextActionId").show();
+				$("#startActionId").hide();
+				$("#sampleSelectId").attr('disabled', true);
+			});
+
+			corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.AFTER_DONE, () => {
+				$("#nextActionId").hide();
+				$("#startActionId").show();
+				$('#dynUIContainerId').html('<div style="margin: 2em; font-size: larger;">&nbsp;<i class="bi bi-check-circle"></i>All Done</div>');
+				$("#sampleSelectId").attr('disabled', false);
+			});
+		});
+	</script>
 </head>
 
 <body>
     <div class="sampleTitle"><i class="bi bi-file-earmark-ruled"></i>&nbsp;Test Driver for Rules Driven Dynamic Forms</div>
 
-    <table width="100%">
-        <tr>
-            <td valign="top">
-                <div class="commandBar">
-                    <div class="commandContainer">
-                        <div class="sampleSelectLabel">Select Sample:</div>
-                        <select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
-							<option value="0">Test Case 1</option>
-							<option value="1">Test Case 2</option>
-							<option value="2">Test Case 3</option>
-							<option value="3">Test Case 4</option>
-							<option value="4">Test Case 5</option>
+	<table width="100%">
+		<tr>
+			<td valign="top">
+				<div class="commandBar">
+					<div class="commandContainer">
+						<div class="sampleSelectLabel">Select Sample:</div>
+						<select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
+							<option value="0">Canonical</option>
+							<option value="3">Travel Claim</option>
+							<option value="1">Validation</option>
+							<option value="2">Taxes</option>
+							<option value="4">Reusing Subflow</option>
+							<option value="5">Job Application</option>
 						</select>
                     </div>
 
