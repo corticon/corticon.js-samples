@@ -9,54 +9,22 @@ corticon.dynForm.StepsController = function () {
     let itsFormData;
     let itsFlagAllDone;
     let itsLabelPositionAtUILevel;
-    let itsQuestionnaireName;
-    let itsInitialLanguage;
 
     const itsUIControlsRenderer = new corticon.dynForm.UIControlsRenderer();
 
-    function startDynUI( baseDynamicUIEl, decisionServiceEngine, externalData, language, questionnaireName ) {
-        itsQuestionnaireName = questionnaireName;
-        itsInitialLanguage = language;
+    function startDynUI( baseDynamicUIEl, decisionServiceEngine, externalData, language ) {
+        _resetDecisionServiceInput(language);
+        _resetState();
 
-        const restartData = getRestartData (questionnaireName);
-        if ( restartData === null ) {
-            setStateForStartFromBeginning(language, externalData);
-        }
-        else {
-            const dialog = confirm("Do you want to start from where you left last time?");
-            if (dialog) {
-                setStateFromRestartData(questionnaireName, restartData);
-            }
-            else {
-                clearRestartData(questionnaireName);
-                setStateForStartFromBeginning(language, externalData);
-            }
-        }
+        // We do a deep Copy of externalData.  We need to do that to be able to start more than once
+        // (if we don't copy, _resetDecisionServiceInput will erase the original externalData)
+        itsDecisionServiceInput[1] = JSON.parse(JSON.stringify(externalData));
 
         corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.BEFORE_START);
 
         _askDecisionServiceForNextUIElementsAndRender( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
 
         corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.AFTER_START);
-    }
-
-    function setStateForStartFromBeginning(language, externalData) {
-        _resetDecisionServiceInput(language);
-
-        itsFormData = null;
-        itsFlagAllDone = false;
-        itsPathToData = null;
-        itsLabelPositionAtUILevel = "Above"; // Default
-
-        // We do a deep Copy of externalData.  We need to do that to be able to start more than once
-        // (if we don't copy, _resetDecisionServiceInput will erase the original externalData)
-        itsDecisionServiceInput[1] = JSON.parse(JSON.stringify(externalData));
-    }
-
-    function setStateFromRestartData(questionnaireName, restartData) {
-        itsPathToData = getPathToData(questionnaireName);
-        itsDecisionServiceInput = restartData;
-        itsFormData = itsDecisionServiceInput[1];
     }
 
     function processNextStep(baseDynamicUIEl, decisionServiceEngine, language) {
@@ -67,12 +35,10 @@ corticon.dynForm.StepsController = function () {
 
         // If previous call to decision service returned done then reset ui to restart and in this sample we just display the form data in debug panel
         if ( itsFlagAllDone ) {
-            clearRestartData(itsQuestionnaireName);
             corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.AFTER_DONE);
         }
         else {
-            _preparePayloadForNextStage (itsDecisionServiceInput[0].nextStageNumber);
-            const restartData = JSON.stringify(itsDecisionServiceInput); // save before call
+            _preparePayloadForNextStage (itsDecisionServiceInput[0].nextStageNumber, language);
             let nextUI = _askDecisionServiceForNextUIElementsAndRender ( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
             // Execute all the steps that are just computation steps till we get a step that require rendering (in which case we will wait for user input and click next)
             while ( nextUI.noUiToRenderContinue !== undefined && nextUI.noUiToRenderContinue ) {
@@ -83,42 +49,8 @@ corticon.dynForm.StepsController = function () {
                     break;
             }
 
-            // now that we have skipped noUIToRender steps we can save the restart data
-            saveRestartData(itsQuestionnaireName, restartData);
-
             itsFlagAllDone = nextUI.done;
         }
-    }
-
-    function clearRestartData( decisionServiceName ) {
-        // try {
-            window.localStorage.removeItem('CorticonRestartPayload_'+decisionServiceName);
-            window.localStorage.removeItem('CorticonRestartPathToData_'+decisionServiceName);
-        // } catch (e) {
-        //     // Some browser in private mode may throw exception when using local storage
-        // }
-    }
-
-    function saveRestartData( decisionServiceName, payload ) {
-        // save it in local storage for restore on reload
-        try {
-            window.localStorage.setItem('CorticonRestartPayload_'+decisionServiceName, payload);
-            window.localStorage.setItem('CorticonRestartPathToData_'+decisionServiceName, itsPathToData);
-        } catch (e) {
-            // Some browser in private mode may throw exception when using local storage
-        }
-    }
-
-    // returns null when no restart data present
-    function getRestartData(decisionServiceName) {
-        const payload = window.localStorage.getItem('CorticonRestartPayload_'+decisionServiceName);
-        if ( payload !== null )
-            return JSON.parse(payload);
-        else
-            return null;
-    }
-    function getPathToData(decisionServiceName) {
-        return window.localStorage.getItem('CorticonRestartPathToData_'+decisionServiceName);
     }
 
     function _resetDecisionServiceInput(language) {
@@ -129,25 +61,21 @@ corticon.dynForm.StepsController = function () {
     }
 
     function _preparePayloadForNextStage( nextStage, language ) {
-        // clear all previous step data except a few state fields like stageOnExit, language, labelPosition
-        const nextPayload = {};
-        const stateProperties = ['stageOnExit', 'language', 'labelPosition', 'pathToData'];
-        // const stateProperties = ['stageOnExit', 'language', 'pathToData'];
-        for ( let i=0; i<stateProperties.length; i++ ) {
-            const prop = stateProperties[i];
-            if ( itsDecisionServiceInput[0][prop] !== undefined )
-                nextPayload[prop] = itsDecisionServiceInput[0][prop];
+        for (const property in itsDecisionServiceInput[0]) // clear all previous step data except stageOnExit
+        {
+            if ( property !== 'stageOnExit' )
+                delete itsDecisionServiceInput[0][property];
         }
 
-        nextPayload.currentStageNumber = nextStage;
+        itsDecisionServiceInput[0].currentStageNumber = nextStage;
+        itsDecisionServiceInput[0].language = language;
+    }
 
-        // Special process language:
-        // On start we accept the language from the UI but a decision service may switch the language based on some rules
-        if ( language !== undefined ) {
-            nextPayload['language'] = language;
-        }
-
-        itsDecisionServiceInput[0] = nextPayload;
+    function _resetState() {
+        itsFormData = null;
+        itsFlagAllDone = false;
+        itsPathToData = null;
+        itsLabelPositionAtUILevel = "Above"; // Default
     }
 
     function _processLabelPositionSetting ( newLabelPosition ) {
@@ -302,6 +230,7 @@ corticon.dynForm.StepsController = function () {
             itsFormData[itsPathToData][formDataFieldName] = outerArray;
         }
     }
+
 
     function _runDecisionService(decisionServiceEngine, payload ) {
         try {
