@@ -19,22 +19,41 @@
 	<!-- To see these icons or search for some see: https://icons.getbootstrap.com/ -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
+<!--
+TODO: create second html for second example
+Remember last selected sample -> local storage
+Add stageDescription
+Add UI mode to keep all previous questions on screen (readonly? what about if user wants to change - better to start with implementing previous step?)
+Add data source prop to UI and implement a select from json
+Add hyperlink field type
+Add currency input field
+Add layout % width sample
+create sample with multiple desicion services (one flow with 2 DS)
+multiple containers per step
+do required fields -> add css class (could disable next but that's lots of work - better to do it later after componentization)
+create second canonical project with branching instead of filter.
+
+Icons: https://web3canvas.com/font-awesome-alternatives/
+-->
+
 	<!--
 	The order of inclusion is critical. It defines the order in which the decision services are indexed and must correspond to the order
 	of the options in the switch sample Select dropdown
 	-->
-	<script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/MultipleSteps2/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/validation/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/taxes/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/ReusingSubflows/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/JobApplication/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/MultiContainer/browser/decisionServiceBundle.js"></script>
 
 	<script>
 		let currentDecisionServiceEngine;
 		let allInputData = [];
-		let inputData; // per decision service set of data to pass all along
+		let inputData; // per decision service initial data set (external data)
 		let itsCurrentLanguage = 'english';
+		let itsQuestionnaireKey = '0';
 
 		const itsTracer = new Tracer();
 		const itsStepsController = new corticon.dynForm.StepsController();
@@ -43,6 +62,7 @@
 			const index = selectObject.value;
 			currentDecisionServiceEngine = window.corticonEngines[index];
 			inputData = allInputData[index];
+			itsQuestionnaireKey = index;
 
 			if ( index === "5" )
 				$("#languageContainerId").show();
@@ -56,7 +76,7 @@
 
 		function processClickStart() {
 			const baseDynamicUIEl = $('#dynUIContainerId');
-			itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage);
+			itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage, itsQuestionnaireKey);
 		}
 
 		function processClickNext() {
@@ -93,6 +113,7 @@
 			const inDataTaxes = inDataEmpty;
 			const inDataValidation = inDataEmpty;
 			const inJobApplication = inDataEmpty;
+			const inMulticontainer = inDataEmpty;
 
 			const inDataReuseSubflow = {};
 			inDataReuseSubflow.reusingSubflows = {};
@@ -101,15 +122,15 @@
 			const inDataClaim = {};
 			inDataClaim.claim = {};
 			inDataClaim.claim.policyType = 'Individual';
-			inDataClaim.claim.firstName = 'Seth';
 
 			// Must correspond with the order of the DS inclusion
-			allInputData.push(inDataClaim);
 			allInputData.push(inDataCanonical);
 			allInputData.push(inDataValidation);
 			allInputData.push(inDataTaxes);
+			allInputData.push(inDataClaim);
 			allInputData.push(inDataReuseSubflow);
 			allInputData.push(inJobApplication);
+			allInputData.push(inMulticontainer);
 
 			inputData = allInputData[0];
 		}
@@ -159,19 +180,19 @@
 					<div class="commandContainer">
 						<div class="sampleSelectLabel">Select Sample:</div>
 						<select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
-							<option value="0">Travel Claim</option>
-							<option value="1">Canonical</option>
-							<option value="2">Validation</option>
-							<option value="3">Taxes</option>
+							<option value="0">Canonical</option>
+							<option value="3">Travel Claim</option>
+							<option value="1">Validation</option>
+							<option value="2">Taxes</option>
 							<option value="4">Reusing Subflow</option>
 							<option value="5">Job Application</option>
+							<option value="6">Multi Container</option>
 						</select>
 					</div>
 
 					<div style="display: none;" id="languageContainerId">
 						<div class="commandVerticalSpacer">&nbsp;</div>
 						<div class="commandContainer">
-	<!--						<div class="sampleSelectLabel">Select Language:</div>-->
 							<select class="sampleSelect" id="languageSelectId" onchange="processSwitchLanguage(this)">
 								<option value="english">English</option>
 								<option value="italian">Italiano</option>
