@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_eo-cQqDLEey8Zv0keitg2Q" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_obDu3q_IEeyM9OrX8KTwcw" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_QX3HIaAHEeynYcbYBLy0bg" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_oXIRE6_IEeyM9OrX8KTwcw" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action disabled="true"/>
       <action/>
@@ -147,6 +147,20 @@
           </parserOutput>
         </opaqueExpression>
       </action>
+      <action>
+        <opaqueExpression expression="UI.currentStageDescription = 'This is implemented in Step4.ers'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageDescription = 'This is implemented in Step4.ers'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="currentStageDescription" datatype="String" termtype="ATTRIBUTE" fulltext="UI.currentStageDescription">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
     </rule>
     <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
       <opaqueExpression expression="UI.currentStageNumber = 4">
@@ -167,6 +181,7 @@
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/done"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageDescription"/>
     </logicalVariable>
     <logicalVariable entity="../Vocabulary/Vocab.ecore#//Container">
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//Container/id"/>
@@ -350,6 +365,21 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.currentStageDescription = 'This is implemented in Step4.ers'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageDescription = 'This is implemented in Step4.ers'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="currentStageDescription" datatype="String" termtype="ATTRIBUTE" fulltext="UI.currentStageDescription">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
     </actionSection>
     <scopeSection>
       <rootNode>
@@ -364,6 +394,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
         </children>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
@@ -414,6 +445,7 @@
             </referencedTermList>
           </parserOutput>
         </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
     </ruleSection>
   </rulesheetViewList>

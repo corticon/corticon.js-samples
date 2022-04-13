@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_s2TEwaepEeym28bJRis_8Q" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_ZSMXk6u9EeyCrcI7dm-VtA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_MCS3caeOEeyCxPBNdjP98A" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_Em5Ukau6EeyCrcI7dm-VtA" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action disabled="true"/>
       <action/>
@@ -30,8 +30,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='MultipleChoices', label='Question 1', id='crtl5_1', fieldName='Step5Field1', dataSource = 'someURL/question1/options']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 1' , UIControl.id = 'crtl5_1' , UIControl.fieldName = 'Step5Field1' , UIControl.dataSource = 'someURL/question1/options' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='MultipleChoices', label='Question 1', id='crtl5_1', fieldName='Step5Field1']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 1' , UIControl.id = 'crtl5_1' , UIControl.fieldName = 'Step5Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -51,9 +51,6 @@
               </terms>
               <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.fieldName">
-                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
-              </terms>
-              <terms text="dataSource" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.dataSource">
                 <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.label">
@@ -273,6 +270,20 @@
           </parserOutput>
         </opaqueExpression>
       </action>
+      <action>
+        <opaqueExpression expression="UI.currentStageDescription = 'This is implemented in Step5.ers'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageDescription = 'This is implemented in Step5.ers'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="currentStageDescription" datatype="String" termtype="ATTRIBUTE" fulltext="UI.currentStageDescription">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
     </rule>
     <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
       <opaqueExpression expression="UI.currentStageNumber = 5">
@@ -295,6 +306,7 @@
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/done"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageDescription"/>
     </logicalVariable>
     <logicalVariable entity="../Vocabulary/Vocab.ecore#//Container">
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//Container/id"/>
@@ -358,10 +370,10 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList rowHeight="71">
+      <actionItemList rowHeight="44">
         <valueSetCell valueSet=""/>
-        <expressionCell external="UI.containers.uiControls += UIControl.new[type='MultipleChoices', label='Question 1', id='crtl5_1', fieldName='Step5Field1', dataSource = 'someURL/question1/options']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 1' , UIControl.id = 'crtl5_1' , UIControl.fieldName = 'Step5Field1' , UIControl.dataSource = 'someURL/question1/options' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls += UIControl.new[type='MultipleChoices', label='Question 1', id='crtl5_1', fieldName='Step5Field1']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 1' , UIControl.id = 'crtl5_1' , UIControl.fieldName = 'Step5Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -383,9 +395,6 @@
               <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.fieldName">
                 <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="dataSource" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.dataSource">
-                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
-              </terms>
               <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.label">
                 <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
@@ -396,7 +405,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="38">
         <valueSetCell valueSet=""/>
         <expressionCell external="UI.containers.uiControls.option += Option.new[value='choice1', displayName='choice 1']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'choice1' , Option.displayName = 'choice 1' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -429,7 +438,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="39">
         <valueSetCell valueSet=""/>
         <expressionCell external="UI.containers.uiControls.option += Option.new[value='choice2', displayName='choice 2']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'choice2' , Option.displayName = 'choice 2' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -462,7 +471,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="40">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls.option += Option.new[value='choice3', displayName='choice 3']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'choice3' , Option.displayName = 'choice 3' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -495,7 +504,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="40">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls.option += Option.new[value='choice4', displayName='choice 4']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'choice4' , Option.displayName = 'choice 4' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -528,7 +537,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="40">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls.option += Option.new[value='choice5', displayName='choice 5']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'choice5' , Option.displayName = 'choice 5' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -561,7 +570,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList rowHeight="34">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls.option += Option.new[value='choice6', displayName='choice 6']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'choice6' , Option.displayName = 'choice 6' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -610,6 +619,21 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.currentStageDescription = 'This is implemented in Step5.ers'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageDescription = 'This is implemented in Step5.ers'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="currentStageDescription" datatype="String" termtype="ATTRIBUTE" fulltext="UI.currentStageDescription">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
     </actionSection>
     <scopeSection>
       <rootNode>
@@ -626,6 +650,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
         </children>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
@@ -684,6 +709,7 @@
             </referencedTermList>
           </parserOutput>
         </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
     </ruleSection>
   </rulesheetViewList>

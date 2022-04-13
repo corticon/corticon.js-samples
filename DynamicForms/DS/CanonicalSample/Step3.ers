@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_a7fd4aDLEey8Zv0keitg2Q" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_oZ7ti6_IEeyM9OrX8KTwcw" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_QX3HIaAHEeynYcbYBLy0bg" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_oXIRE6_IEeyM9OrX8KTwcw" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action>
         <opaqueExpression expression="UI.containers = Container.new[id='thirdContainerId', title='Questions Conditional to Previous Answers - Reference: Step3.ers']">
@@ -41,6 +41,20 @@
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 4" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.currentStageDescription = 'This is implemented in Step3.ers'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageDescription = 'This is implemented in Step3.ers'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="currentStageDescription" datatype="String" termtype="ATTRIBUTE" fulltext="UI.currentStageDescription">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </modifiedTermList>
@@ -439,6 +453,7 @@
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/str1"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/str2"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/comments"/>
+      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageDescription"/>
     </logicalVariable>
     <logicalVariable entity="../Vocabulary/Vocab.ecore#//UIControl">
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/value"/>
@@ -465,7 +480,7 @@
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightAdvancedView="25" sashWeightScope="57" sashWeightConditionsIf="63">
-    <actionSection rowCount="54" columnWidthFactor="0.5">
+    <actionSection rowCount="54" scrollRowTop="5" columnWidthFactor="0.5">
       <actionItemList>
         <valueSetCell/>
         <expressionCell external="UI.containers = Container.new[id='thirdContainerId', title='Questions Conditional to Previous Answers - Reference: Step3.ers']">
@@ -696,6 +711,21 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.currentStageDescription = 'This is implemented in Step3.ers'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageDescription = 'This is implemented in Step3.ers'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="currentStageDescription" datatype="String" termtype="ATTRIBUTE" fulltext="UI.currentStageDescription">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
     </actionSection>
     <scopeSection>
       <rootNode>
@@ -712,6 +742,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
         </children>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
@@ -840,6 +871,7 @@
             </referencedTermList>
           </parserOutput>
         </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
       <ruleColumnList ruleId="1" columnWidth="152" pRule="#//@ruleset/@rules.1">
         <conditionValueSetCellList valueSet="'2022-01-01'">
