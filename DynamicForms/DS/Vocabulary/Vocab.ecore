@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.canonicalvocabularymodel="http:///com/corticon/rulesemf/canonicalvocabularymodel.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="root" nsURI="http://root/1.0" nsPrefix="root">
   <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_OKD2UK1OEeyYDL1RwIbSqg" externalChecksum="547642878:507989954" studioType="Javascript" customDataTypeDisplayCount="37">
+    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_oXIRE6_IEeyM9OrX8KTwcw" externalChecksum="547642878:507989954" studioType="Javascript" customDataTypeDisplayCount="37">
       <languageCode>en_US</languageCode>
       <databaseAccess databasePropertyDisplayCount="50"/>
       <customDataTypeList enumerationDisplayCount="50" eDataType="#//UIControlType">
@@ -1063,7 +1063,7 @@
           <value manuallyCreated="true" value="'Other'"/>
         </enumerationElements>
       </customDataTypeList>
-      <customDataTypeList enumerationDisplayCount="50">
+      <customDataTypeList enumerationDisplayCount="50" eDataType="#//claimPath">
         <dataTypeName manuallyCreated="true" value="claimPath"/>
         <baseDataType manuallyCreated="true" value="String"/>
         <enumeration value="true"/>
@@ -1886,6 +1886,19 @@
     <eLiterals name="V2" value="2" literal="'Military Duty'"/>
     <eLiterals name="V3" value="3" literal="'Other'"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="claimPath">
+    <eLiterals name="V0" literal="'Sickness - indiv'"/>
+    <eLiterals name="V1" value="1" literal="'Sickness - mult'"/>
+    <eLiterals name="V2" value="2" literal="'Injury - indiv'"/>
+    <eLiterals name="V3" value="3" literal="'Injury - mult'"/>
+    <eLiterals name="V4" value="4" literal="'Death - indiv'"/>
+    <eLiterals name="V5" value="5" literal="'Death - mult'"/>
+    <eLiterals name="V6" value="6" literal="'Weather - either'"/>
+    <eLiterals name="V7" value="7" literal="'Job Related - indiv'"/>
+    <eLiterals name="V8" value="8" literal="'Job Related - mult'"/>
+    <eLiterals name="V9" value="9" literal="'Other - indiv'"/>
+    <eLiterals name="V10" value="10" literal="'Other - mult'"/>
+  </eClassifiers>
   <eSubpackages name="ProjectsData" nsURI="http://root/ProjectsData/1.0" nsPrefix="root.ProjectsData">
     <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
       <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:DomainExtension">
@@ -2512,7 +2525,7 @@
           </contents>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="claimPath">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="claimPath" eType="#//claimPath">
         <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
           <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension" customDataType="#//%http:%2F%2F%2Fcom%2Fcorticon%2Frulesemf%2Fcanonicalvocabularymodel%2FVocabularyExtension%/@contents.0/@customDataTypeList.13">
             <name manuallyCreated="true" value="claimPath"/>
