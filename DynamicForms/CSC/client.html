@@ -68,6 +68,17 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 				$("#languageContainerId").show();
 			else
 				$("#languageContainerId").hide();
+
+			saveStateSelectedSample(index);
+		}
+
+		function saveStateSelectedSample(index) {
+			// save it in local storage for restore on reload
+			try {
+				window.localStorage.setItem('CorticonSelectedSample', index);
+			} catch (e) {
+				// Some browser in private mode may throw exception when using local storage
+			}
 		}
 
 		function processSwitchLanguage(selectObject) {
@@ -142,6 +153,12 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 					processShowTrace();
 				else if ( show === 'false' )
 					processHideTrace();
+			}
+
+			const selectedSample = window.localStorage.getItem('CorticonSelectedSample');
+			if ( selectedSample !== null ) {
+				const selector = `#sampleSelectId option[value='${selectedSample}']`
+				$(selector).prop('selected', true);
 			}
 		}
 
