@@ -31,6 +31,10 @@ reused for multiple questionnaires without any changes.  This promotes agility f
 
 The CSC renders the questionnaire following the instructions from a set of rules embedded in a decision service (DS).
 
+Here is a visual representation:
+
+![Big picture view](docs/images/bigPic.PNG)
+
 The CSC does not know the questions to be asked at each step and what the answers mean but it knows
 how to render these questions and collect the answers.
 
@@ -40,7 +44,19 @@ answers.  The DS do not know the current state of the questionnaire but know wha
 Typically, a CSC is written and maintained by a developer or a team of developers while the DS are written by business analysts 
 who understand well the problem domain of the questionnaire.
 
+Here is a summary of the roles and responsibilities:
+
+![Big picture view](docs/images/RolesResponsibilities.PNG)
+
 For more detail on the CSC and the DS please refer to these documents:
 1. [Authoring a decision service (DS)](docs/AuthoringDecisionService.md)
 2. [Authoring a client side component (CSC)](docs/AuthoringClientSideComponents.md)
+
+## Definition - Terms
+
+* Rulesheet: the Corticon condition and actions sheet where the modeler specifies the business rules for rendering the dynamic questionnaire
+* Ruleflow: the Corticon unit of decision service deployment.
+* Flow: The set of stages the user goes through in a specific scenario (Synonym with path)
+* Stage: a unique identifier representing where the flow currently is at in the state machine.
+
 
