@@ -24,6 +24,25 @@ front end UI and device.
 
 Note: These forms are sometimes called Dynamic Questionnaires.  
 
+## Definition - Terms
+
+* Rulesheet: the Corticon condition and actions sheet where the modeler specifies the business rules for rendering the dynamic questionnaire
+* Ruleflow: the Corticon unit of decision service deployment.
+* Flow: The set of stages the user goes through in a specific scenario (Synonym with path)
+* Stage: a unique identifier representing where the flow currently is at in the state machine.
+
+
+## Getting Started
+
+To make it easy to familiarize yourself with the concepts, we have made available several samples 
+that you can run from a test driver web page.
+
+To get started:
+* invoke client.html (available at https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html)
+* go through each sample to get a feel for what is available
+* Run the canonical sample. Each step in this sample shows how to use a specific UI control and display
+the corresponding Corticon rulesheet file in the title of the container.  You can then use the corresponding step rulesheet as an example to implement what you need.
+  
 ## Design
 
 These Dynamic Questionnaires are rendered by a generic client side component (CSC).  
@@ -55,12 +74,5 @@ Here is a summary of the roles and responsibilities:
 For more detail on the CSC and the DS please refer to these documents:
 1. [Authoring a decision service (DS)](docs/AuthoringDecisionService.md)
 2. [Authoring a client side component (CSC)](docs/AuthoringClientSideComponents.md)
-
-## Definition - Terms
-
-* Rulesheet: the Corticon condition and actions sheet where the modeler specifies the business rules for rendering the dynamic questionnaire
-* Ruleflow: the Corticon unit of decision service deployment.
-* Flow: The set of stages the user goes through in a specific scenario (Synonym with path)
-* Stage: a unique identifier representing where the flow currently is at in the state machine.
 
 
