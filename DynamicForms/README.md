@@ -26,12 +26,16 @@ Note: These forms are sometimes called Dynamic Questionnaires.
 
 ## Design
 
-These Dynamic Questionnaires are rendered by a generic client side component (CSC).  By generic, we mean that the same CSC can be 
-reused for multiple questionnaires without any changes.  This promotes agility for the development team.
+These Dynamic Questionnaires are rendered by a generic client side component (CSC).  
+By generic, we mean that the same CSC can be reused for multiple questionnaires without 
+any changes.  
 
-The CSC renders the questionnaire following the instructions from a set of rules embedded in a decision service (DS).
+This promotes agility for the development team.
 
-Here is a visual representation:
+The CSC renders the questionnaire following the instructions from a set of rules 
+embedded in a decision service (DS).
+
+Here is a visual representation of the interaction between the CSC and DS:
 
 ![Big picture view](docs/images/bigPic.PNG)
 
