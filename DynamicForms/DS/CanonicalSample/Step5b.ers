@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_jl-xM6lwEeym28bJRis_8Q" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_CPyFA8fOEeyxQJcBaAt2MA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_7jUOsKldEeym28bJRis_8Q" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_N7_p8cfNEeyxQJcBaAt2MA" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action disabled="true"/>
       <action/>
@@ -45,8 +45,47 @@
       <action/>
       <action disabled="true"/>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl5_3', fieldName='Step5Field3', dataSource = 'http://localhost:3004/options2', label='Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>' , UIControl.id = 'crtl5_3' , UIControl.fieldName = 'Step5Field3' , UIControl.dataSource = 'http://localhost:3004/options2' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl5_3', fieldName='Step5Field3', dataSource = 'http://localhost:3004/options2', label='Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options2&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options2&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>' , UIControl.id = 'crtl5_3' , UIControl.fieldName = 'Step5Field3' , UIControl.dataSource = 'http://localhost:3004/options2' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.fieldName">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="dataSource" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.dataSource">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.label">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl5_4', fieldName='Step5Field4', dataSource = 'http://localhost:3004/options3', label='Question 4 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options3&quot; target=&quot;_blank&quot;>REST server at path /options3&lt;/a>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 4 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options3&quot; target=&quot;_blank&quot;>REST server at path /options3&lt;/a>' , UIControl.id = 'crtl5_4' , UIControl.fieldName = 'Step5Field4' , UIControl.dataSource = 'http://localhost:3004/options3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -127,7 +166,7 @@
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsActions="28" sashWeightConditionsIf="78">
-    <actionSection rowCount="42" columnWidthFactor="0.5">
+    <actionSection rowCount="42" scrollRowTop="4" columnWidthFactor="0.5">
       <actionItemList disabled="true" rowHeight="100">
         <valueSetCell/>
         <expressionCell external="UI.comments = 'Here we demo how to create a Multiple Choices Dropdown with the list of options coming from a datasource (a REST server).  When no dataSourceOptions are specified, it is assumed the datasource will send the options using the field &quot;value&quot; for the option value and the field &quot;displayName&quot; for the option text.  If the datasource sends these into different field names then a DataSourceOption can be added with the name of the fields to use.'">
@@ -206,8 +245,65 @@
       </actionItemList>
       <actionItemList rowHeight="80">
         <valueSetCell/>
-        <expressionCell external="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl5_3', fieldName='Step5Field3', dataSource = 'http://localhost:3004/options2', label='Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>' , UIControl.id = 'crtl5_3' , UIControl.fieldName = 'Step5Field3' , UIControl.dataSource = 'http://localhost:3004/options2' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl5_3', fieldName='Step5Field3', dataSource = 'http://localhost:3004/options2', label='Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options2&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 3 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options2&quot; target=&quot;_blank&quot;>REST server at path /options2&lt;/a>' , UIControl.id = 'crtl5_3' , UIControl.fieldName = 'Step5Field3' , UIControl.dataSource = 'http://localhost:3004/options2' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.fieldName">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="dataSource" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.dataSource">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.label">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList rowHeight="71">
+        <valueSetCell/>
+        <expressionCell external="UI.comments = 'Here we demo how to use a data source combined with a DataSourceOption for field mapping the fields for the option value and the option text AND to map where the actual option array is within the returned JSON data - See Step5c.ers'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = 'Here we demo how to use a data source combined with a DataSourceOption for field mapping the fields for the option value and the option text AND to map where the actual option array is within the returned JSON data - See Step5c.ers'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="99">
+        <valueSetCell/>
+        <expressionCell external="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl5_4', fieldName='Step5Field4', dataSource = 'http://localhost:3004/options3', label='Question 4 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options3&quot; target=&quot;_blank&quot;>REST server at path /options3&lt;/a>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Question 4 - See Step5c.ers - Getting list of options from &lt;a href=&quot;http://localhost:3004/options3&quot; target=&quot;_blank&quot;>REST server at path /options3&lt;/a>' , UIControl.id = 'crtl5_4' , UIControl.fieldName = 'Step5Field4' , UIControl.dataSource = 'http://localhost:3004/options3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -299,6 +395,9 @@
     <conditionSection rowCount="50" columnWidthFactor="0.5"/>
     <ruleSection columnCount="20">
       <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
