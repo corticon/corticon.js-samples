@@ -249,6 +249,19 @@ corticon.dynForm.UIControlsRenderer = function () {
         if ( oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null )
             theAttributes['max'] = oneUIControl.maxDT;
 
+        if ( oneUIControl.value !== undefined && oneUIControl.value !== null ) {
+            // assume the value is specified as getMilliseconds
+            const x = new Date(Number(oneUIControl.value));
+            let month = (x.getMonth() + 1);
+            let day = x.getDate();
+            if (month < 10)
+                month = "0" + month;
+            if (day < 10)
+                day = "0" + day;
+
+            theAttributes['value'] = x.getFullYear() + '-' + month + '-' + day;
+        }
+
         const textInputEl = $('<input/>').attr(theAttributes);
         textInputEl.appendTo(inputContainerEl);
 
