@@ -39,8 +39,8 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 -->
 
 	<!--
-	The order of inclusion is critical. It defines the order in which the decision services are indexed and must correspond to the order
-	of the options in the switch sample Select dropdown
+	The order of inclusion is critical. It defines the order in which the decision services are indexed
+	and must correspond to the order of the options in the switch sample Select dropdown
 	-->
 	<script type="text/javascript" src="decisionServices/MultipleSteps2/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/validation/browser/decisionServiceBundle.js"></script>
@@ -62,6 +62,11 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 
 		function processSwitchSample(selectObject) {
 			const index = selectObject.value;
+			setDataForCurrentSample(index);
+			saveStateSelectedSample(index);
+		}
+
+		function setDataForCurrentSample(index) {
 			currentDecisionServiceEngine = window.corticonEngines[index];
 			inputData = allInputData[index];
 			itsQuestionnaireKey = index;
@@ -70,8 +75,6 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 				$("#languageContainerId").show();
 			else
 				$("#languageContainerId").hide();
-
-			saveStateSelectedSample(index);
 		}
 
 		function saveStateSelectedSample(index) {
@@ -161,6 +164,7 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 			if ( selectedSample !== null ) {
 				const selector = `#sampleSelectId option[value='${selectedSample}']`
 				$(selector).prop('selected', true);
+				setDataForCurrentSample(selectedSample);
 			}
 		}
 
@@ -200,9 +204,9 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 						<div class="sampleSelectLabel">Select Sample:</div>
 						<select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
 							<option value="0">Canonical</option>
-							<option value="3">Travel Claim</option>
 							<option value="1">Validation</option>
 							<option value="2">Taxes</option>
+							<option value="3">Travel Claim</option>
 							<option value="4">Reusing Subflow</option>
 							<option value="5">Job Application</option>
 							<option value="6">Multi Container</option>
