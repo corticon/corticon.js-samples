@@ -4,22 +4,34 @@ module.exports={"ruleMessages": []}
 "use strict";var _jsEngine=require("@corticon/js-engine"),_decisionservicerules=require("./decisionservicerules"),metadata=_interopRequireWildcard(require("./vocab.json")),ruleMessages=_interopRequireWildcard(require("./_ruleMessages.json"));function _getRequireWildcardCache(e){if("function"!=typeof WeakMap)return null;var i=new WeakMap,n=new WeakMap;return(_getRequireWildcardCache=function(e){return e?n:i})(e)}function _interopRequireWildcard(e,i){if(!i&&e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var n=_getRequireWildcardCache(i);if(n&&n.has(e))return n.get(e);var r={},t=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var c in e)if("default"!==c&&Object.prototype.hasOwnProperty.call(e,c)){var o=t?Object.getOwnPropertyDescriptor(e,c):null;o&&(o.get||o.set)?Object.defineProperty(r,c,o):r[c]=e[c]}return r.default=e,n&&n.set(e,r),r}void 0!==window.corticonEngine&&null!==window.corticonEngine||(window.corticonEngine={}),void 0!==window.corticonEngines&&null!==window.corticonEngines||(window.corticonEngines=[]);const decisionServiceFct=function(e,i){return new _jsEngine.CorticonEngine(metadata,ruleMessages,new _decisionservicerules.DecisionServiceRules).executeDecisionService(e,i)};window.corticonEngine.execute=decisionServiceFct,window.corticonEngines.push({execute:decisionServiceFct});
 
 },{"./_ruleMessages.json":1,"./decisionservicerules":3,"./vocab.json":4,"@corticon/js-engine":5}],3:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,n){if(_jsEngine.Utilities.checksum())throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 1.3.0.0.12018");const t=new _jsEngine.RuleContainer("NYI");e.addRule(t);const i=new _jsEngine.RuleContainer("Step1");t.addRule(i),this.addRulesheetContainer_js_Step1(i,n);const s=new _jsEngine.RuleContainer("Step0");t.addRule(s),this.addRulesheetContainer_js_Step0(s,n)}}addRulesheetContainer_js_Step1(e,n){const t=new _jsEngine.TupleOperator("js_Step1_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step1_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]]),l=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>e.get("UI").done=!0]]),r=new _jsEngine.Rule("C0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="introContainerId",e.title="Not Yet Implemented"}))]]),d=new _jsEngine.Rule("E0","T1",[],[[e=>s(e)&&a(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),u=new _jsEngine.Rule("F0","T2",[],[[e=>s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")))(e),e=>e.get("UI.containers.uiControls").value="There are no additional steps in this sample"]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(r),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(u)}addRulesheetContainer_js_Step0(e,n){const t=new _jsEngine.TupleOperator("js_Step0_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step0_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,0)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="introContainerId",e.title="Not Yet Implemented"}))]]),r=new _jsEngine.Rule("E0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=1]]),d=new _jsEngine.Rule("C0","T1",[],[[e=>s(e)&&a(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),u=new _jsEngine.Rule("D0","T2",[],[[e=>s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")))(e),e=>e.get("UI.containers.uiControls").value="This sample is not yet implemented"]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(r),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(u)}}exports.DecisionServiceRules=DecisionServiceRules;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,t){if(_jsEngine.Utilities.checksum())throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 1.3.0.0.12018");const n=new _jsEngine.RuleContainer("validation");e.addRule(n);const i=new _jsEngine.RuleContainer("Description");n.addRule(i),this.addRulesheetContainer_js_Description(i,t);const a=new _jsEngine.RuleContainer("SummaryStep");n.addRule(a),this.addRulesheetContainer_js_SummaryStep(a,t);const r=new _jsEngine.RuleContainer("Step1");n.addRule(r),this.addRulesheetContainer_js_Step1(r,t);const s=new _jsEngine.RuleContainer("Step1Validation");n.addRule(s),this.addRulesheetContainer_js_Step1Validation(s,t)}}addRulesheetContainer_js_SummaryStep(e,t){const n=new _jsEngine.TupleOperator("js_SummaryStep_precondition_0Func",[function(e){e.bind("T2","ProjectsData.ValidationSample",e.datamanager.getEntitiesByType("ProjectsData.ValidationSample")),e.extend("T0","T3",["UI","UI.containers"],"UI","containers"),e.crossproduct("T2","T3","T4"),e.crossproduct("T0","T4","T1")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),r=new _jsEngine.Filter("js_SummaryStep_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,2)]],!0),s=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>t.setAssociation(e.get("UI"),"containers",t.createEntity("Container",function(e){e.id="summaryContainerId",e.title="Summary"}))]]),l=new _jsEngine.Rule("E0","T0",[],[[e=>a(e),e=>e.get("UI").done=!0]]),o=new _jsEngine.Rule("C0","T1",[],[[e=>(e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.ValidationSample")))(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.ValidationSample").sumStep1))(e),e=>t.setAssociation(e.get("UI.containers"),"uiControls",t.createEntity("UIControl",function(t){t.id="total_1",t.type="ReadOnlyText",t.value=_jsEngine.stringOps.plus.func("The sum of the numbers you entered is: ",_jsEngine.integerOps.toStringOp.func(e.get("ProjectsData.ValidationSample").sumStep1))}))]]);e.addRule(i),e.addRule(r),e.addRule(n),e.addRule(s),e.addRule(i),e.addRule(r),e.addRule(n),e.addRule(l),e.addRule(o)}addRulesheetContainer_js_Step1(e,t){const n=new _jsEngine.TupleOperator("js_Step1_precondition_3Func",[function(e){e.extend("T0","T4",["UI","UI.containers"],"UI","containers"),e.join("T1","T3",["Container"],"T6",["Container","number1Crtl","number2Crtl"]),e.projection("T6","T3",["Container","number1Crtl"]),e.bind("T7","ProjectsData.Data",e.datamanager.getEntitiesByType("ProjectsData.Data")),e.extend("T7","T8",["ProjectsData.Data","ProjectsData.Data.validationSample"],"ProjectsData.Data","validationSample"),e.crossproduct("T3","T8","T5"),e.join("T1","T3",["Container"],"T6",["Container","number1Crtl","number2Crtl"]),e.projection("T6","T3",["Container","number1Crtl"]),e.crossproduct("T1","T7","T10"),e.join("T10","T8",["ProjectsData.Data"],"T9",["Container","number2Crtl","ProjectsData.Data","ProjectsData.Data.validationSample"]),e.join("T3","T9",["Container"],"T11",["Container","number1Crtl","number2Crtl","ProjectsData.Data","ProjectsData.Data.validationSample"]),e.projection("T11","T9",["Container","number2Crtl","ProjectsData.Data","ProjectsData.Data.validationSample"])}]),i=new _jsEngine.TupleOperator("js_Step1_precondition_0Func",[function(e){e.bind("T2","Container",e.datamanager.getEntitiesByType("Container")),e.extend("T2","T1",["Container","number2Crtl"],"Container","uiControls")}]),a=new _jsEngine.TupleOperator("js_Step1_precondition_2Func",[function(e){e.extend("T2","T3",["Container","number1Crtl"],"Container","uiControls")}]),r=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("Container")),l=e=>_jsEngine.Utilities.isValid(e.get("number1Crtl")),o=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data")),d=e=>_jsEngine.Utilities.isValid(e.get("UI")),u=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),c=e=>_jsEngine.Utilities.isValid(e.get("number2Crtl")),g=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.validationSample")),j=new _jsEngine.Filter("js_Step1_filter_0","T0",[[e=>d(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]],!0),m=new _jsEngine.Filter("js_Step1_filter_2","T1",[[e=>s(e)&&c(e)&&(e=>_jsEngine.Utilities.isValid(e.get("number2Crtl").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("number2Crtl").id,"number2 Id")]]),_=new _jsEngine.Filter("js_Step1_filter_3","T3",[[e=>s(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("number1Crtl").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("number1Crtl").id,"number1 Id")]]),p=new _jsEngine.Rule("B0","T0",[],[[e=>d(e),e=>e.get("UI").nextStageNumber=1]]),T=new _jsEngine.Rule("D0","T0",[],[[e=>d(e),e=>t.setAssociation(e.get("UI"),"containers",t.createEntity("Container",function(e){e.id="firstContainerId",e.title="Enter 2 Numbers - the sum of the 2 cannot exceed 250"}))]]),U=new _jsEngine.Rule("M0","T0",[],[[e=>d(e),e=>e.get("UI").pathToData="validationSample"]]),E=new _jsEngine.Rule("E0","T4",[],[[e=>d(e)&&u(e),e=>t.addAssociation(e.get("UI.containers"),"uiControls",t.createEntity("UIControl",function(e){e.fieldName="number1",e.id="number1 Id",e.label="Number 1",e.max=200,e.min=1,e.type="Number"}))]]),I=new _jsEngine.Rule("F0","T4",[],[[e=>d(e)&&u(e),e=>t.addAssociation(e.get("UI.containers"),"uiControls",t.createEntity("UIControl",function(e){e.fieldName="number2",e.id="number2 Id",e.label="Number 2",e.max=100,e.min=1,e.type="Number"}))]]),R=new _jsEngine.Rule("I0","T5",[],[[e=>s(e)&&l(e)&&o(e)&&g(e)&&(e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.validationSample").number1))(e),e=>e.get("number1Crtl").value=_jsEngine.integerOps.toStringOp.func(e.get("ProjectsData.Data.validationSample").number1)]]),D=new _jsEngine.Rule("J0","T9",[],[[e=>s(e)&&c(e)&&o(e)&&g(e)&&(e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.validationSample").number2))(e),e=>e.get("number2Crtl").value=_jsEngine.integerOps.toStringOp.func(e.get("ProjectsData.Data.validationSample").number2)]]);e.addRule(r),e.addRule(j),e.addRule(i),e.addRule(m),e.addRule(a),e.addRule(_),e.addRule(n),e.addRule(p),e.addRule(T),e.addRule(r),e.addRule(j),e.addRule(i),e.addRule(m),e.addRule(a),e.addRule(_),e.addRule(n),e.addRule(U),e.addRule(E),e.addRule(r),e.addRule(j),e.addRule(i),e.addRule(m),e.addRule(a),e.addRule(_),e.addRule(n),e.addRule(I),e.addRule(r),e.addRule(j),e.addRule(i),e.addRule(m),e.addRule(a),e.addRule(_),e.addRule(n),e.addRule(R),e.addRule(D)}addRulesheetContainer_js_Description(e,t){const n=new _jsEngine.TupleOperator("js_Description_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")),r=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=new _jsEngine.Filter("js_Description_filter_0","T0",[[e=>r(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,0)]]),o=new _jsEngine.Rule("A0","T0",[],[[e=>r(e),e=>t.setAssociation(e.get("UI"),"containers",t.createEntity("Container",function(e){e.id="introContainerId",e.title="Input Validation Sample"}))]]),d=new _jsEngine.Rule("G0","T0",[],[[e=>r(e),e=>e.get("UI").nextStageNumber=1]]),u=new _jsEngine.Rule("C0","T1",[],[[e=>r(e)&&s(e),e=>t.setAssociation(e.get("UI.containers"),"uiControls",t.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),c=new _jsEngine.Rule("D0","T2",[],[[e=>r(e)&&s(e)&&a(e),e=>e.get("UI.containers.uiControls").value="This sample shows how input validation can be done in decision services rules.<br/><br/>"]]),g=new _jsEngine.Rule("E0","T2",[],[[e=>r(e)&&s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls").value))(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"Certainly, the client side component should validate fields, for example verify the data is entered and is a numeric value between 1 and 100 or that a text area does not contain more than 200 characters.<br/><br/>However, sometimes it is necessary to do some custom computations to validate one or a combination of fields.  Importantly, the custom validation executed on the decision service side are under the control of the rules author.<br/>")]]);e.addRule(i),e.addRule(l),e.addRule(n),e.addRule(o),e.addRule(i),e.addRule(l),e.addRule(n),e.addRule(d),e.addRule(u),e.addRule(i),e.addRule(l),e.addRule(n),e.addRule(c),e.addRule(g)}addRulesheetContainer_js_Step1Validation(e,t){const n=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_Step1Validation_precondition_0Func",[function(e){e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.extend("T2","T1",["UI","UI.containers","number1Crtl"],"UI.containers","uiControls")}]),a=new _jsEngine.TupleOperator("js_Step1Validation_precondition_2Func",[function(e){e.extend("T2","T3",["UI","UI.containers","number2Crtl"],"UI.containers","uiControls")}]),r=new _jsEngine.TupleOperator("js_Step1Validation_precondition_3Func",[function(e){e.bind("T5","ProjectsData.Data",e.datamanager.getEntitiesByType("ProjectsData.Data")),e.extend("T5","T4",["ProjectsData.Data","ProjectsData.Data.validationSample"],"ProjectsData.Data","validationSample"),e.join("T3","T1",["UI","UI.containers"],"T6",["UI","UI.containers","number1Crtl","number2Crtl"]),e.projection("T6","T1",["UI","UI.containers","number1Crtl"]),e.crossproduct("T4","T0","T7"),e.join("T1","T7",["UI"],"T8",["ProjectsData.Data","ProjectsData.Data.validationSample","UI","UI.containers","number1Crtl"]),e.projection("T8","T7",["ProjectsData.Data","ProjectsData.Data.validationSample","UI"]),e.join("T3","T1",["UI","UI.containers"],"T6",["UI","UI.containers","number1Crtl","number2Crtl"]),e.projection("T6","T1",["UI","UI.containers","number1Crtl"]),e.join("T3","T1",["UI","UI.containers"],"T6",["UI","UI.containers","number1Crtl","number2Crtl"]),e.projection("T6","T1",["UI","UI.containers","number1Crtl"]),e.join("T7","T2",["UI"],"T9",["ProjectsData.Data","ProjectsData.Data.validationSample","UI","UI.containers"]),e.join("T9","T3",["UI","UI.containers"],"T10",["ProjectsData.Data","ProjectsData.Data.validationSample","UI","UI.containers","number2Crtl"]),e.join("T1","T10",["UI","UI.containers"],"T11",["ProjectsData.Data","ProjectsData.Data.validationSample","UI","UI.containers","number1Crtl","number2Crtl"]),e.projection("T11","T10",["ProjectsData.Data","ProjectsData.Data.validationSample","UI","UI.containers","number2Crtl"])}]),s=e=>_jsEngine.Utilities.isValid(e.get("number1Crtl")),l=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data")),o=e=>_jsEngine.Utilities.isValid(e.get("UI")),d=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),u=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.validationSample").number2),c=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.validationSample").number1),g=e=>_jsEngine.Utilities.isValid(e.get("number2Crtl")),j=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.validationSample")),m=(e,t)=>e.get("UI").nextStageNumber=t,_=new _jsEngine.Filter("js_Step1Validation_filter_0","T0",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]],!0),p=new _jsEngine.LimitedFilter("js_Step1Validation_filter_2","T1",[[e=>o(e)&&d(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("number1Crtl").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("number1Crtl").id,"number1 Id")]],[[[],[]],[["UI"],["UI","UI.containers"]],[["UI","number1Crtl"],["UI","UI.containers","number1Crtl"]]]),T=new _jsEngine.LimitedFilter("js_Step1Validation_filter_3","T3",[[e=>o(e)&&d(e)&&g(e)&&(e=>_jsEngine.Utilities.isValid(e.get("number2Crtl").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("number2Crtl").id,"number2 Id")]],[[[],[]],[["UI"],["UI","UI.containers"]],[["UI","number2Crtl"],["UI","UI.containers","number2Crtl"]]]),U=new _jsEngine.Rule("A0","T4",[],[[e=>l(e)&&j(e)&&c(e)&&u(e),e=>e.get("ProjectsData.Data.validationSample").sumStep1=_jsEngine.integerOps.add.func(e.get("ProjectsData.Data.validationSample").number1,e.get("ProjectsData.Data.validationSample").number2)]]),E=new _jsEngine.Rule("rule1","T7",[[e=>l(e)&&j(e)&&c(e)&&u(e),e=>_jsEngine.integerOps.lessThanOrEqual.func(_jsEngine.integerOps.add.func(e.get("ProjectsData.Data.validationSample").number1,e.get("ProjectsData.Data.validationSample").number2),250)]],[[e=>o(e),m,e=>2],[e=>o(e),(e,t)=>e.get("UI").noUiToRenderContinue=t,e=>!0]]),I=new _jsEngine.Rule("rule2","T8",[[e=>l(e)&&j(e)&&c(e)&&u(e),e=>_jsEngine.integerOps.greater.func(_jsEngine.integerOps.add.func(e.get("ProjectsData.Data.validationSample").number1,e.get("ProjectsData.Data.validationSample").number2),250)]],[[e=>o(e)&&d(e),(e,t)=>e.get("UI.containers").validationMsg=t,e=>"The sum of the 2 numbers needs to be less than 250"],[e=>o(e)&&d(e)&&s(e),(e,t)=>e.get("number1Crtl").validationErrorMsg=t,e=>"Enter a smaller number here"],[e=>o(e),m,e=>1]]),R=new _jsEngine.Rule("rule3","T10",[[e=>l(e)&&j(e)&&(e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.validationSample").sumStep1))(e),e=>_jsEngine.integerOps.greater.func(e.get("ProjectsData.Data.validationSample").sumStep1,250)]],[[e=>o(e)&&d(e)&&g(e),(e,t)=>e.get("number2Crtl").validationErrorMsg=t,e=>"Or change the number here"]]);e.addRule(n),e.addRule(_),e.addRule(i),e.addRule(p),e.addRule(a),e.addRule(T),e.addRule(r),e.addRule(U),e.addRule(E),e.addRule(I),e.addRule(R)}}exports.DecisionServiceRules=DecisionServiceRules;
 
 },{"@corticon/js-engine":5}],4:[function(require,module,exports){
 module.exports={
     "topLevelEntities": {},
     "entities": [
         {
-            "associations": [{
-                "targetEntity": "ProjectsData.Expense",
-                "roleName": "Step8Field1",
-                "navigability": "CanonicalSample->Step8Field1",
-                "mandatory": false,
-                "cardinality": "*"
-            }],
+            "associations": [
+                {
+                    "targetEntity": "ProjectsData.Expense",
+                    "roleName": "Step8Field1",
+                    "navigability": "CanonicalSample->Step8Field1",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "MultipleAnswers",
+                    "roleName": "Step9Field1",
+                    "navigability": "CanonicalSample->Step9Field1",
+                    "mandatory": false,
+                    "cardinality": "*"
+                }
+            ],
             "transientAttributesDefinition": [],
-            "associationsDefinition": ["Step8Field1"],
+            "associationsDefinition": [
+                "Step8Field1",
+                "Step9Field1"
+            ],
             "name": "ProjectsData.CanonicalSample",
             "attributesDefinition": [
                 "Step1Field1",
@@ -767,7 +779,8 @@ module.exports={
             "name": "DataSourceOptions",
             "attributesDefinition": [
                 "dataTextField",
-                "dataValueField"
+                "dataValueField",
+                "pathToOptionsArray"
             ],
             "attributes": [
                 {
@@ -781,9 +794,53 @@ module.exports={
                     "name": "dataValueField",
                     "type": "Base",
                     "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToOptionsArray",
+                    "type": "Base",
+                    "mandatory": false
                 }
             ],
             "id": "DataSourceOptions"
+        },
+        {
+            "associations": [],
+            "transientAttributesDefinition": [],
+            "name": "MultipleAnswers",
+            "attributesDefinition": [
+                "itemDateTime",
+                "itemDecimal",
+                "itemInteger",
+                "itemText"
+            ],
+            "attributes": [
+                {
+                    "dataType": "DateTime",
+                    "name": "itemDateTime",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "itemDecimal",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "itemInteger",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "itemText",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "MultipleAnswers"
         },
         {
             "associations": [],
@@ -957,6 +1014,7 @@ module.exports={
                 "maxDT",
                 "min",
                 "minDT",
+                "multiple",
                 "required",
                 "rows",
                 "tooltip",
@@ -1028,6 +1086,12 @@ module.exports={
                 {
                     "dataType": "DateTime",
                     "name": "minDT",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "multiple",
                     "type": "Base",
                     "mandatory": false
                 },
