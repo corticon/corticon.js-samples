@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_oaZnpa_IEeyM9OrX8KTwcw" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_nY2YMc1GEeycN8GUwlcrdQ" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_oXIRE6_IEeyM9OrX8KTwcw" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_7pW2Qc1BEeycN8GUwlcrdQ" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
-      <action/>
-      <action/>
+      <action disabled="true"/>
+      <action disabled="true"/>
       <action/>
       <action>
         <opaqueExpression expression="UI.nextStageNumber = 4">
@@ -38,7 +38,8 @@
         </opaqueExpression>
         <viewExpressions lhs="Data.canonicalSample.Step1Field3.toLower" rhs="'yes'"/>
       </condition>
-      <action>
+      <action disabled="true"/>
+      <action disabled="true">
         <opaqueExpression expression="readOnlyText.value = 'You answered YES in step1'">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="readOnlyText.value = 'You answered YES in step1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
@@ -78,7 +79,8 @@
         </opaqueExpression>
         <viewExpressions lhs="Data.canonicalSample.Step1Field3.toLower" rhs="'no'"/>
       </condition>
-      <action>
+      <action disabled="true"/>
+      <action disabled="true">
         <opaqueExpression expression="readOnlyText.value = 'You answered NO in step1'">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="readOnlyText.value = 'You answered NO in step1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
@@ -139,6 +141,7 @@
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/str2"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/str1"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
+      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/comments"/>
     </logicalVariable>
     <logicalVariable entity="../Vocabulary/Vocab.ecore#//UIControl">
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/maxDT"/>
@@ -156,7 +159,22 @@
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="35">
     <actionSection rowCount="47" columnWidthFactor="0.5">
-      <actionItemList rowHeight="39">
+      <actionItemList disabled="true" rowHeight="52">
+        <valueSetCell/>
+        <expressionCell external="UI.comments = 'This is an alternative to using cellValue when creating the control'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = 'This is an alternative to using cellValue when creating the control'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList disabled="true" rowHeight="39">
         <valueSetCell/>
         <expressionCell external="readOnlyText.value">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="readOnlyText.value" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
@@ -171,10 +189,6 @@
             </referencedTermList>
           </parserOutput>
         </expressionCell>
-      </actionItemList>
-      <actionItemList>
-        <valueSetCell/>
-        <expressionCell/>
       </actionItemList>
       <actionItemList>
         <valueSetCell/>
@@ -216,6 +230,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
         </children>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
@@ -311,6 +326,7 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
+        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="'You answered YES in step1'">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="readOnlyText.value = 'You answered YES in step1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
@@ -346,6 +362,7 @@
             </referencedTermList>
           </parserOutput>
         </conditionValueSetCellList>
+        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="'You answered NO in step1'">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="readOnlyText.value = 'You answered NO in step1'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
