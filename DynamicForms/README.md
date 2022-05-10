@@ -82,7 +82,9 @@ A single component for rendering dynamic questionnaires can be reused with multi
 applications as illustrated below:
 
 ![Reuse CSC across applications](docs/images/ReuseCSCAcrossAppsSmaller.jpg)
+
 In other words, to implement a new use cases, you only need to develop the model for the new use case. 
+
 
 Additionally, the same model can be used to drive dynamic questionnaires on different platforms 
 (for example, Web page and Mobile device).
