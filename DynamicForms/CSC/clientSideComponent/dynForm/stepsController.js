@@ -239,18 +239,25 @@ corticon.dynForm.StepsController = function () {
         corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.NEW_FORM_DATA_SAVED, itsFormData );
     }
 
+    // Process all the simple and the complex array type controls
     function _saveArrayTypeInputsToFormData (baseEl) {
-        let outerArray = [];
+        _processAllSimpleArrayControls(baseEl);
+        _processAllComplexArrayControls(baseEl);
+    }
+
+    function _processAllComplexArrayControls (baseEl) {
+        // This function assumes there is only one expense control on the page.
+        let outerArray = [];  // all expenses
         let formDataFieldName;
         let uiControlType;
 
-        let allArrayEls = baseEl.find('.arrayTypeControl');
+        let allArrayEls = baseEl.find('.complexArrayTypeControl');
         allArrayEls.each(function(index,item){
             const oneArrayEl = $(item);
             uiControlType = oneArrayEl.data("uicontroltype");
             let allFormEls = oneArrayEl.find(':input').not(':checkbox');
 
-            let innerArray = [];
+            let innerArray = []; // all items of a single expense
             for ( var i=0; i<allFormEls.length; i++ ) {
                 const oneFormEl = allFormEls[i];
                 const oneInputEl = $(oneFormEl);
@@ -269,16 +276,73 @@ corticon.dynForm.StepsController = function () {
                 _saveArrayElFormData(formDataFieldName, convertedArray);
             }
             else
-                alert('This array type is not yet supported ' + uiControlType );
+                alert('This complex array type is not yet supported ' + uiControlType );
         }
+    }
+
+    function _processAllSimpleArrayControls(baseEl) {
+        const allSimpleUiControlsOfArrayType = _getAllSimpleArrayTypeInputsToFormData(baseEl);
+
+        for (let j = 0; j < allSimpleUiControlsOfArrayType.length; j++) {
+            const oneControlData = allSimpleUiControlsOfArrayType[j];
+            const uiControlType = oneControlData['type'];
+            const formDataFieldName = oneControlData['fieldName'];
+            const valuesForOneControl = oneControlData['values'];
+            if (uiControlType === 'Text') {
+                const convertedArray = _createEachItemEntity(valuesForOneControl);
+                _saveArrayElFormData(formDataFieldName, convertedArray);
+            } else
+                alert('This simple array type is not yet supported ' + uiControlType);
+        }
+    }
+
+    function _getAllSimpleArrayTypeInputsToFormData(baseEl) {
+        // there can be more than one set of multi inputs per container -> we need to group them per field name
+        let allUiControlsOfArrayType = [];
+
+        let allArrayEls = baseEl.find('.simpleArrayTypeControl');
+        allArrayEls.each(function(index,item){
+            let formDataFieldName;
+            const oneArrayEl = $(item);
+            const uiControlType = oneArrayEl.data("uicontroltype");
+            const allFormEls = oneArrayEl.find(':input').not(':checkbox');
+
+            let allValuesForOneControl = [];
+            for ( let i=0; i<allFormEls.length; i++ ) {
+                const oneFormEl = allFormEls[i];
+                const oneInputEl = $(oneFormEl);
+                formDataFieldName = oneInputEl.data("fieldName");
+                const val = oneInputEl.val();
+                allValuesForOneControl.push( val );
+            }
+
+            const allDataForOneControl = {};
+            allDataForOneControl['fieldName'] = formDataFieldName;
+            allDataForOneControl['type'] = uiControlType;
+            allDataForOneControl['values'] = allValuesForOneControl;
+
+            allUiControlsOfArrayType.push(allDataForOneControl);
+        });
+
+        return allUiControlsOfArrayType;
+    }
+
+    function _createEachItemEntity(valuesForOneControl) {
+        const convertedArray = [];
+        for ( let i=0; i<valuesForOneControl.length; i++ ) {
+            const oneItemAsObjLit = {};
+            oneItemAsObjLit['itemText'] = valuesForOneControl[i];
+            convertedArray.push( oneItemAsObjLit );
+        }
+        return convertedArray;
     }
 
     function _createEachExpenseEntity(outerArray, expenseFieldArray) {
         const convertedArray = [];
-        for ( var i=0; i<outerArray.length; i++ ) {
+        for ( let i=0; i<outerArray.length; i++ ) {
             const oneItemAsAnArray = outerArray[i];
             const oneItemAsObjLit = {};
-            for ( var j=0; j<oneItemAsAnArray.length; j++ ) {
+            for ( let j=0; j<oneItemAsAnArray.length; j++ ) {
                 oneItemAsObjLit[expenseFieldArray[j]] = oneItemAsAnArray[j];
             }
             const converted = Number(oneItemAsObjLit['amount']);
