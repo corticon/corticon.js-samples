@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_UfO0l81LEeycN8GUwlcrdQ" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_ijbeYdJJEey2Qqlxhj-3Sw" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
   <ruleset vocabularyUpdateStamp="_7pW2Qc1BEeycN8GUwlcrdQ" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
@@ -27,6 +27,7 @@
           </parserOutput>
         </opaqueExpression>
       </action>
+      <action disabled="true"/>
       <action/>
       <action disabled="true"/>
       <action>
@@ -127,6 +128,29 @@
         <viewExpressions lhs="Data.canonicalSample.Step1Field3.toLower" rhs="'yes'"/>
       </condition>
       <action/>
+      <action disabled="true">
+        <opaqueExpression expression="UI.containers.title += ' - YES -'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = UI.containers.title + ' - YES -'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
       <action/>
       <action disabled="true"/>
       <action/>
@@ -261,6 +285,29 @@
         <viewExpressions lhs="Data.canonicalSample.Step1Field3.toLower" rhs="'no'"/>
       </condition>
       <action/>
+      <action disabled="true">
+        <opaqueExpression expression="UI.containers.title += ' - NO '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = UI.containers.title + ' - NO '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
       <action/>
       <action disabled="true"/>
       <action/>
@@ -410,6 +457,7 @@
     <logicalVariable entity="../Vocabulary/Vocab.ecore#//UI" filters="#//@ruleset/@filters.0 #//@ruleset/@filters.1">
       <extension association="true" entity="../Vocabulary/Vocab.ecore#//Container" traversedAssocRole="../Vocabulary/Vocab.ecore#//UI/containers" filters="#//@ruleset/@filters.1">
         <extension association="true" entity="../Vocabulary/Vocab.ecore#//UIControl" traversedAssocRole="../Vocabulary/Vocab.ecore#//Container/uiControls"/>
+        <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//Container/title"/>
       </extension>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
@@ -445,7 +493,7 @@
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightAdvancedView="25" sashWeightScope="57" sashWeightConditionsActions="29" sashWeightConditionsIf="67">
-    <actionSection rowCount="62" scrollRowTop="5" columnWidthFactor="0.5">
+    <actionSection rowCount="63" columnWidthFactor="0.5">
       <actionItemList>
         <valueSetCell/>
         <expressionCell external="UI.containers = Container.new[id='thirdContainerId', title='Date and Time Examples + Questions Conditional to Previous Answers - Reference: Step3.ers']">
@@ -471,8 +519,29 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList>
+      <actionItemList disabled="true">
         <valueSetCell/>
+        <expressionCell external="UI.containers.title += cellValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = UI.containers.title + cellValue" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
         <expressionCell/>
       </actionItemList>
       <actionItemList disabled="true">
@@ -809,6 +878,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
           </children>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
@@ -896,6 +966,7 @@
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
+        <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -940,6 +1011,27 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="' - YES -'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = UI.containers.title + ' - YES -'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -1000,6 +1092,27 @@
           </parserOutput>
         </conditionValueSetCellList>
         <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="' - NO '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.title = UI.containers.title + ' - NO '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="UI.containers.title">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>

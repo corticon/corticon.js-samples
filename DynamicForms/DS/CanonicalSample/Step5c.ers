@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_-lw9CM1BEeycN8GUwlcrdQ" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_CjuyItJKEey2Qqlxhj-3Sw" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
   <ruleset vocabularyUpdateStamp="_7pW2Qc1BEeycN8GUwlcrdQ" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
@@ -36,9 +36,10 @@
         </opaqueExpression>
       </action>
       <action/>
+      <action disabled="true"/>
       <action>
-        <opaqueExpression expression="uiCrtl4.dataSourceOptions= DataSourceOptions.new [pathToOptionsArray='Results', dataValueField = 'Model_ID', dataTextField = 'Model_Name' ]">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="uiCrtl4.dataSourceOptions = DataSourceOptions.new [ DataSourceOptions.pathToOptionsArray = 'Results' , DataSourceOptions.dataValueField = 'Model_ID' , DataSourceOptions.dataTextField = 'Model_Name' ]" datatype="DataSourceOptions" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="uiCrtl4.dataSourceOptions= DataSourceOptions.new [pathToOptionsArray='$.Results.*', dataValueField = 'Model_ID', dataTextField = 'Model_Name' ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="uiCrtl4.dataSourceOptions = DataSourceOptions.new [ DataSourceOptions.pathToOptionsArray = '$.Results.*' , DataSourceOptions.dataValueField = 'Model_ID' , DataSourceOptions.dataTextField = 'Model_Name' ]" datatype="DataSourceOptions" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="dataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="uiCrtl4.dataSourceOptions" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1/@extension.0">
                 <parentTerm text="uiCrtl4" datatype="UIControl" termtype="ENTITY" fulltext="uiCrtl4" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
@@ -129,6 +130,7 @@
         </extension>
       </extension>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/comments"/>
     </logicalVariable>
     <logicalVariable entity="../Vocabulary/Vocab.ecore#//DataSourceOptions">
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//DataSourceOptions/dataTextField"/>
@@ -144,8 +146,8 @@
       </extension>
     </logicalVariable>
   </ruleset>
-  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="31" sashWeightConditionsIf="80">
-    <actionSection rowCount="49" columnWidthFactor="0.5">
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="31" sashWeightConditionsIf="77">
+    <actionSection rowCount="45" scrollRowTop="1" columnWidthFactor="0.5">
       <actionItemList rowHeight="81">
         <valueSetCell/>
         <expressionCell external="uiCtrl3.dataSourceOptions = DataSourceOptions.new [dataValueField = 'code', dataTextField = 'name' ]">
@@ -183,10 +185,25 @@
         <valueSetCell/>
         <expressionCell/>
       </actionItemList>
+      <actionItemList disabled="true" rowHeight="40">
+        <valueSetCell/>
+        <expressionCell external="UI.comments = 'An example where we specify where the data is using a JSON Path'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = 'An example where we specify where the data is using a JSON Path'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
       <actionItemList rowHeight="74">
         <valueSetCell/>
-        <expressionCell external="uiCrtl4.dataSourceOptions= DataSourceOptions.new [pathToOptionsArray='Results', dataValueField = 'Model_ID', dataTextField = 'Model_Name' ]">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="uiCrtl4.dataSourceOptions = DataSourceOptions.new [ DataSourceOptions.pathToOptionsArray = 'Results' , DataSourceOptions.dataValueField = 'Model_ID' , DataSourceOptions.dataTextField = 'Model_Name' ]" datatype="DataSourceOptions" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="uiCrtl4.dataSourceOptions= DataSourceOptions.new [pathToOptionsArray='$.Results.*', dataValueField = 'Model_ID', dataTextField = 'Model_Name' ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="uiCrtl4.dataSourceOptions = DataSourceOptions.new [ DataSourceOptions.pathToOptionsArray = '$.Results.*' , DataSourceOptions.dataValueField = 'Model_ID' , DataSourceOptions.dataTextField = 'Model_Name' ]" datatype="DataSourceOptions" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="dataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="uiCrtl4.dataSourceOptions" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1/@extension.0">
                 <parentTerm text="uiCrtl4" datatype="UIControl" termtype="ENTITY" fulltext="uiCrtl4" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
@@ -215,6 +232,66 @@
               <terms text="dataValueField" datatype="String" termtype="ATTRIBUTE" fulltext="DataSourceOptions.dataValueField">
                 <parentTerm text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.1"/>
               </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList disabled="true">
+        <valueSetCell/>
+        <expressionCell external="UI.comments = '$.Results.*'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = '$.Results.*'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList disabled="true">
+        <valueSetCell/>
+        <expressionCell external="UI.comments = '$.Results[?(@.Model_Name.startsWith(&quot;A&quot;))]'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = '$.Results[?(@.Model_Name.startsWith(&quot;A&quot;))]'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList disabled="true">
+        <valueSetCell/>
+        <expressionCell external="UI.comments = '$.Results[:10]'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = '$.Results[:10]'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList disabled="true">
+        <valueSetCell/>
+        <expressionCell external="UI.comments = '$.Results[?(@.Model_Name.startsWith(&quot;A&quot;) &amp;&amp; @.Model_Name.length === 2)]'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = '$.Results[?(@.Model_Name.startsWith(&quot;A&quot;) &amp;&amp; @.Model_Name.length === 2)]'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
             </referencedTermList>
           </parserOutput>
         </expressionCell>
@@ -249,6 +326,7 @@
               <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1/@extension.0"/>
             </children>
           </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
         </children>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
@@ -319,6 +397,7 @@
     <ruleSection columnCount="20">
       <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
         <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList valueSet="X"/>
       </ruleColumnList>
