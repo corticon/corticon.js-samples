@@ -145,24 +145,33 @@ No matter how the UI type is rendered, a simple control has only one input (a st
 # Multiple Instance Controls
 
 Sometimes we don’t know in advance how many inputs there will be for a specific field.  
-A good example would be asking for first name of all children.  There may be the need for 2 inputs or 3 or more.
+A good example would be asking for first name of all children.  There may be the need for 1 input or 2 inputs or 3 or more.
 In this case, the UI control is specified with the attribute multiple.
 
 We also call these kinds of controls ArrayTypeInputs as the answers will be stored in an array.
 
-The array will be saved in the project data as specified by the UI control specifies using the field UIControl.fieldName
+The array will be saved in the project data as specified by the UI control specified using the field UIControl.fieldName
+
+For more information check the reference implementation function renderMultipleChoicesInput at https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/clientSideComponent/dynForm/uiControlsRenderers.js
 
 # Complex Controls
 
-Sometimes we need to render a more sophisticated UI control containing multiple primitive UI elements as well as we don’t 
-know in advance how many inputs there will be.  
+These controls are characterized as:
 
-A good example is an expenses question.  The user may have 2 items to claim or may have 10.  
+1. We need to render a more sophisticated UI control containing multiple primitive UI elements 
+   per entry.  For example, an expense claim entry may have both an expense type and an 
+   expense amount; so the complex control would contain both a selector control for the type
+   and a currency input control.
+
+2. There can be multiple entries and the number of entries are not known in advance.  Again, a good example is an expenses question.  The user may have 2 items to claim or may have 10.  
 For each item to claim, there is a choice input for the type of expense, a number input for the amount and a choice 
-for the currency.
+for the currency.  The complex control would typically display a button to let the user add another entry on demand.
 
-We also call these kind of controls ArrayTypeInputs as the answers will be stored in an array.
+We also call this type of controls ArrayTypeInputs as the answers will be stored in an array.
 The array will be saved in the project data as specified by the UI control specifies using the field UIControl.fieldName
+
+For more information check the reference implementation function renderExpenseInput at https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/clientSideComponent/dynForm/uiControlsRenderers.js
+
 
 # Controls Reading Data from External Data Sources
 
