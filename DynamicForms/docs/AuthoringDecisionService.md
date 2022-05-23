@@ -179,7 +179,7 @@ Let's look in details at some key attributes at play, in the validation ruleshee
 
 Sometimes multiple paths share a common set of steps (Stages) as shown in this image:
 
-![common steps](images/SubflowAsReusableItem1.jpg)
+![common steps](images/SubflowAsReusableItem1Smaller.jpg)
 
 One way to achieve reuse is to create a separate ruleflow and use it inside another ruleflow (this is the concept of a subflow).  
 
@@ -195,14 +195,14 @@ To solve that problem we follow the following pattern:
 * The subflow needs to set UI.nextStageNumber to UI.stageOnExit
 
 This is illustrated in the diagram below:
-![Subflows as reusable items](images/SubflowAsReusableItem2.jpg)
+![Subflows as reusable items](images/SubflowAsReusableItem2Smaller.jpg)
 
 To become familiar with this pattern, check the sample: ReusingFlowSample at https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms/DS/ReusingFlowSample
 
 In this sample, the subflow is implemented in stage 10 and 11.  We reuse it twice, the first time from stage 1 
 and the second time from stage 2 as shown below:
 
-![Sample reuse Subflows](images/ReuseFlow.PNG)
+![Sample reuse Subflows](images/ReuseSubFlow.PNG)
 
 Notice, the first time the subflow will return to stage 2 and the second time to stage 3. 
 
