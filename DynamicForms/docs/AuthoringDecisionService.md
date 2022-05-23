@@ -194,8 +194,11 @@ To solve that problem we follow the following pattern:
    
 * The subflow needs to set UI.nextStageNumber to UI.stageOnExit
 
-This is illustrated in the diagram below:
+This is illustrated in the following diagram:
+
 ![Subflows as reusable items](images/SubflowAsReusableItem2Smaller.jpg)
+
+### Sample
 
 To become familiar with this pattern, check the sample: ReusingFlowSample at https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms/DS/ReusingFlowSample
 
