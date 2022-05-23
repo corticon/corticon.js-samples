@@ -109,6 +109,105 @@ It needs to specify that the questionnaire is done using an action like this: UI
 
 Note: other rulesheets do not need to specify UI.done = F
 
+# Typical Patterns
+
+## Executing Step with No UI to Render
+
+Sometimes the DS needs to execute a stage with no associated UI to render; for example, the DS just needs to execute
+business logic and move to next step.
+
+This is specified by the DS in the attribute UI.noUiToRenderContinue (a boolean)
+
+Note: The CSC needs to keep calling the DS by setting the UI.currentStageNumber to UI.nextStageNumber until the flag
+noUiToRenderContinue is not set (undefined) or set to false.
+
+## Validation
+
+There are 2 kinds of validation:
+
+1. The first one is at the UI control itself and can directly be enforced by the CSC.  
+   For this validation, the CSC does not need to call the DS for validation.  
+   It can enforce the validation directly based on various attributes sets on the UIControl and the type of UIControl.  
+   For examples, we may set an input field as required or we may want a number field where the valid data is between 1 and 20.  
+   These are specified in the DS model using the UIControl.required and UIControl.min and UIControl.max attributes respectively.
+
+2)	The second kind is validation that can only be enforced by the DS (remember the CSC is generic and the DS is use case specific). 
+      The DS can implement simple to very complex business rules to infer that some answers may not be valid
+      using all the data available to it (That is data from previously entered user inputs, external data and initial data).  
+      And that validation may be conditional to various paths or various conditions.
+      
+      For example, validating that a claim cannot exceed some amount because the sum of all current claim exceeds the maximum for 
+      the month.
+
+### DS Validation Pattern
+
+The design pattern is to have a first rulesheet for specifying the UI and another one for data validation.  
+Both executes on the same stage number and, as a consequence, the step always executes the 2 rulesheets.  
+And it executes them at least 2 times.  
+
+The first time, the UI rulesheet specifies the controls to render with no default values and the validation rulesheet 
+does not really have any effect as the data to be entered is null.  However, in the second execution, the user data is
+validated and a decision is made to continue to the next step if validation passes or to go back to the UI if validation fails.
+
+The only difference between the 2 passes is that in the first pass there is no data yet
+while in the second pass, there is data to validate.  And if validation fails, we want to reuse the data as the default value for the UI Controls so that the user does not have to retype everything and can just correct the data.
+
+To understand the details, let’s look at our validation sample available at https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms/DS/ValidationSample:
+
+The first rulesheet (Step1.ers) creates the UI as usual and does not set a next stage.  That way, we will re-enter the step
+after the user has submitted data.  
+
+The second rulesheet (Step1Validation.ers) does the data validation.
+
+When the CSC submits the current step, the DS executes both rulesheets again but this time with the data entered by the user.  
+If the validation passes, then we move to next stage (the validation rulesheet sets stage to next stage).
+
+If the validation fails, then we go back to rendering the UI for the same step but this time we have both the 
+data entered by the user and a set of validation messages to render as well.  
+The data entered by the user is set as the default value of the UI control (using the value attribute).
+
+Let's look in details at some key attributes at play, in the validation rulesheet (Step1Validation.ers):
+
+1. when the validation passes the rulesheet sets UI.nextStageNumber to the next stage and the flag “UI.noUiToRenderContinue” to True.
+   That way the client side component knows to execute the decision service a second time to get to the next stage.
+   
+2. when the validation fails the rulesheet sets UI.nextStageNumber to the same stage; so we keep executing till the
+   validation succeeds.
+
+
+## Reusing Some Stages (Reuse via Subflows)
+
+Sometimes multiple paths share a common set of steps (Stages) as shown in this image:
+
+![common steps](images/SubflowAsReusableItem1.jpg)
+
+One way to achieve reuse is to create a separate ruleflow and use it inside another ruleflow (this is the concept of a subflow).  
+
+The subflow does not contain anything special.  It just contains the set of stages the subflow needs to achieve its purpose.  
+Once completed, the subflow can be dragged into the main ruleflow similarly to how we drag rulesheets into a ruleflow.
+
+As a subflow can be invoked from different stages, the UI.nextStageNumber is not known in advance.  
+To solve that problem we follow the following pattern:
+
+* Before invoking a subflow, the main flow (the flow calling the reusable flow) needs to set UI.stageOnExit to where 
+   the subflow needs to resume.
+   
+* The subflow needs to set UI.nextStageNumber to UI.stageOnExit
+
+This is illustrated in the diagram below:
+![Subflows as reusable items](images/SubflowAsReusableItem2.jpg)
+
+To become familiar with this pattern, check the sample: ReusingFlowSample at https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms/DS/ReusingFlowSample
+
+In this sample, the subflow is implemented in stage 10 and 11.  We reuse it twice, the first time from stage 1 
+and the second time from stage 2 as shown below:
+
+![Sample reuse Subflows](images/ReuseFlow.PNG)
+
+Notice, the first time the subflow will return to stage 2 and the second time to stage 3. 
+
+
+
 # Getting Started
 
 The best way to get started is to first try the various samples provided out of the box.  
