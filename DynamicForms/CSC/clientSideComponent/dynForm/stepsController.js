@@ -207,7 +207,7 @@ corticon.dynForm.StepsController = function () {
         // There's a difference between $("#panel input") and $("#panel :input).
         // The first one will only retrieve elements of type input, that is <input type="...">, but not <textarea>, <button> and <select> elements.
         // let allFormEls = $('#dynUIContainerId :input').not('#dynUIContainerId :checkbox');
-        let allFormEls = baseEl.find('.nonarrayTypeControl :input').not(':checkbox');
+        let allFormEls = baseEl.find('.nonarrayTypeControl :input').not(':checkbox').not('.markerFileUploadExpense');
         allFormEls.each(function (index, item) {
             const oneInputEl = $(item);
             const formDataFieldName = oneInputEl.data("fieldName");
@@ -231,6 +231,46 @@ corticon.dynForm.StepsController = function () {
             const val = oneInputEl.is(':checked');
             _saveOneFormData(formDataFieldName, val);
         });
+
+        _saveFileUploadExpenses(baseEl);
+    }
+
+    function _saveFileUploadExpenses(baseEl) {
+        // With space in selector we get all descendants.
+        let allFormEls = baseEl.find('.nonarrayTypeControl .markerFileUploadExpense');
+
+        allFormEls.each(function (index, item) {
+            const oneInputEl = $(item);
+            const formDataFieldName = oneInputEl.data("fieldName");
+            const id = oneInputEl.attr('id')
+            const val = oneInputEl.val();
+            _saveOneFileUploadExpenseData(formDataFieldName, val, id);
+        });
+
+    }
+
+    function _saveOneFileUploadExpenseData(formDataFieldName, val, id) {
+        if ( val === undefined )
+            return;
+
+        let theExpenses;
+        if (itsPathToData === undefined || itsPathToData === null)
+            theExpenses = itsFormData[formDataFieldName];
+        else {
+            if (itsFormData[itsPathToData] === undefined) {
+                alert('Error: There should already be form data');
+                return;
+            }
+            else
+                theExpenses = itsFormData[itsPathToData][formDataFieldName];
+        }
+
+        // iterate expenses and find corresponding id.  When found set the data.
+        for ( let i=0; i<theExpenses.length; i++ ) {
+            const oneExpense = theExpenses[i];
+            if ( oneExpense.id === id )
+                oneExpense['fileUpload'] = val;
+        }
     }
 
     function _saveEnteredInputsToFormData (baseEl) {
@@ -350,6 +390,8 @@ corticon.dynForm.StepsController = function () {
                 oneItemAsObjLit['amount'] = converted;
             else
                 oneItemAsObjLit['amount'] = 0;
+
+            oneItemAsObjLit['id'] = '' + i;  // add a unique id that can be used in other steps where we need to add data to an expense item (like a file upload doc)
 
             convertedArray.push( oneItemAsObjLit );
         }
