@@ -58,6 +58,8 @@ corticon.dynForm.UIControlsRenderer = function () {
                 renderExpenseInput(oneUIControl, baseEl, labelPositionAtUILevel);
             else if ( oneUIControl.type === 'FileUpload' )
                 renderFileUploadInput(oneUIControl, baseEl, labelPositionAtUILevel);
+            else if ( oneUIControl.type === 'FileUploadExpenses' )
+                renderFileUploadExpenseInput(oneUIControl, baseEl, labelPositionAtUILevel);
             else
                 alert('This ui control is not yet supported: '+oneUIControl.type);
         }
@@ -180,6 +182,32 @@ corticon.dynForm.UIControlsRenderer = function () {
         }
         const fileUpHtml = `<label htmlFor="${oneUIControl.id}">${oneUIControl.label}:</label>
 								<input type="file" id="${oneUIControl.id}">`;
+        const fileUpEl = $(fileUpHtml);
+        inputContainerEl.append(fileUpEl);
+        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
+            fileUpEl.data("fieldName", oneUIControl.fieldName );
+        else
+            alert('Missing field name for '+oneUIControl.id);
+    }
+
+    function renderFileUploadExpenseInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
+        const inputContainerEl = createInputContainer(baseEl);
+
+        if ( oneUIControl.id === undefined || oneUIControl.id === null ) {
+            alert('missing id for fileupload ');
+            return;
+        }
+
+        /*
+        <label for="fileUpId">Choose a file:</label>
+        <input type="file" id="fileUpId" name="xyz">
+         */
+        if ( oneUIControl.label === undefined || oneUIControl.label === null || oneUIControl.label.length === 0 ) {
+            alert('missing label for fileupload '+oneUIControl.id);
+            return;
+        }
+        const fileUpHtml = `<label htmlFor="${oneUIControl.id}">${oneUIControl.label}:</label>
+								<input class="markerFileUploadExpense" type="file" id="${oneUIControl.id}">`;
         const fileUpEl = $(fileUpHtml);
         inputContainerEl.append(fileUpEl);
         if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
