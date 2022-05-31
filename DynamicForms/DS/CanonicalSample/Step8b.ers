@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_0djaAKvbEeyCrcI7dm-VtA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_B56vMeDnEeyxBt9QNpJmiQ" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_Em5Ukau6EeyCrcI7dm-VtA" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_KMmgUtYhEey38Pm9Bx7w_Q" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action>
         <opaqueExpression expression="CanonicalSample.Step8SumAll = allExpenses.amount->sum">
@@ -114,7 +114,6 @@
         </parserOutput>
       </opaqueExpression>
     </filter>
-    <filter/>
     <filter logicalVariables="#//@ruleset/@logicalVariables.4/@extension.2">
       <opaqueExpression expression="allEURExpenses.currency = 'EUR'">
         <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allEURExpenses.currency = 'EUR'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
@@ -128,7 +127,6 @@
         </parserOutput>
       </opaqueExpression>
     </filter>
-    <filter/>
     <filter logicalVariables="#//@ruleset/@logicalVariables.4/@extension.3">
       <opaqueExpression expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'">
         <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
@@ -182,12 +180,12 @@
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/Expense/currency"/>
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/Expense/amount"/>
       </extension>
-      <extension explicit="true" association="true" entity="../Vocabulary/Vocab.ecore#//ProjectsData/Expense" traversedAssocRole="../Vocabulary/Vocab.ecore#//ProjectsData/CanonicalSample/Step8Field1" filters="#//@ruleset/@filters.4">
+      <extension explicit="true" association="true" entity="../Vocabulary/Vocab.ecore#//ProjectsData/Expense" traversedAssocRole="../Vocabulary/Vocab.ecore#//ProjectsData/CanonicalSample/Step8Field1" filters="#//@ruleset/@filters.3">
         <alias value="allEURExpenses"/>
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/Expense/currency"/>
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/Expense/amount"/>
       </extension>
-      <extension explicit="true" association="true" entity="../Vocabulary/Vocab.ecore#//ProjectsData/Expense" traversedAssocRole="../Vocabulary/Vocab.ecore#//ProjectsData/CanonicalSample/Step8Field1" filters="#//@ruleset/@filters.6">
+      <extension explicit="true" association="true" entity="../Vocabulary/Vocab.ecore#//ProjectsData/Expense" traversedAssocRole="../Vocabulary/Vocab.ecore#//ProjectsData/CanonicalSample/Step8Field1" filters="#//@ruleset/@filters.4">
         <alias value="onlyUSDHotels"/>
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/Expense/currency"/>
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/Expense/expenseCode"/>
@@ -326,8 +324,8 @@
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.4">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allUSDExpenses.currency = 'USD'" filter="#//@ruleset/@filters.2"/>
-            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allEURExpenses.currency = 'EUR'" filter="#//@ruleset/@filters.4"/>
-            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" filter="#//@ruleset/@filters.6"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allEURExpenses.currency = 'EUR'" filter="#//@ruleset/@filters.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" filter="#//@ruleset/@filters.4"/>
           </children>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.0"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.0">
@@ -343,7 +341,7 @@
           </children>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.2">
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
-              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allEURExpenses.currency = 'EUR'" filter="#//@ruleset/@filters.4"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allEURExpenses.currency = 'EUR'" filter="#//@ruleset/@filters.3"/>
             </children>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.2/@referencedAttributes.0"/>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.2/@referencedAttributes.1"/>
@@ -352,7 +350,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.3">
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
-              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" filter="#//@ruleset/@filters.6"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" filter="#//@ruleset/@filters.4"/>
             </children>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.3/@referencedAttributes.0"/>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.3/@referencedAttributes.1"/>
@@ -362,7 +360,7 @@
         </children>
       </rootNode>
     </scopeSection>
-    <filterSection rowCount="50">
+    <filterSection rowCount="48">
       <filterItemList filter="#//@ruleset/@filters.0">
         <expressionCell external="UI.currentStageNumber = 9">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 9" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
@@ -391,9 +389,6 @@
         </expressionCell>
       </filterItemList>
       <filterItemList filter="#//@ruleset/@filters.3">
-        <expressionCell/>
-      </filterItemList>
-      <filterItemList filter="#//@ruleset/@filters.4">
         <expressionCell external="allEURExpenses.currency = 'EUR'">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allEURExpenses.currency = 'EUR'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
@@ -406,10 +401,7 @@
           </parserOutput>
         </expressionCell>
       </filterItemList>
-      <filterItemList filter="#//@ruleset/@filters.5">
-        <expressionCell/>
-      </filterItemList>
-      <filterItemList filter="#//@ruleset/@filters.6">
+      <filterItemList filter="#//@ruleset/@filters.4">
         <expressionCell external="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
