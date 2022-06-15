@@ -221,3 +221,12 @@ To get started:
 * Run the canonical sample. Each step in this sample shows how to use a specific UI control and display
   the corresponding Corticon rulesheet file in the title of the container.  
   You can then use the corresponding step rulesheet as an example to implement what you need in your own project.
+
+# Additional Resources
+
+Find out more about [Corticon.js](https://www.progress.com/corticon-js)
+
+You can check [these blogs](https://www.progress.com/blogs/author/thierry-ciot) for Corticon news and features as well as Serverless industry trends.
+
+Free training for Corticon.js at https://www.progress.com/blogs/learning-opportunity-available-get-started-corticonjs-rules-today
+

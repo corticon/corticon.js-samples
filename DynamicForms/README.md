@@ -17,7 +17,7 @@ Rules based dynamic forms are used in situations where there are:
 1. multiple paths in the flow of questions to ask the user
 2. there are many questions.
 
-The solution offered here is to use a rule system to separate what questions to ask at each step of the process 
+The solution offered here is to use a rule system ([Corticon](https://www.progress.com/corticon-js)) to separate what questions to ask at each step of the process 
 and what paths the flow of questions take from the UI code responsible from rendering the “questions/answers wizard”.  
 Another way to put it, is the rule system defines a model for the questionnaire independently of how it is rendered in the
 front end UI and device.
@@ -92,3 +92,12 @@ Additionally, the same model can be used to drive dynamic questionnaires on diff
 ![Web page and Mobile device](docs/images/SameModelforDifferentRenderersSmaller.png)
 
 All of this provides agility and improves delivery time.
+
+# Additional Resources
+
+Find out more about [Corticon.js](https://www.progress.com/corticon-js)
+
+You can check [these blogs](https://www.progress.com/blogs/author/thierry-ciot) for Corticon news and features as well as Serverless industry trends.
+
+Free training for Corticon.js at https://www.progress.com/blogs/learning-opportunity-available-get-started-corticonjs-rules-today
+

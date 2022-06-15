@@ -213,3 +213,11 @@ There are 3 attributes in the DS JSON results that deal with stages:
 * nextStageNumber: This is the stage number the CSC specifies when calling the DS for the next step. 
 
 
+# Additional Resources
+
+Find out more about [Corticon.js](https://www.progress.com/corticon-js)
+
+You can check [these blogs](https://www.progress.com/blogs/author/thierry-ciot) for Corticon news and features as well as Serverless industry trends.
+
+Free training for Corticon.js at https://www.progress.com/blogs/learning-opportunity-available-get-started-corticonjs-rules-today
+
