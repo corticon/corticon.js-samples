@@ -87,6 +87,7 @@ This is illustrated in the 2 diagrams below
 
 ![Remote decision service](docs/images/RemoteDS.png)
 
+# More Information
 
 For more detail on the CSC and the DS please refer to these documents:
 1. [Authoring a decision service (DS)](docs/AuthoringDecisionService.md)
