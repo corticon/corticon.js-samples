@@ -83,14 +83,14 @@ the mobile app.
 
 This is illustrated in the 2 diagrams below
 
+![In-process decision service](docs/images/LocalDS.png)
+
+![Remote decision service](docs/images/RemoteDS.png)
+
 
 For more detail on the CSC and the DS please refer to these documents:
 1. [Authoring a decision service (DS)](docs/AuthoringDecisionService.md)
 2. [Authoring a client side component (CSC)](docs/AuthoringClientSideComponents.md)
-
-![In-process decision service](docs/images/LocalDS.png)
-
-![Remote decision service](docs/images/RemoteDS.png)
 
 # Benefits
 
