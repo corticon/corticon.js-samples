@@ -71,10 +71,26 @@ Here is a summary of the roles and responsibilities:
 
 ![Big picture view](docs/images/RolesResponsibilities.PNG)
 
+## Local versus Remote Decision Services
+
+It is typical for the DS to run in process with the CSC or in a remote environment.  
+For the remote option, Corticon.js supports deployments to any of the major cloud vendors Serverless environments (AWS Lambda. Azure and GCP functions), and to any Node.js server 
+running either in the cloud or on premises (traditional server deployments).  
+
+Of course, an in-process deployment will provide instant response time, however, and mostly for mobile apps
+a decision service hosted remotely can be updated very easily without having to force the user to reinstall
+the mobile app.
+
+This is illustrated in the 2 diagrams below
+
+
 For more detail on the CSC and the DS please refer to these documents:
 1. [Authoring a decision service (DS)](docs/AuthoringDecisionService.md)
 2. [Authoring a client side component (CSC)](docs/AuthoringClientSideComponents.md)
 
+![In-process decision service](docs/images/LocalDS.png)
+
+![Remote decision service](docs/images/RemoteDS.png)
 
 # Benefits
 
@@ -84,7 +100,6 @@ applications as illustrated below:
 ![Reuse CSC across applications](docs/images/ReuseCSCAcrossAppsSmaller.jpg)
 
 In other words, to implement a new use cases, you only need to develop the model for the new use case. 
-
 
 Additionally, the same model can be used to drive dynamic questionnaires on different platforms 
 (for example, Web page and Mobile device).
