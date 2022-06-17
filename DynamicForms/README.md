@@ -73,13 +73,20 @@ Here is a summary of the roles and responsibilities:
 
 ## Local versus Remote Decision Services
 
-It is typical for the DS to run in process with the CSC or in a remote environment.  
-For the remote option, Corticon.js supports deployments to any of the major cloud vendors Serverless environments (AWS Lambda. Azure and GCP functions), and to any Node.js server 
-running either in the cloud or on premises (traditional server deployments).  
+It is typical for the DS to run in process with the CSC or in a remote environment.
 
-Of course, an in-process deployment will provide instant response time, however, and mostly for mobile apps
-a decision service hosted remotely can be updated very easily without having to force the user to reinstall
-the mobile app.
+For the remote option, Corticon.js supports deployments to any of 
+the major cloud vendors Serverless environments (AWS Lambda. Azure and GCP functions), 
+and to any Node.js server or traditional Java server running either in the cloud or on premises (traditional server deployments).
+
+Of course, an in-process deployment will provide instant response time, however, there can be situations where you may want to run the model remotely.  
+Here are the cases we have encountered with customers:
+1) For Mobile Apps: a decision service hosted remotely can be updated very easily without having 
+   to force the user to reinstall the app.
+2) Security:
+      * we don’t want to expose some of the data used in the decision process
+      * we want to have the decision service access various data sources inside the firewall.
+      * we don't to risk exposing the decision service to reverse engineering 
 
 This is illustrated in the 2 diagrams below
 
