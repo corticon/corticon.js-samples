@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.common="http:///com/corticon/rulesemf/common.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="1" buildNumber="8018" updateStamp="_lw7wkxkyEeuBGJLl8bz85Q" externalChecksum="3641963118:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_lw7wkBkyEeuBGJLl8bz85Q" key="10" type="Validation" severity="Warning" invalidObjects="#//@rulesheetViewList.0/@ruleStatementSection/@ruleStatementItemList.0/@reference" textKey="RulesheetTableModelAPIImpl.Validation.RuleStatementOutOfContext"/>
+  <ruleset vocabularyUpdateStamp="_roQJcOYSEeqAY8hCrnd_Lw" vocabulary="Solar.ecore#/">
+    <rule>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Rebate.new[Flat=0, Percent=0]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.new [ Rebate.Percent = 0 , Rebate.Flat = 0 ]" datatype="Rebate" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Rebate" termtype="NEW" fulltext="Rebate.new">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="Rebate.Percent += .26">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0.26" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="Property.State = States#MA">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.State" rhs="States#MA"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Property.Type = PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.Type" rhs="PropertyTypes#Residential"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Property.EstimatedInstallationCost * .15 &lt; 1000)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.15 &lt; 1000 ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.EstimatedInstallationCost * .15 &lt; 1000" rhs="T"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+        <opaqueExpression expression="Rebate.Percent += .05">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0.05" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+        <opaqueExpression expression="Rebate.Flat += Property.EstimatedInstallationCost * .15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + Property.EstimatedInstallationCost * 0.15" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Property.State = States#MA">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.State" rhs="States#MA"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Property.Type = PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.Type" rhs="PropertyTypes#Residential"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Property.EstimatedInstallationCost * .15 &lt; 1000)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.15 &lt; 1000 ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.EstimatedInstallationCost * .15 &lt; 1000" rhs="F"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+        <opaqueExpression expression="Rebate.Percent += .05">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0.05" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+        <opaqueExpression expression="Rebate.Flat += 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 1000" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Property.State = States#CA">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'CA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.State" rhs="States#CA"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Property.Type = PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.Type" rhs="PropertyTypes#Residential"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Rebate.Percent += 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rebate.Flat += 500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 500" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rebate.Flat += 0.95 * Constants.DefaultInstallationSize">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 0.95 * Constants.DefaultInstallationSize" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="DefaultInstallationSize" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Constants.DefaultInstallationSize">
+                <parentTerm text="Constants" datatype="Constants" termtype="ENTITY" fulltext="Constants" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Property.State = States#NY">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.State" rhs="States#NY"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Property.Type = PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.Type" rhs="PropertyTypes#Residential"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Property.EstimatedInstallationCost * .25 &lt; 5000)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.25 &lt; 5000 ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.EstimatedInstallationCost * .25 &lt; 5000" rhs="T"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Rebate.Percent += 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rebate.Flat += 1 * Constants.DefaultInstallationSize">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 1 * Constants.DefaultInstallationSize" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="DefaultInstallationSize" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Constants.DefaultInstallationSize">
+                <parentTerm text="Constants" datatype="Constants" termtype="ENTITY" fulltext="Constants" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rebate.Flat += Property.EstimatedInstallationCost * .25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + Property.EstimatedInstallationCost * 0.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Property.State = States#NY">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.State" rhs="States#NY"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Property.Type = PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.Type" rhs="PropertyTypes#Residential"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Property.EstimatedInstallationCost * .25 &lt; 5000)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.25 &lt; 5000 ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.EstimatedInstallationCost * .25 &lt; 5000" rhs="F"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2"/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Rebate.Percent += 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rebate.Flat += 1 * Constants.DefaultInstallationSize">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 1 * Constants.DefaultInstallationSize" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="DefaultInstallationSize" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Constants.DefaultInstallationSize">
+                <parentTerm text="Constants" datatype="Constants" termtype="ENTITY" fulltext="Constants" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="Rebate.Flat += 5000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 5000" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Property.Type = PropertyTypes#Commercial">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Commercial'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.Type" rhs="PropertyTypes#Commercial"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Rebate.new[Flat=0, Percent=0]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.new [ Rebate.Percent = 0 , Rebate.Flat = 0 ]" datatype="Rebate" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Rebate" termtype="NEW" fulltext="Rebate.new">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Property.Type = PropertyTypes#Other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Other'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Property.Type" rhs="PropertyTypes#Other"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Rebate.new[Flat=0, Percent=0]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.new [ Rebate.Percent = 0 , Rebate.Flat = 0 ]" datatype="Rebate" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Rebate" termtype="NEW" fulltext="Rebate.new">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1">
+      <text expression="https://programs.dsireusa.org/system/program/detail/1235, https://www.mass.gov/regulations/830-CMR-6261-residential-energy-credit">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="https://programs.dsireusa.org/system/program/detail/1235, https://www.mass.gov/regulations/830-CMR-6261-residential-energy-credit" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement ruleModelElements="#//@ruleset/@rules.0/@actions.1 #//@ruleset/@rules.1/@actions.1 #//@ruleset/@rules.2/@actions.1 #//@ruleset/@rules.3/@actions.1 #//@ruleset/@rules.4/@actions.1 #//@ruleset/@rules.5/@actions.1">
+      <text expression="Apply federal rate, potentially changes each year">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply federal rate, potentially changes each year" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement ruleModelElements="#//@ruleset/@rules.0/@actions.2 #//@ruleset/@rules.1/@actions.2 #//@ruleset/@rules.2/@actions.2 #//@ruleset/@rules.3/@actions.2 #//@ruleset/@rules.4/@actions.2 #//@ruleset/@rules.5/@actions.2 #//@ruleset/@rules.0/@actions.3 #//@ruleset/@rules.1/@actions.3 #//@ruleset/@rules.2/@actions.3 #//@ruleset/@rules.3/@actions.3 #//@ruleset/@rules.4/@actions.3 #//@ruleset/@rules.5/@actions.3 #//@ruleset/@rules.2/@actions.4 #//@ruleset/@rules.3/@actions.4 #//@ruleset/@rules.4/@actions.4 #//@ruleset/@rules.5/@actions.4">
+      <text expression="Apply MA rate">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply MA rate" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="Solar.ecore#//Property">
+      <referencedAttributes attribute="Solar.ecore#//Property/Address"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/Age"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/City"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/Country"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/MonthlyElectricBill"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/Orientation"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/Type"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/RoofSize"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/Shade"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/Value"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/State"/>
+      <referencedAttributes attribute="Solar.ecore#//Property/EstimatedInstallationCost"/>
+    </logicalVariable>
+    <logicalVariable entity="Solar.ecore#//Rebate">
+      <referencedAttributes attribute="Solar.ecore#//Rebate/Percent"/>
+      <referencedAttributes attribute="Solar.ecore#//Rebate/Flat"/>
+    </logicalVariable>
+    <logicalVariable entity="Solar.ecore#//Constants">
+      <referencedAttributes attribute="Solar.ecore#//Constants/DefaultInstallationSize"/>
+      <referencedAttributes attribute="Solar.ecore#//Constants/DefaultRequiredRoofSpace"/>
+      <referencedAttributes attribute="Solar.ecore#//Constants/PanelPricePerWatt"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightScope="75" sashWeightConditionsIf="53">
+    <actionSection rowCount="51" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.new[Flat=0, Percent=0]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.new [ Rebate.Percent = 0 , Rebate.Flat = 0 ]" datatype="Rebate" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Rebate" termtype="NEW" fulltext="Rebate.new">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Rebate.Percent += .26">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0.26" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Percent += .05">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0.05" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Rebate.Flat += Property.EstimatedInstallationCost * .15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + Property.EstimatedInstallationCost * 0.15" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Flat += 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 1000" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Percent += 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Flat += 500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 500" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Flat += 0.95 * Constants.DefaultInstallationSize">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 0.95 * Constants.DefaultInstallationSize" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="DefaultInstallationSize" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Constants.DefaultInstallationSize">
+                <parentTerm text="Constants" datatype="Constants" termtype="ENTITY" fulltext="Constants" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Percent += 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Percent = Rebate.Percent + 0" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Percent">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Flat += 1 * Constants.DefaultInstallationSize">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 1 * Constants.DefaultInstallationSize" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="DefaultInstallationSize" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Constants.DefaultInstallationSize">
+                <parentTerm text="Constants" datatype="Constants" termtype="ENTITY" fulltext="Constants" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Flat += Property.EstimatedInstallationCost * .25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + Property.EstimatedInstallationCost * 0.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rebate.Flat += 5000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rebate.Flat = Rebate.Flat + 5000" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Flat" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Rebate.Flat">
+                <parentTerm text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Rebate" datatype="Rebate" termtype="ENTITY" fulltext="Rebate" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.9"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.10"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.11"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="198" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference validationMessages="#//@validationMessages.0" tooltip="Rule Statements references entities out of the rule's context: RULE BEHAVIOR MODIFIED" external="1"/>
+        <text external="https://programs.dsireusa.org/system/program/detail/1235, https://www.mass.gov/regulations/830-CMR-6261-residential-energy-credit">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="https://programs.dsireusa.org/system/program/detail/1235, https://www.mass.gov/regulations/830-CMR-6261-residential-energy-credit" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="B"/>
+        <text external="Apply federal rate, potentially changes each year">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply federal rate, potentially changes each year" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="{C, D, E}"/>
+        <text external="Apply MA rate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply MA rate" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="45" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Property.State">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Property.Type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Property.EstimatedInstallationCost * .15 &lt; 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.EstimatedInstallationCost * 0.15 &lt; 1000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Property.EstimatedInstallationCost * .25 &lt; 5000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.EstimatedInstallationCost * 0.25 &lt; 5000" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="States#MA">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.15 &lt; 1000 ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="States#MA">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.15 &lt; 1000 ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="States#CA">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'CA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="States#NY">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.25 &lt; 5000 ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="States#NY">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.State = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="State" datatype="String" termtype="ATTRIBUTE" fulltext="Property.State">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="PropertyTypes#Residential">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Residential'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Property.EstimatedInstallationCost * 0.25 &lt; 5000 ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="EstimatedInstallationCost" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Property.EstimatedInstallationCost">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="PropertyTypes#Commercial">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Commercial'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="PropertyTypes#Other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Property.Type = 'Other'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Type" datatype="String" termtype="ATTRIBUTE" fulltext="Property.Type">
+                <parentTerm text="Property" datatype="Property" termtype="ENTITY" fulltext="Property" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
