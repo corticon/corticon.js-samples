@@ -43,8 +43,6 @@ Rules define the model for what, when, and how to present prompts to an end user
 </figure>
 
 Typically, a client side component is written and maintained by a developer  while the form's rule-driven logic is written by business analysts who  best understand the subject domain of the form.
- 
-
 
 The communication between the rule author and front end developer, as well as between the actual artifacts they each produce, is facilitated by a well documented schema for the JSON to exchange IN and OUT. 
 
@@ -83,7 +81,6 @@ As more rulesheets are added to our Ruleflow, Ruletests can be run against entir
 </p>
 
 
-
 ## Building Dynamic Forms with Corticon.js
 
 It may be easiest to conceptualize Corticon.js Dynamic Forms by first checking out the samples that you can interact with as an end user, leveraging the 'test driver' web page. You can launch it right away at [this link](https://refined-github-html-preview.kidonng.workers.dev/corticon/corticon.js-samples/raw/master/DynamicForms/CSC/client.html), or review the HTML [here](https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html). 
@@ -95,69 +92,64 @@ The Dynamic Forms in the sample page are rendered by a reusable Client Side Comp
 
 This framework--separating the CSC from the rules--promotes agility for development teams, as it distinguishes the 'instructions' for what to present to the user (defined in a Corticon.js decision service) and the code that renders the form based upon these instructions.
 
-Here is a visual representation of the interaction between the CSC and decision service:
 
-![Big picture view](docs/images/bigPic.PNG)
+The CSC does not know the questions to be asked at each step and what the answers mean but it knows how to render these questions and collect the answers.
 
-The CSC does not know the questions to be asked at each step and what the answers mean but it knows
-how to render these questions and collect the answers.
+The decision service driving the dynamic forms, specify what the questions, the constraints on questions and where to store the answers.  The decision services do not know the current state of the questionnaire but know what to do at each step.
 
-The decision service (DS) driving the dynamic forms, specify what the questions, the constraints on questions and where to store the
-answers.  The DS do not know the current state of the questionnaire but know what to do at each step.
-
-Typically, a CSC is written and maintained by a developer or a team of developers while the DS are written by business analysts 
+Typically, a CSC is written and maintained by a developer or a team of developers while the decision services are written by business analysts 
 who understand well the problem domain of the questionnaire.
 
 Here is a summary of the roles and responsibilities:
 
-![Big picture view](docs/images/RolesResponsibilities.PNG)
+![Big picture view](docs/images/architecture.PNG)
 
 ## Local versus Remote Decision Services
 
-It is typical for the DS to run in process with the CSC or in a remote environment.
+Decision service can be run in process within the CSC or maintained and invoked in a remote environment.
 
-For the remote option, Corticon.js supports deployments to any of 
-the major cloud vendors Serverless environments (AWS Lambda. Azure and GCP functions), 
-and to any Node.js server or traditional Java server running either in the cloud or on premises (traditional server deployments).
+For the remote option, Corticon.js supports deployments to:
 
-Of course, an in-process deployment will provide instant response time, however, there can be situations where you may want to run the model remotely.  
-Here are the cases we have encountered with customers:
-1) For Mobile Apps: a decision service hosted remotely can be updated very easily without having 
-   to force the user to reinstall the app.
-2) Security:
+-  Any of the major cloud vendors' serverless environments (AWS Lambda, Azure and GCP functions)
+-  Node.js servers
+-  Traditional Java server running either in the cloud or on premises (traditional server deployments)
+
+In-process deployments provide essentially instant response time, however, there are considerations for when it might make more sense to run maintain this logic in remote environments, such as:
+
+- For Mobile Apps: a decision service hosted remotely can be updated very easily without having to force the user to reinstall the app.
+- To address security:
       * we don’t want to expose some of the data used in the decision process
       * we want to have the decision service access various data sources inside the firewall.
       * we don't to risk exposing the decision service to reverse engineering 
 
-This is illustrated in the 2 diagrams below
+There are only minor distinctions between how the CSC and decision service interactions take place when running in-process or remotely:
 
 ![In-process decision service](docs/images/LocalDS.png)
 
 ![Remote decision service](docs/images/RemoteDS.png)
 
-# More Information
+## Building and integrating a rule-driven form's components
 
-For more detail on the CSC and the DS please refer to these documents:
-1. [Authoring a decision service (DS)](docs/AuthoringDecisionService.md)
+For more detail on the CSC and the decision service please refer to these documents:
+
+1. [Authoring a decision service (decision service)](docs/AuthoringDecisionService.md)
 2. [Authoring a client side component (CSC)](docs/AuthoringClientSideComponents.md)
 
-# Benefits
+## Summary
 
-A single component for rendering dynamic questionnaires can be reused with multiple 
-applications as illustrated below:
+<figure>
+<img align="right" width="400"  src="docs/images/SameModelforDifferentRenderersSmaller.png" 
+ title="Rule Vocabulary">
+</figure>
 
-![Reuse CSC across applications](docs/images/ReuseCSCAcrossAppsSmaller.jpg)
+- A single component for rendering dynamic questionnaires can be reused with multiple applications 
+- In other words, to implement a new use cases, you only need to develop the *model* for the new use case. 
+- Additionally, the same model can be used to drive dynamic questionnaires on different platforms (for example, Web page and Mobile device).
+- All of this provides agility and improves delivery time.
 
-In other words, to implement a new use cases, you only need to develop the model for the new use case. 
 
-Additionally, the same model can be used to drive dynamic questionnaires on different platforms 
-(for example, Web page and Mobile device).
 
-![Web page and Mobile device](docs/images/SameModelforDifferentRenderersSmaller.png)
-
-All of this provides agility and improves delivery time.
-
-# Additional Resources
+## Additional Resources
 
 Find out more about [Corticon.js](https://www.progress.com/corticon-js)
 
