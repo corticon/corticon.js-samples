@@ -58,8 +58,8 @@ Corticon provides domain experts with the tools to define the parts of software 
 
 Logic is authored and tested in Corticon Studio through Rule Modeling in a spreadsheet decision-table interface called *Rulesheets*.  A rule is like an ‘if-then’ statement. Each rule consists of one or more conditions (if) that are associated with one or more actions (then).
 
-<p align="center">
-  <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet  overview">
+<p>
+  <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet  overview" >
 </p>
 
 ### Testing the Rules
@@ -102,11 +102,9 @@ who understand well the problem domain of the questionnaire.
 
 Here is a summary of the roles and responsibilities:
 
-<figure>
-<img align="center" width="500"  src="docs/images/architecture.png" 
- title="architecture">
-</figure>
 
+<img width="500"  src="docs/images/architecture.png" 
+ title="architecture">
 
 
 ## Local versus Remote Decision Services
@@ -123,21 +121,21 @@ In-process deployments provide essentially instant response time, however, there
 
 - For Mobile Apps: a decision service hosted remotely can be updated very easily without having to force the user to reinstall the app.
 - To address security:
-      * we don’t want to expose some of the data used in the decision process
-      * we want to have the decision service access various data sources inside the firewall.
-      * we don't to risk exposing the decision service to reverse engineering 
+	- Don’t want to expose some of the data used in the decision process
+	- Want to have the decision service access various data sources inside the firewall.
+	- Don't to risk exposing the decision service to reverse engineering 
 
 There are only minor distinctions between how the CSC and decision service interactions take place when running in-process or remotely:
 
-<figure>
-<img align="center" width="500"  src="docs/images/LocalDS.png" 
+<p style="text-align:center;">
+<img width="500"  src="docs/images/LocalDS.png" 
  title="Running locally">
-</figure>
-
-<figure>
-<img align="center" width="500"  src="docs/images/RemoteDS.png" 
+<br>
+<br>
+<img width="500"  src="docs/images/RemoteDS.png" 
  title="Remote decision service">
-</figure>
+
+</p>
 
 ## Building and integrating a rule-driven form's components
 
