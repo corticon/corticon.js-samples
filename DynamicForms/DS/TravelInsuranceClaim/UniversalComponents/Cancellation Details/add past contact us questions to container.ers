@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_GbshgK7EEeyln_x8H652Jw" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_Wd6PUiLgEe2HLqI4plPLmw" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_BNH1wK7CEeyln_x8H652Jw" vocabulary="../../../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_KMmgUtYhEey38Pm9Bx7w_Q" vocabulary="../../../Vocabulary/Vocab.ecore#/">
     <rule>
       <action>
         <opaqueExpression expression="UI.containers.uiControls = UIControl.new[type='DateTime', label='When did you first contact us?',  id='crtl5_1', fieldName='whenContactUs']">
@@ -94,8 +94,8 @@
       <action/>
       <action/>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Called, displayName='I Called']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I called' , Option.displayName = 'I Called' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value='Called', displayName='I Called']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Called' , Option.displayName = 'I Called' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -126,8 +126,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Chatted, displayName='I chatted']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I live chatted' , Option.displayName = 'I chatted' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value='Chatted', displayName='I chatted']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Chatted' , Option.displayName = 'I chatted' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -158,8 +158,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Emailed, displayName='I emailed']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I emailed' , Option.displayName = 'I emailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value='Emailed', displayName='I emailed']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Emailed' , Option.displayName = 'I emailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -190,8 +190,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Faxed, displayName='I faxed']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I faxed' , Option.displayName = 'I faxed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value='Faxed', displayName='I faxed']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Faxed' , Option.displayName = 'I faxed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -222,8 +222,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Mailed, displayName='I mailed']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I mailed' , Option.displayName = 'I mailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls.option += Option.new[value='Mailed', displayName='I mailed']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Mailed' , Option.displayName = 'I mailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -367,8 +367,8 @@
       </actionItemList>
       <actionItemList rowHeight="78">
         <valueSetCell valueSet=""/>
-        <expressionCell external="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Called, displayName='I Called']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I called' , Option.displayName = 'I Called' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls.option += Option.new[value='Called', displayName='I Called']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Called' , Option.displayName = 'I Called' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -400,8 +400,8 @@
       </actionItemList>
       <actionItemList rowHeight="85">
         <valueSetCell/>
-        <expressionCell external="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Chatted, displayName='I chatted']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I live chatted' , Option.displayName = 'I chatted' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls.option += Option.new[value='Chatted', displayName='I chatted']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Chatted' , Option.displayName = 'I chatted' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -433,8 +433,8 @@
       </actionItemList>
       <actionItemList rowHeight="77">
         <valueSetCell/>
-        <expressionCell external="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Emailed, displayName='I emailed']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I emailed' , Option.displayName = 'I emailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls.option += Option.new[value='Emailed', displayName='I emailed']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Emailed' , Option.displayName = 'I emailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -466,8 +466,8 @@
       </actionItemList>
       <actionItemList rowHeight="82">
         <valueSetCell valueSet=""/>
-        <expressionCell external="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Faxed, displayName='I faxed']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I faxed' , Option.displayName = 'I faxed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls.option += Option.new[value='Faxed', displayName='I faxed']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Faxed' , Option.displayName = 'I faxed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
@@ -499,8 +499,8 @@
       </actionItemList>
       <actionItemList rowHeight="79">
         <valueSetCell/>
-        <expressionCell external="UI.containers.uiControls.option += Option.new[value=contactUsBeforeMethod#Mailed, displayName='I mailed']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'I mailed' , Option.displayName = 'I mailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls.option += Option.new[value='Mailed', displayName='I mailed']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.option += Option.new [ Option.value = 'Mailed' , Option.displayName = 'I mailed' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="option" datatype="Option" termtype="ENTITY" fulltext="UI.containers.uiControls.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
                 <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
