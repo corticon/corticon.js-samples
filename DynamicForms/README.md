@@ -33,7 +33,8 @@ Using a rules-driven paradigm for dynamic form logic, authored with a proven dec
 Rules define the model for what, when, and how to present prompts to an end user independently from the definition of how these prompts are presented stylistically in the front end UI (denoted here as the Client Side Component, or CSC).
 
 
-## Corticon.js Rule Authoring Concepts
+## Corticon.js Rule Authoring Concepts 
+*(Not limited to Dynamic Forms)*
 
 ### Rule Vocabulary
 
@@ -140,8 +141,8 @@ There are only minor distinctions between how the CSC and decision service inter
 
 For more detail on the CSC and the decision service please refer to these documents:
 
-1. [Authoring a decision service (decision service)](docs/AuthoringDecisionService.md)
-2. [Authoring a client side component (CSC)](docs/AuthoringClientSideComponents.md)
+1. [Authoring a the dynamic form logic in Corticon (these will be generated into the Decision Service) ](docs/AuthoringDecisionService.md)
+2. [Building and configuring the client side component (CSC)](docs/AuthoringClientSideComponents.md)
 
 ## Summary
 
