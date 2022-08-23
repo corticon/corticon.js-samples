@@ -2,34 +2,37 @@
 
 ## Introduction
 
-It is common to have user interactions requiring asking multiple questions. 
-Several UI paradigms have been developed and most UI developers have solutions today.  However, the difficulty comes when:
-1)	The set of questions is large or becomes larger as is typical of many business processes nowadays.
-2)	The questions need to be changed frequently.
-3)	And, more interestingly, the set of questions to ask depends on either or both answers from previous steps 
-      and external data leading to independent paths for various users.
+Implementing the complexities of a dynamic form's user interface often involves a  level of complexity comparable to that of a traditional decision automation use case (e.g. eligibility determination, claims handling, loan origination...). With Corticon.js, we can define this logic using the same declarative, rules-driven paradigm that enables traditional decision automation. 
 
-Consequently, the total number of paths quickly increases (usually exponentially) and overwhelms the development team.   
-Programing all of these in code puts an enormous burden on the front-end development and testing teams.  
-It is difficult to scale up
+There are a wide array of UI paradigms fit for the purpose of building forms with a multitude of questions/prompts, the answers from which will be passed into downstream workflows. But the form logic can evolve into a monolith in its own right when--
 
-Rules based dynamic forms are used in situations where there are:
-1. multiple paths in the flow of questions to ask the user
-2. there are many questions.
+1.  Answers to the form's earlier questions change which questions are asked later in the form. 
+2.  The questions change frequently. 
+3.  External data must be wrangled from external systems in order to pre-populate or predetermine certain steps. 
 
-The solution offered here is to use a rule system ([Corticon](https://www.progress.com/corticon-js)) to separate what questions to ask at each step of the process 
-and what paths the flow of questions take from the UI code responsible from rendering the “questions/answers wizard”.  
-Another way to put it, is the rule system defines a model for the questionnaire independently of how it is rendered in the
-front end UI and device.
 
-Note: These forms are sometimes called Dynamic Questionnaires.  
+Quickly, the number of unique paths which a user can progress through increases exponentially, as does the effort required to maintain and update it. 
 
-## Definition - Terms
+Using a rules-driven paradigm for dynamic form logic, authored with a proven decision automation engine like [Corticon.js](https://www.progress.com/corticon-js), this complexity can be tamed through logic modularization and data abstraction. 
 
-* Rulesheet: the Corticon condition and actions sheet where the modeler specifies the business rules for rendering the dynamic questionnaire
-* Ruleflow: the Corticon unit of decision service deployment.
-* Flow: The set of stages the user goes through in a specific scenario (Synonym with path)
-* Stage: a unique identifier representing where the flow currently is at in the state machine.
+Rules define the model for what, when, and how to present prompts to an end user independently from the definition of how these prompts are presented stylistically in the front end UI.
+
+
+## Corticon.js Rule Authoring Concepts
+
+Corticon business rules are authored in **Corticon.js Studio**, with the backbone of the rules we create being the *Rule Vocabulary*. This will serve as the data model to capture both the  that will define aspects of:
+
+- The user interface (UI), such as which questions to pose to the end user at what stage in the form being filled, and what type of input should be allowed for these questions 
+- The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
+
+![](https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png)
+
+
+
+* **Rulesheet**: the Corticon condition and actions sheet where the modeler specifies the business rules for rendering the dynamic questionnaire
+* **Ruleflow**: the Corticon unit of decision service deployment.
+* **Flow**: The set of stages the user goes through in a specific scenario 
+* **Stage**: a unique identifier representing where the flow currently is at in the state machine.
 
 
 ## Getting Started

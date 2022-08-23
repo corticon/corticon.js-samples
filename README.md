@@ -1,5 +1,5 @@
 # Corticon.js Samples
-This repository contains sample decision services for using Corticon.js across a variety of JavaScript environments.
+This repository contains sample decision services for using [Corticon.js](https://www.progress.com/corticon-js) across a variety of JavaScript environments.
 
 With Corticon.js, you can deploy rules to any platform that supports a compatible version of JavaScript. With this flexibility, you automate decisions where the data originates from or where the decisions have the most effect. Supported deployments of Corticon.js include:
 
