@@ -102,7 +102,12 @@ who understand well the problem domain of the questionnaire.
 
 Here is a summary of the roles and responsibilities:
 
-![Big picture view](docs/images/architecture.png)
+<figure>
+<img align="center" width="500"  src="docs/images/architecture.png" 
+ title="architecture">
+</figure>
+
+
 
 ## Local versus Remote Decision Services
 
@@ -124,9 +129,15 @@ In-process deployments provide essentially instant response time, however, there
 
 There are only minor distinctions between how the CSC and decision service interactions take place when running in-process or remotely:
 
-![In-process decision service](docs/images/LocalDS.png)
+<figure>
+<img align="center" width="500"  src="docs/images/LocalDS.png" 
+ title="Running locally">
+</figure>
 
-![Remote decision service](docs/images/RemoteDS.png)
+<figure>
+<img align="center" width="500"  src="docs/images/RemoteDS.png" 
+ title="Remote decision service">
+</figure>
 
 ## Building and integrating a rule-driven form's components
 
@@ -139,7 +150,7 @@ For more detail on the CSC and the decision service please refer to these docume
 
 <figure>
 <img align="right" width="400"  src="docs/images/SameModelforDifferentRenderersSmaller.png" 
- title="Rule Vocabulary">
+ title="Same Model for Different Renderers">
 </figure>
 
 - A single component for rendering dynamic questionnaires can be reused with multiple applications 
