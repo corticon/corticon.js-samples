@@ -44,17 +44,21 @@ Logic is authored and tested in Corticon Studio through Rule Modeling in a sprea
 
 ###Testing the Rules
 
-A Ruletest simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced. 
+A *Ruletest* simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced. 
 
 You can define different sets of input data to test how the rules behave in different scenarios. You can also use a Ruletest to compare the output of a rule execution with expected results. A Ruletest stores this information in a Ruletest file, enabling you to save use-cases that are of interest, change rules, and run the test again to see how the modified rules behave when applied to the same use-cases. 
 
-Ruletest reproduces how the rules will behave once deployed as a decision service.
-
-
+Ruletests reproduce how the rules will behave once deployed as a decision service.
 
 ###Organizing the Rules
 
-## Getting Started
+From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a Ruleflow to specify the sequence from one rulesheet to another. 
+
+As more rulesheets are added to our Ruleflow, Ruletests can be run against entire Ruleflows, instead of testing only the Rulesheets as they are developed. This enables you to test not only the rules as they are defined in the Rulesheet, but also how the Ruleflow works, and how the rules behave as part of the Ruleflow. This way, problems can be detected and fixed earlier in the lifecycle.
+
+![](https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/ruleflowBreakdown.png)
+
+## Building Dynamic Forms with Corticon.js
 
 To make it easy to familiarize yourself with the concepts, we have made available several samples that you can run from a 'test driver' web page.
 
