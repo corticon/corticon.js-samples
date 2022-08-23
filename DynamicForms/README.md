@@ -86,27 +86,16 @@ As more rulesheets are added to our Ruleflow, Ruletests can be run against entir
 
 ## Building Dynamic Forms with Corticon.js
 
-To make it easy to familiarize yourself with the concepts, we have made available several samples that you can run from a 'test driver' web page.
+It may be easiest to conceptualize Corticon.js Dynamic Forms by first checking out the samples that you can interact with as an end user, leveraging the 'test driver' web page. You can launch it right away at [this link](https://refined-github-html-preview.kidonng.workers.dev/corticon/corticon.js-samples/raw/master/DynamicForms/CSC/client.html), or review the HTML [here](https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html). 
 
-To get started:
-
--  Invoke [client.html](https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html) and select a sample form to test drive from the dropdown
--  Explore the samples to get a feel for what is available
--  Run the canonical sample. Each step in this sample shows how to use a specific UI control and display
-the corresponding Corticon rulesheet file in the title of the container.  You can then use the corresponding step rulesheet as an example to implement what you need.
   
-## Design
+### Design
 
-These Dynamic Questionnaires are rendered by a generic client side component (CSC).  
-By generic, we mean that the same CSC can be reused for multiple questionnaires without 
-any changes.  
+The Dynamic Forms in the sample page are rendered by a reusable Client Side Component (CSC). Just switch samples with the dropdown and you're in a different dynamic form. 
 
-This promotes agility for the development team.
+This framework--separating the CSC from the rules--promotes agility for development teams, as it distinguishes the 'instructions' for what to present to the user (defined in a Corticon.js decision service) and the code that renders the form based upon these instructions.
 
-The CSC renders the questionnaire following the instructions from a set of rules 
-embedded in a decision service (DS).
-
-Here is a visual representation of the interaction between the CSC and DS:
+Here is a visual representation of the interaction between the CSC and decision service:
 
 ![Big picture view](docs/images/bigPic.PNG)
 
