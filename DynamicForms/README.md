@@ -102,7 +102,7 @@ who understand well the problem domain of the questionnaire.
 
 Here is a summary of the roles and responsibilities:
 
-![Big picture view](docs/images/architecture.PNG)
+![Big picture view](docs/images/architecture.png)
 
 ## Local versus Remote Decision Services
 
