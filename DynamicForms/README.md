@@ -15,35 +15,54 @@ Quickly, the number of unique paths which a user can progress through increases 
 
 Using a rules-driven paradigm for dynamic form logic, authored with a proven decision automation engine like [Corticon.js](https://www.progress.com/corticon-js), this complexity can be tamed through logic modularization and data abstraction. 
 
-Rules define the model for what, when, and how to present prompts to an end user independently from the definition of how these prompts are presented stylistically in the front end UI.
+Rules define the model for what, when, and how to present prompts to an end user independently from the definition of how these prompts are presented stylistically in the front end UI (denoted here as the Client Side Component, or CSC).
 
 
 ## Corticon.js Rule Authoring Concepts
 
+###Rule Vocabulary
+
+<img align="right" width="250"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png">
+
+Typically, a client side component is written and maintained by a developer  while the form's rule-driven logic is written by business analysts who  best understand the subject domain of the form. 
+
+The communication between the rule author and front end developer, as well as between the actual artifacts they each produce, is facilitated by a well documented schema for the JSON to exchange IN and OUT. 
+
 Corticon business rules are authored in **Corticon.js Studio**, with the backbone of the rules we create being the *Rule Vocabulary*. This will serve as the data model to capture both the  that will define aspects of:
 
 - The user interface (UI), such as which questions to pose to the end user at what stage in the form being filled, and what type of input should be allowed for these questions 
+
 - The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
 
-![](https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png)
+### Authoring the Rules
+
+Corticon provides domain experts with the tools to define the parts of software guided by complex rules, without needing to be programmers.
+
+Logic is authored and tested in Corticon Studio through Rule Modeling in a spreadsheet decision-table interface called *Rulesheets*.  A rule is like an ‘if-then’ statement. Each rule consists of one or more conditions (if) that are associated with one or more actions (then).
+
+![](https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png)
+
+###Testing the Rules
+
+A Ruletest simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced. 
+
+You can define different sets of input data to test how the rules behave in different scenarios. You can also use a Ruletest to compare the output of a rule execution with expected results. A Ruletest stores this information in a Ruletest file, enabling you to save use-cases that are of interest, change rules, and run the test again to see how the modified rules behave when applied to the same use-cases. 
+
+Ruletest reproduces how the rules will behave once deployed as a decision service.
 
 
 
-* **Rulesheet**: the Corticon condition and actions sheet where the modeler specifies the business rules for rendering the dynamic questionnaire
-* **Ruleflow**: the Corticon unit of decision service deployment.
-* **Flow**: The set of stages the user goes through in a specific scenario 
-* **Stage**: a unique identifier representing where the flow currently is at in the state machine.
-
+###Organizing the Rules
 
 ## Getting Started
 
-To make it easy to familiarize yourself with the concepts, we have made available several samples 
-that you can run from a test driver web page.
+To make it easy to familiarize yourself with the concepts, we have made available several samples that you can run from a 'test driver' web page.
 
 To get started:
-* invoke client.html (available at https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html)
-* go through each sample to get a feel for what is available
-* Run the canonical sample. Each step in this sample shows how to use a specific UI control and display
+
+-  Invoke [client.html](https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html) and select a sample form to test drive from the dropdown
+-  Explore the samples to get a feel for what is available
+-  Run the canonical sample. Each step in this sample shows how to use a specific UI control and display
 the corresponding Corticon rulesheet file in the title of the container.  You can then use the corresponding step rulesheet as an example to implement what you need.
   
 ## Design
