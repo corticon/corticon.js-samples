@@ -1,4 +1,19 @@
-# Rules Based Dynamic Forms
+# Rules-Driven Dynamic Forms
+
+----------
+
+
+### Table of contents
+
+- [Rules-Driven Dynamic Forms](#rules-driven-dynamic-forms)
+  - [Introduction](#introduction)
+  - [Corticon.js Rule Authoring Concepts](#corticonjs-rule-authoring-concepts)
+  - [Building Dynamic Forms with Corticon.js](#building-dynamic-forms-with-corticonjs)
+  - [Design](#design)
+  - [Local versus Remote Decision Services](#local-versus-remote-decision-services)
+- [More Information](#more-information)
+- [Benefits](#benefits)
+- [Additional Resources](#additional-resources)
 
 ## Introduction
 
@@ -22,9 +37,14 @@ Rules define the model for what, when, and how to present prompts to an end user
 
 ### Rule Vocabulary
 
-<img align="right" width="300"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png">
+<figure>
+<img align="right" width="300"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png" 
+ title="Rule Vocabulary">
+</figure>
 
-Typically, a client side component is written and maintained by a developer  while the form's rule-driven logic is written by business analysts who  best understand the subject domain of the form. 
+Typically, a client side component is written and maintained by a developer  while the form's rule-driven logic is written by business analysts who  best understand the subject domain of the form.
+ 
+
 
 The communication between the rule author and front end developer, as well as between the actual artifacts they each produce, is facilitated by a well documented schema for the JSON to exchange IN and OUT. 
 
@@ -40,7 +60,9 @@ Corticon provides domain experts with the tools to define the parts of software 
 
 Logic is authored and tested in Corticon Studio through Rule Modeling in a spreadsheet decision-table interface called *Rulesheets*.  A rule is like an ‘if-then’ statement. Each rule consists of one or more conditions (if) that are associated with one or more actions (then).
 
-![](https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png)
+<p align="center">
+  <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet  overview">
+</p>
 
 ### Testing the Rules
 
@@ -56,7 +78,11 @@ From here, you can continue adding more rules to the rulesheet, or more commonly
 
 As more rulesheets are added to our Ruleflow, Ruletests can be run against entire Ruleflows, instead of testing only the Rulesheets as they are developed. This enables you to test not only the rules as they are defined in the Rulesheet, but also how the Ruleflow works, and how the rules behave as part of the Ruleflow. This way, problems can be detected and fixed earlier in the lifecycle.
 
-![](https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/ruleflowBreakdown.png)
+<p align="center">
+  <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/ruleflowBreakdown.png" title="ruleflow overview">
+</p>
+
+
 
 ## Building Dynamic Forms with Corticon.js
 
