@@ -102,10 +102,10 @@ who understand well the problem domain of the questionnaire.
 
 Here is a summary of the roles and responsibilities:
 
-
-<img width="500"  src="docs/images/architecture.png" 
+<p style="text-align:center;">
+<img width="500"src="docs/images/architecture.png" 
  title="architecture">
-
+</p>
 
 ## Local versus Remote Decision Services
 
@@ -134,7 +134,6 @@ There are only minor distinctions between how the CSC and decision service inter
 <br>
 <img width="500"  src="docs/images/RemoteDS.png" 
  title="Remote decision service">
-
 </p>
 
 ## Building and integrating a rule-driven form's components
@@ -164,5 +163,5 @@ Find out more about [Corticon.js](https://www.progress.com/corticon-js)
 
 You can check [these blogs](https://www.progress.com/blogs/author/thierry-ciot) for Corticon news and features as well as Serverless industry trends.
 
-Free training for Corticon.js at https://www.progress.com/blogs/learning-opportunity-available-get-started-corticonjs-rules-today
+Free training for Corticon.js at [https://www.progress.com/blogs/learning-opportunity-available-get-started-corticonjs-rules-today](https://www.progress.com/blogs/learning-opportunity-available-get-started-corticonjs-rules-today)
 
