@@ -53,7 +53,7 @@ A Stage is typically implemented using one or more **[Rulesheets](https://github
 3. Within a container, 1 or more UI controls are created (e.g. text input, numeric input, checkbox, or multiple choice dropdown list.)
 4. What the next stage is 
 
-![uiContainerAndControls](https://user-images.githubusercontent.com/40301564/186739225-9c46d592-95d7-4fb8-b061-a444de27d367.jpg)
+![uiContainerAndControls](images/uiContainerAndControls.jpg)
 
 Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called 'decisionServiceBundle.js'.
 
@@ -63,22 +63,15 @@ The decision service informs the front end UI each and every prompt to present t
 The content presented in the form at a given point can define different paths depending upon
  * Previously entered data data entry to make decisions. For example, the form may branch to a different step, or specify different UI controls 
  * The output of decisions and computations performed between steps
- * Data already known about the end user, for example data populated from an external CRM system+
+ * Data already known about the end user, for example data populated from an external CRM system
 
 
-Let’s imagine our questionnaire is so simple that it has only 2 steps. Step 1 and 2. 
+Additionally, in the first rulesheet, you typically specify a few instructions for how the CSC should handle the form's rendering:
+- The base path to where to store data using  the attribute: UI.pathToData
 
-You would create 2 rulesheets: Step1.ers and Step2.ers
+![](images/pathtodata.PNG)
 
-The first thing you need to do when creating a rulesheet is to assign a pre-condition filter to specify what stage the rulesheet executes. This is done using a filter like this: UI.currentStageNumber = <stageNbr> Where stageNbr is the actual number. For example for stage 0:
-
-![Filtering on stage number](images/FilterStage.png)
-
-And you would create an action to specify the next stage like this: UI.nextStageNumber = 1
-
-This means from stage 0, the next step will go to rulesheet filtered on stage 1.
-
-Additionally, in the first rulesheet, you will typically specify some initialization attributes like: * The base path to where to store data. It is specified in the attribute: UI.pathToData It is the base path of where all the answers will be stored. This is very useful when you have multiple projects and you are writing multiple decision services. If you don’t set this parameter, all answers will be stored at the root of the project json data. * Whether the question labels are displayed next to the input field or above using the attribute: UI.labelPosition
+- Whether the question labels are displayed next to the input field or above using the attribute: UI.labelPosition
 
 ## Typical Rulesheet
 
