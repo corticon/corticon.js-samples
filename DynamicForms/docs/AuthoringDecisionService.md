@@ -92,7 +92,7 @@ If we're just collecting the end user's responses for year/make/model of a vehic
 
 It needs to specify that the questionnaire is done using an action like this: `UI.done = T`
 
->Note: other rulesheets do not need to specify `UI.done = F`
+:information_source:  Note: other rulesheets do not need to specify `UI.done = F`
 
 # Typical Patterns
 
