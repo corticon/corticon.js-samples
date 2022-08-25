@@ -1,8 +1,12 @@
 ## Defining the Rules 
 
-###Ruleflows
+### Ruleflows
 
 The Decision Service is generated from a Corticon Ruleflow. A Ruleflow is how Corticon assembles and organizes the components of a set of rules into a single unit. It is a presented as a flow diagram, where Rulesheets and  other Ruleflows are encapsulated into a 'top-level' ruleflow. 
+
+
+![Connected Ruleflow](images/connected%20ruleflow.png) <center>'Connected' Ruleflow</center>
+
 
 In contrast to a typical decision automation use case, when creating dynamic forms with Corticon.js, rulesheets and ruleflows are not 'connected' from one to another when constructing the top level ruleflow. Connections are the objects that connect or “stitch” assets and objects together to control their sequence of execution. 
 
@@ -20,7 +24,6 @@ The main function of the rules, from which the Decision Service is generated, ar
 	- What user prompt to render (dropdown, true/false, number, etc). Henceforth, we refer to these user prompts as UI Controls. 
 	- Execute some business logic or computation that doesn't involve presenting anything to the user (e.g. add together dollar amount of all expenses being submitted)
 3. Which data should be retained and accrued to pass along upon form completion, versus which data is only relevant ephemerally (e.g., assigning data related to a claim to be retained, while assigning the response to 'do you have more claims to submit?' to be discarded. 
-
 
 A *Stage* is typically implemented with one or more rulesheets.
 
