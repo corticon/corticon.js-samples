@@ -1,17 +1,28 @@
-# Introduction
+## Defining the Rules 
 
-Decision Service (Rules Based Questions)
+###Ruleflows
 
-The DS is composed of a series of Corticon rulesheets and at least one ruleflow including the rulesheets.  
-The main responsibilities of the DS is to specify:
-1. The flow of the questions (step by step).
-2. For each step, either:
-    * What UI controls to render (questions to ask)
-    * Implement some business logic or computation before executing the next step
-3. Where to store the accumulated data entered by the user or data computed at various steps.
+The Decision Service is generated from a Corticon Ruleflow. A Ruleflow is how Corticon assembles and organizes the components of a set of rules into a single unit. It is a presented as a flow diagram, where Rulesheets and  other Ruleflows are encapsulated into a 'top-level' ruleflow. 
+
+In contrast to a typical decision automation use case, when creating dynamic forms with Corticon.js, rulesheets and ruleflows are not 'connected' from one to another when constructing the top level ruleflow. Connections are the objects that connect or “stitch” assets and objects together to control their sequence of execution. 
+
+If a connector is drawn from Rulesheet sample1.ers to sample2.ers, then when a deployed Ruleflow is invoked, it will execute the rules in sample1.ers first, followed by the rules in sample2.ers.
+
+For dynamic forms however, instead of a decision that will always go through the same chronology during a single execution, dynamic forms require the ability to navigate throughout the objects in a ruleflow, such that different rules may fire depending upon dynamic variables. For example, the sequence may be determined based upon:
+
+-   Data that the end user has entered to that point (e.g. route to different parts of a ruleflow depending upon what type of claim a user has chosen to file)
+-    whether any data is pre-populated at the start of a ruleflow (e.g. user had to log in prior to beginning form, so information tied to their account is leveraged in determining the route through which to fill the form)
+
+The main function of the rules, from which the Decision Service is generated, are to define:
+
+1.  The flow of the questions (What prompt is presented when and base upon what).
+2.  For each step, either:
+	- What user prompt to render (dropdown, true/false, number, etc). Henceforth, we refer to these user prompts as UI Controls. 
+	- Execute some business logic or computation that doesn't involve presenting anything to the user (e.g. add together dollar amount of all expenses being submitted)
+3. Which data should be retained and accrued to pass along upon form completion, versus which data is only relevant ephemerally (e.g., assigning data related to a claim to be retained, while assigning the response to 'do you have more claims to submit?' to be discarded. 
 
 
-A step is typically implemented with one or more rulesheets.
+A *Stage* is typically implemented with one or more rulesheets.
 
 A single rulesheet specifies 3 main items:
 1.	It creates 1 or more container to host the UI controls (This can be viewed as the panel that will contain the questions).
@@ -27,18 +38,18 @@ Feel free to use the solution as is or to adapt it to your own need as you see f
 
 ## What does the decision service do?
 Below is high level summary. And we will get into detailed descriptions in subsequent sections:
-* The decision service (DS) provides the set of steps and paths to take for complex rules-based questionnaires.  The paths can be viewed as a tree of decisions where each branch is a set of different questions (of course there is provision for reusing set of steps that are common to various paths).
+* The decision service  provides the set of steps and paths to take for complex rules-based questionnaires.  The paths can be viewed as a tree of decisions where each branch is a set of different questions (of course there is provision for reusing set of steps that are common to various paths).
 * A step is typically composed of one or more stages.  The stage is a number that identifies what needs to happen for a specific step in the questionnaire.
-* At each step the DS provides the set of UI controls to render and their properties:
+* At each step the Decision Service provides the set of UI controls to render and their properties:
    * It can leverage previous data entry to make decisions.
    For example, decide to branch to a different step or to specify different UI controls to render
    * It can perform complex business logic and computations (non-UI Step).
-* The DS is composed of a series of Corticon rulesheets that represent, in an abstract manner:
+* The Decision Service is composed of a series of Corticon rulesheets that represent, in an abstract manner:
    * The flow of the questions (step by step).  
    * For each step, either:
       * What UI controls to render (questions to ask)
       * Implement some business logic/complex computation before executing the next step
-* The DS specifies where to store both:
+* The Decision Service specifies where to store both:
    * the accumulated data entered by the user (See fieldName attribute on UIControl)
    * and results of business logic
 
@@ -51,15 +62,15 @@ A typical questionnaire goes through many stages.  For example, it can go throug
 if the user answers yes to the first question and through stage 1, 5, 6, 7, 8, 9 and 10 if the user 
 answers no to the first question.
 
-As a modeler and creator of the DS you decide what stage numbers to assign to the various stages
+As a modeler and creator of the Decision Service you decide what stage numbers to assign to the various stages
 used in the overall questionnaire.  
 
 What are Steps?
 
 It is what happens in a single step in the UI (the CSC).  
 For example, it could be a single question to ask the user for a yes / no answer.  
-If the user answers Yes, the DS may take go down one path while if the user answers no, 
-the DS will go down another path.  
+If the user answers Yes, the Decision Service may take go down one path while if the user answers no, 
+the Decision Service will go down another path.  
 
 However, a step may be composed of more than one question.
 * A step is typically implemented with one or more rulesheets.
@@ -113,12 +124,12 @@ Note: other rulesheets do not need to specify UI.done = F
 
 ## Executing Step with No UI to Render
 
-Sometimes the DS needs to execute a stage with no associated UI to render; for example, the DS just needs to execute
+Sometimes the Decision Service needs to execute a stage with no associated UI to render; for example, the Decision Service just needs to execute
 business logic and move to next step.
 
-This is specified by the DS in the attribute UI.noUiToRenderContinue (a boolean)
+This is specified by the Decision Service in the attribute UI.noUiToRenderContinue (a boolean)
 
-Note: The CSC needs to keep calling the DS by setting the UI.currentStageNumber to UI.nextStageNumber until the flag
+Note: The CSC needs to keep calling the Decision Service by setting the UI.currentStageNumber to UI.nextStageNumber until the flag
 noUiToRenderContinue is not set (undefined) or set to false.
 
 ## Validation
@@ -126,12 +137,12 @@ noUiToRenderContinue is not set (undefined) or set to false.
 There are 2 kinds of validation:
 
 1. The first one is at the UI control itself and can directly be enforced by the CSC.  
-   For this validation, the CSC does not need to call the DS for validation.  
+   For this validation, the CSC does not need to call the Decision Service for validation.  
    It can enforce the validation directly based on various attributes sets on the UIControl and the type of UIControl.  
    For examples, we may set an input field as required or we may want a number field where the valid data is between 1 and 20.  
-   These are specified in the DS model using the UIControl.required and UIControl.min and UIControl.max attributes respectively.
+   These are specified in the Decision Service model using the UIControl.required and UIControl.min and UIControl.max attributes respectively.
 
-2)	The second kind is validation that can only be enforced by the DS (remember the CSC is generic and the DS is use case specific). 
+2)	The second kind is validation that can only be enforced by the Decision Service (remember the CSC is generic and the Decision Service is use case specific). 
       The DS can implement simple to very complex business rules to infer that some answers may not be valid
       using all the data available to it (That is data from previously entered user inputs, external data and initial data).  
       And that validation may be conditional to various paths or various conditions.
@@ -139,7 +150,7 @@ There are 2 kinds of validation:
       For example, validating that a claim cannot exceed some amount because the sum of all current claim exceeds the maximum for 
       the month.
 
-### DS Validation Pattern
+### Decision Service Validation Pattern
 
 The design pattern is to have a first rulesheet for specifying the UI and another one for data validation.  
 Both executes on the same stage number and, as a consequence, the step always executes the 2 rulesheets.  
@@ -159,7 +170,7 @@ after the user has submitted data.
 
 The second rulesheet (Step1Validation.ers) does the data validation.
 
-When the CSC submits the current step, the DS executes both rulesheets again but this time with the data entered by the user.  
+When the CSC submits the current step, the Decision Service executes both rulesheets again but this time with the data entered by the user.  
 If the validation passes, then we move to next stage (the validation rulesheet sets stage to next stage).
 
 If the validation fails, then we go back to rendering the UI for the same step but this time we have both the 
