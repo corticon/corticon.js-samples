@@ -33,13 +33,15 @@ The CSC does not know the questions to be asked at each step or what the answers
 The rules group together all of the logic applicable to a question and its answer within a shared **Stage.** The decision service does not know the current state of the questionnaire but knows what to do at each stage.
 
 
-A Stage is typically implemented using one or more **[Rulesheets](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#authoring-the-rules)**. When building dynamic forms, the rulesheets typically specify 3 main things:
-1.	It creates 1 or more **Container** to host the UI controls (This can be viewed as the panel that will contain the questions).
-2.	It adds to the container, 1 or more UI controls.  There are various types of controls available.  For example, a text input, numeric input, checkbox, or multiple choice dropdown list.
-3.	It sets the next step to execute in the flow using the stage attribute.
+A Stage is typically implemented using one or more **[Rulesheets](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#authoring-the-rules)**. When building dynamic forms, the rulesheets typically specify:
+1. Current stage number
+2. If presenting anything to the end user at this step, a  **Container** to host the UI controls is created.
+3. Within a container, 1 or more UI controls are created (e.g. text input, numeric input, checkbox, or multiple choice dropdown list.)
+4. What the next stage is 
+
+![](IMAGES/uiContainerAndControls.png)
 
 Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called 'decisionServiceBundle.js'.
-
 
 ## Decision Services
 The decision service informs the front end UI each and every prompt to present to the user, throughout the form. It likewise may define whether to execute a decision/computation in the background before moving on to subsequent stages. 
