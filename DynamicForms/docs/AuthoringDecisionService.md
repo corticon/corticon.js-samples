@@ -6,7 +6,7 @@ The Decision Service is generated from a Corticon Ruleflow. A Ruleflow is how Co
 
 In contrast to a typical decision automation use case, when creating dynamic forms with Corticon.js, rulesheets and ruleflows are not 'connected' from one to another when constructing the top level ruleflow. Connections are the objects that connect or “stitch” assets and objects together to control their sequence of execution. 
 
-If a connector is drawn from Rulesheet sample1.ers to sample2.ers, then when a deployed Ruleflow is invoked, it will execute the rules in sample1.ers first, followed by the rules in sample2.ers.
+If a connector is drawn from Rulesheet `sample1.ers` to `sample2.ers`, then when a deployed Ruleflow is invoked, it will execute the rules in `sample1.ers` first, followed by the rules in `sample2.ers`.
 
 For dynamic forms however, instead of a decision that will always go through the same chronology during a single execution, dynamic forms require the ability to navigate throughout the objects in a ruleflow, such that different rules may fire depending upon dynamic variables. For example, the sequence may be determined based upon:
 
@@ -46,7 +46,6 @@ The CSC does not know the questions to be asked at each step or what the answers
 
 The rules group together all of the logic applicable to a question and its answer within a shared **Stage.** The decision service does not know the current state of the questionnaire but knows what to do at each stage.
 
-
 A Stage is typically implemented using one or more **[Rulesheets](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#authoring-the-rules)**. When building dynamic forms, the rulesheets typically specify:
 1. Current stage number
 2. If presenting anything to the end user at this step, a  **Container** to host the UI controls is created.
@@ -55,9 +54,10 @@ A Stage is typically implemented using one or more **[Rulesheets](https://github
 
 ![uiContainerAndControls](images/uiContainerAndControls.jpg)
 
-Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called 'decisionServiceBundle.js'.
+Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called `decisionServiceBundle.js`.
 
-## Decision Services
+## What the CSC needs from the rules
+
 The decision service informs the front end UI each and every prompt to present to the user, throughout the form. It likewise may define whether to execute a decision/computation in the background before moving on to subsequent stages. 
 
 The content presented in the form at a given point can define different paths depending upon
@@ -66,26 +66,33 @@ The content presented in the form at a given point can define different paths de
  * Data already known about the end user, for example data populated from an external CRM system
 
 
-Additionally, in the first rulesheet, you typically specify a few instructions for how the CSC should handle the form's rendering:
-- The base path to where to store data using  the attribute: UI.pathToData
+There are certain rules which are useful to implement only at the start or end of the form. For example, telling the CSC where to store the accrued form data, and telling the CSC when the form is complete.
+
+#### Setting the Path to Data
+By default, data is stored in the entity with the name assigned to the `UI.pathToData` attribute. 
+
+Below, on an initial auto insurance form, we're assigning the 'vehicle' entity to be the vocabulary entity / JSON object within which the accrued data will be stored:
 
 ![](images/pathtodata.PNG)
 
-- Whether the question labels are displayed next to the input field or above using the attribute: UI.labelPosition
+If we're just collecting the end user's responses for year/make/model of a vehicle, upon the form's completion, the accrued data would look something like:
 
-## Typical Rulesheet
+```
+    {
+      "vehicle": {
+        "year": 2020,
+        "make": "Mazda",
+        "model": "Cx-3 4Dr Awd"
+      }
+    }
+```
 
-It will set the next stage to execute using: UI.nextStageNumber = <stageNbr> For example: UI.nextStageNumber = 23
 
-It would typically specify UI controls to render, and it could do this conditionally to previous answers. For example, rendering a different control if the user entered yes on a first step.
+#### Setting the Final Rulesheet
 
-See the canonical sample for examples of the supported UI Controls and in particular look at Step3.ers as an example where we specify ui controls based on previous inputs.
+It needs to specify that the questionnaire is done using an action like this: `UI.done = T`
 
-## Last Rulesheet
-
-It needs to specify that the questionnaire is done using an action like this: UI.done = T
-
-Note: other rulesheets do not need to specify UI.done = F
+>Note: other rulesheets do not need to specify `UI.done = F`
 
 # Typical Patterns
 
