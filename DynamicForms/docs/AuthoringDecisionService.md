@@ -13,9 +13,23 @@ For dynamic forms however, instead of a decision that will always go through the
 -   Data that the end user has entered to that point (e.g. route to different parts of a ruleflow depending upon what type of claim a user has chosen to file)
 -    whether any data is pre-populated at the start of a ruleflow (e.g. user had to log in prior to beginning form, so information tied to their account is leveraged in determining the route through which to fill the form)
 
-Connected Ruleflow| Unconnected Ruleflow| 
----------|----------|
- ![Connected Ruleflow](images/connected%20ruleflow.png)  | ![Unonnected Ruleflow](images/unconnected%20ruleflow.png)| 
+<table><tr>
+<td> 
+  <p align="center" style="padding: 10px">
+    <img alt="Forwarding" src="https://user-images.githubusercontent.com/40301564/186739602-888ae2bc-9d55-4bc6-a3cf-527e3d7e47a7.PNG" width="554">
+    <br>
+    <em style="color: grey">Dynamic Form Ruleflow </em>
+  </p> 
+</td>
+<td> 
+  <p align="center">
+    <img alt="Routing" src="https://user-images.githubusercontent.com/40301564/186739592-17ba7774-31ed-413f-81f4-991308728116.PNG" width="515">
+    <br>
+    <em style="color: grey">Typical, Connected Ruleflow</em>
+  </p> 
+</td>
+</tr></table>
+
 
 The main function of the rules, from which the Decision Service is generated, are to define:
 
@@ -39,7 +53,7 @@ A Stage is typically implemented using one or more **[Rulesheets](https://github
 3. Within a container, 1 or more UI controls are created (e.g. text input, numeric input, checkbox, or multiple choice dropdown list.)
 4. What the next stage is 
 
-![](IMAGES/uiContainerAndControls.png)
+![uiContainerAndControls](https://user-images.githubusercontent.com/40301564/186739225-9c46d592-95d7-4fb8-b061-a444de27d367.png)
 
 Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called 'decisionServiceBundle.js'.
 
