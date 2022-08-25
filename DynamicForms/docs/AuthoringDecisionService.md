@@ -53,7 +53,7 @@ A Stage is typically implemented using one or more **[Rulesheets](https://github
 3. Within a container, 1 or more UI controls are created (e.g. text input, numeric input, checkbox, or multiple choice dropdown list.)
 4. What the next stage is 
 
-![uiContainerAndControls](https://user-images.githubusercontent.com/40301564/186739225-9c46d592-95d7-4fb8-b061-a444de27d367.png)
+![uiContainerAndControls](https://user-images.githubusercontent.com/40301564/186739225-9c46d592-95d7-4fb8-b061-a444de27d367.jpg)
 
 Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called 'decisionServiceBundle.js'.
 
