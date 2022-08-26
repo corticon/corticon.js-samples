@@ -26,8 +26,6 @@ For example, a transport company may have a rule that determines how much cargo 
 
 A Vocabulary is similar to a data model such as a (UML) model or an Entity-Relationship model. The terms for the Vocabulary could come from a number of sources—database tables, forms used in business operations, policy and procedure documents, etc. When you build a Vocabulary, you not only define the terms, you also define relationships between those terms. For example, a single vehicle can carry many cargo containers, implying a one-to-many relationship. You would define this as an association in your Vocabulary. The rule vocabulary can be created manually, or it can be auto generated based on a JSON schema or object.
 
-![populating vocabulary from JSON](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MX-6L60ogNliIiTS_7L%2F-MbIZQHqvCjfSXl4GcW2%2F-MbI_VIK1zQ1YdSgOVwz%2Fimage005.png?alt=media&token=c1baa162-c581-47a5-b8aa-dbefe7d9aa5e)
-
 Note that the vocabulary includes every data point involved in the decision/calculation. Some of this data may be passed into the Decision Service when it is called by another application, some of this data may be retrieved by Corticon from an external data source and some of this data may be produced as a result of the rules themselves.
 
 ### Rulesheets
