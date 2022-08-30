@@ -1,10 +1,3 @@
----
-description: >-
-  From Corticon.js Studio, in one click, you can get a deployment package for
-  various JavaScript platforms.
-cover: ../../.gitbook/assets/ProgressCorticon.js_PrimaryLogo_Stacked.png
-coverY: -152.9817671809257
----
 
 # JavaScript Decision Services
 
