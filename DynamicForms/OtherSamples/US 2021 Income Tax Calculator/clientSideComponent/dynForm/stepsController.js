@@ -91,12 +91,8 @@ corticon.dynForm.StepsController = function () {
     }
 
     function clearRestartData( decisionServiceName ) {
-        // try {
-            window.localStorage.removeItem('CorticonRestartPayload_'+decisionServiceName);
-            window.localStorage.removeItem('CorticonRestartPathToData_'+decisionServiceName);
-        // } catch (e) {
-        //     // Some browser in private mode may throw exception when using local storage
-        // }
+        window.localStorage.removeItem('CorticonRestartPayload_'+decisionServiceName);
+        window.localStorage.removeItem('CorticonRestartPathToData_'+decisionServiceName);
     }
 
     function saveRestartData( decisionServiceName, payload ) {
@@ -158,6 +154,9 @@ corticon.dynForm.StepsController = function () {
 
     function _askDecisionServiceForNextUIElementsAndRender ( decisionServiceEngine, payload, baseEl ) {
         const result = _runDecisionService( decisionServiceEngine, payload );
+        if ( result.corticon.status !== 'success' )
+            return;
+
         const nextUI = result.payload[0];
 
         // Save context of where we need to save data the user enters so that rule modeler does not have to specify it at each step.
@@ -204,7 +203,7 @@ corticon.dynForm.StepsController = function () {
         // There's a difference between $("#panel input") and $("#panel :input).
         // The first one will only retrieve elements of type input, that is <input type="...">, but not <textarea>, <button> and <select> elements.
         // let allFormEls = $('#dynUIContainerId :input').not('#dynUIContainerId :checkbox');
-        let allFormEls = baseEl.find('.nonarrayTypeControl :input').not(':checkbox');
+        let allFormEls = baseEl.find('.nonarrayTypeControl :input').not(':checkbox').not('.markerFileUploadExpense');
         allFormEls.each(function (index, item) {
             const oneInputEl = $(item);
             const formDataFieldName = oneInputEl.data("fieldName");
@@ -228,6 +227,46 @@ corticon.dynForm.StepsController = function () {
             const val = oneInputEl.is(':checked');
             _saveOneFormData(formDataFieldName, val);
         });
+
+        _saveFileUploadExpenses(baseEl);
+    }
+
+    function _saveFileUploadExpenses(baseEl) {
+        // With space in selector we get all descendants.
+        let allFormEls = baseEl.find('.nonarrayTypeControl .markerFileUploadExpense');
+
+        allFormEls.each(function (index, item) {
+            const oneInputEl = $(item);
+            const formDataFieldName = oneInputEl.data("fieldName");
+            const id = oneInputEl.attr('id')
+            const val = oneInputEl.val();
+            _saveOneFileUploadExpenseData(formDataFieldName, val, id);
+        });
+
+    }
+
+    function _saveOneFileUploadExpenseData(formDataFieldName, val, id) {
+        if ( val === undefined )
+            return;
+
+        let theExpenses;
+        if (itsPathToData === undefined || itsPathToData === null)
+            theExpenses = itsFormData[formDataFieldName];
+        else {
+            if (itsFormData[itsPathToData] === undefined) {
+                alert('Error: There should already be form data');
+                return;
+            }
+            else
+                theExpenses = itsFormData[itsPathToData][formDataFieldName];
+        }
+
+        // iterate expenses and find corresponding id.  When found set the data.
+        for ( let i=0; i<theExpenses.length; i++ ) {
+            const oneExpense = theExpenses[i];
+            if ( oneExpense.id === id )
+                oneExpense['fileUpload'] = val;
+        }
     }
 
     function _saveEnteredInputsToFormData (baseEl) {
@@ -236,18 +275,25 @@ corticon.dynForm.StepsController = function () {
         corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.NEW_FORM_DATA_SAVED, itsFormData );
     }
 
+    // Process all the simple and the complex array type controls
     function _saveArrayTypeInputsToFormData (baseEl) {
-        let outerArray = [];
+        _processAllSimpleArrayControls(baseEl);
+        _processAllComplexArrayControls(baseEl);
+    }
+
+    function _processAllComplexArrayControls (baseEl) {
+        // This function assumes there is only one expense control on the page.
+        let outerArray = [];  // all expenses
         let formDataFieldName;
         let uiControlType;
 
-        let allArrayEls = baseEl.find('.arrayTypeControl');
+        let allArrayEls = baseEl.find('.complexArrayTypeControl');
         allArrayEls.each(function(index,item){
             const oneArrayEl = $(item);
             uiControlType = oneArrayEl.data("uicontroltype");
             let allFormEls = oneArrayEl.find(':input').not(':checkbox');
 
-            let innerArray = [];
+            let innerArray = []; // all items of a single expense
             for ( var i=0; i<allFormEls.length; i++ ) {
                 const oneFormEl = allFormEls[i];
                 const oneInputEl = $(oneFormEl);
@@ -266,16 +312,85 @@ corticon.dynForm.StepsController = function () {
                 _saveArrayElFormData(formDataFieldName, convertedArray);
             }
             else
-                alert('This array type is not yet supported ' + uiControlType );
+                alert('This complex array type is not yet supported ' + uiControlType );
         }
+    }
+
+    function _processAllSimpleArrayControls(baseEl) {
+        const allSimpleUiControlsOfArrayType = _getAllSimpleArrayTypeInputsToFormData(baseEl);
+
+        for (let j = 0; j < allSimpleUiControlsOfArrayType.length; j++) {
+            const oneControlData = allSimpleUiControlsOfArrayType[j];
+            const uiControlType = oneControlData['type'];
+            const formDataFieldName = oneControlData['fieldName'];
+            const valuesForOneControl = oneControlData['values'];
+            if (uiControlType === 'Text' || uiControlType === 'Number' || uiControlType === 'DateTime' ) {
+                const convertedArray = _createEachItemEntity(valuesForOneControl, uiControlType);
+                _saveArrayElFormData(formDataFieldName, convertedArray);
+            } else
+                alert('This simple array type is not yet supported ' + uiControlType);
+        }
+    }
+
+    function _getAllSimpleArrayTypeInputsToFormData(baseEl) {
+        // there can be more than one set of multi inputs per container -> we need to group them per field name
+        let allUiControlsOfArrayType = [];
+
+        let allArrayEls = baseEl.find('.simpleArrayTypeControl');
+        allArrayEls.each(function(index,item){
+            let formDataFieldName;
+            const oneArrayEl = $(item);
+            const uiControlType = oneArrayEl.data("uicontroltype");
+            const allFormEls = oneArrayEl.find(':input').not(':checkbox');
+
+            let allValuesForOneControl = [];
+            for ( let i=0; i<allFormEls.length; i++ ) {
+                const oneFormEl = allFormEls[i];
+                const oneInputEl = $(oneFormEl);
+                formDataFieldName = oneInputEl.data("fieldName");
+                const val = oneInputEl.val();
+                allValuesForOneControl.push( val );
+            }
+
+            const allDataForOneControl = {};
+            allDataForOneControl['fieldName'] = formDataFieldName;
+            allDataForOneControl['type'] = uiControlType;
+            allDataForOneControl['values'] = allValuesForOneControl;
+
+            allUiControlsOfArrayType.push(allDataForOneControl);
+        });
+
+        return allUiControlsOfArrayType;
+    }
+
+    function _createEachItemEntity(valuesForOneControl, uiControlType) {
+        const convertedArray = [];
+        let fieldName;
+        if (uiControlType === 'Text' )
+            fieldName = 'itemText';
+        else if ( uiControlType === 'Number' )
+            fieldName = 'itemNumber';
+        else if ( uiControlType === 'DateTime' )
+            fieldName = 'itemDateTime';
+        else {
+            alert('This uicontrol type for simple array type is not yet supported ' + uiControlType);
+            return convertedArray;
+        }
+
+        for ( let i=0; i<valuesForOneControl.length; i++ ) {
+            const oneItemAsObjLit = {};
+            oneItemAsObjLit[fieldName] = valuesForOneControl[i];
+            convertedArray.push( oneItemAsObjLit );
+        }
+        return convertedArray;
     }
 
     function _createEachExpenseEntity(outerArray, expenseFieldArray) {
         const convertedArray = [];
-        for ( var i=0; i<outerArray.length; i++ ) {
+        for ( let i=0; i<outerArray.length; i++ ) {
             const oneItemAsAnArray = outerArray[i];
             const oneItemAsObjLit = {};
-            for ( var j=0; j<oneItemAsAnArray.length; j++ ) {
+            for ( let j=0; j<oneItemAsAnArray.length; j++ ) {
                 oneItemAsObjLit[expenseFieldArray[j]] = oneItemAsAnArray[j];
             }
             const converted = Number(oneItemAsObjLit['amount']);
@@ -283,6 +398,8 @@ corticon.dynForm.StepsController = function () {
                 oneItemAsObjLit['amount'] = converted;
             else
                 oneItemAsObjLit['amount'] = 0;
+
+            oneItemAsObjLit['id'] = '' + i;  // add a unique id that can be used in other steps where we need to add data to an expense item (like a file upload doc)
 
             convertedArray.push( oneItemAsObjLit );
         }
@@ -305,24 +422,30 @@ corticon.dynForm.StepsController = function () {
 
     function _runDecisionService(decisionServiceEngine, payload ) {
         try {
-            corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.BEFORE_DS_EXECUTION,{ "input": payload, "stage": payload[0].currentStageNumber });
+            const event = { "input": payload, "stage": payload[0].currentStageNumber };
+            corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.BEFORE_DS_EXECUTION,event);
+
             // const configuration = { logLevel: 0 };
             const configuration = { logLevel: 1 };
             const t1 = performance.now();
             const result = decisionServiceEngine.execute(payload, configuration);
             const t2 = performance.now();
-            corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.NEW_DS_EXECUTION,
-                { "output": result,
-                    "execTimeMs": t2-t1,
-                    "stage": payload[0].currentStageNumber
-                }
-            );
+            const event2 = { "output": result,
+                "execTimeMs": t2-t1,
+                "stage": payload[0].currentStageNumber
+            };
 
             if(result.corticon !== undefined) {
-                if ( result.corticon.status === 'success' )
-                    return result;
+                if ( result.corticon.status === 'success' ) {
+                    const newStepUI = result.payload[0];
+                    if ( newStepUI.currentStageDescription !== undefined && newStepUI.currentStageDescription !== null )
+                        event2["stageDescription"] = newStepUI.currentStageDescription;
+                }
                 else
                     alert('There was an error executing the rules.\n' + JSON.stringify(result, null, 2));
+
+                corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.NEW_DS_EXECUTION, event2 );
+                return result;
             }
             else
                 alert('There was an error executing the rules.\n' + JSON.stringify(result, null, 2));

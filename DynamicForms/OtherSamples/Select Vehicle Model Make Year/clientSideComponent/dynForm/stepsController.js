@@ -91,12 +91,8 @@ corticon.dynForm.StepsController = function () {
     }
 
     function clearRestartData( decisionServiceName ) {
-        // try {
-            window.localStorage.removeItem('CorticonRestartPayload_'+decisionServiceName);
-            window.localStorage.removeItem('CorticonRestartPathToData_'+decisionServiceName);
-        // } catch (e) {
-        //     // Some browser in private mode may throw exception when using local storage
-        // }
+        window.localStorage.removeItem('CorticonRestartPayload_'+decisionServiceName);
+        window.localStorage.removeItem('CorticonRestartPathToData_'+decisionServiceName);
     }
 
     function saveRestartData( decisionServiceName, payload ) {
@@ -328,8 +324,8 @@ corticon.dynForm.StepsController = function () {
             const uiControlType = oneControlData['type'];
             const formDataFieldName = oneControlData['fieldName'];
             const valuesForOneControl = oneControlData['values'];
-            if (uiControlType === 'Text') {
-                const convertedArray = _createEachItemEntity(valuesForOneControl);
+            if (uiControlType === 'Text' || uiControlType === 'Number' || uiControlType === 'DateTime' ) {
+                const convertedArray = _createEachItemEntity(valuesForOneControl, uiControlType);
                 _saveArrayElFormData(formDataFieldName, convertedArray);
             } else
                 alert('This simple array type is not yet supported ' + uiControlType);
@@ -367,11 +363,23 @@ corticon.dynForm.StepsController = function () {
         return allUiControlsOfArrayType;
     }
 
-    function _createEachItemEntity(valuesForOneControl) {
+    function _createEachItemEntity(valuesForOneControl, uiControlType) {
         const convertedArray = [];
+        let fieldName;
+        if (uiControlType === 'Text' )
+            fieldName = 'itemText';
+        else if ( uiControlType === 'Number' )
+            fieldName = 'itemNumber';
+        else if ( uiControlType === 'DateTime' )
+            fieldName = 'itemDateTime';
+        else {
+            alert('This uicontrol type for simple array type is not yet supported ' + uiControlType);
+            return convertedArray;
+        }
+
         for ( let i=0; i<valuesForOneControl.length; i++ ) {
             const oneItemAsObjLit = {};
-            oneItemAsObjLit['itemText'] = valuesForOneControl[i];
+            oneItemAsObjLit[fieldName] = valuesForOneControl[i];
             convertedArray.push( oneItemAsObjLit );
         }
         return convertedArray;
