@@ -1,6 +1,5 @@
 # Corticon Overview
 
-## Corticon Rule Development Life Cycle
 
 ![Corticon Runtimes](https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/docs/assets/corticon%20server%20vs%20js.png)
 
