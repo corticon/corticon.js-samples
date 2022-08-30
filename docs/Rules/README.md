@@ -1,5 +1,4 @@
-
-### Rule Vocabulary
+# Rule Vocabulary
 
 <img align="right" width="300"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png"
  title="Rule Vocabulary">
@@ -14,7 +13,7 @@ Corticon business rules are authored in **Corticon.js Studio**, with the backbon
 
 - The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
 
-### Authoring the Rules
+# Authoring the Rules
 
 Corticon provides domain experts with the tools to define the parts of software guided by complex rules, without needing to be programmers.
 
@@ -24,7 +23,7 @@ Logic is authored and tested in Corticon Studio through Rule Modeling in a sprea
   <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet  overview" >
 </p>
 
-### Testing the Rules
+# Testing the Rules
 
 A *Ruletest* simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced.
 
@@ -32,7 +31,7 @@ You can define different sets of input data to test how the rules behave in diff
 
 Ruletests reproduce how the rules will behave once deployed as a decision service.
 
-### Organizing the Rules
+# Organizing the Rules
 
 From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a Ruleflow to specify the sequence from one rulesheet to another.
 
