@@ -1,47 +1,3 @@
-# Defining the Rules
-
-## File types used in Corticon.js Studio for Building Dynamic Forms
-
-### Rule Vocabulary
-
-
-The first step of the rule modeling process with Corticon is to build the 'dictionary' of business terms used throughout the rules, the Rule Vocabulary.
-
-For example, a transport company may have a rule that determines how much cargo each type of vehicle can carry. There are two key business terms used in this rule—cargo and vehicle. You could define these terms as entities in your Vocabulary.
-
-A Vocabulary is similar to a data model such as a (UML) model or an Entity-Relationship model. The terms for the Vocabulary could come from a number of sources—database tables, forms used in business operations, policy and procedure documents, etc. When you build a Vocabulary, you not only define the terms, you also define relationships between those terms. For example, a single vehicle can carry many cargo containers, implying a one-to-many relationship. You would define this as an association in your Vocabulary. The rule vocabulary can be created manually, or it can be auto generated based on a JSON schema or object.
-
-Note that the vocabulary includes every data point involved in the decision/calculation. Some of this data may be passed into the Decision Service when it is called by another application, some of this data may be retrieved by Corticon from an external data source and some of this data may be produced as a result of the rules themselves.
-
-### Rulesheets
-
-Rulesheets are like Decision Tables. Users 'model' the business rules, where the rule is like an ‘if-then’ statement. Each rule consists of one or more conditions (if) that are associated with one or more actions (then).
-Here is an example of a Rulesheet with three rules.
-
-![Rulesheet](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MX-6L60ogNliIiTS_7L%2F-MbMxC3TwMXx3YxmGQeh%2F-MbMxvPiOWy07klsoQ3B%2Fimage.png?alt=media&token=265a5d09-3c20-4d13-b3eb-4d7e40efbd5e)
-
- The Rulesheet editor has the following parts:
-- Conditions—where you define the conditions for each rule. For example, Aircraft.aircraftType = 747. The condition value could be a single value (747), a set of values (747, 777, 787), or a range of values (weight=100000..200000).
-- Actions—where you define the actions that need to be triggered when the conditions are satisfied. For example, Aircraft.maxCargoWeight=150000.
-- Rule columns—the highlighted columns in this image. Each column represents a rule. It associates a set of conditions with a set of actions. For example, column 1 defines the rule—if the aircraft is a 747, then its maximum cargo weight is 150,000.
-
-### Ruletests
-
-A Ruletest simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced.
-
- You can define different sets of input data to test how the rules behave in different scenarios. You can also use a Ruletest to compare the output of a rule execution with expected results.
-
-  A Ruletest stores this information in a Ruletest file, enabling you to save use-cases that are of interest, change rules, and run the test again to see how the modified rules behave when applied to the same use-cases.
-
-### Ruleflows
-
-From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a Ruleflow to specify the sequence from one rulesheet to another.Ruleflows are both graphical (appearing similar to a flow diagram) and functional (they impact rule behavior, and are ultimately generated into a decision service).
-
-![Ruleflow example](https://progress-be-prod.zoominsoftware.io/bundle/corticon-rule-modeling/page/gsa1430508228388.image?_LANG=enus)
-
- When multiple Rulesheets are included in a Ruleflow, the Rulesheets will execute in a sequence determined by their Rulesheet order in the Ruleflow.
-
-## Rules Driven Forms
 
 ### What the Client Side Component needs from the rules
 
@@ -106,22 +62,3 @@ A Stage may encompass one or more **[Rulesheets](https://github.com/corticon/cor
 ![uiContainerAndControls](images/uiContainerAndControls.jpg)
 
 Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called `decisionServiceBundle.js`.
-
-### Capturing the Response Data
-By default, response data is stored in an entity assigned to be the pathToData, using the attribute `UI.pathToData` .
-
-For example, if we're building auto insurance form, when we're collecting information about the Vehicle, we might assign the 'vehicle' entity to be the vocabulary entity / JSON object within which the accrued data will be stored:
-
-![](images/pathtodata.PNG)
-
-If we start by just collecting the end user's responses for year/make/model of a vehicle, the accrued data would look something like:
-
-```
-    {
-      "vehicle": {
-        "year": 2020,
-        "make": "Mazda",
-        "model": "Cx-3 4Dr Awd"
-      }
-    }
-```
