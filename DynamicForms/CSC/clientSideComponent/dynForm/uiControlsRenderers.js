@@ -4,9 +4,7 @@ corticon.dynForm.UIControlsRenderer = function () {
 // TODO:
 // Number field as integer vs decimal -> new field type?
 
-    // Render all UI Controls into the specified basedEl (A Jquery object - typically from a div element)
-    // Render all Containers in base element
-    // Render all Controls in container element
+    // Render all Containers in base element (baseEl: A Jquery object - typically from a div element)
     // This is the main public entry point
     function renderUI ( containers, baseEl, labelPositionAtUILevel, language ) {
         /* Without JQuery one could create all dynamic elements just using the DOM API.  For example:
@@ -26,6 +24,7 @@ corticon.dynForm.UIControlsRenderer = function () {
             allFormEls[0].focus();
     }
 
+    // Render all Controls in container element
     function renderUIForOneContainer( container, baseEl, labelPositionAtUILevel, language ) {
         const html = '<div id="' + container.id + '"  title="' + container.title + '"><h3>' + container.title + '</h3></div>';
         baseEl.append(html);
@@ -52,7 +51,7 @@ corticon.dynForm.UIControlsRenderer = function () {
                 renderNumberInput(oneUIControl, baseEl, labelPositionAtUILevel);
             else if ( oneUIControl.type === 'SingleChoice' )
                 renderSingleChoiceInput(oneUIControl, baseEl);
-            else if ( oneUIControl.type === 'MultipleChoices' )
+            else if ( oneUIControl.type === 'MultipleChoices' || oneUIControl.type === 'MultipleChoicesMultiSelect' )
                 renderMultipleChoicesInput(oneUIControl, baseEl, labelPositionAtUILevel);
             else if ( oneUIControl.type === 'MultiExpenses' )
                 renderExpenseInput(oneUIControl, baseEl, labelPositionAtUILevel);
@@ -216,38 +215,12 @@ corticon.dynForm.UIControlsRenderer = function () {
             alert('Missing field name for '+oneUIControl.id);
     }
 
-    let nextTextInputId = 0;
     function renderTextInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
-        let arrayTypeControl = false;
-        if ( oneUIControl.multiple !== undefined && oneUIControl.multiple !== null && oneUIControl.multiple )
-            arrayTypeControl = true;
-
-        const inputContainerEl = createInputContainer(baseEl, arrayTypeControl, false);
-        inputContainerEl.data("uicontroltype", oneUIControl.type );  // save it so that we can conditionally add the proper fields when creating the expense object literal in the stepsController.js
-
-        appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
-
-        createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
-
-        if ( arrayTypeControl )
-            createAddTextInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel)
-
-        addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
-    }
-
-    function createAddTextInput( baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel ) {
-        const html = '<div title="Add another one" class="addTextContainer">&nbsp;+&nbsp;</div>';
-        const addContainerEl = $(html);
-        baseEl.append(addContainerEl);
-        addContainerEl.click(function() {
-            createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, true);
-        });
+        renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel);
     }
 
     function createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak=false) {
-        nextTextInputId++;
-
-        const theAttributes = { "type": "text", "id": oneUIControl.id + "_" + nextTextInputId };
+        const theAttributes = { "type": "text", "id": oneUIControl.id + getNextUniqueId() };
         if ( oneUIControl.tooltip !== undefined && oneUIControl.tooltip !== null )
             theAttributes["title"] = oneUIControl.tooltip;
 
@@ -298,18 +271,14 @@ corticon.dynForm.UIControlsRenderer = function () {
         addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
     }
 
-    function renderDateTimeInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
-        const inputContainerEl = createInputContainer(baseEl);
-
-        appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
-
+    function createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak=false) {
         let controlType;
         if ( oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime )
             controlType = 'datetime-local';
         else
             controlType = 'date';
 
-        const theAttributes = { "type": controlType, "id": oneUIControl.id};
+        const theAttributes = { "type": controlType, "id": oneUIControl.id + getNextUniqueId()};
         if ( oneUIControl.minDT !== undefined && oneUIControl.minDT !== null )
             theAttributes['min'] = oneUIControl.minDT;
 
@@ -353,18 +322,82 @@ corticon.dynForm.UIControlsRenderer = function () {
             inputContainerEl.append(validationEl);
         }
 
+        if ( addBreak ) {
+            const breakEl = $('<div>');
+            breakEl.append(textInputEl);
+            inputContainerEl.append(breakEl);
+        }
+        else {
+            inputContainerEl.append(textInputEl);
+        }
+    }
+
+    function createAddTextInput( baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel ) {
+        const addContainerEl = createPlusButton(baseEl);
+        addContainerEl.click(function() {
+            createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, true);
+        });
+    }
+
+    function createAddNumberInput( baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel ) {
+        const addContainerEl = createPlusButton(baseEl);
+        addContainerEl.click(function() {
+            createOneNumberInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, true);
+        });
+    }
+
+    function createAddDateTimeInput( baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel ) {
+        const addContainerEl = createPlusButton(baseEl);
+        addContainerEl.click(function() {
+            createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, true);
+        });
+    }
+
+    function createPlusButton(baseEl) {
+        const html = '<div title="Add another one" class="addTextContainer">&nbsp;+&nbsp;</div>';
+        const addContainerEl = $(html);
+        baseEl.append(addContainerEl);
+        return addContainerEl;
+    }
+
+    function renderDateTimeInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
+        renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel);
+    }
+
+    function renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel ) {
+        const arrayTypeControl = isArrayType(oneUIControl);
+        const inputContainerEl = createInputContainer(baseEl, arrayTypeControl, false);
+        inputContainerEl.data("uicontroltype", oneUIControl.type );  // save it for finding control type in ui controller - we use it to map the name of the field to use in the object literals we save in the array
+        appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
+
+        if ( oneUIControl.type === 'Text' ) {
+            createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
+            if ( arrayTypeControl )
+                createAddTextInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel)
+        }
+        else if ( oneUIControl.type === 'Number' ) {
+            createOneNumberInput(oneUIControl,labelPositionAtContainerLevel,inputContainerEl);
+            if ( arrayTypeControl )
+                createAddNumberInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel)
+        }
+        else if ( oneUIControl.type === 'DateTime' ) {
+            createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
+            if ( arrayTypeControl )
+                createAddDateTimeInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel)
+        }
+        else {
+            alert('Unsupported ui control type as an array type controls ' + oneUIControl.type);
+            return;
+        }
+
         addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
     }
 
-    function renderNumberInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
-        const inputContainerEl = createInputContainer(baseEl);
-
-        appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
-
+    function createOneNumberInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak=false) {
         const html3 = '<span style="display: none;" class="fieldValidationLabel">Enter a number between ' + oneUIControl.min + ' and ' + oneUIControl.max +'</span>';
         const validationEl = $(html3);
 
-        const theAttributes = { "type": "text", "id": oneUIControl.id};
+        const theAttributes = { "type": "text", "id": oneUIControl.id + getNextUniqueId() };
         const textInputEl = $('<input/>').attr(theAttributes);
         textInputEl.appendTo(inputContainerEl);
         if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null ) {
@@ -390,12 +423,21 @@ corticon.dynForm.UIControlsRenderer = function () {
             }
         });
 
-        inputContainerEl.append(validationEl);
-
-        addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
-
         if( oneUIControl.min !== undefined )
             validationEl.show();
+
+        if ( addBreak ) {
+            const breakEl = $('<div>');
+            breakEl.append(textInputEl);
+            inputContainerEl.append(breakEl);
+        }
+        else {
+            inputContainerEl.append(textInputEl);
+        }
+    }
+
+    function renderNumberInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
+        renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel);
     }
 
     function renderReadOnlyText(oneUIControl, baseEl, labelPositionAtContainerLevel) {
@@ -442,8 +484,11 @@ corticon.dynForm.UIControlsRenderer = function () {
 
         appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
 
-        let html3 = `<select "id": ${oneUIControl.id}>`;
-        html3 += '</select>';
+        let html3 = `<select "id": ${oneUIControl.id}`;
+        if ( oneUIControl.type === 'MultipleChoicesMultiSelect' )
+            html3 += ' multiple';
+
+        html3 += '></select>';
         const multipleChoicesEl = $(html3);
         inputContainerEl.append(multipleChoicesEl);
 
@@ -640,6 +685,19 @@ corticon.dynForm.UIControlsRenderer = function () {
 
             inputContainerEl.append($(html2));
         }
+    }
+
+    function isArrayType(oneUIControl) {
+        if (oneUIControl.multiple !== undefined && oneUIControl.multiple !== null && oneUIControl.multiple)
+            return true;
+        else
+            return false;
+    }
+
+    let nextUniqueInputId = 0;
+    function getNextUniqueId() {
+        nextUniqueInputId++;
+        return "_" + nextUniqueInputId;
     }
 
     // public interface
