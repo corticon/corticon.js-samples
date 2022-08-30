@@ -10,10 +10,3 @@ There are four key steps of building rules in Corticon Studio, culminating as a 
 2. [**Rulesheets** ](rulesheets/)are like Decision Tables. Users ‘model’ the business rules by defining actions to take when specific conditions are met.
 3. Once the rules created in the rulesheet are satisfied, the first [**Ruletest** ](ruletests.md)in Corticon Studio can be created to run test data through the rules in the test server embedded in the local application.
 4. From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a **** [**Ruleflow** ](ruleflows/)to specify the sequence from one rulesheet to another. When multiple Rulesheets are included in a Ruleflow, the Rulesheets will execute in a sequence determined by their Rulesheet order in the Ruleflow.
-
-
-
-### **Video**: Learn about Rule Modeling with Progress Corticon
-
-{% embed url="https://www.youtube.com/watch?v=tgAfhgL2k-4&list=PLC679RvCan2CoOLaYQzUEriM3WS-UFQ5N&index=18&t=49s" %}
-
