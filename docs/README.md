@@ -42,7 +42,7 @@ who understand well the problem domain of the questionnaire.
 Here is a summary of the roles and responsibilities:
 
 <p style="text-align:center;">
-<img width="500"src="docs/images/architecture.png"
+<img width="500"src="assets/architecture.png"
  title="architecture">
 </p>
 
@@ -67,11 +67,11 @@ In-process deployments provide essentially instant response time, however, there
 There are only minor distinctions between how the CSC and decision service interactions take place when running in-process or remotely:
 
 <p style="text-align:center;">
-<img width="500"  src="docs/images/LocalDS.png"
+<img width="500"  src="assets/LocalDS.png"
  title="Running locally">
 <br>
 <br>
-<img width="500"  src="docs/images/RemoteDS.png"
+<img width="500"  src="assets/RemoteDS.png"
  title="Remote decision service">
 </p>
 
@@ -85,7 +85,7 @@ For more detail on the CSC and the decision service please refer to these docume
 ### Summary
 
 <figure>
-<img align="right" width="400"  src="docs/images/SameModelforDifferentRenderersSmaller.png"
+<img align="right" width="400"  src="assets/SameModelforDifferentRenderersSmaller.png"
  title="Same Model for Different Renderers">
 </figure>
 
