@@ -2,7 +2,9 @@
 
 ## Corticon Rule Development Life Cycle
 
-![Corticon Runtimes](assets\corticon server vs js.png)
+![Corticon Runtimes](https://github.com/corticon/corticon.js-samples/blob/b0b2251c261b9f895da2ec88941cfd6d425c9ecc/docs/assets/corticon%20server%20vs%20js.png)
+
+
 Corticon has three main components:
 
 
