@@ -2,6 +2,7 @@
 └── docs
     ├── README.md
     ├── guide.md
-    └── zh-cn
+    └── Dynamic%20Forms
         ├── README.md
-        └── guide.md
+        ├── AuthoringClientSideComponents.md
+        ├── AuthoringDecisionService.md
