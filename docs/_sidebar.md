@@ -5,4 +5,4 @@
     *  [Capturing the Response Data](/Rules/CapturingtheResponseData.md)
     *  [Non-UI Steps](/Rules/Non-UI-steps.MD)
     *  [Validations](/Rules/validations.MD)
-   *  [Rendering the Dynamic Form](Rendering/README.md)
+  * [Rendering the Dynamic Form](Rendering/README.md)
