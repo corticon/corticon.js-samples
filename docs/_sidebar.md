@@ -1,8 +1,8 @@
 * [Home](/)
 
-  * [Authoring the Rules](/Rules/README.MD)
-    * [Communicating with the Renderer](/Rules/response.MD)
+  * [Authoring the Rules](/Rules/README.md)
+    * [Communicating with the Renderer](/Rules/response.md)
     *  [Capturing the Response Data](/Rules/CapturingtheResponseData.md)
-    *  [Non-UI Steps](/Rules/Non-UI-steps.MD)
-    *  [Validations](/Rules/validations.MD)
+    *  [Non-UI Steps](/Rules/Non-UI-steps.md)
+    *  [Validations](/Rules/validations.md)
   * [Rendering the Dynamic Form](Rendering/README.md)
