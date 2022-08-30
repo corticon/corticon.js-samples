@@ -1,6 +1,8 @@
 * [Home](/)
 
-
-* [Dynamic Forms](/Dynamic%20Forms/README.md)
-  * [Authoring the Client Side Rendering Components](/Dynamic%20Forms/AuthoringClientSideComponents.md)
-  * [Authoring the Rules](/Dynamic%20Forms/AuthoringDecisionService.md)
+  * [Authoring the Rules](/DynamicForms/Rules/README.MD)
+    * [Corticon.js Studio Rule Files](/DynamicForms/Rules/files.MD)
+    *  [Capturing the Response Data](/DynamicForms/Rules/CapturingtheResponseData.md)
+    *  [Non-UI Steps](/DynamicForms/Rules/Non-UI-steps.MD)
+    *  [Validations](/DynamicForms/Rules/validations.MD)
+   *  [Rendering the Dynamic Form](DynamicForms/Rendering/README.md)
