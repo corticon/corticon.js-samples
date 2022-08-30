@@ -53,7 +53,7 @@ The front end UI (CSC) does not know the questions to be asked at each step nor 
 
 The decision service does not know the current state of the questionnaire but knows what to do at each **Stage.** All of the logic applicable to a question and its answer are tied together which a unique identifier, the stage number.
 
-A Stage may encompass one or more **[Rulesheets](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#authoring-the-rules)**.
+A Stage may encompass one or more **[Rulesheets](https://corticon.github.io/corticon.js-samples/#/Rules/README?id=authoring-the-rules)**.
 
  When building dynamic forms, the rulesheets typically specify:
 1. Current stage number
