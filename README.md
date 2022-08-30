@@ -1,23 +1,13 @@
-# My Title
-> My subtitle
+# Corticon.js Samples
 
+This repository contains sample decision services for using Corticon.js across a variety of JavaScript environments.
 
-## Set up and run
+With Corticon.js, you can deploy rules to any platform that supports a compatible version of JavaScript. With this flexibility, you automate decisions where the data originates from or where the decisions have the most effect. Supported deployments of Corticon.js include:
 
-### Remote use
+- Rules deployed as serverless functions on AWS Lambda, Google Cloud Functions, or Microsoft Azure Functions
+- Rules integrated into a cloud work flow such as AWS Step Functions, Microsoft Flow/Logic Apps, or Google Workflows
+- Rules run on your own back end as part of your node.js platform
+- Rules bundled in a mobile app created with Xamarin, React, Vue.js, or other toolkits
+- Rules executed in a browser as part of a web application
+- Rules executed in a browser which define a dynamic form's UI behavior
 
-1. Go to the repo on **GitHub**.
-2. Go to the _Settings_ section.
-3. Enable **GitHub Pages** for the _docs_ directory.
-4. Click _environment_ tab on your repo and for the site to build.
-5. On success, click _View deployment_ to see the public URL.
-6. Add the uRL to your Github repo's URL field and your README, to make it easy for people to find.
-
-### Serve locally
-
-To view the docs site on a local web server, follow these instructions - [Serve a docs site locally with DocsifyJS](https://gist.github.com/MichaelCurrin/4c8060dcc9d8841f842eeebc7a1436d8)
-
-
-## Resources
-
-For more info on what DocsifyJS is and how to use it, see [DocsifyJS Tutorial](https://michaelcurrin.github.io/docsify-js-tutorial/#/?id=serve-a-docsify-site-locally).
