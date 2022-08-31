@@ -1,4 +1,4 @@
 * [Home](/)
 
-  * [Defining Form Rules in Corticon](/Rules/README.md)
+  * [Overview of Rule Modeling in Corticon.js Studio](/Rules/README.md)
   * [Rendering the Dynamic Form](Rendering/README.md)

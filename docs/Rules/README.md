@@ -1,6 +1,4 @@
-
-## Overview of Rule Modeling in Corticon.js Studio
-### Rule Vocabulary
+# Rule Vocabulary
 
 <img align="right" width="300"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png"
  title="Rule Vocabulary">
@@ -15,7 +13,7 @@ Corticon business rules are authored in **Corticon.js Studio**, with the backbon
 
 - The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
 
-### Authoring the Rules
+# Authoring the Rules
 
 Corticon provides domain experts with the tools to define the parts of software guided by complex rules, without needing to be programmers.
 
@@ -25,7 +23,7 @@ Logic is authored and tested in Corticon Studio through Rule Modeling in a sprea
   <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet  overview" >
 </p>
 
-### Testing the Rules
+# Testing the Rules
 
 A *Ruletest* simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced.
 
@@ -33,7 +31,7 @@ You can define different sets of input data to test how the rules behave in diff
 
 Ruletests reproduce how the rules will behave once deployed as a decision service.
 
-### Organizing the Rules
+# Organizing the Rules
 
 From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a Ruleflow to specify the sequence from one rulesheet to another.
 
@@ -44,9 +42,9 @@ As more rulesheets are added to our Ruleflow, Ruletests can be run against entir
 </p>
 
 
-## Modeling Dynamic Form Rules in Corticon.js Studio
+# Modeling Dynamic Form Rules in Corticon.js Studio
 
-### What the Client Side Component needs from the rules
+## What the Client Side Component needs from the rules
 
 The decision service informs the front end UI each and every prompt to present to the user, throughout the form. It likewise may define whether to execute a decision/computation in the background before moving on to subsequent stages.
 
@@ -57,7 +55,7 @@ The content presented in the form at a given point can define different paths de
 
 There are certain rules which are useful to implement only at the start or end of the form. For example, telling the CSC where to store the accrued form data, and telling the CSC when the form is complete.
 
-### Unique Considerations when Building Rules for Dynamic Forms Rules
+## Unique Considerations when Building Rules for Dynamic Forms Rules
 
 In a typical decision automation use case, rulesheets and ruleflows are 'connected' from one to another when constructing the top level ruleflow. Connections are the objects that connect or “stitch” assets and objects together to control their sequence of execution.
 
@@ -94,7 +92,7 @@ The main functions of the rules throughout a form's ruleflow, from which the Dec
 	- Execute some business logic or computation that doesn't involve presenting anything to the user (e.g. add together dollar amount of all expenses being submitted)
 3. Which data should be retained and accrued to pass along upon form completion, versus which data is only relevant ephemerally (e.g., assigning data related to a claim to be retained, while assigning the response to '_Do you have more claims to submit_?' to be discarded.
 
-### Orchestrating a Form's Sequence
+## Orchestrating a Form's Sequence
 
 The front end UI (CSC) does not know the questions to be asked at each step nor what the answers mean, but it knows how to render these questions and collect the answers.
 
@@ -113,7 +111,7 @@ A Stage may encompass one or more **[Rulesheets](https://corticon.github.io/cort
 
 Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called `decisionServiceBundle.js`.
 
-### Accruing and Using Form Response Data
+## Accruing and Using Form Response Data
 
 By default, response data is stored in an entity assigned to be the pathToData, using the attribute `UI.pathToData` .
 
@@ -133,13 +131,13 @@ If we start by just collecting the end user's responses for year/make/model of a
       }
     }
 ```
-### Executing Steps with No UI to Render
+## Executing Steps with No UI to Render
 
 Sometimes the Decision Service needs to execute a stage with no associated UI to rende. For example, the Decision Service might need to execute business logic and then move to next step.
 
 This is implemented by the Decision Service in the attribute UI.noUiToRenderContinue (a boolean).
 
-### Validations
+## Validations
 There are 2 kinds of validations:
 
 1. Those which are defined directly in UI control itself,  and can thus be directly enforced by the CSC. For this validation, the CSC does not need to call the Decision Service for validation. It can enforce the validation directly based on various attributes sets on the UIControl and the type of UIControl. For examples, we may set an input field as required or we may want a number field where the valid data is between 1 and 20. These are specified in the Decision Service model using the UIControl.required and UIControl.min and UIControl.max attributes respectively:
