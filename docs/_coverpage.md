@@ -1,10 +1,8 @@
-<h1 id="cover-heading">
-  Progress Corticon.js  
-</h1>
 
 
->    Progress Corticon is a business rules engine - a tool built for abstracting complex business logic from applications and data sources into a discrete business rules layer—without coding. 
+![](assets/ProgressCorticon.js_PrimaryLogo_Stacked.png)
 
 
-<!-- TODO: Set your background color or image. -->
-![color](#b3d9f8)
+>   Corticon.js is a business rules engine - a tool built for abstracting complex business logic from applications and data sources into a discrete business rules layer—without coding. 
+
+![color](#4E4B52)
