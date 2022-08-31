@@ -1,7 +1,5 @@
-# Corticon Overview
+# Corticon.js Dynamic Forms: Introduction
 
-
-### Introduction
 
 Implementing the complexities of a dynamic form's user interface often involves a  level of complexity comparable to that of a traditional decision automation use case (e.g. eligibility determination, claims handling, loan origination...). With Corticon.js, we can define this logic using the same declarative, rules-driven paradigm that enables traditional decision automation.
 
@@ -20,12 +18,12 @@ Rules define the model for what, when, and how to present prompts to an end user
 
 
 
-### Building Dynamic Forms with Corticon.js
+## Building Dynamic Forms with Corticon.js
 
 It may be easiest to conceptualize Corticon.js Dynamic Forms by first checking out the samples that you can interact with as an end user, leveraging the 'test driver' web page. You can launch it right away at [this link](https://refined-github-html-preview.kidonng.workers.dev/corticon/corticon.js-samples/raw/master/DynamicForms/CSC/client.html), or review the HTML [here](https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html).
 
 
-#### Design
+## Design
 
 The Dynamic Forms in the sample page are rendered by a reusable Client Side Component (CSC). Just switch samples with the dropdown and you're in a different dynamic form.
 
@@ -46,7 +44,7 @@ Here is a summary of the roles and responsibilities:
  title="architecture">
 </p>
 
-### Local versus Remote Decision Services
+## Local versus Remote Decision Services
 
 Decision service can be run in process within the CSC or maintained and invoked in a remote environment.
 
@@ -75,14 +73,14 @@ There are only minor distinctions between how the CSC and decision service inter
  title="Remote decision service">
 </p>
 
-### Building and integrating a rule-driven form's components
+## Building and integrating a rule-driven form's components
 
 For more detail on the CSC and the decision service please refer to these documents:
 
 1. [Authoring a the dynamic form logic in Corticon (these will be generated into the Decision Service) ](docs/AuthoringDecisionService.md)
 2. [Building and configuring the client side component (CSC)](docs/AuthoringClientSideComponents.md)
 
-### Summary
+## Summary
 
 <figure>
 <img align="right" width="400"  src="assets/SameModelforDifferentRenderersSmaller.png"
@@ -96,7 +94,7 @@ For more detail on the CSC and the decision service please refer to these docume
 
 
 
-### Additional Resources
+## Additional Resources
 
 Find out more about [Corticon.js](https://www.progress.com/corticon-js)
 
