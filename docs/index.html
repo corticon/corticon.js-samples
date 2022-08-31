@@ -52,8 +52,11 @@
             loadSidebar: true,
             loadNavbar: true,
             subMaxLevel: 2,
-            search: 'auto',
-            themeColor: "#34D5FF",
+            search: {
+              noData: {
+                '/': 'No results!',
+              },
+                themeColor: "#34D5FF",
 
             plugins: [
                 EditOnGithubPlugin.create(editPath, null, editMsg)
@@ -61,7 +64,8 @@
         }
 
     </script>
-
+    <script src="/lib/docsify.js"></script>
+    <script src="/lib/plugins/search.js"></script>
 </body>
 
 </html>
