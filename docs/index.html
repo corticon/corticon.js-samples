@@ -35,7 +35,7 @@
         
         window.$docsify = {
             name: "Progress Corticon.js", 
-            repo: repoUrl,
+            repo: 'corticon/corticon.js-samples',
             
             auto2top: true,
             coverpage: true,
@@ -43,14 +43,18 @@
             loadNavbar: true,
             subMaxLevel: 2,
             themeColor: "#3170a7", // TODO: Set your own color.
-
+            search: {
+                paths: 'auto',
+                placeholder: 'Search',
+                noData: 'No Results.',
+            }
             plugins: [
                 EditOnGithubPlugin.create(editPath, null, editMsg)
             ],
         }
 
     </script>
-
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 
 </html>
