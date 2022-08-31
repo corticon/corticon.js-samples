@@ -26,6 +26,8 @@
 
     <!-- Docsify core. -->
     <script defer src="//unpkg.com/docsify@4/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     
     <!-- Syntax highlighting.-->
     <!-- TODO: Add prism-bash, prism-python, prism-javascript etc. as separate items so you can load syntax highlighting for that language. -->
@@ -50,16 +52,16 @@
             loadSidebar: true,
             loadNavbar: true,
             subMaxLevel: 2,
+            search: 'auto',
             themeColor: "#34D5FF",
-             search: 'auto',
+
             plugins: [
                 EditOnGithubPlugin.create(editPath, null, editMsg)
             ],
         }
 
     </script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
 </body>
 
 </html>
