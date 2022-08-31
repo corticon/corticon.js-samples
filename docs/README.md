@@ -1,4 +1,3 @@
-# Corticon.js Overview 
 
 With [Corticon.js](https://www.progress.com/corticon-js), you can deploy rules to any platform that supports a compatible version of JavaScript. With this flexibility, you automate decisions where the data originates from or where the decisions have the most effect. Supported deployments of Corticon.js include:
 
