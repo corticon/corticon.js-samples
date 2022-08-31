@@ -14,14 +14,23 @@
     <link rel="stylesheet" href="//unpkg.com/docsify@4/lib/themes/vue.css">
     <!-- TODO: Replace the theme name or leave as is. -->
     
+        <style>
+        /* Fix issue on mobile devices where a custom cover image goes off the screen. */
+        section.cover.show {
+            height: 100%;
+        }
+
+    </style>
     <!-- Edit on GitHub plugin. -->
     <script src="//unpkg.com/docsify-edit-on-github@1/index.js"></script>
 
     <!-- Docsify core. -->
     <script defer src="//unpkg.com/docsify@4/lib/docsify.min.js"></script>
+    
     <!-- Syntax highlighting.-->
     <!-- TODO: Add prism-bash, prism-python, prism-javascript etc. as separate items so you can load syntax highlighting for that language. -->
     <script defer src="//unpkg.com/prismjs@1/components/prism-markdown.min.js"></script>
+    
 </head>
 
 <body>
@@ -34,7 +43,7 @@
 
         window.$docsify = {
             name: "Progress Corticon.js",
-            repo: 'corticon/corticon.js-samples',
+            repo: repoUrl,
 
             auto2top: true,
             coverpage: true,
@@ -49,9 +58,8 @@
         }
 
     </script>
-    <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
-    
+
 </html>
