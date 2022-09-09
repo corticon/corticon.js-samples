@@ -133,16 +133,32 @@ Here is an example for stage 2 of the canonical sample:
 }
 ~~~
 
-# Simple Controls
+## Supported Controls List
 
-These correspond to a primitive UI element in HTML or mobile platform.  For example, a Text UI type can be rendered as an HTML <input> tag.
-Another example: a MultiChoice ui type can be rendered as a dropdown using a "select" html tag.  
+| UI Control Type | Multiple Instance Controls (For more information read the section below) | Description | Rendering in Reference Implementation (Test Driver) |
+| ----------- | ----------- | ----------- | ----------- |
+| ReadOnlyText | No (NA) | A control to render HTML text | div class="readOnlyText" |
+| TextArea | No | A control to render a multi-lines text input | textarea class="textAreaControl" |
+| Text      | Yes | A control to render a single line text input | input "type": "text"|
+| Number   | Yes | A control to render a single number input | input "type": "text"|
+| DateTime   | Yes | A control to render a date time or a date input (based on attribute showTime) | input type="datetime-local" or input type="date" |
+| SingleChoice   | No (NA) | A control to render a single choice input - typically rendered as a checkbox or ON/OFF item | input type="checkbox" |
+| MultipleChoices   | No (NA) |  A control to render a multi-choice input.  The user can only selects one of the choice - typically rendered as a dropdown | select |
+| MultipleChoicesMultiSelect | No (NA) | A control to render a multi-choice input.  The user can select 1 to all of the choice | select multiple |
+| YesNo   | No (NA) | A control to render a binary yes - no choice.  This is a short cut to creating a multi choices control with yes and no values | select with 2 values, yes and no |
+| FileUpload   | No | A control to render a file upload control.  | input type="file" with appropriate label |
+| MultiExpenses   | Yes | An example to render a complex control (see below for details on simple vs complex controls).  | It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector. |
 
+
+## Simple Controls
+
+These correspond to a primitive UI element in HTML or mobile platform.  For example, a Text UI type can be rendered as 
+an HTML input tag, or a MultiChoice ui type can be rendered as a dropdown using a "select" html tag.
 Note: the CSC can decide to render the MultiChoice as a custom list that the user can click on.
 
 No matter how the UI type is rendered, a simple control has only one input (a string, some numbers, a Boolean, ect…), thus the CSC will be responsible for storing one answer for each simple controls.  The UI control specifies where to store the data in the field UIControl.fieldName
 
-# Multiple Instance Controls
+## Multiple Instance Controls
 
 Sometimes we don’t know in advance how many inputs there will be for a specific field.  
 A good example would be asking for first name of all children.  There may be the need for 1 input or 2 inputs or 3 or more.
@@ -154,7 +170,7 @@ The array will be saved in the project data as specified by the UI control speci
 
 For more information check the reference implementation function renderMultipleChoicesInput at https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/clientSideComponent/dynForm/uiControlsRenderers.js
 
-# Complex Controls
+## Complex Controls
 
 These controls are characterized as:
 
