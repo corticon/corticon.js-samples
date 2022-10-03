@@ -6,11 +6,14 @@ corticon.util.namespace( "corticon.dynForm" );
     corticon.dynForm.customEvents = {
         "BEFORE_START": "beforeStart",
         "AFTER_START": "afterStart",
-        "AFTER_DONE": "afterDone",
+        "FORM_DONE": "formDone",    // Form has reached the end (done flag received in the model)
+        "AFTER_DONE": "afterDone",  // User clicked next after reaching Done.  We simply display a All Done message (that is not part of the model)
+        "BACK_AT_FORM_BEGINNING": "backAtFormBeginning",  // Came back to initial stage from one or more "Previous" steps.
         "NEW_STEP": "newStep",
         "NEW_FORM_DATA_SAVED": "newFormDataSaved", // Some data were saved to the form data storage
         "NEW_DS_EXECUTION": "newDSExecution", // A decision service was executed - data will contain the output
         "BEFORE_DS_EXECUTION": "beforeDSExecution", // A decision service is about to be executed - data will contain the input
+        "AFTER_UI_STEP_RENDERED": "afterUIStepRendered", // A new UI step was rendered
     }
 
     corticon.dynForm.addCustomEventHandler = function  ( name, fct ) {

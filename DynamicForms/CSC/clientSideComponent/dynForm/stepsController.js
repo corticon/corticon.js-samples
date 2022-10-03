@@ -12,11 +12,13 @@ corticon.dynForm.StepsController = function () {
     let itsQuestionnaireName;
     let itsInitialLanguage;
 
+    const itsHistory = new corticon.dynForm.History();
     const itsUIControlsRenderer = new corticon.dynForm.UIControlsRenderer();
 
     function startDynUI( baseDynamicUIEl, decisionServiceEngine, externalData, language, questionnaireName ) {
         itsQuestionnaireName = questionnaireName;
         itsInitialLanguage = language;
+        itsHistory.setupHistory();
 
         const restartData = getRestartData (questionnaireName);
         if ( restartData === null ) {
@@ -55,17 +57,48 @@ corticon.dynForm.StepsController = function () {
 
     function setStateFromRestartData(questionnaireName, restartData) {
         itsPathToData = getPathToData(questionnaireName);
-        itsDecisionServiceInput = restartData;
+        setStateFromStepData(restartData);
+        itsHistory.setRestartHistory(getRestartHistory(questionnaireName));
+        itsHistory.getPreviousStageData(); // we remove from stack the most recent as we are going to execute it again and push it.
+    }
+
+    function getRestartHistory(decisionServiceName) {
+        return window.localStorage.getItem('CorticonRestartHistory_'+decisionServiceName);
+    }
+
+    function setStateFromStepData(data) {
+        itsDecisionServiceInput = data;
         itsFormData = itsDecisionServiceInput[1];
     }
 
-    function processNextStep(baseDynamicUIEl, decisionServiceEngine, language) {
-        // On Next click, copy value of all rendered elements to the UI Controls in payload
-        _saveEnteredInputsToFormData(baseDynamicUIEl);
+    function processPrevStep(baseDynamicUIEl, decisionServiceEngine, language) {
+        if ( itsFlagAllDone )  // Technically not needed if we disable the previous button correctly all the time but safer to double protect in case of bugs.
+            return;
+
+        const allData = itsHistory.getPreviousStageData();
+        if ( allData === undefined )  // we are at beginning
+            return;
+
+        const prevStageNbr = allData['stage'];
+        itsDecisionServiceInput = allData['input'];
+        itsDecisionServiceInput[0].nextStageNumber = prevStageNbr;
+        processNextStep(baseDynamicUIEl, decisionServiceEngine, language, false);
+
+        if ( prevStageNbr === 0 )
+            corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.BACK_AT_FORM_BEGINNING);
+    }
+
+    function processNextStep(baseDynamicUIEl, decisionServiceEngine, language, saveInputToFormData=true) {
+        if ( saveInputToFormData ) {
+            // On Next click, copy value of all rendered elements to the UI Controls in payload
+            _saveEnteredInputsToFormData(baseDynamicUIEl);
+        }
 
         corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.NEW_STEP);
 
-        // If previous call to decision service returned done then reset ui to restart and in this sample we just display the form data in debug panel
+        // If previous call to decision service returned done then reset ui to restart and in this sample we
+        // just display the form data in the trace panel.  In a production application, the data would be submitted
+        // to a backend service for further processing.
         if ( itsFlagAllDone ) {
             clearRestartData(itsQuestionnaireName);
             corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.AFTER_DONE);
@@ -86,13 +119,17 @@ corticon.dynForm.StepsController = function () {
             // now that we have skipped noUIToRender steps we can save the restart data
             saveRestartData(itsQuestionnaireName, restartData);
 
-            itsFlagAllDone = nextUI.done;
+            if ( nextUI.done ) {
+                itsFlagAllDone = nextUI.done;
+                corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.FORM_DONE);
+            }
         }
     }
 
     function clearRestartData( decisionServiceName ) {
         window.localStorage.removeItem('CorticonRestartPayload_'+decisionServiceName);
         window.localStorage.removeItem('CorticonRestartPathToData_'+decisionServiceName);
+        window.localStorage.removeItem('CorticonRestartHistory_'+decisionServiceName);
     }
 
     function saveRestartData( decisionServiceName, payload ) {
@@ -100,6 +137,7 @@ corticon.dynForm.StepsController = function () {
         try {
             window.localStorage.setItem('CorticonRestartPayload_'+decisionServiceName, payload);
             window.localStorage.setItem('CorticonRestartPathToData_'+decisionServiceName, itsPathToData);
+            window.localStorage.setItem('CorticonRestartHistory_'+decisionServiceName, itsHistory.getRestartHistory());
         } catch (e) {
             // Some browser in private mode may throw exception when using local storage
         }
@@ -113,6 +151,7 @@ corticon.dynForm.StepsController = function () {
         else
             return null;
     }
+
     function getPathToData(decisionServiceName) {
         return window.localStorage.getItem('CorticonRestartPathToData_'+decisionServiceName);
     }
@@ -180,6 +219,9 @@ corticon.dynForm.StepsController = function () {
         }
 
         itsUIControlsRenderer.renderUI ( containers, baseEl, itsLabelPositionAtUILevel, nextUI.language );
+
+        const event = { "input": payload, "stage": payload[0].currentStageNumber };
+        corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.AFTER_UI_STEP_RENDERED,event);
 
         return nextUI;
     }
@@ -425,8 +467,8 @@ corticon.dynForm.StepsController = function () {
             const event = { "input": payload, "stage": payload[0].currentStageNumber };
             corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.BEFORE_DS_EXECUTION,event);
 
-            // const configuration = { logLevel: 0 };
-            const configuration = { logLevel: 1 };
+            const configuration = { logLevel: 0 };
+            // const configuration = { logLevel: 1 };
             const t1 = performance.now();
             const result = decisionServiceEngine.execute(payload, configuration);
             const t2 = performance.now();
@@ -458,6 +500,7 @@ corticon.dynForm.StepsController = function () {
     // Public interface
     return {
         startDynUI: startDynUI,
-        processNextStep: processNextStep
+        processNextStep: processNextStep,
+        processPrevStep: processPrevStep
     }
 }

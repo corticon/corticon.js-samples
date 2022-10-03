@@ -535,7 +535,6 @@ corticon.dynForm.UIControlsRenderer = function () {
                     console.log( "success getting list of options on " + dataSource  );
                 })
                 .fail(function( jqXHR, exception ) {
-                    debugger;
                     let msg = '';
                     if (jqXHR.status === 0) {
                         msg = 'Not connected. Verify Network.';
