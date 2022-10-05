@@ -21,7 +21,8 @@ Implementing the complexities of a dynamic form's user interface often involves 
 a traditional decision automation use case (e.g. eligibility determination, claims handling, loan origination...). 
 With Corticon.js, we can define this logic using the same declarative, rules-driven paradigm that enables traditional decision automation.
 
-There are a wide array of UI paradigms fit for the purpose of building forms with a multitude of questions/prompts, the answers from which will be passed into downstream workflows. But the form logic can evolve into a monolith in its own right when--
+There are a wide array of UI paradigms fit for the purpose of building forms with a multitude of questions/prompts, the answers from which will be passed into downstream workflows. 
+But the form logic can evolve into a monolith in its own right when:
 
 1.  Answers to the form's earlier questions change which questions are asked later in the form.
 2.  The questions change frequently.
@@ -102,7 +103,7 @@ for what to present to the user (defined in a Corticon.js decision service) and 
 these instructions.
 
 If you are familiar with the various model/views design patterns; you can consider the CSC to be the view while the model is
-created and maintained using [Corticon](https://www.progress.com/corticon-js)) rule system as a decision service.
+created and maintained using [Corticon](https://www.progress.com/corticon-js) rule system as a decision service.
 Another way to put it, is the decision service defines a model for the questionnaire independently of how it is rendered in the
 front end UI and device.
 
@@ -188,10 +189,11 @@ To make it easy to familiarize yourself with the concepts, we have made availabl
 that you can run from a test driver web page.
 
 To get started:
+* clone the repository https://github.com/corticon/corticon.js-samples/ or download it as a zip file
 * invoke client.html (available at https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html)
 * go through each sample to get a feel for what is available
 * Run the canonical sample. Each step in this sample shows how to use a specific UI control and display
-  the corresponding Corticon rulesheet file in the title of the container.  You can then use the corresponding step rulesheet as an example to implement what you need.
+  the corresponding Corticon rulesheet file in the title of the container.  You can then use the corresponding rulesheet as an example to implement what you need.
 
 ## Summary
 

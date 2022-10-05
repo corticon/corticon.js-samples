@@ -18,6 +18,7 @@
 	<script type="text/javascript" src="clientSideComponent/util/util.js"></script>
 	<script type="text/javascript" src="clientSideComponent/dynForm/customEvents.js"></script>
 	<script type="text/javascript" src="trace/trace.js"></script>
+	<script type="text/javascript" src="clientSideComponent/dynForm/history.js"></script>
 	<script type="text/javascript" src="clientSideComponent/dynForm/uiControlsRenderers.js"></script>
 	<script type="text/javascript" src="clientSideComponent/dynForm/stepsController.js"></script>
 
@@ -101,6 +102,11 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 		function processClickNext() {
 			const baseDynamicUIEl = $('#dynUIContainerId');
 			itsStepsController.processNextStep(baseDynamicUIEl, currentDecisionServiceEngine, itsCurrentLanguage);
+		}
+
+		function processClickPrev() {
+			const baseDynamicUIEl = $('#dynUIContainerId');
+			itsStepsController.processPrevStep(baseDynamicUIEl, currentDecisionServiceEngine, itsCurrentLanguage);
 		}
 
 		function saveStateButton(show) {
@@ -187,8 +193,20 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 				$("#sampleSelectId").attr('disabled', true);
 			});
 
+			corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.NEW_STEP, () => {
+				$("#prevActionId").show();
+			});
+
+			corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.FORM_DONE, () => {
+				$("#prevActionId").hide();
+			});
+			corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.BACK_AT_FORM_BEGINNING, () => {
+				$("#prevActionId").hide();
+			});
+
 			corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.AFTER_DONE, () => {
 				$("#nextActionId").hide();
+				$("#prevActionId").hide();  // needed when continuing to a sample after finishing a sample
 				$("#startActionId").show();
 				$('#dynUIContainerId').html('<div style="margin: 2em; font-size: larger;">&nbsp;<i class="bi bi-check-circle"></i>All Done</div>');
 				$("#sampleSelectId").attr('disabled', false);
@@ -234,6 +252,12 @@ Icons: https://web3canvas.com/font-awesome-alternatives/
 							<i style="padding-left: .3rem;" class="bi bi-box-arrow-in-right"></i>&nbsp;<span style="text-decoration: underline">S</span>tart
 						</a>
 					</span>
+					<span class="commandButton commandButtonHidden" id="prevActionId">
+						<a class="command" accesskey="p" title="Previous Step - Shortcut: Alt P (Windows) - CRTL Option P (Mac)" href="#" onclick="processClickPrev(); return false;">
+							<i style="padding-left: .3rem;" class="bi bi-arrow-left-square"></i>&nbsp;<span style="text-decoration: underline">P</span>revious
+						</a>
+					</span>
+					<div style="height: 0.6rem;">&nbsp;</div>
 					<span class="commandButton commandButtonHidden" id="nextActionId">
 						<a class="command" accesskey="n" title="Next Step - Shortcut: Alt N (Windows) - CRTL Option N (Mac)" href="#" onclick="processClickNext(); return false;">
 							<i style="padding-left: .3rem;" class="bi bi-arrow-right-square"></i>&nbsp;<span style="text-decoration: underline">N</span>ext
