@@ -129,11 +129,17 @@ $( document ).ready(function() {
 
     restoreUIState();
 
-    // addCustomEventHandler( BEFORE_START, () =>  );
-    corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.AFTER_START, () => {
+    corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.AFTER_START, ( event ) => {
         $("#nextActionId").show();
         $("#startActionId").hide();
         $("#sampleSelectId").attr('disabled', true);
+
+        if ( event !== undefined && event !== null ) {
+            if ( event.theData['historyEmpty'] )
+                $("#prevActionId").hide();
+            else
+                $("#prevActionId").show();
+        }
     });
 
     corticon.dynForm.addCustomEventHandler( corticon.dynForm.customEvents.NEW_STEP, () => {

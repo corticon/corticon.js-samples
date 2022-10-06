@@ -39,7 +39,7 @@ corticon.dynForm.StepsController = function () {
 
         _askDecisionServiceForNextUIElementsAndRender( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
 
-        corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.AFTER_START);
+        corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.AFTER_START, { historyEmpty: itsHistory.isHistoryEmpty() });
     }
 
     function setStateForStartFromBeginning(language, externalData) {
