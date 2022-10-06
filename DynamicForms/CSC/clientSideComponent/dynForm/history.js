@@ -20,6 +20,10 @@ corticon.dynForm.History = function () {
         // - console.log(`History: Stored stage ${stage} at ${index}`);
     }
 
+    function isHistoryEmpty() {
+        return itsHistory.length <= 1;
+    }
+
     function getPreviousStageData() {
         // We are maintaining the data about all stages as soon as they are rendered.  This means that the
         // current stage corresponds to the UI currently displayed. We could have stored the stages in history only
@@ -59,6 +63,7 @@ corticon.dynForm.History = function () {
         setupHistory: setupHistory,
         getRestartHistory: getRestartHistory,
         setRestartHistory: setRestartHistory,
-        getPreviousStageData: getPreviousStageData
+        getPreviousStageData: getPreviousStageData,
+        isHistoryEmpty: isHistoryEmpty
     }
 }
