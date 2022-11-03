@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="decisionServiceBundle.js"></script>
+    <script>
+        function runDecisionService() {
+            // Here is where everything starts: we execute the rule with the sample payload and we
+            // output the result to an alert dialog.  Errors and exceptions are shown in alert dialog too.
+            try {
+                const payloadString = document.getElementById("payloadId").value;
+                const payload = JSON.parse(payloadString);
+
+                const configuration = { logLevel: 0};
+                // const configuration = { logLevel: 1 };
+                /*
+                *******************************************************
+                Configuration Properties for Rule Messages
+                *******************************************************
+                /*const configuration = {
+                    logLevel: 0,
+                    ruleMessages: {
+                        logRuleMessages: false, // If true the rule messages will be logged to console
+                        executionProperties: {
+                            restrictInfoRuleMessages: true, // If true Restricts Info Rule Messages
+                            restrictWarningRuleMessages: true, // If true Restricts Warning Rule Messages
+                            restrictViolationRuleMessages: true, // If true Restricts Violation Rule Messages
+                            restrictResponseToRuleMessagesOnly: true, // If true the response returned has only rule messages
+                        },
+                    },
+
+                };*/
+                const result = window.corticonEngine.execute(payload, configuration);
+
+                // We always display the result of execution - if there was an error we will additionally display an alert.
+                document.getElementById("resultId").value = JSON.stringify(result, null, 2);
+                if( result.corticon !== undefined ) {
+                    if ( result.corticon.status !== 'success' ) {
+                        alert('Error executing the rules.\n' + JSON.stringify(result, null, 2));
+                    }
+                }
+                else {
+                    alert('Unknown error executing the rules.\n' + JSON.stringify(result, null, 2));
+                }
+            }
+            catch ( e ) {
+                alert('Unexpected exception executing the rules ' + e);
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Sample Calling Corticon JavaScript Decision Service</h2>
+
+<p>
+    Enter the payload to pass to the decision service:
+<table width="100%">
+    <tr>
+        <td width="50%">
+            <textarea style="width: 100%; height: 500px;" id="payloadId"></textarea>
+        </td>
+        <td width="50%">
+            <textarea style="width: 100%; height: 500px;" id="resultId"></textarea>
+        </td>
+    </tr>
+</table>
+</p>
+<p>
+    Use the link below to run the decision service.
+</p>
+
+<a href="#" onclick="runDecisionService(); return false;">Run Decision Service</a>
+
+</body>
+</html>
