@@ -43,8 +43,8 @@ corticon.dynForm.UIControlsRenderer = function () {
                 renderTextAreaInput(oneUIControl, baseEl, labelPositionAtUILevel);
             else if ( oneUIControl.type === 'DateTime' )
                 renderDateTimeInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'YesNo' )
-                renderYesNoInput(oneUIControl, baseEl, labelPositionAtUILevel, language);
+            else if ( oneUIControl.type === 'YesNo' || oneUIControl.type === 'YesNoBoolean' )
+                renderYesNoInput(oneUIControl, baseEl, labelPositionAtUILevel, language, oneUIControl.type);
             else if ( oneUIControl.type === 'ReadOnlyText' )
                 renderReadOnlyText(oneUIControl, baseEl, labelPositionAtUILevel);
             else if ( oneUIControl.type === 'Number' )
@@ -453,7 +453,7 @@ corticon.dynForm.UIControlsRenderer = function () {
             alert("missing value attribute for renderReadOnlyText id: "+oneUIControl.id);
     }
 
-    function renderYesNoInput(oneUIControl, baseEl, labelPositionAtContainerLevel, language) {
+    function renderYesNoInput(oneUIControl, baseEl, labelPositionAtContainerLevel, language, type) {
         const inputContainerEl = createInputContainer(baseEl);
 
         let yes = 'Yes'; let no = 'No';
@@ -465,9 +465,19 @@ corticon.dynForm.UIControlsRenderer = function () {
 
         appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
 
+        let yesValue; let noValue;
+        if ( type === 'YesNo' ) {
+            yesValue = 'yes';
+            noValue = 'no';
+        }
+        else if ( type === 'YesNoBoolean' ) {
+            yesValue = 'T';
+            noValue = 'F';
+        }
+
         const html3 = `<select "id": ${oneUIControl.id}>
-                        <option value="yes">${yes}</option>
-                        <option value="no">${no}</option>
+                        <option value="${yesValue}">${yes}</option>
+                        <option value="${noValue}">${no}</option>
                 </select>`;
         const yesNoEl = $(html3);
 

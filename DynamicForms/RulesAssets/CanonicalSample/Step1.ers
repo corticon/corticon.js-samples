@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_XsnV8yMTEe2i9YJ9w6DmTA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_19lbcmBbEe2eyfJhZu2GeA" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_NIpkMgfFEe2Xr9ppHsO_bQ" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_2Fa0smBOEe2eyfJhZu2GeA" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action disabled="true"/>
       <action/>
@@ -100,6 +100,40 @@
       <action>
         <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='YesNo', label='Question 3', id='crtl1_3', fieldName='Step1Field3']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'YesNo' , UIControl.label = 'Question 3' , UIControl.id = 'crtl1_3' , UIControl.fieldName = 'Step1Field3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.fieldName">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.label">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='YesNoBoolean', label='Question 4', id='crtl1_4', fieldName='Step1Field4']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'YesNoBoolean' , UIControl.label = 'Question 4' , UIControl.id = 'crtl1_4' , UIControl.fieldName = 'Step1Field4' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -297,7 +331,7 @@
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="23" sashWeightConditionsActions="17" sashWeightConditionsIf="84">
-    <actionSection rowCount="25" scrollRowTop="1" columnWidthFactor="0.5">
+    <actionSection rowCount="26" scrollRowTop="1" columnWidthFactor="0.5">
       <actionItemList disabled="true">
         <valueSetCell/>
         <expressionCell external="UI.comments = 'Here we demo how to create 2 free form text questions and a yes/no questions'">
@@ -416,6 +450,41 @@
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls += UIControl.new[type='YesNo', label='Question 3', id='crtl1_3', fieldName='Step1Field3']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'YesNo' , UIControl.label = 'Question 3' , UIControl.id = 'crtl1_3' , UIControl.fieldName = 'Step1Field3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.fieldName">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.label">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.containers.uiControls += UIControl.new[type='YesNoBoolean', label='Question 4', id='crtl1_4', fieldName='Step1Field4']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'YesNoBoolean' , UIControl.label = 'Question 4' , UIControl.id = 'crtl1_4' , UIControl.fieldName = 'Step1Field4' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -706,6 +775,7 @@
       <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
         <actionValueSetCellList/>
         <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
         <actionValueSetCellList valueSet="X"/>
