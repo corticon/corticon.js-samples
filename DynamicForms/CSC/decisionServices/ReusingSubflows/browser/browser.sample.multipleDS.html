@@ -28,6 +28,8 @@
                 const result2 = window.corticonEngines[1].execute(payload2, configuration);
                 document.getElementById("resultId1").value = JSON.stringify(result1, null, 2);
                 document.getElementById("resultId2").value = JSON.stringify(result2, null, 2);
+
+                // For examples on how to process errors from the decision service, please refer to browser.sample.html
             }
             catch ( e ) {
                 alert('There was an exception executing the rules ' + e);
