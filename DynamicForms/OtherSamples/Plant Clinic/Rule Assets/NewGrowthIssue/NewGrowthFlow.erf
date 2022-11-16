@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_tdeV0TjuEe25B98vWy_h0w" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript" rulesheetAssets="1_terminal%20buds%20dying%20unexpectedly.ers#/ 2_Boron%20Checks.ers#/ 3_Triage%20(boron).ers#/ 2_interveinal%20chlorosis%20Checks.ers#/ 7_triage%20on%20interveinal%20chlorosis.ers#/ 8_Young%20Leaf%20Intrerveinal%20Chorosis.ers#/ 9_triage%20on%20young%20leaf%20interveinal%20chlorosis.ers#/ 10_Iron%20Checks.ers#/ 11_triage%20on%20sharp%20distinction.ers#/ 22_Young%20leaves%20light%20green;%20typically%20no%20chlorotic%20spotting%20or%20striping.ers#/ 23_Triage%20Young%20leaves%20light%20green;%20typically%20no%20chlorotic%20spotting%20or%20striping.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_8320sTg0Ee2ryPbIe46cAQ" vocabulary="../Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="1_terminal buds dying unexpectedly" order="14" ruleActivityUpdateStamp="_Fa92hTg7Ee2tJrwxkoJpZw" invokes="1_terminal%20buds%20dying%20unexpectedly.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Terminal Bud Dies" order="1" ruleActivityUpdateStamp="_tdNQETjuEe25B98vWy_h0w" invokes="#//@ruleflow/@flowControlList.1">
+      <condition expression="Plant.Growing_Point_Dies">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Plant.Growing_Point_Dies" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="Growing_Point_Dies" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Plant.Growing_Point_Dies">
+              <parentTerm text="Plant" datatype="Plant" termtype="ENTITY" fulltext="Plant"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="2" ruleActivityUpdateStamp="_tdcgozjuEe25B98vWy_h0w" invokes="#//@ruleflow/@subflowList.1"/>
+        <label expression="false"/>
+        <viewExpressions lhs="Plant.Growing_Point_Dies" rhs="false"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="11" ruleActivityUpdateStamp="_tddHsjjuEe25B98vWy_h0w" invokes="#//@ruleflow/@subflowList.0"/>
+        <label expression="true"/>
+        <viewExpressions lhs="Plant.Growing_Point_Dies" rhs="true"/>
+      </branches>
+    </flowControlList>
+    <subflowList name="If Terminal Bud Dying = T">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="2_Boron Checks" order="13" ruleActivityUpdateStamp="_o2_P8jhLEe23M-avKN4TVQ" invokes="2_Boron%20Checks.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="3_Triage (boron)" order="12" ruleActivityUpdateStamp="_6Z4e8zhLEe23M-avKN4TVQ" invokes="3_Triage%20(boron).ers#//@ruleset"/>
+    </subflowList>
+    <subflowList name="If Terminal Bud Dying = F">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="2_interveinal chlorosis Checks" order="10" ruleActivityUpdateStamp="_A1URUjhMEe23M-avKN4TVQ" invokes="2_interveinal%20chlorosis%20Checks.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="7_triage on interveinal chlorosis" order="9" ruleActivityUpdateStamp="_aDCx8Tg0Ee2ryPbIe46cAQ" invokes="7_triage%20on%20interveinal%20chlorosis.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="8_Young Leaf Intrerveinal Chorosis" order="8" ruleActivityUpdateStamp="_SObSMjhMEe23M-avKN4TVQ" invokes="8_Young%20Leaf%20Intrerveinal%20Chorosis.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="9_triage on young leaf interveinal chlorosis" order="7" ruleActivityUpdateStamp="_6pTpkTggEe2ryPbIe46cAQ" invokes="9_triage%20on%20young%20leaf%20interveinal%20chlorosis.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="10_Iron Checks" order="6" ruleActivityUpdateStamp="_bCS7kjhMEe23M-avKN4TVQ" invokes="10_Iron%20Checks.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="11_triage on sharp distinction" order="5" ruleActivityUpdateStamp="_EijAxzg7Ee2tJrwxkoJpZw" invokes="11_triage%20on%20sharp%20distinction.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="22_Young leaves light green; typically no chlorotic spotting or striping" order="4" ruleActivityUpdateStamp="_fYL9wjhMEe23M-avKN4TVQ" invokes="22_Young%20leaves%20light%20green;%20typically%20no%20chlorotic%20spotting%20or%20striping.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="23_Triage Young leaves light green; typically no chlorotic spotting or striping" order="3" ruleActivityUpdateStamp="_Du-10Dg7Ee2tJrwxkoJpZw" invokes="23_Triage%20Young%20leaves%20light%20green;%20typically%20no%20chlorotic%20spotting%20or%20striping.ers#//@ruleset"/>
+    </subflowList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="372" y="120" width="228" height="36" activityNode="#//@ruleflow/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="108" y="192" width="745" height="529" activityNode="#//@ruleflow/@flowControlList.1" valid="true" branchContainer="#//@ruleflow/@flowControlList.1">
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="55" y="35" width="252" height="349" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.1/@branchEdgeList.1" activityNode="#//@ruleflow/@flowControlList.1/@branches.1/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="379" y="23" width="313" height="445" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.1/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1/@branches.0/@nextStep.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.1/@flowShapeList.1" branch="#//@ruleflow/@flowControlList.1/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.1/@flowShapeList.0" branch="#//@ruleflow/@flowControlList.1/@branches.1"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="31" y="49" width="181" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="31" y="89" width="181" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="6" width="241" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="52" width="241" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="100" width="241" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.2"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="21" y="148" width="241" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.3"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="191" width="241" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.4"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="241" width="241" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.5"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="293" width="243" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.6"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="353" width="241" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.7"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

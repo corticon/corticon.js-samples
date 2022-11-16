@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_8H9mwDkOEe25B98vWy_h0w" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript" rulesheetAssets="0_What%20part%20of%20the%20plant%20is%20primarily%20affected.ers#/ Nutrient%20Overview.ers#/" ruleflowAssets="NewGrowthIssue/NewGrowthFlow.erf#/ OldGrowthIssue/OldGrowthFlow.erf#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_8320sTg0Ee2ryPbIe46cAQ" vocabulary="Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Growing Area Affected Branch" order="3" ruleActivityUpdateStamp="_8H9mwDkOEe25B98vWy_h0w" invokes="#//@ruleflow/@flowControlList.0">
+      <condition expression="Plant.Affected_Area">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Plant.Affected_Area" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="Affected_Area" datatype="String" termtype="ATTRIBUTE" fulltext="Plant.Affected_Area">
+              <parentTerm text="Plant" datatype="Plant" termtype="ENTITY" fulltext="Plant"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="NewGrowthFlow" order="4" ruleActivityUpdateStamp="_tdeV0TjuEe25B98vWy_h0w" invokes="NewGrowthIssue/NewGrowthFlow.erf#//@ruleflow"/>
+        <label expression="'Youngest leaves affected first'"/>
+        <viewExpressions lhs="Plant.Affected_Area" rhs="'Youngest leaves affected first'"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="OldGrowthFlow" order="5" ruleActivityUpdateStamp="_E417sDhNEe23M-avKN4TVQ" invokes="OldGrowthIssue/OldGrowthFlow.erf#//@ruleflow"/>
+        <label expression="'Older leaves affected first'"/>
+        <viewExpressions lhs="Plant.Affected_Area" rhs="'Older leaves affected first'"/>
+      </branches>
+    </flowControlList>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="0_What part of the plant is primarily affected?" order="2" ruleActivityUpdateStamp="_-6FTcjjqEe25B98vWy_h0w" invokes="0_What%20part%20of%20the%20plant%20is%20primarily%20affected.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Nutrient Overview" order="1" ruleActivityUpdateStamp="_UvnU8jjuEe25B98vWy_h0w" invokes="Nutrient%20Overview.ers#//@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="60" y="192" width="601" height="109" activityNode="#//@ruleflow/@flowControlList.0" valid="true" branchContainer="#//@ruleflow/@flowControlList.0">
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="331" y="23" width="180" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="19" y="23" width="228" height="36" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.1" activityNode="#//@ruleflow/@flowControlList.0/@branches.1/@nextStep.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.0" branch="#//@ruleflow/@flowControlList.0/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.1" branch="#//@ruleflow/@flowControlList.0/@branches.1"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="180" y="120" width="336" height="36" activityNode="#//@ruleflow/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="228" y="336" width="258" height="36" activityNode="#//@ruleflow/@flowControlList.2"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

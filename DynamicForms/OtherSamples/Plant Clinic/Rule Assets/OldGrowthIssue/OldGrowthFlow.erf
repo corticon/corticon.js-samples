@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_E417sDhNEe23M-avKN4TVQ" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript" rulesheetAssets="14_plant%20dark%20green%20purple%20or%20red.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_8320sTg0Ee2ryPbIe46cAQ" vocabulary="../Vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Localized Y/N" order="2" ruleActivityUpdateStamp="_E417sDhNEe23M-avKN4TVQ" invokes="#//@ruleflow/@flowControlList.0">
+      <condition expression="Plant.Is_Localized">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Plant.Is_Localized" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="Is_Localized" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Plant.Is_Localized">
+              <parentTerm text="Plant" datatype="Plant" termtype="ENTITY" fulltext="Plant"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="3" ruleActivityUpdateStamp="_Rsm0AzhLEe23M-avKN4TVQ" invokes="#//@ruleflow/@subflowList.1"/>
+        <label expression="false"/>
+        <viewExpressions lhs="Plant.Is_Localized" rhs="false"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="8" ruleActivityUpdateStamp="_RsnbEjhLEe23M-avKN4TVQ" invokes="#//@ruleflow/@subflowList.0"/>
+        <label expression="true"/>
+        <viewExpressions lhs="Plant.Is_Localized" rhs="true"/>
+      </branches>
+    </flowControlList>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="1_effects localized" order="1" ruleActivityUpdateStamp="_0w4rkjhKEe23M-avKN4TVQ" invokes="1_effects%20localized.ers#//@ruleset"/>
+    <subflowList name="Localized">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="14_Chlorosis with interveinal chlorosis" order="12" ruleActivityUpdateStamp="_FeGk4ThNEe23M-avKN4TVQ" invokes="14_Chlorosis%20with%20interveinal%20chlorosis.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="15_triage intrerveinal chlorosis" order="11" ruleActivityUpdateStamp="_9d8pgTgiEe2ryPbIe46cAQ" invokes="15_triage%20intrerveinal%20chlorosis.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="16_chlorotic areas with a burning of leaf margins; spotting sometimes along leaf margins" order="10" ruleActivityUpdateStamp="_HhVS0jhLEe23M-avKN4TVQ" invokes="16_chlorotic%20areas%20with%20a%20burning%20of%20leaf%20margins;%20spotting%20sometimes%20along%20leaf%20margins.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="17_triage chlorotic areas with a burning of leaf margins" order="9" ruleActivityUpdateStamp="_oZY1ITgjEe2ryPbIe46cAQ" invokes="17_triage%20chlorotic%20areas%20with%20a%20burning%20of%20leaf%20margins.ers#//@ruleset"/>
+    </subflowList>
+    <subflowList name="Generalized">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="18_plant dark green purple or red" order="7" ruleActivityUpdateStamp="_E20idzhNEe23M-avKN4TVQ" invokes="14_plant%20dark%20green%20purple%20or%20red.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="19_triage green purple red" order="6" ruleActivityUpdateStamp="_kSDOkjgyEe2ryPbIe46cAQ" invokes="19_triage%20green%20purple%20red.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="20_Light green no spotting" order="5" ruleActivityUpdateStamp="_QyCCIjhLEe23M-avKN4TVQ" invokes="20_Light%20green%20no%20spotting.ers#//@ruleset"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="21_triage light green yellow no spotting" order="4" ruleActivityUpdateStamp="_yjLKwTgyEe2ryPbIe46cAQ" invokes="21_triage%20light%20green%20yellow%20no%20spotting.ers#//@ruleset"/>
+    </subflowList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="288" y="240" width="1117" height="565" activityNode="#//@ruleflow/@flowControlList.0" valid="true" branchContainer="#//@ruleflow/@flowControlList.0">
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="73" y="96" width="426" height="408" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.1" activityNode="#//@ruleflow/@flowControlList.0/@branches.1/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="595" y="83" width="444" height="372" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.1" branch="#//@ruleflow/@flowControlList.0/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.0" branch="#//@ruleflow/@flowControlList.0/@branches.1"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="94" y="58" width="294" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="94" y="109" width="294" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="94" y="159" width="294" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.2"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="94" y="226" width="292" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.3"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="55" y="54" width="213" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.0"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="55" y="145" width="213" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="55" y="209" width="213" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.2"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="55" y="273" width="217" height="36" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.3"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="360" y="116" width="221" height="36" activityNode="#//@ruleflow/@flowControlList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

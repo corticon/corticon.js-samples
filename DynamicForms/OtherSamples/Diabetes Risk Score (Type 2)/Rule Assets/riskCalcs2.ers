@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_P8BtE_yIEeyJns8DpVMh2A" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_0WGMgPx_EeyJns8DpVMh2A" vocabulary="Vocab.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="Data.Person.terms = 6.322 - Data.Person.sexValue - Data.Person.HTN_value - Data.Person.steroidValue - (0.063 * Data.Person.age) -Data.Person.BMI_Value -  Data.Person.familyDM_value - Data.Person.smokingValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.Person.terms = 6.322 - Data.Person.sexValue - Data.Person.HTN_value - Data.Person.steroidValue - ( 0.063 * Data.Person.age ) - Data.Person.BMI_Value - Data.Person.familyDM_value - Data.Person.smokingValue" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="terms" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.terms">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="steroidValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.steroidValue">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="sexValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.sexValue">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="familyDM_value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.familyDM_value">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="smokingValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.smokingValue">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="HTN_value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.HTN_value">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Data.Person.age">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="BMI_Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.BMI_Value">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Data.Person.risk = (100/(1+( 2.71828182845904523536028747135266249775724709369995957496696762772407663**Data.Person.terms))).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.Person.risk = ( 100 / ( 1 + ( 2.71828182845904523536028747135266249775724709369995957496696762772407663 ** Data.Person.terms ) ) ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="risk" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.risk">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="terms" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.terms">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber=7">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="Vocab.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <referencedAttributes attribute="Vocab.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="Vocab.ecore#//UI/noUiToRenderContinue"/>
+      <referencedAttributes attribute="Vocab.ecore#//UI/nextStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="Vocab.ecore#//Data">
+      <extension association="true" entity="Vocab.ecore#//Person" traversedAssocRole="Vocab.ecore#//Data/Person">
+        <referencedAttributes attribute="Vocab.ecore#//Person/terms"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/risk"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/familyDM_value"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/steroidValue"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/sexValue"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/smokingValue"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/HTN_value"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/age"/>
+        <referencedAttributes attribute="Vocab.ecore#//Person/BMI_Value"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsActions="31">
+    <actionSection rowCount="41" columnWidthFactor="0.5">
+      <actionItemList rowHeight="129">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Data.Person.terms = 6.322 - Data.Person.sexValue - Data.Person.HTN_value - Data.Person.steroidValue - (0.063 * Data.Person.age) -Data.Person.BMI_Value -  Data.Person.familyDM_value - Data.Person.smokingValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.Person.terms = 6.322 - Data.Person.sexValue - Data.Person.HTN_value - Data.Person.steroidValue - ( 0.063 * Data.Person.age ) - Data.Person.BMI_Value - Data.Person.familyDM_value - Data.Person.smokingValue" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="terms" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.terms">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="steroidValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.steroidValue">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="sexValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.sexValue">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="familyDM_value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.familyDM_value">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="smokingValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.smokingValue">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="HTN_value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.HTN_value">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Data.Person.age">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="BMI_Value" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.BMI_Value">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="76">
+        <valueSetCell/>
+        <expressionCell external="Data.Person.risk">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.Person.risk" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="risk" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.risk">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=7" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.5"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.6"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.7"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.8"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="39" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="21">
+      <ruleColumnList ruleId="0" columnWidth="231" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="(100/(1+( 2.71828182845904523536028747135266249775724709369995957496696762772407663**Data.Person.terms))).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Data.Person.risk = ( 100 / ( 1 + ( 2.71828182845904523536028747135266249775724709369995957496696762772407663 ** Data.Person.terms ) ) ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="risk" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.risk">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="terms" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Data.Person.terms">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person">
+                  <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Data.Person">
+                <parentTerm text="Data" datatype="Data" termtype="ENTITY" fulltext="Data"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

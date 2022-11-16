@@ -1,0 +1,2332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_M8XFwONUEey4nfPgwbw0aw" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_M4jj0ONUEey4nfPgwbw0aw" vocabulary="../Vocabulary/Rule%20Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber=UI.stageOnExit">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = UI.stageOnExit" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Single Filer'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs="&lt;65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 12550]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 12550 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Single Filer'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs="&lt;65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'yes'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 14250]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 14250 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Single Filer'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 14250]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 14250 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Single Filer'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'yes'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 15950]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 15950 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Heads of Households'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs="&lt;65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 18800]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 18800 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Heads of Households'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs="&lt;65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'yes'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 20500]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 20500 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Heads of Households'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 20500]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 20500 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Heads of Households'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'yes'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 22200]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 22200 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs="&lt;65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'yes'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs="&lt;65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 26450]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 26450 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs="&lt;65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'yes'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'yes'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs="&lt;65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 27800]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 27800 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs="&lt;65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs="&lt;65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 25100]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 25100 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge &lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs="&lt;65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 26450]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 26450 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs=">65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 27800]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 27800 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'yes'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs=">65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 29150]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 29150 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'no'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'yes'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs=">65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 29150]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 29150 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Filer.filerType = 'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.filerType" rhs="'Married Individuals Filing Joint Returns'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.age >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.age" rhs=">65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.blind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.blind" rhs="'yes'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseBlind = 'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseBlind" rhs="'yes'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Filer.spouseAge >65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Filer.spouseAge" rhs=">65"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Filer.standardDeduction=standardDeduction.new [amount = 30500]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 30500 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.2">
+      <opaqueExpression expression="UI.currentStageNumber=3">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//Filer">
+      <extension association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/standardDeduction">
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction/amount"/>
+      </extension>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/filerType"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/age"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/blind"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/spouseBlind"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/spouseAge"/>
+    </logicalVariable>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction">
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction/amount"/>
+    </logicalVariable>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/noUiToRenderContinue"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/nextStageNumber"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/stageOnExit"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightConditionsActions="25" sashWeightConditionsIf="29">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="55">
+        <valueSetCell/>
+        <expressionCell external="Filer.standardDeduction=standardDeduction.new [amount = cellValue]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = cellValue ]" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction" variable="#//@ruleset/@logicalVariables.1">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.nextStageNumber=UI.stageOnExit">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = UI.stageOnExit" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=3" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50" scrollRowTop="3">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Filer.filerType">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Filer.age">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Filer.blind">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Filer.spouseBlind">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Filer.spouseAge">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="21">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="12550">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 12550 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="14250">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 14250 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="14250">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 14250 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="'Single Filer'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Single Filer'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="15950">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 15950 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="18800">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 18800 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="20500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 20500 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="20500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 20500 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="'Heads of Households'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Heads of Households'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="22200">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 22200 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="26450">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 26450 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="27800">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 27800 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="25100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 25100 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="100" pRule="#//@ruleset/@rules.12">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge &lt; 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="26450">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 26450 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="13" columnWidth="100" pRule="#//@ruleset/@rules.13">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="27800">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 27800 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="14" columnWidth="100" pRule="#//@ruleset/@rules.14">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="29150">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 29150 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="15" columnWidth="100" pRule="#//@ruleset/@rules.15">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'no'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'no'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="29150">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 29150 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="16" columnWidth="100" pRule="#//@ruleset/@rules.16">
+        <conditionValueSetCellList valueSet="'Married Individuals Filing Joint Returns'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.filerType = 'Married Individuals Filing Joint Returns'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="filerType" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.filerType">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.age">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.blind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="blind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.blind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseBlind = 'yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseBlind" datatype="String" termtype="ATTRIBUTE" fulltext="Filer.spouseBlind">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.spouseAge > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="spouseAge" datatype="Integer" termtype="ATTRIBUTE" fulltext="Filer.spouseAge">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="30500">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Filer.standardDeduction = standardDeduction.new [ standardDeduction.amount = 30500 ]" datatype="standardDeduction" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="Filer.standardDeduction">
+                <parentTerm text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="standardDeduction" termtype="NEW" fulltext="standardDeduction.new">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="amount" datatype="Integer" termtype="ATTRIBUTE" fulltext="standardDeduction.amount">
+                <parentTerm text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              </terms>
+              <terms text="standardDeduction" datatype="standardDeduction" termtype="ENTITY" fulltext="standardDeduction"/>
+              <terms text="Filer" datatype="Filer" termtype="ENTITY" fulltext="Filer"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

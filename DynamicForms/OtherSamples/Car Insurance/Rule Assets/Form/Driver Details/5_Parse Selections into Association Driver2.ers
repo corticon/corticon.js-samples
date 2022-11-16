@@ -1,0 +1,2439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_9ziSqWUSEe2j0vJnjQjCWg" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="__fc3QGUREe2j0vJnjQjCWg" vocabulary="../../Rule%20Vocabulary.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="DynamicForm.UI.noUiToRenderContinue">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="drivers.overview = 'Name:' + drivers.full_name + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = 'Name:' + drivers.full_name + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="full_name" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.full_name">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Base Rate: $' + drivers.base_rate.toString + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Base Rate: $' + drivers.base_rate.toString + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="drivers.base_rate.toString">
+                <parentTerm text="base_rate" datatype="Integer" termtype="ATTRIBUTE" fulltext="drivers.base_rate">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="discounts->size = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="0"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Adjusted Rate: $' + drivers.adjusted_rate.toString + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Adjusted Rate: $' + drivers.adjusted_rate.toString + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="drivers.adjusted_rate.toString">
+                <parentTerm text="adjusted_rate" datatype="Integer" termtype="ATTRIBUTE" fulltext="drivers.adjusted_rate">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="1"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->first.type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->first.type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->first">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="2"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="3"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + endorsements->sortedBy(type)->at(3).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="4"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="5"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="6"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type + ', ' + endorsements->sortedBy(type)->at(6).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 6 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="7"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type + ', ' + endorsements->sortedBy(type)->at(6).type +endorsements->sortedBy(type)->at(7).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 6 ).type + endorsements->sortedBy ( endorsements.type )->at ( 7 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="endorsements->size = 8">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="endorsements->size" rhs="8"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Endorsements: ' + endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type + ', ' + endorsements->sortedBy(type)->at(6).type +endorsements->sortedBy(type)->at(7).type + ', ' + endorsements->sortedBy(type)->at(8).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 6 ).type + endorsements->sortedBy ( endorsements.type )->at ( 7 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 8 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="1"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->first.type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->first.type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->first">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="2"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="3"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + discounts->sortedBy(type)->at(3).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + discounts->sortedBy ( discounts.type )->at ( 3 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="4"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="5"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="6"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type + ', ' + discounts->sortedBy(type)->at(6).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 6 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="7"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type + ', ' + discounts->sortedBy(type)->at(6).type +discounts->sortedBy(type)->at(7).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 6 ).type + discounts->sortedBy ( discounts.type )->at ( 7 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="discounts->size = 8">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="discounts->size" rhs="8"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="drivers.overview += 'Discounts: ' + discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type + ', ' + discounts->sortedBy(type)->at(6).type +discounts->sortedBy(type)->at(7).type + ', ' + discounts->sortedBy(type)->at(8).type + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 6 ).type + discounts->sortedBy ( discounts.type )->at ( 7 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 8 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber=5">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="DynamicForm.UI.currentStageNumber">
+              <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter/>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.1/@extension.0">
+      <opaqueExpression expression="drivers.data_collected=F">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.data_collected = F" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="data_collected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="drivers.data_collected">
+              <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../../Rule%20Vocabulary.ecore#//DynamicForm/UI" filters="#//@ruleset/@filters.0">
+      <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//DynamicForm/UI/currentStageNumber"/>
+      <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//DynamicForm/UI/noUiToRenderContinue"/>
+      <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//DynamicForm/UI/nextStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Rule%20Vocabulary.ecore#//AutoQuote">
+      <extension explicit="true" association="true" entity="../../Rule%20Vocabulary.ecore#//Driver" traversedAssocRole="../../Rule%20Vocabulary.ecore#//AutoQuote/driver" filters="#//@ruleset/@filters.2">
+        <alias value="drivers"/>
+        <extension explicit="true" association="true" entity="../../Rule%20Vocabulary.ecore#//Discount" traversedAssocRole="../../Rule%20Vocabulary.ecore#//Driver/discount">
+          <alias value="discounts"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../Rule%20Vocabulary.ecore#//Endorsement" traversedAssocRole="../../Rule%20Vocabulary.ecore#//Driver/endorsement">
+          <alias value="endorsements"/>
+        </extension>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/married"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/education"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/used_for_commercial"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/first"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/last"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/dob"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/insurance_lapse"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/credit_score"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/driving_experience_years"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/full_name"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/id"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/data_collected"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/kids_at_home"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/own_residence"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/age"/>
+        <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/overview"/>
+      </extension>
+      <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//AutoQuote/kids_at_home"/>
+      <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//AutoQuote/own_residence"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Rule%20Vocabulary.ecore#//Driver">
+      <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/id"/>
+      <referencedAttributes attribute="../../Rule%20Vocabulary.ecore#//Driver/age"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="29" sashWeightConditionsActions="37" sashWeightConditionsIf="39">
+    <actionSection rowCount="44" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="DynamicForm.UI.noUiToRenderContinue">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="89">
+        <valueSetCell/>
+        <expressionCell external="drivers.overview">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="101">
+        <valueSetCell/>
+        <expressionCell external="drivers.overview += cellValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + cellValue" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="drivers.overview += 'Endorsements: ' + cellValue + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + cellValue + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="drivers.overview += 'Discounts: ' + cellValue + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + cellValue + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="44">
+        <valueSetCell/>
+        <expressionCell external="drivers.overview += 'Adjusted Rate: $' + cellValue + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Adjusted Rate: $' + cellValue + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=5" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.5"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.6"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.7"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.8"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.9"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.10"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.11"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.12"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.13"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.14"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.15"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="DynamicForm.UI.currentStageNumber">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell/>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell external="drivers.data_collected=F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.data_collected = F" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="data_collected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="drivers.data_collected">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" scrollRowTop="3" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="49" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="endorsements->size">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="discounts->size">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="141" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="DynamicForm.UI.noUiToRenderContinue">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'Name:' + drivers.full_name + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = 'Name:' + drivers.full_name + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="full_name" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.full_name">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'Base Rate: $' + drivers.base_rate.toString + '&lt;br>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Base Rate: $' + drivers.base_rate.toString + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="drivers.base_rate.toString">
+                <parentTerm text="base_rate" datatype="Integer" termtype="ATTRIBUTE" fulltext="drivers.base_rate">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="drivers.adjusted_rate.toString">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Adjusted Rate: $' + drivers.adjusted_rate.toString + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="drivers.adjusted_rate.toString">
+                <parentTerm text="adjusted_rate" datatype="Integer" termtype="ATTRIBUTE" fulltext="drivers.adjusted_rate">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->first.type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->first">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + endorsements->sortedBy(type)->at(3).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type + ', ' + endorsements->sortedBy(type)->at(6).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 6 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type + ', ' + endorsements->sortedBy(type)->at(6).type +endorsements->sortedBy(type)->at(7).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 6 ).type + endorsements->sortedBy ( endorsements.type )->at ( 7 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="8">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="endorsements->size = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="endorsements" datatype="Integer" termtype="COLLECTION" fulltext="endorsements->size">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.1">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="endorsements->sortedBy(type)->at(1).type + ', ' + endorsements->sortedBy(type)->at(2).type + ', ' + endorsements->sortedBy(type)->at(3).type + endorsements->sortedBy(type)->at(4).type + ', ' + endorsements->sortedBy(type)->at(5).type + ', ' + endorsements->sortedBy(type)->at(6).type +endorsements->sortedBy(type)->at(7).type + ', ' + endorsements->sortedBy(type)->at(8).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Endorsements: ' + endorsements->sortedBy ( endorsements.type )->at ( 1 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 2 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 3 ).type + endorsements->sortedBy ( endorsements.type )->at ( 4 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 5 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 6 ).type + endorsements->sortedBy ( endorsements.type )->at ( 7 ).type + ', ' + endorsements->sortedBy ( endorsements.type )->at ( 8 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="endorsements->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy->at">
+                <parentTerm text="endorsements" datatype="Sequence" termtype="COLLECTION" fulltext="endorsements->asSequence->sortedBy">
+                  <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="endorsements.type">
+                <parentTerm text="endorsements" datatype="Endorsement" termtype="ENTITY" fulltext="endorsements">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->first.type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->first">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="100" pRule="#//@ruleset/@rules.12">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + discounts->sortedBy(type)->at(3).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + discounts->sortedBy ( discounts.type )->at ( 3 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="13" columnWidth="100" pRule="#//@ruleset/@rules.13">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="14" columnWidth="100" pRule="#//@ruleset/@rules.14">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="15" columnWidth="100" pRule="#//@ruleset/@rules.15">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type + ', ' + discounts->sortedBy(type)->at(6).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 6 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="16" columnWidth="100" pRule="#//@ruleset/@rules.16">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type + ', ' + discounts->sortedBy(type)->at(6).type +discounts->sortedBy(type)->at(7).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 6 ).type + discounts->sortedBy ( discounts.type )->at ( 7 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="17" columnWidth="100" pRule="#//@ruleset/@rules.17">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="8">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="discounts->size = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="discounts" datatype="Integer" termtype="COLLECTION" fulltext="discounts->size">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="discounts->sortedBy(type)->at(1).type + ', ' + discounts->sortedBy(type)->at(2).type + ', ' + discounts->sortedBy(type)->at(3).type + discounts->sortedBy(type)->at(4).type + ', ' + discounts->sortedBy(type)->at(5).type + ', ' + discounts->sortedBy(type)->at(6).type +discounts->sortedBy(type)->at(7).type + ', ' + discounts->sortedBy(type)->at(8).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drivers.overview = drivers.overview + 'Discounts: ' + discounts->sortedBy ( discounts.type )->at ( 1 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 2 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 3 ).type + discounts->sortedBy ( discounts.type )->at ( 4 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 5 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 6 ).type + discounts->sortedBy ( discounts.type )->at ( 7 ).type + ', ' + discounts->sortedBy ( discounts.type )->at ( 8 ).type + '&lt;br>'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="overview" datatype="String" termtype="ATTRIBUTE" fulltext="drivers.overview">
+                <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                  <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                </parentTerm>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="discounts.type">
+                <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                  <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                    <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="discounts->asSequence->sortedBy" datatype="Object" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy->at">
+                <parentTerm text="discounts" datatype="Sequence" termtype="COLLECTION" fulltext="discounts->asSequence->sortedBy">
+                  <parentTerm text="discounts" datatype="Discount" termtype="ENTITY" fulltext="discounts">
+                    <parentTerm text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                      <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="drivers" datatype="Driver" termtype="ENTITY" fulltext="drivers">
+                <parentTerm text="AutoQuote" datatype="AutoQuote" termtype="ENTITY" fulltext="AutoQuote"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
