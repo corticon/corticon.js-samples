@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_M2BykmXdEe2deY5hVzEZKA" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_E9V6sWW_Ee2drKgH7Va3wg" vocabulary="Rule%20Vocabulary.ecore#/0">
+    <rule>
+      <action>
+        <opaqueExpression expression="UI.containers = Container.new[id='appdet', title= 'Vehicle Details']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Vehicle Details' , Container.id = 'appdet' ]" datatype="DynamicForm.Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="containers" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.Container.title">
+                <parentTerm text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="new" datatype="DynamicForm.Container" termtype="NEW" fulltext="DynamicForm.Container.new">
+                <parentTerm text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.Container.id">
+                <parentTerm text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl1_1', fieldName='year', dataSource = 'https://api.npoint.io/6164bb04bfc421a11a74', label='Please select the model year of vehicle']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Please select the model year of vehicle' , UIControl.id = 'crtl1_1' , UIControl.fieldName = 'year' , UIControl.dataSource = 'https://api.npoint.io/6164bb04bfc421a11a74' ]" datatype="DynamicForm.UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="containers" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.type">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="dataSource" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.dataSource">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.id">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="DynamicForm.UIControl" termtype="NEW" fulltext="DynamicForm.UIControl.new">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.label">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.fieldName">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.1">
+      <opaqueExpression expression="UI.currentStageNumber=  8">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="DynamicForm.UI.currentStageNumber">
+              <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl/type"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl/id"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl/label"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl/fieldName"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl/dataSource"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#/0/DynamicForm/UI" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="Rule%20Vocabulary.ecore#/0/DynamicForm/Container" traversedAssocRole="Rule%20Vocabulary.ecore#/0/DynamicForm/UI/containers">
+        <extension association="true" entity="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl" traversedAssocRole="Rule%20Vocabulary.ecore#/0/DynamicForm/Container/uiControls">
+          <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#/0/DynamicForm/Option" traversedAssocRole="Rule%20Vocabulary.ecore#/0/DynamicForm/UIControl/option">
+            <alias value="options"/>
+          </extension>
+        </extension>
+      </extension>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/UI/nextStageNumber"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/UI/currentStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#/0/DynamicForm/Container">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/Container/title"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/Container/id"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#/0/DynamicForm/Option">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/Option/value"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/DynamicForm/Option/displayName"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#/0/AutoQuote">
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#/0/Vehicle" traversedAssocRole="Rule%20Vocabulary.ecore#/0/AutoQuote/vehicle">
+        <alias value="vehicles"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/Vehicle/data_collected"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/Vehicle/id"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#/0/Vehicle/data_collected"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsActions="26" sashWeightConditionsIf="73">
+    <actionSection rowCount="16" columnWidthFactor="0.5">
+      <actionItemList rowHeight="46">
+        <valueSetCell/>
+        <expressionCell external="UI.containers = Container.new[id='appdet', title= 'Vehicle Details']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Vehicle Details' , Container.id = 'appdet' ]" datatype="DynamicForm.Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="containers" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.Container.title">
+                <parentTerm text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="new" datatype="DynamicForm.Container" termtype="NEW" fulltext="DynamicForm.Container.new">
+                <parentTerm text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.Container.id">
+                <parentTerm text="DynamicForm.Container" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.Container" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="257">
+        <valueSetCell/>
+        <expressionCell external="UI.containers.uiControls += UIControl.new[type='MultipleChoices', id='crtl1_1', fieldName='year', dataSource = 'https://api.npoint.io/6164bb04bfc421a11a74', label='Please select the model year of vehicle']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'MultipleChoices' , UIControl.label = 'Please select the model year of vehicle' , UIControl.id = 'crtl1_1' , UIControl.fieldName = 'year' , UIControl.dataSource = 'https://api.npoint.io/6164bb04bfc421a11a74' ]" datatype="DynamicForm.UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="containers" datatype="DynamicForm.Container" termtype="ENTITY" fulltext="DynamicForm.UI.containers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.type">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="dataSource" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.dataSource">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.id">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="DynamicForm.UIControl" termtype="NEW" fulltext="DynamicForm.UIControl.new">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="label" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.label">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="fieldName" datatype="String" termtype="ATTRIBUTE" fulltext="DynamicForm.UIControl.fieldName">
+                <parentTerm text="DynamicForm.UIControl" datatype="DynamicForm.UIControl" termtype="ENTITY" fulltext="DynamicForm.UIControl" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=  8" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.4">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.0/@referencedAttributes.2"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=  8">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="DynamicForm.UI.currentStageNumber">
+                <parentTerm text="DynamicForm.UI" datatype="DynamicForm.UI" termtype="ENTITY" fulltext="DynamicForm.UI" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

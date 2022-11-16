@@ -4,143 +4,15 @@ module.exports={"ruleMessages": []}
 "use strict";var _jsEngine=require("@corticon/js-engine"),_decisionservicerules=require("./decisionservicerules"),metadata=_interopRequireWildcard(require("./vocab.json")),ruleMessages=_interopRequireWildcard(require("./_ruleMessages.json"));function _getRequireWildcardCache(e){if("function"!=typeof WeakMap)return null;var n=new WeakMap,i=new WeakMap;return(_getRequireWildcardCache=function(e){return e?i:n})(e)}function _interopRequireWildcard(e,n){if(!n&&e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var i=_getRequireWildcardCache(n);if(i&&i.has(e))return i.get(e);var t={},r=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var o in e)if("default"!==o&&Object.prototype.hasOwnProperty.call(e,o)){var c=r?Object.getOwnPropertyDescriptor(e,o):null;c&&(c.get||c.set)?Object.defineProperty(t,o,c):t[o]=e[o]}return t.default=e,i&&i.set(e,t),t}void 0!==window.corticonEngine&&null!==window.corticonEngine||(window.corticonEngine={}),void 0!==window.corticonEngines&&null!==window.corticonEngines||(window.corticonEngines=[]),void 0!==window.corticonEnginesMetadata&&null!==window.corticonEnginesMetadata||(window.corticonEnginesMetadata=[]);const decisionServiceFct=function(e,n){return new _jsEngine.CorticonEngine(metadata,ruleMessages,new _decisionservicerules.DecisionServiceRules).executeDecisionService(e,n)},vocabMetadataFct=function(){return metadata};window.corticonEngine.execute=decisionServiceFct,window.corticonEngine.getVocabularyMetadata=vocabMetadataFct,window.corticonEngines.push({execute:decisionServiceFct}),window.corticonEnginesMetadata.push({getVocabularyMetadata:vocabMetadataFct});
 
 },{"./_ruleMessages.json":1,"./decisionservicerules":3,"./vocab.json":4,"@corticon/js-engine":5}],3:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,n){if(_jsEngine.Utilities.checksum(1685035533898))throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 1.4.0.0.12333");const i=new _jsEngine.RuleContainer("Vehicle_Model_Make_Year_Selector");e.addRule(i);const t=new _jsEngine.RuleContainer("year");i.addRule(t),this.addRulesheetContainer_js_year(t,n);const a=new _jsEngine.RuleContainer("modelFlow");i.addRule(a),this.addRuleflowContainer_js_modelFlow(a,n);const s=new _jsEngine.RuleContainer("makeFlow");i.addRule(s),this.addRuleflowContainer_js_makeFlow(s,n);const l=new _jsEngine.RuleContainer("landing page");i.addRule(l),this.addRulesheetContainer_js_landing32page(l,n)}}addRuleflowContainer_js_modelFlow(e,n){const i=new _jsEngine.RuleContainer("model1");e.addRule(i),this.addRulesheetContainer_js_model1(i,n);const t=new _jsEngine.RuleContainer("model2a");e.addRule(t),this.addRulesheetContainer_js_model2a(t,n);const a=new _jsEngine.RuleContainer("model3a");e.addRule(a),this.addRulesheetContainer_js_model3a(a,n)}addRuleflowContainer_js_makeFlow(e,n){const i=new _jsEngine.RuleContainer("make1");e.addRule(i),this.addRulesheetContainer_js_make1(i,n);const t=new _jsEngine.RuleContainer("make2");e.addRule(t),this.addRulesheetContainer_js_make2(t,n);const a=new _jsEngine.RuleContainer("make3");e.addRule(a),this.addRulesheetContainer_js_make3(a,n)}addRulesheetContainer_js_year(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),t=new _jsEngine.TupleOperator("js_year_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_year_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="chooseYear",e.title="Choose a Car Model Year"}))]]),o=new _jsEngine.Rule("C0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=2]]),d=new _jsEngine.Rule("B0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="year",e.id="crtl1_1",e.label="Please select the model year for the car(s) you would like to insure.",e.type="Number"}))]]);e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(o),e.addRule(d)}addRulesheetContainer_js_model1(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),t=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=new _jsEngine.Filter("js_model1_filter_0","T0",[[e=>t(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,3)]],!0),s=new _jsEngine.Rule("A0","T0",[],[[e=>t(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="chooseModel",e.title="Choose a Car Model"}))]]);e.addRule(i),e.addRule(a),e.addRule(s)}addRulesheetContainer_js_model3a(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),t=new _jsEngine.TupleOperator("js_model3a_precondition_0Func",[function(e){e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.extend("T2","T1",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_model3a_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,3)]],!0),d=new _jsEngine.LimitedFilter("js_model3a_filter_4","T1",[[e=>s(e)&&l(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("UI.containers.uiControls").id,"crtl3_1")]],[[[],[]],[["UI"],["UI","UI.containers","UI.containers.uiControls"]]]),r=new _jsEngine.Rule("A0","T1",[],[[e=>s(e)&&l(e)&&a(e),e=>n.setAssociation(e.get("UI.containers.uiControls"),"dataSourceOptions",n.createEntity("DataSourceOptions",function(e){e.dataTextField="displayName",e.dataValueField="displayName"}))]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(d),e.addRule(r)}addRulesheetContainer_js_model2a(e,n){const i=new _jsEngine.TupleOperator("js_model2a_precondition_0Func",[function(e){e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.bind("T3","Vehicle",e.datamanager.getEntitiesByType("Vehicle")),e.crossproduct("T2","T3","T4"),e.crossproduct("T0","T4","T1")}]),t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_model2a_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,3)]],!0),l=new _jsEngine.Rule("A0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle").make))(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.stringOps.toLower.func(e.get("Vehicle").make)))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(n){n.dataSource=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://my.api.mockaroo.com/",_jsEngine.stringOps.toLower.func(e.get("Vehicle").make)),".json?key=33ac6ab0"),n.fieldName="model",n.id="crtl3_1",n.label="Please select the model for the car(s) you would like to insure.",n.type="MultipleChoices"}))]]),o=new _jsEngine.Rule("B0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=4]]);e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(o)}addRulesheetContainer_js_make3(e,n){const i=new _jsEngine.TupleOperator("js_make3_precondition_0Func",[function(e){e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.extend("T2","T1",["UI","UI.containers","makeDisplay"],"UI.containers","uiControls")}]),t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=e=>_jsEngine.Utilities.isValid(e.get("makeDisplay")),o=new _jsEngine.Filter("js_make3_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,2)]],!0),d=new _jsEngine.LimitedFilter("js_make3_filter_2","T1",[[e=>a(e)&&s(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("makeDisplay").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("makeDisplay").id,"crtl2_1")]],[[[],[]],[["UI"],["UI","UI.containers"]],[["UI","makeDisplay"],["UI","UI.containers","makeDisplay"]]]),r=new _jsEngine.Rule("A0","T1",[],[[e=>a(e)&&s(e)&&l(e),e=>n.setAssociation(e.get("makeDisplay"),"dataSourceOptions",n.createEntity("DataSourceOptions",function(e){e.dataTextField="displayName",e.dataValueField="displayName"}))]]);e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(d),e.addRule(r)}addRulesheetContainer_js_make2(e,n){const i=new _jsEngine.TupleOperator("js_make2_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_make2_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,2)]],!0),l=new _jsEngine.Rule("B0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=3]]),o=new _jsEngine.Rule("C0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.dataSource="https://my.api.mockaroo.com/makes.json?key=33ac6ab0",e.fieldName="make",e.id="crtl2_1",e.label="Please select the make for the car(s) you would like to insure.",e.type="MultipleChoices"}))]]);e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(l),e.addRule(o)}addRulesheetContainer_js_make1(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),t=e=>_jsEngine.Utilities.isValid(e.get("UI")),a=new _jsEngine.Filter("js_make1_filter_0","T0",[[e=>t(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,2)]],!0),s=new _jsEngine.Rule("A0","T0",[],[[e=>t(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="chooseMake",e.title="Choose a Car Make"}))]]);e.addRule(i),e.addRule(a),e.addRule(s)}addRulesheetContainer_js_landing32page(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),t=new _jsEngine.TupleOperator("js_landing32page_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_landing32page_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,0)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="AutoInsuranceApplication",e.title="Corticon.js auto insurance application"}))]]),o=new _jsEngine.Rule("C0","T0",[],[[e=>a(e),e=>e.get("UI").pathToData="vehicle"]]),d=new _jsEngine.Rule("E0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=1]]),r=new _jsEngine.Rule("B0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText",e.value="Thank you for considering us to protect you and your vehicle."}))]]);e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(o),e.addRule(d),e.addRule(r)}}exports.DecisionServiceRules=DecisionServiceRules;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,n){if(_jsEngine.Utilities.checksum(1696097909558))throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 1.4.0.0.12333");const i=new _jsEngine.RuleContainer("FormFlow");e.addRule(i);const t=new _jsEngine.RuleContainer("done");i.addRule(t),this.addRulesheetContainer_js_done(t,n);const a=new _jsEngine.RuleContainer("Select Vehicle Year");i.addRule(a),this.addRulesheetContainer_js_Select32Vehicle32Year(a,n);const s=new _jsEngine.RuleContainer("Year Dropdowns");i.addRule(s),this.addRulesheetContainer_js_Year32Dropdowns(s,n);const l=new _jsEngine.RuleContainer("Select Vehicle Model");i.addRule(l),this.addRulesheetContainer_js_Select32Vehicle32Model(l,n);const o=new _jsEngine.RuleContainer("Select Vehicle Model - (assign data, value fields)");i.addRule(o),this.addRulesheetContainer_js_Select32Vehicle32Model32453240assign32data4432value32fields41(o,n);const r=new _jsEngine.RuleContainer("Select Vehicle Make");i.addRule(r),this.addRulesheetContainer_js_Select32Vehicle32Make(r,n);const c=new _jsEngine.RuleContainer("Select Vehicle Make - (assign data, value fields)");i.addRule(c),this.addRulesheetContainer_js_Select32Vehicle32Make32453240assign32data4432value32fields41(c,n)}}addRulesheetContainer_js_Select32Vehicle32Make(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","DynamicForm.UI",e.datamanager.getEntitiesByType("DynamicForm.UI"))}]),t=new _jsEngine.TupleOperator("js_Select32Vehicle32Make_precondition_0Func",[function(e){e.extend("T0","T1",["DynamicForm.UI","DynamicForm.UI.containers"],"DynamicForm.UI","containers")}]),a=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI")),s=new _jsEngine.Filter("js_Select32Vehicle32Make_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("DynamicForm.UI").currentStageNumber,0)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("DynamicForm.UI"),"containers",n.createEntity("DynamicForm.Container",function(e){e.id="appdet",e.title="Vehicle Details"}))]]),o=new _jsEngine.Rule("C0","T0",[],[[e=>a(e),e=>e.get("DynamicForm.UI").pathToData="vehicle"]]),r=new _jsEngine.Rule("B0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers")))(e),e=>n.addAssociation(e.get("DynamicForm.UI.containers"),"uiControls",n.createEntity("DynamicForm.UIControl",function(e){e.dataSource="https://api.npoint.io/d487567c8a34a506350e",e.fieldName="make",e.id="crtl2_1",e.label="Please select the make of vehicle",e.type="MultipleChoices"}))]]);e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(o),e.addRule(r)}addRulesheetContainer_js_done(e,n){const i=new _jsEngine.TupleOperator("js_done_precondition_0Func",[function(e){e.extend("T0","T2",["DynamicForm.UI","DynamicForm.UI.containers"],"DynamicForm.UI","containers"),e.bind("T3","Vehicle",e.datamanager.getEntitiesByType("Vehicle")),e.crossproduct("T2","T3","T4"),e.crossproduct("T0","T4","T1")}]),t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","DynamicForm.UI",e.datamanager.getEntitiesByType("DynamicForm.UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI")),s=new _jsEngine.Filter("js_done_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("DynamicForm.UI").currentStageNumber,9)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("DynamicForm.UI"),"containers",n.createEntity("DynamicForm.Container",function(e){e.id="done",e.title="all done"}))]]),o=new _jsEngine.Rule("C0","T0",[],[[e=>a(e),e=>e.get("DynamicForm.UI").done=!0]]),r=new _jsEngine.Rule("B0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle").make))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle").model))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle").year))(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.integerOps.toStringOp.func(e.get("Vehicle").year)))(e),e=>n.addAssociation(e.get("DynamicForm.UI.containers"),"uiControls",n.createEntity("DynamicForm.UIControl",function(n){n.id="crtl4_1",n.type="ReadOnlyText",n.value=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("Car Selected: ",_jsEngine.integerOps.toStringOp.func(e.get("Vehicle").year))," "),e.get("Vehicle").make)," "),e.get("Vehicle").model),".")}))]]);e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(o),e.addRule(r)}addRulesheetContainer_js_Year32Dropdowns(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","DynamicForm.UI",e.datamanager.getEntitiesByType("DynamicForm.UI"))}]),t=new _jsEngine.TupleOperator("js_Year32Dropdowns_precondition_0Func",[function(e){e.extend("T0","T2",["DynamicForm.UI","DynamicForm.UI.containers"],"DynamicForm.UI","containers"),e.extend("T2","T1",["DynamicForm.UI","DynamicForm.UI.containers","DynamicForm.UI.containers.uiControls"],"DynamicForm.UI.containers","uiControls"),e.extend("T1","T4",["DynamicForm.UI","DynamicForm.UI.containers","DynamicForm.UI.containers.uiControls","data"],"DynamicForm.UI.containers.uiControls","dataSourceOptions"),e.bind("T5","Vehicle",e.datamanager.getEntitiesByType("Vehicle")),e.crossproduct("T4","T5","T3")}]),a=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers")),s=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers.uiControls")),l=e=>_jsEngine.Utilities.isValid(e.get("data")),o=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI")),r=new _jsEngine.Filter("js_Year32Dropdowns_filter_0","T0",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("DynamicForm.UI").currentStageNumber,8)]],!0),c=new _jsEngine.Rule("A0","T0",[],[[e=>o(e),e=>e.get("DynamicForm.UI").nextStageNumber=9]]),d=new _jsEngine.Rule("B0","T1",[],[[e=>o(e)&&a(e)&&s(e),e=>n.setAssociation(e.get("DynamicForm.UI.containers.uiControls"),"dataSourceOptions",n.createEntity("DynamicForm.DataSourceOptions",function(e){}))]]),u=new _jsEngine.Rule("C0","T3",[],[[e=>o(e)&&a(e)&&s(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle").model))(e),e=>e.get("data").pathToOptionsArray=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("$.[?(@.model== '",e.get("Vehicle").model),"' )]")]]),m=new _jsEngine.Rule("D0","T4",[],[[e=>o(e)&&a(e)&&s(e)&&l(e),e=>e.get("data").dataTextField="year"]]),g=new _jsEngine.Rule("E0","T4",[],[[e=>o(e)&&a(e)&&s(e)&&l(e),e=>e.get("data").dataValueField="year"]]);e.addRule(i),e.addRule(r),e.addRule(t),e.addRule(c),e.addRule(d),e.addRule(i),e.addRule(r),e.addRule(t),e.addRule(u),e.addRule(m),e.addRule(g)}addRulesheetContainer_js_Select32Vehicle32Make32453240assign32data4432value32fields41(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","DynamicForm.UI",e.datamanager.getEntitiesByType("DynamicForm.UI"))}]),t=new _jsEngine.TupleOperator("js_Select32Vehicle32Make32453240assign32data4432value32fields41_precondition_0Func",[function(e){e.extend("T0","T2",["DynamicForm.UI","DynamicForm.UI.containers"],"DynamicForm.UI","containers"),e.extend("T2","T1",["DynamicForm.UI","DynamicForm.UI.containers","makeDisplay"],"DynamicForm.UI.containers","uiControls")}]),a=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI")),s=new _jsEngine.Filter("js_Select32Vehicle32Make32453240assign32data4432value32fields41_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("DynamicForm.UI").currentStageNumber,0)]],!0),l=new _jsEngine.Rule("A0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("makeDisplay")))(e),e=>n.setAssociation(e.get("makeDisplay"),"dataSourceOptions",n.createEntity("DynamicForm.DataSourceOptions",function(e){e.dataTextField="brand",e.dataValueField="brand"}))]]),o=new _jsEngine.Rule("B0","T0",[],[[e=>a(e),e=>e.get("DynamicForm.UI").nextStageNumber=7]]);e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(o)}addRulesheetContainer_js_Select32Vehicle32Year(e,n){const i=new _jsEngine.TupleOperator("js_Select32Vehicle32Year_precondition_0Func",[function(e){e.extend("T0","T1",["DynamicForm.UI","DynamicForm.UI.containers"],"DynamicForm.UI","containers")}]),t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","DynamicForm.UI",e.datamanager.getEntitiesByType("DynamicForm.UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI")),s=new _jsEngine.Filter("js_Select32Vehicle32Year_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("DynamicForm.UI").currentStageNumber,8)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("DynamicForm.UI"),"containers",n.createEntity("DynamicForm.Container",function(e){e.id="appdet",e.title="Vehicle Details"}))]]),o=new _jsEngine.Rule("B0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers")))(e),e=>n.addAssociation(e.get("DynamicForm.UI.containers"),"uiControls",n.createEntity("DynamicForm.UIControl",function(e){e.dataSource="https://api.npoint.io/6164bb04bfc421a11a74",e.fieldName="year",e.id="crtl1_1",e.label="Please select the model year of vehicle",e.type="MultipleChoices"}))]]);e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(o)}addRulesheetContainer_js_Select32Vehicle32Model(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","DynamicForm.UI",e.datamanager.getEntitiesByType("DynamicForm.UI"))}]),t=new _jsEngine.TupleOperator("js_Select32Vehicle32Model_precondition_0Func",[function(e){e.extend("T0","T1",["DynamicForm.UI","DynamicForm.UI.containers"],"DynamicForm.UI","containers")}]),a=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI")),s=new _jsEngine.Filter("js_Select32Vehicle32Model_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("DynamicForm.UI").currentStageNumber,7)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("DynamicForm.UI"),"containers",n.createEntity("DynamicForm.Container",function(e){e.id="appdet",e.title="Vehicle Details"}))]]),o=new _jsEngine.Rule("C0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers")))(e),e=>n.addAssociation(e.get("DynamicForm.UI.containers"),"uiControls",n.createEntity("DynamicForm.UIControl",function(e){e.dataSource="https://api.npoint.io/9da0ffc399de605ffa6d",e.fieldName="model",e.id="model",e.label="Please select the model of vehicle",e.type="MultipleChoices"}))]]);e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(o)}addRulesheetContainer_js_Select32Vehicle32Model32453240assign32data4432value32fields41(e,n){const i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","DynamicForm.UI",e.datamanager.getEntitiesByType("DynamicForm.UI"))}]),t=new _jsEngine.TupleOperator("js_Select32Vehicle32Model32453240assign32data4432value32fields41_precondition_0Func",[function(e){e.extend("T0","T2",["DynamicForm.UI","DynamicForm.UI.containers"],"DynamicForm.UI","containers"),e.extend("T2","T1",["DynamicForm.UI","DynamicForm.UI.containers","DynamicForm.UI.containers.uiControls"],"DynamicForm.UI.containers","uiControls"),e.extend("T1","T4",["DynamicForm.UI","DynamicForm.UI.containers","DynamicForm.UI.containers.uiControls","data"],"DynamicForm.UI.containers.uiControls","dataSourceOptions"),e.bind("T5","Vehicle",e.datamanager.getEntitiesByType("Vehicle")),e.crossproduct("T4","T5","T3")}]),a=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers")),s=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI.containers.uiControls")),l=e=>_jsEngine.Utilities.isValid(e.get("data")),o=e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI")),r=new _jsEngine.Filter("js_Select32Vehicle32Model32453240assign32data4432value32fields41_filter_0","T0",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("DynamicForm.UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("DynamicForm.UI").currentStageNumber,7)]],!0),c=new _jsEngine.Rule("B0","T1",[],[[e=>o(e)&&a(e)&&s(e),e=>n.setAssociation(e.get("DynamicForm.UI.containers.uiControls"),"dataSourceOptions",n.createEntity("DynamicForm.DataSourceOptions",function(e){}))]]),d=new _jsEngine.Rule("F0","T0",[],[[e=>o(e),e=>e.get("DynamicForm.UI").nextStageNumber=8]]),u=new _jsEngine.Rule("C0","T3",[],[[e=>o(e)&&a(e)&&s(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Vehicle").make))(e),e=>e.get("data").pathToOptionsArray=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("$.[?(@.brand== '",e.get("Vehicle").make),"' )]")]]),m=new _jsEngine.Rule("D0","T4",[],[[e=>o(e)&&a(e)&&s(e)&&l(e),e=>e.get("data").dataTextField="model"]]),g=new _jsEngine.Rule("E0","T4",[],[[e=>o(e)&&a(e)&&s(e)&&l(e),e=>e.get("data").dataValueField="model"]]);e.addRule(i),e.addRule(r),e.addRule(t),e.addRule(c),e.addRule(i),e.addRule(r),e.addRule(t),e.addRule(d),e.addRule(u),e.addRule(m),e.addRule(g)}}exports.DecisionServiceRules=DecisionServiceRules;
 
 },{"@corticon/js-engine":5}],4:[function(require,module,exports){
 module.exports={
     "topLevelEntities": {},
     "entities": [
         {
-            "associations": [
-                {
-                    "targetEntity": "data",
-                    "roleName": "data",
-                    "reverseRoleName": "application",
-                    "navigability": "Bidirectional",
-                    "mandatory": true,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "Driver",
-                    "roleName": "driver",
-                    "reverseRoleName": "application",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                },
-                {
-                    "targetEntity": "OfferedPolicy",
-                    "roleName": "offeredPolicy",
-                    "reverseRoleName": "application",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                },
-                {
-                    "targetEntity": "PolicyDecision",
-                    "roleName": "policyDecision",
-                    "reverseRoleName": "application",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "Vehicle",
-                    "roleName": "vehicle",
-                    "reverseRoleName": "application",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                }
-            ],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": [
-                "data",
-                "driver",
-                "offeredPolicy",
-                "policyDecision",
-                "vehicle"
-            ],
-            "name": "Application",
-            "attributesDefinition": [
-                "applicantCount",
-                "driverCount",
-                "paymentPlan",
-                "requestedBodilyInjLimitPerAccident",
-                "requestedBodilyInjLimitPerPerson",
-                "requestedCollisionDeductible",
-                "requestedCompDeductible",
-                "requestedDeductible",
-                "requestedPropertyDamageLimit",
-                "vehicleCount"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Integer",
-                    "name": "applicantCount",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "driverCount",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "paymentPlan",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "requestedBodilyInjLimitPerAccident",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "requestedBodilyInjLimitPerPerson",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "requestedCollisionDeductible",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "requestedCompDeductible",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "requestedDeductible",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "requestedPropertyDamageLimit",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "vehicleCount",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "Application"
-        },
-        {
             "associations": [{
-                "targetEntity": "UIControl",
+                "targetEntity": "DynamicForm.UIControl",
                 "roleName": "uiControls",
                 "navigability": "Container->uiControls",
                 "mandatory": false,
@@ -148,13 +20,14 @@ module.exports={
             }],
             "transientAttributesDefinition": [],
             "associationsDefinition": ["uiControls"],
-            "name": "Container",
+            "name": "DynamicForm.Container",
             "attributesDefinition": [
                 "description",
                 "id",
                 "title",
                 "validationMsg"
             ],
+            "jsonPath": "$[*].containers",
             "attributes": [
                 {
                     "dataType": "String",
@@ -181,143 +54,18 @@ module.exports={
                     "mandatory": false
                 }
             ],
-            "id": "Container"
-        },
-        {
-            "associations": [{
-                "targetEntity": "OfferedPolicy",
-                "roleName": "offeredPolicy",
-                "reverseRoleName": "coverage",
-                "navigability": "Bidirectional",
-                "mandatory": true,
-                "cardinality": "1"
-            }],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": ["offeredPolicy"],
-            "name": "Coverage",
-            "attributesDefinition": [
-                "isRequiredInState",
-                "type"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Boolean",
-                    "name": "isRequiredInState",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "type",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "Coverage"
-        },
-        {
-            "associations": [{
-                "targetEntity": "Driver",
-                "roleName": "driver",
-                "reverseRoleName": "currentInsurer",
-                "navigability": "Bidirectional",
-                "mandatory": true,
-                "cardinality": "1"
-            }],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": ["driver"],
-            "name": "CurrentInsurer",
-            "attributesDefinition": [
-                "bodilyInjLimitPerAccident",
-                "bodilyInjLimitPerPerson",
-                "carrier",
-                "collisionDeductible",
-                "compDeductible",
-                "propertyDamageLimit",
-                "yearsWithApplicant"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Decimal",
-                    "name": "bodilyInjLimitPerAccident",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "bodilyInjLimitPerPerson",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "carrier",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "collisionDeductible",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "compDeductible",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "propertyDamageLimit",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "yearsWithApplicant",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "CurrentInsurer"
-        },
-        {
-            "associations": [
-                {
-                    "targetEntity": "Application",
-                    "roleName": "application",
-                    "reverseRoleName": "data",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "Vehicle",
-                    "roleName": "vehicle",
-                    "navigability": "data->vehicle",
-                    "mandatory": false,
-                    "cardinality": "*"
-                }
-            ],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": [
-                "application",
-                "vehicle"
-            ],
-            "name": "data",
-            "attributesDefinition": [],
-            "attributes": [],
-            "id": "data"
+            "id": "DynamicForm.Container"
         },
         {
             "associations": [],
             "transientAttributesDefinition": [],
-            "name": "DataSourceOptions",
+            "name": "DynamicForm.DataSourceOptions",
             "attributesDefinition": [
                 "dataTextField",
-                "dataValueField"
+                "dataValueField",
+                "pathToOptionsArray"
             ],
+            "jsonPath": "$[*].containers.uiControls.dataSourceOptions",
             "attributes": [
                 {
                     "dataType": "String",
@@ -330,392 +78,25 @@ module.exports={
                     "name": "dataValueField",
                     "type": "Base",
                     "mandatory": false
-                }
-            ],
-            "id": "DataSourceOptions"
-        },
-        {
-            "associations": [{
-                "targetEntity": "OfferedPolicy",
-                "roleName": "offeredPolicy",
-                "reverseRoleName": "discount",
-                "navigability": "Bidirectional",
-                "mandatory": true,
-                "cardinality": "1"
-            }],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": ["offeredPolicy"],
-            "name": "Discount",
-            "attributesDefinition": [
-                "amount",
-                "type"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Decimal",
-                    "name": "amount",
-                    "type": "Base",
-                    "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "type",
+                    "name": "pathToOptionsArray",
                     "type": "Base",
                     "mandatory": false
                 }
             ],
-            "id": "Discount"
-        },
-        {
-            "associations": [
-                {
-                    "targetEntity": "Application",
-                    "roleName": "application",
-                    "reverseRoleName": "driver",
-                    "navigability": "Bidirectional",
-                    "mandatory": true,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "CurrentInsurer",
-                    "roleName": "currentInsurer",
-                    "reverseRoleName": "driver",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "Incident",
-                    "roleName": "incident",
-                    "reverseRoleName": "driver",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                }
-            ],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": [
-                "application",
-                "currentInsurer",
-                "incident"
-            ],
-            "name": "Driver",
-            "attributesDefinition": [
-                "age",
-                "atFaultAccidentCountLast3Years",
-                "CitationsCountLast3Years",
-                "dateLicensed",
-                "dob",
-                "drivingExperienceYears",
-                "DUI_convictions",
-                "email",
-                "first",
-                "isStudent",
-                "last",
-                "licenseNo",
-                "licenseState",
-                "phone",
-                "sex",
-                "state",
-                "streetAddress",
-                "zip"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Integer",
-                    "name": "age",
-                    "type": "Base",
-                    "mandatory": true
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "atFaultAccidentCountLast3Years",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "CitationsCountLast3Years",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "dateLicensed",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "dob",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "drivingExperienceYears",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "DUI_convictions",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "email",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "first",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "isStudent",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "last",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "licenseNo",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "licenseState",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "phone",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "sex",
-                    "type": "Base",
-                    "mandatory": true
-                },
-                {
-                    "dataType": "String",
-                    "name": "state",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "streetAddress",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "zip",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "Driver"
-        },
-        {
-            "associations": [{
-                "targetEntity": "Driver",
-                "roleName": "driver",
-                "reverseRoleName": "incident",
-                "navigability": "Bidirectional",
-                "mandatory": true,
-                "cardinality": "*"
-            }],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": ["driver"],
-            "name": "Incident",
-            "attributesDefinition": [
-                "atFault",
-                "date",
-                "type"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Boolean",
-                    "name": "atFault",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "date",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "type",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "Incident"
-        },
-        {
-            "associations": [
-                {
-                    "targetEntity": "Application",
-                    "roleName": "application",
-                    "reverseRoleName": "offeredPolicy",
-                    "navigability": "Bidirectional",
-                    "mandatory": true,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "Coverage",
-                    "roleName": "coverage",
-                    "reverseRoleName": "offeredPolicy",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                },
-                {
-                    "targetEntity": "Discount",
-                    "roleName": "discount",
-                    "reverseRoleName": "offeredPolicy",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                },
-                {
-                    "targetEntity": "PolicyDecision",
-                    "roleName": "policyDecision",
-                    "reverseRoleName": "offeredPolicy",
-                    "navigability": "Bidirectional",
-                    "mandatory": true,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "Surcharge",
-                    "roleName": "surcharge",
-                    "reverseRoleName": "offeredPolicy",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                },
-                {
-                    "targetEntity": "Vehicle",
-                    "roleName": "vehicle",
-                    "reverseRoleName": "offeredPolicy",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                }
-            ],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": [
-                "application",
-                "coverage",
-                "discount",
-                "policyDecision",
-                "surcharge",
-                "vehicle"
-            ],
-            "name": "OfferedPolicy",
-            "attributesDefinition": [
-                "annualPremium",
-                "bodilyInjLimitPerAccident",
-                "bodilyInjLimitPerPerson",
-                "collisionDeductible",
-                "compDeductible",
-                "effectiveFrom",
-                "effectiveTo",
-                "paymentPlan",
-                "policyNumber",
-                "propertyDamageLimit"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Decimal",
-                    "name": "annualPremium",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "bodilyInjLimitPerAccident",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "bodilyInjLimitPerPerson",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "collisionDeductible",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "compDeductible",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "effectiveFrom",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "effectiveTo",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "paymentPlan",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "policyNumber",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "propertyDamageLimit",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "OfferedPolicy"
+            "id": "DynamicForm.DataSourceOptions"
         },
         {
             "associations": [],
             "transientAttributesDefinition": [],
-            "name": "Option",
+            "name": "DynamicForm.Option",
             "attributesDefinition": [
                 "displayName",
                 "value"
             ],
+            "jsonPath": "$[*].containers.uiControls.option",
             "attributes": [
                 {
                     "dataType": "String",
@@ -730,157 +111,32 @@ module.exports={
                     "mandatory": false
                 }
             ],
-            "id": "Option"
-        },
-        {
-            "associations": [
-                {
-                    "targetEntity": "Application",
-                    "roleName": "application",
-                    "reverseRoleName": "policyDecision",
-                    "navigability": "Bidirectional",
-                    "mandatory": true,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "OfferedPolicy",
-                    "roleName": "offeredPolicy",
-                    "reverseRoleName": "policyDecision",
-                    "navigability": "Bidirectional",
-                    "mandatory": false,
-                    "cardinality": "*"
-                }
-            ],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": [
-                "application",
-                "offeredPolicy"
-            ],
-            "name": "PolicyDecision",
-            "attributesDefinition": [
-                "AgentManager",
-                "annualPremium",
-                "insurable",
-                "licenseValid",
-                "OfficeLocation",
-                "OfficePhone",
-                "ValidationCode"
-            ],
-            "attributes": [
-                {
-                    "dataType": "String",
-                    "name": "AgentManager",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "annualPremium",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "insurable",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "licenseValid",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "OfficeLocation",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "OfficePhone",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "ValidationCode",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "PolicyDecision"
+            "id": "DynamicForm.Option"
         },
         {
             "associations": [{
-                "targetEntity": "OfferedPolicy",
-                "roleName": "offeredPolicy",
-                "reverseRoleName": "surcharge",
-                "navigability": "Bidirectional",
-                "mandatory": true,
+                "targetEntity": "DynamicForm.Container",
+                "roleName": "containers",
+                "navigability": "UI->containers",
+                "mandatory": false,
                 "cardinality": "1"
             }],
             "transientAttributesDefinition": [],
-            "associationsDefinition": ["offeredPolicy"],
-            "name": "Surcharge",
-            "attributesDefinition": [
-                "amount",
-                "type"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Decimal",
-                    "name": "amount",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "type",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "Surcharge"
-        },
-        {
-            "associations": [{
-                "targetEntity": "Container",
-                "roleName": "containers",
-                "navigability": "UI->containers",
-                "mandatory": true,
-                "cardinality": "*"
-            }],
-            "transientAttributesDefinition": [
-                "comments",
-                "dt1",
-                "str1",
-                "str2"
-            ],
             "associationsDefinition": ["containers"],
-            "name": "UI",
+            "name": "DynamicForm.UI",
             "attributesDefinition": [
-                "comments",
                 "currentStageDescription",
                 "currentStageNumber",
                 "done",
-                "dt1",
+                "labelPosition",
                 "language",
                 "nextStageNumber",
                 "noUiToRenderContinue",
                 "pathToData",
-                "stageOnExit",
-                "str1",
-                "str2"
+                "stageOnExit"
             ],
+            "jsonPath": "$",
             "attributes": [
-                {
-                    "dataType": "String",
-                    "name": "comments",
-                    "type": "ExtendedTransient",
-                    "mandatory": false
-                },
                 {
                     "dataType": "String",
                     "name": "currentStageDescription",
@@ -900,9 +156,9 @@ module.exports={
                     "mandatory": false
                 },
                 {
-                    "dataType": "DateTime",
-                    "name": "dt1",
-                    "type": "ExtendedTransient",
+                    "dataType": "String",
+                    "name": "labelPosition",
+                    "type": "Base",
                     "mandatory": false
                 },
                 {
@@ -934,33 +190,21 @@ module.exports={
                     "name": "stageOnExit",
                     "type": "Base",
                     "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "str1",
-                    "type": "ExtendedTransient",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "str2",
-                    "type": "ExtendedTransient",
-                    "mandatory": false
                 }
             ],
-            "id": "UI"
+            "id": "DynamicForm.UI"
         },
         {
             "associations": [
                 {
-                    "targetEntity": "DataSourceOptions",
+                    "targetEntity": "DynamicForm.DataSourceOptions",
                     "roleName": "dataSourceOptions",
                     "navigability": "UIControl->dataSourceOptions",
                     "mandatory": false,
                     "cardinality": "1"
                 },
                 {
-                    "targetEntity": "Option",
+                    "targetEntity": "DynamicForm.Option",
                     "roleName": "option",
                     "navigability": "UIControl->option",
                     "mandatory": false,
@@ -972,7 +216,7 @@ module.exports={
                 "dataSourceOptions",
                 "option"
             ],
-            "name": "UIControl",
+            "name": "DynamicForm.UIControl",
             "attributesDefinition": [
                 "cols",
                 "dataSource",
@@ -980,17 +224,22 @@ module.exports={
                 "fieldName",
                 "id",
                 "label",
+                "labelPosition",
                 "max",
                 "maxDT",
                 "min",
                 "minDT",
+                "multiple",
                 "required",
                 "rows",
+                "showTime",
+                "sortOptions",
                 "tooltip",
                 "type",
                 "validationErrorMsg",
                 "value"
             ],
+            "jsonPath": "$[*].containers.uiControls",
             "attributes": [
                 {
                     "dataType": "Integer",
@@ -1029,7 +278,13 @@ module.exports={
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
+                    "dataType": "String",
+                    "name": "labelPosition",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
                     "name": "max",
                     "type": "Base",
                     "mandatory": false
@@ -1041,7 +296,7 @@ module.exports={
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
+                    "dataType": "Integer",
                     "name": "min",
                     "type": "Base",
                     "mandatory": false
@@ -1049,6 +304,12 @@ module.exports={
                 {
                     "dataType": "DateTime",
                     "name": "minDT",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "multiple",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -1065,6 +326,18 @@ module.exports={
                     "mandatory": false
                 },
                 {
+                    "dataType": "Boolean",
+                    "name": "showTime",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "sortOptions",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
                     "dataType": "String",
                     "name": "tooltip",
                     "type": "Base",
@@ -1074,7 +347,7 @@ module.exports={
                     "dataType": "String",
                     "name": "type",
                     "type": "Base",
-                    "mandatory": true
+                    "mandatory": false
                 },
                 {
                     "dataType": "String",
@@ -1089,207 +362,63 @@ module.exports={
                     "mandatory": false
                 }
             ],
-            "id": "UIControl"
+            "id": "DynamicForm.UIControl"
         },
         {
-            "associations": [
-                {
-                    "targetEntity": "Application",
-                    "roleName": "application",
-                    "reverseRoleName": "vehicle",
-                    "navigability": "Bidirectional",
-                    "mandatory": true,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "OfferedPolicy",
-                    "roleName": "offeredPolicy",
-                    "reverseRoleName": "vehicle",
-                    "navigability": "Bidirectional",
-                    "mandatory": true,
-                    "cardinality": "1"
-                }
-            ],
+            "associations": [],
             "transientAttributesDefinition": [],
-            "associationsDefinition": [
-                "application",
-                "offeredPolicy"
-            ],
-            "name": "Vehicle",
+            "name": "Applicant",
             "attributesDefinition": [
-                "airBag",
-                "annualMileage",
-                "bodyStyle",
-                "brandId",
-                "costIndexCollisionClaims",
-                "costIndexComprehensiveClaims",
-                "costIndexPropertyDamageClaims",
-                "datePurchase",
-                "estAnnualMiles",
-                "garageState",
-                "leased",
-                "make",
-                "model",
-                "modelID",
-                "plateNo",
-                "premium",
-                "primaryDriverName",
-                "quartileCollision",
-                "quartileComp",
-                "quartileProperty",
-                "registeredOwner",
-                "riskClass",
-                "sumQuartiles",
-                "tempField",
+                "address1",
+                "address2",
+                "email",
+                "first",
+                "last",
+                "phone",
+                "state",
                 "type",
-                "usedFor",
-                "vehicleInsurabilityGrade",
-                "vehicleMiles",
-                "vin",
-                "year"
+                "zip"
             ],
             "attributes": [
                 {
                     "dataType": "String",
-                    "name": "airBag",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "annualMileage",
+                    "name": "address1",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "bodyStyle",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "brandId",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "costIndexCollisionClaims",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "costIndexComprehensiveClaims",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "costIndexPropertyDamageClaims",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "datePurchase",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "estAnnualMiles",
+                    "name": "address2",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "garageState",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "leased",
+                    "name": "email",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "make",
+                    "name": "first",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "model",
+                    "name": "last",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "Integer",
-                    "name": "modelID",
+                    "name": "phone",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "plateNo",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "premium",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "primaryDriverName",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "quartileCollision",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "quartileComp",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "quartileProperty",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "registeredOwner",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "riskClass",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "sumQuartiles",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "tempField",
+                    "name": "state",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -1300,26 +429,747 @@ module.exports={
                     "mandatory": false
                 },
                 {
-                    "dataType": "String",
-                    "name": "usedFor",
+                    "dataType": "Integer",
+                    "name": "zip",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Applicant"
+        },
+        {
+            "associations": [
+                {
+                    "targetEntity": "Discount",
+                    "roleName": "discount",
+                    "navigability": "AutoQuote->discount",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "Driver",
+                    "roleName": "driver",
+                    "navigability": "AutoQuote->driver",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "Endorsement",
+                    "roleName": "endorsement",
+                    "reverseRoleName": "autoQuote",
+                    "navigability": "Bidirectional",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "Vehicle",
+                    "roleName": "vehicle",
+                    "navigability": "AutoQuote->vehicle",
+                    "mandatory": false,
+                    "cardinality": "*"
+                }
+            ],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": [
+                "discount",
+                "driver",
+                "endorsement",
+                "vehicle"
+            ],
+            "name": "AutoQuote",
+            "attributesDefinition": [
+                "applicant_dob",
+                "applicant_first",
+                "applicant_last",
+                "applicant_primary_driver",
+                "credit_score",
+                "driver_married",
+                "driverCount",
+                "driving_experience_years",
+                "education",
+                "full_time_employed",
+                "gender",
+                "insurance_lapse",
+                "kids_at_home",
+                "minBodilyInjLimitPerAccident",
+                "minBodilyInjLimitPerPerson",
+                "minPropertyDamageLimit",
+                "number_vehicles",
+                "overview",
+                "own_residence",
+                "pay_in_full",
+                "rate",
+                "state",
+                "total_premium",
+                "used_for_commercial",
+                "vehicle_make",
+                "vehicle_model",
+                "vehicle_year",
+                "yearLicensed"
+            ],
+            "attributes": [
+                {
+                    "dataType": "DateTime",
+                    "name": "applicant_dob",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "vehicleInsurabilityGrade",
+                    "name": "applicant_first",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "applicant_last",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "applicant_primary_driver",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "credit_score",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "driver_married",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "Integer",
-                    "name": "vehicleMiles",
+                    "name": "driverCount",
                     "type": "Base",
-                    "mandatory": true
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "driving_experience_years",
+                    "type": "Base",
+                    "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "vin",
+                    "name": "education",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "full_time_employed",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "gender",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "insurance_lapse",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "kids_at_home",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "minBodilyInjLimitPerAccident",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "minBodilyInjLimitPerPerson",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "minPropertyDamageLimit",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "number_vehicles",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "overview",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "own_residence",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "pay_in_full",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "rate",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "state",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "total_premium",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "used_for_commercial",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "vehicle_make",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "vehicle_model",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "vehicle_year",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "yearLicensed",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "AutoQuote"
+        },
+        {
+            "associations": [],
+            "transientAttributesDefinition": [],
+            "name": "Coverage",
+            "attributesDefinition": [
+                "deductible",
+                "liability_coverage_type",
+                "min_limit",
+                "required",
+                "type"
+            ],
+            "attributes": [
+                {
+                    "dataType": "Integer",
+                    "name": "deductible",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "liability_coverage_type",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "min_limit",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "required",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "type",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Coverage"
+        },
+        {
+            "associations": [{
+                "targetEntity": "AutoQuote",
+                "roleName": "carInsuranceQuote",
+                "navigability": "Data->carInsuranceQuote",
+                "mandatory": false,
+                "cardinality": "1"
+            }],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": ["carInsuranceQuote"],
+            "name": "Data",
+            "attributesDefinition": [],
+            "attributes": [],
+            "id": "Data"
+        },
+        {
+            "associations": [],
+            "transientAttributesDefinition": [],
+            "name": "Discount",
+            "attributesDefinition": [
+                "adjustment",
+                "percent_adjustment",
+                "type"
+            ],
+            "attributes": [
+                {
+                    "dataType": "Decimal",
+                    "name": "adjustment",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "percent_adjustment",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "type",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Discount"
+        },
+        {
+            "associations": [
+                {
+                    "targetEntity": "Discount",
+                    "roleName": "discount",
+                    "navigability": "Driver->discount",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "Endorsement",
+                    "roleName": "endorsement",
+                    "navigability": "Driver->endorsement",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "Risk_Factor",
+                    "roleName": "risk_Factor",
+                    "reverseRoleName": "driver",
+                    "navigability": "Bidirectional",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "Violation",
+                    "roleName": "violation",
+                    "navigability": "Driver->violation",
+                    "mandatory": false,
+                    "cardinality": "*"
+                }
+            ],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": [
+                "discount",
+                "endorsement",
+                "risk_Factor",
+                "violation"
+            ],
+            "name": "Driver",
+            "attributesDefinition": [
+                "adjusted_rate",
+                "age",
+                "base_rate",
+                "credit_score",
+                "data_collected",
+                "dob",
+                "driving_experience_years",
+                "education",
+                "first",
+                "full_name",
+                "gender",
+                "id",
+                "insurance_lapse",
+                "kids_at_home",
+                "last",
+                "length_coverage_years",
+                "married",
+                "monthsWithoutClaim",
+                "occupation",
+                "overview",
+                "own_residence",
+                "previously_revoked_license",
+                "rate_portion",
+                "used_for_commercial",
+                "yearLicensed"
+            ],
+            "attributes": [
+                {
+                    "dataType": "Integer",
+                    "name": "adjusted_rate",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "age",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "base_rate",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "credit_score",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "data_collected",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "DateTime",
+                    "name": "dob",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "driving_experience_years",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "education",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "first",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "full_name",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "gender",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "id",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "insurance_lapse",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "kids_at_home",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "last",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "length_coverage_years",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "married",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "monthsWithoutClaim",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "occupation",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "overview",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "own_residence",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "previously_revoked_license",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "rate_portion",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "used_for_commercial",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "yearLicensed",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Driver"
+        },
+        {
+            "associations": [{
+                "targetEntity": "AutoQuote",
+                "roleName": "autoQuote",
+                "reverseRoleName": "endorsement",
+                "navigability": "Bidirectional",
+                "mandatory": true,
+                "cardinality": "1"
+            }],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": ["autoQuote"],
+            "name": "Endorsement",
+            "attributesDefinition": [
+                "adjustment",
+                "percent_adjustment",
+                "type"
+            ],
+            "attributes": [
+                {
+                    "dataType": "Decimal",
+                    "name": "adjustment",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "percent_adjustment",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "type",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Endorsement"
+        },
+        {
+            "associations": [{
+                "targetEntity": "Driver",
+                "roleName": "driver",
+                "reverseRoleName": "risk_Factor",
+                "navigability": "Bidirectional",
+                "mandatory": true,
+                "cardinality": "1"
+            }],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": ["driver"],
+            "name": "Risk_Factor",
+            "attributesDefinition": [
+                "lawful",
+                "type"
+            ],
+            "attributes": [
+                {
+                    "dataType": "Boolean",
+                    "name": "lawful",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "type",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Risk_Factor"
+        },
+        {
+            "associations": [
+                {
+                    "targetEntity": "Discount",
+                    "roleName": "discount",
+                    "navigability": "Vehicle->discount",
+                    "mandatory": false,
+                    "cardinality": "*"
+                },
+                {
+                    "targetEntity": "Endorsement",
+                    "roleName": "endorsement",
+                    "navigability": "Vehicle->endorsement",
+                    "mandatory": false,
+                    "cardinality": "*"
+                }
+            ],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": [
+                "discount",
+                "endorsement"
+            ],
+            "name": "Vehicle",
+            "attributesDefinition": [
+                "adjusted_rate",
+                "age_years",
+                "bluebook",
+                "data_collected",
+                "full_car_spec",
+                "garage_state",
+                "id",
+                "make",
+                "miles",
+                "model",
+                "overview",
+                "type",
+                "year"
+            ],
+            "attributes": [
+                {
+                    "dataType": "Integer",
+                    "name": "adjusted_rate",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "age_years",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Decimal",
+                    "name": "bluebook",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "data_collected",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "full_car_spec",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "garage_state",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "id",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "make",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "miles",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "model",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "overview",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "type",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -1331,6 +1181,19 @@ module.exports={
                 }
             ],
             "id": "Vehicle"
+        },
+        {
+            "associations": [],
+            "transientAttributesDefinition": [],
+            "name": "Violation",
+            "attributesDefinition": ["type"],
+            "attributes": [{
+                "dataType": "String",
+                "name": "type",
+                "type": "Base",
+                "mandatory": false
+            }],
+            "id": "Violation"
         }
     ]
 }
