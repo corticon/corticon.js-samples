@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_xDny6EsSEe2G-sb5U_GIkA" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_wo0h4EjQEe2R7-vS_O5N_A" vocabulary="../../Vocabulary/Vocab.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="Containers = Container.new [id = 'ENTER TITLE OF CONTAINER HERE', title = 'ENTER TITLE OF CONTAINER HERE']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Containers = Container.new [ Container.title = 'ENTER TITLE OF CONTAINER HERE' , Container.id = 'ENTER TITLE OF CONTAINER HERE' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="new" datatype="Container" termtype="NEW" fulltext="Container.new">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="Container.id">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="Container.title">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Containers.description = 'OPTIONAL DESCRIPTION OF THIS CONTAINER, CAN BE USED TO BETTER IDENTIFY PAST STAGES ON CLIENT SIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Containers.description = 'OPTIONAL DESCRIPTION OF THIS CONTAINER, CAN BE USED TO BETTER IDENTIFY PAST STAGES ON CLIENT SIDE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Containers.description">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="ReadOnlyTextControl += UIControl.new">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl += UIControl.new" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="ReadOnlyTextControl.id = 'ENTER A UNIQUE ID FOR THIS UICONTROL'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.id = 'ENTER A UNIQUE ID FOR THIS UICONTROL'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.id">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="ReadOnlyTextControl.value = 'ENTER THE PROMPT FOR THE ASSOCIATED TEXT INPUT HERE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.value = 'ENTER THE PROMPT FOR THE ASSOCIATED TEXT INPUT HERE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.value">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 0" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="ReadOnlyTextControl.type = 'ReadOnlyText'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.type = 'ReadOnlyText'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.type">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber = 0">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <extension explicit="true" association="true" entity="../../Vocabulary/Vocab.ecore#//Container" traversedAssocRole="../../Vocabulary/Vocab.ecore#//UI/containers">
+        <alias value="Containers"/>
+        <extension explicit="true" association="true" entity="../../Vocabulary/Vocab.ecore#//UIControl" traversedAssocRole="../../Vocabulary/Vocab.ecore#//Container/uiControls">
+          <alias value="ReadOnlyTextControl"/>
+          <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+          <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+          <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/dataSource"/>
+          <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+          <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+          <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/value"/>
+        </extension>
+        <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//Container/description"/>
+      </extension>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//Container">
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//Container/id"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//Container/title"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//UIControl">
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="26" sashWeightScope="50" sashWeightConditionsActions="10">
+    <actionSection rowCount="47" columnWidthFactor="0.5">
+      <actionItemList>
+        <naturalLanguageText value="Create a new container which will have a title of -------->"/>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Containers = Container.new [id = cellValue, title = cellValue]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Containers = Container.new [ Container.title = cellValue , Container.id = cellValue ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="new" datatype="Container" termtype="NEW" fulltext="Container.new">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="Container.id">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="Container.title">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Containers.description">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Containers.description" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Containers.description">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Create a new UI Control -------->"/>
+        <valueSetCell/>
+        <expressionCell external="ReadOnlyTextControl += UIControl.new">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl += UIControl.new" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="152">
+        <naturalLanguageText value="Give this UI Control this unique id -------->"/>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="ReadOnlyTextControl.id">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.id" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.id">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="78">
+        <naturalLanguageText value="The label for this UI Control (the user prompt/question) -------->"/>
+        <valueSetCell/>
+        <expressionCell external="ReadOnlyTextControl.value">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.value" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.value">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Enter next stage number in place of current value  ------>"/>
+        <valueSetCell/>
+        <expressionCell external="UI.nextStageNumber">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="The UI Control we've create has a 'type' of ------>"/>
+        <valueSetCell/>
+        <expressionCell external="ReadOnlyTextControl.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.type" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.type">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber = 0" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.2"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.3"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.4"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.5"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+        <naturalLanguageText value="Enter current stage number in place of current value"/>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" scrollRowTop="6" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="410" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="'ENTER TITLE OF CONTAINER HERE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Containers = Container.new [ Container.title = 'ENTER TITLE OF CONTAINER HERE' , Container.id = 'ENTER TITLE OF CONTAINER HERE' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Container" datatype="Container" termtype="ENTITY" fulltext="Container"/>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              <terms text="new" datatype="Container" termtype="NEW" fulltext="Container.new">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="Container.id">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="Container.title">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'OPTIONAL DESCRIPTION OF THIS CONTAINER, CAN BE USED TO BETTER IDENTIFY PAST STAGES ON CLIENT SIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Containers.description = 'OPTIONAL DESCRIPTION OF THIS CONTAINER, CAN BE USED TO BETTER IDENTIFY PAST STAGES ON CLIENT SIDE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Containers.description">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="'ENTER A UNIQUE ID FOR THIS UICONTROL'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.id = 'ENTER A UNIQUE ID FOR THIS UICONTROL'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.id">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'ENTER THE PROMPT FOR THE ASSOCIATED TEXT INPUT HERE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.value = 'ENTER THE PROMPT FOR THE ASSOCIATED TEXT INPUT HERE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.value">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 0" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'ReadOnlyText'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ReadOnlyTextControl.type = 'ReadOnlyText'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="ReadOnlyTextControl.type">
+                <parentTerm text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl">
+                  <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ReadOnlyTextControl" datatype="UIControl" termtype="ENTITY" fulltext="ReadOnlyTextControl">
+                <parentTerm text="Containers" datatype="Container" termtype="ENTITY" fulltext="Containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
