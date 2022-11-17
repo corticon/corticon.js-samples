@@ -231,6 +231,11 @@ corticon.dynForm.UIControlsRenderer = function () {
         else
             alert('Missing field name for '+oneUIControl.id);
 
+        // there may be a value (default value)
+        if ( oneUIControl.value !== undefined && oneUIControl.value !== null ) {
+            textInputEl.val(oneUIControl.value);
+        }
+
         if ( addBreak ) {
             const breakEl = $('<div>');
             breakEl.append(textInputEl);
