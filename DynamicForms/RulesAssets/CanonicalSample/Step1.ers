@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_19lbcmBbEe2eyfJhZu2GeA" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_woRPMWaTEe2PZtWAgYURqQ" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_2Fa0smBOEe2eyfJhZu2GeA" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_WCbFYWBmEe28GPF-4yorLg" vocabulary="../Vocabulary/Vocab.ecore#/">
     <rule>
       <action disabled="true"/>
       <action/>
@@ -30,8 +30,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='Text', label='Question 1', id='crtl1_1', fieldName='Step1Field1']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'Text' , UIControl.label = 'Question 1' , UIControl.id = 'crtl1_1' , UIControl.fieldName = 'Step1Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='Text', label='Question 1', value='Initial Value', id='crtl1_1', fieldName='Step1Field1']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = 'Initial Value' , UIControl.type = 'Text' , UIControl.label = 'Question 1' , UIControl.id = 'crtl1_1' , UIControl.fieldName = 'Step1Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -40,6 +40,9 @@
               </terms>
             </modifiedTermList>
             <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
               <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
                 <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
@@ -318,6 +321,7 @@
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/id"/>
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/label"/>
         <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/tooltip"/>
+        <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/value"/>
       </extension>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//Container/id"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//Container/title"/>
@@ -328,6 +332,7 @@
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/label"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/id"/>
       <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/value"/>
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="23" sashWeightConditionsActions="17" sashWeightConditionsIf="84">
@@ -378,8 +383,8 @@
       </actionItemList>
       <actionItemList rowHeight="43">
         <valueSetCell valueSet=""/>
-        <expressionCell external="UI.containers.uiControls += UIControl.new[type='Text', label='Question 1', id='crtl1_1', fieldName='Step1Field1']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'Text' , UIControl.label = 'Question 1' , UIControl.id = 'crtl1_1' , UIControl.fieldName = 'Step1Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls += UIControl.new[type='Text', label='Question 1', value='Initial Value', id='crtl1_1', fieldName='Step1Field1']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = 'Initial Value' , UIControl.type = 'Text' , UIControl.label = 'Question 1' , UIControl.id = 'crtl1_1' , UIControl.fieldName = 'Step1Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -388,6 +393,9 @@
               </terms>
             </modifiedTermList>
             <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
               <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
                 <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
@@ -717,6 +725,7 @@
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.2/@referencedAttributes.0"/>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.2/@referencedAttributes.1"/>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.2/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.2/@referencedAttributes.3"/>
           </children>
         </children>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
@@ -724,6 +733,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.4"/>
         </children>
       </rootNode>
     </scopeSection>
