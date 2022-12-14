@@ -1,10 +1,10 @@
 - Getting Started
   - [Corticon.js Studio Overview](README.md)
-  - [Corticon.js Studio Installation](Getting-Started/Installation.md)
     - [Rule Vocabulary](Getting-Started/Vocabulary.md)
     - [Rulesheets](Getting-Started/Rulesheets.md)
     - [Ruletests](Getting-Started/Ruletests.md)
     - [Ruleflows](Getting-Started/Ruleflows.md)
+  - [Corticon.js Studio Installation](Getting-Started/Installation.md)
 
 - Guided Overview
   - [Introduction](Authoring-the-Rules/Rule-Modeling-Intro.md)
@@ -22,4 +22,3 @@
   - [Corticon Videos](https://docs.progress.com/category/corticon-videos)
   - [GitHub](https://github.com/corticon/)
   - [Corticon.js Home Page](https://www.progress.com/corticon-js)
-  - [Codepen Examples](https://codepen.io/collection/KpMRLe)
