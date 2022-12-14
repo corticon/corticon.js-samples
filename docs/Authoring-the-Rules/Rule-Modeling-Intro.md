@@ -2,7 +2,6 @@
 
 Implementing the complexities of a dynamic form's user interface often involves a  level of complexity comparable to that of a traditional decision automation use case (e.g. eligibility determination, claims handling, loan origination...). With Corticon.js, we can define this logic using the same declarative, rules-driven paradigm that enables traditional decision automation.
 
-<iframe width="768" height="432" src="https://miro.com/app/embed/uXjVPeY7yXg=/?pres=1&frameId=3458764534444317409&embedId=495190973416" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
 ## Introduction
 
