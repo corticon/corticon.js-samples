@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.common="http:///com/corticon/rulesemf/common.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_GN3LsWahEe2a2btQkTEFrw" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_TaUK2EmVEe2Xy-YFfq1vEQ" externalChecksum="2722078124:507989954">
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_CFZGYEmVEe2Xy-YFfq1vEQ" key="2" type="Validation" severity="Warning" invalidObjects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.1" textKey="TestsheetTreeSetModelAPIImpl.Validation.Attribute.Datatype.Value" locationKey="TestsheetTreeSetModelAPIImpl.Validation.NullTemplate">
+      <textVariables>1990-11-05</textVariables>
+      <textVariables>DateTime</textVariables>
+      <locationVariables>Filer [1].dob</locationVariables>
+    </validationMessages>
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_TaUK1kmVEe2Xy-YFfq1vEQ" key="100" type="Validation" severity="Warning" textKey="TestsheetTreeSetModelAPIImpl.Validation.Mismatch.OutputTree.ExpectedTree" locationKey="TestsheetTreeSetModelAPIImpl.Validation.Testsheet.Name">
+      <locationVariables>untitled_1</locationVariables>
+    </validationMessages>
+    <testsheet ruleActivityUpdateStamp="_QOj6gD2iEe29jealknEmuQ" ruleActivity="Calculations.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Unmarried heads of households are set to be a filer type of Heads of Households"/>
+        <PostedMessage severity="Info" text="Tax bill when filing as [Heads of Households] with a taxable income of $[50000] is $[5716]"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//Filer">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="50000.000000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/taxableIncome"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" validationMessages="#//@testsheetAssets.0/@validationMessages.0" manuallyCreated="true" value="1990-11-05" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/dob"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="no" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/married"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="yes" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/headHousehold"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="yes" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/blind"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true" passed="false">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" passed="false" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//Filer">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="yes" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/blind"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="50000.000000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/taxableIncome"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1990-11-05T00:00:00-0500" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/dob"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Heads of Households" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/filerType"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" eReference="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/standardDeduction" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="20500" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction/amount"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" passed="false" value="5716.000000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/taxOwed"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="no" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/married"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="yes" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/headHousehold"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="31" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.100000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.120000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.220000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="4" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.240000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="5" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="5" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.320000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="6" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="6" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.350000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="7" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="7" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.370000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="18800" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction/amount"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot passed="false">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" passed="false" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//Filer">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="yes" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/blind"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="50000.000000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/taxableIncome"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1990-11-05T00:00:00-0500" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/dob"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Heads of Households" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/filerType"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/standardDeduction" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="20500" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction/amount"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" passed="false" value="5800.000000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/taxOwed"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="no" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/married"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="yes" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/headHousehold"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="31" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//Filer/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.100000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.120000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.220000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.240000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="5" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.320000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="6" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="6" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.350000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="7" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="7" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/tier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.370000" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//taxBracket/rate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="18800" eAttribute="../Vocabulary/Rule%20Vocabulary.ecore#//standardDeduction/amount"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_M4jj0ONUEey4nfPgwbw0aw" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="../Vocabulary/Rule%20Vocabulary.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
