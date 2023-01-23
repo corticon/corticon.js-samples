@@ -1,14 +1,13 @@
 # Client Side Component (CSC)
 
-It is responsible for rendering the UI Controls (questions, labels, descriptions, validation messages…), collecting the 
-data entered along the flow (the answers), and moving to the next steps when the user asks for it.  
+The Client Side Component is responsible for rendering the UI Controls (questions, labels, descriptions, validation messages…), collecting the data entered along the flow (the answers), and navigating through the next steps.  
 
 It does so by:
-1.	Invoking the DS at both the start of the flow and at each step in the flow.  The DS returns a JSON payload with all 
+1.	Invoking the decision service at both the start of the flow and at each step in the flow.  The decision service returns a JSON payload with all 
       the necessary data to proceed for the entire step.
 2.	Maintaining the state of the flow.  That is, the state machine representing the flow is maintained by the CSC and 
-      not by the DS (The DS is stateless).
-3.	Exiting when the end of the flow is reported by the DS. 
+      not by the decision service (The decision service is stateless).
+3.	Exiting when the end of the flow is reported by the decision service. 
       
 All of this can be implemented in a generic fashion so that the same CSC can be reused on different pages and with 
 different use cases.
@@ -25,9 +24,9 @@ Whether you use it directly, or you want to leverage a different technology like
 to understand what to do.
 
 
-# Returned Payload from DS
+# Returned Payload from Decision Service
 
-The DS returns a JSON payload containing an array with 2 elements.  
+The decision service returns a JSON payload containing an array with 2 elements.  
 Each of the element represents top level entities from the Corticon model.  
 
 The item at index 0 is the UI model.  
@@ -35,7 +34,7 @@ The item at index 0 is the UI model.
 The item at index 1 is the data for the specific use case.  We call this the project data.  It contains:
 1.	Initial data to pass to the first step of the flow (initialization data for this specific flow session).  For example, this could be contextual information about a user (first name, last name, preferred language…).  In an insurance claim that could be the type of insurance the user has, ect…
 2.	Accumulated answers along the flow.
-3.	Additional data created by the DS along the flow.  For example, the DS can compute the total expenses amount in one step and then use that total in another step to decide to skip some questions based on whether the total is less than say $1000.
+3.	Additional data created by the decision service along the flow.  For example, the decision service can compute the total expenses amount in one step and then use that total in another step to decide to skip some questions based on whether the total is less than say $1000.
 
 Note: In the rest of this document when we reference an item as UI.fieldName we mean to reference the top level entity item at index 0 from the payload (that is UI.fieldName is a short hand notation for payload[0].fieldName).
 
@@ -43,29 +42,29 @@ Note: In the rest of this document when we reference an item as UI.fieldName we 
 
 How does the CSC maintain the state of the overall flow?
 It does so by:
-1. Keeping a variable for the current stage to execute and setting the next stage to execute based on instructions from the DS.  Specifically, the DS sets the attribute UI.nextStageNumber to specify the next step in the flow.  Thus, when the CSC is ready for the next step in the flow, it invokes the DS by setting UI.currentStageNumber to UI.nextStageNumber in the input payload of the DS.
+1. Keeping a variable for the current stage to execute and setting the next stage to execute based on instructions from the decision service.  Specifically, the decision service sets the attribute UI.nextStageNumber to specify the next step in the flow.  Thus, when the CSC is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to UI.nextStageNumber in the input payload of the decision service.
 2. Keeping a variable to an object literal for the set of data (answers) entered at each step.  
-   The answers are stored in specific fields, again as specified by the DS. Specifically, the field is specified in each UIControl as field UIControl.fieldName.      
-3. Upon receiving a “done” instruction from the DS (a notification of the end of the flow), it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow.  Specifically, this is specified in the UI.done attribute.
+   The answers are stored in specific fields, again as specified by the decision service. Specifically, the field is specified in each UIControl as field UIControl.fieldName.      
+3. Upon receiving a “done” instruction from the decision service (a notification of the end of the flow), it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow.  Specifically, this is specified in the UI.done attribute.
 
-It’s important to keep in mind that the DS does not maintain any state.
+It’s important to keep in mind that the decision service does not maintain any state.
 
 Another way to look at that is:
-1. The CSC does not know the questions to be asked and what the answers mean.  It simply stores the answers as specified by the DS.
-2. The DS does not know the current state of the questionnaire but know what to do at each step.
+1. The CSC does not know the questions to be asked and what the answers mean.  It simply stores the answers as specified by the decision service.
+2. The decision service does not know the current state of the questionnaire but know what to do at each step.
 
-# Storing answers with multiple projects/Multiple DS
+# Storing answers with multiple projects/Multiple Decision Services
 
 As the CSC can be reused across different projects, there is a need to be able to specify where to store the data within the returned JSON payload.
 
-The DS can optionally specify a path to where the data will be stored within the answers object literal.
+The decision service can optionally specify a path to where the data will be stored within the answers object literal.
 This is specified with UI.pathToData
 When not specified the CSC will write the answers at the root of the object literal.
-The CSC is responsible for maintaining the state of the pathToData as it can change between stages but the DS is not responsible for specifying the pathToData at every single step.
+The CSC is responsible for maintaining the state of the pathToData as it can change between stages but the decision service is not responsible for specifying the pathToData at every single step.
 
 # Rendering UI Controls
 
-The CSC receives the list of UI controls to render from the DS JSON payload at the “UI.containers” element.  
+The CSC receives the list of UI controls to render from the decision service JSON payload at the “UI.containers” element.  
 This is an array of all the containers to render for this stage.
 The container can be viewed as a panel containing various labels and input fields.
 The container has various attributes, for example a title.  
@@ -198,7 +197,7 @@ somewhere else, and you don’t want to duplicate it in Corticon.
 Or perhaps the list is changing so frequently that you want to make sure the user always get the list 
 from an external data source (for example a set of exchange rate).
 
-The DS can specify an external data source with the property UIControl.dataSource.
+The decision service can specify an external data source with the property UIControl.dataSource.
 
 To see an example of what you need to implement, check the MultiChoice renderer (function renderMultipleChoicesInput in  https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/clientSideComponent/dynForm/uiControlsRenderers.js)
 
@@ -214,19 +213,19 @@ Stage: a unique identifier representing where the flow currently is at in the st
 
 ## In the Request
 
-When the CSC makes a request to the DS it asks for a specific stage to render by specifying 
+When the CSC makes a request to the decision service it asks for a specific stage to render by specifying 
 UI.currentStageNumber.
 
-On the request, the CSC tells the DS the current stage number to execute. 
-The DS will respond with the corresponding to the current UI to render.
+On the request, the CSC tells the decision service the current stage number to execute. 
+The decision service will respond with the corresponding to the current UI to render.
 
 ## In the Response
 
-There are 3 attributes in the DS JSON results that deal with stages:
-* currentStageNumber: The DS tell the CSC the current stage number it has executed.  
+There are 3 attributes in the decision service JSON results that deal with stages:
+* currentStageNumber: The decision service tell the CSC the current stage number it has executed.  
   The CSC shouldn't do anything special with it.  It is mostly useful for troubleshooting.
 * currentStageDescription: An optional string.  Again, the CSC shouldn't do anything special with it.  It is mostly useful for troubleshooting.  
-* nextStageNumber: This is the stage number the CSC specifies when calling the DS for the next step. 
+* nextStageNumber: This is the stage number the CSC specifies when calling the decision service for the next step. 
 
 
 # Additional Resources
