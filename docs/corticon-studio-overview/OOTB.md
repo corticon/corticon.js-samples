@@ -183,16 +183,91 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘MultipleChoices’_
     Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
+
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![Alt text](../assets/multiple_choices_rules.png)
+
+### **Rendered Rules**
+
+![Alt text](../assets/multiple_choices_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - _type = ‘Number’_
     Single number input
+
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![Alt text](../assets/number_rules.png)
+
+### **Rendered Rules**
+
+![Alt text](../assets/number_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - _type = ‘DateTime’_
     Date picker
+
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![](../assets/date_time_rules.png)
+
+### **Rendered Rules**
+
+![](../assets/date_time_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - _type = ‘ReadOnlyText’_
     A control to render HTML text
 - _type = ‘YesNo’_
     Dropdown of Yes or No, stored as Yes or No
+
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![](../assets/yes_no_rule.png)
+
+### **Rendered Rules**
+
+![](../assets/yes-no_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - _type = ‘YesNoBoolean’_
     Dropdown of Yes or No, stored as T or F
+
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![](../assets/yes_no_boolean_rule.png)
+
+### **Rendered Rules**
+
+![](../assets/yes-no_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - _type = ‘FileUpload’_
     A control to render a file upload control.
 
