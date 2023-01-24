@@ -98,7 +98,7 @@ Each UI control element has multiple attributes. The most important one is the `
 |**defaultValue**|Alphanumeric string|Optionally give the rendering component for this UI Control a placeholder default value|
 |**multiple**|T/F|When there could be any number of responses to a prompt, set this to true. The answers are stored in an array pointed as specified by `fieldName` attribute. |
 |**tooltip**|Alphanumeric string|Optionally give the rendering component for this UI Control a tooltip to assist end user|
-|**label\***|Alphanumeric string|Content of the prompt provided by the UI Control|
+|**label**|Alphanumeric string|Content of the prompt provided by the UI Control|
 |**rows**|integer|HTML textarea rows attribute|
 |**required**|T/F|Whether the user filling out the form is required to respond to this prompt|
 |**validationErrorMsg**|Alphanumeric string|Creates validation message for individual UI Control|
@@ -108,6 +108,7 @@ Each UI control element has multiple attributes. The most important one is the `
 |**sortOptions**|'A to Z', 'Z to A'|Optionally instruct the rendering component how to sort the list of options applied to this UI Control|
 
 When using the MultipleChoices UI Control, the actual choices can be populated from a JSON endpoint or be specified by the rule modeler. For the first option, the rule modeler must specify a URL on the field `UIControl.dataSource`. The default client renderer will look for the options at that endpoint under the `value` and `displayName` field. So if the endpoint looks like this, then you’re good to go:
+
 ![Alt text](../assets/formattedJSON.png)
 
 
