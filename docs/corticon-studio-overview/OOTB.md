@@ -165,6 +165,21 @@ The specific type of UI Control. In the out of the box test driver, the followin
     Multi-lines text input
 - _type = ‘SingleChoice’_
     Renders as a checkbox with value stored as T/F
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![](../assets/singlechoice.png)
+
+### **Rendered Rules**
+
+![](../assets/singlechoice-rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
+
 - _type = ‘MultipleChoices’_
     Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
 - _type = ‘Number’_
