@@ -2,14 +2,15 @@
 
 <!-- panels:start -->
 
-
 ## UI
 
 
 The entity UI is the ‘parent’ entity, returned at index 0, which will guide things like where we are in the form, when the form is complete, and where to store the accrued data. See table below for full scope of available out of the box options. Items with an asterisk are required.
+
 <!-- div:title-panel -->
 
 ### pathToData
+
 <!-- div:left-panel -->
 
 _Any alphanumeric string will be accepted, but in order to use user-selected responses to dynamically change form behavior in future steps, this should be set to an entity in the vocabulary that will accrue the data_
