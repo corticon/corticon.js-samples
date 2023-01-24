@@ -76,7 +76,7 @@ Each UI control element has multiple attributes. The most important one is the `
 
 |**Attribute name**|**Acceptable Values**|**Description**|
 | :-: | :-: | :-: |
-|**type\***||<p>The specific type of UI Control. In the out of the box test driver, the following UI Controls / specifications are defined:</p><p></p>|
+|**type**||<p>The specific type of UI Control. In the out of the box test driver, the following UI Controls / specifications are defined:</p><p></p>|
 ||type = 'Text'|Single line text field input|
 ||type = ‘TextArea’|Multi-lines text input|
 ||type = 'SingleChoice'|Renders as a checkbox with value stored as T/F|
@@ -89,8 +89,8 @@ Each UI control element has multiple attributes. The most important one is the `
 ||type = 'FileUpload'|A control to render a file upload control.|
 ||type = 'MultiExpenses'|List of financial line items. It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector.|
 ||type = 'MultipleChoicesMultiSelect'|Similar to MultipleChoices, but allows for multiple selected options|
-|**fieldName\***|fieldName = `entity_assigned_as_pathToData.attribute` |The UI control specifies where to store the data in the field `UIControl.fieldName`. For example, if we want to store the value of a person's date of birth in a field called `dob`, within a JSON object called `Person`, we would first need to set (either in this stage or a preceding one) the `UI.pathToData = 'Person'` and then we could define the UI Control's `fieldName` to be 'dob'. This would hold the value selected for the `dob` in the JSON object as follows: `"Person" : { "dob" : "MM/DD/YYYY" }`|
-|**id\***|Any unique alphanumeric string|Unique identifier (within the context of one container) for the UI control.|
+|**fieldName**|fieldName = `entity_assigned_as_pathToData.attribute` |The UI control specifies where to store the data in the field `UIControl.fieldName`. For example, if we want to store the value of a person's date of birth in a field called `dob`, within a JSON object called `Person`, we would first need to set (either in this stage or a preceding one) the `UI.pathToData = 'Person'` and then we could define the UI Control's `fieldName` to be 'dob'. This would hold the value selected for the `dob` in the JSON object as follows: `"Person" : { "dob" : "MM/DD/YYYY" }`|
+|**id**|Any unique alphanumeric string|Unique identifier (within the context of one container) for the UI control.|
 |**dataSource**|URL pointing to JSON formatted data |<p>Specifies the datasource to populate MultipleChoices dropdown options from. Value field at the JSON endpoint must have the key `value`, display name must have the value `displayName`. If not the case for either of these, these can be overridden by specifying a child entity ‘DataSourceOptions’</p><p></p><p>![](../assets/datasource.png)</p><p></p>|
 |**max**|Integer|Optionally give the rendering component for this UI Control a numeric maximum|
 |**min**|Integer|<p>Optionally give the rendering component for this UI Control a minimum numeric value end user can enter</p><p></p><p>![](../assets/min.png)</p><p></p>|
