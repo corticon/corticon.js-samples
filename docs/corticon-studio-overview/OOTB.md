@@ -42,9 +42,13 @@ Set to ‘T’ for any stages where no UI needs to be rendered, but some action 
 
 ### done
 
+<!-- div:left-panel -->
+
 _T/F_
 
 Upon receiving a done instruction from the decision service (a notification of the end of the flow) via UI.done=T, it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow.
+
+<!-- div:right-panel -->
 
 ![Alt text](../assets/UIdone.png)
 
@@ -52,9 +56,13 @@ Upon receiving a done instruction from the decision service (a notification of t
 
 ### nextStageNumber
 
+<!-- div:left-panel -->
+
 _Integer_
 
 The decision service sets the attribute UI.nextStageNumber to specify the next step in the flow, unless it is the last stage, in which case this field is left null and done is set to ‘true’
+
+<!-- div:right-panel -->
 
 ![Alt text](../assets/nextStageNumber.png)
 
@@ -62,9 +70,13 @@ The decision service sets the attribute UI.nextStageNumber to specify the next s
 
 ### currentStageNumber
 
+<!-- div:left-panel -->
+
 _Integer_
 
 When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to UI.nextStageNumber in the input payload of the decision service.
+
+<!-- div:right-panel -->
 
 ![](../assets/currentStageNumber.png)
 
@@ -72,12 +84,13 @@ When the client side rendering component is ready for the next step in the flow,
 
 ###  Language
 
+<!-- div:left-panel -->
+
 _String_
 
 On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules
 
 ---
-<!-- div:title-panel -->
 
 <!-- div:title-panel -->
 
