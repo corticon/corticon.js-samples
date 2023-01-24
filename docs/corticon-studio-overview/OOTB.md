@@ -324,3 +324,5 @@ The value stored in the pathToData.fieldName when user selects corresponding dis
 
 ![](../assets/manualOptions.png)
 
+
+<!-- panels:end -->
