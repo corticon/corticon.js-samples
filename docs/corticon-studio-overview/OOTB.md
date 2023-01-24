@@ -207,7 +207,7 @@ A control to render a file upload control.
 
 ### **Rendered Rules**
 
-![Alt text](../assets/file_upload_rendered.png)
+![](../assets/file_upload_rendered.png)
 
 <!-- tabs:end -->
 
