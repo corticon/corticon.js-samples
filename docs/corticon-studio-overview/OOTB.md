@@ -180,17 +180,17 @@ The specific type of UI Control. In the out of the box test driver, the followin
 - _type = ‘FileUpload’_
     A control to render a file upload control.
 
-<!-- tabs:start -->
+        <!-- tabs:start -->
 
-    #### **Rule Definition**
+            #### **Rule Definition**
 
-    ![](../assets/file-upload-expense.png)
+            ![](../assets/file-upload-expense.png)
 
-    #### **Rendered Rules**
+            #### **Rendered Rules**
 
-    ![](../assets/file_upload_rendered.png)
+            ![](../assets/file_upload_rendered.png)
 
-<!-- tabs:end -->
+        <!-- tabs:end -->
 
 <!-- div:left-panel -->
 
