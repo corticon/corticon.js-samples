@@ -173,7 +173,9 @@ Optionally give the rendering component for this UI Control a numeric maximum
 _Integer_
 
 Optionally give the rendering component for this UI Control a minimum numeric value end user can enter
+
 ![](../assets/min.png)
+
 ## minDT
 
 _Date_
@@ -185,7 +187,9 @@ Optionally give the rendering component for this UI Control a minimum date value
 _Date_
 
 Optionally give the rendering component for this UI Control a maximum date value end user can enter
+
 [](../assets/maxDt.png)
+
 ##  defaultValue
 
 _Alphanumeric string_
@@ -270,14 +274,19 @@ If the JSON data has different keys, such as shown below, the client renderer mu
 ## dataTextField
 
 Optionally define the key name to use as the display name for this option from dropdown, if its name isn’t displayName. Oftentimes this will be the same as the dataValueField field.
+
 ![Alt text](../assets/dataTextField.png)
+
 ## dataValueField
 
 Optionally define the name of the key whose value should be stored should end user select this option from dropdown, if its name isn’t value. Oftentimes this will be the same as the dataTextField field.
+
 ![](../assets/dataValueField.png)
+
 ## pathToOptionsArray
 
 Optionally define where in a JSON endpoint is the array of options to populate a dropdown list with
+
 ![](../assets/pathToOptionsArray.png)
 
 When the rule modeler is defining the list of dropdown options, they can do so with the Option entity.
@@ -293,4 +302,5 @@ The displayed option within a multiple-choice dropdown. When selected, it is sto
 ## value
 
 The value stored in the pathToData.fieldName when user selects corresponding displayName.
+
 ![](../assets/manualOptions.png)
