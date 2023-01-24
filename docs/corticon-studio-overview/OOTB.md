@@ -161,8 +161,38 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘Text’_
     Single line text field input
+
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![](../assets/text_rule.png)
+
+### **Rendered Rules**
+
+![](../assets/text_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - _type = ‘TextArea’_
     Multi-lines text input
+
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![](../assets/text_area_rules.png)
+
+### **Rendered Rules**
+
+![](../assets/text_area_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - _type = ‘SingleChoice’_
     Renders as a checkbox with value stored as T/F
 
@@ -179,7 +209,6 @@ The specific type of UI Control. In the out of the box test driver, the followin
 <!-- tabs:end -->
 
 <!-- div:left-panel -->
-
 
 - _type = ‘MultipleChoices’_
     Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
