@@ -25,6 +25,9 @@ We define which data we want to store by specifying in the initial stage of the 
 
 ### noUiToRenderContinue
 
+<!-- div:left-panel -->
+
+
 _T/F_
 
 Set to ‘T’ for any stages where no UI needs to be rendered, but some action (a decision/calculation/augmentation of separate rulesheet) needs to be executed. Does not need to be set to ‘F’ when this is not the case.
