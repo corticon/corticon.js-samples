@@ -1,12 +1,12 @@
 
-- Authoring Form Behavior Rules
+- **Authoring Form Behavior Rules**
   - [Corticon.js Studio Overview](README.md)
-  - [Environment Setup](Getting-Started/get-set-up.md)
-  - [Rule Syntax](Getting-Started/syntax.md.md)
-
+  - [Environment Setup](corticon-studio-overview/get-set-up.md)
+  - [Rule Syntax](corticon-studio-overview/syntax.md)
+  
 ---
 
-- Links
+- **Links**
   - [Corticon Information Hub](https://docs.progress.com/category/corticon-information-hub)
   - [Tutorials](https://www.progress.com/corticon/corticon-learning-center)
   - [Blog Roll](https://www.progress.com/blogs/cognitive-services)
