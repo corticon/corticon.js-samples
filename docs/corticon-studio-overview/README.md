@@ -12,7 +12,7 @@ There are four main steps of building rules in Corticon Studio, culminating in t
 2. **Rulesheets** are like Decision Tables. Users ‘model’ the business rules by defining actions to take when specific conditions are met.
 3. Once the rules created in the rulesheet are satisfied, the first **Ruletest** in Corticon Studio can be created to run test data through the rules in the test server embedded in the local application.
 4. From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a  **Ruleflow** to specify the sequence from one rulesheet to another. When multiple Rulesheets are included in a Ruleflow, the Rulesheets will execute in a sequence determined by their Rulesheet order in the Ruleflow.
-
+---
 # Rule Vocabulary
 
 ![Rule Vocabulary](../assets/JS%20vocabulary.png)
@@ -27,7 +27,7 @@ Corticon business rules are authored in **Corticon.js Studio**, with the backbon
   - The user interface (UI), such as which questions to pose to the end user at what stage in the form being filled, and what type of input should be allowed for these questions
 
   - The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
-
+---
 # Authoring the Rules
 
 Corticon provides domain experts with the tools to define the parts of software guided by complex rules, without needing to be programmers.
@@ -52,6 +52,8 @@ Detects logical loops in rule interaction that may need special attention.
 
 [Rule Authoring](../assets/Rule%20Authoring.mp4  ':include')
 
+---
+
 # Testing the Rules
 
 A *Ruletest* simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced.
@@ -60,7 +62,10 @@ You can define different sets of input data to test how the rules behave in diff
 
 Ruletests reproduce how the rules will behave once deployed as a decision service.
 
+---
+
 # Organizing the Rules
+
 
 From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a Ruleflow to specify the sequence from one rulesheet to another.
 
