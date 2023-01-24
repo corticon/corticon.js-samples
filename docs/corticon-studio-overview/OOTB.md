@@ -205,8 +205,13 @@ A control to render a file upload control.
 
 <!-- tabs:start -->
 
-### **Rule Defnition**
+### **Rule Definition**
+
+![](../assets/file-upload-expense.png)
+
 ### **Rendered Rules**
+
+![Alt text](../assets/file_upload_rendered.png)
 
 <!-- tabs:end -->
 
