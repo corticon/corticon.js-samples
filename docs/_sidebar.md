@@ -2,7 +2,8 @@
 - **Authoring Form Behavior Rules**
   - [Corticon.js Studio Overview](corticon-studio-overview/README.md)
   - [Environment Setup](corticon-studio-overview/get-set-up.md)
-  - [Rule Syntax](corticon-studio-overview/syntax.md)
+  - [Demo Scenario](corticon-studio-overview/demo-intro.md)
+  - [Define Form Behavior by Vocabulary Assignments](corticon-studio-overview/OOTB.md)
   
 ---
 
