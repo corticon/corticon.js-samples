@@ -203,6 +203,13 @@ _type = ‘FileUpload’_
 
 A control to render a file upload control.
 
+<!-- tabs:start -->
+
+### **Rule Defnition**
+### **Rendered Rules**
+
+<!-- tabs:end -->
+
 _type = ‘MultiExpenses’_
 
 List of financial line items. It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector.
