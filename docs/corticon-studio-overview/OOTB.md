@@ -124,6 +124,8 @@ _Alphanumeric string_
 
 h3 header on Container
 
+<!-- div:right-panel -->
+
 ![Alt text](../assets/createContainer.png)
 
 
@@ -223,6 +225,8 @@ _URL pointing to JSON formatted data_
 
 Specifies the datasource to populate MultipleChoices dropdown options from. Value field at the JSON endpoint must have the key value, display name must have the value displayName. If not the case for either of these, these can be overridden by specifying a child entity ‘DataSourceOptions’
 
+<!-- div:right-panel -->
+
 ![](../assets/datasource.png)
 
 <!-- div:title-panel -->
@@ -245,6 +249,8 @@ _Integer_
 
 Optionally give the rendering component for this UI Control a minimum numeric value end user can enter
 
+<!-- div:right-panel -->
+
 ![](../assets/min.png)
 
 <!-- div:title-panel -->
@@ -266,6 +272,8 @@ Optionally give the rendering component for this UI Control a minimum date value
 _Date_
 
 Optionally give the rendering component for this UI Control a maximum date value end user can enter
+
+<!-- div:right-panel -->
 
 [](../assets/maxDt.png)
 
@@ -359,6 +367,8 @@ _Alphanumeric string_
 
 The content of a ReadOnlyText UI Control
 
+<!-- div:right-panel -->
+
 ![Alt text](../assets/readOnlyText.png)
 
 <!-- div:title-panel -->
@@ -383,9 +393,15 @@ Optionally instruct the rendering component how to sort the list of options appl
 
 When using the MultipleChoices UI Control, the actual choices can be populated from a JSON endpoint or be specified by the rule modeler. For the first option, the rule modeler must specify a URL on the field UIControl.dataSource. The default client renderer will look for the options at that endpoint under the value and displayName field. So if the endpoint looks like this, then you’re good to go:
 
+<!-- div:right-panel -->
+
 ![Alt text](../assets/formattedJSON.png)
 
+<!-- div:left-panel -->
+
 If the JSON data has different keys, such as shown below, the client renderer must be told which field is going to serve as the value field and which as the displayName field—these can be, and often are, the same. These are specified with the DataSourceOptions entity.
+
+<!-- div:right-panel -->
 
 ![Alt text](../assets/unformattedJsonEnd.png)
 
@@ -405,6 +421,8 @@ If the JSON data has different keys, such as shown below, the client renderer mu
 
 Optionally define the key name to use as the display name for this option from dropdown, if its name isn’t displayName. Oftentimes this will be the same as the dataValueField field.
 
+<!-- div:right-panel -->
+
 ![Alt text](../assets/dataTextField.png)
 
 <!-- div:title-panel -->
@@ -415,6 +433,8 @@ Optionally define the key name to use as the display name for this option from d
 
 Optionally define the name of the key whose value should be stored should end user select this option from dropdown, if its name isn’t value. Oftentimes this will be the same as the dataTextField field.
 
+<!-- div:right-panel -->
+
 ![](../assets/dataValueField.png)
 
 <!-- div:title-panel -->
@@ -424,6 +444,8 @@ Optionally define the name of the key whose value should be stored should end us
 <!-- div:left-panel -->
 
 Optionally define where in a JSON endpoint is the array of options to populate a dropdown list with
+
+<!-- div:right-panel -->
 
 ![](../assets/pathToOptionsArray.png)
 
@@ -449,6 +471,8 @@ The displayed option within a multiple-choice dropdown. When selected, it is sto
 <!-- div:left-panel -->
 
 The value stored in the pathToData.fieldName when user selects corresponding displayName.
+
+<!-- div:right-panel -->
 
 ![](../assets/manualOptions.png)
 
