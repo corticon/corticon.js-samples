@@ -23,9 +23,11 @@
       repo: 'https://github.com/corticon/documentation',
       logo: 'assets/ProgressCorticon.js_PrimaryLogo.png',
       themeColor: '#e774f2',
-      coverpage: true,
+      coverpage: false,
       loadSidebar: true,
       auto2top: true,
+      sidebarDisplayLevel: 0,
+      autoheader: true,
       // PLUGIN SETTINGS
       // -----------------------------------------------------------------
       search: {
@@ -44,30 +46,38 @@
         crossChapter: false,
         crossChapterText: false,
       },
-
-
-
-
+      toc: {
+        scope: '.markdown-section',
+        headings: 'h2, h3',
+        title: 'Contents',
+      }
     }
+
+
+
 
   </script>
 
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 
   <!-- Search Box Plugin -->
   <script src="https://unpkg.com/docsify/lib/plugins/search.min.js"></script>
 
-  <!-- Emoji Plugin -->
-  <script src="https://unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <!-- docsify-copy-code  -->
+  <script src="https://unpkg.com/docsify-copy-code@2"></script>
 
   <!-- Font Awesome Plugin -->
   <script src="https://unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
 
-  <!-- Tabs Plugin-->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
-
   <!-- Run External Scripts Plugin -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+
+  <!-- docsify-gifcontrol-->
+  <script src="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script>
+
+
+  <!--docsify-sidebar-collapse -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 
   <!-- Pagination Plugin -->
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
@@ -76,6 +86,17 @@
 
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
+  <!-- docsify-image-caption -->
+
+  <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
+
+  <!--   docsify-toc -->
+
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script> -->
+  <!-- docsify-themeable styles-->
+  <script 
+  src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"
+  type="text/javascript">
 </body>
 
 </html>
