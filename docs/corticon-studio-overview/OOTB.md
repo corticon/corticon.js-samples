@@ -163,51 +163,51 @@ Each UI control element has multiple attributes. The most important one is the t
 
 The specific type of UI Control. In the out of the box test driver, the following UI Controls / specifications are defined:
 
-_·       type = ‘Text’_
+_type = ‘Text’_
 
 Single line text field input
 
-·       _type = ‘TextArea’_
+_type = ‘TextArea’_
 
 Multi-lines text input
 
-·       _type = ‘SingleChoice’_
+_type = ‘SingleChoice’_
 
 Renders as a checkbox with value stored as T/F
 
-·       _type = ‘MultipleChoices’_
+_type = ‘MultipleChoices’_
 
 Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
 
-·       _type = ‘Number’_
+_type = ‘Number’_
 
 Single number input
 
-·       _type = ‘DateTime’_
+_type = ‘DateTime’_
 
 Date picker
 
-·       _type = ‘ReadOnlyText’_
+_type = ‘ReadOnlyText’_
 
 A control to render HTML text
 
-·       _type = ‘YesNo’_
+_type = ‘YesNo’_
 
 Dropdown of Yes or No, stored as Yes or No
 
-·       _type = ‘YesNoBoolean’_
+_type = ‘YesNoBoolean’_
 
 Dropdown of Yes or No, stored as T or F
 
-·       _type = ‘FileUpload’_
+_type = ‘FileUpload’_
 
 A control to render a file upload control.
 
-·       _type = ‘MultiExpenses’_
+_type = ‘MultiExpenses’_
 
 List of financial line items. It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector.
 
-·       _type = ‘MultipleChoicesMultiSelect’_
+_type = ‘MultipleChoicesMultiSelect’_
 
 Similar to MultipleChoices, but allows for multiple selected options
 
