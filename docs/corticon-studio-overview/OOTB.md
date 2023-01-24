@@ -50,6 +50,8 @@ _String_
 
 On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules
 
+---
+
 # Container (UI.containers)
 
 For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
@@ -79,6 +81,10 @@ _Alphanumeric string_
 h3 header on Container
 
 ![Alt text](../assets/createContainer.png)
+
+---
+
+---
 
 # UIControl (UI.containers.uiControls)
 
@@ -257,6 +263,8 @@ If the JSON data has different keys, such as shown below, the client renderer mu
 ![Alt text](../assets/unformattedJsonEnd.png)
 
 
+---
+
 # DataSourceOptions (UI.containers.uiControls.dataSourceOptions)
 
 ## dataTextField
@@ -273,6 +281,8 @@ Optionally define where in a JSON endpoint is the array of options to populate a
 ![](../assets/pathToOptionsArray.png)
 
 When the rule modeler is defining the list of dropdown options, they can do so with the Option entity.
+
+---
 
 # Option (UI.containers.uiControls.option)
 
