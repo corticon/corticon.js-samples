@@ -1,8 +1,12 @@
+<!-- panels:start -->
+
+<!-- div:title-panel -->
+
 # UI
 
 The entity UI is the ‘parent’ entity, returned at index 0, which will guide things like where we are in the form, when the form is complete, and where to store the accrued data. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
-  
+<!-- div:left-panel -->
 
 ## pathToData
 
@@ -51,8 +55,11 @@ _String_
 On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules
 
 ---
+<!-- div:title-panel -->
 
 # Container (UI.containers)
+
+<!-- div:left-panel -->
 
 For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
 
@@ -82,11 +89,13 @@ h3 header on Container
 
 ![Alt text](../assets/createContainer.png)
 
----
 
 ---
+<!-- div:title-panel -->
 
 # UIControl (UI.containers.uiControls)
+
+<!-- div:left-panel -->
 
 Each UI control element has multiple attributes. The most important one is the type attribute as it allows the client-side component to know what kind of control to render and which necessary attributes to access based on the type. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
@@ -269,7 +278,11 @@ If the JSON data has different keys, such as shown below, the client renderer mu
 
 ---
 
+<!-- div:title-panel -->
+
 # DataSourceOptions (UI.containers.uiControls.dataSourceOptions)
+
+<!-- div:left-panel -->
 
 ## dataTextField
 
@@ -292,9 +305,9 @@ Optionally define where in a JSON endpoint is the array of options to populate a
 When the rule modeler is defining the list of dropdown options, they can do so with the Option entity.
 
 ---
-
+<!-- div:title-panel -->
 # Option (UI.containers.uiControls.option)
-
+<!-- div:left-panel -->
 ## displayName
 
 The displayed option within a multiple-choice dropdown. When selected, it is stored as the corresponding value under the attribute assigned UIControl.fieldName
@@ -304,3 +317,4 @@ The displayed option within a multiple-choice dropdown. When selected, it is sto
 The value stored in the pathToData.fieldName when user selects corresponding displayName.
 
 ![](../assets/manualOptions.png)
+
