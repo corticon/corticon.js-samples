@@ -159,67 +159,45 @@ Each UI control element has multiple attributes. The most important one is the t
 
 The specific type of UI Control. In the out of the box test driver, the following UI Controls / specifications are defined:
 
-_type = ‘Text’_
+- _type = ‘Text’_
+    Single line text field input
+- _type = ‘TextArea’_
+    Multi-lines text input
+- _type = ‘SingleChoice’_
+    Renders as a checkbox with value stored as T/F
+- _type = ‘MultipleChoices’_
+    Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
+- _type = ‘Number’_
+    Single number input
+- _type = ‘DateTime’_
+    Date picker
+- _type = ‘ReadOnlyText’_
+    A control to render HTML text
+- _type = ‘YesNo’_
+    Dropdown of Yes or No, stored as Yes or No
+- _type = ‘YesNoBoolean’_
+    Dropdown of Yes or No, stored as T or F
+- _type = ‘FileUpload’_
+    A control to render a file upload control.
 
-Single line text field input
+    <!-- tabs:start -->
 
-_type = ‘TextArea’_
+    #### Rule Definition
 
-Multi-lines text input
+    ![](../assets/file-upload-expense.png)
 
-_type = ‘SingleChoice’_
+    #### Rendered Rules
 
-Renders as a checkbox with value stored as T/F
+    ![](../assets/file_upload_rendered.png)
 
-_type = ‘MultipleChoices’_
-
-Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
-
-_type = ‘Number’_
-
-Single number input
-
-_type = ‘DateTime’_
-
-Date picker
-
-_type = ‘ReadOnlyText’_
-
-A control to render HTML text
-
-_type = ‘YesNo’_
-
-Dropdown of Yes or No, stored as Yes or No
-
-_type = ‘YesNoBoolean’_
-
-Dropdown of Yes or No, stored as T or F
-
-_type = ‘FileUpload’_
-
-A control to render a file upload control.
-
-<!-- tabs:start -->
-
-#### Rule Definition
-
-![](../assets/file-upload-expense.png)
-
-#### Rendered Rules
-
-![](../assets/file_upload_rendered.png)
-
-<!-- tabs:end -->
+    <!-- tabs:end -->
 
 <!-- div:left-panel -->
 
-_type = ‘MultiExpenses’_
-
-List of financial line items. It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector.
-
-_type = ‘MultipleChoicesMultiSelect’_
-
-Similar to MultipleChoices, but allows for multiple selected options
+- _type = ‘MultiExpenses’_
+    List of financial line items. It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector.
+- _type = ‘MultipleChoicesMultiSelect’_
+    Similar to MultipleChoices, but allows for multiple selected options
 
 <!-- div:title-panel -->
 
