@@ -21,7 +21,7 @@ We define which data we want to store by specifying in the initial stage of the 
 
 ![Alt text](../assets/pathToData.PNG)
 
-<!-- div:left-panel -->
+<!-- div:title-panel -->
 
 ### noUiToRenderContinue
 
