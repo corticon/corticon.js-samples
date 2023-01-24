@@ -69,7 +69,6 @@ For all steps in which something is being presented to the user (versus just a c
 
 <p align="center">  <img src="../assets/createContainer.png" />
 
-![Alt text]()
 #### *UIControl (UI.containers.uiControls)*
 Each UI control element has multiple attributes. The most important one is the `type` attribute as it allows the client-side component to know what kind of control to render and which necessary attributes to access based on the type. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
