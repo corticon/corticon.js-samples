@@ -43,8 +43,8 @@ Each of the vocabulary entities (`UI`, `UIControl`, `AutoQuote` etc) represents 
 In any given use case, some of the values specified within the JSON array will only be used occasionally, and the majority of the values are relevant only ephemerally, i.e., it is unnecessary to document in the final policy quote to report that at the first stage in the application, we presented to the user each of these 50 states—we just need the actual value that was selected.
 
 
-### Vocabulary Elements for Form Definition
-#### `UI`
+## Vocabulary Elements for Form Definition
+### `UI`
 The entity UI is the ‘parent’ entity, returned at index 0, which will guide things like where we are in the form, when the form is complete, and where to store the accrued data. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
 |**Attribute name**|**Acceptable Values**|**Description**|
@@ -56,7 +56,7 @@ The entity UI is the ‘parent’ entity, returned at index 0, which will guide 
 |**currentStageNumber**|Integer|<p>When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting `UI.currentStageNumber` to `UI.nextStageNumber` in the input payload of the decision service.</p><p></p><p>![](../assets/currentStageNumber.png)</p><p></p>|
 |**language**||On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules|
 
-#### *Container (UI.containers)*
+### *Container (UI.containers)*
 For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the `UI.containers` element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
 
 
@@ -69,7 +69,7 @@ For all steps in which something is being presented to the user (versus just a c
 
 ![Alt text](../assets/createContainer.png)
 
-#### *UIControl (UI.containers.uiControls)*
+### *UIControl (UI.containers.uiControls)*
 Each UI control element has multiple attributes. The most important one is the `type` attribute as it allows the client-side component to know what kind of control to render and which necessary attributes to access based on the type. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
 
@@ -116,7 +116,7 @@ If the JSON data has different keys, such as shown below, the client renderer mu
  <p align="center">  <img src="https://cdn.jsdelivr.net/gh/corticon/documentation@latest/docs/assets/unformattedJsonEnd.png" />
 </p>
 
-#### *DataSourceOptions (UI.containers.uiControls.dataSourceOptions)*
+### *DataSourceOptions (UI.containers.uiControls.dataSourceOptions)*
 
 
 |**Attribute name**|Description|
@@ -128,7 +128,7 @@ If the JSON data has different keys, such as shown below, the client renderer mu
 
 When the rule modeler is defining the list of dropdown options, they can do so with the Option entity.
 
-#### *Option (UI.containers.uiControls.option)*
+### *Option (UI.containers.uiControls.option)*
 
 
 |**Attribute name**|**Description**|
