@@ -15,7 +15,7 @@ There are four main steps of building rules in Corticon Studio, culminating in t
 
 # Rule Vocabulary
 
-<img align="right" width="300"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png"
+<img align="right" width="600"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png"
  title="Rule Vocabulary">
 
 Typically, a client side component is written and maintained by a developer  while the form's rule-driven logic is written by business analysts who  best understand the subject domain of the form.
@@ -24,9 +24,9 @@ The communication between the rule author and front end developer, as well as be
 
 Corticon business rules are authored in **Corticon.js Studio**, with the backbone of the rules we create being the *Rule Vocabulary*. This will serve as the data model to capture both the  that will define aspects of:
 
-- The user interface (UI), such as which questions to pose to the end user at what stage in the form being filled, and what type of input should be allowed for these questions
+  - The user interface (UI), such as which questions to pose to the end user at what stage in the form being filled, and what type of input should be allowed for these questions
 
-- The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
+  - The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
 
 # Authoring the Rules
 
@@ -34,9 +34,7 @@ Corticon provides domain experts with the tools to define the parts of software 
 
 Logic is authored and tested in Corticon Studio through Rule Modeling in a spreadsheet decision-table interface called *Rulesheets*.  A rule is like an ‘if-then’ statement. Each rule consists of one or more conditions (if) that are associated with one or more actions (then).
 
-<p>
-  <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet  overview" >
-</p>
+<img align="right" width="900"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet overview" >
 
 ## Logical Integrity Checks
 
@@ -67,7 +65,6 @@ From here, you can continue adding more rules to the rulesheet, or more commonly
 
 As more rulesheets are added to our Ruleflow, Ruletests can be run against entire Ruleflows, instead of testing only the Rulesheets as they are developed. This enables you to test not only the rules as they are defined in the Rulesheet, but also how the Ruleflow works, and how the rules behave as part of the Ruleflow. This way, problems can be detected and fixed earlier in the lifecycle.
 
-<p align="center">
-  <img  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/ruleflowBreakdown.png" title="ruleflow overview">
-</p>
+<img align="right" width="900"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/ruleflowBreakdown.png" title="ruleflow overview">
+
 
