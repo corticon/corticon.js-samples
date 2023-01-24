@@ -15,8 +15,8 @@ There are four main steps of building rules in Corticon Studio, culminating in t
 
 # Rule Vocabulary
 
-<img align="right" width="600"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples@latest/DynamicForms/docs/images/JS%20vocabulary.png"
- title="Rule Vocabulary">
+![Rule Vocabulary](../assets/JS%20vocabulary.png)
+
 
 Typically, a client side component is written and maintained by a developer  while the form's rule-driven logic is written by business analysts who  best understand the subject domain of the form.
 
@@ -34,7 +34,8 @@ Corticon provides domain experts with the tools to define the parts of software 
 
 Logic is authored and tested in Corticon Studio through Rule Modeling in a spreadsheet decision-table interface called *Rulesheets*.  A rule is like an ‘if-then’ statement. Each rule consists of one or more conditions (if) that are associated with one or more actions (then).
 
-<img align="right" width="900"  src="https://cdn.jsdelivr.net/gh/corticon/corticon.js-samples/DynamicForms/docs/images/rulesheet%20overview.png" title="rulesheet overview" >
+![rulesheet overview](../assets/rulesheet%20overview.png)
+
 
 ## Logical Integrity Checks
 
