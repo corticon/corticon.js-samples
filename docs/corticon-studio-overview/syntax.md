@@ -135,9 +135,8 @@ When the rule modeler is defining the list of dropdown options, they can do so w
 |**Attribute name**|**Description**|
 | :-: | :-: |
 |**displayName**|<p>The displayed option within a multiple-choice dropdown. When selected, it is stored as the corresponding value under the attribute assigned `UIControl.fieldName`</p><p></p>|
-|**value**|The value stored in the `pathToData.fieldName` when user selects corresponding `displayName`. |
+|**value**|<p>The value stored in the `pathToData.fieldName` when user selects corresponding `displayName`.</p><p></p><p>![](../assets/manualOptions.png)</p><p></p>|
 
-![](../assets/manualOptions.png)
 
  # Unique Considerations when Building Rules for Dynamic Forms Rules
 
