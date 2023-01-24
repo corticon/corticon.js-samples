@@ -65,8 +65,8 @@ For all steps in which something is being presented to the user (versus just a c
 | :-: | :-: | :-: |
 |**validationMsg**|Alphanumeric string|Creates a container wide validation message|
 |**description**|Alphanumeric string|An optional string that doesn't impact behavior of the form. It is mostly useful for troubleshooting.|
-|**id\***|Any unique alphanumeric string|Required if any container is being rendered.|
-|**title\***|Alphanumeric string|h3 header on Container|
+|**id**|Any unique alphanumeric string|Required if any container is being rendered.|
+|**title**|Alphanumeric string|h3 header on Container|
 
 ![Alt text](../assets/createContainer.png)
 
