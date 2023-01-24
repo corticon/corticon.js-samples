@@ -182,11 +182,11 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 <!-- tabs:start -->
 
-    #### Rule Definition
+    #### **Rule Definition**
 
     ![](../assets/file-upload-expense.png)
 
-    #### Rendered Rules
+    #### **Rendered Rules**
 
     ![](../assets/file_upload_rendered.png)
 
