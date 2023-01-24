@@ -108,13 +108,12 @@ Each UI control element has multiple attributes. The most important one is the `
 |**sortOptions**|'A to Z', 'Z to A'|Optionally instruct the rendering component how to sort the list of options applied to this UI Control|
 
 When using the MultipleChoices UI Control, the actual choices can be populated from a JSON endpoint or be specified by the rule modeler. For the first option, the rule modeler must specify a URL on the field `UIControl.dataSource`. The default client renderer will look for the options at that endpoint under the `value` and `displayName` field. So if the endpoint looks like this, then you’re good to go:
-<p align="center">  <img src="https://cdn.jsdelivr.net/gh/corticon/documentation@latest/docs/assets/formattedJSON.png" />
-</p>
+![Alt text](../assets/formattedJSON.png)
+
 
 If the JSON data has different keys, such as shown below, the client renderer must be told which field is going to serve as the `value` field and which as the `displayName` field—these can be, and often are, the same. These are specified with the `DataSourceOptions` entity.
 
- <p align="center">  <img src="https://cdn.jsdelivr.net/gh/corticon/documentation@latest/docs/assets/unformattedJsonEnd.png" />
-</p>
+![Alt text](../assets/unformattedJsonEnd.png)
 
 ### *DataSourceOptions (UI.containers.uiControls.dataSourceOptions)*
 
