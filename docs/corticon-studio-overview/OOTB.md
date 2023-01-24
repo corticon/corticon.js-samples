@@ -13,8 +13,10 @@ The entity UI is the ‘parent’ entity, returned at index 0, which will guide 
 _Any alphanumeric string will be accepted, but in order to use user-selected responses to dynamically change form behavior in future steps, this should be set to an entity in the vocabulary that will accrue the data_
 
 We define which data we want to store by specifying in the initial stage of the rules which vocabulary entity should ‘store’ the data accrued throughout the form. This is specified with UI.pathToData in an initial stage, in this case, it will be the AutoQuote entity. The pathToData entity will be at index 1 in the JSON. The stored data can then be passed along to other workflow steps once the form is complete, or used to define a conditional rule at a later stage in the form.
+
 <!-- div:right-panel -->
 ![Alt text](../assets/pathToData.PNG)
+
 <!-- div:left-panel -->
 ## noUiToRenderContinue
 
