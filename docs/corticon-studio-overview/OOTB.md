@@ -165,7 +165,7 @@ The specific type of UI Control. In the out of the box test driver, the followin
     Multi-lines text input
 - _type = ‘SingleChoice’_
     Renders as a checkbox with value stored as T/F
-    
+
 <!-- tabs:start -->
 
 ### **Rule Definition**
