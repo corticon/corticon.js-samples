@@ -95,7 +95,6 @@ On start, the rendered can accept the language from the UI but a decision servic
 <!-- div:title-panel -->
 
 ## Container (UI.containers)
-
 <!-- div:left-panel -->
 
 For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
@@ -103,7 +102,6 @@ For all steps in which something is being presented to the user (versus just a c
 <!-- div:title-panel -->
 
 ### validationMsg
-
 <!-- div:left-panel -->
 
 _Alphanumeric string_
@@ -113,7 +111,6 @@ Creates a container wide validation message
 <!-- div:title-panel -->
 
 ### description
-
 <!-- div:left-panel -->
 
 _Alphanumeric string_
@@ -143,7 +140,6 @@ h3 header on Container
 <!-- div:right-panel -->
 
 ![Alt text](../assets/createContainer.png)
-
 
 ---
 
