@@ -27,14 +27,15 @@ We define which data we want to store by specifying in the initial stage of the 
 
 <!-- div:left-panel -->
 
-
 _T/F_
 
 Set to ‘T’ for any stages where no UI needs to be rendered, but some action (a decision/calculation/augmentation of separate rulesheet) needs to be executed. Does not need to be set to ‘F’ when this is not the case.
+
 <!-- div:right-panel -->
 
 ![Alt text](../assets/noUItoRender.png)
-<!-- div:left-panel -->
+
+<!-- div:title-panel -->
 
 ### done
 
@@ -44,6 +45,8 @@ Upon receiving a done instruction from the decision service (a notification of t
 
 ![Alt text](../assets/UIdone.png)
 
+<!-- div:title-panel -->
+
 ### nextStageNumber
 
 _Integer_
@@ -52,6 +55,8 @@ The decision service sets the attribute UI.nextStageNumber to specify the next s
 
 ![Alt text](../assets/nextStageNumber.png)
 
+<!-- div:title-panel -->
+
 ### currentStageNumber
 
 _Integer_
@@ -59,6 +64,8 @@ _Integer_
 When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to UI.nextStageNumber in the input payload of the decision service.
 
 ![](../assets/currentStageNumber.png)
+
+<!-- div:title-panel -->
 
 ###  Language
 
@@ -69,31 +76,49 @@ On start, the rendered can accept the language from the UI but a decision servic
 ---
 <!-- div:title-panel -->
 
+<!-- div:title-panel -->
+
 ## Container (UI.containers)
 
 <!-- div:left-panel -->
 
 For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
 
+<!-- div:title-panel -->
+
 ### validationMsg
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
 Creates a container wide validation message
 
+<!-- div:title-panel -->
+
 ### description
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
 An optional string that doesn’t impact behavior of the form. It is mostly useful for troubleshooting.
 
+<!-- div:title-panel -->
+
 ### id
+
+<!-- div:left-panel -->
 
 _Any unique alphanumeric string_
 
 Required if any container is being rendered.
 
+<!-- div:title-panel -->
+
 ### title
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
@@ -103,6 +128,7 @@ h3 header on Container
 
 
 ---
+
 <!-- div:title-panel -->
 
 ## UIControl (UI.containers.uiControls)
@@ -111,7 +137,11 @@ h3 header on Container
 
 Each UI control element has multiple attributes. The most important one is the type attribute as it allows the client-side component to know what kind of control to render and which necessary attributes to access based on the type. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
+<!-- div:title-panel -->
+
 ### type
+
+<!-- div:left-panel -->
 
 The specific type of UI Control. In the out of the box test driver, the following UI Controls / specifications are defined:
 
@@ -163,19 +193,31 @@ List of financial line items. It contain 3 primitive UI elements: an expense typ
 
 Similar to MultipleChoices, but allows for multiple selected options
 
+<!-- div:title-panel -->
+
 ### fieldName
+
+<!-- div:left-panel -->
 
 _fieldName = entity\_assigned\_as\_pathToData.attribute_
 
 The UI control specifies where to store the data in the field UIControl.fieldName. For example, if we want to store the value of a person’s date of birth in a field called dob, within a JSON object called Person, we would first need to set (either in this stage or a preceding one) the UI.pathToData = 'Person' and then we could define the UI Control’s fieldName to be ‘dob’. This would hold the value selected for the dob in the JSON object as follows: "Person" : { "dob" : "MM/DD/YYYY" }
 
+<!-- div:title-panel -->
+
 ### id
+
+<!-- div:left-panel -->
 
 _Any unique alphanumeric string_
 
 Unique identifier (within the context of one container) for the UI control.
 
+<!-- div:title-panel -->
+
 ### dataSource
+
+<!-- div:left-panel -->
 
 _URL pointing to JSON formatted data_
 
@@ -183,13 +225,21 @@ Specifies the datasource to populate MultipleChoices dropdown options from. Valu
 
 ![](../assets/datasource.png)
 
+<!-- div:title-panel -->
+
 ### max
+
+<!-- div:left-panel -->
 
 _Integer_
 
 Optionally give the rendering component for this UI Control a numeric maximum
 
+<!-- div:title-panel -->
+
 ### min
+
+<!-- div:left-panel -->
 
 _Integer_
 
@@ -197,13 +247,21 @@ Optionally give the rendering component for this UI Control a minimum numeric va
 
 ![](../assets/min.png)
 
+<!-- div:title-panel -->
+
 ### minDT
+
+<!-- div:left-panel -->
 
 _Date_
 
 Optionally give the rendering component for this UI Control a minimum date value end user can enter
 
+<!-- div:title-panel -->
+
 ### maxDT
+
+<!-- div:left-panel -->
 
 _Date_
 
@@ -211,55 +269,91 @@ Optionally give the rendering component for this UI Control a maximum date value
 
 [](../assets/maxDt.png)
 
+<!-- div:title-panel -->
+
 ###  defaultValue
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
 Optionally give the rendering component for this UI Control a placeholder default value
 
+<!-- div:title-panel -->
+
 ### multiple
+
+<!-- div:left-panel -->
 
 _T/F_
 
 When there could be any number of responses to a prompt, set this to true. The answers are stored in an array pointed as specified by fieldName attribute.
 
+<!-- div:title-panel -->
+
 ### tooltip
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
 Optionally give the rendering component for this UI Control a tooltip to assist end user
 
+<!-- div:title-panel -->
+
 ### label
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
 Content of the prompt provided by the UI Control
 
+<!-- div:title-panel -->
+
 ### rows
+
+<!-- div:left-panel -->
 
 _integer_
 
 HTML textarea rows attribute
 
+<!-- div:title-panel -->
+
 ### required
+
+<!-- div:left-panel -->
 
 _T/F_
 
 Whether the user filling out the form is required to respond to this prompt
 
+<!-- div:title-panel -->
+
 ### validationErrorMsg
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
 Creates validation message for individual UI Control
 
+<!-- div:title-panel -->
+
 ### cols
+
+<!-- div:left-panel -->
 
 _integer_
 
 HTML textarea cols attribute
 
+<!-- div:title-panel -->
+
 ### value
+
+<!-- div:left-panel -->
 
 _Alphanumeric string_
 
@@ -267,13 +361,21 @@ The content of a ReadOnlyText UI Control
 
 ![Alt text](../assets/readOnlyText.png)
 
+<!-- div:title-panel -->
+
 ###  labelPosition
+
+<!-- div:left-panel -->
 
 _‘Above’, ‘Side’_
 
 Optionally instruct the rendering component where to place the label for this UI Control
 
+<!-- div:title-panel -->
+
 ### sortOptions
+
+<!-- div:left-panel -->
 
 _‘A to Z’, ‘Z to A’_
 
@@ -294,21 +396,32 @@ If the JSON data has different keys, such as shown below, the client renderer mu
 
 ## DataSourceOptions (UI.containers.uiControls.dataSourceOptions)
 
-<!-- div:left-panel -->
+
+<!-- div:title-panel -->
 
 ### dataTextField
+
+<!-- div:left-panel -->
 
 Optionally define the key name to use as the display name for this option from dropdown, if its name isn’t displayName. Oftentimes this will be the same as the dataValueField field.
 
 ![Alt text](../assets/dataTextField.png)
 
+<!-- div:title-panel -->
+
 ### dataValueField
+
+<!-- div:left-panel -->
 
 Optionally define the name of the key whose value should be stored should end user select this option from dropdown, if its name isn’t value. Oftentimes this will be the same as the dataTextField field.
 
 ![](../assets/dataValueField.png)
 
+<!-- div:title-panel -->
+
 ### pathToOptionsArray
+
+<!-- div:left-panel -->
 
 Optionally define where in a JSON endpoint is the array of options to populate a dropdown list with
 
@@ -321,13 +434,19 @@ When the rule modeler is defining the list of dropdown options, they can do so w
 
 ## Option (UI.containers.uiControls.option)
 
-<!-- div:left-panel -->
+<!-- div:title-panel -->
 
 ### displayName
 
+<!-- div:left-panel -->
+
 The displayed option within a multiple-choice dropdown. When selected, it is stored as the corresponding value under the attribute assigned UIControl.fieldName
 
+<!-- div:title-panel -->
+
 ### value
+
+<!-- div:left-panel -->
 
 The value stored in the pathToData.fieldName when user selects corresponding displayName.
 
