@@ -1,6 +1,6 @@
 
 - **Authoring Form Behavior Rules**
-  - [Corticon.js Studio Overview](README.md)
+  - [Corticon.js Studio Overview](corticon-studio-overview/README.md)
   - [Environment Setup](corticon-studio-overview/get-set-up.md)
   - [Rule Syntax](corticon-studio-overview/syntax.md)
   
