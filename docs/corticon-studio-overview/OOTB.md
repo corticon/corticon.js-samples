@@ -201,11 +201,11 @@ A control to render a file upload control.
 
 <!-- tabs:start -->
 
-### **Rule Definition**
+#### Rule Definition
 
 ![](../assets/file-upload-expense.png)
 
-### **Rendered Rules**
+#### Rendered Rules
 
 ![](../assets/file_upload_rendered.png)
 
