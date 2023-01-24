@@ -45,7 +45,7 @@ In any given use case, some of the values specified within the JSON array will o
 
 
 ## Vocabulary Elements for Form Definition
-### **UI*
+### *UI*
 The entity UI is the ‘parent’ entity, returned at index 0, which will guide things like where we are in the form, when the form is complete, and where to store the accrued data. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
 |**Attribute name**|**Acceptable Values**|**Description**|
