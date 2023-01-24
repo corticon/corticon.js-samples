@@ -162,6 +162,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 - _type = ‘Text’_
     Single line text field input
 
+<!-- div:right-panel -->
+
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -179,6 +181,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 - _type = ‘TextArea’_
     Multi-lines text input
 
+<!-- div:right-panel -->
+
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -195,7 +199,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘SingleChoice’_
     Renders as a checkbox with value stored as T/F
-
+    
+<!-- div:right-panel -->
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -212,7 +217,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘MultipleChoices’_
     Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
-
+    
+<!-- div:right-panel -->
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -229,7 +235,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘Number’_
     Single number input
-
+    
+<!-- div:right-panel -->
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -246,7 +253,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘DateTime’_
     Date picker
-
+    
+<!-- div:right-panel -->
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -263,9 +271,11 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘ReadOnlyText’_
     A control to render HTML text
+
 - _type = ‘YesNo’_
     Dropdown of Yes or No, stored as Yes or No
-
+    
+<!-- div:right-panel -->
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -282,7 +292,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘YesNoBoolean’_
     Dropdown of Yes or No, stored as T or F
-
+    
+<!-- div:right-panel -->
 <!-- tabs:start -->
 
 ### **Rule Definition**
@@ -299,7 +310,8 @@ The specific type of UI Control. In the out of the box test driver, the followin
 
 - _type = ‘FileUpload’_
     A control to render a file upload control.
-
+    
+<!-- div:right-panel -->
 <!-- tabs:start -->
 
 ### **Rule Definition**
