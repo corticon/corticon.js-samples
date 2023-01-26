@@ -24,7 +24,6 @@ We define which data we want to store by specifying in the initial stage of the 
 
 ![Alt text](../assets/pathToData.PNG)
 
-```UI.containers.uiControls += UIControl.new[type='ReadOnlyText', id='crtl0_1', value='Thank you for considering us to protect you and your vehicle.']```
 
 <!-- div:title-panel -->
 
@@ -274,8 +273,12 @@ The specific type of UI Control. In the out of the box test driver, the followin
 - _type = ‘ReadOnlyText’_
     A control to render HTML text
 
+```UI.containers.uiControls += UIControl.new[type='ReadOnlyText', id='crtl0_1', value='Thank you for considering us to protect you and your vehicle.']```
+
+
 - _type = ‘YesNo’_
     Dropdown of Yes or No, stored as Yes or No
+    
     
 <!-- div:right-panel -->
 <!-- tabs:start -->
