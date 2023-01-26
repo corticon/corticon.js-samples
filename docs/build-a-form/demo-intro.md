@@ -1,8 +1,5 @@
-# Use Cases for Corticon.js Dynamic Forms
 
-Implementing the complexities of a dynamic form's user interface often involves a  level of complexity comparable to that of a traditional decision automation use case (e.g. eligibility determination, claims handling, loan origination...). With Corticon.js, we can define this logic using the same declarative, rules-driven paradigm that enables traditional decision automation.
-
----
+# Car Insurance Quote Rules
 
 ## Introduction
 
@@ -15,8 +12,6 @@ To illustrate, we'll consider a scenario where an insurance company is building 
 
 In this section, we’ll explore one implementation possibility for handling the form that will produce a quote.  
 
-# Car Insurance Quote Rules
-
 
 - First, the app must prompt the applicant to enter the number of drivers on the policy, number of vehicles on the policy, and their state of residents. Each of these values need to be stored, as their respective responses will elicit different form paths.
 - The form will gather information for each driver, only asking questions based upon questions that are [legally allowable](https://www.thezebra.com/resources/research/car-insurance-rating-factors-by-state/) in that state.
@@ -25,7 +20,7 @@ In this section, we’ll explore one implementation possibility for handling the
 - Based upon the selected model, only the model years that actually exist will be presented to the end user to select in a dropdown, by similarly filtering by model at [this](https://api.npoint.io/6164bb04bfc421a11a74) REST endpoint.
 - Using the accrued data about the drivers, vehicles, and allowable risk factor considerations, a policy is created with various endorsements and discounts.
   
-# Building the Data Model
+## Building the Data Model
 We can use Corticon.js Studio to model business rules to define both the dynamic form’s behavior and the eligibility/qualification rules. First, we define a unified data model—the Rule Vocabulary—that captures:
 
 - The underwriters’ mental model of necessary data points for evaluating the applicant
@@ -37,14 +32,14 @@ When working with this model in Corticon.js Studio, it is referred to as a Rule 
 | :-: | :-: | 
 |![](../assets/quoteVocab.png) | ![](../assets/formVocab.png) |
 
-# The Rule Vocabulary
+## The Rule Vocabulary
 
 Each of the vocabulary entities (`UI`, `UIControl`, `AutoQuote` etc) represents part of a JSON array that will be passed between the form’s presentation layer and the embedded Corticon.js decision service (a JavaScript bundle which will always be generated with the name decisionServiceBundle.js). Each attribute underlying the entities (`AutoQuote.state`, `Driver.credit_score`, etc) represents a key/value pair.
 
 In any given use case, some of the values specified within the JSON array will only be used occasionally, and the majority of the values are relevant only ephemerally, i.e., it is unnecessary to document in the final policy quote to report that at the first stage in the application, we presented to the user each of these 50 states—we just need the actual value that was selected.
 
 
- # Unique Considerations when Building Rules for Dynamic Forms Rules
+## Unique Considerations when Building Rules for Dynamic Forms Rules
 
 In a typical decision automation use case, rulesheets and ruleflows are 'connected' from one to another when constructing the top level ruleflow. Connections are the objects that connect or “stitch” assets and objects together to control their sequence of execution.
 
