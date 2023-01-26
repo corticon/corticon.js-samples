@@ -507,6 +507,10 @@ The content of a ReadOnlyText UI Control
 
 ![Alt text](../assets/readOnlyText.png)
 
+<button class="btn" data-clipboard-text="UI.containers.uiControls += UIControl.new[type='ReadOnlyText', id='crtl0_1', value='Thank you for considering us to protect you and your vehicle.']">
+    Copy above syntax to clipboard
+</button>
+
 <!-- div:title-panel -->
 
 ###  labelPosition
