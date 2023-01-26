@@ -274,14 +274,10 @@ The specific type of UI Control. In the out of the box test driver, the followin
     A control to render HTML text
 
 <details>
-  <summary>ReadOnlyText</summary>
-
+  <summary>Example Usage</summary>
 ```
-  <body>
 UI.containers.uiControls += UIControl.new[type='ReadOnlyText', id='crtl0_1', value='Thank you for considering us to protect you and your vehicle
-  </body>
 ```
-
 </details>
 
 
