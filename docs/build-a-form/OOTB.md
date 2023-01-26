@@ -273,7 +273,16 @@ The specific type of UI Control. In the out of the box test driver, the followin
 - _type = ‘ReadOnlyText’_
     A control to render HTML text
 
-```UI.containers.uiControls += UIControl.new[type='ReadOnlyText', id='crtl0_1', value='Thank you for considering us to protect you and your vehicle.']```
+<details>
+  <summary>ReadOnlyText</summary>
+
+```
+  <body>
+UI.containers.uiControls += UIControl.new[type='ReadOnlyText', id='crtl0_1', value='Thank you for considering us to protect you and your vehicle
+  </body>
+```
+
+</details>
 
 
 - _type = ‘YesNo’_
