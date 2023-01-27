@@ -288,7 +288,20 @@ UI.done
 
    - Description:  A control to render HTML text
 
+<!-- div:right-panel -->
+<!-- tabs:start -->
 
+### **Rule Definition**
+
+![Alt text](../assets/readOnlyText.png)
+
+### **Rendered Rules**
+
+![Alt text](../assets/readOnlyText_render.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
 
 - `type = ‘YesNo’`
 
