@@ -201,26 +201,6 @@ UI.done
 
 ![](../assets/text_area_rendered.png)
 
-
-<button onclick="setClipboard('textAreaCrtl.label
-textAreaCrtl.labelPosition
-textAreaCrtl.cols
-textAreaCrtl.rows
-textAreaCrtl.min
-textAreaCrtl.max
-
-UI.nextStageNumber
-UI.currentStageDescription = 'This is implemented in Step7.ers'#CopyRowTableDelimiter
-'Enter your comments'		
-'Above'		
-80		
-3		
-5		
-20		
-		
-8		
-X		')">Copy</button>
-
 <!-- tabs:end -->
 
 <!-- div:left-panel -->
