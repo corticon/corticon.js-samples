@@ -352,9 +352,37 @@ UI.done
 
    - Description:  List of financial line items. It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector.
 
+<!-- div:right-panel -->
+<!-- tabs:start -->
+
+### **Rule Definition**
+![](../assets/multiexpense%20rule.png)
+
+### **Rendered Rules**
+![Alt text](../assets/multiexpense%20rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
+
 - `type = ‘MultipleChoicesMultiSelect’`
 
     - Description: Similar to MultipleChoices, but allows for multiple selected options
+
+<!-- div:right-panel -->
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+![Alt text](../assets/MultipleChoicesMultiSelect_rule.png)
+
+### **Rendered Rules**
+
+![Alt text](../assets/MultipleChoicesMultiSelect_rendered.png)
+
+<!-- tabs:end -->
+
+<!-- div:left-panel -->
 
 <!-- div:title-panel -->
 
@@ -379,6 +407,7 @@ UI.done
 - Data Type: _Any unique alphanumeric string_
 
 - Description: Unique identifier (within the context of one container) for the UI control.
+- Example: `UI.containers.uiControls += UIControl.new [id = 'dietary_restrictions', type = 'MultipleChoices', label =  'Do you have any dietary restrictions?', fieldName = 'has_dietary_restrictions']`
 
 <!-- div:title-panel -->
 
