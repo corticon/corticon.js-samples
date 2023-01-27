@@ -202,23 +202,25 @@ UI.done
 ![](../assets/text_area_rendered.png)
 
 
-```hover mouse to copy
-UI.pathToData
-```
-```
-ACTION ROWS	COLUMN 0
-UI.containers.uiControls += UIControl.new[type='TextArea', id='crtl7_1', fieldName='Step7Field1']	X
-	
-textAreaCrtl.label	'Enter your comments'
-textAreaCrtl.labelPosition	'Above'
-textAreaCrtl.cols	80
-textAreaCrtl.rows	3
-textAreaCrtl.min	5
-textAreaCrtl.max	20
-	
-UI.nextStageNumber	8
-UI.currentStageDescription = 'This is implemented in Step7.ers'	X
-```
+<button onclick="setClipboard('textAreaCrtl.label
+textAreaCrtl.labelPosition
+textAreaCrtl.cols
+textAreaCrtl.rows
+textAreaCrtl.min
+textAreaCrtl.max
+
+UI.nextStageNumber
+UI.currentStageDescription = 'This is implemented in Step7.ers'#CopyRowTableDelimiter
+'Enter your comments'		
+'Above'		
+80		
+3		
+5		
+20		
+		
+8		
+X		')">Copy</button>
+
 <!-- tabs:end -->
 
 <!-- div:left-panel -->
