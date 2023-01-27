@@ -24,9 +24,6 @@
 
 ![Code](../assets/pathToData.PNG)
 
-```hover mouse to copy
-UI.pathToData
-```
 
 <!-- div:title-panel -->
 
@@ -204,6 +201,24 @@ UI.done
 
 ![](../assets/text_area_rendered.png)
 
+
+```hover mouse to copy
+UI.pathToData
+```
+```
+ACTION ROWS	COLUMN 0
+UI.containers.uiControls += UIControl.new[type='TextArea', id='crtl7_1', fieldName='Step7Field1']	X
+	
+textAreaCrtl.label	'Enter your comments'
+textAreaCrtl.labelPosition	'Above'
+textAreaCrtl.cols	80
+textAreaCrtl.rows	3
+textAreaCrtl.min	5
+textAreaCrtl.max	20
+	
+UI.nextStageNumber	8
+UI.currentStageDescription = 'This is implemented in Step7.ers'	X
+```
 <!-- tabs:end -->
 
 <!-- div:left-panel -->
@@ -382,6 +397,8 @@ UI.done
 
     - Description: Similar to MultipleChoices, but allows for multiple selected options
 
+
+
 <!-- div:right-panel -->
 <!-- tabs:start -->
 
@@ -389,9 +406,22 @@ UI.done
 
 ![Alt text](../assets/MultipleChoicesMultiSelect_rule.png)
 
+<details>
+```UI.containers.uiControls += UIControl.new[type='MultiExpenses', label='Enter all the expenses', id='crtl8_1', fieldName='Step8Field1']
+UI.containers.uiControls.option += Option.new[value='hotelCode', displayName='Hotel']
+UI.containers.uiControls.option += Option.new[value='carRentalCode', displayName='Car Rental']
+UI.containers.uiControls.option += Option.new[value='airfareCode', displayName='Airfare']
+
+UI.nextStageNumber
+UI.currentStageDescription = 'This is implemented in Step8.ers'
+
+```
+</details>
 ### **Rendered Rules**
 
 ![Alt text](../assets/MultipleChoicesMultiSelect_rendered.png)
+
+
 
 <!-- tabs:end -->
 
