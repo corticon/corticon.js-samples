@@ -671,16 +671,24 @@ Description: Optionally define the name of the key whose value should be stored 
 Description: Optionally define where in a JSON endpoint is the array of options to populate a dropdown list with
 
 <!-- div:right-panel -->
+<!-- tabs:start -->
 
+### **Rule Definition**
 ![](../assets/pathToOptionsArray.png)
 
-Description: When the rule modeler is defining the list of dropdown options, they can do so with the `Option` entity.
+### **Copy this rule**
+```
+data.pathToOptionsArray='$.[?(@.brand== \'' + AutoQuote.vehicle_make + '\' )]'
+```
+<!-- tabs:end -->
 
----
 <!-- div:title-panel -->
 
 ## Option 
 `UI.containers.uiControls.option`
+
+Description: When the rule modeler is defining the list of dropdown options, they can do so with the `Option` entity.
+
 <!-- div:title-panel -->
 
 ### displayName
