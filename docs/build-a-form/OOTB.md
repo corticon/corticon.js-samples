@@ -377,19 +377,23 @@ Description: The specific type of UI Control. In the out of the box test driver,
 
 ![Alt text](../assets/MultipleChoicesMultiSelect_rule.png)
 
-<details>
-```UI.containers.uiControls += UIControl.new[type='MultiExpenses', label='Enter all the expenses', id='crtl8_1', fieldName='Step8Field1']
+
+
+### **Rendered Rules**
+
+![Alt text](../assets/MultipleChoicesMultiSelect_rendered.png)
+
+### **Copy these rules**
+```hover mouse to copy
+UI.containers.uiControls += UIControl.new[type='MultiExpenses', label='Enter all the expenses', id='crtl8_1', fieldName='Step8Field1']
 UI.containers.uiControls.option += Option.new[value='hotelCode', displayName='Hotel']
 UI.containers.uiControls.option += Option.new[value='carRentalCode', displayName='Car Rental']
 UI.containers.uiControls.option += Option.new[value='airfareCode', displayName='Airfare']
 
 UI.nextStageNumber
-UI.currentStageDescription = 'This is implemented in Step8.ers'```
-</details>
+UI.currentStageDescription = 'This is implemented in Step8.ers' 
 
-### **Rendered Rules**
-
-![Alt text](../assets/MultipleChoicesMultiSelect_rendered.png)
+```
 
 <!-- tabs:end -->
 
