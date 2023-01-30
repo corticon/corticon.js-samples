@@ -6,8 +6,8 @@
   - [RuleTests](build-a-form/testing.md)
   - [RuleFlows](build-a-form/flows.md)
 - [Environment Setup](build-a-form/get-set-up.md)
-- [Demo Scenario](build-a-form/demo-intro.md)
 - [Form Behavior Schema](build-a-form/OOTB.md)
+- [Example Scenario](build-a-form/demo-intro.md)
   
 ---
 
