@@ -8,7 +8,7 @@
 
 <!-- div:left-panel -->
 
-- Description: The entity UI is the ‘parent’ entity, returned at index 0, which will guide things like where we are in the form, when the form is complete, and where to store the accrued data. See table below for full scope of available out of the box options. Items with an asterisk are required.
+Description: The entity UI is the ‘parent’ entity, returned at index 0, which will guide things like where we are in the form, when the form is complete, and where to store the accrued data. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
 <!-- div:title-panel -->
 
@@ -18,7 +18,7 @@
 
 Data Type: _Any alphanumeric string will be accepted, but in order to use user-selected responses to dynamically change form behavior in future steps, this should be set to an entity in the vocabulary that will accrue the data_
   
-- Description: We define which data we want to store by specifying in the initial stage of the rules which vocabulary entity should ‘store’ the data accrued throughout the form. This is specified with `UI.pathToData` in an initial stage, in this case, it will be the `AutoQuote` entity. The `pathToData` entity will be at index 1 in the JSON. The stored data can then be passed along to other workflow steps once the form is complete, or used to define a conditional rule at a later stage in the form.
+Description: We define which data we want to store by specifying in the initial stage of the rules which vocabulary entity should ‘store’ the data accrued throughout the form. This is specified with `UI.pathToData` in an initial stage, in this case, it will be the `AutoQuote` entity. The `pathToData` entity will be at index 1 in the JSON. The stored data can then be passed along to other workflow steps once the form is complete, or used to define a conditional rule at a later stage in the form.
 
 <!-- div:right-panel -->
 
@@ -34,11 +34,11 @@ Data Type: _Any alphanumeric string will be accepted, but in order to use user-s
 Data Type: _T/F_
 
 
-- Description: Set to ‘T’ for any stages where no UI needs to be rendered, but some action (a decision/calculation/augmentation of separate rulesheet) needs to be executed. Does not need to be set to ‘F’ when this is not the case.
+Description: Set to ‘T’ for any stages where no UI needs to be rendered, but some action (a decision/calculation/augmentation of separate rulesheet) needs to be executed. Does not need to be set to ‘F’ when this is not the case.
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/noUItoRender.png)
+![](../assets/noUItoRender.png)
 ```hover mouse to copy
 UI.noUItoRender
 ```
@@ -50,12 +50,21 @@ UI.noUItoRender
 
 Data Type: _T/F_
 
-- Description: Upon receiving a done instruction from the decision service (a notification of the end of the flow) via `UI.done=T`, it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow.
+Description: Upon receiving a done instruction from the decision service (a notification of the end of the flow) via `UI.done=T`, it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow.
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/UIdone.png)
-```hover mouse to copy
+<!-- tabs:start -->
+
+### **Rule Definition**
+
+
+### **Rendered Rules**
+![](../assets/UIdone.png)
+
+### **Copy these rules**
+
+```
 UI.done
 ```
 <!-- div:title-panel -->
@@ -63,14 +72,16 @@ UI.done
 ### nextStageNumber
 
 <!-- div:left-panel -->
+
 Data Type: _Integer_
-- Where to specify: **Action** row of rulesheet
-- Description: 
-    The decision service sets the attribute `UI.nextStageNumber` to specify the next step in the flow, unless it is the last stage, in which case this field is left null and done is set to ‘true’
+
+Where to specify: **Action** row of rulesheet
+
+Description: The decision service sets the attribute `UI.nextStageNumber` to specify the next step in the flow, unless it is the last stage, in which case this field is left null and done is set to ‘true’
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/nextStageNumber.png)
+![](../assets/nextStageNumber.png)
 
 <!-- div:title-panel -->
 
@@ -80,7 +91,7 @@ Data Type: _Integer_
 
 Data Type: _Integer_
 
-- Description: When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to `UI.nextStageNumber` in the input payload of the decision service.
+Description: When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to `UI.nextStageNumber` in the input payload of the decision service.
 
 <!-- div:right-panel -->
 
@@ -93,7 +104,7 @@ Data Type: _Integer_
 <!-- div:left-panel -->
 Data Type: _String_
 
-- Description: On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules
+Description: On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules
 
 ---
 
@@ -103,16 +114,17 @@ Data Type: _String_
 `UI.containers`
 <!-- div:left-panel -->
 
-- Description: For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
+Description: For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
 
 <!-- div:title-panel -->
 
 ### validationMsg
+
 <!-- div:left-panel -->
 
 Data Type: _Alphanumeric string_
 
-- Description: Creates a container wide validation message
+Description: Creates a container wide validation message
 
 <!-- div:title-panel -->
 
@@ -121,7 +133,7 @@ Data Type: _Alphanumeric string_
 
 Data Type: _Alphanumeric string_
 
-- Description: An optional string that doesn’t impact behavior of the form. It is mostly useful for troubleshooting.
+Description: An optional string that doesn’t impact behavior of the form. It is mostly useful for troubleshooting.
 
 <!-- div:title-panel -->
 
@@ -131,7 +143,7 @@ Data Type: _Alphanumeric string_
 
 Data Type: _Any unique alphanumeric string_
 
-- Description: Required if any container is being rendered.
+Description: Required if any container is being rendered.
 
 <!-- div:title-panel -->
 
@@ -141,11 +153,11 @@ Data Type: _Any unique alphanumeric string_
 
 Data Type: _Alphanumeric string_
 
-- Description: Renders the h3 header on Container entity
+Description: Renders the h3 header on Container entity
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/createContainer.png)
+![](../assets/createContainer.png)
 
 ---
 
@@ -224,11 +236,11 @@ Description: The specific type of UI Control. In the out of the box test driver,
 
 ### **Rule Definition**
 
-![Alt text](../assets/multiple_choices_rules.png)
+![](../assets/multiple_choices_rules.png)
 
 ### **Rendered Rules**
 
-![Alt text](../assets/multiple_choices_rendered.png)
+![](../assets/multiple_choices_rendered.png)
 
 <!-- tabs:end -->
 
@@ -243,11 +255,11 @@ Description: The specific type of UI Control. In the out of the box test driver,
 
 ### **Rule Definition**
 
-![Alt text](../assets/number_rules.png)
+![](../assets/number_rules.png)
 
 ### **Rendered Rules**
 
-![Alt text](../assets/number_rendered.png)
+![](../assets/number_rendered.png)
 <!-- tabs:end -->
 
 
@@ -280,11 +292,11 @@ Description: The specific type of UI Control. In the out of the box test driver,
 
 ### **Rule Definition**
 
-![Alt text](../assets/readOnlyText.png)
+![](../assets/readOnlyText.png)
 
 ### **Rendered Rules**
 
-![Alt text](../assets/readOnlyText_render.png)
+![](../assets/readOnlyText_render.png)
 <!-- tabs:end -->
 
 <!-- div:left-panel -->
@@ -358,7 +370,7 @@ Description: The specific type of UI Control. In the out of the box test driver,
 ![](../assets/multiexpense%20rule.png)
 
 ### **Rendered Rules**
-![Alt text](../assets/multiexpense%20rendered.png)
+![](../assets/multiexpense%20rendered.png)
 <!-- tabs:end -->
 
 
@@ -375,13 +387,13 @@ Description: The specific type of UI Control. In the out of the box test driver,
 
 ### **Rule Definition**
 
-![Alt text](../assets/MultipleChoicesMultiSelect_rule.png)
+![](../assets/MultipleChoicesMultiSelect_rule.png)
 
 
 
 ### **Rendered Rules**
 
-![Alt text](../assets/MultipleChoicesMultiSelect_rendered.png)
+![](../assets/MultipleChoicesMultiSelect_rendered.png)
 
 ### **Copy these rules**
 ```hover mouse to copy
@@ -581,7 +593,7 @@ Description: The content of a `ReadOnlyText` UI Control
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/readOnlyText.png)
+![](../assets/readOnlyText.png)
 
 <!-- div:title-panel -->
 
@@ -612,7 +624,7 @@ Description: Optionally instruct the rendering component how to sort the list of
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/formattedJSON.png)
+![](../assets/formattedJSON.png)
 
 <!-- div:left-panel -->
 
@@ -620,7 +632,7 @@ Description: Optionally instruct the rendering component how to sort the list of
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/unformattedJsonEnd.png)
+![](../assets/unformattedJsonEnd.png)
 
 
 ---
@@ -636,7 +648,7 @@ Description: Optionally define the key name to use as the display name for this 
 
 <!-- div:right-panel -->
 
-![Alt text](../assets/dataTextField.png)
+![](../assets/dataTextField.png)
 
 <!-- div:title-panel -->
 
