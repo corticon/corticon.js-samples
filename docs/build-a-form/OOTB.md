@@ -58,8 +58,6 @@ Description: Upon receiving a done instruction from the decision service (a noti
 
 ### **Rule Definition**
 
-
-### **Rendered Rules**
 ![](../assets/UIdone.png)
 
 ### **Copy these rules**
@@ -90,6 +88,8 @@ Description: The decision service sets the attribute `UI.nextStageNumber` to spe
 <!-- div:left-panel -->
 
 Data Type: _Integer_
+
+Where to specify: **Filter** panel of rulesheet, in advanced view
 
 Description: When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to `UI.nextStageNumber` in the input payload of the decision service.
 
