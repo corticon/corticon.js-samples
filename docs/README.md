@@ -19,6 +19,6 @@ Corticon.js is the JavaScript runtime variant of Corticon, distinct from deploym
 
 ## Dynamic Forms with Corticon.js
 
-For example, consider a scenario where we want to define a form that determines an end user's income tax based upon their income and demographic characteristics. In the US, taxes are impacted by marital status. 
+For example, consider a car insurance application. Insurers in the United States are regulated at the state level, and states allow different kinds of factors to be weighed as part of the evaluation. A dynamic form for the insurance application can thus be used to only present prompts based upon the insured's state of residence. Depending upon the number of drivers, the number of vehicles, and the types of vehicles, different prompts would need to be presented, and different data elements captured. 
 
-It's made possible by leveraging the fact that the deployable in Corticon.js is a self contained JavaScript bundle, so all rule logic can be built directly into a front end website or app to guide the rendering of the form. 
+This logic can be managed in business rules by leveraging the fact that the deployable in Corticon.js is a self contained JavaScript bundle, so all rule logic can be built directly into a front end website or app to guide the rendering of the form. 
