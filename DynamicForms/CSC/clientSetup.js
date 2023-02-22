@@ -18,8 +18,15 @@ function setDataForCurrentSample(index) {
     inputData = allInputData[index];
     itsQuestionnaireKey = index;
 
-    if ( index === "5" )
+    if ( index === "5" || index === "7" ) {
+        $('#languageSelectId').html('');
+        $('#languageSelectId').append('<option value="english">English</option>');
+        if ( index === "5" )
+            $('#languageSelectId').append('<option value="italian">Italiano</option>');
+        else
+            $('#languageSelectId').append('<option value="french">French</option>');
         $("#languageContainerId").show();
+    }
     else
         $("#languageContainerId").hide();
 }
@@ -68,6 +75,7 @@ function processShowTrace() {
     $("#showTraceId").hide();
     saveStateButton(true);
 }
+
 function processHideTrace() {
     const traceEl = $('.allTracesContainer');
     traceEl.hide();
@@ -75,6 +83,7 @@ function processHideTrace() {
     $("#hideTraceId").hide();
     saveStateButton(false);
 }
+
 function setupInitialInputData() {
     const inDataEmpty = {};
     const inDataCanonical = inDataEmpty;
@@ -82,6 +91,7 @@ function setupInitialInputData() {
     const inDataValidation = inDataEmpty;
     const inJobApplication = inDataEmpty;
     const inMulticontainer = inDataEmpty;
+    const inI18N = inDataEmpty;
 
     const inDataReuseSubflow = {};
     inDataReuseSubflow.reusingSubflows = {};
@@ -99,6 +109,7 @@ function setupInitialInputData() {
     allInputData.push(inDataReuseSubflow);
     allInputData.push(inJobApplication);
     allInputData.push(inMulticontainer);
+    allInputData.push(inI18N);
 
     inputData = allInputData[0];
 }
