@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicaltestmodel.testsheet="http:///com/corticon/rulesemf/canonicaltestmodel/testsheet.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="7" buildNumber="8020" updateStamp="_7CqQYLemEe2vc4OFwG1njw" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="7" buildNumber="8020" updateStamp="_pdCbIrnjEe200oc8GkrUZA" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_gZaegrnjEe200oc8GkrUZA" ruleActivity="BrowserSco.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="1" rulesheet="getLastUsed" rule="" entityname="Hello" entityidentity="" entityid="Hello_id_1" name="lastUsed" oldvalue="" newvalue="2023-03-01T16:51:30.874Z"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="2" rulesheet="RuleSheet" rule="1" entityname="Hello" entityidentity="" entityid="Hello_id_1" name="message" oldvalue="" newvalue="Special offer at 20% discount"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="vocab.ecore#//Hello">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="vocab.ecore#//Hello/lastUsed"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="vocab.ecore#//Hello/message"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="vocab.ecore#//Hello">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.0" value="2023-03-01T11:51:30-0500" eAttribute="vocab.ecore#//Hello/lastUsed"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.1" value="Special offer at 20% discount" eAttribute="vocab.ecore#//Hello/message"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.0"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.1"/>
+      </outputRuleTraceSection>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_JgQX0LemEe2vc4OFwG1njw" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="vocab.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="Test"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
