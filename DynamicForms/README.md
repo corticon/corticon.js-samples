@@ -1,5 +1,4 @@
-# Business Rule Driven Dynamic Forms
-
+# Guide to Business Rule Driven Dynamic Forms
 
 ## Summary
 
@@ -118,21 +117,6 @@ For more detail on the CSC and the decision service please refer to these docume
 1. [Authoring a the dynamic form logic in Corticon (these will be generated into the Decision Service) ](docs/AuthoringDecisionService.md)
 2. [Building and configuring the client side component (CSC)](docs/AuthoringClientSideComponents.md)
 
-# Benefits
-
-A single component for rendering dynamic questionnaires can be reused with multiple
-applications as illustrated below:
-
-![Reuse CSC across applications](docs/images/ReuseCSCAcrossAppsSmaller.jpg)
-
-In other words, to implement a new use cases, you only need to develop the model for the new use case.
-
-Additionally, the same model can be used to drive dynamic questionnaires on different platforms
-(for example, Web page and Mobile device).
-
-![Web page and Mobile device](docs/images/SameModelforDifferentRenderersSmaller.png)
-
-All of this provides agility and improves delivery time.
 
 ## Getting Started
 
