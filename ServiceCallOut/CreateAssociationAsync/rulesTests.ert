@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicaltestmodel.testsheet="http:///com/corticon/rulesemf/canonicaltestmodel/testsheet.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="7" buildNumber="8020" updateStamp="_EDuAQLR9Ee2ZLPiWVbJ26g" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="7" buildNumber="8020" updateStamp="_qbZVAcRQEe2GJKoxPkfs7w" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_iuAyksRQEe2GJKoxPkfs7w" ruleActivity="ruleflow.erf#//@ruleflow" locale="">
+      <input/>
+      <output/>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="A-123" eAttribute="vocab.ecore#//Product/sku"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="B-123" eAttribute="vocab.ecore#//Product/sku"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="XXXXX" eAttribute="vocab.ecore#//Product/sku"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="14" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Provider1" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="abc@prov1.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="15.330000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Provider2" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="def@prov2.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="21.100000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="11.220000" eAttribute="vocab.ecore#//Product/price"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Ran at 2023-03-16T23:17:04.076Z - Provider: Provider1 - Provider: Provider2" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="A-123" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="58.870000" eAttribute="vocab.ecore#//Product/totalCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2026-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Product/expirationDate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="58" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="15" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" newOrModified="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Provider3" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="abc@prov3.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="11.700000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="79.390000" eAttribute="vocab.ecore#//Product/price"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Ran at 2023-03-16T23:17:04.076Z - Provider: Provider3" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="B-123" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1202.550000" eAttribute="vocab.ecore#//Product/totalCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2025-11-30T19:00:00-0500" eAttribute="vocab.ecore#//Product/expirationDate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" newOrModified="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="15" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Requested product not found for sku: XXXXX" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="XXXXX" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.000000" eAttribute="vocab.ecore#//Product/totalCost"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Provider1" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="abc@prov1.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15.330000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Provider2" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="def@prov2.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="21.100000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11.220000" eAttribute="vocab.ecore#//Product/price"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="Ran at 2023-02-24T19:54:05.317Z - Provider: Provider1 - Provider: Provider2" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="A-123" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="58.870000" eAttribute="vocab.ecore#//Product/totalCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2026-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Product/expirationDate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="58" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Provider3" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="abc@prov3.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11.700000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="79.390000" eAttribute="vocab.ecore#//Product/price"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="Ran at 2023-02-24T19:54:05.317Z - Provider: Provider3" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="B-123" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1202.550000" eAttribute="vocab.ecore#//Product/totalCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2025-11-30T19:00:00-0500" eAttribute="vocab.ecore#//Product/expirationDate"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="Requested product not found for sku: XXXXX" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="XXXXX" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.000000" eAttribute="vocab.ecore#//Product/totalCost"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="7" buildNumber="8020" updateStamp="_iujlIMRQEe2GJKoxPkfs7w" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_iuAyksRQEe2GJKoxPkfs7w" ruleActivity="ruleflow.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceEntityData" sequence="6" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_1" action="New"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceEntityData" sequence="15" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_2" action="New"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="1" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="quantityAvailable" oldvalue="" newvalue="14"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="2" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="price" oldvalue="" newvalue="11.22"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="3" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="expirationDate" oldvalue="" newvalue="2026-02-14T00:00:00.000Z"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="4" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="_debug" oldvalue="" newvalue="Ran at 2023-03-02T22:35:04.570Z"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="5" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="_debug" oldvalue="Ran at 2023-03-02T22:35:04.570Z" newvalue="Ran at 2023-03-02T22:35:04.570Z - Provider: Provider1"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="7" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_1" name="name" oldvalue="" newvalue="Provider1"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="8" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_1" name="name" oldvalue="Provider1" newvalue="Provider1"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="9" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_1" name="email" oldvalue="" newvalue="abc@prov1.com"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="10" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_1" name="email" oldvalue="abc@prov1.com" newvalue="abc@prov1.com"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="11" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_1" name="availableTillDate" oldvalue="" newvalue="2024-02-14T00:00:00.000Z"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="12" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_1" name="deliveryCost" oldvalue="" newvalue="15.33"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="14" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="_debug" oldvalue="Ran at 2023-03-02T22:35:04.570Z - Provider: Provider1" newvalue="Ran at 2023-03-02T22:35:04.570Z - Provider: Provider1 - Provider: Provider2"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="16" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_2" name="name" oldvalue="" newvalue="Provider2"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="17" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_2" name="name" oldvalue="Provider2" newvalue="Provider2"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="18" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_2" name="email" oldvalue="" newvalue="def@prov2.com"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="19" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_2" name="email" oldvalue="def@prov2.com" newvalue="def@prov2.com"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="20" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_2" name="availableTillDate" oldvalue="" newvalue="2024-02-14T00:00:00.000Z"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="21" rulesheet="updateProduct" rule="" entityname="Provider" entityidentity="" entityid="Provider_id_2" name="deliveryCost" oldvalue="" newvalue="21.1"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="23" rulesheet="ComputeTotalCost" rule="1" entityname="Product" entityidentity="" entityid="Product_id_1" name="totalCost" oldvalue="" newvalue="22.44"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="24" rulesheet="ComputeTotalCost" rule="1" entityname="Product" entityidentity="" entityid="Product_id_1" name="totalCost" oldvalue="22.44" newvalue="58.87"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAssociationData" sequence="13" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="provider" action="Add" targetentity="Provider" targetentityidentity="" targetentityid="Provider_id_1"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAssociationData" sequence="22" rulesheet="updateProduct" rule="" entityname="Product" entityidentity="" entityid="Product_id_1" name="provider" action="Add" targetentity="Provider" targetentityidentity="" targetentityid="Provider_id_2"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="A-123" eAttribute="vocab.ecore#//Product/sku"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.2" value="14" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.0 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.22" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.7 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.8" value="Provider1" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.11" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.9 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.10" value="abc@prov1.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.12" value="15.330000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.1 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.23" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.14 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.15" value="Provider2" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.18" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.16 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.17" value="def@prov2.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.19" value="21.100000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.3" value="11.220000" eAttribute="vocab.ecore#//Product/price"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.5 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.6 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.13" value="Ran at 2023-03-02T22:35:04.570Z - Provider: Provider1 - Provider: Provider2" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="A-123" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.20 #//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.21" value="58.870000" eAttribute="vocab.ecore#//Product/totalCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.4" value="2026-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Product/expirationDate"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="vocab.ecore#//Product">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14" eAttribute="vocab.ecore#//Product/quantityAvailable"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="vocab.ecore#//Product/quantityRequested"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Provider1" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="abc@prov1.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15.330000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="vocab.ecore#//Product/provider" eClass="vocab.ecore#//Provider">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Provider2" eAttribute="vocab.ecore#//Provider/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2024-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Provider/availableTillDate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="def@prov2.com" eAttribute="vocab.ecore#//Provider/email"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="21.100000" eAttribute="vocab.ecore#//Provider/deliveryCost"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11.220000" eAttribute="vocab.ecore#//Product/price"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="Ran at 2023-02-24T19:54:47.333Z - Provider: Provider1 - Provider: Provider2" eAttribute="vocab.ecore#//Product/_debug"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="A-123" eAttribute="vocab.ecore#//Product/sku"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="58.870000" eAttribute="vocab.ecore#//Product/totalCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2026-02-13T19:00:00-0500" eAttribute="vocab.ecore#//Product/expirationDate"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.0" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.1" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.2" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.0"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.3" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.4"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.4" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.8"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.5" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.5"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.6" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.5"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.7" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.0"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.8" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.0"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.9" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.2"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.10" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.2"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.11" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.1"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.12" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.3"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.13" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.5"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.14" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.0"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.15" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.0"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.16" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.2"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.17" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.2"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.18" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.1"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.19" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.3"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.20" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.7"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.21" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.7"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.22" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.2"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.1/@testsheet/@output/@RuleTraceData.23" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.3"/>
+      </outputRuleTraceSection>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="__7Icga7lEe2w0c8LC8iCZg" testsheets="#//@testsheetAssets.0/@testsheet #//@testsheetAssets.1/@testsheet" vocabulary="vocab.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="test 3 products"/>
+    <testTabList name="test 1 product"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
