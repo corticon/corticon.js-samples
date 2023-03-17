@@ -1,75 +1,38 @@
-# Defining the Rules 
+# Corticon.js Studio Rule Authoring Components
 
-- [Defining the Rules](#defining-the-rules)
-  - [File types used in Corticon.js Studio for Building Dynamic Forms](#file-types-used-in-corticonjs-studio-for-building-dynamic-forms)
-    - [Rule Vocabulary](#rule-vocabulary)
-    - [Rulesheets](#rulesheets)
-    - [Ruletests](#ruletests)
-    - [Ruleflows](#ruleflows)
-  - [Rules Driven Forms](#rules-driven-forms)
-    - [What the Client Side Component needs from the rules](#what-the-client-side-component-needs-from-the-rules)
-    - [Working with Corticon.js Studio file types to build Dynamic Forms](#working-with-corticonjs-studio-file-types-to-build-dynamic-forms)
-    - [Defining a Form's Sequence of Events](#defining-a-forms-sequence-of-events)
-    - [Capturing the Response Data](#capturing-the-response-data)
-    - [Executing Steps with No UI to Render](#executing-steps-with-no-ui-to-render)
-    - [Validations](#validations)
-  
+## Rule Vocabulary
 
-## File types used in Corticon.js Studio for Building Dynamic Forms
+Typically, a client side component is written and maintained by a developer  while the form's rule-driven logic is written by business analysts who  best understand the subject domain of the form.
 
-### Rule Vocabulary
+The communication between the rule author and front end developer, as well as between the actual artifacts they each produce, is facilitated by a well documented schema for the JSON to exchange IN and OUT.
 
+Corticon business rules are authored in **Corticon.js Studio**, with the backbone of the rules we create being the *Rule Vocabulary*. This will serve as the data model to capture both the  that will define aspects of:
+- The user interface (UI), such as which questions to pose to the end user at what stage in the form being filled, and what type of input should be allowed for these questions
+- The data needed for the actual decision at hand, which will be captured as a form response and sent along to a downstream application, decision service or system of record
 
-The first step of the rule modeling process with Corticon is to build the 'dictionary' of business terms used throughout the rules, the Rule Vocabulary. 
-
-For example, a transport company may have a rule that determines how much cargo each type of vehicle can carry. There are two key business terms used in this rule—cargo and vehicle. You could define these terms as entities in your Vocabulary. 
-
-A Vocabulary is similar to a data model such as a (UML) model or an Entity-Relationship model. The terms for the Vocabulary could come from a number of sources—database tables, forms used in business operations, policy and procedure documents, etc. When you build a Vocabulary, you not only define the terms, you also define relationships between those terms. For example, a single vehicle can carry many cargo containers, implying a one-to-many relationship. You would define this as an association in your Vocabulary. The rule vocabulary can be created manually, or it can be auto generated based on a JSON schema or object.
+![vocabulary](images/JS%20vocabulary.png)
 
 Note that the vocabulary includes every data point involved in the decision/calculation. Some of this data may be passed into the Decision Service when it is called by another application, some of this data may be retrieved by Corticon from an external data source and some of this data may be produced as a result of the rules themselves.
 
-### Rulesheets
+## Rulesheets
 
 Rulesheets are like Decision Tables. Users 'model' the business rules, where the rule is like an ‘if-then’ statement. Each rule consists of one or more conditions (if) that are associated with one or more actions (then). 
-Here is an example of a Rulesheet with three rules.
 
-![Rulesheet](https://files.gitbook.com/v0/b/gitbook-legacy-files/o/assets%2F-MX-6L60ogNliIiTS_7L%2F-MbMxC3TwMXx3YxmGQeh%2F-MbMxvPiOWy07klsoQ3B%2Fimage.png?alt=media&token=265a5d09-3c20-4d13-b3eb-4d7e40efbd5e)
+![Alt text](images/rulesheet%20overview.png)
 
- The Rulesheet editor has the following parts:
-- Conditions—where you define the conditions for each rule. For example, Aircraft.aircraftType = 747. The condition value could be a single value (747), a set of values (747, 777, 787), or a range of values (weight=100000..200000). 
-- Actions—where you define the actions that need to be triggered when the conditions are satisfied. For example, Aircraft.maxCargoWeight=150000. 
-- Rule columns—the highlighted columns in this image. Each column represents a rule. It associates a set of conditions with a set of actions. For example, column 1 defines the rule—if the aircraft is a 747, then its maximum cargo weight is 150,000. 
-
-### Ruletests
+## Ruletests
 
 A Ruletest simulates a business scenario where the rules are applied to input data. If the data satisfies all the conditions in a rule, the rule fires and some output containing the results of the rule execution is produced.
 
- You can define different sets of input data to test how the rules behave in different scenarios. You can also use a Ruletest to compare the output of a rule execution with expected results.
- 
-  A Ruletest stores this information in a Ruletest file, enabling you to save use-cases that are of interest, change rules, and run the test again to see how the modified rules behave when applied to the same use-cases. 
+You can define different sets of input data to test how the rules behave in different scenarios. You can also use a Ruletest to compare the output of a rule execution with expected results. A Ruletest stores this information in a Ruletest file, enabling you to save use-cases that are of interest, change rules, and run the test again to see how the modified rules behave when applied to the same use-cases. 
 
-### Ruleflows
+## Ruleflows
 
 From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a Ruleflow to specify the sequence from one rulesheet to another.Ruleflows are both graphical (appearing similar to a flow diagram) and functional (they impact rule behavior, and are ultimately generated into a decision service).
 
 ![Ruleflow example](https://progress-be-prod.zoominsoftware.io/bundle/corticon-rule-modeling/page/gsa1430508228388.image?_LANG=enus)
 
- When multiple Rulesheets are included in a Ruleflow, the Rulesheets will execute in a sequence determined by their Rulesheet order in the Ruleflow.
-
-## Rules Driven Forms
-
-### What the Client Side Component needs from the rules
-
-The decision service informs the front end UI each and every prompt to present to the user, throughout the form. It likewise may define whether to execute a decision/computation in the background before moving on to subsequent stages. 
-
-The content presented in the form at a given point can define different paths depending upon
- * Previously entered data data entry to make decisions. For example, the form may branch to a different step, or specify different UI controls 
- * The output of decisions and computations performed between steps
- * Data already known about the end user, for example data populated from an external CRM system
-
-There are certain rules which are useful to implement only at the start or end of the form. For example, telling the CSC where to store the accrued form data, and telling the CSC when the form is complete.
-
-### Working with Corticon.js Studio file types to build Dynamic Forms
+When multiple Rulesheets are included in a Ruleflow, the Rulesheets will execute in a sequence determined by their Rulesheet order in the Ruleflow.
 
 In a typical decision automation use case, rulesheets and ruleflows are 'connected' from one to another when constructing the top level ruleflow. Connections are the objects that connect or “stitch” assets and objects together to control their sequence of execution. 
 
@@ -97,66 +60,591 @@ For dynamic forms however, instead of a decision that will always go through the
 </td>
 </tr></table>
 
+## What the Client Side Component needs from the rules
+
+The decision service informs the front end UI each and every prompt to present to the user, throughout the form. It likewise may define whether to execute a decision/computation in the background before moving on to subsequent stages. 
+
+The content presented in the form at a given point can define different paths depending upon
+ * Previously entered data data entry to make decisions. For example, the form may branch to a different step, or specify different UI controls 
+ * The output of decisions and computations performed between steps
+ * Data already known about the end user, for example data populated from an external CRM system
+
+There are certain rules which are useful to implement only at the start or end of the form. For example, telling the CSC where to store the accrued form data, and telling the CSC when the form is complete.
+
+## Working with Corticon.js Studio file types to build Dynamic Forms
+
 The main functions of the rules throughout a form's ruleflow, from which the Decision Service will be generated, are to define:
 
 1.  The sequence of the questions (What prompt is presented when and base upon what).
 2.  For each step, either:
-   
-	- What user prompt to render (e.g. dropdown, true/false, number, etc). Henceforth, we refer to these user prompts as **UI Controls**. 
+  - What user prompt to render (e.g. dropdown, true/false, number, etc). Henceforth, we refer to these user prompts as **UI Controls**. 
 	- Execute some business logic or computation that doesn't involve presenting anything to the user (e.g. add together dollar amount of all expenses being submitted)
 3. Which data should be retained and accrued to pass along upon form completion, versus which data is only relevant ephemerally (e.g., assigning data related to a claim to be retained, while assigning the response to '_Do you have more claims to submit_?' to be discarded. 
 
-### Defining a Form's Sequence of Events
+# Using the Template Vocabulary
 
-The front end UI (CSC) does not know the questions to be asked at each step nor what the answers mean, but it knows how to render these questions and collect the answers. 
+In order for the front end UI to know how to interpret a message from the decision service, they must work from the same data model. In the pre-built template form, all of the following data elements can be used when building the rules, and the front end component will understand the directions.
 
-The decision service does not know the current state of the questionnaire but knows what to do at each **Stage.** All of the logic applicable to a question and its answer are tied together which a unique identifier, the stage number. 
+## UI
 
-A Stage may encompass one or more **[Rulesheets](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#authoring-the-rules)**. When building dynamic forms, the rulesheets typically specify:
-1. Current stage number
-2. If presenting anything to the end user at this step, a  **Container** to host the UI controls is created.
-3. Within a container, 1 or more UI controls are created (e.g. text input, numeric input, checkbox, or multiple choice dropdown list.)
-4. What the next stage is 
 
-![uiContainerAndControls](images/uiContainerAndControls.jpg)
+Description: The entity UI is the ‘parent’ entity, returned at index 0, which will guide things like where we are in the form, when the form is complete, and where to store the accrued data. See table below for full scope of available out of the box options. Items with an asterisk are required.
 
-Once all rulesheets in the ruleflow have been arranged and [tested](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms#testing-the-rules), the ruleflow is deployed as a JavaScript Decision Service bundle--a single file called `decisionServiceBundle.js`.
 
-### Capturing the Response Data
-By default, response data is stored in an entity assigned to be the pathToData, using the attribute `UI.pathToData` . 
+### pathToData
 
-For example, if we're building auto insurance form, when we're collecting information about the Vehicle, we might assign the 'vehicle' entity to be the vocabulary entity / JSON object within which the accrued data will be stored:
 
-![](images/pathtodata.PNG)
+Data Type: _Any alphanumeric string will be accepted, but in order to use user-selected responses to dynamically change form behavior in future steps, this should be set to an entity in the vocabulary that will accrue the data_
+  
+Description: We define which data we want to store by specifying in the initial stage of the rules which vocabulary entity should ‘store’ the data accrued throughout the form. This is specified with `UI.pathToData` in an initial stage, in this case, it will be the `AutoQuote` entity. The `pathToData` entity will be at index 1 in the JSON. The stored data can then be passed along to other workflow steps once the form is complete, or used to define a conditional rule at a later stage in the form.
 
-If we start by just collecting the end user's responses for year/make/model of a vehicle, the accrued data would look something like:
 
-```
-    {
-      "vehicle": {
-        "year": 2020,
-        "make": "Mazda",
-        "model": "Cx-3 4Dr Awd"
-      }
-    }
-```
+![Code](images//pathToData.PNG)
 
-### Executing Steps with No UI to Render
 
-Sometimes the Decision Service needs to execute a stage with no associated UI to rende. For example, the Decision Service might need to execute business logic and then move to next step.
 
-This is implemented by the Decision Service in the attribute UI.noUiToRenderContinue (a boolean).
+### noUiToRenderContinue
 
-### Validations
-There are 2 kinds of validations:
 
-1. Those which are defined directly in UI control itself,  and can thus be directly enforced by the CSC. For this validation, the CSC does not need to call the Decision Service for validation. It can enforce the validation directly based on various attributes sets on the UIControl and the type of UIControl. For examples, we may set an input field as required or we may want a number field where the valid data is between 1 and 20. These are specified in the Decision Service model using the UIControl.required and UIControl.min and UIControl.max attributes respectively:
+Data Type: _T/F_
 
-```
-UI.containers.uiControls += UIControl.new[type='Number', min=1, max=200, label='Number 1', id='number1 Id', fieldName='number1']
+
+Description: Set to ‘T’ for any stages where no UI needs to be rendered, but some action (a decision/calculation/augmentation of separate rulesheet) needs to be executed. Does not need to be set to ‘F’ when this is not the case.
+
+
+![](images//noUItoRender.png)
+```hover mouse to copy
+UI.noUItoRender
 ```
 
-2) The second kind is validation that can only be enforced by the Decision Service (remember the Client Side Component is generic, while the Decision Service is use case specific). The Decision Service can implement simple to very complex business rules to infer that some answers may not be valid using all the data available to it (That is data from previously entered user inputs, external data and initial data). And that validation may be conditional to various paths or various conditions. For example, validating that a claim cannot exceed some amount because the sum of all current claim exceeds the maximum for the month.
+### done
 
+
+Data Type: _T/F_
+
+Description: Upon receiving a done instruction from the decision service (a notification of the end of the flow) via `UI.done=T`, it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow.
+
+
+
+### **Rule Definition**
+
+![](images//UIdone.png)
+
+### **Copy these rules**
+
+```
+UI.done
+```
+
+### nextStageNumber
+
+
+Data Type: _Integer_
+
+Where to specify: **Action** row of rulesheet
+
+Description: The decision service sets the attribute `UI.nextStageNumber` to specify the next step in the flow, unless it is the last stage, in which case this field is left null and done is set to ‘true’
+
+
+![](images//nextStageNumber.png)
+
+
+### currentStageNumber
+
+
+Data Type: _Integer_
+
+Where to specify: **Filter** panel of rulesheet, in advanced view
+
+Description: When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to `UI.nextStageNumber` in the input payload of the decision service.
+
+
+![](images//currentStageNumber.png)
+
+
+###  Language
+
+Data Type: _String_
+
+Description: On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules
+
+---
+
+
+## Container 
+`UI.containers`
+
+Description: For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields. The container has various attributes, for example a title.
+
+
+### validationMsg
+
+
+Data Type: _Alphanumeric string_
+
+Description: Creates a container wide validation message
+
+
+### description
+
+Data Type: _Alphanumeric string_
+
+Description: An optional string that doesn’t impact behavior of the form. It is mostly useful for troubleshooting.
+
+
+### id
+
+
+Data Type: _Any unique alphanumeric string_
+
+Description: Required if any container is being rendered.
+
+
+### title
+
+
+Data Type: _Alphanumeric string_
+
+Description: Renders the h3 header on Container entity
+
+
+![](images//createContainer.png)
+
+---
+
+
+## UIControl 
+`UI.containers.uiControls`
+
+Description: Each UI control element has multiple attributes. The most important one is the type attribute as it allows the client-side component to know what kind of control to render and which necessary attributes to access based on the type. See table below for full scope of available out of the box options. Items with an asterisk are required.
+
+
+### type
+
+
+Description: The specific type of UI Control. In the out of the box test driver, the following UI Controls / specifications are defined:
+
+- `type = ‘Text’`
+
+   Description:    Single line text field input
+
+
+### **Rule Definition**
+
+![](images//text_rule.png)
+
+### **Rendered Rules**
+
+![](images//text_rendered.png)
+
+- `type = ‘TextArea’`
+  
+  Description:   Multi-lines text input
+
+### **Rule Definition**
+
+![](images//text_area_rules.png)
+
+### **Rendered Rules**
+
+![](images//text_area_rendered.png)
+
+- `type = ‘SingleChoice’`
+  
+   Description:    Renders as a checkbox with value stored as T/F
+    
+### **Rule Definition**
+
+![](images//singlechoice.png)
+
+### **Rendered Rules**
+
+![](images//singlechoice-rendered.png)
+
+
+- `type = ‘MultipleChoices’`
+
+   Description:  Multiple choice dropdown. Options must be specified either by pointing to a JSON datasource or defining the options in a subsequent rulesheet.
+    
+
+### **Rule Definition**
+
+![](images//multiple_choices_rules.png)
+
+### **Rendered Rules**
+
+![](images//multiple_choices_rendered.png)
+
+
+
+- `type = ‘Number’`
+
+  Description:   Single number input
+    
+
+### **Rule Definition**
+
+![](images//number_rules.png)
+
+### **Rendered Rules**
+
+![](images//number_rendered.png)
+
+
+
+- `type = ‘DateTime’`
+
+  Description:   Date picker
+    
+
+### **Rule Definition**
+
+![](images//date_time_rules.png)
+
+### **Rendered Rules**
+
+![](images//date_time_rendered.png)
+
+
+- `type = ‘ReadOnlyText’`
+
+   Description:  A control to render HTML text
+
+
+### **Rule Definition**
+
+![](images//readOnlyText.png)
+
+### **Rendered Rules**
+
+![](images//readOnlyText_render.png)
+
+
+- `type = ‘YesNo’`
+
+  Description:   Dropdown of Yes or No, stored as Yes or No
+    
+    
+
+### **Rule Definition**
+
+![](images//yes_no_rule.png)
+
+### **Rendered Rules**
+
+![](images//yes-no_rendered.png)
+
+
+
+- `type = ‘YesNoBoolean’`
+
+  Description:   Dropdown of Yes or No, stored as T or F
+    
+
+### **Rule Definition**
+
+![](images//yes_no_boolean_rule.png)
+
+### **Rendered Rules**
+
+![](images//yes-no_rendered.png)
+
+
+
+- `type = ‘FileUpload’`
+
+   - Description:  A control to render a file upload control.
+    
+
+### **Rule Definition**
+
+![](images//file-upload-expense.png)
+
+### **Rendered Rules**
+
+![](images//file_upload_rendered.png)
+
+
+
+- `type = ‘MultiExpenses’`
+
+   Description:  List of financial line items. It contain 3 primitive UI elements: an expense type selector, an expense amount input and a currency selector.
+
+
+### **Rule Definition**
+![](images//multiexpense%20rule.png)
+
+### **Rendered Rules**
+![](images//multiexpense%20rendered.png)
+
+
+
+- `type = ‘MultipleChoicesMultiSelect’`
+
+    Description: Similar to MultipleChoices, but allows for multiple selected options
+
+
+
+
+### **Rule Definition**
+
+![](images//MultipleChoicesMultiSelect_rule.png)
+
+
+
+### **Rendered Rules**
+
+![](images//MultipleChoicesMultiSelect_rendered.png)
+
+### **Copy these rules**
+```hover mouse to copy
+UI.containers.uiControls += UIControl.new[type='MultiExpenses', label='Enter all the expenses', id='crtl8_1', fieldName='Step8Field1']
+UI.containers.uiControls.option += Option.new[value='hotelCode', displayName='Hotel']
+UI.containers.uiControls.option += Option.new[value='carRentalCode', displayName='Car Rental']
+UI.containers.uiControls.option += Option.new[value='airfareCode', displayName='Airfare']
+
+UI.nextStageNumber
+UI.currentStageDescription = 'This is implemented in Step8.ers' 
+
+```
+
+
+
+
+### fieldName
+
+
+
+`fieldName = entity_assigned_as_pathToData.attribute`
+
+   Description: The UI control specifies where to store the data in the field UIControl.fieldName. For example, if we want to store the value of a person’s date of birth in a field called dob, within a JSON object called `Person`, we would first need to set (either in this stage or a preceding one) the `UI.pathToData = 'Person'` and then we could define the UI Control’s `fieldName` to be ‘dob’. This would hold the value selected for the dob in the JSON object as follows: 
+
+   `"Person":{
+      "dob":"MM/DD/YYYY"
+   }`
+
+
+### id
+
+
+Data Type: _Any unique alphanumeric string_
+
+Description: Unique identifier (within the context of one container) for the UI control.
+
+
+
+Example: `UI.containers.uiControls += UIControl.new [id = 'dietary_restrictions', type = 'MultipleChoices', label =  'Do you have any dietary restrictions?', fieldName = 'has_dietary_restrictions']`
+
+
+### dataSource
+
+
+Data Type: _URL pointing to JSON formatted data_
+
+Description: Specifies the datasource to populate MultipleChoices dropdown options from. Value field at the JSON endpoint must have the key value, display name must have the value `displayName`. If not the case for either of these, these can be overridden by specifying a child entity `‘DataSourceOptions’`
+
+
+![](images//datasource.png)
+
+
+### max
+
+
+Data Type: _Integer_
+
+Description: Optionally give the rendering component for this UI Control a numeric maximum
+
+
+### min
+
+
+Data Type: _Integer_
+
+Description: Optionally give the rendering component for this UI Control a minimum numeric value end user can enter
+
+
+![](images//min.png)
+
+
+### minDT
+
+
+Data Type: _Date_
+
+Description: Optionally give the rendering component for this UI Control a minimum date value end user can enter
+
+
+### maxDT
+
+
+Data Type: _Date_
+
+Description: Optionally give the rendering component for this UI Control a maximum date value end user can enter
+
+
+[](images//maxDt.png)
+
+
+###  defaultValue
+
+
+Data Type: _Alphanumeric string_
+
+Description: Optionally give the rendering component for this UI Control a placeholder default value
+
+
+### multiple
+
+
+Data Type: _T/F_
+
+Description: When there could be any number of responses to a prompt, set this to true. The answers are stored in an array pointed as specified by `fieldName` attribute.
+
+
+### tooltip
+
+
+Data Type: _Alphanumeric string_
+
+Description: Optionally give the rendering component for this UI Control a tooltip to assist end user
+
+
+### label
+
+
+Data Type: _Alphanumeric string_
+
+Description: Content of the prompt provided by the UI Control
+
+
+### rows
+
+
+Data Type: _integer_
+
+Description: HTML textarea rows attribute
+
+
+### required
+
+
+Data Type: _T/F_
+
+Description: Whether the user filling out the form is required to respond to this prompt
+
+
+### validationErrorMsg
+
+
+Data Type: _Alphanumeric string_
+
+Description: Creates validation message for individual UI Control
+
+
+### cols
+
+
+Data Type: _integer_
+
+Description: HTML textarea cols attribute
+
+
+### value
+
+
+Data Type: _Alphanumeric string_
+
+Description: The content of a `ReadOnlyText` UI Control
+
+
+![](images//readOnlyText.png)
+
+
+###  labelPosition
+
+
+Data Type: _‘Above’, ‘Side’_
+
+Description: Optionally instruct the rendering component where to place the `label` for this UI Control
+
+
+### sortOptions
+
+
+Data Type: _‘A to Z’, ‘Z to A’_
+
+Description: Optionally instruct the rendering component how to sort the list of options applied to this UI Control
+
+## DataSourceOptions
+ `UI.containers.uiControls.dataSourceOptions`
+
+   When using the MultipleChoices UI Control, the actual choices can be populated from a JSON endpoint or be specified by the rule modeler. For the first option, the rule modeler must specify a URL on the field `UIControl.dataSource`. The default client renderer will look for the options at that endpoint under the `value` and `displayName` field. So if the endpoint looks like this, then you’re good to go:
+
+
+![](images//formattedJSON.png)
+
+
+  If the JSON data has different keys, such as shown below, the client renderer must be told which field is going to serve as the value field and which as the displayName field—these can be, and often are, the same. These are specified with the DataSourceOptions entity.
+
+
+![](images//unformattedJsonEnd.png)
+
+
+---
+
+
+
+### dataTextField
+
+
+Description: Optionally define the key name to use as the display name for this option from dropdown, if its name isn’t `displayName`. Oftentimes this will be the same as the `dataValueField` field.
+
+
+![](images//dataTextField.png)
+
+
+### dataValueField
+
+
+Description: Optionally define the name of the key whose value should be stored should end user select this option from dropdown, if its name isn’t value. Oftentimes this will be the same as the `dataTextField` field.
+
+
+![](images//dataValueField.png)
+
+
+### pathToOptionsArray
+
+
+Description: Optionally define where in a JSON endpoint is the array of options to populate a dropdown list with
+
+
+### **Rule Definition**
+![](images//pathToOptionsArray.png)
+
+### **Copy this rule**
+```
+data.pathToOptionsArray='$.[?(@.brand== \'' + AutoQuote.vehicle_make + '\' )]'
+```
+
+
+## Option 
+`UI.containers.uiControls.option`
+
+Description: When the rule modeler is defining the list of dropdown options, they can do so with the `Option` entity.
+
+
+### displayName
+
+
+Description: The displayed option within a multiple-choice dropdown. When selected, it is stored as the corresponding value under the attribute assigned `UIControl.fieldName`
+
+
+### value
+
+
+Description: The value stored in the `pathToData.fieldName` when user selects corresponding displayName.
+
+
+![](images//manualOptions.png)
 
 

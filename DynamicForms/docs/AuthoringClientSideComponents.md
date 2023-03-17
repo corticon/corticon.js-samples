@@ -1,30 +1,77 @@
 # Client Side Component (CSC)
 
+- [Client Side Component (CSC)](#client-side-component-csc)
+    - [Local versus Remote Decision Services](#local-versus-remote-decision-services)
+  - [The Pre-Built CSC](#the-pre-built-csc)
+  - [Responsibilities of the Client Side Component](#responsibilities-of-the-client-side-component)
+  - [Returned Payload from Decision Service](#returned-payload-from-decision-service)
+- [State Machine](#state-machine)
+- [Storing answers with multiple projects/Multiple Decision Services](#storing-answers-with-multiple-projectsmultiple-decision-services)
+- [Rendering UI Controls](#rendering-ui-controls)
+  - [Supported Controls List](#supported-controls-list)
+  - [Simple Controls](#simple-controls)
+  - [Multiple Instance Controls](#multiple-instance-controls)
+  - [Complex Controls](#complex-controls)
+- [Controls Reading Data from External Data Sources](#controls-reading-data-from-external-data-sources)
+- [Stages](#stages)
+  - [In the Request](#in-the-request)
+  - [In the Response](#in-the-response)
+
+
+The Dynamic Forms in the sample page are rendered by a reusable, adaptable template referred to as the Client Side Component (CSC). By template, we mean that the same CSC can be reused for multiple questionnaires without any front end client changes. When you switch samples with the dropdown sample selector, you're in a different dynamic form; however it is using the CSC for all the samples.
+
+This framework of separating the CSC from the rules promotes agility for development teams, as it disentangles the 'instructions' logic for what to present to the user (defined in a Corticon.js decision service) and the code that renders the form based upon these instructions.
+Typically, a CSC is written and maintained by a developer or a team of developers while the decision services are written by business analysts who understand well the problem domain of the questionnaire.
+
+If you are familiar with model/views design patterns; you can consider the CSC to be the view while the model is created and maintained using a [Corticon.js](https://www.progress.com/corticon-js) decision service.
+
+### Local versus Remote Decision Services
+
+Decision services can be run in process within the CSC or maintained in and invoked at a remote environment.
+
+For the remote option, Corticon.js supports deployments to:
+
+-  Any of the major cloud vendors' serverless environments (AWS Lambda, Azure and GCP functions)
+-  Node.js servers
+-  Traditional Java server running either in the cloud or on premises (traditional server deployments)
+
+In-process deployments provide essentially instant response time, however, there are considerations for when it might make more sense to run maintain this logic in remote environments, such as:
+
+- For Mobile Apps: a decision service hosted remotely can be updated very easily without having to force the user to reinstall the app.
+- To address security:
+	- Don’t want to expose some of the data used in the decision process.
+	- Want to have the decision service access various data sources inside the firewall.
+	- Don't want to risk exposing the decision service to reverse engineering.
+
+There are only minor distinctions between how the CSC and decision service interactions take place when running in-process or remotely as illustrated in the 2 diagrams below:
+
+<p style="text-align:center;">
+<img width="500"  src="images/LocalDS.png"
+ title="Running locally">
+<br>
+<br>
+<img width="500"  src="images/RemoteDS.png"
+ title="Remote decision service">
+</p>
+
+## The Pre-Built CSC
+
+The [CSC within this repository](https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms/CSC/clientSideComponent) which you can fork and adapt as needed is based on plain HTML and JQuery. You can likewise test drive the client side form [here](https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html).
+
+Whether you built off the template CSC or you want to leverage a different technology like React or Angular or Vue, it is useful to play around with the prebuilt components.
+
+## Responsibilities of the Client Side Component
+
 The Client Side Component is responsible for rendering the UI Controls (questions, labels, descriptions, validation messages…), collecting the data entered along the flow (the answers), and navigating through the next steps.  
 
 It does so by:
-1.	Invoking the decision service at both the start of the flow and at each step in the flow.  The decision service returns a JSON payload with all 
-      the necessary data to proceed for the entire step.
-2.	Maintaining the state of the flow.  That is, the state machine representing the flow is maintained by the CSC and 
-      not by the decision service (The decision service is stateless).
+1.	Invoking the decision service at both the start of the flow and at each step in the flow.  The decision service returns a JSON payload with all the necessary data to proceed for the entire step.
+2.	Maintaining the state of the flow.  That is, the state machine representing the flow is maintained by the CSC and not by the decision service (The decision service is stateless).
 3.	Exiting when the end of the flow is reported by the decision service. 
       
-All of this can be implemented in a generic fashion so that the same CSC can be reused on different pages and with 
-different use cases.
+All of this is by default implemented in an interoperable fashion, as the same CSC can be reused on different pages and with different use cases.
 
-# Using the Pre-Built CSC
-
-We provide a CSC based on Plain Html and JQuery.  It is a very lightweight component.  It is a reference implementation.
-
-You are welcome to use it as is or augment it or change it to fit your need.
-The component is available at https://github.com/corticon/corticon.js-samples/tree/master/DynamicForms/CSC/clientSideComponent
-You can run it out of the box using https://github.com/corticon/corticon.js-samples/blob/master/DynamicForms/CSC/client.html
-
-Whether you use it directly, or you want to leverage a different technology like React or Angular or Vue, it is a good place to start
-to understand what to do.
-
-
-# Returned Payload from Decision Service
+## Returned Payload from Decision Service
 
 The decision service returns a JSON payload containing an array with 2 elements.  
 Each of the element represents top level entities from the Corticon model.  
