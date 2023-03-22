@@ -68,7 +68,7 @@ function localizeAllUIControls(corticonDataManager, theStrings) {
 function getPreferredLanguage(theUI) {
     let requestedLanguage;
 	if ( theUI.language !== undefined && theUI.language !== null ) {
-		requestedLanguage = theUI.language;	
+		requestedLanguage = theUI.language;
 	}
 	else {
 		if ( isBrowserFct() ) {
@@ -76,21 +76,21 @@ function getPreferredLanguage(theUI) {
 		}
 		else {
 			requestedLanguage = "en";
-		} 
+		}
 	}
-	
+
     let theLanguage;
     requestedLanguage = requestedLanguage.toLowerCase();
     if (requestedLanguage.startsWith('fr'))
 		theLanguage = 'fr';
     else
 	    theLanguage = 'en';
-	
+
 	logger.logDebug('Requesting translation for language: ' + requestedLanguage);
-	
+
 	return theLanguage;
 }
-        
+
 function getStringsForCurrentLanguage(corticonDataManager) {
     const allUI = corticonDataManager.getEntitiesByType('UI');
     let theStrings;
@@ -135,7 +135,7 @@ function getEnglishStrings(allStrings) {
 
 function getFrenchStrings(allStrings) {
 	allStrings["step0_title"] = 'Exemple I18N et L18N';
-	allStrings["ctrl0_0_value"] = 'Cet example montre un formulaire multi-langue (Englais/Francais) utlisant les Service Call Out (SCO).<br/><br/>Le SCO est appelé lors de la dernière étape du flux<br/>';
+	allStrings["ctrl0_0_value"] = 'Cet example montre un formulaire multi-langue (Anglais/Francais) utlisant les Service Call Out (SCO).<br/><br/>Le SCO est appelé lors de la dernière étape du flux<br/>';
 	allStrings["step1_title"] = 'Une étape de la forme avec 2 champs';
 	allStrings["crtl1_1_label"] = 'Prénom';
 	allStrings["crtl1_1_tooltip"] = 'Control 1 tooltip - FR';
