@@ -7,9 +7,10 @@ const promiseThen = {
 };
 
 /*
-This hangs studio tester but it does not in browser bundle.
-But in browser, we still cannot get the attribute to be updated - we get same error as async/await
-This was expected anyway as call stack of the whole call has to complete before JS can call the promise resolver
+Corticon.js does not support this pattern.  When you need to do asynchronous operations use the await
+pattern as illustrated in https://github.com/corticon/corticon.js-samples/tree/master/ServiceCallOut/BasicAsyncOperation
+
+This sample is provided as an illustration of what NOT to do.
 */
 function promiseThenFct(corticonDataManager) {
 	const logger = corticonDataManager.getLogger();
@@ -28,22 +29,6 @@ function promiseThenFct(corticonDataManager) {
 	try {
     	logger.logError(`*** call to getSomeDataAsynchronously`);
 
-		/*
-		const data = "The data from the asynchronous call";
-    	logger.logError(`*** Got data: ${data}`);
-	    const entities = corticonDataManager.getEntitiesByType('Hello');
-	    entities.forEach(entity => {
-    		logger.logError(`  *** Working on entity.message ${entity.message}`);
-    		logger.logError(`  *** Writing attribute with: ${data}`);
-			try {
-		    	entity.message = `Got this data: ${data}` ;
-		    }
-			catch ( e ) {
-				logger.logError(`*** Error updating with data : ${e}`);
-				entity.message = `Could not update with data. Error: ${e}`;
-			}
-	    });
-*/
 		getSomeDataAsynchronously(logger).then( (data) => {
 	    	logger.logError(`*** Got data: ${data}`);
 		    const entities = corticonDataManager.getEntitiesByType('Hello');
@@ -58,6 +43,9 @@ function promiseThenFct(corticonDataManager) {
 					entity.message = `Could not update with data. Error: ${e}`;
 				}
 		    });
+
+			// Here there is no callback to Corticon to continue executing the rest of the rules.
+			// That's why we do not support this asynchronous programming pattern.
 		});
 	}
 	catch ( e ) {
@@ -68,13 +56,6 @@ function promiseThenFct(corticonDataManager) {
 exports.promiseThenFct = promiseThenFct;
 
 function getSomeDataAsynchronously (logger) {
-/*
-Immediate call but still async
-	return new Promise(resolve => {
-	    	logger.logError(`*** about to resolve promise`);
-	      	resolve(' The data from the asynchronous call.');
-	  });
-*/
 	return new Promise(resolve => {
 	    setTimeout(() => {
 	    	logger.logError(`*** about to resolve promise`);
