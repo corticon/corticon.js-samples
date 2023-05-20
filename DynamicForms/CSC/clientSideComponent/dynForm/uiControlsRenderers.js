@@ -4,9 +4,15 @@ corticon.dynForm.UIControlsRenderer = function () {
 // TODO:
 // Number field as integer vs decimal -> new field type?
 
+    let itsFlagRenderWithKui = false;
+    // let itsFlagRenderWithKui = true;
+
     // Render all Containers in base element (baseEl: A Jquery object - typically from a div element)
     // This is the main public entry point
-    function renderUI ( containers, baseEl, labelPositionAtUILevel, language ) {
+    function renderUI ( containers, baseEl, labelPositionAtUILevel, language, useKui ) {
+        // itsFlagRenderWithKui = useKui;
+        // itsFlagRenderWithKui = true;
+
         /* Without JQuery one could create all dynamic elements just using the DOM API.  For example:
         var contEl = document.createElement('div');
         contEl.setAttribute('id', containers[0].id);
@@ -15,6 +21,13 @@ corticon.dynForm.UIControlsRenderer = function () {
         */
         // Start with clean component - that is without any UI Controls from previous steps
         baseEl.empty();
+
+        if ( itsFlagRenderWithKui ) {
+            baseEl.addClass( 'k-content' );
+        }
+        else {
+            baseEl.addClass( 'dynUIContainerColors' );
+        }
 
         for ( let i=0; i<containers.length; i++ )
             renderUIForOneContainer( containers[i], baseEl, labelPositionAtUILevel, language );
@@ -26,7 +39,11 @@ corticon.dynForm.UIControlsRenderer = function () {
 
     // Render all Controls in container element
     function renderUIForOneContainer( container, baseEl, labelPositionAtUILevel, language ) {
-        const html = '<div id="' + container.id + '"  title="' + container.title + '"><h3>' + container.title + '</h3></div>';
+        let html = '<div';
+        if ( itsFlagRenderWithKui )
+            html += ' class="k-content"';
+
+        html += ' id="' + container.id + '"  title="' + container.title + '"><h3>' + container.title + '</h3></div>';
         baseEl.append(html);
 
         const uiControls = container.uiControls;
@@ -59,6 +76,12 @@ corticon.dynForm.UIControlsRenderer = function () {
                 renderFileUploadInput(oneUIControl, baseEl, labelPositionAtUILevel);
             else if ( oneUIControl.type === 'FileUploadExpenses' )
                 renderFileUploadExpenseInput(oneUIControl, baseEl, labelPositionAtUILevel);
+            else if ( oneUIControl.type === 'QRCode' )
+                renderQRCode(oneUIControl, baseEl, labelPositionAtUILevel);
+            else if ( oneUIControl.type === 'GeoCoordinates' )
+                renderGeoCoordinates(oneUIControl, baseEl, labelPositionAtUILevel);
+            else if ( oneUIControl.type === 'Rating' )
+                renderRating(oneUIControl, baseEl, labelPositionAtUILevel);
             else
                 alert('This ui control is not yet supported: '+oneUIControl.type);
         }
@@ -153,6 +176,9 @@ corticon.dynForm.UIControlsRenderer = function () {
                 checkboxInputEl.data("fieldName", oneUIControl.fieldName );
             else
                 alert('Missing field name for '+oneUIControl.id);
+
+            if ( itsFlagRenderWithKui )
+                checkboxInputEl.kendoCheckBox();
         }
         else
             alert('Missing label for checkbox '+oneUIControl.id);
@@ -187,6 +213,9 @@ corticon.dynForm.UIControlsRenderer = function () {
             fileUpEl.data("fieldName", oneUIControl.fieldName );
         else
             alert('Missing field name for '+oneUIControl.id);
+
+        if (itsFlagRenderWithKui)
+            fileUpEl.kendoUpload();
     }
 
     function renderFileUploadExpenseInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
@@ -213,6 +242,21 @@ corticon.dynForm.UIControlsRenderer = function () {
             fileUpEl.data("fieldName", oneUIControl.fieldName );
         else
             alert('Missing field name for '+oneUIControl.id);
+    }
+
+    function renderQRCode(oneUIControl, baseEl, labelPositionAtUILevel) {
+        // temporary: will be implemented soon
+        alert('Error rendering QRCode not yet supported');
+    }
+
+    function renderGeoCoordinates(oneUIControl, baseEl, labelPositionAtUILevel) {
+        // temporary: will be implemented soon
+        alert('Error rendering GeoCoord not yet supported');
+    }
+
+    function renderRating(oneUIControl, baseEl, labelPositionAtUILevel) {
+        // temporary: will be implemented soon
+        alert('Error rendering Rating not yet supported');
     }
 
     function renderTextInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
@@ -244,6 +288,9 @@ corticon.dynForm.UIControlsRenderer = function () {
         else {
             inputContainerEl.append(textInputEl);
         }
+
+        if ( itsFlagRenderWithKui )
+            textInputEl.kendoTextBox();
     }
 
     function renderTextAreaInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
@@ -272,6 +319,9 @@ corticon.dynForm.UIControlsRenderer = function () {
             textInputEl.data("fieldName", oneUIControl.fieldName );
         else
             alert('Missing field name for '+oneUIControl.id);
+
+        if ( itsFlagRenderWithKui )
+            textInputEl.kendoTextArea();
 
         addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
     }
@@ -311,6 +361,22 @@ corticon.dynForm.UIControlsRenderer = function () {
         else
             alert('Missing field name for '+oneUIControl.id);
 
+        if ( addBreak ) {
+            const breakEl = $('<div>');
+            breakEl.append(textInputEl);
+            inputContainerEl.append(breakEl);
+        }
+        else {
+            inputContainerEl.append(textInputEl);
+        }
+
+        if ( itsFlagRenderWithKui ) {
+            if ( oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime )
+                textInputEl.kendoDateTimePicker({...theAttributes, format: 'u'}); // u: Renders universal sortable UTC date/time pattern ("yyyy-MM-dd HH:mm:ssZ"
+            else
+                textInputEl.kendoDatePicker({...theAttributes, format: 'yyyy-MM-dd'});
+        }
+
         if ( oneUIControl.minDT !== undefined && oneUIControl.minDT !== null && oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null ) {
             const html3 = '<span  class="fieldValidationLabel">Enter a date between ' + oneUIControl.minDT.substr(0,10) + ' and ' + oneUIControl.maxDT.substr(0,10) +'</span>';
             const validationEl = $(html3);
@@ -325,15 +391,6 @@ corticon.dynForm.UIControlsRenderer = function () {
             const html3 = '<span  class="fieldValidationLabel">Enter a date less than ' + oneUIControl.maxDT.substr(0,10) +'</span>';
             const validationEl = $(html3);
             inputContainerEl.append(validationEl);
-        }
-
-        if ( addBreak ) {
-            const breakEl = $('<div>');
-            breakEl.append(textInputEl);
-            inputContainerEl.append(breakEl);
-        }
-        else {
-            inputContainerEl.append(textInputEl);
         }
     }
 
@@ -439,6 +496,15 @@ corticon.dynForm.UIControlsRenderer = function () {
         else {
             inputContainerEl.append(textInputEl);
         }
+
+        if ( itsFlagRenderWithKui ) {
+            textInputEl.kendoNumericTextBox({
+                min: oneUIControl.min,
+                max: oneUIControl.max,
+                required: true,
+                value: typeof oneUIControl.value === 'number' ? oneUIControl.value : undefined
+            });
+        }
     }
 
     function renderNumberInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
@@ -492,6 +558,9 @@ corticon.dynForm.UIControlsRenderer = function () {
             alert('Missing field name for '+oneUIControl.id);
 
         inputContainerEl.append(yesNoEl);
+
+        if ( itsFlagRenderWithKui )
+            yesNoEl.kendoDropDownList();
     }
 
     function renderMultipleChoicesInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
@@ -520,13 +589,20 @@ corticon.dynForm.UIControlsRenderer = function () {
             alert("Missing datasource or options for "+oneUIControl.id + " - you need to specify at least one of the 2");
         }
         else {
-            addOptions(theOptions, dataSource, multipleChoicesEl, inputContainerEl, oneUIControl);
+            if ( itsFlagRenderWithKui ) {
+                //todo: add support for multiple?
+                addOptions(theOptions, dataSource, multipleChoicesEl,
+                    inputContainerEl, oneUIControl, () => { multipleChoicesEl.kendoDropDownList(); });
+                    // inputContainerEl, oneUIControl, () => { multipleChoicesEl.kendoDropDownList({filter: true}); });
+            }
+            else
+                addOptions(theOptions, dataSource, multipleChoicesEl, inputContainerEl, oneUIControl);
         }
 
         addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
     }
 
-    function addOptions(theOptions, dataSource, multipleChoicesEl, inputContainerEl, oneUIControl) {
+    function addOptions(theOptions, dataSource, multipleChoicesEl, inputContainerEl, oneUIControl, completionFct) {
         if ( theOptions !== undefined && theOptions !== null ) {
             if (theOptions.length > 0) {
                 for (var i = 0; i < theOptions.length; i++) {
@@ -535,6 +611,8 @@ corticon.dynForm.UIControlsRenderer = function () {
                         text: theOptions[i].displayName
                     }));
                 }
+                if ( itsFlagRenderWithKui && completionFct !== undefined )
+                    completionFct();
             } else
                 alert('List of options is empty - are you sure you this is intentional? - for multiple choices control  ' + oneUIControl.id);
         }
@@ -544,6 +622,8 @@ corticon.dynForm.UIControlsRenderer = function () {
             inputContainerEl.hide();  // we hide it until we receive the data.  that way, if server is down or user does not have a server when trying the sample nothing is shown.
             const jqxhr = $.get( dataSource, function(data) {
                     addOptionsFromDataSource( multipleChoicesEl, data, oneUIControl );
+                    if ( itsFlagRenderWithKui && completionFct !== undefined )
+                        completionFct();
                     inputContainerEl.show();
                 }, "json")
                 .done(function() {

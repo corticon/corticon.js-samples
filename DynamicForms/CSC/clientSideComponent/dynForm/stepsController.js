@@ -11,11 +11,13 @@ corticon.dynForm.StepsController = function () {
     let itsLabelPositionAtUILevel;
     let itsQuestionnaireName;
     let itsInitialLanguage;
+    let itsFlagRenderWithKui;
 
     const itsHistory = new corticon.dynForm.History();
     const itsUIControlsRenderer = new corticon.dynForm.UIControlsRenderer();
 
-    function startDynUI( baseDynamicUIEl, decisionServiceEngine, externalData, language, questionnaireName ) {
+    async function startDynUI( baseDynamicUIEl, decisionServiceEngine, externalData, language, questionnaireName, useKui ) {
+        itsFlagRenderWithKui = useKui;
         itsQuestionnaireName = questionnaireName;
         itsInitialLanguage = language;
         itsHistory.setupHistory();
@@ -37,7 +39,7 @@ corticon.dynForm.StepsController = function () {
 
         corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.BEFORE_START);
 
-        _askDecisionServiceForNextUIElementsAndRender( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
+        await _askDecisionServiceForNextUIElementsAndRender( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
 
         corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.AFTER_START, { historyEmpty: itsHistory.isHistoryEmpty() });
     }
@@ -56,6 +58,7 @@ corticon.dynForm.StepsController = function () {
     }
 
     function setStateFromRestartData(questionnaireName, restartData) {
+        itsLabelPositionAtUILevel = "Above"; // Default
         itsPathToData = getPathToData(questionnaireName);
         setStateFromStepData(restartData);
         itsHistory.setRestartHistory(getRestartHistory(questionnaireName));
@@ -71,7 +74,7 @@ corticon.dynForm.StepsController = function () {
         itsFormData = itsDecisionServiceInput[1];
     }
 
-    function processPrevStep(baseDynamicUIEl, decisionServiceEngine, language) {
+    async function processPrevStep(baseDynamicUIEl, decisionServiceEngine, language) {
         if ( itsFlagAllDone )  // Technically not needed if we disable the previous button correctly all the time but safer to double protect in case of bugs.
             return;
 
@@ -82,13 +85,13 @@ corticon.dynForm.StepsController = function () {
         const prevStageNbr = allData['stage'];
         itsDecisionServiceInput = allData['input'];
         itsDecisionServiceInput[0].nextStageNumber = prevStageNbr;
-        processNextStep(baseDynamicUIEl, decisionServiceEngine, language, false);
+        await processNextStep(baseDynamicUIEl, decisionServiceEngine, language, false);
 
         if ( prevStageNbr === 0 )
             corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.BACK_AT_FORM_BEGINNING);
     }
 
-    function processNextStep(baseDynamicUIEl, decisionServiceEngine, language, saveInputToFormData=true) {
+    async function processNextStep(baseDynamicUIEl, decisionServiceEngine, language, saveInputToFormData=true) {
         if ( saveInputToFormData ) {
             // On Next click, copy value of all rendered elements to the UI Controls in payload
             _saveEnteredInputsToFormData(baseDynamicUIEl);
@@ -106,11 +109,11 @@ corticon.dynForm.StepsController = function () {
         else {
             _preparePayloadForNextStage (itsDecisionServiceInput[0].nextStageNumber);
             const restartData = JSON.stringify(itsDecisionServiceInput); // save before call
-            let nextUI = _askDecisionServiceForNextUIElementsAndRender ( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
+            let nextUI = await _askDecisionServiceForNextUIElementsAndRender ( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
             // Execute all the steps that are just computation steps till we get a step that require rendering (in which case we will wait for user input and click next)
             while ( nextUI.noUiToRenderContinue !== undefined && nextUI.noUiToRenderContinue ) {
                 _preparePayloadForNextStage (nextUI.nextStageNumber);
-                nextUI = _askDecisionServiceForNextUIElementsAndRender( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
+                nextUI = await _askDecisionServiceForNextUIElementsAndRender( decisionServiceEngine, itsDecisionServiceInput, baseDynamicUIEl );
                 corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.NEW_FORM_DATA_SAVED, itsFormData );
                 if ( nextUI.done ) // if last step is a computation step
                     break;
@@ -191,8 +194,8 @@ corticon.dynForm.StepsController = function () {
             itsLabelPositionAtUILevel = newLabelPosition;
     }
 
-    function _askDecisionServiceForNextUIElementsAndRender ( decisionServiceEngine, payload, baseEl ) {
-        const result = _runDecisionService( decisionServiceEngine, payload );
+    async function _askDecisionServiceForNextUIElementsAndRender ( decisionServiceEngine, payload, baseEl ) {
+        const result = await _runDecisionService( decisionServiceEngine, payload );
         if ( result.corticon.status !== 'success' )
             return;
 
@@ -218,7 +221,7 @@ corticon.dynForm.StepsController = function () {
             return nextUI;
         }
 
-        itsUIControlsRenderer.renderUI ( containers, baseEl, itsLabelPositionAtUILevel, nextUI.language );
+        itsUIControlsRenderer.renderUI ( containers, baseEl, itsLabelPositionAtUILevel, nextUI.language, itsFlagRenderWithKui );
 
         const event = { "input": payload, "stage": payload[0].currentStageNumber };
         corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.AFTER_UI_STEP_RENDERED,event);
@@ -462,7 +465,7 @@ corticon.dynForm.StepsController = function () {
         }
     }
 
-    function _runDecisionService(decisionServiceEngine, payload ) {
+    async function _runDecisionService(decisionServiceEngine, payload ) {
         try {
             const event = { "input": payload, "stage": payload[0].currentStageNumber };
             corticon.dynForm.raiseEvent( corticon.dynForm.customEvents.BEFORE_DS_EXECUTION,event);
@@ -470,7 +473,9 @@ corticon.dynForm.StepsController = function () {
             const configuration = { logLevel: 0 };
             // const configuration = { logLevel: 1 };
             const t1 = performance.now();
-            const result = decisionServiceEngine.execute(payload, configuration);
+            console.log("** About to call decision service");
+            const result = await decisionServiceEngine.execute(payload, configuration);
+            console.log("** Done with call decision service");
             const t2 = performance.now();
             const event2 = { "output": result,
                 "execTimeMs": t2-t1,

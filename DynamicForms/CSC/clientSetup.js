@@ -3,6 +3,7 @@ let allInputData = [];
 let inputData; // per decision service initial data set (external data)
 let itsCurrentLanguage = 'english';
 let itsQuestionnaireKey = '0';
+let itsFlagRenderWithKui = false;
 
 const itsTracer = new Tracer();
 const itsStepsController = new corticon.dynForm.StepsController();
@@ -10,7 +11,7 @@ const itsStepsController = new corticon.dynForm.StepsController();
 function processSwitchSample(selectObject) {
     const index = selectObject.value;
     setDataForCurrentSample(index);
-    saveStateSelectedSample(index);
+    saveStateToLocalStorage('CorticonSelectedSample', index);
 }
 
 function setDataForCurrentSample(index) {
@@ -31,22 +32,13 @@ function setDataForCurrentSample(index) {
         $("#languageContainerId").hide();
 }
 
-function saveStateSelectedSample(index) {
-    // save it in local storage for restore on reload
-    try {
-        window.localStorage.setItem('CorticonSelectedSample', index);
-    } catch (e) {
-        // Some browser in private mode may throw exception when using local storage
-    }
-}
-
 function processSwitchLanguage(selectObject) {
     itsCurrentLanguage = selectObject.value;
 }
 
 function processClickStart() {
     const baseDynamicUIEl = $('#dynUIContainerId');
-    itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage, itsQuestionnaireKey);
+    itsStepsController.startDynUI(baseDynamicUIEl, currentDecisionServiceEngine, inputData, itsCurrentLanguage, itsQuestionnaireKey, itsFlagRenderWithKui);
 }
 
 function processClickNext() {
@@ -59,10 +51,10 @@ function processClickPrev() {
     itsStepsController.processPrevStep(baseDynamicUIEl, currentDecisionServiceEngine, itsCurrentLanguage);
 }
 
-function saveStateButton(show) {
+function saveStateToLocalStorage(key, value) {
     // save it in local storage for restore  on reload
     try {
-        window.localStorage.setItem('CorticonShowDSTrace', show);
+        window.localStorage.setItem(key, value);
     } catch (e) {
         // Some browser in private mode may throw exception when using local storage
     }
@@ -73,7 +65,7 @@ function processShowTrace() {
     traceEl.show();
     $("#hideTraceId").show();
     $("#showTraceId").hide();
-    saveStateButton(true);
+    saveStateToLocalStorage('CorticonShowDSTrace', true);
 }
 
 function processHideTrace() {
@@ -81,7 +73,21 @@ function processHideTrace() {
     traceEl.hide();
     $("#showTraceId").show();
     $("#hideTraceId").hide();
-    saveStateButton(false);
+    saveStateToLocalStorage('CorticonShowDSTrace', false);
+}
+
+function processUseHtml() {
+    $("#useHtmlId").hide();
+    $("#useKuiId").show();
+    saveStateToLocalStorage('CorticonUseKui', false);
+    itsFlagRenderWithKui = false;
+}
+
+function processUseKui() {
+    $("#useHtmlId").show();
+    $("#useKuiId").hide();
+    saveStateToLocalStorage('CorticonUseKui', true);
+    itsFlagRenderWithKui = true;
 }
 
 function setupInitialInputData() {
@@ -123,6 +129,14 @@ function restoreUIState() {
             processHideTrace();
     }
 
+    const useKui = window.localStorage.getItem('CorticonUseKui');
+    if ( useKui !== null  ) {
+        if ( useKui === 'true' )
+            processUseKui();
+        else if ( useKui === 'false' )
+            processUseHtml();
+    }
+
     const selectedSample = window.localStorage.getItem('CorticonSelectedSample');
     if ( selectedSample !== null ) {
         const selector = `#sampleSelectId option[value='${selectedSample}']`
@@ -144,6 +158,8 @@ $( document ).ready(function() {
         $("#nextActionId").show();
         $("#startActionId").hide();
         $("#sampleSelectId").attr('disabled', true);
+        $("#useHtmlId").hide();
+        $("#useKuiId").hide();
 
         if ( event !== undefined && event !== null ) {
             if ( event.theData['historyEmpty'] )
@@ -170,5 +186,9 @@ $( document ).ready(function() {
         $("#startActionId").show();
         $('#dynUIContainerId').html('<div style="margin: 2em; font-size: larger;">&nbsp;<i class="bi bi-check-circle"></i>All Done</div>');
         $("#sampleSelectId").attr('disabled', false);
+        if ( itsFlagRenderWithKui )
+            $("#useHtmlId").show();
+        else
+            $("#useKuiId").show();
     });
 });
