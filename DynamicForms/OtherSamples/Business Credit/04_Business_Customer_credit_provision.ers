@@ -1,0 +1,1817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="2" buildNumber="8020" updateStamp="_5QHDwkb2Eey4G7FeQV2Gwg" externalChecksum="547642878:507989954:3413468793" studioType="Java">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_zSPHkDnsEemM7o5GC87i7Q" vocabulary="Vehicel_offer.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#positive"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness in 15..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 15 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="15..25"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#approved">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'approved'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0 or BC.amount_unsettled_bills = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0 or BC.amount_unsettled_bills = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="{0, 1}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#negative"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness in 15..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 15 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="15..25"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0 or BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0 or BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="{0, 1, 2, > 2}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#very_negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'very_negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#very_negative"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness in 0..6 or BC.worthiness in 7..14 or BC.worthiness in 15..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 0 .. 6 or BC.worthiness in 7 .. 14 or BC.worthiness in 15 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="{0..6, 7..14, 15..25}"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#negative"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness in 0 .. 6 or BC.worthiness in 7 .. 14">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 0 .. 6 or BC.worthiness in 7 .. 14" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="{0 .. 6, 7 .. 14}"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.4">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#positive"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness in 7..14">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 7 .. 14" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="7..14"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#approved">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'approved'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.5">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#positive"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness in 0..6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 0 .. 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="0..6"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.6">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="{1, 2}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#positive"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.7">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills > 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="> 2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#positive"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.8">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="{2, > 2}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#negative"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.9">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#negative"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness &lt; 0 or BC.worthiness > 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness &lt; 0 or BC.worthiness > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="{&lt; 0, > 25}"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.10">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#very_negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'very_negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#very_negative"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.11">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="1"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#negative"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness &lt; 0 or BC.worthiness in 0..6 or BC.worthiness in 7..14 or BC.worthiness > 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness &lt; 0 or BC.worthiness in 0 .. 6 or BC.worthiness in 7 .. 14 or BC.worthiness > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="{&lt; 0, 0..6, 7..14, > 25}"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.12">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="{1, 2, > 2}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#very_negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'very_negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#very_negative"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.13">
+      <condition>
+        <opaqueExpression expression="BC.amount_unsettled_bills = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.amount_unsettled_bills" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.business_register = business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.business_register" rhs="business_register#positive"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.worthiness &lt; 0 or BC.worthiness > 25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness &lt; 0 or BC.worthiness > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.worthiness" rhs="{&lt; 0, > 25}"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.credit_provision = credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter>
+      <opaqueExpression expression="BC.positive_money_availability=true">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.positive_money_availability = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="positive_money_availability" datatype="Boolean" termtype="ATTRIBUTE" fulltext="BC.positive_money_availability">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement externalID="1" post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application approved [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application approved [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="2" post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="3" post="Info" ruleModelElements="#//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="4" post="Info" ruleModelElements="#//@ruleset/@rules.4" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="5" post="Info" ruleModelElements="#//@ruleset/@rules.5" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application approved [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application approved [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="6" post="Info" ruleModelElements="#//@ruleset/@rules.6" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="7" post="Info" ruleModelElements="#//@ruleset/@rules.7" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="8" post="Info" ruleModelElements="#//@ruleset/@rules.8" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="9" post="Info" ruleModelElements="#//@ruleset/@rules.9" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="10" post="Info" ruleModelElements="#//@ruleset/@rules.10" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="11" post="Info" ruleModelElements="#//@ruleset/@rules.11" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="12" post="Info" ruleModelElements="#//@ruleset/@rules.12" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="13" post="Info" ruleModelElements="#//@ruleset/@rules.13" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="14" post="Info" ruleModelElements="#//@ruleset/@rules.14" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="Vehicel_offer.ecore#//Business_customer" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2 #//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.4 #//@ruleset/@ruleStatements.5 #//@ruleset/@ruleStatements.6 #//@ruleset/@ruleStatements.7 #//@ruleset/@ruleStatements.8 #//@ruleset/@ruleStatements.9 #//@ruleset/@ruleStatements.10 #//@ruleset/@ruleStatements.11 #//@ruleset/@ruleStatements.12 #//@ruleset/@ruleStatements.13">
+      <alias value="BC"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Customer/positive_money_availability"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Business_customer/amount_unsettled_bills"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Business_customer/business_register"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Customer/worthiness"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Customer/credit_provision"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.credit_provision">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="BC.positive_money_availability=true" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" descendent="true" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" descendent="true" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" descendent="true" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="BC.positive_money_availability=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.positive_money_availability = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="positive_money_availability" datatype="Boolean" termtype="ATTRIBUTE" fulltext="BC.positive_money_availability">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="100" columnWidthPostSeverity="100" columnWidthAlias="100" columnWidthID="100" columnWidthText="500" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="500">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="Application approved [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application approved [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="3"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="4"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.4">
+        <reference external="5"/>
+        <text external="Application approved [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application approved [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.5">
+        <reference external="6"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.6">
+        <reference external="7"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.7">
+        <reference external="8"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.8">
+        <reference external="9"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.9">
+        <reference external="10"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.10">
+        <reference external="11"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.11">
+        <reference external="12"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.12">
+        <reference external="13"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.13">
+        <reference external="14"/>
+        <text external="Application rejected [unsettled bills= {BC.amount_unsettled_bills} / register={BC.business_register} / worthiness={BC.worthiness} ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application rejected [unsettled bills=  + BC.amount_unsettled_bills +  / register= + BC.business_register +  / worthiness= + BC.worthiness +  ]" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="BC.amount_unsettled_bills">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="BC.business_register">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="BC.worthiness">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="15..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 15 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#approved">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'approved'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="{0, 1}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0 or BC.amount_unsettled_bills = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="15..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 15 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="{0, 1, 2, > 2}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0 or BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#very_negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'very_negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{0..6, 7..14, 15..25}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 0 .. 6 or BC.worthiness in 7 .. 14 or BC.worthiness in 15 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{0 .. 6, 7 .. 14}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 0 .. 6 or BC.worthiness in 7 .. 14" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="7..14">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 7 .. 14" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#approved">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'approved'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="0..6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness in 0 .. 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="{1, 2}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="> 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="{2, > 2}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{&lt; 0, > 25}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness &lt; 0 or BC.worthiness > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#very_negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'very_negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="100" pRule="#//@ruleset/@rules.12">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{&lt; 0, 0..6, 7..14, > 25}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness &lt; 0 or BC.worthiness in 0 .. 6 or BC.worthiness in 7 .. 14 or BC.worthiness > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="13" columnWidth="100" pRule="#//@ruleset/@rules.13">
+        <conditionValueSetCellList valueSet="{1, 2, > 2}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 1 or BC.amount_unsettled_bills = 2 or BC.amount_unsettled_bills > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#very_negative">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'very_negative'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="14" columnWidth="100" pRule="#//@ruleset/@rules.14">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.amount_unsettled_bills = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="amount_unsettled_bills" datatype="Decimal" termtype="ATTRIBUTE" fulltext="BC.amount_unsettled_bills">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="business_register#positive">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.business_register = 'positive'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="business_register" datatype="String" termtype="ATTRIBUTE" fulltext="BC.business_register">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{&lt; 0, > 25}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness &lt; 0 or BC.worthiness > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="credit_provision#rejected">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.credit_provision = 'rejected'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="credit_provision" datatype="String" termtype="ATTRIBUTE" fulltext="BC.credit_provision">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

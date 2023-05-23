@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="2" buildNumber="8020" updateStamp="_5OzcNkb2Eey4G7FeQV2Gwg" externalChecksum="547642878:507989954:3413468793" studioType="Java">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_zSPHkDnsEemM7o5GC87i7Q" vocabulary="Vehicel_offer.ecore#/" totalNoOfRules="21">
+    <rule>
+      <condition/>
+      <condition/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="1..2"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 9" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="3..4"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=11">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 11" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="5..10"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=13">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 13" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="0"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="> 10"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.4">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="1..2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="1..2"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 7" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.5">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="1..2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="3..4"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 9" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.6">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="1..2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="5..10"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=11">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 11" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.7">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="1..2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="> 10"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=13">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 13" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.8">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="3..4"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="1..2"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 5" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.9">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="3..4"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="3..4"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 7" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.10">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="3..4"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="5..10"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 9" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.11">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="3..4"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="> 10"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=11">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 11" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.12">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="5..10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="1..2"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 3" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.13">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="5..10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="3..4"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 5" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.14">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="5..10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="5..10"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 7" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.15">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="5..10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="> 10"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 9" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.16">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="> 10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="1..2"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.17">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="> 10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="3..4"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 3" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.18">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="> 10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases in 5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="5..10"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 5" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.19">
+      <condition>
+        <opaqueExpression expression="BC.years_since_first_purchase > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.years_since_first_purchase" rhs="> 10"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="BC.car_purchases > 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="BC.car_purchases" rhs="> 10"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="BC.worthiness+=7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 7" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter>
+      <opaqueExpression expression="BC.positive_money_availability=true">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.positive_money_availability = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="positive_money_availability" datatype="Boolean" termtype="ATTRIBUTE" fulltext="BC.positive_money_availability">
+              <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement externalID="1" post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +9">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="2" post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a less than 1year old customer and has yet bought 3-4 cars ->worthiness +11">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 3-4 cars ->worthiness +11" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="3" post="Info" ruleModelElements="#//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a less than 1year old customer and has yet bought 5-10 cars ->worthiness +13">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 5-10 cars ->worthiness +13" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="4" post="Info" ruleModelElements="#//@ruleset/@rules.4" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +15">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +15" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="5" post="Info" ruleModelElements="#//@ruleset/@rules.5" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  1-2 year old customer and has yet bought 1-2 cars ->worthiness +7">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought 1-2 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="6" post="Info" ruleModelElements="#//@ruleset/@rules.6" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  1-2 year old customer and has yet bought 3-4 cars ->worthiness +9">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought 3-4 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="7" post="Info" ruleModelElements="#//@ruleset/@rules.7" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  1-2 year old customer and has yet bought 5-10 cars ->worthiness +11">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought 5-10 cars ->worthiness +11" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="8" post="Info" ruleModelElements="#//@ruleset/@rules.8" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  1-2 year old customer and has yet bought more than 10 cars ->worthiness +13">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought more than 10 cars ->worthiness +13" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="9" post="Info" ruleModelElements="#//@ruleset/@rules.9" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  3-4 year old customer and has yet bought 1-2 cars ->worthiness +5">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought 1-2 cars ->worthiness +5" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="10" post="Info" ruleModelElements="#//@ruleset/@rules.10" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  3-4 year old customer and has yet bought 3-4 cars ->worthiness +7">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought 3-4 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="11" post="Info" ruleModelElements="#//@ruleset/@rules.11" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  3-4 year old customer and has yet bought 5-10 cars ->worthiness +9">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought 5-10 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="12" post="Info" ruleModelElements="#//@ruleset/@rules.12" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  3-4 year old customer and has yet bought more than 10 cars ->worthiness +11">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought more than 10 cars ->worthiness +11" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="13" post="Info" ruleModelElements="#//@ruleset/@rules.13" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  5-10 year old customer and has yet bought 1-2 cars ->worthiness +3">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought 1-2 cars ->worthiness +3" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="14" post="Info" ruleModelElements="#//@ruleset/@rules.14" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  5-10 year old customer and has yet bought 3-4 cars ->worthiness +5">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought 3-4 cars ->worthiness +5" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="15" post="Info" ruleModelElements="#//@ruleset/@rules.15" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  5-10 year old customer and has yet bought 5-10 cars ->worthiness +7">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought 5-10 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="16" post="Info" ruleModelElements="#//@ruleset/@rules.16" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  5-10 year old customer and has yet bought more than 10 cars ->worthiness +9">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought more than 10 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="17" post="Info" ruleModelElements="#//@ruleset/@rules.17" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  more than 10 year old customer and has yet bought 1-2 cars ->worthiness +1">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought 1-2 cars ->worthiness +1" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="18" post="Info" ruleModelElements="#//@ruleset/@rules.18" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  more than 10 year old customer and has yet bought 3-4 cars ->worthiness +3">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought 3-4 cars ->worthiness +3" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="19" post="Info" ruleModelElements="#//@ruleset/@rules.19" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  more than 10 year old customer and has yet bought 5-10 cars ->worthiness +5">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought 5-10 cars ->worthiness +5" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement externalID="20" post="Info" ruleModelElements="#//@ruleset/@rules.20" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The credit applicant is a  more than 10 year old customer and has yet bought more than 10 cars ->worthiness +7">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought more than 10 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="Vehicel_offer.ecore#//Business_customer" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2 #//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.4 #//@ruleset/@ruleStatements.5 #//@ruleset/@ruleStatements.6 #//@ruleset/@ruleStatements.7 #//@ruleset/@ruleStatements.8 #//@ruleset/@ruleStatements.9 #//@ruleset/@ruleStatements.10 #//@ruleset/@ruleStatements.11 #//@ruleset/@ruleStatements.12 #//@ruleset/@ruleStatements.13 #//@ruleset/@ruleStatements.14 #//@ruleset/@ruleStatements.15 #//@ruleset/@ruleStatements.16 #//@ruleset/@ruleStatements.17 #//@ruleset/@ruleStatements.18 #//@ruleset/@ruleStatements.19">
+      <alias value="BC"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Customer/worthiness"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Customer/positive_money_availability"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Business_customer/car_purchases"/>
+      <referencedAttributes attribute="Vehicel_offer.ecore#//Business_customer/years_since_first_purchase"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=13">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 13" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=11">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 11" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 9" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 7" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 5" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 3" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="BC.worthiness+=0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.worthiness = BC.worthiness + 0" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="worthiness" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.worthiness">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="BC.positive_money_availability=true" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" descendent="true" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" descendent="true" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="BC.positive_money_availability=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.positive_money_availability = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="positive_money_availability" datatype="Boolean" termtype="ATTRIBUTE" fulltext="BC.positive_money_availability">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="100" columnWidthPostSeverity="100" columnWidthAlias="100" columnWidthID="100" columnWidthText="500" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="500">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="The credit applicant is a less than 1year old customer and has yet bought 3-4 cars ->worthiness +11">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 3-4 cars ->worthiness +11" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="3"/>
+        <text external="The credit applicant is a less than 1year old customer and has yet bought 5-10 cars ->worthiness +13">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 5-10 cars ->worthiness +13" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="4"/>
+        <text external="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a less than 1year old customer and has yet bought 1-2 cars ->worthiness +15" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.4">
+        <reference external="5"/>
+        <text external="The credit applicant is a  1-2 year old customer and has yet bought 1-2 cars ->worthiness +7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought 1-2 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.5">
+        <reference external="6"/>
+        <text external="The credit applicant is a  1-2 year old customer and has yet bought 3-4 cars ->worthiness +9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought 3-4 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.6">
+        <reference external="7"/>
+        <text external="The credit applicant is a  1-2 year old customer and has yet bought 5-10 cars ->worthiness +11">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought 5-10 cars ->worthiness +11" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.7">
+        <reference external="8"/>
+        <text external="The credit applicant is a  1-2 year old customer and has yet bought more than 10 cars ->worthiness +13">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  1-2 year old customer and has yet bought more than 10 cars ->worthiness +13" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.8">
+        <reference external="9"/>
+        <text external="The credit applicant is a  3-4 year old customer and has yet bought 1-2 cars ->worthiness +5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought 1-2 cars ->worthiness +5" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.9">
+        <reference external="10"/>
+        <text external="The credit applicant is a  3-4 year old customer and has yet bought 3-4 cars ->worthiness +7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought 3-4 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.10">
+        <reference external="11"/>
+        <text external="The credit applicant is a  3-4 year old customer and has yet bought 5-10 cars ->worthiness +9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought 5-10 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.11">
+        <reference external="12"/>
+        <text external="The credit applicant is a  3-4 year old customer and has yet bought more than 10 cars ->worthiness +11">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  3-4 year old customer and has yet bought more than 10 cars ->worthiness +11" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.12">
+        <reference external="13"/>
+        <text external="The credit applicant is a  5-10 year old customer and has yet bought 1-2 cars ->worthiness +3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought 1-2 cars ->worthiness +3" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.13">
+        <reference external="14"/>
+        <text external="The credit applicant is a  5-10 year old customer and has yet bought 3-4 cars ->worthiness +5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought 3-4 cars ->worthiness +5" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.14">
+        <reference external="15"/>
+        <text external="The credit applicant is a  5-10 year old customer and has yet bought 5-10 cars ->worthiness +7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought 5-10 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.15">
+        <reference external="16"/>
+        <text external="The credit applicant is a  5-10 year old customer and has yet bought more than 10 cars ->worthiness +9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  5-10 year old customer and has yet bought more than 10 cars ->worthiness +9" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.16">
+        <reference external="17"/>
+        <text external="The credit applicant is a  more than 10 year old customer and has yet bought 1-2 cars ->worthiness +1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought 1-2 cars ->worthiness +1" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.17">
+        <reference external="18"/>
+        <text external="The credit applicant is a  more than 10 year old customer and has yet bought 3-4 cars ->worthiness +3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought 3-4 cars ->worthiness +3" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.18">
+        <reference external="19"/>
+        <text external="The credit applicant is a  more than 10 year old customer and has yet bought 5-10 cars ->worthiness +5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought 5-10 cars ->worthiness +5" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.19">
+        <reference external="20"/>
+        <text external="The credit applicant is a  more than 10 year old customer and has yet bought more than 10 cars ->worthiness +7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The credit applicant is a  more than 10 year old customer and has yet bought more than 10 cars ->worthiness +7" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList variableMode="Literal">
+        <valueSetCell/>
+        <expressionCell external="BC.years_since_first_purchase">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell/>
+        <expressionCell external="BC.car_purchases">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="35">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="100" pRule="#//@ruleset/@rules.12">
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="13" columnWidth="100" pRule="#//@ruleset/@rules.13">
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="14" columnWidth="100" pRule="#//@ruleset/@rules.14">
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="15" columnWidth="100" pRule="#//@ruleset/@rules.15">
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="16" columnWidth="100" pRule="#//@ruleset/@rules.16">
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="17" columnWidth="100" pRule="#//@ruleset/@rules.17">
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="1..2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 1 .. 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="18" columnWidth="100" pRule="#//@ruleset/@rules.18">
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="3..4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 3 .. 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="19" columnWidth="100" pRule="#//@ruleset/@rules.19">
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="5..10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases in 5 .. 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="20" columnWidth="100" pRule="#//@ruleset/@rules.20">
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.years_since_first_purchase > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="years_since_first_purchase" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.years_since_first_purchase">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 10">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="BC.car_purchases > 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="car_purchases" datatype="Integer" termtype="ATTRIBUTE" fulltext="BC.car_purchases">
+                <parentTerm text="BC" datatype="Business_customer" termtype="ENTITY" fulltext="BC" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
