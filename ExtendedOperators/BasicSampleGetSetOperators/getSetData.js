@@ -77,8 +77,5 @@ function setSessionData(helper, name, value) {
 // either the get or set operators.
 module.exports = {
     getSessionData,
-    "from session data": getSessionData,  // an example with a user-friendly name including spaces
-    setSessionData: setSessionData,
-    fromSessionData: getSessionData, // we can define synonyms
-    toSessionData: setSessionData // we can define synonyms
+    setSessionData: setSessionData
 };
