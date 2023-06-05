@@ -260,8 +260,11 @@ corticon.dynForm.StepsController = function () {
                     alert("you didn't enter a number in the field");
                 else
                     _saveOneFormData(formDataFieldName, converted);
-            } else
-                _saveOneFormData(formDataFieldName, val);
+            }
+            else {
+                if ( val !== undefined && val !== null && val !== "" )
+                    _saveOneFormData(formDataFieldName, val);
+            }
         });
 
         // allFormEls = $('#dynUIContainerId :checkbox');
@@ -423,9 +426,12 @@ corticon.dynForm.StepsController = function () {
         }
 
         for ( let i=0; i<valuesForOneControl.length; i++ ) {
-            const oneItemAsObjLit = {};
-            oneItemAsObjLit[fieldName] = valuesForOneControl[i];
-            convertedArray.push( oneItemAsObjLit );
+            const val = valuesForOneControl[i];
+            if ( val !== undefined && val !== null && val !== "" ) {
+                const oneItemAsObjLit = {};
+                oneItemAsObjLit[fieldName] = val;
+                convertedArray.push( oneItemAsObjLit );
+            }
         }
         return convertedArray;
     }
@@ -473,9 +479,9 @@ corticon.dynForm.StepsController = function () {
             const configuration = { logLevel: 0 };
             // const configuration = { logLevel: 1 };
             const t1 = performance.now();
-            console.log("** About to call decision service");
+            // console.log("** About to call decision service");
             const result = await decisionServiceEngine.execute(payload, configuration);
-            console.log("** Done with call decision service");
+            // console.log("** Done with call decision service");
             const t2 = performance.now();
             const event2 = { "output": result,
                 "execTimeMs": t2-t1,
