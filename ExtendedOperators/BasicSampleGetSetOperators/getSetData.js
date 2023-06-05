@@ -17,7 +17,7 @@ This provides 2 main capabilities:
 Implementation notes:
 
 For Date, DateTime or Decimal datatypes we store them as a JSON String when calling set,
-and we convert them back to the proper object when calling set.  See implementation
+and we convert them back to the proper object when calling get.  See implementation
 below showing how to use the helper object to do that.
 
 The session data is stored in memory in a Map object.  For a real implementation, you
