@@ -5,13 +5,11 @@ corticon.dynForm.UIControlsRenderer = function () {
 // Number field as integer vs decimal -> new field type?
 
     let itsFlagRenderWithKui = false;
-    // let itsFlagRenderWithKui = true;
 
     // Render all Containers in base element (baseEl: A Jquery object - typically from a div element)
     // This is the main public entry point
     function renderUI ( containers, baseEl, labelPositionAtUILevel, language, useKui ) {
-        // itsFlagRenderWithKui = useKui;
-        // itsFlagRenderWithKui = true;
+        itsFlagRenderWithKui = useKui;
 
         /* Without JQuery one could create all dynamic elements just using the DOM API.  For example:
         var contEl = document.createElement('div');
@@ -245,8 +243,28 @@ corticon.dynForm.UIControlsRenderer = function () {
     }
 
     function renderQRCode(oneUIControl, baseEl, labelPositionAtUILevel) {
-        // temporary: will be implemented soon
-        alert('Error rendering QRCode not yet supported');
+        if ( ! itsFlagRenderWithKui ) {
+            alert ("QRCode UI controls can only be rendered in KendoUI mode");
+            return;
+        }
+
+        if ( oneUIControl.value === undefined || oneUIControl.value === null ) {
+            console.log('Error rendering QRCode no value specified - id: ' + oneUIControl.id);
+            return;
+        }
+
+        const contEl = $(`<div class="inputContainer"></div>`);
+        contEl.appendTo(baseEl);
+
+        appendLabel(oneUIControl, labelPositionAtUILevel, contEl);
+
+        const qrCodeEl = $(`<div class="QRCode" id="${oneUIControl.id}"></div>`);
+        qrCodeEl.appendTo(contEl);
+
+        if ( itsFlagRenderWithKui )
+            qrCodeEl.kendoQRCode({ value: oneUIControl.value });
+        else
+            qrCodeEl.html = oneUIControl.value;
     }
 
     function renderGeoCoordinates(oneUIControl, baseEl, labelPositionAtUILevel) {
