@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript" src="./decisionServiceBundle.js"></script>
+  <title>CorticonJS 2.0 Plain Javascript Sample</title>
+  <script type="text/javascript">
+
+	const payload = [{
+		"YearsDriving": 1,
+		"DamageWaiver": "Full",
+		"Gender": "male",
+		"Age": 20
+	}];
+	
+	const configuration = {
+		logLevel: 1,
+		logFunction: corticonLogEntry => console.log(corticonLogEntry)
+	};
+	var result;
+	
+	async function processResult(e) {
+		console.log('page is fully loaded');
+		result = await window.corticonEngine.execute(payload,configuration);
+		document.getElementById('result').append(JSON.stringify(result));
+	};
+	window.onload = processResult;
+
+  </script>
+</head>
+<body>
+	<div id="result"></div>
+</body>
+</html>
