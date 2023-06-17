@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -13,18 +13,16 @@
 		"Gender": "male",
 		"Age": 20
 	}];
-	
-	const configuration = {
-		logLevel: 1,
-		logFunction: corticonLogEntry => console.log(corticonLogEntry)
-	};
-	var result;
-	
-	async function processResult(e) {
+
+	let result;
+
+	async function processResult() {
 		console.log('page is fully loaded');
+        const configuration = {logLevel: 1};
 		result = await window.corticonEngine.execute(payload,configuration);
 		document.getElementById('result').append(JSON.stringify(result));
-	};
+	}
+
 	window.onload = processResult;
 
   </script>
