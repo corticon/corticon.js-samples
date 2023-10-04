@@ -1,0 +1,19 @@
+This SCO shows how to make a REST call from a Corticon decision service using data from the payload and augment the payload 
+with information returned from the REST service.
+
+Specifically, it takes medical procedure codes and return the associated reimbursement rates.
+	
+Important note when SCO runs in browser:
+---------------------------------------
+When running a decision service that uses a REST SCO within a browser, one may face cross-origin browser restrictions. 
+For security reasons, browsers restrict cross-origin HTTP requests initiated from scripts. For example, XMLHttpRequest and the Fetch API 
+follow the same-origin policy. This means that a web application using those APIs can only request resources from the same origin the application 
+was loaded from unless the response from other origins includes the right CORS headers.
+	
+To invoke a REST service that is running on a different host than the decision service, one needs to use cors.
+	 
+Here are some good read on cors:
+	_ https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+	_ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
+		
+
