@@ -4,7 +4,20 @@
     <script type="text/javascript" src="decisionServiceBundle.js"></script>
     <script type="text/javascript" src="decisionServiceBundle2.js"></script>
     <script>
-        function runDecisionService() {
+        window.onload = (event) => {
+            restoreInputPayload();
+        };
+        function restoreInputPayload() {
+            const payload1 = window.localStorage.getItem('CorticonJSPayload1');
+            if ( payload1 !== null  )
+                document.getElementById("payloadId1").value = payload1;
+
+            const payload2 = window.localStorage.getItem('CorticonJSPayload2');
+            if ( payload2 !== null  )
+                document.getElementById("payloadId2").value = payload2;
+        }
+
+        async function runDecisionService() {
             if ( window.corticonEngines === undefined ) {
                 alert("Ensure that you provide 2 decision service files called decisionServiceBundle.js and decisionServiceBundle2.js in the same directory as where this html file resides");
                 return;
@@ -23,9 +36,18 @@
                 const payloadString2 = document.getElementById("payloadId2").value;
                 const payload2 = JSON.parse(payloadString2);
 
+                // save them in local storage for restore  on reload
+                try {
+                    window.localStorage.setItem('CorticonJSPayload1', payloadString1);
+                    window.localStorage.setItem('CorticonJSPayload2', payloadString2);
+                }
+                catch (e) {
+                    // Some browser in private mode may throw exception when using local storage
+                }
+
                 const configuration = { logLevel: 0};
-                const result1 = window.corticonEngines[0].execute(payload1, configuration);
-                const result2 = window.corticonEngines[1].execute(payload2, configuration);
+                const result1 = await window.corticonEngines[0].execute(payload1, configuration);
+                const result2 = await window.corticonEngines[1].execute(payload2, configuration);
                 document.getElementById("resultId1").value = JSON.stringify(result1, null, 2);
                 document.getElementById("resultId2").value = JSON.stringify(result2, null, 2);
 
