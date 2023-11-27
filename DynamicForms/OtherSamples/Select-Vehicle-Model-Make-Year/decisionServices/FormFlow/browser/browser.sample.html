@@ -3,12 +3,28 @@
     <meta charset="utf-8" />
     <script type="text/javascript" src="decisionServiceBundle.js"></script>
     <script>
-        function runDecisionService() {
+        window.onload = (event) => {
+            restoreInputPayload();
+        };
+        function restoreInputPayload() {
+            const payload = window.localStorage.getItem('CorticonJSPayload');
+            if ( payload !== null  )
+                document.getElementById("payloadId").value = payload;
+        }
+
+        async function runDecisionService() {
             // Here is where everything starts: we execute the rule with the sample payload and we
             // output the result to an alert dialog.  Errors and exceptions are shown in alert dialog too.
             try {
                 const payloadString = document.getElementById("payloadId").value;
                 const payload = JSON.parse(payloadString);
+                // save it in local storage for restore  on reload
+                try {
+                    window.localStorage.setItem('CorticonJSPayload', payloadString);
+                }
+                catch (e) {
+                    // Some browser in private mode may throw exception when using local storage
+                }
 
                 const configuration = { logLevel: 0};
                 // const configuration = { logLevel: 1 };
@@ -29,7 +45,7 @@
                     },
 
                 };*/
-                const result = window.corticonEngine.execute(payload, configuration);
+                const result = await window.corticonEngine.execute(payload, configuration);
 
                 // We always display the result of execution - if there was an error we will additionally display an alert.
                 document.getElementById("resultId").value = JSON.stringify(result, null, 2);
