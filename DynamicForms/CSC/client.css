@@ -1,61 +1,290 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
 body {
-    /*background-color: black;*/
-    background-color: #535151;
-    color: white;
+  font-family: Nunito, arial, verdana;
 }
 
 .sampleTitle {
-    font-size: 1.7rem;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.3rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  font-family: "Nunito", sans-serif;
 }
 
 .commandVerticalSpacer {
-    height: 1rem;
+  height: 0rem;
 }
 
 .commandBar {
-    margin-top: 1rem;
+  margin-right: 1.3rem;
+  margin-top: 0rem;
 }
 
-.commandContainer {
+.center {
+  margin: auto;
+  width: 66%;
 }
-.command {
+
+ul li {
+  padding: 5px 0px;
 }
+
 .commandButton {
-    background-color: lightblue;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    padding-right: 0.6rem;
-    /*font-size: 1rem;*/
-    border-radius: 5px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 2rem;
+  font-size: 1rem;
 }
+
 .commandButtonHidden {
-    display: none;
+  display: none;
 }
 
 .showTraceContainer {
-    padding-top: 1rem;
+  padding-top: 1rem;
+  left: 0px;
 }
 
-.useHtmlKuiContainer {
-    padding-top: 1rem;
+a.command:hover,
+a.command:visited,
+a.command:link,
+a.command:active {
+  text-decoration: none;
+  color: black;
+}
+.tracePanelTitle {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 0.5rem;
 }
 
-.sampleSelectLabel {
-    font-size: 0.9rem;
-}
-.sampleSelect {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    /*font-size: 1rem;*/
-    background-color: lightblue;
-    border-radius: 5px;
+.allTracesContainer {
+  margin-top: 1.5rem;
+  border: cornflowerblue 3px solid;
+  border-radius: 1rem;
+  display: none;
 }
 
-a.command:hover, a.command:visited, a.command:link, a.command:active {
-    text-decoration: none;
-    color: black;
+.allTracesContainer textarea {
+  background-color: #53515116;
+  color: hsl(309, 100%, 1%);
+}
+
+.allTracesContainer tr {
+  color: black;
+}
+
+.stageTraceHistory {
+  font-size: 1.1rem;
+  color: lightskyblue;
+}
+
+.stageInTrace {
+  color: lightskyblue;
+  border: #2be259 2px solid;
+  border-radius: 1rem;
+}
+
+.activeStageInTrace {
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 1.3rem;
+}
+
+a.stageInTrace:hover,
+a.stageInTrace:visited,
+a.stageInTrace:link,
+a.stageInTrace:active {
+  text-decoration: none;
+}
+
+a.copyToClip:hover,
+a.copyToClip:visited,
+a.copyToClip:link,
+a.copyToClip:active {
+  text-decoration: none;
+  color: white;
+}
+.dynUIContainer {
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.5rem solid black;
+  background-color: rgba(56, 251, 46, 0.446);
+  color: black;
+  border-radius: 1rem;
+}
+
+.inputContainer {
+  margin: 1em;
+}
+
+.inputLabelSide {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+.inputLabelAbove {
+  margin-bottom: 0.3rem;
+}
+
+.readOnlyText {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.fieldValidationLabel {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.containerValidationMessage {
+  color: firebrick;
+}
+.controlValidationMessage {
+  color: firebrick;
+}
+
+.textAreaControl {
+  vertical-align: middle;
+}
+
+.addTextContainer {
+  text-align: center;
+  border: black 1px solid;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: blue;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  display: table;
+}
+
+.expenseAmount {
+  width: 5rem;
+  margin-left: 0.8rem;
+}
+.addExpenseContainer {
+  text-align: center;
+  border: black 1px solid;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: blue;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  display: table;
+}
+.currencySelector {
+  margin-left: 0.8rem;
+}
+/* Shared with Kendo UI mode */
+.dynUIContainer {
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.3rem solid #6381dc;
+  border-radius: 1rem;
+}
+
+/* Not shared with Kendo UI mode */
+.dynUIContainerColors {
+  background-color: ghostwhite;
+  color: black;
+}
+
+.inputContainer {
+  margin: 1em;
+}
+
+.inputLabelSide {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+.inputLabelAbove {
+  margin-bottom: 0.3rem;
+}
+
+.readOnlyText {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.fieldValidationLabel {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.containerValidationMessage {
+  color: firebrick;
+}
+.controlValidationMessage {
+  color: firebrick;
+}
+
+.textAreaControl {
+  vertical-align: middle;
+}
+
+.addTextContainer {
+  text-align: center;
+  border: black 1px solid;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: blue;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  display: table;
+}
+
+.expenseAmount {
+  width: 5rem;
+  margin-left: 0.8rem;
+}
+.addExpenseContainer {
+  text-align: center;
+  border: black 1px solid;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: blue;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  display: table;
+}
+.currencySelector {
+  margin-left: 0.8rem;
+}
+
+/* Override some of the kendo ui style*/
+.k-input {
+  width: auto;
+}
+.k-input,
+.k-picker {
+  width: auto;
+}
+
+/* Override some of the kendo ui style*/
+.k-input {
+  width: auto;
+}
+.k-input,
+.k-picker {
+  width: auto;
+}
+
+.QRCode {
+  width: 120px;
+  height: 120px;
+}
+
+.GeoCoordinates {
+  width: 600px;
+  height: 400px;
 }
