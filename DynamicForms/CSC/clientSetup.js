@@ -98,6 +98,7 @@ function setupInitialInputData() {
     const inJobApplication = inDataEmpty;
     const inMulticontainer = inDataEmpty;
     const inI18N = inDataEmpty;
+    const inCountry = inDataEmpty;
 
     const inDataReuseSubflow = {};
     inDataReuseSubflow.reusingSubflows = {};
@@ -116,6 +117,7 @@ function setupInitialInputData() {
     allInputData.push(inJobApplication);
     allInputData.push(inMulticontainer);
     allInputData.push(inI18N);
+    allInputData.push(inCountry);
 
     inputData = allInputData[0];
 }
