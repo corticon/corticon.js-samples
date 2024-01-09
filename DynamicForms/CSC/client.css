@@ -1,290 +1,61 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-
 body {
-  font-family: Nunito, arial, verdana;
+    /*background-color: black;*/
+    background-color: #535151;
+    color: white;
 }
 
 .sampleTitle {
-  font-size: 1.7rem;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.3rem;
-  font-family: "Nunito", sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
 }
 
 .commandVerticalSpacer {
-  height: 0rem;
+    height: 1rem;
 }
 
 .commandBar {
-  margin-right: 1.3rem;
-  margin-top: 0rem;
+    margin-top: 1rem;
 }
 
-.center {
-  margin: auto;
-  width: 66%;
+.commandContainer {
 }
-
-ul li {
-  padding: 5px 0px;
+.command {
 }
-
 .commandButton {
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-  padding-right: 2rem;
-  font-size: 1rem;
+    background-color: lightblue;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 0.6rem;
+    /*font-size: 1rem;*/
+    border-radius: 5px;
 }
-
 .commandButtonHidden {
-  display: none;
+    display: none;
 }
 
 .showTraceContainer {
-  padding-top: 1rem;
-  left: 0px;
+    padding-top: 1rem;
 }
 
-a.command:hover,
-a.command:visited,
-a.command:link,
-a.command:active {
-  text-decoration: none;
-  color: black;
-}
-.tracePanelTitle {
-  text-align: center;
-  font-size: 1.4rem;
-  margin: 0.5rem;
+.useHtmlKuiContainer {
+    padding-top: 1rem;
 }
 
-.allTracesContainer {
-  margin-top: 1.5rem;
-  border: cornflowerblue 3px solid;
-  border-radius: 1rem;
-  display: none;
+.sampleSelectLabel {
+    font-size: 0.9rem;
+}
+.sampleSelect {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    /*font-size: 1rem;*/
+    background-color: lightblue;
+    border-radius: 5px;
 }
 
-.allTracesContainer textarea {
-  background-color: #53515116;
-  color: hsl(309, 100%, 1%);
-}
-
-.allTracesContainer tr {
-  color: black;
-}
-
-.stageTraceHistory {
-  font-size: 1.1rem;
-  color: lightskyblue;
-}
-
-.stageInTrace {
-  color: lightskyblue;
-  border: #2be259 2px solid;
-  border-radius: 1rem;
-}
-
-.activeStageInTrace {
-  font-size: 1.3rem;
-  font-weight: bold;
-  border-radius: 1.3rem;
-}
-
-a.stageInTrace:hover,
-a.stageInTrace:visited,
-a.stageInTrace:link,
-a.stageInTrace:active {
-  text-decoration: none;
-}
-
-a.copyToClip:hover,
-a.copyToClip:visited,
-a.copyToClip:link,
-a.copyToClip:active {
-  text-decoration: none;
-  color: white;
-}
-.dynUIContainer {
-  margin: 1rem;
-  padding: 1rem;
-  border: 0.5rem solid black;
-  background-color: rgba(56, 251, 46, 0.446);
-  color: black;
-  border-radius: 1rem;
-}
-
-.inputContainer {
-  margin: 1em;
-}
-
-.inputLabelSide {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-}
-.inputLabelAbove {
-  margin-bottom: 0.3rem;
-}
-
-.readOnlyText {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-}
-
-.fieldValidationLabel {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-}
-
-.containerValidationMessage {
-  color: firebrick;
-}
-.controlValidationMessage {
-  color: firebrick;
-}
-
-.textAreaControl {
-  vertical-align: middle;
-}
-
-.addTextContainer {
-  text-align: center;
-  border: black 1px solid;
-  border-radius: 0.5rem;
-  margin-left: 2rem;
-  font-size: 1.05rem;
-  font-weight: bold;
-  color: blue;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  display: table;
-}
-
-.expenseAmount {
-  width: 5rem;
-  margin-left: 0.8rem;
-}
-.addExpenseContainer {
-  text-align: center;
-  border: black 1px solid;
-  border-radius: 0.5rem;
-  margin-left: 2rem;
-  font-size: 1.05rem;
-  font-weight: bold;
-  color: blue;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  display: table;
-}
-.currencySelector {
-  margin-left: 0.8rem;
-}
-/* Shared with Kendo UI mode */
-.dynUIContainer {
-  margin: 1rem;
-  padding: 1rem;
-  border: 0.3rem solid #6381dc;
-  border-radius: 1rem;
-}
-
-/* Not shared with Kendo UI mode */
-.dynUIContainerColors {
-  background-color: ghostwhite;
-  color: black;
-}
-
-.inputContainer {
-  margin: 1em;
-}
-
-.inputLabelSide {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-}
-.inputLabelAbove {
-  margin-bottom: 0.3rem;
-}
-
-.readOnlyText {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-}
-
-.fieldValidationLabel {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-}
-
-.containerValidationMessage {
-  color: firebrick;
-}
-.controlValidationMessage {
-  color: firebrick;
-}
-
-.textAreaControl {
-  vertical-align: middle;
-}
-
-.addTextContainer {
-  text-align: center;
-  border: black 1px solid;
-  border-radius: 0.5rem;
-  margin-left: 2rem;
-  font-size: 1.05rem;
-  font-weight: bold;
-  color: blue;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  display: table;
-}
-
-.expenseAmount {
-  width: 5rem;
-  margin-left: 0.8rem;
-}
-.addExpenseContainer {
-  text-align: center;
-  border: black 1px solid;
-  border-radius: 0.5rem;
-  margin-left: 2rem;
-  font-size: 1.05rem;
-  font-weight: bold;
-  color: blue;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  display: table;
-}
-.currencySelector {
-  margin-left: 0.8rem;
-}
-
-/* Override some of the kendo ui style*/
-.k-input {
-  width: auto;
-}
-.k-input,
-.k-picker {
-  width: auto;
-}
-
-/* Override some of the kendo ui style*/
-.k-input {
-  width: auto;
-}
-.k-input,
-.k-picker {
-  width: auto;
-}
-
-.QRCode {
-  width: 120px;
-  height: 120px;
-}
-
-.GeoCoordinates {
-  width: 600px;
-  height: 400px;
+a.command:hover, a.command:visited, a.command:link, a.command:active {
+    text-decoration: none;
+    color: black;
 }
