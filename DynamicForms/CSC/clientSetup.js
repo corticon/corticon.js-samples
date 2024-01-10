@@ -99,6 +99,10 @@ function setupInitialInputData() {
     const inMulticontainer = inDataEmpty;
     const inI18N = inDataEmpty;
     const inCountry = inDataEmpty;
+    const inVehicleSelection = inDataEmpty;
+    const inPropertyInsurance = inDataEmpty;
+    const inGardenPlantDisease = inDataEmpty;
+    const inT2DB = inDataEmpty;
 
     const inDataReuseSubflow = {};
     inDataReuseSubflow.reusingSubflows = {};
@@ -118,6 +122,10 @@ function setupInitialInputData() {
     allInputData.push(inMulticontainer);
     allInputData.push(inI18N);
     allInputData.push(inCountry);
+    allInputData.push(inVehicleSelection);
+    allInputData.push(inPropertyInsurance);
+    allInputData.push(inGardenPlantDisease);
+    allInputData.push(inT2DB);
 
     inputData = allInputData[0];
 }
