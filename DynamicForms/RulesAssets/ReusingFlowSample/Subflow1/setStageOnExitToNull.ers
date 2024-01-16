@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_cyfUca6wEeyYDL1RwIbSqg" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_S4e26rSbEe6Kjq85BNgf8w" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_1XqhcK1SEeyYDL1RwIbSqg" vocabulary="../../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_GcxPgcGoEe2JJdwUheDGaA" vocabulary="../../Vocabulary/Rule%20Vocabulary.ecore#/">
     <rule>
       <action disabled="true"/>
       <action>
@@ -33,10 +33,10 @@
         </parserOutput>
       </opaqueExpression>
     </filter>
-    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//UI" filters="#//@ruleset/@filters.0">
-      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
-      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/stageOnExit"/>
-      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/comments"/>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/nextStageNumber"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/stageOnExit"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/comments"/>
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="81">
@@ -44,7 +44,7 @@
       <actionItemList disabled="true" rowHeight="108">
         <valueSetCell/>
         <expressionCell external="UI.comments = 'It is good practice to reset the value of stageOnExit once we have consumed it - though not completely mandatory.  Notice that we do that with a filter to execute this only when the nextStageNumber is the stageOnExit so that it will execute only once and as the last stage of the subflow is reached.'">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = 'It is good practice to reset the value of stageOnExit once we have consumed it - though not completely mandatory.  Notice that we do that with a filter to execute this only when the nextStageNumber is the stageOnExit so that it will execute only once at as the last stage of the subflow is reached.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.comments = 'It is good practice to reset the value of stageOnExit once we have consumed it - though not completely mandatory.  Notice that we do that with a filter to execute this only when the nextStageNumber is the stageOnExit so that it will execute only once and as the last stage of the subflow is reached.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="comments" datatype="String" termtype="ATTRIBUTE" fulltext="UI.comments">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -90,10 +90,10 @@
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = UI.stageOnExit" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
             <referencedTermList>
               <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
               <terms text="stageOnExit" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.stageOnExit">
-                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </referencedTermList>
           </parserOutput>

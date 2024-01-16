@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.common="http:///com/corticon/rulesemf/common.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="1" minorVersionNumber="4" buildNumber="8020" updateStamp="_ypJkcLShEe6Q__w-pDrfOg" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_ypb4UbShEe6Q__w-pDrfOg" externalChecksum="2722078124:507989954">
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_yp8OoLShEe6Q__w-pDrfOg" key="1" type="Validation" severity="Error" invalidObjects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0" textKey="TestsheetTreeSetModelAPIImpl.Validation.Reference.Entity" locationKey="TestsheetTreeSetModelAPIImpl.Validation.NullTemplate">
+      <textVariables>UI</textVariables>
+      <locationVariables>UI [1]</locationVariables>
+    </validationMessages>
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_yp8OobShEe6Q__w-pDrfOg" key="1" type="Validation" severity="Error" invalidObjects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.1" textKey="TestsheetTreeSetModelAPIImpl.Validation.Reference.Entity" locationKey="TestsheetTreeSetModelAPIImpl.Validation.NullTemplate">
+      <textVariables>Data</textVariables>
+      <locationVariables>Data [1]</locationVariables>
+    </validationMessages>
+    <testsheet ruleActivityUpdateStamp="_vKr5gLShEe6Q__w-pDrfOg" ruleActivity="../SummaryStep.ers#//@ruleset" locale="">
+      <input/>
+      <output/>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" validationMessages="#//@testsheetAssets.0/@validationMessages.0" nodeID="1" manuallyCreated="true" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="false" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/done"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" validationMessages="#//@testsheetAssets.0/@validationMessages.1" nodeID="1" manuallyCreated="true" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data/validationSample" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number1"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number2"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="33" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/sumStep1"/>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/containers" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//Container">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="summaryContainerId" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//Container/uiControls" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="total_1" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="ReadOnlyText" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/type"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="The sum of the numbers you entered is: 33" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/value"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Summary" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="true" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/done"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data/validationSample" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="33" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/sumStep1"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="11" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number1"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="22" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number2"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_ypb4ULShEe6Q__w-pDrfOg" externalChecksum="2722078124:507989954">
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_yp81sLShEe6Q__w-pDrfOg" key="1" type="Validation" severity="Error" invalidObjects="#//@testsheetAssets.1/@testsheetViewList.0/@inputRoot/@children.0" textKey="TestsheetTreeSetModelAPIImpl.Validation.Reference.Entity" locationKey="TestsheetTreeSetModelAPIImpl.Validation.NullTemplate">
+      <textVariables>UI</textVariables>
+      <locationVariables>UI [1]</locationVariables>
+    </validationMessages>
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_yp81sbShEe6Q__w-pDrfOg" key="1" type="Validation" severity="Error" invalidObjects="#//@testsheetAssets.1/@testsheetViewList.0/@inputRoot/@children.1" textKey="TestsheetTreeSetModelAPIImpl.Validation.Reference.Entity" locationKey="TestsheetTreeSetModelAPIImpl.Validation.NullTemplate">
+      <textVariables>Data</textVariables>
+      <locationVariables>Data [1]</locationVariables>
+    </validationMessages>
+    <testsheet ruleActivityUpdateStamp="_xDoYILShEe6Q__w-pDrfOg" ruleActivity="../validation.erf#//@ruleflow" locale="">
+      <input/>
+      <output/>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" validationMessages="#//@testsheetAssets.1/@validationMessages.0" nodeID="1" manuallyCreated="true" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="false" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/done"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" validationMessages="#//@testsheetAssets.1/@validationMessages.1" nodeID="1" manuallyCreated="true" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data/validationSample" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number1"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number2"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="33" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/sumStep1"/>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/containers" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//Container">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="summaryContainerId" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//Container/uiControls" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="total_1" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="ReadOnlyText" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/type"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="The sum of the numbers you entered is: 33" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/value"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Summary" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="true" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/done"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data/validationSample" eClass="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="33" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/sumStep1"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="11" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number1"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="22" eAttribute="../../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/number2"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_GcxPgcGoEe2JJdwUheDGaA" testsheets="#//@testsheetAssets.0/@testsheet #//@testsheetAssets.1/@testsheet" vocabulary="../Rule%20Vocabulary.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="UnitTest"/>
+    <testTabList name="FlowTest"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>

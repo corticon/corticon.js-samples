@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_BdraEKptEe6Sl9gK7pxHug" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_keoVsRQGEe27GMv-xcnDFw" vocabulary="../../Vocabulary/Vocab.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls.dataSourceOptions = DataSourceOptions.new [dataTextField='country_name', dataValueField='country_name']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.dataSourceOptions = DataSourceOptions.new [ DataSourceOptions.dataValueField = 'country_name' , DataSourceOptions.dataTextField = 'country_name' ]" datatype="DataSourceOptions" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="dataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="UI.containers.uiControls.dataSourceOptions" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="new" datatype="DataSourceOptions" termtype="NEW" fulltext="DataSourceOptions.new">
+                <parentTerm text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="dataTextField" datatype="String" termtype="ATTRIBUTE" fulltext="DataSourceOptions.dataTextField">
+                <parentTerm text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="dataValueField" datatype="String" termtype="ATTRIBUTE" fulltext="DataSourceOptions.dataValueField">
+                <parentTerm text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber = 0">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="../../Vocabulary/Vocab.ecore#//Container" traversedAssocRole="../../Vocabulary/Vocab.ecore#//UI/containers">
+        <extension association="true" entity="../../Vocabulary/Vocab.ecore#//UIControl" traversedAssocRole="../../Vocabulary/Vocab.ecore#//Container/uiControls">
+          <extension association="true" entity="../../Vocabulary/Vocab.ecore#//DataSourceOptions" traversedAssocRole="../../Vocabulary/Vocab.ecore#//UIControl/dataSourceOptions"/>
+        </extension>
+      </extension>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/pathToData"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/currentStageDescription"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UI/noUiToRenderContinue"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//Container">
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//Container/id"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//Container/title"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//UIControl">
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/type"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/id"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/label"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//UIControl/dataSource"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Vocab.ecore#//DataSourceOptions">
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//DataSourceOptions/dataTextField"/>
+      <referencedAttributes attribute="../../Vocabulary/Vocab.ecore#//DataSourceOptions/dataValueField"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="27" sashWeightConditionsActions="7">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="315">
+        <valueSetCell/>
+        <expressionCell external="UI.containers.uiControls.dataSourceOptions = DataSourceOptions.new [dataTextField='country_name', dataValueField='country_name']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls.dataSourceOptions = DataSourceOptions.new [ DataSourceOptions.dataValueField = 'country_name' , DataSourceOptions.dataTextField = 'country_name' ]" datatype="DataSourceOptions" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="dataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="UI.containers.uiControls.dataSourceOptions" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="new" datatype="DataSourceOptions" termtype="NEW" fulltext="DataSourceOptions.new">
+                <parentTerm text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="dataTextField" datatype="String" termtype="ATTRIBUTE" fulltext="DataSourceOptions.dataTextField">
+                <parentTerm text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="dataValueField" datatype="String" termtype="ATTRIBUTE" fulltext="DataSourceOptions.dataValueField">
+                <parentTerm text="DataSourceOptions" datatype="DataSourceOptions" termtype="ENTITY" fulltext="DataSourceOptions" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber = 0" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber = 0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="319" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

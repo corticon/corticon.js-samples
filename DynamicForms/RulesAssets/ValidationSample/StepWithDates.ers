@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_btNvksppEeyxQJcBaAt2MA" externalChecksum="547642878:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="1" minorVersionNumber="3" buildNumber="8020" updateStamp="_TywuBbSbEe6Kjq85BNgf8w" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_K52gEcppEeyxQJcBaAt2MA" vocabulary="../Vocabulary/Vocab.ecore#/">
+  <ruleset vocabularyUpdateStamp="_GcxPgcGoEe2JJdwUheDGaA" vocabulary="../Vocabulary/Rule%20Vocabulary.ecore#/">
     <rule>
       <action>
         <opaqueExpression expression="UI.containers = Container.new[id='dtContainerId', title='Validating an End Date is After the Start Date']">
@@ -269,47 +269,47 @@
         </parserOutput>
       </opaqueExpression>
     </filter>
-    <logicalVariable entity="../Vocabulary/Vocab.ecore#//UI" filters="#//@ruleset/@filters.0">
-      <extension association="true" entity="../Vocabulary/Vocab.ecore#//Container" traversedAssocRole="../Vocabulary/Vocab.ecore#//UI/containers">
-        <extension association="true" entity="../Vocabulary/Vocab.ecore#//UIControl" traversedAssocRole="../Vocabulary/Vocab.ecore#//Container/uiControls"/>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//Container" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//UI/containers">
+        <extension association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//Container/uiControls"/>
       </extension>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/comments"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/str2"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UI/str1"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/comments"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/str2"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UI/str1"/>
     </logicalVariable>
-    <logicalVariable entity="../Vocabulary/Vocab.ecore#//Container" filters="#//@ruleset/@filters.2 #//@ruleset/@filters.3">
-      <extension explicit="true" association="true" entity="../Vocabulary/Vocab.ecore#//UIControl" traversedAssocRole="../Vocabulary/Vocab.ecore#//Container/uiControls" filters="#//@ruleset/@filters.2">
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//Container" filters="#//@ruleset/@filters.2 #//@ruleset/@filters.3">
+      <extension explicit="true" association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//Container/uiControls" filters="#//@ruleset/@filters.2">
         <alias value="startDate"/>
-        <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/id"/>
-        <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/value"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/id"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/value"/>
       </extension>
-      <extension explicit="true" association="true" entity="../Vocabulary/Vocab.ecore#//UIControl" traversedAssocRole="../Vocabulary/Vocab.ecore#//Container/uiControls" filters="#//@ruleset/@filters.3">
+      <extension explicit="true" association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//Container/uiControls" filters="#//@ruleset/@filters.3">
         <alias value="endDate"/>
-        <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/id"/>
-        <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/value"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/id"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/value"/>
       </extension>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//Container/id"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//Container/title"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
     </logicalVariable>
-    <logicalVariable entity="../Vocabulary/Vocab.ecore#//UIControl">
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/value"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/type"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/id"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/maxDT"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/minDT"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/label"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl">
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/value"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/type"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/id"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/maxDT"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/minDT"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/label"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//UIControl/fieldName"/>
     </logicalVariable>
-    <logicalVariable entity="../Vocabulary/Vocab.ecore#//ProjectsData/Data">
-      <extension association="true" entity="../Vocabulary/Vocab.ecore#//ProjectsData/ValidationSample" traversedAssocRole="../Vocabulary/Vocab.ecore#//ProjectsData/Data/validationSample">
-        <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/ValidationSample/startDate"/>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data">
+      <extension association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/Data/validationSample">
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/startDate"/>
       </extension>
     </logicalVariable>
-    <logicalVariable entity="../Vocabulary/Vocab.ecore#//ProjectsData/ValidationSample">
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/ValidationSample/startDateMS"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/ValidationSample/endDateMS"/>
-      <referencedAttributes attribute="../Vocabulary/Vocab.ecore#//ProjectsData/ValidationSample/endDate"/>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample">
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/startDateMS"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/endDateMS"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//ProjectsData/ValidationSample/endDate"/>
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="73">

@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" buildNumber="8020" updateStamp="_EpLGQLSgEe6Q__w-pDrfOg" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_6R4iULSfEe6Q__w-pDrfOg" vocabulary="Rule%20Vocabulary.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="CanonicalSample.Step8SumAll = allExpenses.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8SumAll = allExpenses.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8SumAll" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8SumAll">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allExpenses_amount" datatype="Decimal" termtype="COLLECTION" fulltext="allExpenses.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allExpenses.amount">
+                  <parentTerm text="allExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.0">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="CanonicalSample.Step8USDSum = allUSDExpenses.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8USDSum = allUSDExpenses.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8USDSum" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8USDSum">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              <terms text="allUSDExpenses_amount" datatype="Decimal" termtype="COLLECTION" fulltext="allUSDExpenses.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allUSDExpenses.amount">
+                  <parentTerm text="allUSDExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allUSDExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.1">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="CanonicalSample.Step8EurSum = allEURExpenses.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8EurSum = allEURExpenses.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8EurSum" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8EurSum">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allEURExpenses_amount" datatype="Decimal" termtype="COLLECTION" fulltext="allEURExpenses.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allEURExpenses.amount">
+                  <parentTerm text="allEURExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allEURExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.2">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="CanonicalSample.Step8HotelUSDSum = onlyUSDHotels.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8HotelUSDSum = onlyUSDHotels.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8HotelUSDSum" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8HotelUSDSum">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="onlyUSDHotels_amount" datatype="Decimal" termtype="COLLECTION" fulltext="onlyUSDHotels.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="onlyUSDHotels.amount">
+                  <parentTerm text="onlyUSDHotels" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="onlyUSDHotels" variable="#//@ruleset/@logicalVariables.4/@extension.3">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber = 9">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 9" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter/>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.4/@extension.1">
+      <opaqueExpression expression="allUSDExpenses.currency = 'USD'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allUSDExpenses.currency = 'USD'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currency" datatype="String" termtype="ATTRIBUTE" fulltext="allUSDExpenses.currency">
+              <parentTerm text="allUSDExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allUSDExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.1">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.4/@extension.2">
+      <opaqueExpression expression="allEURExpenses.currency = 'EUR'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allEURExpenses.currency = 'EUR'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currency" datatype="String" termtype="ATTRIBUTE" fulltext="allEURExpenses.currency">
+              <parentTerm text="allEURExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allEURExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.2">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.4/@extension.3">
+      <opaqueExpression expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currency" datatype="String" termtype="ATTRIBUTE" fulltext="onlyUSDHotels.currency">
+              <parentTerm text="onlyUSDHotels" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="onlyUSDHotels" variable="#//@ruleset/@logicalVariables.4/@extension.3">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </parentTerm>
+            </terms>
+            <terms text="expenseCode" datatype="String" termtype="ATTRIBUTE" fulltext="onlyUSDHotels.expenseCode">
+              <parentTerm text="onlyUSDHotels" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="onlyUSDHotels" variable="#//@ruleset/@logicalVariables.4/@extension.3">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="Rule%20Vocabulary.ecore#//Container" traversedAssocRole="Rule%20Vocabulary.ecore#//UI/containers">
+        <extension association="true" entity="Rule%20Vocabulary.ecore#//UIControl" traversedAssocRole="Rule%20Vocabulary.ecore#//Container/uiControls">
+          <extension association="true" entity="Rule%20Vocabulary.ecore#//Option" traversedAssocRole="Rule%20Vocabulary.ecore#//UIControl/option"/>
+          <referencedAttributes attribute="Rule%20Vocabulary.ecore#//UIControl/value"/>
+        </extension>
+      </extension>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//UI/nextStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//Container">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Container/id"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Container/title"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//UIControl">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//UIControl/type"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//UIControl/id"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//UIControl/fieldName"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//UIControl/label"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//Option">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Option/value"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Option/displayName"/>
+    </logicalVariable>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample">
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//ProjectsData/Expense" traversedAssocRole="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8Field1">
+        <alias value="allExpenses"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/currency"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/amount"/>
+      </extension>
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//ProjectsData/Expense" traversedAssocRole="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8Field1" filters="#//@ruleset/@filters.2">
+        <alias value="allUSDExpenses"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/currency"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/amount"/>
+      </extension>
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//ProjectsData/Expense" traversedAssocRole="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8Field1" filters="#//@ruleset/@filters.3">
+        <alias value="allEURExpenses"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/currency"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/amount"/>
+      </extension>
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//ProjectsData/Expense" traversedAssocRole="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8Field1" filters="#//@ruleset/@filters.4">
+        <alias value="onlyUSDHotels"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/currency"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/expenseCode"/>
+        <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/Expense/amount"/>
+      </extension>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8USDSum"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8EurSum"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8SumAll"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8HotelUSDSum"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="39" sashWeightConditionsActions="37" sashWeightConditionsIf="71">
+    <actionSection rowCount="42" columnWidthFactor="0.5">
+      <actionItemList rowHeight="48">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="CanonicalSample.Step8SumAll = allExpenses.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8SumAll = allExpenses.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8SumAll" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8SumAll">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allExpenses_amount" datatype="Decimal" termtype="COLLECTION" fulltext="allExpenses.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allExpenses.amount">
+                  <parentTerm text="allExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.0">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="46">
+        <valueSetCell/>
+        <expressionCell external="CanonicalSample.Step8USDSum = allUSDExpenses.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8USDSum = allUSDExpenses.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8USDSum" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8USDSum">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              <terms text="allUSDExpenses_amount" datatype="Decimal" termtype="COLLECTION" fulltext="allUSDExpenses.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allUSDExpenses.amount">
+                  <parentTerm text="allUSDExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allUSDExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.1">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="31">
+        <valueSetCell/>
+        <expressionCell external="CanonicalSample.Step8EurSum = allEURExpenses.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8EurSum = allEURExpenses.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8EurSum" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8EurSum">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allEURExpenses_amount" datatype="Decimal" termtype="COLLECTION" fulltext="allEURExpenses.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allEURExpenses.amount">
+                  <parentTerm text="allEURExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allEURExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.2">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="50">
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList rowHeight="34">
+        <valueSetCell/>
+        <expressionCell external="CanonicalSample.Step8HotelUSDSum = onlyUSDHotels.amount->sum">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="CanonicalSample.Step8HotelUSDSum = onlyUSDHotels.amount->sum" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Step8HotelUSDSum" datatype="Decimal" termtype="ATTRIBUTE" fulltext="ProjectsData.CanonicalSample.Step8HotelUSDSum">
+                <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="onlyUSDHotels_amount" datatype="Decimal" termtype="COLLECTION" fulltext="onlyUSDHotels.amount->sum">
+                <parentTerm text="amount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="onlyUSDHotels.amount">
+                  <parentTerm text="onlyUSDHotels" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="onlyUSDHotels" variable="#//@ruleset/@logicalVariables.4/@extension.3">
+                    <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber = 9" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.4">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allUSDExpenses.currency = 'USD'" filter="#//@ruleset/@filters.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allEURExpenses.currency = 'EUR'" filter="#//@ruleset/@filters.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" filter="#//@ruleset/@filters.4"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.0/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allUSDExpenses.currency = 'USD'" filter="#//@ruleset/@filters.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.1/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.1/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.2">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allEURExpenses.currency = 'EUR'" filter="#//@ruleset/@filters.3"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.2/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.2/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.4/@extension.3">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" filter="#//@ruleset/@filters.4"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.3/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.3/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@extension.3/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="48">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber = 9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 9" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell/>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell external="allUSDExpenses.currency = 'USD'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allUSDExpenses.currency = 'USD'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currency" datatype="String" termtype="ATTRIBUTE" fulltext="allUSDExpenses.currency">
+                <parentTerm text="allUSDExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allUSDExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.1">
+                  <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.3">
+        <expressionCell external="allEURExpenses.currency = 'EUR'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allEURExpenses.currency = 'EUR'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currency" datatype="String" termtype="ATTRIBUTE" fulltext="allEURExpenses.currency">
+                <parentTerm text="allEURExpenses" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="allEURExpenses" variable="#//@ruleset/@logicalVariables.4/@extension.2">
+                  <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.4">
+        <expressionCell external="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="onlyUSDHotels.currency = 'USD' and onlyUSDHotels.expenseCode = 'hotelCode'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currency" datatype="String" termtype="ATTRIBUTE" fulltext="onlyUSDHotels.currency">
+                <parentTerm text="onlyUSDHotels" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="onlyUSDHotels" variable="#//@ruleset/@logicalVariables.4/@extension.3">
+                  <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                </parentTerm>
+              </terms>
+              <terms text="expenseCode" datatype="String" termtype="ATTRIBUTE" fulltext="onlyUSDHotels.expenseCode">
+                <parentTerm text="onlyUSDHotels" datatype="ProjectsData.Expense" termtype="ENTITY" fulltext="onlyUSDHotels" variable="#//@ruleset/@logicalVariables.4/@extension.3">
+                  <parentTerm text="ProjectsData.CanonicalSample" datatype="ProjectsData.CanonicalSample" termtype="ENTITY" fulltext="ProjectsData.CanonicalSample" variable="#//@ruleset/@logicalVariables.4"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

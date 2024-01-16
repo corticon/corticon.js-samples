@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_QtkgcZ9QEe601v34mLvuew" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="2" buildNumber="8020" updateStamp="_dbBgcapGEe6Sl9gK7pxHug" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_da-dIKpGEe6Sl9gK7pxHug" ruleActivity="Ruleflow/FilterByCountryStateCity.erf#//@ruleflow" locale="">
+      <input/>
+      <output/>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="Vocabulary/Vocab.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="place" eAttribute="Vocabulary/Vocab.ecore#//UI/pathToData"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="english" eAttribute="Vocabulary/Vocab.ecore#//UI/language"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="Vocabulary/Vocab.ecore#//formData/data">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Vocab.ecore#//formData/data/place" eClass="Vocabulary/Vocab.ecore#//formData/place">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Albania" eAttribute="Vocabulary/Vocab.ecore#//formData/place/country"/>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="Vocabulary/Vocab.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="Vocabulary/Vocab.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="place" eAttribute="Vocabulary/Vocab.ecore#//UI/pathToData"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="english" eAttribute="Vocabulary/Vocab.ecore#//UI/language"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="Vocabulary/Vocab.ecore#//UI/containers" eClass="Vocabulary/Vocab.ecore#//Container">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Retrieve State" eAttribute="Vocabulary/Vocab.ecore#//Container/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="Vocabulary/Vocab.ecore#//Container/uiControls" eClass="Vocabulary/Vocab.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="state" eAttribute="Vocabulary/Vocab.ecore#//UIControl/fieldName"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="Vocabulary/Vocab.ecore#//UIControl/dataSourceOptions" eClass="Vocabulary/Vocab.ecore#//DataSourceOptions">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="name" eAttribute="Vocabulary/Vocab.ecore#//DataSourceOptions/dataTextField"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="name" eAttribute="Vocabulary/Vocab.ecore#//DataSourceOptions/dataValueField"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="$[?(@.country_name=='Albania')]" eAttribute="Vocabulary/Vocab.ecore#//DataSourceOptions/pathToOptionsArray"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="stateOrProvince Control" eAttribute="Vocabulary/Vocab.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="What state or province?" eAttribute="Vocabulary/Vocab.ecore#//UIControl/label"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="MultipleChoices" eAttribute="Vocabulary/Vocab.ecore#//UIControl/type"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="https://api.npoint.io/eeaedc1172d94276273d" eAttribute="Vocabulary/Vocab.ecore#//UIControl/dataSource"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="State/Province" eAttribute="Vocabulary/Vocab.ecore#//Container/title"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3" eAttribute="Vocabulary/Vocab.ecore#//UI/nextStageNumber"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" eClass="Vocabulary/Vocab.ecore#//formData/data">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="Vocabulary/Vocab.ecore#//formData/data/place" eClass="Vocabulary/Vocab.ecore#//formData/place">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Albania" eAttribute="Vocabulary/Vocab.ecore#//formData/place/country"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_keoVsRQGEe27GMv-xcnDFw" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="Vocabulary/Vocab.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>

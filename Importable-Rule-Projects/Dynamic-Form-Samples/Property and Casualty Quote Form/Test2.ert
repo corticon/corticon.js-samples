@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.common="http:///com/corticon/rulesemf/common.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_Bb4xQZ6vEe67YImV7o9ivQ" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="2" buildNumber="8020" updateStamp="_ws3PEoyuEe6c9p5y_x2F9Q" externalChecksum="2722078124:507989954">
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_yXwqoIyuEe6c9p5y_x2F9Q" key="2" type="Validation" severity="Warning" invalidObjects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.9/@children.4/@children.17" textKey="TestsheetTreeSetModelAPIImpl.Validation.Attribute.NotSet" locationKey="TestsheetTreeSetModelAPIImpl.Validation.NullTemplate">
+      <locationVariables>UI [1].containers (Container) [1].uiControls (UIControl) [1].type</locationVariables>
+    </validationMessages>
+    <comments timestamp="2023-11-26T15:51:21.886-0500" username="smeldon" text="When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to UI.nextStageNumber in the input payload of the decision service." objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.1" type="Note"/>
+    <comments timestamp="2023-11-26T15:51:37.217-0500" username="smeldon" text="Sets the default label position - Can be overidden on a control by control basis" objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.3" type="Note"/>
+    <comments timestamp="2023-11-26T15:51:44.749-0500" username="smeldon" text="To invoke a subflow we need to specify the entry stage via nextStageNumber and where we will resume via stageOnExit" objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.8" type="Note"/>
+    <comments timestamp="2023-11-26T15:52:18.295-0500" username="smeldon" text="We define which data we want to store by specifying in the initial stage of the rules which vocabulary entity should ‘store’ the data accrued throughout the form. This is specified with UI.pathToData in an initial stage. The pathToData entity will be at index 1 in the JSON. The stored data can then be passed along to other workflow steps once the form is complete, or used to define a conditional rule at a later stage in the form." objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.7" type="Note"/>
+    <comments timestamp="2023-11-26T15:55:58.502-0500" username="smeldon" text="On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules" objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.4" type="Note"/>
+    <comments timestamp="2023-11-26T15:56:28.923-0500" username="smeldon" text="For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify  the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields decision service. The container has various attributes, for example a title." objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.9" type="Note"/>
+    <comments timestamp="2023-11-26T15:56:47.109-0500" username="smeldon" text="Upon receiving a done instruction from the decision service (a notification of the end of the flow) via UI.done=T, it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow." objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.2" type="Note"/>
+    <comments timestamp="2023-11-26T15:56:57.854-0500" username="smeldon" text="The decision service sets the attribute UI.nextStageNumber to specify the next step in the flow, unless it is the last stage, in which case this field is left null and done is set to ‘true’\n\nWhere to specify: Action row of rulesheet" objects="#//@testsheetAssets.0/@testsheetViewList.0/@inputRoot/@children.0/@children.5" type="Note"/>
+    <testsheet ruleActivityUpdateStamp="_VUKSQYlxEe6rk7cXUnc1FA" ruleActivity="PropertyCasualty.erf#//@ruleflow" locale="">
+      <input/>
+      <output/>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageDescription"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber">
+            <comments>When the client side rendering component is ready for the next step in the flow, it invokes the decision service by setting UI.currentStageNumber to UI.nextStageNumber in the input payload of the decision service.</comments>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/done">
+            <comments>Upon receiving a done instruction from the decision service (a notification of the end of the flow) via UI.done=T, it is expected the collected data will be passed to another function or process; typically an event will be raised with a pointer to the JSON data collected during the flow.</comments>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/labelPosition">
+            <comments>Sets the default label position - Can be overidden on a control by control basis</comments>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/language">
+            <comments>On start, the rendered can accept the language from the UI but a decision service may switch the language based on some rules</comments>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/nextStageNumber">
+            <comments>The decision service sets the attribute UI.nextStageNumber to specify the next step in the flow, unless it is the last stage, in which case this field is left null and done is set to ‘true’\n\nWhere to specify: Action row of rulesheet</comments>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/noUiToRenderContinue"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/pathToData">
+            <comments>We define which data we want to store by specifying in the initial stage of the rules which vocabulary entity should ‘store’ the data accrued throughout the form. This is specified with UI.pathToData in an initial stage. The pathToData entity will be at index 1 in the JSON. The stored data can then be passed along to other workflow steps once the form is complete, or used to define a conditional rule at a later stage in the form.</comments>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/stageOnExit">
+            <comments>To invoke a subflow we need to specify the entry stage via nextStageNumber and where we will resume via stageOnExit</comments>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//UI/containers" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/description"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/validationMsg"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Container/uiControls" eClass="Vocabulary/Rule%20Vocabulary.ecore#//UIControl">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/cols"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/dataSource"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/defaultValue"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/fieldName"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/label"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/labelPosition"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/max"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/maxDT"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/min"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/minDT"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/multiple"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/required"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/rows"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/showTime"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/sortOptions"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/tooltip"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" validationMessages="#//@testsheetAssets.0/@validationMessages.0" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/type"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/validationErrorMsg"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/value"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/option" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Option">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Option/displayName"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Option/value"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//UIControl/dataSourceOptions" eClass="Vocabulary/Rule%20Vocabulary.ecore#//DataSourceOptions">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//DataSourceOptions/dataTextField"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//DataSourceOptions/dataValueField"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//DataSourceOptions/pathToOptionsArray"/>
+              </children>
+            </children>
+            <comments>For all steps in which something is being presented to the user (versus just a calculation/decision made in the background), the decision service will specify  the list of UI controls to render from the decision service JSON payload at the UI.containers element. This is an array of all the containers to render for this stage. The container can be viewed as a panel containing various labels and input fields decision service. The container has various attributes, for example a title.</comments>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//UI">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="completedQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/pathToData"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="english" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/language"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="8" newOrModified="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//UI/containers" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//UI/done"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Data">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Data/completedQuote" eClass="Vocabulary/Rule%20Vocabulary.ecore#//CompletedQuote">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="Vocabulary/Rule%20Vocabulary.ecore#//CompletedQuote/finalQuotes" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Quote">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/liabilityCoverage"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Renters" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/policyType"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/propertyCoverage"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/postCode"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1700599915651" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/complete"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="Vocabulary/Rule%20Vocabulary.ecore#//CompletedQuote/finalQuotes" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Quote">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="4400.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/premium"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/driver" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Driver">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="dsfdfs" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/lastName"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Male" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/gender"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2023" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/drivingExperience"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/insuranceLapse"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="High School" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/highestEducation"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/isMarried"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="dfsfsd" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/firstName"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2023-11-02" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/DoB"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/dataCollected"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/id"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/age"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/usedForCommercial"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Auto" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/policyType"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="25000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/minBodilyInjLimitPerPerson"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="25000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/propertyCoverage"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/numberVehicles"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1700599921641" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/complete"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="50000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/minBodilyInjLimitPerAccident"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/driverCount"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/vehicle" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1997 Acura CL" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/fullCarSpec"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="26" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/ageYears"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1997" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/year"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/dataCollected"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CL" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/model"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/id"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Acura" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/make"/>
+              </children>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="false" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//CompletedQuote/additionalQuoteNeeded"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Data/quote" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Quote">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="4400.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/premium"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/driver" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Driver">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="dsfdfs" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/lastName"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Male" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/gender"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2023" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/drivingExperience"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/insuranceLapse"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="High School" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/highestEducation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/isMarried"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="dfsfsd" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/firstName"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2023-11-02" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/DoB"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/dataCollected"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/age"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Driver/usedForCommercial"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Auto" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/policyType"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="25000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/minBodilyInjLimitPerPerson"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="25000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/propertyCoverage"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/numberVehicles"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1700599921641" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/complete"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="50000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/minBodilyInjLimitPerAccident"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/driverCount"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/vehicle" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1997 Acura CL" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/fullCarSpec"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="26" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/ageYears"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1997" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/year"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/dataCollected"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CL" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/model"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Acura" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/make"/>
+            </children>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="5" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="6" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="7" newOrModified="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Container">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="multiQuote" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Your requested quotes are ready" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Container/title"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_qD07Ip6tEe67YImV7o9ivQ" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="Vocabulary/Rule%20Vocabulary.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>

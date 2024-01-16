@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_ZiUoYo0tEe6VBtd-Aycz0A" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_tVXDII0vEe6VBtd-Aycz0A" vocabulary="../../Vocabulary/Rule%20Vocabulary.ecore#/">
+    <rule>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="Driver.fullName = Driver.firstName+ ' ' + Driver.lastName">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.fullName = Driver.firstName + ' ' + Driver.lastName" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fullName" datatype="String" termtype="ATTRIBUTE" fulltext="Driver.fullName">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="lastName" datatype="String" termtype="ATTRIBUTE" fulltext="Driver.lastName">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="firstName" datatype="String" termtype="ATTRIBUTE" fulltext="Driver.firstName">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.2"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(allDrivers->exists(dataCollected=F))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allDrivers->exists ( allDrivers.dataCollected = F ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allDrivers" datatype="Boolean" termtype="COLLECTION" fulltext="allDrivers->exists">
+                <parentTerm text="allDrivers" datatype="Driver" termtype="ENTITY" fulltext="allDrivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allDrivers->exists(dataCollected=F)" rhs="F"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 6" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(allDrivers->exists(dataCollected=F))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allDrivers->exists ( allDrivers.dataCollected = F ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allDrivers" datatype="Boolean" termtype="COLLECTION" fulltext="allDrivers->exists">
+                <parentTerm text="allDrivers" datatype="Driver" termtype="ENTITY" fulltext="allDrivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allDrivers->exists(dataCollected=F)" rhs="T"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 4" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber=5">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.1">
+      <opaqueExpression expression="Quote.complete&lt;>T">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Quote.complete &lt;> T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="complete" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Quote.complete">
+              <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/noUiToRenderContinue"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/nextStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//Quote" filters="#//@ruleset/@filters.1">
+      <extension explicit="true" association="true" entity="../../Vocabulary/Rule%20Vocabulary.ecore#//Driver" traversedAssocRole="../../Vocabulary/Rule%20Vocabulary.ecore#//Quote/driver">
+        <alias value="allDrivers"/>
+      </extension>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Quote/complete"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//Driver">
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Driver/fullName"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Driver/firstName"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Driver/lastName"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightScope="50" sashWeightConditionsIf="25">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.nextStageNumber">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Driver.fullName">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.fullName" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fullName" datatype="String" termtype="ATTRIBUTE" fulltext="Driver.fullName">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=5" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Quote.complete&lt;>T" filter="#//@ruleset/@filters.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="Quote.complete&lt;>T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Quote.complete &lt;> T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="complete" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Quote.complete">
+                <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="allDrivers->exists(dataCollected=F)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allDrivers->exists ( allDrivers.dataCollected = F )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allDrivers" datatype="Boolean" termtype="COLLECTION" fulltext="allDrivers->exists">
+                <parentTerm text="allDrivers" datatype="Driver" termtype="ENTITY" fulltext="allDrivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="359" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="Driver.firstName+ ' ' + Driver.lastName">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.fullName = Driver.firstName + ' ' + Driver.lastName" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fullName" datatype="String" termtype="ATTRIBUTE" fulltext="Driver.fullName">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="lastName" datatype="String" termtype="ATTRIBUTE" fulltext="Driver.lastName">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+              <terms text="firstName" datatype="String" termtype="ATTRIBUTE" fulltext="Driver.firstName">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allDrivers->exists ( allDrivers.dataCollected = F ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allDrivers" datatype="Boolean" termtype="COLLECTION" fulltext="allDrivers->exists">
+                <parentTerm text="allDrivers" datatype="Driver" termtype="ENTITY" fulltext="allDrivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 6" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allDrivers->exists ( allDrivers.dataCollected = F ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allDrivers" datatype="Boolean" termtype="COLLECTION" fulltext="allDrivers->exists">
+                <parentTerm text="allDrivers" datatype="Driver" termtype="ENTITY" fulltext="allDrivers" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 4" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

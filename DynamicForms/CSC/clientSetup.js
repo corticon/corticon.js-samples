@@ -105,8 +105,6 @@ function setupInitialInputData() {
     const inT2DB = inDataEmpty;
 
     const inDataReuseSubflow = {};
-    inDataReuseSubflow.reusingSubflows = {};
-    inDataReuseSubflow.reusingSubflows.SubflowField2 = '0';
 
     const inDataClaim = {};
     inDataClaim.claim = {};

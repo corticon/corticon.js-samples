@@ -86,19 +86,16 @@
 	The order of inclusion is critical. It defines the order in which the decision services are indexed
 	and must correspond to the order of the options in the switch sample Select dropdown
 	-->
-	<script type="text/javascript" src="decisionServices/MultipleSteps2/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/FeatureKitchenSink/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/validation/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/taxes/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/FilterByCountryStateCity/browser/decisionServiceBundle.js"></script>	
 	<script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/ReusingSubflows/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/JobApplication/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/MultiContainer/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/I18N/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/Country/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/t2db/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/JobApplication/browser/decisionServiceBundle.js"></script>	
 	<script type="text/javascript" src="decisionServices/Select-Vehicle-Model-Make-Year/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/I18N/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/PropertyCasualty/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/PlantClinic/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/t2db/browser/decisionServiceBundle.js"></script>
 
 	<script type="text/javascript" src="clientSetup.js"></script>
 
@@ -113,19 +110,16 @@
 					<div class="commandContainer">
 						<div class="sampleSelectLabel">Select Sample:</div>
 						<select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
-							<option value="0">Canonical</option>
+							<option value="0">Kitchen Sink</option>
 							<option value="1">Validation</option>
-							<option value="2">Taxes</option>
+							<option value="2">Select Country, then State/Province, then City (JSON path example)</option>
 							<option value="3">Travel Claim</option>
-							<option value="4">Reusing Subflow</option>
+							<option value="4">Type 2 Diabetes Risk Score</option>
 							<option value="5">Job Application</option>
-							<option value="6">Multi Container</option>
+							<option value="6">Select Vehicle Make, then Model, then Year (JSON path example)</option>
 							<option value="7">I18N with SCO</option>
-							<option value="8">Select Country, then State/Province, then City (JSON path example)</option>
-							<option value="9">Select Vehicle Make, then Model, then Year (JSON path example)</option>
-							<option value="10">Property/Casualty Insurance Quote</option>
-							<option value="11">Diagnose garden plant diseases</option>
-							<option value="12">Type 2 Diabetes Risk Score</option>
+							<option value="8">Property/Casualty Insurance Quote</option>
+							<option value="9">Diagnose garden plant diseases</option>
 						</select>
 					</div>
 

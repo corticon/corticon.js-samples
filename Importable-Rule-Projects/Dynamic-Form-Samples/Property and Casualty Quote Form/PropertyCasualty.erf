@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_maTq0I1WEe6VBtd-Aycz0A" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript" rulesheetAssets="Form%20Rules/0_policy%20type.ers#/ Form%20Rules/1_route%20on%20policy%20type.ers#/ 500_Check%20if%20other%20policies%20to%20quote.ers#/ 501_associate%20quote%20to%20others.ers#/0 502_route%20based%20on%20more%20quotes.ers#/" ruleflowAssets="Form%20Rules/Condo/Condo%20flow.erf#/ Form%20Rules/Homeowners/Homeowners%20flow.erf#/ Form%20Rules/Auto/AutoQuote.erf#/ Form%20Rules/Renters/Renter%20Flow.erf#/ Create%20final%20quote%20document/Create%20final%20quote%20document.erf#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_qD07Ip6tEe67YImV7o9ivQ" vocabulary="Vocabulary/Rule%20Vocabulary.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Select policy type" order="11" ruleActivityUpdateStamp="_qumWcp6tEe67YImV7o9ivQ" invokes="Form%20Rules/0_policy%20type.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Triage to policy-specific form steps" order="10" ruleActivityUpdateStamp="_tg1r0I1aEe6VBtd-Aycz0A" invokes="Form%20Rules/1_route%20on%20policy%20type.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="500_Check if other policies to quote" order="9" ruleActivityUpdateStamp="_NkKvkYzFEe6c9p5y_x2F9Q" invokes="500_Check%20if%20other%20policies%20to%20quote.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="4" ruleActivityUpdateStamp="_8fRlYo0rEe6VBtd-Aycz0A" invokes="#//@ruleflow/@subflowList.0"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Assimilate Latest Quote" order="3" ruleActivityUpdateStamp="_gfZbUI1FEe6VBtd-Aycz0A" invokes="501_associate%20quote%20to%20others.ers#/0/@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Route to End or Additional Quote" order="2" ruleActivityUpdateStamp="_AVOkcI1GEe6VBtd-Aycz0A" invokes="502_route%20based%20on%20more%20quotes.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Create final quote document" order="1" ruleActivityUpdateStamp="_LPZtoI0zEe6VBtd-Aycz0A" invokes="Create%20final%20quote%20document/Create%20final%20quote%20document.erf#//@ruleflow"/>
+    <subflowList name="Policy Types">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Condo flow" order="8" ruleActivityUpdateStamp="_A7RnUYzDEe6c9p5y_x2F9Q" invokes="Form%20Rules/Condo/Condo%20flow.erf#//@ruleflow"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Homeowners flow" order="7" ruleActivityUpdateStamp="_jLscMIzGEe6c9p5y_x2F9Q" invokes="Form%20Rules/Homeowners/Homeowners%20flow.erf#//@ruleflow"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Auto Quote Form Rules" order="6" ruleActivityUpdateStamp="_ma6HwI1WEe6VBtd-Aycz0A" invokes="Form%20Rules/Auto/AutoQuote.erf#//@ruleflow"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Renter Quote Form Rules" order="5" ruleActivityUpdateStamp="__zITgYzCEe6c9p5y_x2F9Q" invokes="Form%20Rules/Renters/Renter%20Flow.erf#//@ruleflow"/>
+    </subflowList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="135" y="105" width="271" height="111" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="16494982"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="135" y="225" width="271" height="106" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="2086998"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="135" y="375" width="316" height="106" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="12895368"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="465" y="135" width="976" height="166" activityNode="#//@ruleflow/@flowControlList.3"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="490" y="15" width="449" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0">
+      <annotations name="Color" value="14068991"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="490" y="75" width="449" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.1">
+      <annotations name="Color" value="12902911"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="10" y="15" width="449" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.2">
+      <annotations name="Color" value="16777088"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="10" y="75" width="449" height="36" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.3">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="480" y="375" width="256" height="106" activityNode="#//@ruleflow/@flowControlList.4"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="780" y="375" width="301" height="106" activityNode="#//@ruleflow/@flowControlList.5"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="1140" y="375" width="256" height="106" activityNode="#//@ruleflow/@flowControlList.6"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

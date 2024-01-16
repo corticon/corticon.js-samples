@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_Eh7EMYitEe6p2OuJlh45xw" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_c-vN0IisEe6p2OuJlh45xw" vocabulary="../../Vocabulary/Rule%20Vocabulary.ecore#/">
+    <rule>
+      <action/>
+      <action>
+        <opaqueExpression expression="allVehicles->sortedBy(id)->first.ageYears = now.year -TempFields.year.toInteger">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.ageYears = now.year - TempFields.year.toInteger" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageYears" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.ageYears">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="ageYears" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.ageYears">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="TempFields.year.toInteger">
+                <parentTerm text="year" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.year">
+                  <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="allVehicles->sortedBy(id)->first.make = TempFields.make">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.make = TempFields.make" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.make">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.make">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.make">
+                <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="allVehicles->sortedBy(id)->first.model = TempFields.model">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.model = TempFields.model" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.model">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.model">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.model">
+                <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="allVehicles->sortedBy(id)->first.year = TempFields.year.toInteger">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.year = TempFields.year.toInteger" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="year" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.year">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="year" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.year">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="TempFields.year.toInteger">
+                <parentTerm text="year" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.year">
+                  <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="allVehicles->sortedBy(id)->first.fullCarSpec = allVehicles->sortedBy(id)->first.year.toString + ' '  + allVehicles->sortedBy(id)->first.make + ' ' + allVehicles->sortedBy(id)->first.model">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.fullCarSpec = allVehicles->sortedBy ( allVehicles.id )->first.year.toString + ' ' + allVehicles->sortedBy ( allVehicles.id )->first.make + ' ' + allVehicles->sortedBy ( allVehicles.id )->first.model" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fullCarSpec" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.fullCarSpec">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="fullCarSpec" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.fullCarSpec">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.model">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.make">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="allVehicles.year.toString">
+                <parentTerm text="year" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.year">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="allVehicles->sortedBy(id)->first.dataCollected=T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.dataCollected = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="dataCollected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="allVehicles.dataCollected">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="dataCollected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="allVehicles.dataCollected">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.2">
+      <opaqueExpression expression="UI.currentStageNumber=9">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 9" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.1/@extension.0">
+      <opaqueExpression expression="allVehicles.dataCollected=F">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles.dataCollected = F" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="dataCollected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="allVehicles.dataCollected">
+              <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.1">
+      <opaqueExpression expression="Quote.complete&lt;>T">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Quote.complete &lt;> T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="complete" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Quote.complete">
+              <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle"/>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//Quote" filters="#//@ruleset/@filters.2">
+      <extension explicit="true" association="true" entity="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle" traversedAssocRole="../../Vocabulary/Rule%20Vocabulary.ecore#//Quote/vehicle" filters="#//@ruleset/@filters.1">
+        <alias value="allVehicles"/>
+        <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/dataCollected"/>
+        <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/ageYears"/>
+        <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/year"/>
+        <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/model"/>
+        <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/make"/>
+        <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Vehicle/fullCarSpec"/>
+      </extension>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//Quote/complete"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/noUiToRenderContinue"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="../../Vocabulary/Rule%20Vocabulary.ecore#//TempFields">
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//TempFields/year"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//TempFields/make"/>
+      <referencedAttributes attribute="../../Vocabulary/Rule%20Vocabulary.ecore#//TempFields/model"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="25" sashWeightConditionsActions="12" sashWeightConditionsIf="38">
+    <actionSection rowCount="49" columnWidthFactor="0.5">
+      <actionItemList rowHeight="80">
+        <valueSetCell valueSet=""/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList rowHeight="28">
+        <valueSetCell/>
+        <expressionCell external="allVehicles->sortedBy(id)->first.ageYears">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.ageYears" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ageYears" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.ageYears">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList rowHeight="30">
+        <valueSetCell/>
+        <expressionCell external="allVehicles->sortedBy(id)->first.make">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.make" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.make">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="allVehicles->sortedBy(id)->first.model">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.model" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.model">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="28">
+        <valueSetCell/>
+        <expressionCell external="allVehicles->sortedBy(id)->first.year">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.year" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="year" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.year">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="121">
+        <valueSetCell/>
+        <expressionCell external="allVehicles->sortedBy(id)->first.fullCarSpec">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.fullCarSpec" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fullCarSpec" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.fullCarSpec">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="119">
+        <valueSetCell/>
+        <expressionCell external="allVehicles->sortedBy(id)->first.dataCollected=T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.dataCollected = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="dataCollected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="allVehicles.dataCollected">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="dataCollected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="allVehicles.dataCollected">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0"/>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allVehicles.dataCollected=F" filter="#//@ruleset/@filters.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Quote.complete&lt;>T" filter="#//@ruleset/@filters.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="allVehicles.dataCollected=F" filter="#//@ruleset/@filters.1"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.5"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=9" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.2"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 9" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="allVehicles.dataCollected=F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles.dataCollected = F" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="dataCollected" datatype="Boolean" termtype="ATTRIBUTE" fulltext="allVehicles.dataCollected">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell external="Quote.complete&lt;>T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Quote.complete &lt;> T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="complete" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Quote.complete">
+                <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" scrollRowTop="3" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="389" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="now.year -TempFields.year.toInteger">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.ageYears = now.year - TempFields.year.toInteger" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageYears" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.ageYears">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+              <terms text="ageYears" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.ageYears">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="TempFields.year.toInteger">
+                <parentTerm text="year" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.year">
+                  <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="TempFields.make">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.make = TempFields.make" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.make">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.make">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.make">
+                <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="TempFields.model">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.model = TempFields.model" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.model">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.model">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.model">
+                <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields"/>
+              </terms>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="TempFields.year.toInteger">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.year = TempFields.year.toInteger" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="year" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.year">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+              <terms text="year" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.year">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="TempFields.year.toInteger">
+                <parentTerm text="year" datatype="String" termtype="ATTRIBUTE" fulltext="TempFields.year">
+                  <parentTerm text="TempFields" datatype="TempFields" termtype="ENTITY" fulltext="TempFields"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="allVehicles->sortedBy(id)->first.year.toString + ' '  + allVehicles->sortedBy(id)->first.make + ' ' + allVehicles->sortedBy(id)->first.model">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allVehicles->sortedBy ( allVehicles.id )->first.fullCarSpec = allVehicles->sortedBy ( allVehicles.id )->first.year.toString + ' ' + allVehicles->sortedBy ( allVehicles.id )->first.make + ' ' + allVehicles->sortedBy ( allVehicles.id )->first.model" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fullCarSpec" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.fullCarSpec">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+              <terms text="fullCarSpec" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.fullCarSpec">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="model" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.model">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+              <terms text="allVehicles->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy->first">
+                <parentTerm text="allVehicles" datatype="Sequence" termtype="COLLECTION" fulltext="allVehicles->asSequence->sortedBy">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="make" datatype="String" termtype="ATTRIBUTE" fulltext="allVehicles.make">
+                <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                  <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="allVehicles.year.toString">
+                <parentTerm text="year" datatype="Integer" termtype="ATTRIBUTE" fulltext="allVehicles.year">
+                  <parentTerm text="allVehicles" datatype="Vehicle" termtype="ENTITY" fulltext="allVehicles">
+                    <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
