@@ -528,7 +528,7 @@ Description: Optionally define the name of the key whose value should be stored 
 ### pathToOptionsArray
 
 
-Description: Optionally define where in a JSON endpoint is the array of options to populate a dropdown list with
+Description: Optionally define where in a JSON endpoint is the array of options to populate a dropdown list with by using JSONPath syntax.
 
 
 ### **Rule Definition**
