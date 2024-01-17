@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" majorServiceNumber="1" minorServiceNumber="2" buildNumber="8020" updateStamp="_U22fMcQPEe2ZaZb8mmkfLA" externalChecksum="3391387159:507989954:2614682131" studioType="Java">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_MAneIMQPEe2BeJJuD9AWXA" vocabulary="eHarmonyMatch.ecore#/">
+    <rule/>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="(boy.location = girl.location)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( boy.location = girl.location ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="girl.location">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="boy.location">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="boy.location = girl.location" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="((boy.age - girl.age).absVal &lt; boy.ageRange.min(girl.ageRange))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( ( boy.age - girl.age ).absVal &lt; boy.ageRange.min ( girl.ageRange ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.ageRange">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="min" datatype="Integer" termtype="METHOD" fulltext="boy.ageRange.min">
+                <parentTerm text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.ageRange">
+                  <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="(boy.age - girl.age).absVal &lt; boy.ageRange.min(girl.ageRange)" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Match.new[p1=boy,p2=girl,score=(girl.age-boy.age).absVal]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Match.new [ Match.score = ( girl.age - boy.age ).absVal , Match.p2 = girl , Match.p1 = boy ]" datatype="Match" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="p2" datatype="Person" termtype="ENTITY" fulltext="Match.p2" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="p1" datatype="Person" termtype="ENTITY" fulltext="Match.p1" variable="#//@ruleset/@logicalVariables.2/@extension.1">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="score" datatype="Integer" termtype="ATTRIBUTE" fulltext="Match.score">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="new" datatype="Match" termtype="NEW" fulltext="Match.new">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="(boy.location = girl.location)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( boy.location = girl.location ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="girl.location">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="boy.location">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="boy.location = girl.location" rhs="F"/>
+      </condition>
+      <condition/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition/>
+      <condition>
+        <opaqueExpression expression="((boy.age - girl.age).absVal &lt; boy.ageRange.min(girl.ageRange))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( ( boy.age - girl.age ).absVal &lt; boy.ageRange.min ( girl.ageRange ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.ageRange">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="min" datatype="Integer" termtype="METHOD" fulltext="boy.ageRange.min">
+                <parentTerm text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.ageRange">
+                  <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="(boy.age - girl.age).absVal &lt; boy.ageRange.min(girl.ageRange)" rhs="F"/>
+      </condition>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="boy.gender='male'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="boy.gender = 'male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="gender" datatype="String" termtype="ATTRIBUTE" fulltext="boy.gender">
+              <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.1">
+      <opaqueExpression expression="girl.gender='female'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.gender = 'female'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="gender" datatype="String" termtype="ATTRIBUTE" fulltext="girl.gender">
+              <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="{girl.name} is a good match for {boy.name}. Location and age are acceptable to both.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.name +  is a good match for  + boy.name + . Location and age are acceptable to both." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="boy.name">
+              <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="girl.name">
+              <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Warning" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="{girl.name} is not a good match for {boy.name} because they live in different towns">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.name +  is not a good match for  + boy.name +  because they live in different towns" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="boy.name">
+              <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="girl.name">
+              <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Warning" ruleModelElements="#//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="{girl.name} ({girl.age}) and {boy.name} ({boy.age}) are not compatible because of age">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.name +  ( + girl.age + ) and  + boy.name +  ( + boy.age + ) are not compatible because of age" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="boy.name">
+              <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+              <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+              <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="girl.name">
+              <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="eHarmonyMatch.ecore#//Person" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2" filters="#//@ruleset/@filters.0">
+      <alias value="boy"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/gender"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/location"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/age"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/name"/>
+    </logicalVariable>
+    <logicalVariable explicit="true" entity="eHarmonyMatch.ecore#//Person" filters="#//@ruleset/@filters.1">
+      <alias value="girl"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/gender"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/location"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/age"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Person/name"/>
+    </logicalVariable>
+    <logicalVariable entity="eHarmonyMatch.ecore#//Match">
+      <extension association="true" entity="eHarmonyMatch.ecore#//Person" traversedAssocRole="eHarmonyMatch.ecore#//Match/p2"/>
+      <extension association="true" entity="eHarmonyMatch.ecore#//Person" traversedAssocRole="eHarmonyMatch.ecore#//Match/p1"/>
+      <referencedAttributes attribute="eHarmonyMatch.ecore#//Match/score"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Match.new[p1=boy,p2=girl,score=(girl.age-boy.age).absVal]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Match.new [ Match.score = ( girl.age - boy.age ).absVal , Match.p2 = girl , Match.p1 = boy ]" datatype="Match" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="p2" datatype="Person" termtype="ENTITY" fulltext="Match.p2" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="p1" datatype="Person" termtype="ENTITY" fulltext="Match.p1" variable="#//@ruleset/@logicalVariables.2/@extension.1">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="score" datatype="Integer" termtype="ATTRIBUTE" fulltext="Match.score">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="new" datatype="Match" termtype="NEW" fulltext="Match.new">
+                <parentTerm text="Match" datatype="Match" termtype="ENTITY" fulltext="Match" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="boy.gender='male'" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="girl.gender='female'" filter="#//@ruleset/@filters.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="boy.gender='male'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="boy.gender = 'male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="gender" datatype="String" termtype="ATTRIBUTE" fulltext="boy.gender">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="girl.gender='female'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.gender = 'female'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="gender" datatype="String" termtype="ATTRIBUTE" fulltext="girl.gender">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="{girl.name} is a good match for {boy.name}. Location and age are acceptable to both.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.name +  is a good match for  + boy.name + . Location and age are acceptable to both." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="boy.name">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="girl.name">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="{girl.name} is not a good match for {boy.name} because they live in different towns">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.name +  is not a good match for  + boy.name +  because they live in different towns" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="boy.name">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="girl.name">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="3"/>
+        <text external="{girl.name} ({girl.age}) and {boy.name} ({boy.age}) are not compatible because of age">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="girl.name +  ( + girl.age + ) and  + boy.name +  ( + boy.age + ) are not compatible because of age" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="boy.name">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="girl.name">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="boy.location = girl.location">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="boy.location = girl.location" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="girl.location">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="boy.location">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="(boy.age - girl.age).absVal &lt; boy.ageRange.min(girl.ageRange)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( boy.age - girl.age ).absVal &lt; boy.ageRange.min ( girl.ageRange )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.ageRange">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="min" datatype="Integer" termtype="METHOD" fulltext="boy.ageRange.min">
+                <parentTerm text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.ageRange">
+                  <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( boy.location = girl.location ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="girl.location">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="boy.location">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( ( boy.age - girl.age ).absVal &lt; boy.ageRange.min ( girl.ageRange ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.ageRange">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="min" datatype="Integer" termtype="METHOD" fulltext="boy.ageRange.min">
+                <parentTerm text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.ageRange">
+                  <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( boy.location = girl.location ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="girl.location">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="boy.location">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( ( boy.age - girl.age ).absVal &lt; boy.ageRange.min ( girl.ageRange ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.age">
+                <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.ageRange">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="girl.age">
+                <parentTerm text="girl" datatype="Person" termtype="ENTITY" fulltext="girl" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="min" datatype="Integer" termtype="METHOD" fulltext="boy.ageRange.min">
+                <parentTerm text="ageRange" datatype="Integer" termtype="ATTRIBUTE" fulltext="boy.ageRange">
+                  <parentTerm text="boy" datatype="Person" termtype="ENTITY" fulltext="boy" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

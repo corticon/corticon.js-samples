@@ -1,5 +1,5 @@
 ---
-id: js_Matchmaker
+id: classic_Matchmaker
 title: Online Dating Matchmaker
 tags:
   - Corticon.js
@@ -153,6 +153,6 @@ Notice that the Person with the little disk icon is the “someone” being sear
 the rules to drive the search. The filters with the disk icon show that the query is processed on the database side.
 
 The rules themselves don’t need to change (they don’t care about or need to know the source of the data) except for using
-a different alias to the Person object to distinguish the searcher from someone being searched. So now instead of comparing NxN pairs of people, we only need to compare X (where X is less than N; X is the size of the set with location matching the searcher).
+a different alias to the Person object to distinguish the searcher from someone being searched. So now instead of comparing NxN pairs of people, we only need to compare X (where  < N; X is the size of the set with location matching the searcher).
 
 ![Alt text](images/Matchmaking_sshot-9.png)

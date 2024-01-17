@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="6" minorVersionNumber="3" majorServiceNumber="1" minorServiceNumber="2" buildNumber="8020" updateStamp="_MFQtlsQPEe2BeJJuD9AWXA" externalChecksum="3391387159:507989954" studioType="Java">
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="3" majorServiceNumber="1" minorServiceNumber="2" buildNumber="8020" updateStamp="_dTmzcsQQEe2ZaZb8mmkfLA" externalChecksum="3391387159:507989954" studioType="Java">
+    <testsheet ruleActivityUpdateStamp="_dTNK1cQQEe2ZaZb8mmkfLA" returnEntityMode="All" ruleActivity="eHarmonyMatch.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="[eHarmonyMatch_Match_With_Scoring,1] Tom is a good match for Jenny. Location and age are acceptable to both."/>
+        <PostedMessage severity="Warning" text="[eHarmonyMatch_Match_With_Scoring,2] Tom is not a good match for Jane because they live in different towns"/>
+        <PostedMessage severity="Warning" text="[eHarmonyMatch_Match_With_Scoring,2] Jenny is not a good match for Dick because they live in different towns"/>
+        <PostedMessage severity="Warning" text="[eHarmonyMatch_Match_With_Scoring,2] Mary is not a good match for Dick because they live in different towns"/>
+        <PostedMessage severity="Warning" text="[eHarmonyMatch_Match_With_Scoring,3] Tom (37) and Jane (43) are not compatible because of age"/>
+        <PostedMessage severity="Warning" text="[eHarmonyMatch_Match_With_Scoring,3] Jane (43) and Dick (32) are not compatible because of age"/>
+        <PostedMessage severity="Warning" text="[eHarmonyMatch_Match_With_Scoring,3] Tom (37) and Mary (40) are not compatible because of age"/>
+        <PostedMessage severity="Warning" text="[eHarmonyMatch_Match_With_Scoring,3] Mary (40) and Dick (32) are not compatible because of age"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="37" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Tom" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="34" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jenny" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="40" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mary" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="32" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="6" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Dick" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="5" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="43" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jane" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.6" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Mary" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="40" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.2 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.3 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.5 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.7" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="6" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Dick" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="32" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="5" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.1 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.4" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="3" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Jane" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="43" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Jenny" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="34" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="eHarmonyMatch.ecore#//Match/p2" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="5" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Tom" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="37" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.3/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.4" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.5" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.6" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.7" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+      </outputMessageSection>
+      <expectedRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="40" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mary" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="32" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="6" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Dick" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="5" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="43" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jane" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" manuallyCreated="true" value="3" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" manuallyCreated="true" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="34" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jenny" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" manuallyCreated="true" eReference="eHarmonyMatch.ecore#//Match/p2" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="37" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Tom" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="3" majorServiceNumber="1" minorServiceNumber="2" buildNumber="8020" updateStamp="_dTmzccQQEe2ZaZb8mmkfLA" externalChecksum="3391387159:507989954">
+    <testsheet ruleActivityUpdateStamp="_dTNK1cQQEe2ZaZb8mmkfLA" returnEntityMode="All" ruleActivity="eHarmonyMatch.erf#//@ruleflow">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Tom is a good match for Jenny. Location and age are acceptable to both."/>
+        <PostedMessage severity="Info" text="Tom is a good match for Jane. Location and age are acceptable to both."/>
+        <PostedMessage severity="Info" text="Tom is a good match for Mary. Location and age are acceptable to both."/>
+        <PostedMessage severity="Warning" text="Mary is not a good match for Dick because they live in different towns"/>
+        <PostedMessage severity="Warning" text="Jenny is not a good match for Dick because they live in different towns"/>
+        <PostedMessage severity="Warning" text="Jane is not a good match for Dick because they live in different towns"/>
+        <PostedMessage severity="Warning" text="Mary (40) and Dick (32) are not compatible because of age"/>
+        <PostedMessage severity="Warning" text="Jane (38) and Dick (32) are not compatible because of age"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="37" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Tom" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="34" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jenny" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="40" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mary" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="32" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="6" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Dick" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="5" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="38" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jane" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.3 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.4 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.5 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.6 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.7" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="32" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="6" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Dick" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="34" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Jenny" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" referencingHrefs="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.2/@children.2 #//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.3/@children.2" eReference="eHarmonyMatch.ecore#//Match/p2" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="37" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="5" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Tom" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="38" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="3" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Jane" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationHref" nodeID="1" newOrModified="true" eReference="eHarmonyMatch.ecore#//Match/p2" targetTestNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.1/@children.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" newOrModified="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.2" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="40" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Mary" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationHref" nodeID="1" newOrModified="true" eReference="eHarmonyMatch.ecore#//Match/p2" targetTestNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.1/@children.2"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.1/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.2/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.3/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.4" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.5" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.6" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.7" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="4" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Person">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="32" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="6" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="San Diego" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Dick" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" manuallyCreated="true" value="3" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" manuallyCreated="true" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="34" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jenny" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" manuallyCreated="true" referencingHrefs="#//@testsheetAssets.1/@testsheetViewList.0/@expectedRoot/@children.2/@children.2 #//@testsheetAssets.1/@testsheetViewList.0/@expectedRoot/@children.3/@children.2" eReference="eHarmonyMatch.ecore#//Match/p2" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="37" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="male" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Tom" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" manuallyCreated="true" value="1" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" newOrModified="true" manuallyCreated="true" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="38" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jane" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationHref" nodeID="1" newOrModified="true" manuallyCreated="true" eReference="eHarmonyMatch.ecore#//Match/p2" targetTestNode="#//@testsheetAssets.1/@testsheetViewList.0/@expectedRoot/@children.1/@children.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" newOrModified="true" manuallyCreated="true" eClass="eHarmonyMatch.ecore#//Match">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" manuallyCreated="true" value="3" eAttribute="eHarmonyMatch.ecore#//Match/score"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" newOrModified="true" manuallyCreated="true" eReference="eHarmonyMatch.ecore#//Match/p1" eClass="eHarmonyMatch.ecore#//Person">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="40" eAttribute="eHarmonyMatch.ecore#//Person/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="eHarmonyMatch.ecore#//Person/ageRange"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="female" eAttribute="eHarmonyMatch.ecore#//Person/gender"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Orange" eAttribute="eHarmonyMatch.ecore#//Person/location"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mary" eAttribute="eHarmonyMatch.ecore#//Person/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationHref" nodeID="1" newOrModified="true" manuallyCreated="true" eReference="eHarmonyMatch.ecore#//Match/p2" targetTestNode="#//@testsheetAssets.1/@testsheetViewList.0/@expectedRoot/@children.1/@children.2"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_MAneIMQPEe2BeJJuD9AWXA" testsheets="#//@testsheetAssets.0/@testsheet #//@testsheetAssets.1/@testsheet" vocabulary="eHarmonyMatch.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="eHarmony"/>
+    <testTabList name="Scoring"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
