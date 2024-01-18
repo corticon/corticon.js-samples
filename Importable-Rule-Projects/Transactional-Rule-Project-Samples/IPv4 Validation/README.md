@@ -1,20 +1,7 @@
----
-id: classic_IPv4
-title: IPv4 Validation
-tags:
-  - Corticon.js
-  - Corticon classic
-  - Regular Expressions
+# IPv4 Validation
 
----
+_Use regular expression in Corticon to validate IP address_
 
-Use regular expression in Corticon to validate IP address
-
- ---
-[Download Rule Assets
-](https://github.com/corticon/accelerators/raw/main/docs/js-templates/project-zips/IPv4%20Validation.zip)
-
----
 
 This project, explored in depth in the below video, demonstrates the use of regular expressions in Corticon or Corticon.js to implement a IPv4 address verification service. 
 

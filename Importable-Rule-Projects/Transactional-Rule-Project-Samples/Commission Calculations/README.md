@@ -1,17 +1,4 @@
----
-id: classic_commission
-title: Sales Commission
-tags:
-  - Corticon.js
-  - Corticon classic
----
-
-Calculate sales commission payments
-
----
-[Download Rule Assets](https://github.com/corticon/accelerators/raw/main/docs/classic-templates/project-zips/Commission%20Calculations.zip)
-
----
+# Calculate sales commission payments
 
 _This example illustrates how sales commissions can be calculated using a tiering system whereby sales over quota are rewarded at higher commission rates_
 

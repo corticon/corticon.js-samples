@@ -1,18 +1,8 @@
----
-id: classic_Matchmaker
-title: Online Dating Matchmaker
-tags:
-  - Corticon.js
-  - Corticon classic
----
+# Online Dating Matchmaker
 
-Rules to match dating preferences 
-
----
+_Rules to match dating preferences_
 
 
-[Download Rule Assets
-](https://github.com/corticon/accelerators/raw/main/docs/classic-templates/project-zips/Matchmaking.zip)
 
 ## Challenge Prompt:
 
