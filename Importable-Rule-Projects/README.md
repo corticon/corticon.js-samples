@@ -16,7 +16,7 @@ _(versus Corticon Server Deployments)_
 ### Rule Assets 
 - [Conference Registration](Dynamic-Form-Samples/Conference-Registration)
 - [Country State City Selector](Dynamic-Form-Samples/Country-State-City-Selector)
-- [Diabetes Risk Score (Type 2](Dynamic-Form-Samples/Diabetes-Risk-Score-(Type-2))
+- [Diabetes Risk Score (Type 2)](Dynamic-Form-Samples/Diabetes-Risk-Score-(Type-2))
 - [Feature Kitchen Sink](<Dynamic-Form-Samples/Feature Kitchen Sink>)
 - [Form Validation](<Dynamic-Form-Samples/Form Validation>)
 - [I18N](Dynamic-Form-Samples/I18N)
