@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="5" minorVersionNumber="3" majorServiceNumber="4" buildNumber="5724" updateStamp="_HmR-YzMyEeK0uKs4MURIxw" externalChecksum="3054974779:201531363:0">
+  <languageCode>en_GB</languageCode>
+  <ruleset vocabularyUpdateStamp="_kcQbcbAfEeOhn4FjKi9Cpw" vocabulary="StockEvaluation.ecore#/">
+    <rule>
+      <condition/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="(MarketReport.title.toLower.contains ( 'insider' ))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( MarketReport.title.toLower.contains ( 'insider' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="contains" datatype="boolean" termtype="METHOD" fulltext="MarketReport.title.toLower.contains">
+                <parentTerm text="toLower" datatype="String" termtype="METHOD" fulltext="MarketReport.title.toLower">
+                  <parentTerm text="title" datatype="String" termtype="ATTRIBUTE" fulltext="MarketReport.title">
+                    <parentTerm text="MarketReport" datatype="MarketReports" termtype="ENTITY" fulltext="MarketReport" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="MarketReport.title.toLower.contains ( 'insider' )" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="StockEvaluation.titleRationality = 'Unreasonable'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="StockEvaluation.titleRationality = 'Unreasonable'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="titleRationality" datatype="String" termtype="ATTRIBUTE" fulltext="StockEvaluation.titleRationality">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="(MarketReport.title.toLower.contains ( 'insider' ))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( MarketReport.title.toLower.contains ( 'insider' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="contains" datatype="boolean" termtype="METHOD" fulltext="MarketReport.title.toLower.contains">
+                <parentTerm text="toLower" datatype="String" termtype="METHOD" fulltext="MarketReport.title.toLower">
+                  <parentTerm text="title" datatype="String" termtype="ATTRIBUTE" fulltext="MarketReport.title">
+                    <parentTerm text="MarketReport" datatype="MarketReports" termtype="ENTITY" fulltext="MarketReport" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="MarketReport.title.toLower.contains ( 'insider' )" rhs="F"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="StockEvaluation.titleRationality = 'Reasonble'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="StockEvaluation.titleRationality = 'Reasonble'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="titleRationality" datatype="String" termtype="ATTRIBUTE" fulltext="StockEvaluation.titleRationality">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter>
+      <opaqueExpression expression="MarketReport.stockCode=StockEvaluation.stockCode">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="MarketReport.stockCode = StockEvaluation.stockCode" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="StockEvaluation.stockCode">
+              <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+            <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="MarketReport.stockCode">
+              <parentTerm text="MarketReport" datatype="MarketReports" termtype="ENTITY" fulltext="MarketReport" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Warning" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.1">
+      <text expression="Title rationality is UNREASONABLE if the Market Report for that stock contains the word 'insider' (or any other variant of this word).">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Title rationality is UNREASONABLE if the Market Report for that stock contains the word 'insider' (or any other variant of this word)." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.1">
+      <text expression="Title rationality is REASONABLE if the Market Report for that stock doesn't contain the word 'insider' (or any other variant of this word).">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Title rationality is REASONABLE if the Market Report for that stock doesn't contain the word 'insider' (or any other variant of this word)." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="StockEvaluation.ecore#//MarketReports">
+      <alias value="MarketReport"/>
+      <referencedAttributes attribute="StockEvaluation.ecore#//MarketReports/title"/>
+      <referencedAttributes attribute="StockEvaluation.ecore#//MarketReports/stockCode"/>
+    </logicalVariable>
+    <logicalVariable entity="StockEvaluation.ecore#//StockEvaluation" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1">
+      <referencedAttributes attribute="StockEvaluation.ecore#//StockEvaluation/titleRationality"/>
+      <referencedAttributes attribute="StockEvaluation.ecore#//StockEvaluation/stockCode"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="23">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet="{'Reasonble', 'Unreasonable'}"/>
+        <expressionCell external="StockEvaluation.titleRationality">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="StockEvaluation.titleRationality" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="titleRationality" datatype="String" termtype="ATTRIBUTE" fulltext="StockEvaluation.titleRationality">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="MarketReport.stockCode=StockEvaluation.stockCode" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="MarketReport.stockCode=StockEvaluation.stockCode" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="MarketReport.stockCode=StockEvaluation.stockCode">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="MarketReport.stockCode = StockEvaluation.stockCode" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="StockEvaluation.stockCode">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="MarketReport.stockCode">
+                <parentTerm text="MarketReport" datatype="MarketReports" termtype="ENTITY" fulltext="MarketReport" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="759" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="Title rationality is UNREASONABLE if the Market Report for that stock contains the word 'insider' (or any other variant of this word).">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Title rationality is UNREASONABLE if the Market Report for that stock contains the word 'insider' (or any other variant of this word)." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="Title rationality is REASONABLE if the Market Report for that stock doesn't contain the word 'insider' (or any other variant of this word).">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Title rationality is REASONABLE if the Market Report for that stock doesn't contain the word 'insider' (or any other variant of this word)." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="MarketReport.title.toLower.contains ( 'insider' )">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="MarketReport.title.toLower.contains ( 'insider' )" datatype="boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="contains" datatype="boolean" termtype="METHOD" fulltext="MarketReport.title.toLower.contains">
+                <parentTerm text="toLower" datatype="String" termtype="METHOD" fulltext="MarketReport.title.toLower">
+                  <parentTerm text="title" datatype="String" termtype="ATTRIBUTE" fulltext="MarketReport.title">
+                    <parentTerm text="MarketReport" datatype="MarketReports" termtype="ENTITY" fulltext="MarketReport" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList valueSet="-"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T"/>
+        <actionValueSetCellList valueSet="'Unreasonable'"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="F"/>
+        <actionValueSetCellList valueSet="'Reasonble'"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

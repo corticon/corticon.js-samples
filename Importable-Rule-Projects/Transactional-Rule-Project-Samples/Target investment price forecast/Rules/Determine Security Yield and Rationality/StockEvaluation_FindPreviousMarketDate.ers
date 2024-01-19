@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_kWVTCVylEe63oNJ8DxzcwQ" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_GB</languageCode>
+  <ruleset vocabularyUpdateStamp="_jzJtcFylEe63oNJ8DxzcwQ" vocabulary="StockEvaluation.ecore#/">
+    <rule>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="StockEvaluation.previousStockDate=MD->sortedByDesc ( marketDate )->at(2).marketDate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="StockEvaluation.previousStockDate = MD->sortedByDesc ( MD.marketDate )->at ( 2 ).marketDate" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="previousStockDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="StockEvaluation.previousStockDate">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="marketDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="MD.marketDate">
+                <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="MD->asSequence->sortedByDesc(marketDate)" datatype="Object" termtype="COLLECTION" fulltext="MD->asSequence->sortedByDesc->at">
+                <parentTerm text="MD" datatype="Sequence" termtype="COLLECTION" fulltext="MD->asSequence->sortedByDesc">
+                  <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter>
+      <opaqueExpression expression="MD.stockCode=StockEvaluation.stockCode">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="MD.stockCode = StockEvaluation.stockCode" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="MD.stockCode">
+              <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="StockEvaluation.stockCode">
+              <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter>
+      <opaqueExpression expression="MD.marketDate&lt;=StockEvaluation.marketDate">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="MD.marketDate &lt;= StockEvaluation.marketDate" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="marketDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="MD.marketDate">
+              <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="marketDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="StockEvaluation.marketDate">
+              <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement>
+      <text expression="The previous market date in the collection of market events for this stock is the second occurance when the collection is sorted in descending order.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The previous market date in the collection of market events for this stock is the second occurance when the collection is sorted in descending order." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.1">
+      <text expression="The previous date in the collection of MarketData compaired to the stock evaluation date is [{StockEvaluation.previousStockDate}].">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The previous date in the collection of MarketData compaired to the stock evaluation date is [ + StockEvaluation.previousStockDate + ]." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="previousStockDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="StockEvaluation.previousStockDate">
+              <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="StockEvaluation.ecore#//MarketData">
+      <alias value="MD"/>
+      <referencedAttributes attribute="StockEvaluation.ecore#//MarketData/stockCode"/>
+      <referencedAttributes attribute="StockEvaluation.ecore#//MarketData/marketDate"/>
+    </logicalVariable>
+    <logicalVariable entity="StockEvaluation.ecore#//StockEvaluation" ruleStatements="#//@ruleset/@ruleStatements.1">
+      <referencedAttributes attribute="StockEvaluation.ecore#//StockEvaluation/stockCode"/>
+      <referencedAttributes attribute="StockEvaluation.ecore#//StockEvaluation/marketDate"/>
+      <referencedAttributes attribute="StockEvaluation.ecore#//StockEvaluation/previousStockDate"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="22">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="StockEvaluation.previousStockDate=MD->sortedByDesc ( marketDate )->at(2).marketDate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="StockEvaluation.previousStockDate = MD->sortedByDesc ( MD.marketDate )->at ( 2 ).marketDate" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="previousStockDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="StockEvaluation.previousStockDate">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="marketDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="MD.marketDate">
+                <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="MD->asSequence->sortedByDesc(marketDate)" datatype="Object" termtype="COLLECTION" fulltext="MD->asSequence->sortedByDesc->at">
+                <parentTerm text="MD" datatype="Sequence" termtype="COLLECTION" fulltext="MD->asSequence->sortedByDesc">
+                  <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="MD.stockCode=StockEvaluation.stockCode" filter="#//@ruleset/@filters.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="MD.marketDate&lt;=StockEvaluation.marketDate" filter="#//@ruleset/@filters.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="MD.stockCode=StockEvaluation.stockCode" filter="#//@ruleset/@filters.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="MD.marketDate&lt;=StockEvaluation.marketDate" filter="#//@ruleset/@filters.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="MD.stockCode=StockEvaluation.stockCode">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="MD.stockCode = StockEvaluation.stockCode" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="MD.stockCode">
+                <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="stockCode" datatype="Integer" termtype="ATTRIBUTE" fulltext="StockEvaluation.stockCode">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="MD.marketDate&lt;=StockEvaluation.marketDate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="MD.marketDate &lt;= StockEvaluation.marketDate" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="marketDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="MD.marketDate">
+                <parentTerm text="MD" datatype="MarketData" termtype="ENTITY" fulltext="MD" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="marketDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="StockEvaluation.marketDate">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="943" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference/>
+        <text external="The previous market date in the collection of market events for this stock is the second occurance when the collection is sorted in descending order.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The previous market date in the collection of market events for this stock is the second occurance when the collection is sorted in descending order." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="A0"/>
+        <text external="The previous date in the collection of MarketData compaired to the stock evaluation date is [{StockEvaluation.previousStockDate}].">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The previous date in the collection of MarketData compaired to the stock evaluation date is [ + StockEvaluation.previousStockDate + ]." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="previousStockDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="StockEvaluation.previousStockDate">
+                <parentTerm text="StockEvaluation" datatype="StockEvaluation" termtype="ENTITY" fulltext="StockEvaluation" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
