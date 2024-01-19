@@ -11,7 +11,7 @@ _(versus Corticon Server Deployments)_
 
 ### Dynamic Form Test Driver
 
-[Codepen](https://codepen.io/SethMeldon/embed/yLwBKpm?default-tab=result)
+Use the dynamic form template on [**Codepen**](https://codepen.io/SethMeldon/pen/wvOGvra) to try out the lightning quick, plug and play front end to a Corticon.js decision service-driven dynamic form.
 
 ### Rule Assets 
 - [Conference Registration](Dynamic-Form-Samples/Conference-Registration)
