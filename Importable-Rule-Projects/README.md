@@ -1,4 +1,4 @@
-# Rule Project Accelerators for Serverless flavor of Corticon, Corticon.js
+# :rocket: Rule Project Accelerators for Serverless flavor of Corticon, Corticon.js 
 _(versus Corticon Server Deployments)_
 
 ## Transactional Rule Project Samples
