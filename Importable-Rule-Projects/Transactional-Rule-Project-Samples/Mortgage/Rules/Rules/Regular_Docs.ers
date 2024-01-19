@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_U9i8NrbbEe6b3vRPP1714g" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_lBbsALbaEe6b3vRPP1714g" vocabulary="../Vocab/MISMO.ecore#/">
+    <rule/>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="emplyr.employmentCurrentIndicator = 'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentCurrentIndicator" rhs="'Y'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (emplyr.employmentBorrowerSelfEmployedIndicator = 'Y' or emplyr.employmentBorrowerSelfEmployedIndicator = null) or emplyr.employmentBorrowerSelfEmployedIndicator = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( emplyr.employmentBorrowerSelfEmployedIndicator = 'Y' or emplyr.employmentBorrowerSelfEmployedIndicator = null ) or emplyr.employmentBorrowerSelfEmployedIndicator = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentBorrowerSelfEmployedIndicator" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv > 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv > 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="> 80.0"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="product.documentation = '2 years W-2s and current paystub, or 24 months of personal bank statements.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '2 years W-2s and current paystub, or 24 months of personal bank statements.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="emplyr.employmentCurrentIndicator = 'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentCurrentIndicator" rhs="'Y'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (emplyr.employmentBorrowerSelfEmployedIndicator = 'Y' or emplyr.employmentBorrowerSelfEmployedIndicator = null) or emplyr.employmentBorrowerSelfEmployedIndicator = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( emplyr.employmentBorrowerSelfEmployedIndicator = 'Y' or emplyr.employmentBorrowerSelfEmployedIndicator = null ) or emplyr.employmentBorrowerSelfEmployedIndicator = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentBorrowerSelfEmployedIndicator" rhs="other"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 80.0"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="product.documentation = '1 year W-2 and current paystub, or 12 months of personal bank statements.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '1 year W-2 and current paystub, or 12 months of personal bank statements.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="emplyr.employmentCurrentIndicator = 'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentCurrentIndicator" rhs="'Y'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="emplyr.employmentBorrowerSelfEmployedIndicator = 'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentBorrowerSelfEmployedIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentBorrowerSelfEmployedIndicator" rhs="'Y'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv > 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv > 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="> 80.0"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="product.documentation = '2 years 1040s + YTD P&amp;L, or 24 months of personal bank statements. 24 months of business bank statements may be used to 90% LTV using 50% of deposits.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '2 years 1040s + YTD P&amp;L, or 24 months of personal bank statements. 24 months of business bank statements may be used to 90% LTV using 50% of deposits.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition>
+        <opaqueExpression expression="emplyr.employmentCurrentIndicator = 'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentCurrentIndicator" rhs="'Y'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="emplyr.employmentBorrowerSelfEmployedIndicator = 'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentBorrowerSelfEmployedIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr.employmentBorrowerSelfEmployedIndicator" rhs="'Y'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 80.0"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="product.documentation = '1 year 1040 + YTD P&amp;L, or 12 months of personal bank statements. 24 months of business bank statements may be used using 50% of deposits.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '1 year 1040 + YTD P&amp;L, or 12 months of personal bank statements. 24 months of business bank statements may be used using 50% of deposits.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.4">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(emplyr ->exists(employmentCurrentIndicator='Y'))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( emplyr->exists ( emplyr.employmentCurrentIndicator = 'Y' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="emplyr" datatype="Boolean" termtype="COLLECTION" fulltext="emplyr->exists">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="emplyr ->exists(employmentCurrentIndicator='Y')" rhs="F"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="product.documentation = 'Copy of Awards Letter, tax returns or 12 months of bank statements.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = 'Copy of Awards Letter, tax returns or 12 months of bank statements.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.1">
+      <opaqueExpression expression="product.program = 'Regular'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.program = 'Regular'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="program" datatype="String" termtype="ATTRIBUTE" fulltext="product.program">
+              <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+      <text expression="If wage earner with LTV over 80%, documentation required includes 2 years W-2s">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If wage earner with LTV over 80%, documentation required includes 2 years W-2s" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+      <text expression="If wage earner with LTV 80% or less, documentation required includes 1 year W-2">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If wage earner with LTV 80% or less, documentation required includes 1 year W-2" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+      <text expression="If self employed with LTV over 80%, documentation required includes 2 years 1040s">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If self employed with LTV over 80%, documentation required includes 2 years 1040s" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.4" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+      <text expression="If self employed with LTV 80% or less, documentation required includes 1 year 1040">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If self employed with LTV 80% or less, documentation required includes 1 year 1040" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.5" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+      <text expression="If fixed income, documentation required includes Awards Letter or tax returns">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If fixed income, documentation required includes Awards Letter or tax returns" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../Vocab/MISMO.ecore#//LoanApplication" filters="#//@ruleset/@filters.0">
+      <alias value="loanapp"/>
+      <extension association="true" entity="../Vocab/MISMO.ecore#//Borrower" traversedAssocRole="../Vocab/MISMO.ecore#//LoanApplication/borrower">
+        <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//Employer" traversedAssocRole="../Vocab/MISMO.ecore#//Borrower/employer">
+          <alias value="emplyr"/>
+          <referencedAttributes attribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+          <referencedAttributes attribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+        </extension>
+      </extension>
+      <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//EligibleProduct" traversedAssocRole="../Vocab/MISMO.ecore#//LoanApplication/eligibleProduct" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2 #//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.4" filters="#//@ruleset/@filters.0">
+        <alias value="product"/>
+        <referencedAttributes attribute="../Vocab/MISMO.ecore#//EligibleProduct/program"/>
+        <referencedAttributes attribute="../Vocab/MISMO.ecore#//EligibleProduct/documentation"/>
+      </extension>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/ltv"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="product.documentation = '2 years W-2s and current paystub, or 24 months of personal bank statements.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '2 years W-2s and current paystub, or 24 months of personal bank statements.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="product.documentation = '1 year W-2 and current paystub, or 12 months of personal bank statements.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '1 year W-2 and current paystub, or 12 months of personal bank statements.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="product.documentation = '2 years 1040s + YTD P&amp;L, or 24 months of personal bank statements. 24 months of business bank statements may be used to 90% LTV using 50% of deposits.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '2 years 1040s + YTD P&amp;L, or 24 months of personal bank statements. 24 months of business bank statements may be used to 90% LTV using 50% of deposits.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="product.documentation = '1 year 1040 + YTD P&amp;L, or 12 months of personal bank statements. 24 months of business bank statements may be used using 50% of deposits.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = '1 year 1040 + YTD P&amp;L, or 12 months of personal bank statements. 24 months of business bank statements may be used using 50% of deposits.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="product.documentation = 'Copy of Awards Letter, tax returns or 12 months of bank statements.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.documentation = 'Copy of Awards Letter, tax returns or 12 months of bank statements.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documentation" datatype="String" termtype="ATTRIBUTE" fulltext="product.documentation">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="product.program = 'Regular'" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="product.program = 'Regular'" filter="#//@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="product.program = 'Regular'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.program = 'Regular'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="program" datatype="String" termtype="ATTRIBUTE" fulltext="product.program">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="If wage earner with LTV over 80%, documentation required includes 2 years W-2s">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If wage earner with LTV over 80%, documentation required includes 2 years W-2s" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="If wage earner with LTV 80% or less, documentation required includes 1 year W-2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If wage earner with LTV 80% or less, documentation required includes 1 year W-2" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="3"/>
+        <text external="If self employed with LTV over 80%, documentation required includes 2 years 1040s">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If self employed with LTV over 80%, documentation required includes 2 years 1040s" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="4"/>
+        <text external="If self employed with LTV 80% or less, documentation required includes 1 year 1040">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If self employed with LTV 80% or less, documentation required includes 1 year 1040" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.4">
+        <reference external="5"/>
+        <text external="If fixed income, documentation required includes Awards Letter or tax returns">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If fixed income, documentation required includes Awards Letter or tax returns" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{'Y', other}"/>
+        <expressionCell external="emplyr.employmentCurrentIndicator">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{'Y', other}"/>
+        <expressionCell external="emplyr.employmentBorrowerSelfEmployedIndicator">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentBorrowerSelfEmployedIndicator" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{> 80.0, &lt;= 80.0}"/>
+        <expressionCell external="loanapp.ltv">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="emplyr ->exists(employmentCurrentIndicator='Y')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr->exists ( emplyr.employmentCurrentIndicator = 'Y' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="emplyr" datatype="Boolean" termtype="COLLECTION" fulltext="emplyr->exists">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( emplyr.employmentBorrowerSelfEmployedIndicator = 'Y' or emplyr.employmentBorrowerSelfEmployedIndicator = null ) or emplyr.employmentBorrowerSelfEmployedIndicator = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv > 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( emplyr.employmentBorrowerSelfEmployedIndicator = 'Y' or emplyr.employmentBorrowerSelfEmployedIndicator = null ) or emplyr.employmentBorrowerSelfEmployedIndicator = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentBorrowerSelfEmployedIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv > 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentCurrentIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentCurrentIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentCurrentIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Y'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="emplyr.employmentBorrowerSelfEmployedIndicator = 'Y'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="employmentBorrowerSelfEmployedIndicator" datatype="String" termtype="ATTRIBUTE" fulltext="emplyr.employmentBorrowerSelfEmployedIndicator">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 80.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 80.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( emplyr->exists ( emplyr.employmentCurrentIndicator = 'Y' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="emplyr" datatype="Boolean" termtype="COLLECTION" fulltext="emplyr->exists">
+                <parentTerm text="emplyr" datatype="Employer" termtype="ENTITY" fulltext="emplyr" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="borrower" datatype="Borrower" termtype="ENTITY" fulltext="loanapp.borrower" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

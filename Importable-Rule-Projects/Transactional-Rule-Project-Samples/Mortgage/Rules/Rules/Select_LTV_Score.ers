@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" buildNumber="8020" updateStamp="_VRx_c7beEe6-SN-rPVoSWg" externalChecksum="2722078124:507989954:2304733958" studioType="Java">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_1O4DoLbdEe6-SN-rPVoSWg" vocabulary="../Vocab/MISMO.ecore#/">
+    <rule>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="loanapp.ltv = ( terms.borrowerRequestedLoanAmount / transdata.propertyAppraisedValueAmount ) * 100.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv = ( terms.borrowerRequestedLoanAmount / transdata.propertyAppraisedValueAmount ) * 100.0" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="propertyAppraisedValueAmount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="transdata.propertyAppraisedValueAmount">
+                <parentTerm text="transdata" datatype="TransmittalData" termtype="ENTITY" fulltext="transdata" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="additionalCaseData" datatype="AdditionalCaseData" termtype="ENTITY" fulltext="loanapp.additionalCaseData" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="borrowerRequestedLoanAmount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="terms.borrowerRequestedLoanAmount">
+                <parentTerm text="terms" datatype="MortgageTerms" termtype="ENTITY" fulltext="terms" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="loanapp.creditScore = score->sortedBy(value) ->first.value">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.creditScore = score->sortedBy ( score.value )->first.value" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="creditScore" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.creditScore">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="score" datatype="CreditScore" termtype="COLLECTION" fulltext="score->asSequence->first">
+                <parentTerm text="score" datatype="CreditScore" termtype="ENTITY" fulltext="score" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="Integer" termtype="ATTRIBUTE" fulltext="score.value">
+                <parentTerm text="score" datatype="CreditScore" termtype="ENTITY" fulltext="score" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Credit score used in evaluating the loan application is the lowest score from all of the agencies">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Credit score used in evaluating the loan application is the lowest score from all of the agencies" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../Vocab/MISMO.ecore#//LoanApplication" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1">
+      <alias value="loanapp"/>
+      <extension association="true" entity="../Vocab/MISMO.ecore#//AdditionalCaseData" traversedAssocRole="../Vocab/MISMO.ecore#//LoanApplication/additionalCaseData">
+        <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//TransmittalData" traversedAssocRole="../Vocab/MISMO.ecore#//AdditionalCaseData/transmittalData">
+          <alias value="transdata"/>
+          <referencedAttributes attribute="../Vocab/MISMO.ecore#//TransmittalData/propertyAppraisedValueAmount"/>
+        </extension>
+      </extension>
+      <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//MortgageTerms" traversedAssocRole="../Vocab/MISMO.ecore#//LoanApplication/mortgageTerms">
+        <alias value="terms"/>
+        <referencedAttributes attribute="../Vocab/MISMO.ecore#//MortgageTerms/borrowerRequestedLoanAmount"/>
+      </extension>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/ltv"/>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/creditScore"/>
+    </logicalVariable>
+    <logicalVariable entity="../Vocab/MISMO.ecore#//ResponseGroup">
+      <extension association="true" entity="../Vocab/MISMO.ecore#//Response" traversedAssocRole="../Vocab/MISMO.ecore#//ResponseGroup/response">
+        <extension association="true" entity="../Vocab/MISMO.ecore#//ResponseData" traversedAssocRole="../Vocab/MISMO.ecore#//Response/responseData">
+          <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//CreditResponse" traversedAssocRole="../Vocab/MISMO.ecore#//ResponseData/creditResponse">
+            <alias value="credit"/>
+            <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//CreditScore" traversedAssocRole="../Vocab/MISMO.ecore#//CreditResponse/creditScore">
+              <alias value="score"/>
+              <referencedAttributes attribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+            </extension>
+          </extension>
+        </extension>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="loanapp.ltv = ( terms.borrowerRequestedLoanAmount / transdata.propertyAppraisedValueAmount ) * 100.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv = ( terms.borrowerRequestedLoanAmount / transdata.propertyAppraisedValueAmount ) * 100.0" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="propertyAppraisedValueAmount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="transdata.propertyAppraisedValueAmount">
+                <parentTerm text="transdata" datatype="TransmittalData" termtype="ENTITY" fulltext="transdata" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="additionalCaseData" datatype="AdditionalCaseData" termtype="ENTITY" fulltext="loanapp.additionalCaseData" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="borrowerRequestedLoanAmount" datatype="Decimal" termtype="ATTRIBUTE" fulltext="terms.borrowerRequestedLoanAmount">
+                <parentTerm text="terms" datatype="MortgageTerms" termtype="ENTITY" fulltext="terms" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="loanapp.creditScore = score->sortedBy(value) ->first.value">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.creditScore = score->sortedBy ( score.value )->first.value" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="creditScore" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.creditScore">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="score" datatype="CreditScore" termtype="COLLECTION" fulltext="score->asSequence->first">
+                <parentTerm text="score" datatype="CreditScore" termtype="ENTITY" fulltext="score" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="Integer" termtype="ATTRIBUTE" fulltext="score.value">
+                <parentTerm text="score" datatype="CreditScore" termtype="ENTITY" fulltext="score" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A0"/>
+        <text external="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="B0"/>
+        <text external="Credit score used in evaluating the loan application is the lowest score from all of the agencies">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Credit score used in evaluating the loan application is the lowest score from all of the agencies" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

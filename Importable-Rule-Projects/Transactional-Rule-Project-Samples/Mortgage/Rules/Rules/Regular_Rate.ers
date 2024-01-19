@@ -1,0 +1,2433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_p2cLw7bdEe6b3vRPP1714g" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_F1YGYrbfEe6b3vRPP1714g" vocabulary="../Vocab/MISMO.ecore#/">
+    <rule/>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 65.0"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 7.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 65 .. 70.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 7.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 70.0 .. 75.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 7.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 75.0 .. 80.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.30" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 80.0 .. 85.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 85.0 .. 90.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 85.0 .. 90.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 85.0 .. 90.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A-'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 65.0"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 7.85">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.85" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A-'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 65 .. 70.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 7.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A-'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 70.0 .. 75.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A-'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 75.0 .. 80.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A-'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 80.0 .. 85.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'A-'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 85.0 .. 90.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 85.0 .. 90.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 85.0 .. 90.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.65" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 65.0"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.65" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 65 .. 70.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.95">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.95" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 70.0 .. 75.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 75.0 .. 80.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 80.0 .. 85.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 85.0 .. 90.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 85.0 .. 90.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 85.0 .. 90.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 10.45">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.45" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 65.0"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 8.85">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.85" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 65 .. 70.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 70.0 .. 75.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.55">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.55" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 75.0 .. 80.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'B'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 80.0 .. 85.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 10.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'C+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'C+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 65.0"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 9.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'C+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'C+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 65 .. 70.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 10.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'C+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'C+'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv in ( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="( 70.0 .. 75.0 ]"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 10.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="product.creditRisk = 'C'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.creditRisk" rhs="'C'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="loanapp.ltv &lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="loanapp.ltv" rhs="&lt;= 65.0"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="product.rate = 11.55">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 11.55" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0">
+      <opaqueExpression expression="product.program = 'Regular'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.program = 'Regular'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="program" datatype="String" termtype="ATTRIBUTE" fulltext="product.program">
+              <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement>
+      <text expression="Rate for regular program for applicants with credit risk grade {product.creditRisk}, credit score of {loanapp.creditScore} and ltv of {loanapp.ltv} = {product.rate} %">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rate for regular program for applicants with credit risk grade  + product.creditRisk + , credit score of  + loanapp.creditScore +  and ltv of  + loanapp.ltv +  =  + product.rate +  %" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+              <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+            <terms text="creditScore" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.creditScore">
+              <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+              <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+            <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+              <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../Vocab/MISMO.ecore#//LoanApplication" filters="#//@ruleset/@filters.0">
+      <alias value="loanapp"/>
+      <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//EligibleProduct" traversedAssocRole="../Vocab/MISMO.ecore#//LoanApplication/eligibleProduct" filters="#//@ruleset/@filters.0">
+        <alias value="product"/>
+        <referencedAttributes attribute="../Vocab/MISMO.ecore#//EligibleProduct/program"/>
+        <referencedAttributes attribute="../Vocab/MISMO.ecore#//EligibleProduct/creditRisk"/>
+        <referencedAttributes attribute="../Vocab/MISMO.ecore#//EligibleProduct/rate"/>
+      </extension>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/ltv"/>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/creditScore"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet="{7.50, 7.75, 7.85, 7.99, 8.25, 8.30, 8.65, 8.75, 8.85, 8.95, 8.99, 9.25, 9.35, 9.50, 9.55, 9.65, 9.75, 9.99, 10.25, 10.45, 10.50, 11.55}"/>
+        <expressionCell external="product.rate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="product.program = 'Regular'" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="product.program = 'Regular'" filter="#//@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="product.program = 'Regular'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.program = 'Regular'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="program" datatype="String" termtype="ATTRIBUTE" fulltext="product.program">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1715" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference/>
+        <text external="Rate for regular program for applicants with credit risk grade {product.creditRisk}, credit score of {loanapp.creditScore} and ltv of {loanapp.ltv} = {product.rate} %">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rate for regular program for applicants with credit risk grade  + product.creditRisk + , credit score of  + loanapp.creditScore +  and ltv of  + loanapp.ltv +  =  + product.rate +  %" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="creditScore" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.creditScore">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{'A+', 'A-', 'B+', 'B', 'C+', 'C'}"/>
+        <expressionCell external="product.creditRisk">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{> 90.0, ( 85.0 .. 90.0 ], ( 80.0 .. 85.0 ], ( 75.0 .. 80.0 ], ( 70.0 .. 75.0 ], ( 65 .. 70.0 ], &lt;= 65.0}"/>
+        <expressionCell external="loanapp.ltv">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="28">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="7.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="7.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="7.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.30" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="'A+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 85.0 .. 90.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 85.0 .. 90.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="7.85">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.85" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="7.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 7.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="100" pRule="#//@ruleset/@rules.12">
+        <conditionValueSetCellList valueSet="'A-'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'A-'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 85.0 .. 90.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 85.0 .. 90.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.65" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="13" columnWidth="100" pRule="#//@ruleset/@rules.13">
+        <conditionValueSetCellList valueSet="'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.65" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="14" columnWidth="100" pRule="#//@ruleset/@rules.14">
+        <conditionValueSetCellList valueSet="'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.95">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.95" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="15" columnWidth="100" pRule="#//@ruleset/@rules.15">
+        <conditionValueSetCellList valueSet="'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.35">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.35" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="16" columnWidth="100" pRule="#//@ruleset/@rules.16">
+        <conditionValueSetCellList valueSet="'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="17" columnWidth="100" pRule="#//@ruleset/@rules.17">
+        <conditionValueSetCellList valueSet="'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="18" columnWidth="100" pRule="#//@ruleset/@rules.18">
+        <conditionValueSetCellList valueSet="'B+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 85.0 .. 90.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 85.0 .. 90.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="10.45">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.45" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="19" columnWidth="100" pRule="#//@ruleset/@rules.19">
+        <conditionValueSetCellList valueSet="'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="8.85">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 8.85" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="20" columnWidth="100" pRule="#//@ruleset/@rules.20">
+        <conditionValueSetCellList valueSet="'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="21" columnWidth="100" pRule="#//@ruleset/@rules.21">
+        <conditionValueSetCellList valueSet="'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.55">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.55" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="22" columnWidth="100" pRule="#//@ruleset/@rules.22">
+        <conditionValueSetCellList valueSet="'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 75.0 .. 80.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 75.0 .. 80.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.75">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.75" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="23" columnWidth="100" pRule="#//@ruleset/@rules.23">
+        <conditionValueSetCellList valueSet="'B'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'B'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 80.0 .. 85.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 80.0 .. 85.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="10.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="24" columnWidth="100" pRule="#//@ruleset/@rules.24">
+        <conditionValueSetCellList valueSet="'C+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="9.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 9.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="25" columnWidth="100" pRule="#//@ruleset/@rules.25">
+        <conditionValueSetCellList valueSet="'C+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 65 .. 70.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 65 .. 70.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="10.25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.25" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="26" columnWidth="100" pRule="#//@ruleset/@rules.26">
+        <conditionValueSetCellList valueSet="'C+'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C+'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="( 70.0 .. 75.0 ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv in ( 70.0 .. 75.0 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="10.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 10.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="27" columnWidth="100" pRule="#//@ruleset/@rules.27">
+        <conditionValueSetCellList valueSet="'C'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.creditRisk = 'C'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="creditRisk" datatype="String" termtype="ATTRIBUTE" fulltext="product.creditRisk">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 65.0">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.ltv &lt;= 65.0" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ltv" datatype="Decimal" termtype="ATTRIBUTE" fulltext="loanapp.ltv">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="11.55">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.rate = 11.55" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rate" datatype="Decimal" termtype="ATTRIBUTE" fulltext="product.rate">
+                <parentTerm text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                  <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="product" datatype="EligibleProduct" termtype="ENTITY" fulltext="product">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

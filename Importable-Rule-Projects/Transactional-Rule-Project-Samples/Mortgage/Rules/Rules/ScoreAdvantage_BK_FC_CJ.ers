@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_Z2oqvrbeEe6-SN-rPVoSWg" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_F1YGYrbfEe6b3vRPP1714g" vocabulary="../Vocab/MISMO.ecore#/">
+    <rule>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="loanapp.bkDischMosLow = record->sortedBy(bkDischMos) ->first.bkDischMos">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.bkDischMosLow = record->sortedBy ( record.bkDischMos )->first.bkDischMos" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bkDischMosLow" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.bkDischMosLow">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record->asSequence->sortedBy(bkDischMos)" datatype="Object" termtype="COLLECTION" fulltext="record->asSequence->sortedBy->first">
+                <parentTerm text="record" datatype="Sequence" termtype="COLLECTION" fulltext="record->asSequence->sortedBy">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="bkDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.bkDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="loanapp.fcDischMosLow = record ->sortedBy(fcDischMos) ->first.fcDischMos">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.fcDischMosLow = record->sortedBy ( record.fcDischMos )->first.fcDischMos" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fcDischMosLow" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.fcDischMosLow">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="fcDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.fcDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record->asSequence->sortedBy(fcDischMos)" datatype="Object" termtype="COLLECTION" fulltext="record->asSequence->sortedBy->first">
+                <parentTerm text="record" datatype="Sequence" termtype="COLLECTION" fulltext="record->asSequence->sortedBy">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+        <opaqueExpression expression="loanapp.cjDischMosLow = record ->sortedBy(cjDischMos) ->first.cjDischMos">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.cjDischMosLow = record->sortedBy ( record.cjDischMos )->first.cjDischMos" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cjDischMosLow" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.cjDischMosLow">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cjDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.cjDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record->asSequence->sortedBy(cjDischMos)" datatype="Object" termtype="COLLECTION" fulltext="record->asSequence->sortedBy->first">
+                <parentTerm text="record" datatype="Sequence" termtype="COLLECTION" fulltext="record->asSequence->sortedBy">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition>
+        <opaqueExpression expression="(record.type.startsWith('Bankruptcy'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type.startsWith ( 'Bankruptcy' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="startsWith ('Bankruptcy')" datatype="Boolean" termtype="METHOD" fulltext="record.type.startsWith ('Bankruptcy')">
+                <parentTerm text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="record.type.startsWith('Bankruptcy')" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="record.bkDischMos = record.dispositionDate.monthsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.bkDischMos = record.dispositionDate.monthsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bkDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.bkDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="record.dispositionDate.monthsBetween (today)">
+                <parentTerm text="dispositionDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="record.dispositionDate">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.4">
+      <condition>
+        <opaqueExpression expression="(record.type.startsWith('Bankruptcy'))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type.startsWith ( 'Bankruptcy' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="startsWith ('Bankruptcy')" datatype="Boolean" termtype="METHOD" fulltext="record.type.startsWith ('Bankruptcy')">
+                <parentTerm text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="record.type.startsWith('Bankruptcy')" rhs="F"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="record.bkDischMos = 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.bkDischMos = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bkDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.bkDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.5">
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(record.type = 'Foreclosure')=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type = 'Foreclosure' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="record.type = 'Foreclosure'" rhs="T"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="record.fcDischMos = record.dispositionDate.monthsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.fcDischMos = record.dispositionDate.monthsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fcDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.fcDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="record.dispositionDate.monthsBetween (today)">
+                <parentTerm text="dispositionDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="record.dispositionDate">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.6">
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(record.type = 'Foreclosure')=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type = 'Foreclosure' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="record.type = 'Foreclosure'" rhs="F"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="record.fcDischMos = 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.fcDischMos = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fcDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.fcDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.7">
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="record.type = 'Collection' or record.type = 'Judgment'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.type = 'Collection' or record.type = 'Judgment'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="record.type" rhs="{'Collection', 'Judgment'}"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="record.cjDischMos = record.dispositionDate.monthsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.cjDischMos = record.dispositionDate.monthsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cjDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.cjDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="record.dispositionDate.monthsBetween (today)">
+                <parentTerm text="dispositionDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="record.dispositionDate">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.8">
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="not (record.type = 'Collection' or record.type = 'Judgment' or record.type = null) or record.type = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( record.type = 'Collection' or record.type = 'Judgment' or record.type = null ) or record.type = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="record.type" rhs="other"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="record.cjDischMos = 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.cjDischMos = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cjDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.cjDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Months since bankruptcy discharged used in evaluating the loan application is the lowest value">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Months since bankruptcy discharged used in evaluating the loan application is the lowest value" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Months since foreclosure discharged used in evaluating the loan application is the lowest value">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Months since foreclosure discharged used in evaluating the loan application is the lowest value" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Months since collection or judgment discharged used in evaluating the loan application is the lowest value">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Months since collection or judgment discharged used in evaluating the loan application is the lowest value" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+      <text expression="If credit public record is of a bankruptcy type, months since bankruptcy discharged is the number of months between disposition date and today">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is of a bankruptcy type, months since bankruptcy discharged is the number of months between disposition date and today" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+      <text expression="If credit public record is not of a bankruptcy type, months since bankruptcy discharged is set to 1000 (large value that won't cause a false bad result)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is not of a bankruptcy type, months since bankruptcy discharged is set to 1000 (large value that won't cause a false bad result)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+      <text expression="If credit public record is of a foreclosure type, months since foreclosure discharged is the number of months between disposition date and today">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is of a foreclosure type, months since foreclosure discharged is the number of months between disposition date and today" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.4" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+      <text expression="If credit public record is not of a foreclosure type, months since foreclosure discharged is set to 1000 (large value that won't cause a false bad result)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is not of a foreclosure type, months since foreclosure discharged is set to 1000 (large value that won't cause a false bad result)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.5" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+      <text expression="If credit public record is of a collection or judgment type, months since collection or judgment discharged is the number of months between disposition date and today">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is of a collection or judgment type, months since collection or judgment discharged is the number of months between disposition date and today" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.6" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+      <text expression="If credit public record is not of a collection or judgment type, months since collection or judgment discharged is set to 1000 (large value that won't cause a false bad result)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is not of a collection or judgment type, months since collection or judgment discharged is set to 1000 (large value that won't cause a false bad result)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../Vocab/MISMO.ecore#//LoanApplication" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2">
+      <alias value="loanapp"/>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/bkDischMosLow"/>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/fcDischMosLow"/>
+      <referencedAttributes attribute="../Vocab/MISMO.ecore#//LoanApplication/cjDischMosLow"/>
+    </logicalVariable>
+    <logicalVariable entity="../Vocab/MISMO.ecore#//ResponseGroup">
+      <extension association="true" entity="../Vocab/MISMO.ecore#//Response" traversedAssocRole="../Vocab/MISMO.ecore#//ResponseGroup/response">
+        <extension association="true" entity="../Vocab/MISMO.ecore#//ResponseData" traversedAssocRole="../Vocab/MISMO.ecore#//Response/responseData">
+          <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//CreditResponse" traversedAssocRole="../Vocab/MISMO.ecore#//ResponseData/creditResponse">
+            <alias value="credit"/>
+            <extension explicit="true" association="true" entity="../Vocab/MISMO.ecore#//CreditPublicRecord" traversedAssocRole="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" ruleStatements="#//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.4 #//@ruleset/@ruleStatements.5 #//@ruleset/@ruleStatements.6 #//@ruleset/@ruleStatements.7 #//@ruleset/@ruleStatements.8">
+              <alias value="record"/>
+              <referencedAttributes attribute="../Vocab/MISMO.ecore#//CreditPublicRecord/bkDischMos"/>
+              <referencedAttributes attribute="../Vocab/MISMO.ecore#//CreditPublicRecord/fcDischMos"/>
+              <referencedAttributes attribute="../Vocab/MISMO.ecore#//CreditPublicRecord/cjDischMos"/>
+              <referencedAttributes attribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+              <referencedAttributes attribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+            </extension>
+          </extension>
+        </extension>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="loanapp.bkDischMosLow = record->sortedBy(bkDischMos) ->first.bkDischMos">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.bkDischMosLow = record->sortedBy ( record.bkDischMos )->first.bkDischMos" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bkDischMosLow" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.bkDischMosLow">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record->asSequence->sortedBy(bkDischMos)" datatype="Object" termtype="COLLECTION" fulltext="record->asSequence->sortedBy->first">
+                <parentTerm text="record" datatype="Sequence" termtype="COLLECTION" fulltext="record->asSequence->sortedBy">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="bkDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.bkDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="loanapp.fcDischMosLow = record ->sortedBy(fcDischMos) ->first.fcDischMos">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.fcDischMosLow = record->sortedBy ( record.fcDischMos )->first.fcDischMos" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fcDischMosLow" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.fcDischMosLow">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="fcDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.fcDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record->asSequence->sortedBy(fcDischMos)" datatype="Object" termtype="COLLECTION" fulltext="record->asSequence->sortedBy->first">
+                <parentTerm text="record" datatype="Sequence" termtype="COLLECTION" fulltext="record->asSequence->sortedBy">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="loanapp.cjDischMosLow = record ->sortedBy(cjDischMos) ->first.cjDischMos">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="loanapp.cjDischMosLow = record->sortedBy ( record.cjDischMos )->first.cjDischMos" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cjDischMosLow" datatype="Integer" termtype="ATTRIBUTE" fulltext="loanapp.cjDischMosLow">
+                <parentTerm text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="loanapp" datatype="LoanApplication" termtype="ENTITY" fulltext="loanapp" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cjDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.cjDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record->asSequence->sortedBy(cjDischMos)" datatype="Object" termtype="COLLECTION" fulltext="record->asSequence->sortedBy->first">
+                <parentTerm text="record" datatype="Sequence" termtype="COLLECTION" fulltext="record->asSequence->sortedBy">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="record.bkDischMos = record.dispositionDate.monthsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.bkDischMos = record.dispositionDate.monthsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bkDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.bkDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="record.dispositionDate.monthsBetween (today)">
+                <parentTerm text="dispositionDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="record.dispositionDate">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="record.bkDischMos = 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.bkDischMos = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bkDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.bkDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="record.fcDischMos = record.dispositionDate.monthsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.fcDischMos = record.dispositionDate.monthsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fcDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.fcDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="record.dispositionDate.monthsBetween (today)">
+                <parentTerm text="dispositionDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="record.dispositionDate">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="record.fcDischMos = 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.fcDischMos = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="fcDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.fcDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="record.cjDischMos = record.dispositionDate.monthsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.cjDischMos = record.dispositionDate.monthsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cjDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.cjDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="record.dispositionDate.monthsBetween (today)">
+                <parentTerm text="dispositionDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="record.dispositionDate">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="record.cjDischMos = 1000">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.cjDischMos = 1000" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cjDischMos" datatype="Integer" termtype="ATTRIBUTE" fulltext="record.cjDischMos">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+                  <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+                  <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0/@referencedAttributes.2"/>
+                  <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0/@referencedAttributes.3"/>
+                  <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0/@referencedAttributes.4"/>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A0"/>
+        <text external="Months since bankruptcy discharged used in evaluating the loan application is the lowest value">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Months since bankruptcy discharged used in evaluating the loan application is the lowest value" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="B0"/>
+        <text external="Months since foreclosure discharged used in evaluating the loan application is the lowest value">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Months since foreclosure discharged used in evaluating the loan application is the lowest value" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="C0"/>
+        <text external="Months since collection or judgment discharged used in evaluating the loan application is the lowest value">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Months since collection or judgment discharged used in evaluating the loan application is the lowest value" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="1"/>
+        <text external="If credit public record is of a bankruptcy type, months since bankruptcy discharged is the number of months between disposition date and today">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is of a bankruptcy type, months since bankruptcy discharged is the number of months between disposition date and today" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.4">
+        <reference external="2"/>
+        <text external="If credit public record is not of a bankruptcy type, months since bankruptcy discharged is set to 1000 (large value that won't cause a false bad result)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is not of a bankruptcy type, months since bankruptcy discharged is set to 1000 (large value that won't cause a false bad result)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.5">
+        <reference external="3"/>
+        <text external="If credit public record is of a foreclosure type, months since foreclosure discharged is the number of months between disposition date and today">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is of a foreclosure type, months since foreclosure discharged is the number of months between disposition date and today" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.6">
+        <reference external="4"/>
+        <text external="If credit public record is not of a foreclosure type, months since foreclosure discharged is set to 1000 (large value that won't cause a false bad result)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is not of a foreclosure type, months since foreclosure discharged is set to 1000 (large value that won't cause a false bad result)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.7">
+        <reference external="5"/>
+        <text external="If credit public record is of a collection or judgment type, months since collection or judgment discharged is the number of months between disposition date and today">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is of a collection or judgment type, months since collection or judgment discharged is the number of months between disposition date and today" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.8">
+        <reference external="6"/>
+        <text external="If credit public record is not of a collection or judgment type, months since collection or judgment discharged is set to 1000 (large value that won't cause a false bad result)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="If credit public record is not of a collection or judgment type, months since collection or judgment discharged is set to 1000 (large value that won't cause a false bad result)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="record.type.startsWith('Bankruptcy')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.type.startsWith ( 'Bankruptcy' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="startsWith ('Bankruptcy')" datatype="Boolean" termtype="METHOD" fulltext="record.type.startsWith ('Bankruptcy')">
+                <parentTerm text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="record.type = 'Foreclosure'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.type = 'Foreclosure'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{'Collection', 'Judgment', other}"/>
+        <expressionCell external="record.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.type" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type.startsWith ( 'Bankruptcy' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="startsWith ('Bankruptcy')" datatype="Boolean" termtype="METHOD" fulltext="record.type.startsWith ('Bankruptcy')">
+                <parentTerm text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type.startsWith ( 'Bankruptcy' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="startsWith ('Bankruptcy')" datatype="Boolean" termtype="METHOD" fulltext="record.type.startsWith ('Bankruptcy')">
+                <parentTerm text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                  <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                      <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                        <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                          <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                        </parentTerm>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type = 'Foreclosure' ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( record.type = 'Foreclosure' ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="{'Collection', 'Judgment'}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="record.type = 'Collection' or record.type = 'Judgment'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( record.type = 'Collection' or record.type = 'Judgment' or record.type = null ) or record.type = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="record.type">
+                <parentTerm text="record" datatype="CreditPublicRecord" termtype="ENTITY" fulltext="record" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="credit" datatype="CreditResponse" termtype="ENTITY" fulltext="credit" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                    <parentTerm text="responseData" datatype="ResponseData" termtype="ENTITY" fulltext="ResponseGroup.response.responseData" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                      <parentTerm text="response" datatype="Response" termtype="ENTITY" fulltext="ResponseGroup.response" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                        <parentTerm text="ResponseGroup" datatype="ResponseGroup" termtype="ENTITY" fulltext="ResponseGroup" variable="#//@ruleset/@logicalVariables.1"/>
+                      </parentTerm>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

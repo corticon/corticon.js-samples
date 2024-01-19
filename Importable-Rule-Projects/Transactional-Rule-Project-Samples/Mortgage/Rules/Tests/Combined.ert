@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="2" buildNumber="8020" updateStamp="_YO6NBbbgEe6tXIJJ4AM27Q" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="2" buildNumber="8020" updateStamp="_YPKEoLbgEe6tXIJJ4AM27Q" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_JM6NcbbgEe6tXIJJ4AM27Q" ruleActivity="../AllPrograms.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100"/>
+        <PostedMessage severity="Info" text="If number of times late 30 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Info" text="If number of times late 60 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Info" text="If number of times late 90 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Info" text="If number of times late 120 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Warning" text="We're sorry. This application is not eligible for a Regular program loan"/>
+        <PostedMessage severity="Info" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100"/>
+        <PostedMessage severity="Warning" text="We're sorry. This application is not eligible for a Score Advantage program loan"/>
+        <PostedMessage severity="Info" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100"/>
+        <PostedMessage severity="Warning" text="If credit requirement met indicator was not set due to a lack of data, set it to false"/>
+        <PostedMessage severity="Warning" text="We're sorry. This application is not eligible for a Select program loan"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" expanded="false" eClass="../Vocab/MISMO.ecore#//LoanApplication">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/borrower" eClass="../Vocab/MISMO.ecore#//Borrower">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Borrower/declaration" eClass="../Vocab/MISMO.ecore#//Declaration">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Yes" eAttribute="../Vocab/MISMO.ecore#//Declaration/intentToOccupyType"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/property" eClass="../Vocab/MISMO.ecore#//Property">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="SingleFamily" eAttribute="../Vocab/MISMO.ecore#//Property/titleCategoryType"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/additionalCaseData" eClass="../Vocab/MISMO.ecore#//AdditionalCaseData">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//AdditionalCaseData/transmittalData" eClass="../Vocab/MISMO.ecore#//TransmittalData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="500000.000000" eAttribute="../Vocab/MISMO.ecore#//TransmittalData/propertyAppraisedValueAmount"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/mortgageTerms" eClass="../Vocab/MISMO.ecore#//MortgageTerms">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="400000.000000" eAttribute="../Vocab/MISMO.ecore#//MortgageTerms/borrowerRequestedLoanAmount"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" expanded="false" eClass="../Vocab/MISMO.ecore#//ResponseData">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//ResponseData/response" eClass="../Vocab/MISMO.ecore#//Response">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Response/responseData" eClass="../Vocab/MISMO.ecore#//ResponseData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//ResponseData/creditResponse" eClass="../Vocab/MISMO.ecore#//CreditResponse">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="680" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="640" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="660" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="BankruptcyChaper11" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="BankruptcyChapter12" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2001-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Collection" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="6" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Judgment" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" expanded="false" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.1 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.2 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.3 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.4 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.5 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.6 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.7 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.8 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.9 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.10" eClass="../Vocab/MISMO.ecore#//LoanApplication">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late60DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late90DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/borrower" eClass="../Vocab/MISMO.ecore#//Borrower">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//Borrower/declaration" eClass="../Vocab/MISMO.ecore#//Declaration">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Yes" eAttribute="../Vocab/MISMO.ecore#//Declaration/intentToOccupyType"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/property" eClass="../Vocab/MISMO.ecore#//Property">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="SingleFamily" eAttribute="../Vocab/MISMO.ecore#//Property/titleCategoryType"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late30DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late120DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/additionalCaseData" eClass="../Vocab/MISMO.ecore#//AdditionalCaseData">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//AdditionalCaseData/transmittalData" eClass="../Vocab/MISMO.ecore#//TransmittalData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="500000.000000" eAttribute="../Vocab/MISMO.ecore#//TransmittalData/propertyAppraisedValueAmount"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/mortgageTerms" eClass="../Vocab/MISMO.ecore#//MortgageTerms">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="400000.000000" eAttribute="../Vocab/MISMO.ecore#//MortgageTerms/borrowerRequestedLoanAmount"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="80.000000" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/ltv"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/creditReqtMet"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" expanded="false" eClass="../Vocab/MISMO.ecore#//ResponseData">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//ResponseData/response" eClass="../Vocab/MISMO.ecore#//Response">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//Response/responseData" eClass="../Vocab/MISMO.ecore#//ResponseData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//ResponseData/creditResponse" eClass="../Vocab/MISMO.ecore#//CreditResponse">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="3000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="680" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="640" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="660" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2000-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="BankruptcyChaper11" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="BankruptcyChapter12" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2000-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2002-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Collection" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="6" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Judgment" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.4" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.5" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.6" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.7" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.8" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.9" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.10" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="2" buildNumber="8020" updateStamp="_ZgfJoLbgEe6tXIJJ4AM27Q" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_JM6NcbbgEe6tXIJJ4AM27Q" ruleActivity="../AllPrograms.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100"/>
+        <PostedMessage severity="Info" text="If number of times late 30 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Info" text="If number of times late 60 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Info" text="If number of times late 90 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Info" text="If number of times late 120 days was not set due to a lack of data, set it to 0"/>
+        <PostedMessage severity="Warning" text="We're sorry. This application is not eligible for a Regular program loan"/>
+        <PostedMessage severity="Info" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100"/>
+        <PostedMessage severity="Info" text="If wage earner with LTV 80% or less, documentation required includes 1 year W-2"/>
+        <PostedMessage severity="Info" text="Congratulations! You qualify for the ScoreAdvantage mortgage program. Please providedocumentation."/>
+        <PostedMessage severity="Info" text="Loan to value is calculated by dividing requested loan amount by appraised property value and multiplying by 100"/>
+        <PostedMessage severity="Warning" text="If credit requirement met indicator was not set due to a lack of data, set it to false"/>
+        <PostedMessage severity="Warning" text="We're sorry. This application is not eligible for a Select program loan"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocab/MISMO.ecore#//LoanApplication">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/eligibleProduct" eClass="../Vocab/MISMO.ecore#//EligibleProduct">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="A+" eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/creditRisk"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="7.700000" eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/rate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1 year W-2 and current paystub, or 12 months of personal bank statements." eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/documentation"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="ScoreAdvantage" eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/program"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/borrower" eClass="../Vocab/MISMO.ecore#//Borrower">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Borrower/declaration" eClass="../Vocab/MISMO.ecore#//Declaration">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Yes" eAttribute="../Vocab/MISMO.ecore#//Declaration/intentToOccupyType"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/additionalCaseData" eClass="../Vocab/MISMO.ecore#//AdditionalCaseData">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//AdditionalCaseData/transmittalData" eClass="../Vocab/MISMO.ecore#//TransmittalData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="500000.000000" eAttribute="../Vocab/MISMO.ecore#//TransmittalData/propertyAppraisedValueAmount"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/property" eClass="../Vocab/MISMO.ecore#//Property">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="SingleFamily" eAttribute="../Vocab/MISMO.ecore#//Property/titleCategoryType"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/mortgageTerms" eClass="../Vocab/MISMO.ecore#//MortgageTerms">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="400000.000000" eAttribute="../Vocab/MISMO.ecore#//MortgageTerms/borrowerRequestedLoanAmount"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocab/MISMO.ecore#//ResponseData">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//ResponseData/response" eClass="../Vocab/MISMO.ecore#//Response">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//Response/responseData" eClass="../Vocab/MISMO.ecore#//ResponseData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//ResponseData/creditResponse" eClass="../Vocab/MISMO.ecore#//CreditResponse">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="680" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="640" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="660" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="BankruptcyChaper11" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="BankruptcyChapter12" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2001-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Collection" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="6" manuallyCreated="true" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Judgment" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.1 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.2 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.3 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.4 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.5 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.6 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.7 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.8 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.9 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.10 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.11" eClass="../Vocab/MISMO.ecore#//LoanApplication">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late60DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late90DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../Vocab/MISMO.ecore#//LoanApplication/eligibleProduct" eClass="../Vocab/MISMO.ecore#//EligibleProduct">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="A+" eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/creditRisk"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="7.700000" eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/rate"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1 year W-2 and current paystub, or 12 months of personal bank statements." eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/documentation"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="ScoreAdvantage" eAttribute="../Vocab/MISMO.ecore#//EligibleProduct/program"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/borrower" eClass="../Vocab/MISMO.ecore#//Borrower">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//Borrower/employer" eClass="../Vocab/MISMO.ecore#//Employer">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Y" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentBorrowerSelfEmployedIndicator"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="N" eAttribute="../Vocab/MISMO.ecore#//Employer/employmentCurrentIndicator"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//Borrower/declaration" eClass="../Vocab/MISMO.ecore#//Declaration">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Yes" eAttribute="../Vocab/MISMO.ecore#//Declaration/intentToOccupyType"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/property" eClass="../Vocab/MISMO.ecore#//Property">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="SingleFamily" eAttribute="../Vocab/MISMO.ecore#//Property/titleCategoryType"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late30DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/late120DaysSum"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/additionalCaseData" eClass="../Vocab/MISMO.ecore#//AdditionalCaseData">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//AdditionalCaseData/transmittalData" eClass="../Vocab/MISMO.ecore#//TransmittalData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="500000.000000" eAttribute="../Vocab/MISMO.ecore#//TransmittalData/propertyAppraisedValueAmount"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//LoanApplication/mortgageTerms" eClass="../Vocab/MISMO.ecore#//MortgageTerms">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="400000.000000" eAttribute="../Vocab/MISMO.ecore#//MortgageTerms/borrowerRequestedLoanAmount"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="80.000000" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/ltv"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../Vocab/MISMO.ecore#//LoanApplication/creditReqtMet"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" eClass="../Vocab/MISMO.ecore#//ResponseData">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//ResponseData/response" eClass="../Vocab/MISMO.ecore#//Response">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//Response/responseData" eClass="../Vocab/MISMO.ecore#//ResponseData">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//ResponseData/creditResponse" eClass="../Vocab/MISMO.ecore#//CreditResponse">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="3000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2004-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/lastActivityDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="CreditLine" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1000.000000" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/highCreditAmount"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditLiability" eClass="../Vocab/MISMO.ecore#//CreditLiability">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Mortgage" eAttribute="../Vocab/MISMO.ecore#//CreditLiability/accountType"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditLiability/lateCount" eClass="../Vocab/MISMO.ecore#//LateCount">
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late120Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../Vocab/MISMO.ecore#//LateCount/late90Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late60Days"/>
+                    <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocab/MISMO.ecore#//LateCount/late30Days"/>
+                  </children>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="680" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="640" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditScore" eClass="../Vocab/MISMO.ecore#//CreditScore">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="660" eAttribute="../Vocab/MISMO.ecore#//CreditScore/value"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2000-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="BankruptcyChaper11" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="BankruptcyChapter12" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2000-07-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Foreclosure" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2002-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Collection" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="6" eReference="../Vocab/MISMO.ecore#//CreditResponse/creditPublicRecord" eClass="../Vocab/MISMO.ecore#//CreditPublicRecord">
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-01-01" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/dispositionDate"/>
+                  <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Judgment" eAttribute="../Vocab/MISMO.ecore#//CreditPublicRecord/type"/>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.4" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.5" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.6" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.7" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.8" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.9" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.10" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.11" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_FeIOkLbgEe6tXIJJ4AM27Q" testsheets="#//@testsheetAssets.0/@testsheet #//@testsheetAssets.1/@testsheet" vocabulary="../Vocab/MISMO.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+    <testTabList name="untitled_2"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>

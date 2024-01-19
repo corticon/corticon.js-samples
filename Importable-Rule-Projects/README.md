@@ -7,6 +7,7 @@ _(versus Corticon Server Deployments)_
 - [First Order of Decay Calculations](<Hazardous Gas First Order Decay/README.md>)
 - [IPv4 Validation](<IPv4 Validation/README.md>)
 - [Online Dating Matchmaker](Matchmaking/README.md)
+- [Residential Mortgage Eligibility and Scoring](Transactional-Rule-Project-Samples/Mortgage/README.md)
 - [Target investment price forecast](<Transactional-Rule-Project-Samples/Target investment price forecast/README.md>)
 
 ## Dynamic Form Samples
