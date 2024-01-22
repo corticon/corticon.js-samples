@@ -3,7 +3,7 @@ _(versus Corticon Server Deployments)_
 
 ## Transactional Rule Project Samples
 - [Airplane Scheduled Maintenance](<Transactional-Rule-Project-Samples/Airplane maintenance/README.md>)
- - [Baseball's Infield Fly Rule](<Transactional-Rule-Project-Samples/Infield Fly/README.md>)
+- [Baseball's Infield Fly Rule](<Transactional-Rule-Project-Samples/Infield Fly/README.md>)
 - [Calculate sales commission payments](<Commission Calculations/README.md>)
 - [First Order of Decay Calculations](<Hazardous Gas First Order Decay/README.md>)
 - [IPv4 Validation](<IPv4 Validation/README.md>)
