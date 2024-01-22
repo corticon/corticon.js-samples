@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" buildNumber="8020" updateStamp="_E84Ok7lEEe6GVqHbArYzzA" externalChecksum="2722078124:507989954:2304733958" studioType="Java">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_zewXoIX-EemQjqsc1Wb-Ng" vocabulary="InfieldFly_Flat.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="(Game.runnerOnFirst)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnFirst ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.runnerOnFirst" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Game.runnerOnSecond)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnSecond ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.runnerOnSecond" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Game.outs = 0 or Game.outs = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = 0 or Game.outs = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.outs" rhs="{0, 1}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Game.flyball)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.flyball ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.flyball" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Game.catchableByInfield)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.catchableByInfield ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="catchableByInfield" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.catchableByInfield">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.catchableByInfield" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Game.call='Infield fly, batter is out'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.call = 'Infield fly, batter is out'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="call" datatype="String" termtype="ATTRIBUTE" fulltext="Game.call">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Game.outs+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = Game.outs + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="(Game.runnerOnFirst)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnFirst ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.runnerOnFirst" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Game.runnerOnSecond)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnSecond ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.runnerOnSecond" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Game.runnerOnThird)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnThird ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnThird" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnThird">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.runnerOnThird" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Game.outs = 0 or Game.outs = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = 0 or Game.outs = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.outs" rhs="{0, 1}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Game.flyball)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.flyball ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.flyball" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Game.catchableByInfield)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.catchableByInfield ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="catchableByInfield" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.catchableByInfield">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.catchableByInfield" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Game.call='Infield fly, batter is out'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.call = 'Infield fly, batter is out'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="call" datatype="String" termtype="ATTRIBUTE" fulltext="Game.call">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Game.outs+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = Game.outs + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Game.outs = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.outs" rhs="2"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition>
+        <opaqueExpression expression="(Game.runnerOnFirst)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnFirst ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.runnerOnFirst" rhs="F"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.4">
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Game.runnerOnSecond)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnSecond ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.runnerOnSecond" rhs="F"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.5">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Game.flyball)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.flyball ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.flyball" rhs="F"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.6">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Game.catchableByInfield)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.catchableByInfield ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="catchableByInfield" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.catchableByInfield">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Game.catchableByInfield" rhs="F"/>
+      </condition>
+      <action/>
+      <action/>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Infield flyball rule applies when runners on first and second - batter is out">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Infield flyball rule applies when runners on first and second - batter is out" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Infield flyball rule applies when bases are loaded - batter is out">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Infield flyball rule applies when bases are loaded - batter is out" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="2 outs - infield flyball rule does not apply">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="2 outs - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.4" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="No runner on first - infield flyball rule does not apply">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No runner on first - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.5" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="No runner on second - infield flyball rule does not apply">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No runner on second - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.6" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Not a flyball - infield flyball rule does not apply">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Not a flyball - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.7" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Not considered catchable by infield - infield flyball rule does not apply">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Not considered catchable by infield - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="InfieldFly_Flat.ecore#//Game" ruleStatements="#//@ruleset/@ruleStatements.2 #//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.4 #//@ruleset/@ruleStatements.5 #//@ruleset/@ruleStatements.6 #//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1">
+      <referencedAttributes attribute="InfieldFly_Flat.ecore#//Game/runnerOnFirst"/>
+      <referencedAttributes attribute="InfieldFly_Flat.ecore#//Game/runnerOnSecond"/>
+      <referencedAttributes attribute="InfieldFly_Flat.ecore#//Game/runnerOnThird"/>
+      <referencedAttributes attribute="InfieldFly_Flat.ecore#//Game/outs"/>
+      <referencedAttributes attribute="InfieldFly_Flat.ecore#//Game/flyball"/>
+      <referencedAttributes attribute="InfieldFly_Flat.ecore#//Game/catchableByInfield"/>
+      <referencedAttributes attribute="InfieldFly_Flat.ecore#//Game/call"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Game.call='Infield fly, batter is out'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.call = 'Infield fly, batter is out'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="call" datatype="String" termtype="ATTRIBUTE" fulltext="Game.call">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Game.outs+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = Game.outs + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="51" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="Infield flyball rule applies when runners on first and second - batter is out">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Infield flyball rule applies when runners on first and second - batter is out" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="Infield flyball rule applies when bases are loaded - batter is out">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Infield flyball rule applies when bases are loaded - batter is out" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="3"/>
+        <text external="2 outs - infield flyball rule does not apply">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="2 outs - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="4"/>
+        <text external="No runner on first - infield flyball rule does not apply">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No runner on first - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.4">
+        <reference external="5"/>
+        <text external="No runner on second - infield flyball rule does not apply">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No runner on second - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.5">
+        <reference external="6"/>
+        <text external="Not a flyball - infield flyball rule does not apply">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Not a flyball - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.6">
+        <reference external="7"/>
+        <text external="Not considered catchable by infield - infield flyball rule does not apply">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Not considered catchable by infield - infield flyball rule does not apply" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="Game.runnerOnFirst">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.runnerOnFirst" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="Game.runnerOnSecond">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.runnerOnSecond" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="Game.runnerOnThird">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.runnerOnThird" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnThird" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnThird">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{0, 1, 2}"/>
+        <expressionCell external="Game.outs">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs" datatype="Integer" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="Game.flyball">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.flyball" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList variableMode="Literal">
+        <valueSetCell valueSet="{T, F}"/>
+        <expressionCell external="Game.catchableByInfield">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.catchableByInfield" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="catchableByInfield" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.catchableByInfield">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="22">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+        <conditionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnFirst ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnSecond ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="{0, 1}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = 0 or Game.outs = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.flyball ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.catchableByInfield ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="catchableByInfield" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.catchableByInfield">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnFirst ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnSecond ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnThird ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnThird" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnThird">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{0, 1}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = 0 or Game.outs = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.flyball ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.catchableByInfield ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="catchableByInfield" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.catchableByInfield">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnFirst ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnSecond ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnThird ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnThird" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnThird">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = 0 or Game.outs = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.flyball ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.catchableByInfield ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="catchableByInfield" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.catchableByInfield">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="F"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Game.outs = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="outs" datatype="Integer" termtype="ATTRIBUTE" fulltext="Game.outs">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnFirst ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnFirst" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnFirst">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.runnerOnSecond ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="runnerOnSecond" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.runnerOnSecond">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Game.flyball ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="flyball" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Game.flyball">
+                <parentTerm text="Game" datatype="Game" termtype="ENTITY" fulltext="Game" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
