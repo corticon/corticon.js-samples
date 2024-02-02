@@ -25,7 +25,7 @@ Corticon business rules are authored in **Corticon.js Studio**, with the backbon
 
 Note that the vocabulary includes every data point involved in the decision/calculation. Some of this data may be passed into the Decision Service when it is called by another application, some of this data may be retrieved by Corticon from an external data source and some of this data may be produced as a result of the rules themselves.
 
-The Client-Side Rendering components is preconfigured to 'know' how to render specific end user prompts based on Corticon.js rules, because it works with the same data model that underlies the rule vocabulary. These preconfigured fields are documented [here](<Using the Template Vocabulary.md>).
+The Client-Side Rendering components is preconfigured to 'know' how to render specific end user prompts based on Corticon.js rules, because it works with the same data model that underlies the rule vocabulary. 
 
 ## Rulesheets
 
