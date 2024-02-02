@@ -1,8 +1,6 @@
 # Dynamic Forms with Corticon.js
 
-Creating a dynamic form can be a slog even when you know what you're doing. It's time consuming, repetitive, and frankly runs the risk of transforming front end developers into Jack Torrance from [The Shining](https://static.tumblr.com/72b7451c23e74696386ae2e2c05a8761/alu9pkg/eSdnfi67l/tumblr_static_7lu60nk316gw4sggg4owgcwgg_640_v2.jpg). 
-
-But with Corticon.js, dynamic forms can be created in a fraction of the time, with substantial contributions from non-developers, and through a framework-agnostic design pattern that maximizes the reusability of form logic.
+Creating a dynamic form can be a slog even when you know what you're doing. But with Corticon.js, dynamic forms can be created in a fraction of the time, with substantial contributions from non-developers, and through a framework-agnostic design pattern that maximizes the reusability of form logic.
 
 ## What we mean by dynamic forms
 
@@ -46,17 +44,9 @@ To get you started building forms, we provide a form accelerator template which 
 
 ## Corticon.js Dynamic Forms Documentation 
 
-## Rule Author Guides
-- [Authoring Form Rules](<docs/Rule Author's Guide/AuthoringFormRules.md>)
-- [Using the Template Vocabulary](<docs/Rule Author's Guide/Using the Template Vocabulary.md>)
-- [Sequence Of Form Stages](<docs/Rule Author's Guide/SequenceOfFormStages.md>)
+- [Rule Author Guide to Authoring Form Rules](<docs/Rule Author's Guide/AuthoringFormRules.md>)
 
-## Developer Guides
 
-- [Overview of the Test Drive Client](<docs/Developer's Guide/OverviewOfTestDriveClient.md>)
-- [Stages of a Form](<docs/Developer's Guide/StagesInAForm.md>)
-- [Rendering UI Controls](<docs/Developer's Guide/RenderingUIControls.md>)
-- [Preconfigured Vocabulary Attributes](<docs/Developer's Guide/OutOfTheBoxVocabularyAttributes.md>)
-- [Preconfigured UI Control Types](<docs/Developer's Guide/PreConfiguredControlTypes.md>)
-- [Pulling External Data Into Rendered Controls](<docs/Developer's Guide/PullingExternalDataIntoRenderedControls.md>)
-- [Local versus Remote Decision Services](<docs/Developer's Guide/Local versus Remote Decision Services.md>)
+- [Developer Guide to the Client Side Component Drive Client](<docs/Developer's Guide/README.md>)
+  - [Preconfigured Vocabulary Attributes](<docs/Developer's Guide/OutOfTheBoxVocabularyAttributes.md>)
+  - [Preconfigured UI Control Types](<docs/Developer's Guide/PreConfiguredControlTypes.md>)
