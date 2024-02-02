@@ -2,6 +2,8 @@
 
 Creating a dynamic form can be a slog even when you know what you're doing. But with Corticon.js, dynamic forms can be created in a fraction of the time, with substantial contributions from non-developers, and through a framework-agnostic design pattern that maximizes the reusability of form logic.
 
+Try a Corticon.js rules-driven dynamic form with the [test driver on Codepen](https://codepen.io/SethMeldon/pen/wvOGvra). 
+
 ## What we mean by dynamic forms
 
 It's common to fill out forms and most frameworks can easily handle simple forms, but dynamic forms are more challenging to create and maintain. The complexity in those two directions could be exacerbated when there is a use case with hundreds of fields and questions that should be entered by the users. This could be especially difficult for customers that need to deal with a vast number of rules that change over time. This leads to many possible paths for the end user to take (e.g., filling out an insurance claim).
