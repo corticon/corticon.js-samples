@@ -42,7 +42,8 @@ You can define different sets of input data to test how the rules behave in diff
 
 From here, you can continue adding more rules to the rulesheet, or more commonly, compartmentalize our rules into different rulesheets, and create a Ruleflow to specify the sequence from one rulesheet to another.Ruleflows are both graphical (appearing similar to a flow diagram) and functional (they impact rule behavior, and are ultimately generated into a decision service).
 
-![Ruleflow example](https://progress-be-prod.zoominsoftware.io/bundle/corticon-rule-modeling/page/gsa1430508228388.image?_LANG=enus)
+![Ruleflow example](../images/ruleflowBreakdown.png)
+
 
 When multiple Rulesheets are included in a Ruleflow, the Rulesheets will execute in a sequence determined by their Rulesheet order in the Ruleflow.
 
