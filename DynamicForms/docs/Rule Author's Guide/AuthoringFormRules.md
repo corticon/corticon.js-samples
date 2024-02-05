@@ -331,7 +331,7 @@ Description: The specific type of UI Control. In the out of the box test driver,
 
 - `type = ‘YesNo’`
 
-  Description:   Dropdown of Yes or No, stored as Yes or No
+  Description:   Dropdown of Yes or No, stored as string value Yes or No
     
     
 
