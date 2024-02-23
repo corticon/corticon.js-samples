@@ -19,10 +19,10 @@ function setDataForCurrentSample(index) {
     inputData = allInputData[index];
     itsQuestionnaireKey = index;
 
-    if ( index === "5" || index === "7" ) {
+    if ( index === "6" || index === "8" ) {
         $('#languageSelectId').html('');
         $('#languageSelectId').append('<option value="english">English</option>');
-        if ( index === "5" )
+        if ( index === "6" )
             $('#languageSelectId').append('<option value="italian">Italiano</option>');
         else
             $('#languageSelectId').append('<option value="french">French</option>');
@@ -92,7 +92,7 @@ function processUseKui() {
 
 function setupInitialInputData() {
     const inDataEmpty = {};
-    const inDataCanonical = inDataEmpty;
+    const inKitchenSink = inDataEmpty;
     const inDataTaxes = inDataEmpty;
     const inDataValidation = inDataEmpty;
     const inJobApplication = inDataEmpty;
@@ -103,6 +103,8 @@ function setupInitialInputData() {
     const inPropertyInsurance = inDataEmpty;
     const inGardenPlantDisease = inDataEmpty;
     const inT2DB = inDataEmpty;
+    const inDataCanonical = inDataEmpty;
+    const inForeignRisk = inDataEmpty;
 
     const inDataReuseSubflow = {};
 
@@ -111,6 +113,7 @@ function setupInitialInputData() {
     inDataClaim.claim.policyType = 'Individual';
 
     // Must correspond with the order of the DS inclusion
+    allInputData.push(inKitchenSink);
     allInputData.push(inDataCanonical);
     allInputData.push(inDataValidation);
     allInputData.push(inDataTaxes);
@@ -124,6 +127,7 @@ function setupInitialInputData() {
     allInputData.push(inPropertyInsurance);
     allInputData.push(inGardenPlantDisease);
     allInputData.push(inT2DB);
+    allInputData.push(inForeignRisk);
 
     inputData = allInputData[0];
 }
