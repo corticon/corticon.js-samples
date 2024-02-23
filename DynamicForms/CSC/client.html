@@ -86,15 +86,13 @@
 	The order of inclusion is critical. It defines the order in which the decision services are indexed
 	and must correspond to the order of the options in the switch sample Select dropdown and the initial data init.
 	-->
-	<script type="text/javascript" src="decisionServices/FeatureKitchenSink/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/MultipleSteps2/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/validation/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/taxes/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/submitClaim/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/ReusingSubflows/browser/decisionServiceBundle.js"></script>
-	<script type="text/javascript" src="decisionServices/JobApplication/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/MultiContainer/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/validation/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/JobApplication/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/I18N/browser/decisionServiceBundle.js"></script>
+	<script type="text/javascript" src="decisionServices/FeatureKitchenSink/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/Country/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/Select-Vehicle-Model-Make-Year/browser/decisionServiceBundle.js"></script>
 	<script type="text/javascript" src="decisionServices/PropertyCasualty/browser/decisionServiceBundle.js"></script>
@@ -115,21 +113,19 @@
 					<div class="commandContainer">
 						<div class="sampleSelectLabel">Select Sample:</div>
 						<select class="sampleSelect" id="sampleSelectId" onchange="processSwitchSample(this)">
-							<option value="0">Kitchen Sink</option>
-							<option value="1">Canonical</option>
-							<option value="2">Validation</option>
-							<option value="3">Taxes</option>
-							<option value="4">Travel Claim</option>
-							<option value="5">Reusing Subflow</option>
-							<option value="6">Job Application</option>
-							<option value="7">Multi Container</option>
-							<option value="8">I18N with SCO</option>
-							<option value="9">Select Country, then State/Province, then City (JSON path example)</option>
-							<option value="10">Select Vehicle Make, then Model, then Year (JSON path example)</option>
-							<option value="11">Property/Casualty Insurance Quote</option>
-							<option value="12">Diagnose garden plant diseases</option>
-							<option value="13">Type 2 Diabetes Risk Score</option>
-							<option value="14">Foreign Risk</option>
+							<option value="0">Test All UI Controls</option>
+							<option value="1">Reusing Subflow</option>
+							<option value="2">Multi Containers</option>
+							<option value="3">Multi Fields Validation</option>
+							<option value="4">Job Application - I18N option1</option>
+							<option value="5">I18N with SCO - I18N option 2</option>
+							<option value="6">Kitchen Sink</option>
+							<option value="7">Select Country, then State/Province, then City (JSON path example)</option>
+							<option value="8">Select Vehicle Make, then Model, then Year (JSON path example)</option>
+							<option value="9">Property/Casualty Insurance Quote</option>
+							<option value="10">Diagnose garden plant diseases</option>
+							<option value="11">Type 2 Diabetes Risk Score</option>
+							<option value="12">Foreign Risk</option>
 						</select>
 					</div>
 

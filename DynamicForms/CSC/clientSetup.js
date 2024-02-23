@@ -19,13 +19,14 @@ function setDataForCurrentSample(index) {
     inputData = allInputData[index];
     itsQuestionnaireKey = index;
 
-    if ( index === "6" || index === "8" ) {
+    if ( index === "4" || index === "5" ) {
         $('#languageSelectId').html('');
         $('#languageSelectId').append('<option value="english">English</option>');
-        if ( index === "6" )
+        if ( index === "4" )
             $('#languageSelectId').append('<option value="italian">Italiano</option>');
         else
             $('#languageSelectId').append('<option value="french">French</option>');
+
         $("#languageContainerId").show();
     }
     else
@@ -92,36 +93,33 @@ function processUseKui() {
 
 function setupInitialInputData() {
     const inDataEmpty = {};
-    const inKitchenSink = inDataEmpty;
-    const inDataTaxes = inDataEmpty;
+    const inDataCanonical = inDataEmpty;
+    const inDataReuseSubflow = {};
+    const inMulticontainer = inDataEmpty;
     const inDataValidation = inDataEmpty;
     const inJobApplication = inDataEmpty;
-    const inMulticontainer = inDataEmpty;
     const inI18N = inDataEmpty;
+    const inKitchenSink = inDataEmpty;
     const inCountry = inDataEmpty;
     const inVehicleSelection = inDataEmpty;
     const inPropertyInsurance = inDataEmpty;
     const inGardenPlantDisease = inDataEmpty;
     const inT2DB = inDataEmpty;
-    const inDataCanonical = inDataEmpty;
     const inForeignRisk = inDataEmpty;
 
-    const inDataReuseSubflow = {};
-
-    const inDataClaim = {};
-    inDataClaim.claim = {};
-    inDataClaim.claim.policyType = 'Individual';
+    // Here is an example on how to pass initial data to the decision service before the first step
+    // const inDataClaim = {};
+    // inDataClaim.claim = {};
+    // inDataClaim.claim.policyType = 'Individual';
 
     // Must correspond with the order of the DS inclusion
-    allInputData.push(inKitchenSink);
     allInputData.push(inDataCanonical);
-    allInputData.push(inDataValidation);
-    allInputData.push(inDataTaxes);
-    allInputData.push(inDataClaim);
     allInputData.push(inDataReuseSubflow);
-    allInputData.push(inJobApplication);
     allInputData.push(inMulticontainer);
+    allInputData.push(inDataValidation);
+    allInputData.push(inJobApplication);
     allInputData.push(inI18N);
+    allInputData.push(inKitchenSink);
     allInputData.push(inCountry);
     allInputData.push(inVehicleSelection);
     allInputData.push(inPropertyInsurance);
