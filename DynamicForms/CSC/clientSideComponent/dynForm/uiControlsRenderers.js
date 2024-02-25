@@ -346,10 +346,15 @@ corticon.dynForm.UIControlsRenderer = function () {
 
     function createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak=false) {
         let controlType;
-        if ( oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime )
+        let tag;
+        if ( oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime ) {
             controlType = 'datetime-local';
-        else
+            tag = "datetimetag";
+        }
+        else {
             controlType = 'date';
+            tag = "datetag";
+        }
 
         const theAttributes = { "type": controlType, "id": oneUIControl.id + getNextUniqueId()};
         if ( oneUIControl.minDT !== undefined && oneUIControl.minDT !== null )
@@ -359,19 +364,37 @@ corticon.dynForm.UIControlsRenderer = function () {
             theAttributes['max'] = oneUIControl.maxDT;
 
         if ( oneUIControl.value !== undefined && oneUIControl.value !== null ) {
-            // assume the value is specified as getMilliseconds
-            const x = new Date(Number(oneUIControl.value));
-            let month = (x.getMonth() + 1);
-            let day = x.getDate();
+            // debugger;
+            // Create a new Date object in the browser timezone
+            const localDate = new Date(Number(oneUIControl.value)); // assume the value is specified as getMilliseconds
+
+            // format for date time input control
+            let month = (localDate.getMonth() + 1);
+            let day = localDate.getDate();
             if (month < 10)
                 month = "0" + month;
             if (day < 10)
                 day = "0" + day;
 
-            theAttributes['value'] = x.getFullYear() + '-' + month + '-' + day;
+            theAttributes['value'] = localDate.getFullYear() + '-' + month + '-' + day;
+
+            // if needed add the time part
+            if ( tag === "datetimetag" ) {
+                let hours = localDate.getHours();
+                if ( hours < 10 )
+                    hours = "0" + hours;
+
+                let mn = localDate.getMinutes();
+                if ( mn < 10 )
+                    mn = "0" + mn;
+
+                theAttributes['value'] += " " + hours + ":" + mn;
+            }
         }
 
         const textInputEl = $('<input/>').attr(theAttributes);
+        textInputEl.data("type", tag ); //tag it so that we can do proper convertion to UTC
+
         textInputEl.appendTo(inputContainerEl);
 
         if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
