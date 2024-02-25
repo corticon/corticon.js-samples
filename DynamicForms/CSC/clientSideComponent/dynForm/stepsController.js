@@ -261,6 +261,29 @@ corticon.dynForm.StepsController = function () {
                 else
                     _saveOneFormData(formDataFieldName, converted);
             }
+            else if (type !== undefined && type !== null && type === "datetimetag" || type === "datetag") {
+                if ( val !== undefined && val !== null && val !== "" ) {
+                    const theDate = new Date(val);
+                    let theDateISOString;
+                    let theDateAsMsSinceEpoch;  // if one prefers to work with ms since epoch
+                    if ( type === "datetag" ) {
+                        const tzOffsetMns = theDate.getTimezoneOffset();
+                        // Create a new Date object UTC timezone
+                        const utcMs = theDate.getTime() + tzOffsetMns * 60 * 1000;
+                        const utcDate = new Date(utcMs);
+                        theDateISOString = utcDate.toISOString();
+                        theDateAsMsSinceEpoch = utcDate.getTime(); // it is possible to pass the date to Corticon DS as ms since epoch
+                    }
+                    else {
+                        theDateISOString = theDate.toISOString();
+                        theDateAsMsSinceEpoch = theDate.getTime();
+                    }
+
+                    // debugger;
+                    _saveOneFormData(formDataFieldName, theDateISOString);
+                    // _saveOneFormData(formDataFieldName, theDateAsMsSinceEpoch);
+                }
+            }
             else {
                 if ( val !== undefined && val !== null && val !== "" )
                     _saveOneFormData(formDataFieldName, val);
