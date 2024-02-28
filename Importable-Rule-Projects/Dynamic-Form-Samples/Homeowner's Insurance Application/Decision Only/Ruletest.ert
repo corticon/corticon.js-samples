@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.common="http:///com/corticon/rulesemf/common.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="2" minorServiceNumber="2" buildNumber="8020" updateStamp="_-2Mb8dUVEe6SKsD5-O1zcA" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="2" minorServiceNumber="2" buildNumber="8020" updateStamp="_GIMkEdZBEe63LoggTPAoxg" externalChecksum="2722078124:507989954">
+    <validationMessages xsi:type="com.corticon.rulesemf.common:InternationalValidationMessage" UUID="_oS8OMNXVEe6Ju4F4wemFpg" key="100" type="Validation" severity="Warning" textKey="TestsheetTreeSetModelAPIImpl.Validation.Mismatch.OutputTree.ExpectedTree" locationKey="TestsheetTreeSetModelAPIImpl.Validation.Testsheet.Name">
+      <locationVariables>untitled_1</locationVariables>
+    </validationMessages>
+    <testsheet ruleActivityUpdateStamp="_LMJToNXUEe6Ju4F4wemFpg" ruleActivity="Homeowners.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Base premium for home insurance coverage in Alabama is $2896."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Quote">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/addElectronics"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/addFlood"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/addJewelry"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="$100K Dwelling / $50K Personal Property / $100K Liability" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/baseCoverage"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="300" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/deductible"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/electronicsCoverageAmt"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/jewelryCoverageAmt"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/property" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Property">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Boston" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/city"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="21840" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/postCode"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="600000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/replacementCostValue"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Alabama" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/state"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="123 Bell Hand St" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/streetAddress"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/coverage" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Coverage"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Alabama" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/propertyState"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true" passed="false"/>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <expectedRoot passed="false">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" passed="false" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Quote">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="$100K Dwelling / $50K Personal Property / $100K Liability" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/baseCoverage"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/electronicsCoverageAmt"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/coverage" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Coverage"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" passed="false" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/coverage" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Coverage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" passed="false" value="3000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/premium"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Flood" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/type"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/coverage" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Coverage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/amount"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="40.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/premium"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Electronics" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/type"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/coverage" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Coverage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/amount"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="100.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/premium"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jewelry" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Coverage/type"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/jewelryCoverageAmt"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2896.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/premium"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="300" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/deductible"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Alabama" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/propertyState"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Vocabulary/Rule%20Vocabulary.ecore#//Quote/property" eClass="Vocabulary/Rule%20Vocabulary.ecore#//Property">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="600000.000000" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/replacementCostValue"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Boston" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/city"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="123 Bell Hand St" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/streetAddress"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="21840" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/postCode"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Alabama" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Property/state"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/addElectronics"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/addJewelry"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="Vocabulary/Rule%20Vocabulary.ecore#//Quote/addFlood"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_A9N_UdXFEe6Ju4F4wemFpg" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="Vocabulary/Rule%20Vocabulary.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
