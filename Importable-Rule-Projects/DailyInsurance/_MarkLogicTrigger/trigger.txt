@@ -1,0 +1,77 @@
+let $uri := "/thierry/trigger.sjs"
+let $code := <code><![CDATA[
+
+// This is an example trigger for use with Corticon.js DailyInsurance Sample.
+// Adjust to your own environment and need (database and collection where you want to read data from and write
+// results to.  Search for thierry within this file and replace with your own collection.
+
+//let demoType = "simple"; // update a doc in ML and execute the DS on it, write the results to ML as separate doc
+//let demoType = "readAdditionalDoc"; // update a doc in ML, then read an additional doc, add an attribute from it to the DS payload and execute the DS on it, write the results to ML as separate doc
+let demoType = "readAdditionalDocSCO"; // update a doc in ML and execute the DS on it. DS reads an additional doc from SCO to augmentthe DS payload, write the results to ML as separate doc
+
+var uri;
+// ignore update to document that are not Drivers
+if ( uri.indexOf("Driver.json") === -1 && uri.indexOf("Drivers.json") === -1 ) {
+  console.log("Not processing this file " + uri);
+}
+else {
+  console.log("Processing rules for: " + uri);
+  const data = cts.doc(uri).toObject();
+
+  const demoTypeOverride = data[0]["demoType"];
+  if ( demoTypeOverride !== undefined && demoTypeOverride !== null )
+    demoType = demoTypeOverride;
+
+  console.log("Executing demo type: " + demoType);
+  if ( demoType === "readAdditionalDoc" ) {
+    const driverId = data[0]["id"];
+    const additionalDataFileUri = "/thierry/additionalDriverData"+driverId+".json";
+    console.log("Reading additional data from: " + additionalDataFileUri);
+    const additionalDataText = cts.doc(additionalDataFileUri);
+    if ( additionalDataText !== undefined && additionalDataText !== null ) {
+      const additionalData = additionalDataText.toObject();
+      console.log("Augmenting decision service data with zone risk ");
+      data[0]["riskZoneDriven"] = additionalData[0]["zoneDriven"];
+    }
+    else {
+      console.log("Missing additional data " + additionalDataFileUri);
+    }
+  }
+
+  let decisionService;
+  if ( demoType === "readAdditionalDocSCO" )
+    decisionService = require("/thierry/dailyInsuranceMLWithSCO.js");
+  else
+    decisionService = require("/thierry/dailyInsuranceMLNoSCO.js");
+
+  const configuration = { logLevel: 0,
+                          logFunction: console.log,
+                          "demoType": demoType,
+                          "serviceCallout": {
+                              "ctsApi": cts,
+                              "xmdpApi": xdmp,
+                              "uriAdditionalData": "/thierry/additionalDriverData"
+                           }
+                        };
+  const confString = JSON.stringify(configuration);
+  console.log("Using Corticon execution config: ", confString);
+  const result = decisionService.execute(data, configuration);
+
+  result["marklogic-doc-uri"] = uri;
+  result["triggerFrom"] = "thierry";
+  result["triggerVersion"] = 14;
+  result["executionConfig"] = confString;
+
+  // " + fn.currentDateTime() + "
+  const newUri = "/thierry/insuranceResult.json";
+
+  console.log("Writing decision service results to: ", newUri);
+
+  xdmp.documentInsert(newUri, result, {
+    "collections": ["corticon-results", uri],
+    "permissions": [xdmp.permission("rest-reader", "read"), xdmp.permission("rest-writer", "update")]
+  });
+}
+]]></code>
+
+return xdmp:document-insert($uri, $code/text(), xdmp:document-get-permissions($uri))

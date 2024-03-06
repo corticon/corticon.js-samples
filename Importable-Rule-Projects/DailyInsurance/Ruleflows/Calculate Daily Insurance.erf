@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8021" updateStamp="_ecyXMNS-Ee6gGaW0Dx1HxQ" externalChecksum="2722078124:201531363:2146616488" studioType="Javascript" rulesheetAssets="../Rulesheets/Calculate%20Daily%20Insurance%20Per%20Distance%20Driven.ers#/ ../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Zone%20Driven.ers#/ ../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Vehicle%20Cost.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_eNPqoNfEEe6ersd3l_R2Aw" vocabulary="../Vocabulary/Daily%20Insurance.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calculate Daily Insurance per Distance Driven" order="1" ruleActivityUpdateStamp="_xvv1o9S-Ee6gGaW0Dx1HxQ" nextStep="#//@ruleflow/@flowControlList.1" invokes="../Rulesheets/Calculate%20Daily%20Insurance%20Per%20Distance%20Driven.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Adjustment Daily Insurance Based On Zone Driven" order="2" ruleActivityUpdateStamp="_YnaKI9S8Ee6gGaW0Dx1HxQ" nextStep="#//@ruleflow/@flowControlList.2" invokes="../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Zone%20Driven.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Adjust Daily Insurance Based On Vehicle Cost" order="3" ruleActivityUpdateStamp="_VoKf49S-Ee6gGaW0Dx1HxQ" invokes="../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Vehicle%20Cost.ers#//@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="66" y="36" width="391" height="109" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="10485663"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="66" y="192" width="391" height="109" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="10485663"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="66" y="342" width="391" height="109" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="10485663"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

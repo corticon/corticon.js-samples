@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="_iDYi0tpCEe6QtIg68rDsUQ" externalChecksum="2722078124:507989954:2049017379" studioType="Javascript" rulesheetAssets="../Rulesheets/Calculate%20Daily%20Insurance%20Per%20Distance%20Driven.ers#/ ../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Zone%20Driven.ers#/ ../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Vehicle%20Cost.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_eNPqoNfEEe6ersd3l_R2Aw" vocabulary="../Vocabulary/Daily%20Insurance.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calculate Daily Insurance Per Distance Driven" order="1" ruleActivityUpdateStamp="_GjOP4dfFEe6ersd3l_R2Aw" nextStep="#//@ruleflow/@flowControlList.3" invokes="../Rulesheets/Calculate%20Daily%20Insurance%20Per%20Distance%20Driven.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Adjust Daily Insurance Based On Zone Driven" order="3" ruleActivityUpdateStamp="_Aw6d8NgQEe6c4MLEFr0nKw" nextStep="#//@ruleflow/@flowControlList.2" invokes="../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Zone%20Driven.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Adjust Daily Insurance Based On Vehicle Cost" order="4" ruleActivityUpdateStamp="_dTftQdfGEe6ersd3l_R2Aw" invokes="../Rulesheets/Adjust%20Daily%20Insurance%20Based%20On%20Vehicle%20Cost.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Get Risk for Zone Driven from MarkLogic" order="2" ruleActivityUpdateStamp="_iDROENpCEe6QtIg68rDsUQ" nextStep="#//@ruleflow/@flowControlList.1" invokes="#//@ruleflow/@connectorList.0"/>
+    <connectorList className="AccessMarkLogicServiceCallout.js" serviceName="getZoneDrivenRiskLevel"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="60" y="18" width="430" height="88" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="13041606"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="60" y="246" width="430" height="85" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="10485663"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="60" y="360" width="430" height="91" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="10485663"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="60" y="132" width="430" height="79" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="9948159"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.3"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.3" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

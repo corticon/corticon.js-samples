@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="_GM8zYNgREe6c4MLEFr0nKw" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="_KaYUSdvOEe6QtIg68rDsUQ" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_ecyXMNS-Ee6gGaW0Dx1HxQ" ruleActivity="../Ruleflows/Calculate%20Daily%20Insurance.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="***** Calculation of insurance costs for date/time: [2024-03-06T15:28:20.311Z]. *****"/>
+        <PostedMessage severity="Info" text="***** Calculation of insurance costs for date/time: [2024-03-06T15:28:20.311Z]. *****"/>
+        <PostedMessage severity="Info" text="***** Calculation of insurance costs for date/time: [2024-03-06T15:28:20.311Z]. *****"/>
+        <PostedMessage severity="Warning" text="This is a young driver [22] with very little driving experience ([2] years)!"/>
+        <PostedMessage severity="Info" text="Calculated insurance costs of 14.58 per day for driver (age [22]) with [2] years of driving experience who drives a distance of [1] per day."/>
+        <PostedMessage severity="Warning" text="This is a young driver [22] with very little driving experience ([2] years)!"/>
+        <PostedMessage severity="Info" text="Calculated insurance costs of 14.58 per day for driver (age [22]) with [2] years of driving experience who drives a distance of [22] per day."/>
+        <PostedMessage severity="Info" text="Calculated insurance costs of 2.45 per day for driver (age [37]) with [4] years of driving experience who drives a distance of [11] per day."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [2.29] for driver (age [22]) driving in a [High Risk] zone."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [0.99] for driver (age [22]) driving in a [Low Risk] zone."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [2.05] for driver (age [37]) driving in a [High Risk] zone."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [1.21924] to accomodate for driver age and vehicle cost."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [1.21924] to accomodate for driver age and vehicle cost."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [1.0758] to accomodate for driver age and vehicle cost."/>
+        <PostedMessage severity="Info" text="Total daily insurance costs for this driver is [18.08924]!"/>
+        <PostedMessage severity="Info" text="Total daily insurance costs for this driver is [16.78924]!"/>
+        <PostedMessage severity="Info" text="Total daily insurance costs for this driver is [5.5758]!"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="111" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002/01/01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Low Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="222" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002/01/01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="333" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1987/01/01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.3 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.4 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.8 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.11 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.14" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2.290000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="18.089240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-03-06T10:28:20-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="111" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.1 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.5 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.6 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.9 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.12 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.15" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.990000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="16.789240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Low Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-03-06T10:28:20-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="222" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.2 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.7 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.10 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.13 #//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.16" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2.050000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="5.575800" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="11" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="4" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-03-06T10:28:20-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1987-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="333" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1.075800" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="37" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.4" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.5" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.6" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.7" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.8" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.9" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.10" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.11" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.12" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.13" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.14" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.15" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.16" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.2"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2.290000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="18.089240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="2024-03-01T15:41:56-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="111" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.990000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="16.789240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Low Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="2024-03-01T15:41:56-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="222" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="3" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2.050000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5.575800" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="4" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="2024-03-01T15:41:56-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1987-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="333" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1.075800" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="37" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="__u7cgNgPEe6c4MLEFr0nKw" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_GjOP4dfFEe6ersd3l_R2Aw" ruleActivity="../Rulesheets/Calculate%20Daily%20Insurance%20Per%20Distance%20Driven.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="***** Calculation of insurance costs for date/time: [2024-02-27T10:00:31.770Z]. *****"/>
+        <PostedMessage severity="Info" text="***** Calculation of insurance costs for date/time: [2024-02-27T10:00:31.770Z]. *****"/>
+        <PostedMessage severity="Info" text="Calculated insurance costs of 5.49 per day for driver (age [22]) with [3] years of driving experience who drives a distance of [50] per day."/>
+        <PostedMessage severity="Info" text="***** Special deal for young drivers between 20 to 22 who don't drive much and have over 2 years of driving experience. ******"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="50" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002/01/01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="11" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="3" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002/01/01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-02-27T11:00:31+0100" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="5.490000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="3" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-12-31" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="50" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.2 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.3" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-02-27T11:00:31+0100" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3.500000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="3" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="High Risk" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2001-12-31" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="11" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.1"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.1"/>
+      </outputMessageSection>
+      <expectedRoot passed="false"/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="_MRzv8tvOEe6QtIg68rDsUQ" externalChecksum="2722078124:507989954" studioType="Javascript">
+    <testsheet ruleActivityUpdateStamp="_iDYi0tpCEe6QtIg68rDsUQ" ruleActivity="../Ruleflows/Calculate%20Daily%20Insurance%20With%20SCO.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="***** Calculation of insurance costs for date/time: [2024-03-06T15:28:32.850Z]. *****"/>
+        <PostedMessage severity="Warning" text="This is a young driver [22] with very little driving experience ([2] years)!"/>
+        <PostedMessage severity="Info" text="Calculated insurance costs of 14.58 per day for driver (age [22]) with [2] years of driving experience who drives a distance of [1] per day."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [0] for driver (age [22]) driving in a [missing cts API. {}] zone."/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [1.21924] to accomodate for driver age and vehicle cost."/>
+        <PostedMessage severity="Info" text="Total daily insurance costs for this driver is [15.79924]!"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002/01/01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.1 #//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.2 #//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.3 #//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.4 #//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.5" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="15.799240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="missing cts API. {}" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-03-06T10:28:32-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.4" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.5" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/zone_cost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15.799240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="missing cts API. {}" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="2024-03-01T15:44:09-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="_Nz4mstvOEe6QtIg68rDsUQ" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_ecyXMNS-Ee6gGaW0Dx1HxQ" ruleActivity="../Ruleflows/Calculate%20Daily%20Insurance.erf#//@ruleflow" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="***** Calculation of insurance costs for date/time: [2024-03-06T15:28:43.137Z]. *****"/>
+        <PostedMessage severity="Info" text="Insurance costs adjusted with uplift of [1.21924] to accomodate for driver age and vehicle cost."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="111" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002/01/01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.3/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.3/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="2024-03-06T10:28:43-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="111" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.3/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.3/@testsheetViewList.0/@outputRoot/@children.0"/>
+        <messageItemList postedMessage="#//@testsheetAssets.3/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.3/@testsheetViewList.0/@outputRoot/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../Vocabulary/Daily%20Insurance.ecore#//Driver">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/riskZoneDriven"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" ignoreValidation="true" value="2024-03-01T16:18:43-0500" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="14344.000000" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2002-01-01" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="111" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/id"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1.219240" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCostUplift"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="22" eAttribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_eNPqoNfEEe6ersd3l_R2Aw" testsheets="#//@testsheetAssets.0/@testsheet #//@testsheetAssets.1/@testsheet #//@testsheetAssets.2/@testsheet #//@testsheetAssets.3/@testsheet" vocabulary="../Vocabulary/Daily%20Insurance.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="Full Flow 3 drivers"/>
+    <testTabList name="First Step"/>
+    <testTabList name="Full Flow with SCO 1 driver_"/>
+    <testTabList name="Full Flow drive 0 distance"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
