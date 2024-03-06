@@ -106,6 +106,9 @@ function setupInitialInputData() {
     const inGardenPlantDisease = inDataEmpty;
     const inT2DB = inDataEmpty;
     const inForeignRisk = inDataEmpty;
+    const inHomeowners = inDataEmpty;
+    
+
 
     // Here is an example on how to pass initial data to the decision service before the first step
     // const inDataClaim = {};
@@ -126,6 +129,8 @@ function setupInitialInputData() {
     allInputData.push(inGardenPlantDisease);
     allInputData.push(inT2DB);
     allInputData.push(inForeignRisk);
+    allInputData.push(inHomeowners);
+    
 
     inputData = allInputData[0];
 }

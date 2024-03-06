@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="2" minorServiceNumber="2" buildNumber="8020" updateStamp="_LMJToNXUEe6Ju4F4wemFpg" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript" rulesheetAssets="Pricing%20by%20Coverage%20Levels/100k.ers#/ Pricing%20by%20Coverage%20Levels/250k.ers#/ Pricing%20by%20Coverage%20Levels/500k.ers#/ Pricing%20by%20Coverage%20Levels/750k.ers#/ additional%20coverages%20costs.ers#/ flood%20cost.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_A9N_UdXFEe6Ju4F4wemFpg" vocabulary="Vocabulary/Rule%20Vocabulary.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Branch on Coverage Amount to State Base Rates" order="1" ruleActivityUpdateStamp="_LMJToNXUEe6Ju4F4wemFpg" nextStep="#//@ruleflow/@flowControlList.2" invokes="#//@ruleflow/@flowControlList.0">
+      <condition expression="Quote.baseCoverage">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Quote.baseCoverage" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="baseCoverage" datatype="String" termtype="ATTRIBUTE" fulltext="Quote.baseCoverage">
+              <parentTerm text="Quote" datatype="Quote" termtype="ENTITY" fulltext="Quote"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="750k" order="2" ruleActivityUpdateStamp="_PVJ_ItXOEe6Ju4F4wemFpg" invokes="Pricing%20by%20Coverage%20Levels/750k.ers#//@ruleset"/>
+        <label expression="'$750K Dwelling / $375K Personal Property / $500K Liability'"/>
+        <viewExpressions lhs="Quote.baseCoverage" rhs="'$750K Dwelling / $375K Personal Property / $500K Liability'"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="250k" order="3" ruleActivityUpdateStamp="_2yCC4NWyEe6Ju4F4wemFpg" invokes="Pricing%20by%20Coverage%20Levels/250k.ers#//@ruleset"/>
+        <label expression="'$250K Dwelling / $125K Personal Property / $200K Liability'"/>
+        <viewExpressions lhs="Quote.baseCoverage" rhs="'$250K Dwelling / $125K Personal Property / $200K Liability'"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="100k" order="4" ruleActivityUpdateStamp="_RQvQItXQEe6Ju4F4wemFpg" invokes="Pricing%20by%20Coverage%20Levels/100k.ers#//@ruleset"/>
+        <label expression="'$100K Dwelling / $50K Personal Property / $100K Liability'"/>
+        <viewExpressions lhs="Quote.baseCoverage" rhs="'$100K Dwelling / $50K Personal Property / $100K Liability'"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="500k" order="5" ruleActivityUpdateStamp="_PUX8B9XOEe6Ju4F4wemFpg" invokes="Pricing%20by%20Coverage%20Levels/500k.ers#//@ruleset"/>
+        <label expression="'$500K Dwelling / $250K Personal Property / $300K Liability'"/>
+        <viewExpressions lhs="Quote.baseCoverage" rhs="'$500K Dwelling / $250K Personal Property / $300K Liability'"/>
+      </branches>
+    </flowControlList>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="additional coverages costs" order="7" ruleActivityUpdateStamp="_GmtHcdWxEe6Ju4F4wemFpg" invokes="additional%20coverages%20costs.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="flood cost" order="6" ruleActivityUpdateStamp="_5iZjodWwEe6Ju4F4wemFpg" nextStep="#//@ruleflow/@flowControlList.1" invokes="flood%20cost.ers#//@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="90" y="72" width="486" height="433" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0" valid="true" branchContainer="#//@ruleflow/@flowControlList.0">
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="13" y="29" width="433" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.2" activityNode="#//@ruleflow/@flowControlList.0/@branches.2/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="13" y="109" width="433" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.1" activityNode="#//@ruleflow/@flowControlList.0/@branches.1/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="13" y="189" width="433" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.3" activityNode="#//@ruleflow/@flowControlList.0/@branches.3/@nextStep.0"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="13" y="269" width="433" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.3" branch="#//@ruleflow/@flowControlList.0/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.1" branch="#//@ruleflow/@flowControlList.0/@branches.1"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.0" branch="#//@ruleflow/@flowControlList.0/@branches.2"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.2" branch="#//@ruleflow/@flowControlList.0/@branches.3"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="738" y="342" width="505" height="72" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="738" y="234" width="505" height="72" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.2" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>
