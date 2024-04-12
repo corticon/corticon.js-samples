@@ -1,0 +1,1905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8021" updateStamp="_BZT-YvaTEe6uTeBtv8XLZQ" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_2--GcPaSEe6uTeBtv8XLZQ" vocabulary="Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="1"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employee lives in the zip code ' + allZips.value + ' : ' + allZips.employees.name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employee lives in the zip code ' + allZips.value + ' : ' + allZips.employees.name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="2"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="3"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="4"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="5"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="6"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="7"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name+ ', ' + allZips.employees->sortedBy(name)->at(7).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 7 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 8">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="8"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name+ ', ' + allZips.employees->sortedBy(name)->at(7).name+ ', ' + allZips.employees->sortedBy(name)->at(8).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 7 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 8 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="allZips.employees->size = 9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 9" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allZips.employees->size" rhs="9"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name+ ', ' + allZips.employees->sortedBy(name)->at(7).name+ ', ' + allZips.employees->sortedBy(name)->at(8).name+ ', ' + allZips.employees->sortedBy(name)->at(9).name + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 7 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 8 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 9 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Root.percentileCount = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Root.percentileCount" rhs="1"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' +Root.percentileQuery.toString+ ' percentile: '+ highSalaried->sortedBy(salary)->at(1).name + '.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Root.percentileCount = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Root.percentileCount" rhs="2"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' +Root.percentileQuery.toString+ ' percentile: '+ highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name + '.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Root.percentileCount = 3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Root.percentileCount" rhs="3"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' +Root.percentileQuery.toString+ ' percentile: '+ highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name +', ' + highSalaried->sortedBy(salary)->at(3).name + '.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 3 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Root.percentileCount = 4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Root.percentileCount" rhs="4"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' +Root.percentileQuery.toString+ ' percentile: '+ highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name +', ' + highSalaried->sortedBy(salary)->at(3).name +', ' + highSalaried->sortedBy(salary)->at(4).name + '.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 3 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 4 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Root.percentileCount = 5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Root.percentileCount" rhs="5"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' +Root.percentileQuery.toString+ ' percentile: '+ highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name +', ' + highSalaried->sortedBy(salary)->at(3).name +', ' + highSalaried->sortedBy(salary)->at(4).name+', ' + highSalaried->sortedBy(salary)->at(5).name + '.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 3 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 4 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 5 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0/@extension.1 #//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+      <opaqueExpression expression="highSalaried.highSalaried=T">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="highSalaried.highSalaried = T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="highSalaried" datatype="Boolean" termtype="ATTRIBUTE" fulltext="highSalaried.highSalaried">
+              <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="Vocabulary.ecore#//Root">
+      <extension explicit="true" association="true" entity="Vocabulary.ecore#//Zipcodes" traversedAssocRole="Vocabulary.ecore#//Root/zipcodes">
+        <alias value="allZips"/>
+        <extension association="true" entity="Vocabulary.ecore#//Employees" traversedAssocRole="Vocabulary.ecore#//Zipcodes/employees">
+          <referencedAttributes attribute="Vocabulary.ecore#//Employees/name"/>
+        </extension>
+        <referencedAttributes attribute="Vocabulary.ecore#//Zipcodes/value"/>
+        <referencedAttributes attribute="Vocabulary.ecore#//Zipcodes/members"/>
+        <referencedAttributes attribute="Vocabulary.ecore#//Zipcodes/summary"/>
+      </extension>
+      <extension association="true" entity="Vocabulary.ecore#//Company" traversedAssocRole="Vocabulary.ecore#//Root/company" filters="#//@ruleset/@filters.0">
+        <extension explicit="true" association="true" entity="Vocabulary.ecore#//Employees" traversedAssocRole="Vocabulary.ecore#//Company/employees" filters="#//@ruleset/@filters.0">
+          <alias value="highSalaried"/>
+          <referencedAttributes attribute="Vocabulary.ecore#//Employees/highSalaried"/>
+          <referencedAttributes attribute="Vocabulary.ecore#//Employees/name"/>
+        </extension>
+      </extension>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/stateCount"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/states"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/avgSalary"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/percentileIndex"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/zips"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/zipCount"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/percentileNames"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/percentileCount"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Root/percentileQuery"/>
+    </logicalVariable>
+    <logicalVariable entity="Vocabulary.ecore#//Zipcodes">
+      <referencedAttributes attribute="Vocabulary.ecore#//Zipcodes/value"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="19" sashWeightScope="68" sashWeightConditionsActions="23" sashWeightConditionsIf="41">
+    <actionSection rowCount="52" columnWidthFactor="0.9305785123966942">
+      <actionItemList rowHeight="26">
+        <valueSetCell/>
+        <expressionCell external="allZips.summary = (allZips.employees->size).toString + ' employee lives in the zip code ' + allZips.value + ' : ' + cellValue + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employee lives in the zip code ' + allZips.value + ' : ' + cellValue + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="152">
+        <valueSetCell/>
+        <expressionCell external="allZips.summary = (allZips.employees->size).toString + ' employees live in the zip code ' + allZips.value + ' : ' + cellValue + '. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + cellValue + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="227">
+        <valueSetCell/>
+        <expressionCell external="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' +Root.percentileQuery.toString+ ' percentile: '+ cellValue + '.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + cellValue + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="highSalaried.highSalaried=T" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="highSalaried.highSalaried=T" filter="#//@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="highSalaried.highSalaried=T" filter="#//@ruleset/@filters.0"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@referencedAttributes.1"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.8"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="highSalaried.highSalaried=T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="highSalaried.highSalaried = T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="highSalaried" datatype="Boolean" termtype="ATTRIBUTE" fulltext="highSalaried.highSalaried">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="allZips.employees->size">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Root.percentileCount">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="40">
+      <ruleColumnList ruleId="0" columnWidth="45" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="111" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="allZips.employees.name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employee lives in the zip code ' + allZips.value + ' : ' + allZips.employees.name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="116" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="309" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 6" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="7">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 7" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name+ ', ' + allZips.employees->sortedBy(name)->at(7).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 7 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="464" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="8">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 8" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name+ ', ' + allZips.employees->sortedBy(name)->at(7).name+ ', ' + allZips.employees->sortedBy(name)->at(8).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 7 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 8 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="9">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.employees->size = 9" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="allZips.employees->sortedBy(name)->at(1).name + ', ' + allZips.employees->sortedBy(name)->at(2).name+ ', ' + allZips.employees->sortedBy(name)->at(3).name+ ', ' + allZips.employees->sortedBy(name)->at(4).name+ ', ' + allZips.employees->sortedBy(name)->at(5).name+ ', ' + allZips.employees->sortedBy(name)->at(6).name+ ', ' + allZips.employees->sortedBy(name)->at(7).name+ ', ' + allZips.employees->sortedBy(name)->at(8).name+ ', ' + allZips.employees->sortedBy(name)->at(9).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allZips.summary = ( allZips.employees->size ).toString + ' employees live in the zip code ' + allZips.value + ' : ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 1 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 2 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 3 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 4 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 5 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 6 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 7 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 8 ).name + ', ' + allZips.employees->sortedBy ( allZips.employees.name )->at ( 9 ).name + '. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.summary">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="allZips_employees" datatype="Integer" termtype="COLLECTION" fulltext="allZips.employees->size">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.value">
+                <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+              <terms text="allZips_employees->asSequence->sortedBy(name)" datatype="Object" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy->at">
+                <parentTerm text="allZips_employees" datatype="Sequence" termtype="COLLECTION" fulltext="allZips.employees->asSequence->sortedBy">
+                  <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                    <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="allZips.employees.name">
+                <parentTerm text="employees" datatype="Employees" termtype="ENTITY" fulltext="allZips.employees">
+                  <parentTerm text="allZips" datatype="Zipcodes" termtype="ENTITY" fulltext="allZips">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="highSalaried->sortedBy(salary)->at(1).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="221" pRule="#//@ruleset/@rules.12">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name +', ' + highSalaried->sortedBy(salary)->at(3).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 3 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="13" columnWidth="612" pRule="#//@ruleset/@rules.13">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name +', ' + highSalaried->sortedBy(salary)->at(3).name +', ' + highSalaried->sortedBy(salary)->at(4).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 3 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 4 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="14" columnWidth="701" pRule="#//@ruleset/@rules.14">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileCount = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="highSalaried->sortedBy(salary)->at(1).name + ', ' + highSalaried->sortedBy(salary)->at(2).name +', ' + highSalaried->sortedBy(salary)->at(3).name +', ' + highSalaried->sortedBy(salary)->at(4).name+', ' + highSalaried->sortedBy(salary)->at(5).name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Root.percentileNames = Root.percentileCount.toString + ' employees have a salary in the top ' + Root.percentileQuery.toString + ' percentile: ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 1 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 2 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 3 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 4 ).name + ', ' + highSalaried->sortedBy ( highSalaried.salary )->at ( 5 ).name + '.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="percentileNames" datatype="String" termtype="ATTRIBUTE" fulltext="Root.percentileNames">
+                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileCount.toString">
+                <parentTerm text="percentileCount" datatype="Integer" termtype="ATTRIBUTE" fulltext="Root.percentileCount">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="highSalaried.name">
+                <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                  <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                    <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="toString" datatype="String" termtype="METHOD" fulltext="Root.percentileQuery.toString">
+                <parentTerm text="percentileQuery" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileQuery">
+                  <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                </parentTerm>
+              </terms>
+              <terms text="highSalaried->asSequence->sortedBy(salary)" datatype="Object" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy->at">
+                <parentTerm text="highSalaried" datatype="Sequence" termtype="COLLECTION" fulltext="highSalaried->asSequence->sortedBy">
+                  <parentTerm text="highSalaried" datatype="Employees" termtype="ENTITY" fulltext="highSalaried">
+                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company">
+                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
