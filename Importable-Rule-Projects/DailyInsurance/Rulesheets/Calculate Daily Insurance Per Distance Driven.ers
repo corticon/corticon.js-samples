@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="_GjOP4dfFEe6ersd3l_R2Aw" externalChecksum="2722078124:507989954:2049017379" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_eNPqoNfEEe6ersd3l_R2Aw" vocabulary="../Vocabulary/Daily%20Insurance.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="Driver.calculationDateTime = now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.calculationDateTime = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="calculationDateTime" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Driver.calculationDateTime">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Driver.age = Driver.dateOfBirth.yearsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age = Driver.dateOfBirth.yearsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="yearsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="Driver.dateOfBirth.yearsBetween (today)">
+                <parentTerm text="dateOfBirth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Driver.dateOfBirth">
+                  <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="18..25"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday in 1..29">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday in 1 .. 29" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs="1..29"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.yearsDriving &lt;= 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.yearsDriving &lt;= 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.yearsDriving" rhs="&lt;= 2"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 14.58">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 14.58" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2" overriddenBy="#//@ruleset/@rules.12">
+      <condition>
+        <opaqueExpression expression="Driver.age in 18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="18..25"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday in 1..29">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday in 1 .. 29" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs="1..29"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.yearsDriving > 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.yearsDriving > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.yearsDriving" rhs="> 2"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 3.98">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 3.98" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="18..25"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday >= 30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs=">= 30"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 5.49">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 5.49" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 26..32">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 26 .. 32" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="26..32"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday &lt; 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs="&lt; 40"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 1.34">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.34" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 26..32">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 26 .. 32" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="26..32"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday >= 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs=">= 40"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 4.66">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 4.66" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 33..50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 33 .. 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="33..50"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday &lt; 50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs="&lt; 50"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 2.45">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 2.45" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 33..50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 33 .. 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="33..50"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday >= 50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs=">= 50"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 2.95">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 2.95" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 51..65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 51 .. 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="51..65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday &lt; 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs="&lt; 40"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 1.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 51..65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 51 .. 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="51..65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday >= 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs=">= 40"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 2.21">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 2.21" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age > 65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="> 65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday &lt; 30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs="&lt; 30"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 1.45">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.45" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="Driver.age > 65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="> 65"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday >= 30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs=">= 30"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 1.89">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.89" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3" overrides="#//@ruleset/@rules.2">
+      <condition>
+        <opaqueExpression expression="Driver.age in 20..22">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 20 .. 22" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.age" rhs="20..22"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.distanceDrivenToday &lt; 15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 15" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.distanceDrivenToday" rhs="&lt; 15"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Driver.yearsDriving > 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.yearsDriving > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Driver.yearsDriving" rhs="> 2"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Driver.insuranceCostToday = 3.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 3.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="***** Calculation of insurance costs for date/time: [{Driver.calculationDateTime}]. *****">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="***** Calculation of insurance costs for date/time: [ + Driver.calculationDateTime + ]. *****" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="calculationDateTime" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Driver.calculationDateTime">
+              <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Warning" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="This is a young driver [{Driver.age}] with very little driving experience ([{Driver.yearsDriving}] years)!">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="This is a young driver [ + Driver.age + ] with very little driving experience ([ + Driver.yearsDriving + ] years)!" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+              <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+              <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1 #//@ruleset/@rules.2 #//@ruleset/@rules.3 #//@ruleset/@rules.4 #//@ruleset/@rules.5 #//@ruleset/@rules.6 #//@ruleset/@rules.7 #//@ruleset/@rules.8 #//@ruleset/@rules.9 #//@ruleset/@rules.10 #//@ruleset/@rules.11" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Calculated insurance costs of {Driver.insuranceCostToday} per day for driver (age [{Driver.age}]) with [{Driver.yearsDriving}] years of driving experience who drives a distance of [{Driver.distanceDrivenToday}] per day.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Calculated insurance costs of  + Driver.insuranceCostToday +  per day for driver (age [ + Driver.age + ]) with [ + Driver.yearsDriving + ] years of driving experience who drives a distance of [ + Driver.distanceDrivenToday + ] per day." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+              <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+              <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+              <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+              <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.12" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="***** Special deal for young drivers between 20 to 22 who don't drive much and have over 2 years of driving experience. ******">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="***** Special deal for young drivers between 20 to 22 who don't drive much and have over 2 years of driving experience. ******" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../Vocabulary/Daily%20Insurance.ecore#//Driver" ruleStatements="#//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2 #//@ruleset/@ruleStatements.0">
+      <referencedAttributes attribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/age"/>
+      <referencedAttributes attribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/distanceDrivenToday"/>
+      <referencedAttributes attribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/yearsDriving"/>
+      <referencedAttributes attribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/insuranceCostToday"/>
+      <referencedAttributes attribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/vehicleCost"/>
+      <referencedAttributes attribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/calculationDateTime"/>
+      <referencedAttributes attribute="../Vocabulary/Daily%20Insurance.ecore#//Driver/dateOfBirth"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightAdvancedView="20" sashWeightConditionsActions="36" sashWeightConditionsIf="24">
+    <actionSection rowCount="52" columnWidthFactor="0.5">
+      <actionItemList>
+        <naturalLanguageText value="Incurred insurance costs today equals"/>
+        <valueSetCell/>
+        <expressionCell external="Driver.insuranceCostToday">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Set current calculation processing date and time"/>
+        <valueSetCell/>
+        <expressionCell external="Driver.calculationDateTime = now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.calculationDateTime = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="calculationDateTime" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Driver.calculationDateTime">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Derive the driver's age from date of birth"/>
+        <valueSetCell/>
+        <expressionCell external="Driver.age = Driver.dateOfBirth.yearsBetween(today)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age = Driver.dateOfBirth.yearsBetween ( today )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="yearsBetween (today)" datatype="Integer" termtype="METHOD" fulltext="Driver.dateOfBirth.yearsBetween (today)">
+                <parentTerm text="dateOfBirth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Driver.dateOfBirth">
+                  <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="995" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList rowHeight="32" ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="B0"/>
+        <text external="***** Calculation of insurance costs for date/time: [{Driver.calculationDateTime}]. *****">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="***** Calculation of insurance costs for date/time: [ + Driver.calculationDateTime + ]. *****" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="calculationDateTime" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Driver.calculationDateTime">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="36" ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="1"/>
+        <text external="This is a young driver [{Driver.age}] with very little driving experience ([{Driver.yearsDriving}] years)!">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="This is a young driver [ + Driver.age + ] with very little driving experience ([ + Driver.yearsDriving + ] years)!" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="55" ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="1:11"/>
+        <text external="Calculated insurance costs of {Driver.insuranceCostToday} per day for driver (age [{Driver.age}]) with [{Driver.yearsDriving}] years of driving experience who drives a distance of [{Driver.distanceDrivenToday}] per day.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Calculated insurance costs of  + Driver.insuranceCostToday +  per day for driver (age [ + Driver.age + ]) with [ + Driver.yearsDriving + ] years of driving experience who drives a distance of [ + Driver.distanceDrivenToday + ] per day." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="36" ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="12"/>
+        <text external="***** Special deal for young drivers between 20 to 22 who don't drive much and have over 2 years of driving experience. ******">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="***** Special deal for young drivers between 20 to 22 who don't drive much and have over 2 years of driving experience. ******" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <naturalLanguageText value="If the driver age is"/>
+        <valueSetCell/>
+        <expressionCell external="Driver.age">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <naturalLanguageText value="If the distance driven today is"/>
+        <valueSetCell/>
+        <expressionCell external="Driver.distanceDrivenToday">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <naturalLanguageText value="If the driver's experience in number of years is"/>
+        <valueSetCell/>
+        <expressionCell external="Driver.yearsDriving">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.yearsDriving" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="51" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="105" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="1..29">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday in 1 .. 29" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt;= 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.yearsDriving &lt;= 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="14.58">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 14.58" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="110" pRule="#//@ruleset/@rules.2">
+        <overrideValueSetCell valueSet=""/>
+        <conditionValueSetCellList valueSet="18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="1..29">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday in 1 .. 29" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.yearsDriving > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="3.98">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 3.98" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="97" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="18..25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 18 .. 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">= 30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="5.49">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 5.49" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="114" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="26..32">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 26 .. 32" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt; 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="1.34">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.34" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="109" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="26..32">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 26 .. 32" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">= 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="4.66">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 4.66" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="96" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="33..50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 33 .. 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt; 50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="2.45">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 2.45" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="33..50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 33 .. 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">= 50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="2.95">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 2.95" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="51..65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 51 .. 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt; 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="1.99">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.99" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="51..65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 51 .. 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">= 40">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 40" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="2.21">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 2.21" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="> 65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt; 30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="1.45">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.45" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="109" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="> 65">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age > 65" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet=">= 30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday >= 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="1.89">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 1.89" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="100" pRule="#//@ruleset/@rules.12">
+        <overrideValueSetCell valueSet="2"/>
+        <conditionValueSetCellList valueSet="20..22">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.age in 20 .. 22" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.age">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="&lt; 15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.distanceDrivenToday &lt; 15" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="distanceDrivenToday" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.distanceDrivenToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.yearsDriving > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearsDriving" datatype="Integer" termtype="ATTRIBUTE" fulltext="Driver.yearsDriving">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="3.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Driver.insuranceCostToday = 3.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="insuranceCostToday" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Driver.insuranceCostToday">
+                <parentTerm text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Driver" datatype="Driver" termtype="ENTITY" fulltext="Driver"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
