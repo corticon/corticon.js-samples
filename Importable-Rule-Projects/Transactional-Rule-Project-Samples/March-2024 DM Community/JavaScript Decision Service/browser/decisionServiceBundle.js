@@ -8,7 +8,7 @@ module.exports={"ruleMessages": []}
 
 },{"@corticon/js-engine":5}],4:[function(require,module,exports){
 module.exports={
-    "topLevelEntities": {},
+    "topLevelEntities": {"$": ["Root"]},
     "entities": [
         {
             "associations": [
