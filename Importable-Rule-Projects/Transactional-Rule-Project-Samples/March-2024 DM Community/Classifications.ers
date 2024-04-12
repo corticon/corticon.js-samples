@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8021" updateStamp="_kFiF0faTEe6uTeBtv8XLZQ" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8021" updateStamp="_QQtJ4fjXEe6nrePwSTQipQ" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_2--GcPaSEe6uTeBtv8XLZQ" vocabulary="Vocabulary.ecore#/">
+  <ruleset vocabularyUpdateStamp="_QIu5oPjXEe6nrePwSTQipQ" vocabulary="Vocabulary.ecore#/">
     <rule>
       <condition/>
       <action>
@@ -311,27 +311,7 @@
       </action>
     </rule>
     <rule>
-      <condition>
-        <opaqueExpression expression="(allEmployees.salary.toInteger>Root.percentileValue)=true">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allEmployees.salary.toInteger > Root.percentileValue ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
-            <referencedTermList>
-              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="allEmployees.salary.toInteger">
-                <parentTerm text="salary" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allEmployees.salary">
-                  <parentTerm text="allEmployees" datatype="Employees" termtype="ENTITY" fulltext="allEmployees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
-                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
-                    </parentTerm>
-                  </parentTerm>
-                </parentTerm>
-              </terms>
-              <terms text="percentileValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileValue">
-                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </opaqueExpression>
-        <viewExpressions lhs="allEmployees.salary.toInteger>Root.percentileValue" rhs="T"/>
-      </condition>
+      <condition/>
       <action/>
       <action/>
       <action/>
@@ -424,8 +404,8 @@
       <referencedAttributes attribute="Vocabulary.ecore#//Zipcodes/value"/>
     </logicalVariable>
   </ruleset>
-  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="28" sashWeightScope="84" sashWeightConditionsActions="40" sashWeightConditionsIf="33">
-    <actionSection rowCount="60" scrollRowTop="10" columnWidthFactor="0.5">
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="28" sashWeightScope="44" sashWeightConditionsActions="40" sashWeightConditionsIf="33">
+    <actionSection rowCount="60" scrollRowTop="6" columnWidthFactor="0.5">
       <actionItemList rowHeight="21">
         <naturalLanguageText value="Set the current total number of employees to ----->"/>
         <valueSetCell valueSet=""/>
@@ -718,25 +698,8 @@
     <conditionSection rowCount="50" columnWidthFactor="0.5">
       <conditionItemList>
         <naturalLanguageText value="When an employee's salary is greater than the percentile threshold (T/F)"/>
-        <valueSetCell/>
-        <expressionCell external="allEmployees.salary.toInteger>Root.percentileValue">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allEmployees.salary.toInteger > Root.percentileValue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
-            <referencedTermList>
-              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="allEmployees.salary.toInteger">
-                <parentTerm text="salary" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allEmployees.salary">
-                  <parentTerm text="allEmployees" datatype="Employees" termtype="ENTITY" fulltext="allEmployees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
-                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
-                    </parentTerm>
-                  </parentTerm>
-                </parentTerm>
-              </terms>
-              <terms text="percentileValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileValue">
-                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </expressionCell>
+        <valueSetCell valueSet=""/>
+        <expressionCell/>
       </conditionItemList>
     </conditionSection>
     <ruleSection columnCount="20">
@@ -952,24 +915,7 @@
         </actionValueSetCellList>
       </ruleColumnList>
       <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
-        <conditionValueSetCellList valueSet="T">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allEmployees.salary.toInteger > Root.percentileValue ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
-            <referencedTermList>
-              <terms text="toInteger" datatype="Integer" termtype="METHOD" fulltext="allEmployees.salary.toInteger">
-                <parentTerm text="salary" datatype="Decimal" termtype="ATTRIBUTE" fulltext="allEmployees.salary">
-                  <parentTerm text="allEmployees" datatype="Employees" termtype="ENTITY" fulltext="allEmployees" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
-                    <parentTerm text="company" datatype="Company" termtype="ENTITY" fulltext="Root.company" variable="#//@ruleset/@logicalVariables.0/@extension.0">
-                      <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
-                    </parentTerm>
-                  </parentTerm>
-                </parentTerm>
-              </terms>
-              <terms text="percentileValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Root.percentileValue">
-                <parentTerm text="Root" datatype="Root" termtype="ENTITY" fulltext="Root" variable="#//@ruleset/@logicalVariables.0"/>
-              </terms>
-            </referencedTermList>
-          </parserOutput>
-        </conditionValueSetCellList>
+        <conditionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
@@ -985,7 +931,7 @@
         <actionValueSetCellList/>
       </ruleColumnList>
       <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
-        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
         <actionValueSetCellList/>
