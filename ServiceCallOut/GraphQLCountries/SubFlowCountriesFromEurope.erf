@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="7" minorVersionNumber="1" buildNumber="8022" updateStamp="_eag2QfhgEe6_YOEiLugddg" externalChecksum="2722078124:507989954:2562609826" studioType="Javascript">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_hhFvQfeoEe6_YOEiLugddg" vocabulary="vocab.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Get countries from Europe" order="1" ruleActivityUpdateStamp="_eafBEPhgEe6_YOEiLugddg" invokes="#//@ruleflow/@connectorList.0"/>
+    <connectorList className="GetCountriesServiceCallout.js" serviceName="getCountries">
+      <connectorDecryptedProperties name="entityToAppendTo" value="Geography"/>
+      <connectorDecryptedProperties name="continentCode" value="EU"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="274" y="192" width="267" height="36" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="16776960"/>
+    </flowShapeList>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>
