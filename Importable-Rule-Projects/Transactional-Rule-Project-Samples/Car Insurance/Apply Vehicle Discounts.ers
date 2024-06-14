@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_lXvL8yqFEe-7SIiN-LGrDg" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_yzpK0CjtEe-yCMoktIlsDg" vocabulary="Rule%20Vocabulary.ecore#/">
+    <rule>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="Application.netPremium*=(100-antiTheftDiscounts.percent)/100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.netPremium = Application.netPremium * ( 100 - antiTheftDiscounts.percent ) / 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="antiTheftDiscounts.percent">
+                <parentTerm text="antiTheftDiscounts" datatype="Discount" termtype="ENTITY" fulltext="antiTheftDiscounts" variable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0">
+                  <parentTerm text="antiTheft" datatype="Vehicle" termtype="ENTITY" fulltext="antiTheft" variable="#//@ruleset/@logicalVariables.0/@extension.2">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="Application.netPremium*=(100-under7500Discount.percent)/100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.netPremium = Application.netPremium * ( 100 - under7500Discount.percent ) / 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="under7500Discount.percent">
+                <parentTerm text="under7500Discount" datatype="Discount" termtype="ENTITY" fulltext="under7500Discount" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="under7500" datatype="Vehicle" termtype="ENTITY" fulltext="under7500" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+        <opaqueExpression expression="Application.netPremium*=(100-between7500_10000_Discounts.percent)/100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.netPremium = Application.netPremium * ( 100 - between7500_10000_Discounts.percent ) / 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="between7500_10000_Discounts.percent">
+                <parentTerm text="between7500_10000_Discounts" datatype="Discount" termtype="ENTITY" fulltext="between7500_10000_Discounts" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="between7500_10000" datatype="Vehicle" termtype="ENTITY" fulltext="between7500_10000" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0/@extension.2 #//@ruleset/@logicalVariables.0/@extension.2/@extension.0 #//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="antiTheftDiscounts->exists(type= 'Anti Theft Device')">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="antiTheftDiscounts->exists ( antiTheftDiscounts.type = 'Anti Theft Device' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="antiTheftDiscounts" datatype="Boolean" termtype="COLLECTION" fulltext="antiTheftDiscounts->exists">
+              <parentTerm text="antiTheftDiscounts" datatype="Discount" termtype="ENTITY" fulltext="antiTheftDiscounts" variable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0">
+                <parentTerm text="antiTheft" datatype="Vehicle" termtype="ENTITY" fulltext="antiTheft" variable="#//@ruleset/@logicalVariables.0/@extension.2">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0/@extension.1 #//@ruleset/@logicalVariables.0/@extension.1/@extension.0 #//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="between7500_10000_Discounts->exists(type= 'Annual Mileage 7500 to 10000')">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="between7500_10000_Discounts->exists ( between7500_10000_Discounts.type = 'Annual Mileage 7500 to 10000' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="between7500_10000_Discounts" datatype="Boolean" termtype="COLLECTION" fulltext="between7500_10000_Discounts->exists">
+              <parentTerm text="between7500_10000_Discounts" datatype="Discount" termtype="ENTITY" fulltext="between7500_10000_Discounts" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                <parentTerm text="between7500_10000" datatype="Vehicle" termtype="ENTITY" fulltext="between7500_10000" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0/@extension.0 #//@ruleset/@logicalVariables.0/@extension.0/@extension.0 #//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="under7500Discount->exists(type= 'Annual Mileage under 7500')">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="under7500Discount->exists ( under7500Discount.type = 'Annual Mileage under 7500' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="under7500Discount" datatype="Boolean" termtype="COLLECTION" fulltext="under7500Discount->exists">
+              <parentTerm text="under7500Discount" datatype="Discount" termtype="ENTITY" fulltext="under7500Discount" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="under7500" datatype="Vehicle" termtype="ENTITY" fulltext="under7500" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Apply anti theft device discount to applicable vehicle(s)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply anti theft device discount to applicable vehicle(s)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Apply &lt;7.5k/miles/year discount to applicable vehicle(s)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply &lt;7.5k/miles/year discount to applicable vehicle(s)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Apply mileage discount for vehicle annual mileage between 7,500 and 10,000 applicable vehicle(s)">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply mileage discount for vehicle annual mileage between 7,500 and 10,000 applicable vehicle(s)" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//Application" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2" filters="#//@ruleset/@filters.0 #//@ruleset/@filters.1 #//@ruleset/@filters.2">
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//Vehicle" traversedAssocRole="Rule%20Vocabulary.ecore#//Application/vehicle" filters="#//@ruleset/@filters.2">
+        <alias value="under7500"/>
+        <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//Discount" traversedAssocRole="Rule%20Vocabulary.ecore#//Vehicle/discount" filters="#//@ruleset/@filters.2">
+          <alias value="under7500Discount"/>
+          <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Discount/percent"/>
+        </extension>
+      </extension>
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//Vehicle" traversedAssocRole="Rule%20Vocabulary.ecore#//Application/vehicle" filters="#//@ruleset/@filters.1">
+        <alias value="between7500_10000"/>
+        <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//Discount" traversedAssocRole="Rule%20Vocabulary.ecore#//Vehicle/discount" filters="#//@ruleset/@filters.1">
+          <alias value="between7500_10000_Discounts"/>
+          <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Discount/percent"/>
+        </extension>
+      </extension>
+      <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//Vehicle" traversedAssocRole="Rule%20Vocabulary.ecore#//Application/vehicle" filters="#//@ruleset/@filters.0">
+        <alias value="antiTheft"/>
+        <extension explicit="true" association="true" entity="Rule%20Vocabulary.ecore#//Discount" traversedAssocRole="Rule%20Vocabulary.ecore#//Vehicle/discount" filters="#//@ruleset/@filters.0">
+          <alias value="antiTheftDiscounts"/>
+          <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Discount/percent"/>
+        </extension>
+      </extension>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Application/netPremium"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="29" sashWeightConditionsIf="66">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Application.netPremium*=(100-antiTheftDiscounts.percent)/100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.netPremium = Application.netPremium * ( 100 - antiTheftDiscounts.percent ) / 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="antiTheftDiscounts.percent">
+                <parentTerm text="antiTheftDiscounts" datatype="Discount" termtype="ENTITY" fulltext="antiTheftDiscounts" variable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0">
+                  <parentTerm text="antiTheft" datatype="Vehicle" termtype="ENTITY" fulltext="antiTheft" variable="#//@ruleset/@logicalVariables.0/@extension.2">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Application.netPremium*=(100-under7500Discount.percent)/100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.netPremium = Application.netPremium * ( 100 - under7500Discount.percent ) / 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="under7500Discount.percent">
+                <parentTerm text="under7500Discount" datatype="Discount" termtype="ENTITY" fulltext="under7500Discount" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="under7500" datatype="Vehicle" termtype="ENTITY" fulltext="under7500" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="26">
+        <valueSetCell/>
+        <expressionCell external="Application.netPremium*=(100-between7500_10000_Discounts.percent)/100">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.netPremium = Application.netPremium * ( 100 - between7500_10000_Discounts.percent ) / 100" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="netPremium" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Application.netPremium">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="percent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="between7500_10000_Discounts.percent">
+                <parentTerm text="between7500_10000_Discounts" datatype="Discount" termtype="ENTITY" fulltext="between7500_10000_Discounts" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="between7500_10000" datatype="Vehicle" termtype="ENTITY" fulltext="between7500_10000" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="antiTheftDiscounts->exists(type= 'Anti Theft Device')" filter="#//@ruleset/@filters.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="between7500_10000_Discounts->exists(type= 'Annual Mileage 7500 to 10000')" filter="#//@ruleset/@filters.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="under7500Discount->exists(type= 'Annual Mileage under 7500')" filter="#//@ruleset/@filters.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="under7500Discount->exists(type= 'Annual Mileage under 7500')" filter="#//@ruleset/@filters.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="under7500Discount->exists(type= 'Annual Mileage under 7500')" filter="#//@ruleset/@filters.2"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="between7500_10000_Discounts->exists(type= 'Annual Mileage 7500 to 10000')" filter="#//@ruleset/@filters.1"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="between7500_10000_Discounts->exists(type= 'Annual Mileage 7500 to 10000')" filter="#//@ruleset/@filters.1"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="antiTheftDiscounts->exists(type= 'Anti Theft Device')" filter="#//@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="antiTheftDiscounts->exists(type= 'Anti Theft Device')" filter="#//@ruleset/@filters.0"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="antiTheftDiscounts->exists(type= 'Anti Theft Device')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="antiTheftDiscounts->exists ( antiTheftDiscounts.type = 'Anti Theft Device' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="antiTheftDiscounts" datatype="Boolean" termtype="COLLECTION" fulltext="antiTheftDiscounts->exists">
+                <parentTerm text="antiTheftDiscounts" datatype="Discount" termtype="ENTITY" fulltext="antiTheftDiscounts" variable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0">
+                  <parentTerm text="antiTheft" datatype="Vehicle" termtype="ENTITY" fulltext="antiTheft" variable="#//@ruleset/@logicalVariables.0/@extension.2">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="between7500_10000_Discounts->exists(type= 'Annual Mileage 7500 to 10000')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="between7500_10000_Discounts->exists ( between7500_10000_Discounts.type = 'Annual Mileage 7500 to 10000' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="between7500_10000_Discounts" datatype="Boolean" termtype="COLLECTION" fulltext="between7500_10000_Discounts->exists">
+                <parentTerm text="between7500_10000_Discounts" datatype="Discount" termtype="ENTITY" fulltext="between7500_10000_Discounts" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="between7500_10000" datatype="Vehicle" termtype="ENTITY" fulltext="between7500_10000" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell external="under7500Discount->exists(type= 'Annual Mileage under 7500')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="under7500Discount->exists ( under7500Discount.type = 'Annual Mileage under 7500' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="under7500Discount" datatype="Boolean" termtype="COLLECTION" fulltext="under7500Discount->exists">
+                <parentTerm text="under7500Discount" datatype="Discount" termtype="ENTITY" fulltext="under7500Discount" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="under7500" datatype="Vehicle" termtype="ENTITY" fulltext="under7500" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A0"/>
+        <text external="Apply anti theft device discount to applicable vehicle(s)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply anti theft device discount to applicable vehicle(s)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="B0"/>
+        <text external="Apply &lt;7.5k/miles/year discount to applicable vehicle(s)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply &lt;7.5k/miles/year discount to applicable vehicle(s)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="C0"/>
+        <text external="Apply mileage discount for vehicle annual mileage between 7,500 and 10,000 applicable vehicle(s)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Apply mileage discount for vehicle annual mileage between 7,500 and 10,000 applicable vehicle(s)" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
