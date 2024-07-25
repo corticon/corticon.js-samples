@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.canonicalvocabularymodel="http:///com/corticon/rulesemf/canonicalvocabularymodel.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="root" nsURI="http://root/1.0" nsPrefix="root">
   <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="2" buildNumber="8020" updateStamp="_6R4iULSfEe6Q__w-pDrfOg" externalChecksum="2722078124:507989954" studioType="Javascript" customDataTypeDisplayCount="23">
+    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_CCZIAUqPEe-LmoSGiAw6VQ" externalChecksum="2722078124:507989954" studioType="Javascript" customDataTypeDisplayCount="23">
       <languageCode>en_US</languageCode>
       <databaseAccess databasePropertyDisplayCount="50"/>
       <customDataTypeList enumerationDisplayCount="52" eDataType="#//UIControlType">
@@ -566,10 +566,10 @@
     <eLiterals name="V9" value="9" literal="'Other - indiv'"/>
     <eLiterals name="V10" value="10" literal="'Other - mult'"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultipleAnswers">
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleText">
     <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
       <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:EntityExtension">
-        <name manuallyCreated="true" value="MultipleAnswers"/>
+        <name manuallyCreated="true" value="MultipleText"/>
         <datastorePersistent manuallyCreated="true" value="false"/>
         <datastoreCaching manuallyCreated="true" value="false"/>
       </contents>
@@ -582,7 +582,37 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemDateTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SortOptions">
+    <eLiterals name="V0" literal="'A to Z'"/>
+    <eLiterals name="V1" value="1" literal="'Z to A'"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleNumber">
+    <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+      <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:EntityExtension">
+        <name manuallyCreated="true" value="MultipleNumber"/>
+        <datastorePersistent manuallyCreated="true" value="false"/>
+        <datastoreCaching manuallyCreated="true" value="false"/>
+      </contents>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="itemNumber"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleDateTime">
+    <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+      <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:EntityExtension">
+        <name manuallyCreated="true" value="MultipleDateTime"/>
+        <datastorePersistent manuallyCreated="true" value="false"/>
+        <datastoreCaching manuallyCreated="true" value="false"/>
+      </contents>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemDateTime" eType="ecore:EDataType http:///com/corticon/rulesemf/canonicalvocabularymodel.ecore#//Date">
       <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
         <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
           <name manuallyCreated="true" value="itemDateTime"/>
@@ -590,26 +620,13 @@
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemInteger" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="canonicalSample" lowerBound="1" eType="#//ProjectsData/CanonicalSample" eOpposite="#//ProjectsData/CanonicalSample/Step9Field3">
       <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
-          <name manuallyCreated="true" value="itemInteger"/>
-          <mode manuallyCreated="true" value="Base"/>
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
+          <name manuallyCreated="true" value="canonicalSample"/>
         </contents>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemDecimal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
-      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
-        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
-          <name manuallyCreated="true" value="itemDecimal"/>
-          <mode manuallyCreated="true" value="Base"/>
-        </contents>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="SortOptions">
-    <eLiterals name="V0" literal="'A to Z'"/>
-    <eLiterals name="V1" value="1" literal="'Z to A'"/>
   </eClassifiers>
   <eSubpackages name="ProjectsData" nsURI="http://root/ProjectsData/1.0" nsPrefix="root.ProjectsData">
     <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
@@ -744,7 +761,7 @@
           </contents>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="Step9Field1" upperBound="-1" eType="#//MultipleAnswers">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Step9Field1" upperBound="-1" eType="#//MultipleText">
         <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
           <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
             <name manuallyCreated="true" value="Step9Field1"/>
@@ -764,6 +781,20 @@
           <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
             <name manuallyCreated="true" value="Step3Field3"/>
             <mode manuallyCreated="true" value="Base"/>
+          </contents>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Step9Field2" upperBound="-1" eType="#//MultipleNumber">
+        <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+          <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
+            <name manuallyCreated="true" value="Step9Field2"/>
+          </contents>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Step9Field3" upperBound="-1" eType="#//MultipleDateTime" eOpposite="#//MultipleDateTime/canonicalSample">
+        <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+          <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
+            <name manuallyCreated="true" value="Step9Field3"/>
           </contents>
         </eAnnotations>
       </eStructuralFeatures>

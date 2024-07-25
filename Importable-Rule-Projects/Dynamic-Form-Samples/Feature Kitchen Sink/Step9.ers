@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" buildNumber="8020" updateStamp="_ExmJ0LSdEe6Q__w-pDrfOg" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_EH-7gUqPEe-LmoSGiAw6VQ" externalChecksum="2722078124:507989954:0" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_GcxPgcGoEe2JJdwUheDGaA" vocabulary="Rule%20Vocabulary.ecore#/">
+  <ruleset vocabularyUpdateStamp="_CCZIAUqPEe-LmoSGiAw6VQ" vocabulary="Rule%20Vocabulary.ecore#/">
     <rule>
       <action disabled="true"/>
       <action/>
@@ -135,8 +135,8 @@
         </opaqueExpression>
       </action>
       <action>
-        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='DateTime', multiple=true, label='DateTime Multiple Questions', id='crtl9_2', fieldName='Step9Field3']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'DateTime' , UIControl.multiple = true , UIControl.label = 'DateTime Multiple Questions' , UIControl.id = 'crtl9_2' , UIControl.fieldName = 'Step9Field3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.containers.uiControls += UIControl.new[type='DateTime', multiple=true, label='DateTime Multiple Questions', id='crtl9_3', fieldName='Step9Field3']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'DateTime' , UIControl.multiple = true , UIControl.label = 'DateTime Multiple Questions' , UIControl.id = 'crtl9_3' , UIControl.fieldName = 'Step9Field3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -203,7 +203,7 @@
     </rule>
     <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
       <opaqueExpression expression="UI.currentStageNumber = 10">
-        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
           <referencedTermList>
             <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
               <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -237,7 +237,7 @@
       <referencedAttributes attribute="Rule%20Vocabulary.ecore#//ProjectsData/CanonicalSample/Step8SumAll"/>
     </logicalVariable>
   </ruleset>
-  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightAdvancedView="23" sashWeightConditionsActions="31" sashWeightConditionsIf="74">
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="23" sashWeightConditionsActions="31" sashWeightConditionsIf="74">
     <actionSection rowCount="53" columnWidthFactor="0.5">
       <actionItemList disabled="true">
         <valueSetCell/>
@@ -283,7 +283,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList rowHeight="87">
+      <actionItemList rowHeight="72">
         <valueSetCell valueSet=""/>
         <expressionCell external="UI.containers.uiControls = UIControl.new[type='ReadOnlyText', id='crtl9_0', value='Here we do not know in advance how many answers there are so we use the attribute multiple=true.  The answers are stored in an array pointed as specified by attribute fieldName']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls = UIControl.new [ UIControl.value = 'Here we do not know in advance how many answers there are so we use the attribute multiple=true.  The answers are stored in an array pointed as specified by attribute fieldName' , UIControl.type = 'ReadOnlyText' , UIControl.id = 'crtl9_0' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -315,7 +315,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList rowHeight="57">
+      <actionItemList rowHeight="93">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls += UIControl.new[type='Text', multiple=true, label='Text Multiple Questions', id='crtl9_1', fieldName='Step9Field1']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'Text' , UIControl.multiple = true , UIControl.label = 'Text Multiple Questions' , UIControl.id = 'crtl9_1' , UIControl.fieldName = 'Step9Field1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -353,7 +353,7 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList rowHeight="48">
+      <actionItemList rowHeight="51">
         <valueSetCell/>
         <expressionCell external="UI.containers.uiControls += UIControl.new[type='Number', multiple=true, label='Number Multiple Questions', id='crtl9_2', fieldName='Step9Field2']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'Number' , UIControl.multiple = true , UIControl.label = 'Number Multiple Questions' , UIControl.id = 'crtl9_2' , UIControl.fieldName = 'Step9Field2' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -391,10 +391,10 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
-      <actionItemList rowHeight="54">
+      <actionItemList rowHeight="76">
         <valueSetCell/>
-        <expressionCell external="UI.containers.uiControls += UIControl.new[type='DateTime', multiple=true, label='DateTime Multiple Questions', id='crtl9_2', fieldName='Step9Field3']">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'DateTime' , UIControl.multiple = true , UIControl.label = 'DateTime Multiple Questions' , UIControl.id = 'crtl9_2' , UIControl.fieldName = 'Step9Field3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <expressionCell external="UI.containers.uiControls += UIControl.new[type='DateTime', multiple=true, label='DateTime Multiple Questions', id='crtl9_3', fieldName='Step9Field3']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.type = 'DateTime' , UIControl.multiple = true , UIControl.label = 'DateTime Multiple Questions' , UIControl.id = 'crtl9_3' , UIControl.fieldName = 'Step9Field3' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -436,7 +436,7 @@
       <actionItemList>
         <valueSetCell/>
         <expressionCell external="UI.nextStageNumber">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -495,7 +495,7 @@
     <filterSection rowCount="50">
       <filterItemList filter="#//@ruleset/@filters.0">
         <expressionCell external="UI.currentStageNumber = 10">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 10" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
