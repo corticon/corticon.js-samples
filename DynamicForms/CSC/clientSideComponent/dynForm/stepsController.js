@@ -268,13 +268,15 @@ corticon.dynForm.StepsController = function () {
 
         // Save state: the decision service could potentially augment the form data with computed values that we want to keep carrying around.
         itsFormData = itsDecisionServiceInput[1];
-        // Handle Background Data
+
+        // Handle Background Data (this block should be here)
         const backgroundDataArray = nextUI.backgroundData;
         if (backgroundDataArray) {
             for (const backgroundData of backgroundDataArray) {
-                await _processBackgroundData(backgroundData); // Pass the backgroundData object
+                await _processBackgroundData(backgroundData);
             }
         }
+
         // Check if this step was just a computation step in which case we just continue as there is no ui to display
         if (nextUI.noUiToRenderContinue !== undefined && nextUI.noUiToRenderContinue)
             return nextUI;
@@ -289,14 +291,9 @@ corticon.dynForm.StepsController = function () {
 
         const event = { "input": payload, "stage": payload[0].currentStageNumber };
         corticon.dynForm.raiseEvent(corticon.dynForm.customEvents.AFTER_UI_STEP_RENDERED, event);
-        // Handle Background Data
-        const backgroundData = nextUI.backgroundData;
-        if (backgroundData) {
-            await _processBackgroundData(backgroundData);
-        }
+
         return nextUI;
     }
-
     function _saveOneFormData(formDataFieldName, val) {
         if (val === undefined)
             return;
@@ -427,7 +424,7 @@ corticon.dynForm.StepsController = function () {
 
         allArrayEls.each(function (index, item) {
             const oneArrayEl = $(item);
-            uiControlType = $(this).data("uicontroltype");
+            uiControlType = $(this).parent().data("uicontroltype");
             let allFormEls = oneArrayEl.find(":input").not(":checkbox");
 
             let innerArray = [];
@@ -635,7 +632,7 @@ corticon.dynForm.StepsController = function () {
                 let uiControlType = $(this).find('input').data("uicontroltype"); if (uiControlType === 'MultiText') {
                     const textFieldArray = ['textInput'];
                     const convertedArray = _createEachTextEntity(outerArray, textFieldArray);
-                    _saveArrayElFormData(formDataFieldName, convertedArray);
+                    _saveArrayElFormData(formDataFieldName, convertedArray, itsPathToData); // Pass itsPathToData
                 }
                 //  else
                 //        alert('This complex array type is not yet supported ' + uiControlType);
