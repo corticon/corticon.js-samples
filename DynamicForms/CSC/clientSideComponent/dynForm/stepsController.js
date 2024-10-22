@@ -427,7 +427,7 @@ corticon.dynForm.StepsController = function () {
 
         allArrayEls.each(function (index, item) {
             const oneArrayEl = $(item);
-            uiControlType = $(this).parent().data("uicontroltype");
+            uiControlType = $(this).data("uicontroltype");
             let allFormEls = oneArrayEl.find(":input").not(":checkbox");
 
             let innerArray = [];
