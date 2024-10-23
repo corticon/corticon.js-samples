@@ -1,0 +1,1792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_8SFQJEUFEe--FZkVDdw5rg" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_5Bbt4IsFEe-j89Qdc2NwKg" vocabulary="../Rule%20Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <action>
+        <opaqueExpression expression="UI.containers=Container.new[id = 'stateHX', title = 'Please use your state marketplace.']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Please use your state marketplace.' , Container.id = 'stateHX' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="new" datatype="Container" termtype="NEW" fulltext="Container.new">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="Container.id">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="Container.title">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.done = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.done = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="done" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.done">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'CA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'CA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'CA'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;p>Covered California is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.coveredca.com/&quot;>Visit California\'s website.&lt;/a>&lt;/p>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;p>Covered California is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.coveredca.com/&quot;>Visit California\'s website.&lt;/a>&lt;/p>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'CO'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'CO'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'CO'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Connect for Health Colorado is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.connectforhealthco.com/&quot;>Visit Colorado\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Connect for Health Colorado is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.connectforhealthco.com/&quot;>Visit Colorado\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'CT'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'CT'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'CT'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Access Health CT is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.accesshealthct.com/&quot;>Visit Connecticut\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Access Health CT is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.accesshealthct.com/&quot;>Visit Connecticut\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'DC'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'DC'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'DC'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>DC Health Link is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://dchealthlink.com/&quot;>Visit the District of Columbia\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>DC Health Link is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://dchealthlink.com/&quot;>Visit the District of Columbia\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'ID'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'ID'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'ID'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Your Health Idaho is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.yourhealthidaho.org/&quot;>Visit Idaho\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Your Health Idaho is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.yourhealthidaho.org/&quot;>Visit Idaho\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'KY'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'KY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'KY'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Kynect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://kynect.ky.gov/s/?language=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Kentucky\'s website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Kynect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://kynect.ky.gov/s/?language=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Kentucky\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'ME'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'ME'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'ME'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>CoverMe is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://coverme.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maine\'s website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>CoverMe is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://coverme.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maine\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'MA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'MA'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Maryland Health Connection is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://www.marylandhealthconnection.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maryland\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Maryland Health Connection is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://www.marylandhealthconnection.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maryland\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'MD'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'MD'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'MD'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Health Connector is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.mahealthconnector.org/&quot;>Visit Massachusetts\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Health Connector is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.mahealthconnector.org/&quot;>Visit Massachusetts\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'MN'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'MN'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'MN'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>MNsure website is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://mn.gov/hix/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Minnesota\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>MNsure website is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://mn.gov/hix/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Minnesota\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'NM'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NM'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'NM'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>beWellnm is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.bewellnm.com/&quot;>Visit New Mexico\'s website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>beWellnm is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.bewellnm.com/&quot;>Visit New Mexico\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'NV'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NV'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'NV'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Nevada Health Link is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.nevadahealthlink.com/&quot;>Visit Nevada\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Nevada Health Link is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.nevadahealthlink.com/&quot;>Visit Nevada\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'NY'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'NY'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>New York State of Health is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://nystateofhealth.ny.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New York\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>New York State of Health is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://nystateofhealth.ny.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New York\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'RI'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'RI'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'RI'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>HealthSource RI is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.healthsourceri.com/&quot;>Visit Rhode Island\'s website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>HealthSource RI is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.healthsourceri.com/&quot;>Visit Rhode Island\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'VT'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'VT'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'VT'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Vermont Health Connect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://healthconnect.vermont.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Vermont\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Vermont Health Connect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://healthconnect.vermont.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Vermont\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'WA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'WA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'WA'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Washington Healthplanfinder is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.wahealthplanfinder.org/&quot;>Visit Washington\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Washington Healthplanfinder is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.wahealthplanfinder.org/&quot;>Visit Washington\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'NJ'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NJ'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'NJ'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Get Covered NJ is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.getcovered.nj.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New Jersey\' website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Get Covered NJ is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.getcovered.nj.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New Jersey\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.state = 'VA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'VA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.state" rhs="'VA'"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Virginia\'s Insurance Marketplace is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.marketplace.virginia.gov&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Virginia\'s website.&lt;/a>&lt;/div>']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Virginia\'s Insurance Marketplace is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.marketplace.virginia.gov&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Virginia\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber=999">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 999" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="../Rule%20Vocabulary.ecore#//Container" traversedAssocRole="../Rule%20Vocabulary.ecore#//UI/containers">
+        <extension association="true" entity="../Rule%20Vocabulary.ecore#//UIControl" traversedAssocRole="../Rule%20Vocabulary.ecore#//Container/uiControls"/>
+      </extension>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/done"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//Container">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Container/id"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Container/title"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//Data/Household">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/state"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//UIControl">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/value"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/type"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/id"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightConditionsIf="17">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="98">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="UI.containers=Container.new[id = 'stateHX', title = 'Please use your state marketplace.']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers = Container.new [ Container.title = 'Please use your state marketplace.' , Container.id = 'stateHX' ]" datatype="Container" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="new" datatype="Container" termtype="NEW" fulltext="Container.new">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="Container.id">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="title" datatype="String" termtype="ATTRIBUTE" fulltext="Container.title">
+                <parentTerm text="Container" datatype="Container" termtype="ENTITY" fulltext="Container" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="26">
+        <valueSetCell/>
+        <expressionCell external="UI.containers.uiControls+=UIControl.new[id='1', type = 'ReadOnlyText', value = cellValue]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = cellValue , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl" variable="#//@ruleset/@logicalVariables.3"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.done">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.done" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="done" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.done">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=999" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.2"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=999">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 999" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Household.state">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.done = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="done" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.done">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="79" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'CA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'CA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;p>Covered California is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.coveredca.com/&quot;>Visit California\'s website.&lt;/a>&lt;/p>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;p>Covered California is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.coveredca.com/&quot;>Visit California\'s website.&lt;/a>&lt;/p>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'CO'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'CO'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Connect for Health Colorado is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.connectforhealthco.com/&quot;>Visit Colorado\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Connect for Health Colorado is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.connectforhealthco.com/&quot;>Visit Colorado\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="'CT'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'CT'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Access Health CT is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.accesshealthct.com/&quot;>Visit Connecticut\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Access Health CT is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.accesshealthct.com/&quot;>Visit Connecticut\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="'DC'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'DC'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>DC Health Link is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://dchealthlink.com/&quot;>Visit the District of Columbia\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>DC Health Link is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://dchealthlink.com/&quot;>Visit the District of Columbia\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="'ID'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'ID'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Your Health Idaho is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.yourhealthidaho.org/&quot;>Visit Idaho\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Your Health Idaho is your state\' Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.yourhealthidaho.org/&quot;>Visit Idaho\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="'KY'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'KY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Kynect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://kynect.ky.gov/s/?language=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Kentucky\'s website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Kynect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://kynect.ky.gov/s/?language=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Kentucky\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="'ME'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'ME'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>CoverMe is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://coverme.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maine\'s website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>CoverMe is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://coverme.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maine\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="'MA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'MA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Maryland Health Connection is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://www.marylandhealthconnection.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maryland\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Maryland Health Connection is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://www.marylandhealthconnection.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Maryland\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="'MD'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'MD'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Health Connector is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.mahealthconnector.org/&quot;>Visit Massachusetts\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Health Connector is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.mahealthconnector.org/&quot;>Visit Massachusetts\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="'MN'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'MN'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>MNsure website is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://mn.gov/hix/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Minnesota\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>MNsure website is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://mn.gov/hix/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Minnesota\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="'NM'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NM'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>beWellnm is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.bewellnm.com/&quot;>Visit New Mexico\'s website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>beWellnm is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.bewellnm.com/&quot;>Visit New Mexico\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="12" columnWidth="100" pRule="#//@ruleset/@rules.12">
+        <conditionValueSetCellList valueSet="'NV'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NV'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Nevada Health Link is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.nevadahealthlink.com/&quot;>Visit Nevada\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Nevada Health Link is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;https://www.nevadahealthlink.com/&quot;>Visit Nevada\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="13" columnWidth="100" pRule="#//@ruleset/@rules.13">
+        <conditionValueSetCellList valueSet="'NY'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NY'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>New York State of Health is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://nystateofhealth.ny.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New York\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>New York State of Health is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://nystateofhealth.ny.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New York\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="14" columnWidth="100" pRule="#//@ruleset/@rules.14">
+        <conditionValueSetCellList valueSet="'RI'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'RI'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>HealthSource RI is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.healthsourceri.com/&quot;>Visit Rhode Island\'s website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>HealthSource RI is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.healthsourceri.com/&quot;>Visit Rhode Island\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="15" columnWidth="100" pRule="#//@ruleset/@rules.15">
+        <conditionValueSetCellList valueSet="'VT'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'VT'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Vermont Health Connect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://healthconnect.vermont.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Vermont\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Vermont Health Connect is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;http://healthconnect.vermont.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Vermont\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="16" columnWidth="100" pRule="#//@ruleset/@rules.16">
+        <conditionValueSetCellList valueSet="'WA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'WA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Washington Healthplanfinder is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.wahealthplanfinder.org/&quot;>Visit Washington\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Washington Healthplanfinder is your state\'s Marketplace.&amp;nbsp;&lt;a class=&quot;ds-c-external-link&quot; href=&quot;http://www.wahealthplanfinder.org/&quot;>Visit Washington\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="17" columnWidth="100" pRule="#//@ruleset/@rules.17">
+        <conditionValueSetCellList valueSet="'NJ'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'NJ'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Get Covered NJ is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.getcovered.nj.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New Jersey\' website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Get Covered NJ is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.getcovered.nj.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit New Jersey\' website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="18" columnWidth="100" pRule="#//@ruleset/@rules.18">
+        <conditionValueSetCellList valueSet="'VA'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.state = 'VA'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="state" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.state">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Virginia\'s Insurance Marketplace is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.marketplace.virginia.gov&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Virginia\'s website.&lt;/a>&lt;/div>'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.containers.uiControls += UIControl.new [ UIControl.value = '&lt;div class=&quot;learnParagraph-module--paragraph--4a23b &quot;>Virginia\'s Insurance Marketplace is your state\'s Marketplace.&amp;nbsp;&lt;a href=&quot;https://www.marketplace.virginia.gov&quot; target=&quot;_blank&quot; rel=&quot;external&quot;>Visit Virginia\'s website.&lt;/a>&lt;/div>' , UIControl.type = 'ReadOnlyText' , UIControl.id = '1' ]" datatype="UIControl" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="uiControls" datatype="UIControl" termtype="ENTITY" fulltext="UI.containers.uiControls">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.value">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.type">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="id" datatype="String" termtype="ATTRIBUTE" fulltext="UIControl.id">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+              <terms text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+              <terms text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              <terms text="new" datatype="UIControl" termtype="NEW" fulltext="UIControl.new">
+                <parentTerm text="UIControl" datatype="UIControl" termtype="ENTITY" fulltext="UIControl"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
