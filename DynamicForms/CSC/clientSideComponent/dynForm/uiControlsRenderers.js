@@ -859,15 +859,26 @@ corticon.dynForm.UIControlsRenderer = function () {
         if (oneUIControl.label !== undefined && oneUIControl.label !== null) {
             let html2;
             const labelPosition = getLabelPositionForControl(oneUIControl, labelPositionAtContainerLevel);
-            if (labelPosition === 'Above')
+            if (labelPosition === 'Above') {
                 html2 = '<div class="inputLabelAbove">' + oneUIControl.label + '</div>';
-            else
+            } else {
                 html2 = '<span class="inputLabelSide">' + oneUIControl.label + '</span>';
 
-            inputContainerEl.append($(html2));
+            }
+
+            // Apply emphasis styling if emphasize is true
+            if (oneUIControl.emphasize === true) {
+                html2 = $(html2).css({
+                    'font-weight': 'bold',
+                    'color': 'red'
+                });
+            } else {
+                html2 = $(html2); // Ensure html2 is a jQuery object
+            }
+
+            inputContainerEl.append(html2);
         }
     }
-
     function isArrayType(oneUIControl) {
         if (oneUIControl.multiple !== undefined && oneUIControl.multiple !== null && oneUIControl.multiple)
             return true;

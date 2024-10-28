@@ -2,7 +2,7 @@
 
 Creating a dynamic form can be a slog even when you know what you're doing. But with Corticon.js, dynamic forms can be created in a fraction of the time, with substantial contributions from non-developers, and through a framework-agnostic design pattern that maximizes the reusability of form logic.
 
-Try a Corticon.js rules-driven dynamic form with the [test driver on Codepen](https://codepen.io/SethMeldon/pen/wvOGvra). 
+Try a Corticon.js rules-driven dynamic form with the [test driver on Codepen](https://codepen.io/SethMeldon/pen/wvOGvra).
 
 ## What we mean by dynamic forms
 
@@ -16,8 +16,8 @@ The last element of the array of problems is how to visualize all those rules on
 
 Dynamic Forms are just one use case for Corticon.js. The dynamic form solution is architected around having a model/view, where:
 
-  * The model is generated from the rules system.
-  * A generic UI component capable of rendering the instructions from the model is acting as the view. The component can be hosted in any Web app or in mobile apps.
+* The model is generated from the rules system.
+* A generic UI component capable of rendering the instructions from the model is acting as the view. The component can be hosted in any Web app or in mobile apps.
 
 In a nutshell, Corticon.js provides a model-driven interactive development interface called Corticon.js Studio within which users define business rules that will change input data based upon specified conditions.
 
@@ -33,22 +33,13 @@ The front end rendering component in turn will be responsible for the styling of
 
 For example, consider an insurance quoting form. An optimal dynamic form for the quoting process should:
 
-  * Guide the end user through the quoting process in the most efficient way possible—not wasting the end users' time with inapplicable inquiries such as 'Please Select a Vehicle Make (if applicable)' for a renter's insurance policy, or ask for the applicant's home address if we already know that they're an existing customer and thus we know this information already.
-  * Not risk the end user abandoning the quoting process by making calls to a server every time something dynamic must happen.
-  * At each juncture where the form determines what information is needed, evaluate the accrued user provided data, data already known about the user (e.g. via them being logged in and their info populated from a CRM), or data retrieved live from external endpoints
-  * Maintain form rendering logic (rendering component only knows that when it is told to render a multi select dropdown UI component, it will look and behave like this) as a separate but interoperable component from the content of the prompt/responses itself (decision service logic doesn't care how the multi select dropdown looks or behave, but the content of the prompt should be X, the options should be populated from the array Y, and the selection of the end user's selected value should be captured in the browser session storage under fieldname Z.
+* Guide the end user through the quoting process in the most efficient way possible—not wasting the end users' time with inapplicable inquiries such as 'Please Select a Vehicle Make (if applicable)' for a renter's insurance policy, or ask for the applicant's home address if we already know that they're an existing customer and thus we know this information already.
+* Not risk the end user abandoning the quoting process by making calls to a server every time something dynamic must happen.
+* At each juncture where the form determines what information is needed, evaluate the accrued user provided data, data already known about the user (e.g. via them being logged in and their info populated from a CRM), or data retrieved live from external endpoints
+* Maintain form rendering logic (rendering component only knows that when it is told to render a multi select dropdown UI component, it will look and behave like this) as a separate but interoperable component from the content of the prompt/responses itself (decision service logic doesn't care how the multi select dropdown looks or behave, but the content of the prompt should be X, the options should be populated from the array Y, and the selection of the end user's selected value should be captured in the browser session storage under fieldname Z.
 
 To get you started building forms, we provide a form accelerator template which is made up of:
 
-  * A base Corticon.js Rule Vocabulary comprised of the UI definition components that are able to render by the rendering HTML out of the box
-  * A 'test driver' html page which allows form developers to test the form as they go and see how the different components work together
-  * JS files which serve as the glue between the Decision Service file and the front end HTML. These will be preconfigured to 'translate' the terminology used in the rule vocabulary to specify UI components into the actual HTML input types etc.
-
-## Corticon.js Dynamic Forms Documentation 
-
-- [Rule Author Guide to Authoring Form Rules](<docs/Rule Author's Guide/AuthoringFormRules.md>)
-
-
-- [Developer Guide to the Client Side Component Drive Client](<docs/Developer's Guide/README.md>)
-  - [Preconfigured Vocabulary Attributes](<docs/Developer's Guide/OutOfTheBoxVocabularyAttributes.md>)
-  - [Preconfigured UI Control Types](<docs/Developer's Guide/PreConfiguredControlTypes.md>)
+* A base Corticon.js Rule Vocabulary comprised of the UI definition components that are able to render by the rendering HTML out of the box
+* A 'test driver' html page which allows form developers to test the form as they go and see how the different components work together
+* JS files which serve as the glue between the Decision Service file and the front end HTML. These will be preconfigured to 'translate' the terminology used in the rule vocabulary to specify UI components into the actual HTML input types etc.

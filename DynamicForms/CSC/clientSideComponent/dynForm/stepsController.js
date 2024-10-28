@@ -151,7 +151,32 @@ corticon.dynForm.StepsController = function () {
 
     async function processNextStep(baseDynamicUIEl, decisionServiceEngine, language, saveInputToFormData = true) {
         if (saveInputToFormData) {
-            // On Next click, copy value of all rendered elements to the UI Controls in payload
+            // Validate required fields within each container
+            const containers = baseDynamicUIEl.find('.inputContainer');
+            let isValid = true;
+            containers.each(function (index, container) {
+                const requiredInputs = $(container).find('.required-input');
+                requiredInputs.each(function (index, item) {
+                    const inputEl = $(item);
+                    if (inputEl.val() === '') {
+                        // Create an error message element
+                        const errorMessage = $('<span class="error-message">This field is required</span>');
+
+                        // Insert the error message after the input field
+                        inputEl.after(errorMessage);
+
+                        isValid = false;
+                        return false;
+                    }
+                });
+                if (!isValid) return false; // Exit the outer loop if invalid
+            });
+
+            if (!isValid) {
+                return; // Prevent moving to the next step
+            }
+
+            // Now save the input data since it's valid
             _saveEnteredInputsToFormData(baseDynamicUIEl);
         }
 
