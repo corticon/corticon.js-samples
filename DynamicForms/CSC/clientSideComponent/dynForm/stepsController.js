@@ -72,47 +72,76 @@ corticon.dynForm.StepsController = function () {
     }
     async function _processBackgroundData(backgroundData) {
         const url = backgroundData.url;
-        const fieldName1 = backgroundData.fieldName1; // Use fieldName1
         const arrayToSet = backgroundData.arrayToSet;
-        const pathToValue1 = backgroundData.pathToValue1; // Use pathToValue1
-        const labelName1 = backgroundData.labelName1; // Use labelName1
         const arrayToCollection = backgroundData.arrayToCollection;
         const collectionName = backgroundData.collectionName;
-
+        const fieldName1 = backgroundData.fieldName1;
+        const labelName1 = backgroundData.labelName1;
+        const pathToValue1 = backgroundData.pathToValue1;
+        const labelName2 = backgroundData.labelName2;
+        const pathToValue2 = backgroundData.pathToValue2;
+        const fieldName3 = backgroundData.fieldName3;
+        const labelName3 = backgroundData.labelName3;
+        const pathToValue3 = backgroundData.pathToValue3;
+        const fieldName4 = backgroundData.fieldName4;
+        const labelName4 = backgroundData.labelName4;
+        const pathToValue4 = backgroundData.pathToValue4;
+        const fieldName5 = backgroundData.fieldName5;
+        const labelName5 = backgroundData.labelName5;
+        const pathToValue5 = backgroundData.pathToValue5;
+        const fieldName6 = backgroundData.fieldName6;
+        const labelName6 = backgroundData.labelName6;
+        const pathToValue6 = backgroundData.pathToValue6;
+        const fieldName7 = backgroundData.fieldName7;
+        const labelName7 = backgroundData.labelName7;
+        const pathToValue7 = backgroundData.pathToValue7;
+        const fieldName8 = backgroundData.fieldName8;
+        const labelName8 = backgroundData.labelName8;
+        const pathToValue8 = backgroundData.pathToValue8;
+        const fieldName9 = backgroundData.fieldName9;
+        const labelName9 = backgroundData.labelName9;
+        const pathToValue9 = backgroundData.pathToValue9;
+        const fieldName10 = backgroundData.fieldName10;
+        const labelName10 = backgroundData.labelName10;
+        const pathToValue10 = backgroundData.pathToValue10;
 
         try {
             const response = await fetch(url);
             const data = await response.json();
 
-
             let value;
             if (arrayToSet) {
-                value = data.map(item => item[labelName1]).join(', '); // Changed labelName to labelName1
+                value = data.map(item => item[labelName1]).join(', ');
             } else if (arrayToCollection) {
-                value = data.map(item => ({ [fieldName1]: item[labelName1] })); // Changed fieldName to fieldName1 and labelName to labelName1
+                value = data.map(item => {
+                    const newObj = {};
+                    for (let i = 1; i <= 10; i++) {
+                        const fieldName = backgroundData[`fieldName${i}`];
+                        const labelName = backgroundData[`labelName${i}`];
+                        const pathToValue = backgroundData[`pathToValue${i}`];  // Access pathToValue here
+                        if (fieldName && labelName) {  // Only check for fieldName and labelName
+                            newObj[fieldName] = item[labelName];  // Directly use labelName for extraction
+                        }
+                    }
+                    return newObj;
+                });
+            } else if (fieldName1 && labelName1 && pathToValue1) {  // Condition for single value extraction
+                value = JSONPath.JSONPath(pathToValue1, data)[0];
+                _saveOneFormData(fieldName1, value); // Save the extracted value
             } else {
-                value = JSONPath.JSONPath(pathToValue1, data)[0]; // Changed pathToValue to pathToValue1
+                // Handle other cases or provide a default behavior if needed
             }
-            // Extract and save additional field values
-            for (let i = 2; i <= 5; i++) {
-                const labelName = backgroundData[`labelName${i}`];
-                const fieldName = backgroundData[`fieldName${i}`];
-                const pathToValue = backgroundData[`pathToValue${i}`];
 
-                if (labelName && fieldName && pathToValue) {
-                    const fieldValue = JSONPath.JSONPath(pathToValue, data)[0];
-                    _saveOneFormData(fieldName, fieldValue);
-                }
-            }
             // Store the value under the collectionName if arrayToCollection is true
             if (arrayToCollection) {
                 _saveOneFormData(collectionName, value);
-            } else {
-                _saveOneFormData(fieldName1, value); // Use fieldName1
+            } else if (!(fieldName1 && labelName1 && pathToValue1)) { // Avoid saving again if already saved in the condition above
+                _saveOneFormData(fieldName1, value);
             }
+
         } catch (error) {
             console.error('Error processing background data:', error);
-            // Handle errors
+            // Handle errors appropriately
         }
     }
     function setStateFromRestartData(questionnaireName, restartData) {
