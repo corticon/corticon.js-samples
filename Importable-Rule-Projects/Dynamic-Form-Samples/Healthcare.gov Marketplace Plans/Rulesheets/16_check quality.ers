@@ -1,0 +1,1637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_ndl5wpbkEe-uUeFGoKqkVA" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_bKbJ4ZbiEe-uUeFGoKqkVA" vocabulary="../Rule%20Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Household.matchingPlan.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.matchingPlan.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="Data.Household.matchingPlan.remove">
+                <parentTerm text="matchingPlan" datatype="Data.MatchingPlan" termtype="ENTITY" fulltext="Data.Household.matchingPlan" variable="#//@ruleset/@logicalVariables.2/@extension.12">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 17">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 17" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.desiredMetalLevel = 'Bronze'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Bronze'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredMetalLevel" rhs="'Bronze'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="notBronze.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notBronze.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notBronze.remove">
+                <parentTerm text="notBronze" datatype="Data.Plan" termtype="ENTITY" fulltext="notBronze" variable="#//@ruleset/@logicalVariables.2/@extension.8">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.desiredMetalLevel = 'Silver'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Silver'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredMetalLevel" rhs="'Silver'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notSilver.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notSilver.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notSilver.remove">
+                <parentTerm text="notSilver" datatype="Data.Plan" termtype="ENTITY" fulltext="notSilver" variable="#//@ruleset/@logicalVariables.2/@extension.11">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.desiredMetalLevel = 'Gold'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Gold'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredMetalLevel" rhs="'Gold'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notGold.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notGold.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notGold.remove">
+                <parentTerm text="notGold" datatype="Data.Plan" termtype="ENTITY" fulltext="notGold" variable="#//@ruleset/@logicalVariables.2/@extension.9">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Household.desiredMetalLevel = 'Platinum'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Platinum'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredMetalLevel" rhs="'Platinum'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notPlatinum.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notPlatinum.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notPlatinum.remove">
+                <parentTerm text="notPlatinum" datatype="Data.Plan" termtype="ENTITY" fulltext="notPlatinum" variable="#//@ruleset/@logicalVariables.2/@extension.10">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Household.planPreference_hsa)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Household.planPreference_hsa ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="planPreference_hsa" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Data.Household.planPreference_hsa">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.planPreference_hsa" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="noHsa.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="noHsa.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="noHsa.remove">
+                <parentTerm text="noHsa" datatype="Data.Plan" termtype="ENTITY" fulltext="noHsa" variable="#//@ruleset/@logicalVariables.2/@extension.1">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Household.dentalOnly)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Household.dentalOnly ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="dentalOnly" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Data.Household.dentalOnly">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.dentalOnly" rhs="T"/>
+      </condition>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="dentalOnly.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="dentalOnly.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="dentalOnly.remove">
+                <parentTerm text="dentalOnly" datatype="Data.Plan" termtype="ENTITY" fulltext="dentalOnly" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Household.desiredQualityLevel = '1'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '1'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredQualityLevel" rhs="'1'"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notRating1.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating1.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating1.remove">
+                <parentTerm text="notRating1" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating1" variable="#//@ruleset/@logicalVariables.2/@extension.2">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Household.desiredQualityLevel = '2'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '2'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredQualityLevel" rhs="'2'"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notRating2.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating2.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating2.remove">
+                <parentTerm text="notRating2" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating2" variable="#//@ruleset/@logicalVariables.2/@extension.3">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Household.desiredQualityLevel = '3'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '3'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredQualityLevel" rhs="'3'"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notRating3.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating3.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating3.remove">
+                <parentTerm text="notRating3" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating3" variable="#//@ruleset/@logicalVariables.2/@extension.4">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Household.desiredQualityLevel = '4'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '4'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredQualityLevel" rhs="'4'"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notRating4.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating4.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating4.remove">
+                <parentTerm text="notRating4" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating4" variable="#//@ruleset/@logicalVariables.2/@extension.5">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Household.desiredQualityLevel = '5'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '5'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Household.desiredQualityLevel" rhs="'5'"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="notRating5.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating5.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating5.remove">
+                <parentTerm text="notRating5" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating5" variable="#//@ruleset/@logicalVariables.2/@extension.6">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber=16">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 16" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter/>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.0">
+      <opaqueExpression expression="dentalOnly.dentalOnly='Yes'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="dentalOnly.dentalOnly = 'Yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="dentalOnly" datatype="String" termtype="ATTRIBUTE" fulltext="dentalOnly.dentalOnly">
+              <parentTerm text="dentalOnly" datatype="Data.Plan" termtype="ENTITY" fulltext="dentalOnly" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.1">
+      <opaqueExpression expression="noHsa.isHSAEligible='No'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="noHsa.isHSAEligible = 'No'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="isHSAEligible" datatype="String" termtype="ATTRIBUTE" fulltext="noHsa.isHSAEligible">
+              <parentTerm text="noHsa" datatype="Data.Plan" termtype="ENTITY" fulltext="noHsa" variable="#//@ruleset/@logicalVariables.2/@extension.1">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter/>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.2">
+      <opaqueExpression expression="notRating1.rating &lt;>'1'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating1.rating &lt;> '1'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating1.rating">
+              <parentTerm text="notRating1" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating1" variable="#//@ruleset/@logicalVariables.2/@extension.2">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.3">
+      <opaqueExpression expression="notRating2.rating&lt;>'2'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating2.rating &lt;> '2'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating2.rating">
+              <parentTerm text="notRating2" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating2" variable="#//@ruleset/@logicalVariables.2/@extension.3">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.4">
+      <opaqueExpression expression="notRating3.rating&lt;>'3'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating3.rating &lt;> '3'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating3.rating">
+              <parentTerm text="notRating3" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating3" variable="#//@ruleset/@logicalVariables.2/@extension.4">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.5">
+      <opaqueExpression expression="notRating4.rating&lt;>'4'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating4.rating &lt;> '4'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating4.rating">
+              <parentTerm text="notRating4" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating4" variable="#//@ruleset/@logicalVariables.2/@extension.5">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.6">
+      <opaqueExpression expression="notRating5.rating&lt;>'5'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating5.rating &lt;> '5'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating5.rating">
+              <parentTerm text="notRating5" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating5" variable="#//@ruleset/@logicalVariables.2/@extension.6">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.11">
+      <opaqueExpression expression="notSilver.metalLevel in {'Platinum', 'Gold', 'Bronze'}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notSilver.metalLevel in { 'Platinum' , 'Gold' , 'Bronze' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notSilver.metalLevel">
+              <parentTerm text="notSilver" datatype="Data.Plan" termtype="ENTITY" fulltext="notSilver" variable="#//@ruleset/@logicalVariables.2/@extension.11">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.10">
+      <opaqueExpression expression="notPlatinum.metalLevel in {'Silver', 'Gold', 'Bronze'}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notPlatinum.metalLevel in { 'Silver' , 'Gold' , 'Bronze' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notPlatinum.metalLevel">
+              <parentTerm text="notPlatinum" datatype="Data.Plan" termtype="ENTITY" fulltext="notPlatinum" variable="#//@ruleset/@logicalVariables.2/@extension.10">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.9">
+      <opaqueExpression expression="notGold.metalLevel in {'Platinum', 'Silver', 'Bronze'}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notGold.metalLevel in { 'Platinum' , 'Silver' , 'Bronze' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notGold.metalLevel">
+              <parentTerm text="notGold" datatype="Data.Plan" termtype="ENTITY" fulltext="notGold" variable="#//@ruleset/@logicalVariables.2/@extension.9">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.2/@extension.8">
+      <opaqueExpression expression="notBronze.metalLevel in {'Platinum', 'Gold', 'Silver'}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notBronze.metalLevel in { 'Platinum' , 'Gold' , 'Silver' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notBronze.metalLevel">
+              <parentTerm text="notBronze" datatype="Data.Plan" termtype="ENTITY" fulltext="notBronze" variable="#//@ruleset/@logicalVariables.2/@extension.8">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/noUiToRenderContinue"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/nextStageNumber"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//Data/Plan">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/id"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/metalLevel"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//Data/Household">
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.2">
+        <alias value="dentalOnly"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/metalLevel"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/dentalOnly"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/isHSAEligible"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.3">
+        <alias value="noHsa"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/isHSAEligible"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.5">
+        <alias value="notRating1"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.6">
+        <alias value="notRating2"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.7">
+        <alias value="notRating3"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.8">
+        <alias value="notRating4"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.9">
+        <alias value="notRating5"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan">
+        <alias value="notUnrated"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/rating"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.13">
+        <alias value="notBronze"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/metalLevel"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.12">
+        <alias value="notGold"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/metalLevel"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.11">
+        <alias value="notPlatinum"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/metalLevel"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.10">
+        <alias value="notSilver"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/metalLevel"/>
+      </extension>
+      <extension association="true" entity="../Rule%20Vocabulary.ecore#//Data/MatchingPlan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/matchingPlan"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/planPreference_hsa"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/desiredQualityLevel"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/desiredMetalLevel"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/dentalOnly"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/tempInt"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="33" sashWeightScope="47" sashWeightConditionsActions="35" sashWeightConditionsIf="25">
+    <actionSection rowCount="48" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notBronze.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notBronze.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notBronze.remove">
+                <parentTerm text="notBronze" datatype="Data.Plan" termtype="ENTITY" fulltext="notBronze" variable="#//@ruleset/@logicalVariables.2/@extension.8">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notSilver.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notSilver.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notSilver.remove">
+                <parentTerm text="notSilver" datatype="Data.Plan" termtype="ENTITY" fulltext="notSilver" variable="#//@ruleset/@logicalVariables.2/@extension.11">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="26">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notGold.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notGold.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notGold.remove">
+                <parentTerm text="notGold" datatype="Data.Plan" termtype="ENTITY" fulltext="notGold" variable="#//@ruleset/@logicalVariables.2/@extension.9">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notPlatinum.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notPlatinum.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notPlatinum.remove">
+                <parentTerm text="notPlatinum" datatype="Data.Plan" termtype="ENTITY" fulltext="notPlatinum" variable="#//@ruleset/@logicalVariables.2/@extension.10">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="noHsa.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="noHsa.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="noHsa.remove">
+                <parentTerm text="noHsa" datatype="Data.Plan" termtype="ENTITY" fulltext="noHsa" variable="#//@ruleset/@logicalVariables.2/@extension.1">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="dentalOnly.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="dentalOnly.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="dentalOnly.remove">
+                <parentTerm text="dentalOnly" datatype="Data.Plan" termtype="ENTITY" fulltext="dentalOnly" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notRating1.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating1.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating1.remove">
+                <parentTerm text="notRating1" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating1" variable="#//@ruleset/@logicalVariables.2/@extension.2">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notRating2.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating2.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating2.remove">
+                <parentTerm text="notRating2" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating2" variable="#//@ruleset/@logicalVariables.2/@extension.3">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notRating3.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating3.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating3.remove">
+                <parentTerm text="notRating3" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating3" variable="#//@ruleset/@logicalVariables.2/@extension.4">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notRating4.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating4.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating4.remove">
+                <parentTerm text="notRating4" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating4" variable="#//@ruleset/@logicalVariables.2/@extension.5">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="notRating5.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating5.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="notRating5.remove">
+                <parentTerm text="notRating5" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating5" variable="#//@ruleset/@logicalVariables.2/@extension.6">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Household.matchingPlan.remove">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.matchingPlan.remove" datatype="Object" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="remove" termtype="METHOD" fulltext="Data.Household.matchingPlan.remove">
+                <parentTerm text="matchingPlan" datatype="Data.MatchingPlan" termtype="ENTITY" fulltext="Data.Household.matchingPlan" variable="#//@ruleset/@logicalVariables.2/@extension.12">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.nextStageNumber">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=16" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="dentalOnly.dentalOnly='Yes'" filter="#//@ruleset/@filters.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="noHsa.isHSAEligible='No'" filter="#//@ruleset/@filters.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating1.rating &lt;>'1'" filter="#//@ruleset/@filters.5"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating2.rating&lt;>'2'" filter="#//@ruleset/@filters.6"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating3.rating&lt;>'3'" filter="#//@ruleset/@filters.7"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating4.rating&lt;>'4'" filter="#//@ruleset/@filters.8"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating5.rating&lt;>'5'" filter="#//@ruleset/@filters.9"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notSilver.metalLevel in {'Platinum', 'Gold', 'Bronze'}" filter="#//@ruleset/@filters.10"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notPlatinum.metalLevel in {'Silver', 'Gold', 'Bronze'}" filter="#//@ruleset/@filters.11"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notGold.metalLevel in {'Platinum', 'Silver', 'Bronze'}" filter="#//@ruleset/@filters.12"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notBronze.metalLevel in {'Platinum', 'Gold', 'Silver'}" filter="#//@ruleset/@filters.13"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="dentalOnly.dentalOnly='Yes'" filter="#//@ruleset/@filters.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.0/@referencedAttributes.3"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="noHsa.isHSAEligible='No'" filter="#//@ruleset/@filters.3"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.1/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.2">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating1.rating &lt;>'1'" filter="#//@ruleset/@filters.5"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.2/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.3">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating2.rating&lt;>'2'" filter="#//@ruleset/@filters.6"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.3/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.4">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating3.rating&lt;>'3'" filter="#//@ruleset/@filters.7"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.4/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.5">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating4.rating&lt;>'4'" filter="#//@ruleset/@filters.8"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.5/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.6">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notRating5.rating&lt;>'5'" filter="#//@ruleset/@filters.9"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.6/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.7">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.7/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.8">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notBronze.metalLevel in {'Platinum', 'Gold', 'Silver'}" filter="#//@ruleset/@filters.13"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.8/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.9">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notGold.metalLevel in {'Platinum', 'Silver', 'Bronze'}" filter="#//@ruleset/@filters.12"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.9/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.10">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notPlatinum.metalLevel in {'Silver', 'Gold', 'Bronze'}" filter="#//@ruleset/@filters.11"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.10/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.11">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="notSilver.metalLevel in {'Platinum', 'Gold', 'Bronze'}" filter="#//@ruleset/@filters.10"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.11/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.12"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="44">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=16">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 16" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell/>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell external="dentalOnly.dentalOnly='Yes'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="dentalOnly.dentalOnly = 'Yes'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="dentalOnly" datatype="String" termtype="ATTRIBUTE" fulltext="dentalOnly.dentalOnly">
+                <parentTerm text="dentalOnly" datatype="Data.Plan" termtype="ENTITY" fulltext="dentalOnly" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.3">
+        <expressionCell external="noHsa.isHSAEligible='No'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="noHsa.isHSAEligible = 'No'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="isHSAEligible" datatype="String" termtype="ATTRIBUTE" fulltext="noHsa.isHSAEligible">
+                <parentTerm text="noHsa" datatype="Data.Plan" termtype="ENTITY" fulltext="noHsa" variable="#//@ruleset/@logicalVariables.2/@extension.1">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.4">
+        <expressionCell/>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.5">
+        <expressionCell external="notRating1.rating &lt;>'1'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating1.rating &lt;> '1'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating1.rating">
+                <parentTerm text="notRating1" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating1" variable="#//@ruleset/@logicalVariables.2/@extension.2">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.6">
+        <expressionCell external="notRating2.rating&lt;>'2'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating2.rating &lt;> '2'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating2.rating">
+                <parentTerm text="notRating2" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating2" variable="#//@ruleset/@logicalVariables.2/@extension.3">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.7">
+        <expressionCell external="notRating3.rating&lt;>'3'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating3.rating &lt;> '3'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating3.rating">
+                <parentTerm text="notRating3" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating3" variable="#//@ruleset/@logicalVariables.2/@extension.4">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.8">
+        <expressionCell external="notRating4.rating&lt;>'4'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating4.rating &lt;> '4'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating4.rating">
+                <parentTerm text="notRating4" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating4" variable="#//@ruleset/@logicalVariables.2/@extension.5">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.9">
+        <expressionCell external="notRating5.rating&lt;>'5'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notRating5.rating &lt;> '5'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="rating" datatype="String" termtype="ATTRIBUTE" fulltext="notRating5.rating">
+                <parentTerm text="notRating5" datatype="Data.Plan" termtype="ENTITY" fulltext="notRating5" variable="#//@ruleset/@logicalVariables.2/@extension.6">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.10">
+        <expressionCell external="notSilver.metalLevel in {'Platinum', 'Gold', 'Bronze'}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notSilver.metalLevel in { 'Platinum' , 'Gold' , 'Bronze' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notSilver.metalLevel">
+                <parentTerm text="notSilver" datatype="Data.Plan" termtype="ENTITY" fulltext="notSilver" variable="#//@ruleset/@logicalVariables.2/@extension.11">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.11">
+        <expressionCell external="notPlatinum.metalLevel in {'Silver', 'Gold', 'Bronze'}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notPlatinum.metalLevel in { 'Silver' , 'Gold' , 'Bronze' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notPlatinum.metalLevel">
+                <parentTerm text="notPlatinum" datatype="Data.Plan" termtype="ENTITY" fulltext="notPlatinum" variable="#//@ruleset/@logicalVariables.2/@extension.10">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.12">
+        <expressionCell external="notGold.metalLevel in {'Platinum', 'Silver', 'Bronze'}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notGold.metalLevel in { 'Platinum' , 'Silver' , 'Bronze' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notGold.metalLevel">
+                <parentTerm text="notGold" datatype="Data.Plan" termtype="ENTITY" fulltext="notGold" variable="#//@ruleset/@logicalVariables.2/@extension.9">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.13">
+        <expressionCell external="notBronze.metalLevel in {'Platinum', 'Gold', 'Silver'}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="notBronze.metalLevel in { 'Platinum' , 'Gold' , 'Silver' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="metalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="notBronze.metalLevel">
+                <parentTerm text="notBronze" datatype="Data.Plan" termtype="ENTITY" fulltext="notBronze" variable="#//@ruleset/@logicalVariables.2/@extension.8">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="41" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Household.desiredMetalLevel">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Household.planPreference_hsa">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.planPreference_hsa" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="planPreference_hsa" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Data.Household.planPreference_hsa">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Household.dentalOnly">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.dentalOnly" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="dentalOnly" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Data.Household.dentalOnly">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Household.desiredQualityLevel">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="230" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="17">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 17" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'Bronze'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Bronze'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'Silver'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Silver'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="'Gold'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Gold'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="'Platinum'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredMetalLevel = 'Platinum'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredMetalLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredMetalLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Household.planPreference_hsa ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="planPreference_hsa" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Data.Household.planPreference_hsa">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Household.dentalOnly ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="dentalOnly" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Data.Household.dentalOnly">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'1'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '1'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="100" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'2'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '2'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'3'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '3'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'4'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '4'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="11" columnWidth="100" pRule="#//@ruleset/@rules.11">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="'5'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Household.desiredQualityLevel = '5'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="desiredQualityLevel" datatype="String" termtype="ATTRIBUTE" fulltext="Data.Household.desiredQualityLevel">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_DwhvcJbbEe-qXOd12DkQLQ" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_2g9wIZbVEe-qXOd12DkQLQ" vocabulary="../Rule%20Vocabulary.ecore#/">
+    <rule>
+      <action/>
+      <action>
+        <opaqueExpression expression="planMatches->sortedBy(id)->first.name = 'obtained'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="planMatches->sortedBy ( planMatches.id )->first.name = 'obtained'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="planMatches.name">
+                <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="planMatches->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy->first">
+                <parentTerm text="planMatches" datatype="Sequence" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy">
+                  <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.noUiToRenderContinue = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.backgroundData=BackgroundData.newUnique[ url='https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 35648b25-e666-5f35-82bb-75fd87d6d716][WHERE StandardComponentId = &quot;' + planMatches->sortedBy(id)->first.id+'&quot;', arrayToCollection = true, collectionName='matchingPlan', labelName1='MetalLevel', fieldName1 = 'metalLevel', labelName2='DentalOnlyPlan', fieldName2 = 'dentalOnly', labelName3='IsHSAEligible', fieldName3 = 'isHSAEligible', labelName4='PlanMarketingName', fieldName4 = 'name', labelName5='StandardComponentId', fieldName5 = 'id', labelName6='PlanBrochure', fieldName6 = 'url' ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.backgroundData = BackgroundData.newUnique [ BackgroundData.url = 'https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 35648b25-e666-5f35-82bb-75fd87d6d716][WHERE StandardComponentId = &quot;' + planMatches->sortedBy ( planMatches.id )->first.id + '&quot;' , BackgroundData.labelName6 = 'PlanBrochure' , BackgroundData.labelName5 = 'StandardComponentId' , BackgroundData.labelName4 = 'PlanMarketingName' , BackgroundData.labelName3 = 'IsHSAEligible' , BackgroundData.labelName2 = 'DentalOnlyPlan' , BackgroundData.labelName1 = 'MetalLevel' , BackgroundData.fieldName6 = 'url' , BackgroundData.fieldName5 = 'id' , BackgroundData.fieldName4 = 'name' , BackgroundData.fieldName3 = 'isHSAEligible' , BackgroundData.fieldName2 = 'dentalOnly' , BackgroundData.fieldName1 = 'metalLevel' , BackgroundData.collectionName = 'matchingPlan' , BackgroundData.arrayToCollection = true ]" datatype="BackgroundData" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="backgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="UI.backgroundData" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="labelName5" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName5">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName2" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName2">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName6" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName6">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName1" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName1">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName3" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName3">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName4" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName4">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="new" datatype="BackgroundData" termtype="NEW" fulltext="BackgroundData.new">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName4" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName4">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName3" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName3">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName1" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName1">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName6" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName6">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName2" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName2">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName5" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName5">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="url" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.url">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="planMatches->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy->first">
+                <parentTerm text="planMatches" datatype="Sequence" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy">
+                  <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="arrayToCollection" datatype="Boolean" termtype="ATTRIBUTE" fulltext="BackgroundData.arrayToCollection">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="collectionName" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.collectionName">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(allPlans->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allPlans->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allPlans" datatype="Boolean" termtype="COLLECTION" fulltext="allPlans->isEmpty">
+                <parentTerm text="allPlans" datatype="Data.Plan" termtype="ENTITY" fulltext="allPlans" variable="#//@ruleset/@logicalVariables.1/@extension.1">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="allPlans->isEmpty" rhs="T"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="UI.nextStageNumber = 998">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 998" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="UI.currentStageNumber=14">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 14" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+              <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter/>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.1/@extension.0">
+      <opaqueExpression expression="planMatches.name = null">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="planMatches.name = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="planMatches.name">
+              <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//UI" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="../Rule%20Vocabulary.ecore#//Container" traversedAssocRole="../Rule%20Vocabulary.ecore#//UI/containers">
+        <extension association="true" entity="../Rule%20Vocabulary.ecore#//UIControl" traversedAssocRole="../Rule%20Vocabulary.ecore#//Container/uiControls"/>
+      </extension>
+      <extension association="true" entity="../Rule%20Vocabulary.ecore#//BackgroundData" traversedAssocRole="../Rule%20Vocabulary.ecore#//UI/backgroundData"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/currentStageNumber"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/nextStageNumber"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UI/noUiToRenderContinue"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//Data/Household">
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan" filters="#//@ruleset/@filters.2">
+        <alias value="planMatches"/>
+        <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/name"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Rule%20Vocabulary.ecore#//Data/Plan" traversedAssocRole="../Rule%20Vocabulary.ecore#//Data/Household/plan">
+        <alias value="allPlans"/>
+      </extension>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/plans"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/tempInt"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/desiredMetalLevel"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/planPreference_hsa"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Household/state"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//Data/Plan">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/id"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Data/Plan/name"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//Container">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Container/id"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Container/title"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//UIControl">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/value"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/type"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/id"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/fieldName"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//UIControl/label"/>
+    </logicalVariable>
+    <logicalVariable entity="../Rule%20Vocabulary.ecore#//BackgroundData">
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/url"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/fieldName1"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/labelName1"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/arrayToCollection"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/collectionName"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/pathToValue1"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/fieldName2"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/labelName2"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/pathToValue2"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/labelName3"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/fieldName3"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/pathToValue3"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/fieldName4"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/labelName4"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/pathToValue4"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/labelName5"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/fieldName5"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/pathToValue5"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/labelName6"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/fieldName6"/>
+      <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//BackgroundData/pathToValue6"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="17" sashWeightScope="64" sashWeightConditionsActions="26" sashWeightConditionsIf="70">
+    <actionSection rowCount="49" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="planMatches->sortedBy(id)->first.name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="planMatches->sortedBy ( planMatches.id )->first.name" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="planMatches->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy->first">
+                <parentTerm text="planMatches" datatype="Sequence" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy">
+                  <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.noUiToRenderContinue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="UI.nextStageNumber">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList rowHeight="362">
+        <valueSetCell/>
+        <expressionCell external="UI.backgroundData=BackgroundData.newUnique[ url='https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 35648b25-e666-5f35-82bb-75fd87d6d716][WHERE StandardComponentId = &quot;' + planMatches->sortedBy(id)->first.id+'&quot;', arrayToCollection = true, collectionName='matchingPlan', labelName1='MetalLevel', fieldName1 = 'metalLevel', labelName2='DentalOnlyPlan', fieldName2 = 'dentalOnly', labelName3='IsHSAEligible', fieldName3 = 'isHSAEligible', labelName4='PlanMarketingName', fieldName4 = 'name', labelName5='StandardComponentId', fieldName5 = 'id', labelName6='PlanBrochure', fieldName6 = 'url' ]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.backgroundData = BackgroundData.newUnique [ BackgroundData.url = 'https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 35648b25-e666-5f35-82bb-75fd87d6d716][WHERE StandardComponentId = &quot;' + planMatches->sortedBy ( planMatches.id )->first.id + '&quot;' , BackgroundData.labelName6 = 'PlanBrochure' , BackgroundData.labelName5 = 'StandardComponentId' , BackgroundData.labelName4 = 'PlanMarketingName' , BackgroundData.labelName3 = 'IsHSAEligible' , BackgroundData.labelName2 = 'DentalOnlyPlan' , BackgroundData.labelName1 = 'MetalLevel' , BackgroundData.fieldName6 = 'url' , BackgroundData.fieldName5 = 'id' , BackgroundData.fieldName4 = 'name' , BackgroundData.fieldName3 = 'isHSAEligible' , BackgroundData.fieldName2 = 'dentalOnly' , BackgroundData.fieldName1 = 'metalLevel' , BackgroundData.collectionName = 'matchingPlan' , BackgroundData.arrayToCollection = true ]" datatype="BackgroundData" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="backgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="UI.backgroundData" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="labelName5" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName5">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName2" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName2">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName6" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName6">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName1" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName1">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName3" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName3">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName4" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName4">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="new" datatype="BackgroundData" termtype="NEW" fulltext="BackgroundData.new">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName4" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName4">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName3" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName3">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName1" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName1">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName6" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName6">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="labelName2" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.labelName2">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="fieldName5" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.fieldName5">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="url" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.url">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="planMatches->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy->first">
+                <parentTerm text="planMatches" datatype="Sequence" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy">
+                  <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="arrayToCollection" datatype="Boolean" termtype="ATTRIBUTE" fulltext="BackgroundData.arrayToCollection">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+              <terms text="collectionName" datatype="String" termtype="ATTRIBUTE" fulltext="BackgroundData.collectionName">
+                <parentTerm text="BackgroundData" datatype="BackgroundData" termtype="ENTITY" fulltext="BackgroundData" variable="#//@ruleset/@logicalVariables.5"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=14" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="planMatches.name = null" filter="#//@ruleset/@filters.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="planMatches.name = null" filter="#//@ruleset/@filters.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.4">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.4/@referencedAttributes.4"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.5">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.9"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.10"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.11"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.12"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.13"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.14"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.15"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.16"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.17"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.18"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.19"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.5/@referencedAttributes.20"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="UI.currentStageNumber=14">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 14" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell/>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell external="planMatches.name = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="planMatches.name = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="planMatches.name">
+                <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="allPlans->isEmpty">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="allPlans->isEmpty" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allPlans" datatype="Boolean" termtype="COLLECTION" fulltext="allPlans->isEmpty">
+                <parentTerm text="allPlans" datatype="Data.Plan" termtype="ENTITY" fulltext="allPlans" variable="#//@ruleset/@logicalVariables.1/@extension.1">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="19">
+      <ruleColumnList ruleId="0" columnWidth="250" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="'obtained'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="planMatches->sortedBy ( planMatches.id )->first.name = 'obtained'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="planMatches.name">
+                <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="planMatches->asSequence->sortedBy(id)" datatype="Object" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy->first">
+                <parentTerm text="planMatches" datatype="Sequence" termtype="COLLECTION" fulltext="planMatches->asSequence->sortedBy">
+                  <parentTerm text="planMatches" datatype="Data.Plan" termtype="ENTITY" fulltext="planMatches">
+                    <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.noUiToRenderContinue = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noUiToRenderContinue" datatype="Boolean" termtype="ATTRIBUTE" fulltext="UI.noUiToRenderContinue">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="15">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 15" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( allPlans->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="allPlans" datatype="Boolean" termtype="COLLECTION" fulltext="allPlans->isEmpty">
+                <parentTerm text="allPlans" datatype="Data.Plan" termtype="ENTITY" fulltext="allPlans" variable="#//@ruleset/@logicalVariables.1/@extension.1">
+                  <parentTerm text="Data.Household" datatype="Data.Household" termtype="ENTITY" fulltext="Data.Household" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="998">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 998" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
+                <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

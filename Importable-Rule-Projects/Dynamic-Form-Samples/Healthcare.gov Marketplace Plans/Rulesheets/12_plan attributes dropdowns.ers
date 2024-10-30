@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_cjcj-I_fEe-fQKzecIHNCQ" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8022" updateStamp="_4bkjEpYOEe-S26kmKk6XvQ" externalChecksum="2722078124:507989954:0" studioType="Javascript">
   <languageCode>en_US</languageCode>
-  <ruleset vocabularyUpdateStamp="_cdxZwY_fEe-fQKzecIHNCQ" vocabulary="../Rule%20Vocabulary.ecore#/">
+  <ruleset vocabularyUpdateStamp="_DdZSwZYEEe-S26kmKk6XvQ" vocabulary="../Rule%20Vocabulary.ecore#/">
     <rule>
+      <action>
+        <opaqueExpression expression="metalLevel.option+=Option.new [displayName = 'Any', value = 'Any']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="metalLevel.option += Option.new [ Option.value = 'Any' , Option.displayName = 'Any' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="option" datatype="Option" termtype="ENTITY" fulltext="metalLevel.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
       <action>
         <opaqueExpression expression="metalLevel.option+=Option.new [displayName = 'Bronze', value = 'Bronze']">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="metalLevel.option += Option.new [ Option.value = 'Bronze' , Option.displayName = 'Bronze' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
@@ -17,11 +49,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -29,7 +61,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -49,11 +81,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -61,7 +93,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -81,11 +113,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -93,7 +125,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -113,11 +145,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -125,7 +157,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -146,11 +178,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -158,7 +190,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -178,11 +210,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -190,7 +222,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -210,11 +242,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -222,7 +254,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -242,11 +274,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -254,7 +286,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -274,11 +306,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -286,7 +318,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -294,8 +326,8 @@
       </action>
       <action/>
       <action>
-        <opaqueExpression expression="UI.nextStageNumber = 16">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 16" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <opaqueExpression expression="UI.nextStageNumber = 13">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 13" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -309,8 +341,8 @@
       </action>
     </rule>
     <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
-      <opaqueExpression expression="UI.currentStageNumber=15">
-        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 15" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+      <opaqueExpression expression="UI.currentStageNumber=12">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 12" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
           <referencedTermList>
             <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
               <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -371,16 +403,46 @@
       <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Container/id"/>
       <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Container/title"/>
     </logicalVariable>
-    <logicalVariable entity="../Rule%20Vocabulary.ecore#//UIControl">
-      <extension association="true" entity="../Rule%20Vocabulary.ecore#//Option" traversedAssocRole="../Rule%20Vocabulary.ecore#//UIControl/option"/>
-    </logicalVariable>
     <logicalVariable entity="../Rule%20Vocabulary.ecore#//Option">
       <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Option/value"/>
       <referencedAttributes attribute="../Rule%20Vocabulary.ecore#//Option/displayName"/>
     </logicalVariable>
   </ruleset>
-  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true">
-    <actionSection rowCount="50" columnWidthFactor="0.5">
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="24">
+    <actionSection rowCount="51" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="metalLevel.option+=Option.new [displayName = cellValue, value = cellValue]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="metalLevel.option += Option.new [ Option.value = cellValue , Option.displayName = cellValue ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="option" datatype="Option" termtype="ENTITY" fulltext="metalLevel.option" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
       <actionItemList>
         <valueSetCell valueSet=""/>
         <expressionCell external="metalLevel.option+=Option.new [displayName = cellValue, value = cellValue]">
@@ -396,11 +458,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -408,7 +470,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -429,11 +491,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -441,7 +503,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -462,11 +524,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -474,7 +536,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -495,11 +557,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -507,7 +569,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -518,7 +580,7 @@
         <expressionCell/>
       </actionItemList>
       <actionItemList>
-        <valueSetCell/>
+        <valueSetCell valueSet=""/>
         <expressionCell external="quality.option+=Option.new [displayName = cellValue, value = cellValue]">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="quality.option += Option.new [ Option.value = cellValue , Option.displayName = cellValue ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
             <modifiedTermList>
@@ -532,11 +594,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -544,14 +606,14 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
         </expressionCell>
       </actionItemList>
       <actionItemList>
-        <valueSetCell/>
+        <valueSetCell valueSet=""/>
         <expressionCell external="quality.option+=Option.new [displayName = cellValue, value = cellValue]">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="quality.option += Option.new [ Option.value = cellValue , Option.displayName = cellValue ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
             <modifiedTermList>
@@ -565,11 +627,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -577,14 +639,14 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
         </expressionCell>
       </actionItemList>
       <actionItemList>
-        <valueSetCell/>
+        <valueSetCell valueSet=""/>
         <expressionCell external="quality.option+=Option.new [displayName = cellValue, value = cellValue]">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="quality.option += Option.new [ Option.value = cellValue , Option.displayName = cellValue ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
             <modifiedTermList>
@@ -598,11 +660,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -610,14 +672,14 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
         </expressionCell>
       </actionItemList>
       <actionItemList>
-        <valueSetCell/>
+        <valueSetCell valueSet=""/>
         <expressionCell external="quality.option+=Option.new [displayName = cellValue, value = cellValue]">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="quality.option += Option.new [ Option.value = cellValue , Option.displayName = cellValue ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
             <modifiedTermList>
@@ -631,11 +693,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -643,14 +705,14 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
         </expressionCell>
       </actionItemList>
       <actionItemList>
-        <valueSetCell/>
+        <valueSetCell valueSet=""/>
         <expressionCell external="quality.option+=Option.new [displayName = cellValue, value = cellValue]">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="quality.option += Option.new [ Option.value = cellValue , Option.displayName = cellValue ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
             <modifiedTermList>
@@ -664,11 +726,11 @@
             </modifiedTermList>
             <referencedTermList>
               <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
-              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
               <terms text="quality" datatype="UIControl" termtype="ENTITY" fulltext="quality" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
                 <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers" variable="#//@ruleset/@logicalVariables.0/@extension.0">
@@ -676,7 +738,7 @@
                 </parentTerm>
               </terms>
               <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
-                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.3"/>
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option" variable="#//@ruleset/@logicalVariables.2"/>
               </terms>
             </referencedTermList>
           </parserOutput>
@@ -703,7 +765,7 @@
       <rootNode>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder" expanded="true">
-            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=15" filter="#//@ruleset/@filters.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="UI.currentStageNumber=12" filter="#//@ruleset/@filters.0"/>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="metalLevel.id='metal'" filter="#//@ruleset/@filters.1"/>
             <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="quality.id='desiredQualityLevel'" filter="#//@ruleset/@filters.3"/>
           </children>
@@ -735,19 +797,16 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
         </children>
-        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
-          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.0"/>
-        </children>
-        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
-          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.0"/>
-          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@referencedAttributes.1"/>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
         </children>
       </rootNode>
     </scopeSection>
     <filterSection rowCount="50">
       <filterItemList filter="#//@ruleset/@filters.0">
-        <expressionCell external="UI.currentStageNumber=15">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 15" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+        <expressionCell external="UI.currentStageNumber=12">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.currentStageNumber = 12" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
             <referencedTermList>
               <terms text="currentStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.currentStageNumber">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI" variable="#//@ruleset/@logicalVariables.0"/>
@@ -794,6 +853,36 @@
     <conditionSection rowCount="50" columnWidthFactor="0.5"/>
     <ruleSection columnCount="20">
       <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="'Any'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="metalLevel.option += Option.new [ Option.value = 'Any' , Option.displayName = 'Any' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="option" datatype="Option" termtype="ENTITY" fulltext="metalLevel.option">
+                <parentTerm text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel">
+                  <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                    <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Option" termtype="NEW" fulltext="Option.new">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option"/>
+              </terms>
+              <terms text="Option" datatype="Option" termtype="ENTITY" fulltext="Option"/>
+              <terms text="value" datatype="String" termtype="ATTRIBUTE" fulltext="Option.value">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option"/>
+              </terms>
+              <terms text="metalLevel" datatype="UIControl" termtype="ENTITY" fulltext="metalLevel">
+                <parentTerm text="containers" datatype="Container" termtype="ENTITY" fulltext="UI.containers">
+                  <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
+                </parentTerm>
+              </terms>
+              <terms text="displayName" datatype="String" termtype="ATTRIBUTE" fulltext="Option.displayName">
+                <parentTerm text="Option" datatype="Option" termtype="ENTITY" fulltext="Option"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
         <actionValueSetCellList valueSet="'Bronze'">
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="metalLevel.option += Option.new [ Option.value = 'Bronze' , Option.displayName = 'Bronze' ]" datatype="Option" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
@@ -1066,8 +1155,8 @@
           </parserOutput>
         </actionValueSetCellList>
         <actionValueSetCellList/>
-        <actionValueSetCellList valueSet="16">
-          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 16" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+        <actionValueSetCellList valueSet="13">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="UI.nextStageNumber = 13" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="nextStageNumber" datatype="Integer" termtype="ATTRIBUTE" fulltext="UI.nextStageNumber">
                 <parentTerm text="UI" datatype="UI" termtype="ENTITY" fulltext="UI"/>
