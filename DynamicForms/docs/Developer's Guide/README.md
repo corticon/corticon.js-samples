@@ -1,10 +1,9 @@
-# Client Side Component (CSC)
+# Developer's Overview of Corticon.js Dynamic Forms
 
-<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
-
-- [Client Side Component (CSC)](#client-side-component-csc)
+- [Developer's Overview of Corticon.js Dynamic Forms](#developers-overview-of-corticonjs-dynamic-forms)
+  - [Client Side Component (CSC)](#client-side-component-csc)
     - [Local versus Remote Decision Services](#local-versus-remote-decision-services)
-  - [Responsibilities of the Client Side Component](#responsibilities-of-the-client-side-component)
+  - [Functionalities of the Client Side Component](#functionalities-of-the-client-side-component)
   - [Returned Payload from Decision Service](#returned-payload-from-decision-service)
 - [State Machine](#state-machine)
 - [Storing answers with multiple projects/Multiple Decision Services](#storing-answers-with-multiple-projectsmultiple-decision-services)
@@ -33,51 +32,46 @@
   - [Controls Reading Data from External Data Sources](#controls-reading-data-from-external-data-sources-1)
 
 <!-- TOC end -->
+---
+[Corticon.js](https://www.progress.com/corticon-js) Dynamic Forms are rendered by a reusable, adaptable template we refer to as the Client Side Component (CSC). Using the same CSC, rule authors can create any number of dynamic forms without any front end client changes. This framework of separating the CSC from the rules promotes agility for development teams, as it disentangles the 'instructions' logic for what to present to the user (defined in a Corticon.js decision service) and the code that renders the form based upon these instructions.
 
+This is demonstrated using the 'switch samples' dropdown in the test renderer included in the CSC template folder called [client.html](../../CSC/client.html). 
 
-Corticon.js Dynamic Forms are rendered by a reusable, adaptable template referred to as the Client Side Component (CSC). The same CSC can be reused for multiple forms without any front end client changes. When you switch samples with the dropdown sample selector, you're in a different dynamic form; while using the CSC.
+If you are familiar with model/views design patterns, you can consider the CSC to be the view while the model is created and maintained using a Corticon.js decision service.
 
-This framework of separating the CSC from the rules promotes agility for development teams, as it disentangles the 'instructions' logic for what to present to the user (defined in a Corticon.js decision service) and the code that renders the form based upon these instructions.
-
-If you are familiar with model/views design patterns, you can consider the CSC to be the view while the model is created and maintained using a [Corticon.js](https://www.progress.com/corticon-js) decision service.
+## Client Side Component (CSC)
 
 ### Local versus Remote Decision Services
 
-Decision services can be run in process within the CSC or maintained in and invoked at a remote environment.
+Corticon.js decision services can be referenced by the front end form renderer *in process* (locally within the CSC) or, less commonly used with dynamic forms, the decision service can be exposed as a serverless function. In the latter case, the decision service would be generated as an AWS Lambda function, Azure function, or Google Cloud function, with the front end form invoking the decision service via that cloud endpoint. 
 
-For the remote option, Corticon.js supports deployments to:
+In-process deployments provide essentially instant response time, although there are specific scenarios wherein it may be better to use the serverless function approach:
 
-- Any of the major cloud vendors' serverless environments (AWS Lambda, Azure and GCP functions)
-- Node.js servers
-- Traditional Java server running either in the cloud or on premises (traditional server deployments)
-
-In-process deployments provide essentially instant response time, however, there are considerations for when it might make more sense to run maintain this logic in remote environments, such as:
-
-- For Mobile Apps: a decision service hosted remotely can be updated very easily without having to force the user to reinstall the app.
-- To address security:
-  - Don’t want to expose some of the data used in the decision process.
-  - Want to have the decision service access various data sources inside the firewall.
-  - Don't want to risk exposing the decision service to reverse engineering.
+- **For Mobile Apps**: a decision service hosted remotely can be updated very easily without having to force the user to reinstall the app.
+- **Security Context:**
+  - Don’t want to expose some of the data used in the decision service.
+  - Want to have the decision service access data sources inside the firewall.
+  - Don't want to risk exposing the decision service to reverse engineering. When running locally, the decision service file is stored locally too. That said, when you generate a decision service JavaScript bundle from Corticon Studio, the bundle is minified and compressed which makes it very hard to read. The rules as written in Corticon Studio are not written into the bundle, they are converted entirely into JavaScript.
 
 There are only minor distinctions between how the CSC and decision service interactions take place when running in-process or remotely as illustrated in the 2 diagrams below:
 
 <p style="text-align:center;">
-<img width="500"  src="images/LocalDS.png"
+<img width="500"  src="../images/LocalDS.png"
  title="Running locally">
 <br>
 <br>
-<img width="500"  src="images/RemoteDS.png"
+<img width="500"  src="../images/RemoteDS.png"
  title="Remote decision service">
 </p>
 
-## Responsibilities of the Client Side Component
+## Functionalities of the Client Side Component 
 
-The Client Side Component is responsible for rendering the UI Controls (questions, labels, descriptions, validation messages…), collecting the data entered along the flow (the answers), and navigating through the next steps.
+The Client Side Component is responsible for rendering  UI Controls (prompts to the end user, labels, descriptions, validation messages…), collecting the data entered along the flow (the answers), and navigating through the next steps.
 
 It does so by:
 
-1. Invoking the decision service at both the start of the flow and at each step in the flow.  The decision service returns a JSON payload with all the necessary data to proceed for the entire step.
-2. Maintaining the state of the flow.  That is, the state machine representing the flow is maintained by the CSC and not by the decision service (The decision service is stateless).
+1. Invoking the decision service at the very first stage of the form, and each subsequent stage through the form's completion. The decision service returns a JSON payload with all the necessary data to proceed for the entire stage.
+2. Maintaining the *state* of the flow. Data is entirely maintained by the CSC, being passed into and changed by the rules in the decision service. The decision service itself is stateless. 
 3. Exiting when the end of the flow is reported by the decision service.
 
 All of this is by default implemented in an interoperable fashion, as the same CSC can be reused on different pages and with different use cases.
