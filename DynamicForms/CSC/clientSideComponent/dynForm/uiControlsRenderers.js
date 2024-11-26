@@ -1,14 +1,15 @@
-corticon.util.namespace( "corticon.dynForm" );
+
+corticon.util.namespace("corticon.dynForm");
 
 corticon.dynForm.UIControlsRenderer = function () {
-// TODO:
-// Number field as integer vs decimal -> new field type?
+    // TODO:
+    // Number field as integer vs decimal -> new field type?
 
     let itsFlagRenderWithKui = false;
 
     // Render all Containers in base element (baseEl: A Jquery object - typically from a div element)
     // This is the main public entry point
-    function renderUI ( containers, baseEl, labelPositionAtUILevel, language, useKui ) {
+    function renderUI(containers, baseEl, labelPositionAtUILevel, language, useKui) {
         itsFlagRenderWithKui = useKui;
 
         /* Without JQuery one could create all dynamic elements just using the DOM API.  For example:
@@ -20,74 +21,77 @@ corticon.dynForm.UIControlsRenderer = function () {
         // Start with clean component - that is without any UI Controls from previous steps
         baseEl.empty();
 
-        if ( itsFlagRenderWithKui ) {
-            baseEl.addClass( 'k-content' );
+        if (itsFlagRenderWithKui) {
+            baseEl.addClass('k-content');
         }
         else {
-            baseEl.addClass( 'dynUIContainerColors' );
+            baseEl.addClass('dynUIContainerColors');
         }
 
-        for ( let i=0; i<containers.length; i++ )
-            renderUIForOneContainer( containers[i], baseEl, labelPositionAtUILevel, language );
+        for (let i = 0; i < containers.length; i++)
+            renderUIForOneContainer(containers[i], baseEl, labelPositionAtUILevel, language);
 
         const allFormEls = $(baseEl).find(':input');
-        if ( allFormEls !== null && allFormEls.length > 0 )
+        if (allFormEls !== null && allFormEls.length > 0)
             allFormEls[0].focus();
     }
 
     // Render all Controls in container element
-    function renderUIForOneContainer( container, baseEl, labelPositionAtUILevel, language ) {
+    function renderUIForOneContainer(container, baseEl, labelPositionAtUILevel, language) {
         let html = '<div';
-        if ( itsFlagRenderWithKui )
+        if (itsFlagRenderWithKui)
             html += ' class="k-content"';
 
         html += ' id="' + container.id + '"  title="' + container.title + '"><h3>' + container.title + '</h3></div>';
         baseEl.append(html);
 
         const uiControls = container.uiControls;
-        if ( uiControls === undefined || uiControls === null ) {
+        if (uiControls === undefined || uiControls === null) {
             alert('There are no UI Controls to render in this step');
             return;
         }
 
-        for ( var i=0; i<uiControls.length; i++ ) {
+        for (var i = 0; i < uiControls.length; i++) {
             const oneUIControl = uiControls[i];
-            if ( oneUIControl.type === 'Text' )
+            if (oneUIControl.type === 'Text')
                 renderTextInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'TextArea' )
+            else if (oneUIControl.type === 'TextArea')
                 renderTextAreaInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'DateTime' )
+            else if (oneUIControl.type === 'DateTime')
                 renderDateTimeInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'YesNo' || oneUIControl.type === 'YesNoBoolean' )
+            else if (oneUIControl.type === 'YesNo' || oneUIControl.type === 'YesNoBoolean')
                 renderYesNoInput(oneUIControl, baseEl, labelPositionAtUILevel, language, oneUIControl.type);
-            else if ( oneUIControl.type === 'ReadOnlyText' )
+            else if (oneUIControl.type === 'ReadOnlyText')
                 renderReadOnlyText(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'Number' )
+            else if (oneUIControl.type === 'Number')
                 renderNumberInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'SingleChoice' )
+            else if (oneUIControl.type === 'SingleChoice')
                 renderSingleChoiceInput(oneUIControl, baseEl);
-            else if ( oneUIControl.type === 'MultipleChoices' || oneUIControl.type === 'MultipleChoicesMultiSelect' )
+            else if (oneUIControl.type === 'MultipleChoices' || oneUIControl.type === 'MultipleChoicesMultiSelect')
                 renderMultipleChoicesInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'MultiExpenses' )
+            else if (oneUIControl.type === 'MultiExpenses')
                 renderExpenseInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'FileUpload' )
+            else if (oneUIControl.type === 'FileUpload')
                 renderFileUploadInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'FileUploadExpenses' )
+            else if (oneUIControl.type === 'FileUploadExpenses')
                 renderFileUploadExpenseInput(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'QRCode' )
+            else if (oneUIControl.type === 'QRCode')
                 renderQRCode(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'GeoCoordinates' )
+            else if (oneUIControl.type === 'GeoCoordinates')
                 renderGeoCoordinates(oneUIControl, baseEl, labelPositionAtUILevel);
-            else if ( oneUIControl.type === 'Rating' )
+            else if (oneUIControl.type === 'Rating')
                 renderRating(oneUIControl, baseEl, labelPositionAtUILevel);
+            else if (oneUIControl.type === 'MultiText') {
+                renderMultiTextInput(oneUIControl, baseEl, labelPositionAtUILevel);
+            }
             else
-                alert('This ui control is not yet supported: '+oneUIControl.type);
+                alert('This ui control is not yet supported: ' + oneUIControl.type);
         }
 
         renderContainerValidationMessage(container.validationMsg, baseEl);
     }
 
-// Begin expense
+    // Begin expense
     let nextExpenseId = 0;
     function renderExpenseInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
         const html = '<div class="expenseInputContainer"></div>';
@@ -98,16 +102,16 @@ corticon.dynForm.UIControlsRenderer = function () {
 
         createOneExpenseInput(oneUIControl, expenseContainerEl);
 
-        createAddExpenseControl( baseEl, oneUIControl, expenseContainerEl );
+        createAddExpenseControl(baseEl, oneUIControl, expenseContainerEl);
 
         addValidationMsgFromDecisionService(oneUIControl, expenseContainerEl);
     }
 
-    function createAddExpenseControl( baseEl, oneUIControl, expenseContainerEl ) {
+    function createAddExpenseControl(baseEl, oneUIControl, expenseContainerEl) {
         const html = '<div title="Add another expense" class="addExpenseContainer">&nbsp;+&nbsp;</div>';
         const addContainerEl = $(html);
         baseEl.append(addContainerEl);
-        addContainerEl.click(function() {
+        addContainerEl.click(function () {
             createOneExpenseInput(oneUIControl, expenseContainerEl);
         });
     }
@@ -115,77 +119,129 @@ corticon.dynForm.UIControlsRenderer = function () {
     function createOneExpenseInput(oneUIControl, expenseContainerEl) {
         nextExpenseId++;
         const inputContainerEl = createInputContainer(expenseContainerEl, true, true);
-        inputContainerEl.data("uicontroltype", oneUIControl.type );  // save it so that we can conditionally add the proper fields when creating the expense object literal in the stepsController.js
-
+        inputContainerEl.data("uicontroltype", oneUIControl.type);  // save it so that we can conditionally add the proper fields when creating the expense object literal in the stepsController.js
+        // Set the uicontroltype on the individual input elements
         let htmlExpenseType = `<select "id": ${oneUIControl.id}_expType_${nextExpenseId}>`;
         const theOptions = oneUIControl.option;
-        if ( theOptions === undefined || theOptions === null ) {
-            alert("Missing options for "+oneUIControl.id);
+        if (theOptions === undefined || theOptions === null) {
+            alert("Missing options for " + oneUIControl.id);
         }
         else {
-            if ( theOptions.length > 0 ) {
-                for ( let i=0; i<theOptions.length; i++)
+            if (theOptions.length > 0) {
+                for (let i = 0; i < theOptions.length; i++)
                     htmlExpenseType += `<option value="${theOptions[i].value}">${theOptions[i].displayName}</option>`;
             }
             else
-                alert('missing list of options for expense control '+oneUIControl.id);
+                alert('missing list of options for expense control ' + oneUIControl.id);
         }
 
-        htmlExpenseType += '</select>';
 
         const expenseEl = $(htmlExpenseType);
+        expenseEl.data("uicontroltype", oneUIControl.type);
+
         inputContainerEl.append(expenseEl);
 
-        const theAttributes = { "type": "text", "id": `${oneUIControl.id}_expAmount_${nextExpenseId}`};
+        const theAttributes = { "type": "number", "id": `${oneUIControl.id}_expAmount_${nextExpenseId}` };
         const textInputEl = $('<input class="expenseAmount"/>').attr(theAttributes);
+        textInputEl.data("uicontroltype", oneUIControl.type);
+
         textInputEl.appendTo(inputContainerEl);
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null ) {
-            textInputEl.data("fieldName", oneUIControl.fieldName );
-            textInputEl.data("type", "array" );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null) {
+            textInputEl.data("fieldName", oneUIControl.fieldName);
+            textInputEl.data("type", "array");
         }
         else
-            alert('Missing field name for '+oneUIControl.id);
-
-        addCurrencyDropDown(oneUIControl,inputContainerEl);
-    }
-
-    function addCurrencyDropDown(oneUIControl,inputContainerEl) {
+            alert('Missing field name for ' + oneUIControl.id);
+        // Define the currency variable here
         let currency = `<select class="currencySelector" "id": ${oneUIControl.id}_Currency_${nextExpenseId}>`;
         currency += `<option value="USD">$ US Dollars</option>`;
         currency += `<option value="EUR">&euro; Euro</option>`;
         currency += '</select>';
-
         const currencyEl = $(currency);
-        currencyEl.data("fieldName", oneUIControl.fieldName );
+
+        function addCurrencyDropDown(oneUIControl, inputContainerEl) {
+            let currency = `<select class="currencySelector" "id": ${oneUIControl.id}_Currency_${nextExpenseId}>`;
+            currency += `<option value="USD">$ US Dollars</option>`;
+            currency += `<option value="EUR">&euro; Euro</option>`;
+            currency += '</select>';
+
+            const currencyEl = $(currency);
+            currencyEl.data("fieldName", oneUIControl.fieldName);
+            inputContainerEl.append(currencyEl);
+        }
+        currencyEl.data("uicontroltype", oneUIControl.type);
+        currencyEl.data("fieldName", oneUIControl.fieldName);
         inputContainerEl.append(currencyEl);
     }
-// End expense
 
+
+    // End expense
+
+    // Begin MultiText
+    let nextTextId = 0;
+    function renderMultiTextInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
+        const html = '<div class="multiTextInputContainer"></div>';
+        const multiTextContainerEl = $(html);
+        baseEl.append(multiTextContainerEl);
+        multiTextContainerEl.data("uicontroltype", oneUIControl.type);
+        appendLabel(oneUIControl, labelPositionAtContainerLevel, multiTextContainerEl);
+
+        createOneMultiTextInput(oneUIControl, multiTextContainerEl);
+
+        createAddMultiTextControl(baseEl, oneUIControl, multiTextContainerEl);
+
+        addValidationMsgFromDecisionService(oneUIControl, multiTextContainerEl);
+    }
+
+    function createAddMultiTextControl(baseEl, oneUIControl, multiTextContainerEl) {
+        const addContainerEl = createPlusButton(baseEl); // Reuse or create a similar function
+        addContainerEl.click(function () {
+            createOneMultiTextInput(oneUIControl, multiTextContainerEl);
+        });
+    }
+
+    function createOneMultiTextInput(oneUIControl, multiTextContainerEl) {
+        nextTextId++;
+        const inputContainerEl = createInputContainer(multiTextContainerEl, true, true);
+        inputContainerEl.data("uicontroltype", oneUIControl.type);
+
+        const theAttributes = { "type": "text", "id": `${oneUIControl.id}_text_${nextTextId}` };
+        const textInputEl = $('<input/>').attr(theAttributes);
+        textInputEl.appendTo(inputContainerEl);
+
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null) {
+            textInputEl.data("fieldName", oneUIControl.fieldName); // Set the fieldName directly
+            textInputEl.data("type", "array");
+        } else {
+            alert('Missing field name for ' + oneUIControl.id);
+        }
+    }
+    // end milti text
     function renderSingleChoiceInput(oneUIControl, baseEl) {
         const inputContainerEl = createInputContainer(baseEl);
 
-        if ( oneUIControl.label !== undefined && oneUIControl.label !== null ) {
-            const theAttributes = { "type": "checkbox", "id": oneUIControl.id, "name": oneUIControl.id};
+        if (oneUIControl.label !== undefined && oneUIControl.label !== null) {
+            const theAttributes = { "type": "checkbox", "id": oneUIControl.id, "name": oneUIControl.id };
             const checkboxInputEl = $('<input/>').attr(theAttributes);
             checkboxInputEl.appendTo(inputContainerEl);
             const checkboxLabelEl = $(`<label for="${oneUIControl.id}">&nbsp;${oneUIControl.label}</label>`)
             checkboxLabelEl.appendTo(inputContainerEl);
-            if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-                checkboxInputEl.data("fieldName", oneUIControl.fieldName );
+            if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+                checkboxInputEl.data("fieldName", oneUIControl.fieldName);
             else
-                alert('Missing field name for '+oneUIControl.id);
+                alert('Missing field name for ' + oneUIControl.id);
 
-            if ( itsFlagRenderWithKui )
+            if (itsFlagRenderWithKui)
                 checkboxInputEl.kendoCheckBox();
         }
         else
-            alert('Missing label for checkbox '+oneUIControl.id);
+            alert('Missing label for checkbox ' + oneUIControl.id);
     }
 
     function renderFileUploadInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
         const inputContainerEl = createInputContainer(baseEl);
 
-        if ( oneUIControl.id === undefined || oneUIControl.id === null ) {
+        if (oneUIControl.id === undefined || oneUIControl.id === null) {
             alert('missing id for fileupload ');
             return;
         }
@@ -195,22 +251,22 @@ corticon.dynForm.UIControlsRenderer = function () {
           <input type="file" id="myFile" name="filename">
           <input type="submit">
         </form>
-
+	
         <label for="fileUpId">Choose a file:</label>
         <input type="file" id="fileUpId" name="xyz">
          */
-        if ( oneUIControl.label === undefined || oneUIControl.label === null || oneUIControl.label.length === 0 ) {
-            alert('missing label for fileupload '+oneUIControl.id);
+        if (oneUIControl.label === undefined || oneUIControl.label === null || oneUIControl.label.length === 0) {
+            alert('missing label for fileupload ' + oneUIControl.id);
             return;
         }
         const fileUpHtml = `<label htmlFor="${oneUIControl.id}">${oneUIControl.label}:</label>
 								<input type="file" id="${oneUIControl.id}">`;
         const fileUpEl = $(fileUpHtml);
         inputContainerEl.append(fileUpEl);
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-            fileUpEl.data("fieldName", oneUIControl.fieldName );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+            fileUpEl.data("fieldName", oneUIControl.fieldName);
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
 
         if (itsFlagRenderWithKui)
             fileUpEl.kendoUpload();
@@ -219,7 +275,7 @@ corticon.dynForm.UIControlsRenderer = function () {
     function renderFileUploadExpenseInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
         const inputContainerEl = createInputContainer(baseEl);
 
-        if ( oneUIControl.id === undefined || oneUIControl.id === null ) {
+        if (oneUIControl.id === undefined || oneUIControl.id === null) {
             alert('missing id for fileupload ');
             return;
         }
@@ -228,27 +284,27 @@ corticon.dynForm.UIControlsRenderer = function () {
         <label for="fileUpId">Choose a file:</label>
         <input type="file" id="fileUpId" name="xyz">
          */
-        if ( oneUIControl.label === undefined || oneUIControl.label === null || oneUIControl.label.length === 0 ) {
-            alert('missing label for fileupload '+oneUIControl.id);
+        if (oneUIControl.label === undefined || oneUIControl.label === null || oneUIControl.label.length === 0) {
+            alert('missing label for fileupload ' + oneUIControl.id);
             return;
         }
         const fileUpHtml = `<label htmlFor="${oneUIControl.id}">${oneUIControl.label}:</label>
 								<input class="markerFileUploadExpense" type="file" id="${oneUIControl.id}">`;
         const fileUpEl = $(fileUpHtml);
         inputContainerEl.append(fileUpEl);
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-            fileUpEl.data("fieldName", oneUIControl.fieldName );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+            fileUpEl.data("fieldName", oneUIControl.fieldName);
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
     }
 
     function renderQRCode(oneUIControl, baseEl, labelPositionAtUILevel) {
-        if ( ! itsFlagRenderWithKui ) {
-            alert ("QRCode UI controls can only be rendered in KendoUI mode");
+        if (!itsFlagRenderWithKui) {
+            alert("QRCode UI controls can only be rendered in KendoUI mode");
             return;
         }
 
-        if ( oneUIControl.value === undefined || oneUIControl.value === null ) {
+        if (oneUIControl.value === undefined || oneUIControl.value === null) {
             console.log('Error rendering QRCode no value specified - id: ' + oneUIControl.id);
             return;
         }
@@ -261,44 +317,34 @@ corticon.dynForm.UIControlsRenderer = function () {
         const qrCodeEl = $(`<div class="QRCode" id="${oneUIControl.id}"></div>`);
         qrCodeEl.appendTo(contEl);
 
-        if ( itsFlagRenderWithKui )
+        if (itsFlagRenderWithKui)
             qrCodeEl.kendoQRCode({ value: oneUIControl.value });
         else
             qrCodeEl.html = oneUIControl.value;
-    }
-
-    function renderGeoCoordinates(oneUIControl, baseEl, labelPositionAtUILevel) {
-        // temporary: will be implemented soon
-        alert('Error rendering GeoCoord not yet supported');
-    }
-
-    function renderRating(oneUIControl, baseEl, labelPositionAtUILevel) {
-        // temporary: will be implemented soon
-        alert('Error rendering Rating not yet supported');
     }
 
     function renderTextInput(oneUIControl, baseEl, labelPositionAtContainerLevel) {
         renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel);
     }
 
-    function createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak=false) {
+    function createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak = false) {
         const theAttributes = { "type": "text", "id": oneUIControl.id + getNextUniqueId() };
-        if ( oneUIControl.tooltip !== undefined && oneUIControl.tooltip !== null )
+        if (oneUIControl.tooltip !== undefined && oneUIControl.tooltip !== null)
             theAttributes["title"] = oneUIControl.tooltip;
 
         const textInputEl = $('<input/>').attr(theAttributes);
         textInputEl.appendTo(inputContainerEl);
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-            textInputEl.data("fieldName", oneUIControl.fieldName );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+            textInputEl.data("fieldName", oneUIControl.fieldName);
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
 
         // there may be a value (default value)
-        if ( oneUIControl.value !== undefined && oneUIControl.value !== null ) {
+        if (oneUIControl.value !== undefined && oneUIControl.value !== null) {
             textInputEl.val(oneUIControl.value);
         }
 
-        if ( addBreak ) {
+        if (addBreak) {
             const breakEl = $('<div>');
             breakEl.append(textInputEl);
             inputContainerEl.append(breakEl);
@@ -307,7 +353,7 @@ corticon.dynForm.UIControlsRenderer = function () {
             inputContainerEl.append(textInputEl);
         }
 
-        if ( itsFlagRenderWithKui )
+        if (itsFlagRenderWithKui)
             textInputEl.kendoTextBox();
     }
 
@@ -317,37 +363,37 @@ corticon.dynForm.UIControlsRenderer = function () {
         appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
 
         let html3 = `<textarea class="textAreaControl" id="${oneUIControl.id}"`;
-        if ( oneUIControl.rows !== undefined && oneUIControl.rows !== null )
+        if (oneUIControl.rows !== undefined && oneUIControl.rows !== null)
             html3 += ` rows="${oneUIControl.rows}"`;
 
-        if ( oneUIControl.cols !== undefined && oneUIControl.cols !== null )
+        if (oneUIControl.cols !== undefined && oneUIControl.cols !== null)
             html3 += ` cols="${oneUIControl.cols}"`;
 
-        if ( oneUIControl.min !== undefined && oneUIControl.min !== null )
+        if (oneUIControl.min !== undefined && oneUIControl.min !== null)
             html3 += ` minlength="${oneUIControl.min}"`;
 
-        if ( oneUIControl.max !== undefined && oneUIControl.max !== null )
+        if (oneUIControl.max !== undefined && oneUIControl.max !== null)
             html3 += ` maxlength="${oneUIControl.max}"`;
 
         html3 += `></textarea>`;
 
         const textInputEl = $(html3);
         textInputEl.appendTo(inputContainerEl);
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-            textInputEl.data("fieldName", oneUIControl.fieldName );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+            textInputEl.data("fieldName", oneUIControl.fieldName);
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
 
-        if ( itsFlagRenderWithKui )
+        if (itsFlagRenderWithKui)
             textInputEl.kendoTextArea();
 
         addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
     }
 
-    function createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak=false) {
+    function createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak = false) {
         let controlType;
         let tag;
-        if ( oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime ) {
+        if (oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime) {
             controlType = 'datetime-local';
             tag = "datetimetag";
         }
@@ -356,14 +402,14 @@ corticon.dynForm.UIControlsRenderer = function () {
             tag = "datetag";
         }
 
-        const theAttributes = { "type": controlType, "id": oneUIControl.id + getNextUniqueId()};
-        if ( oneUIControl.minDT !== undefined && oneUIControl.minDT !== null )
+        const theAttributes = { "type": controlType, "id": oneUIControl.id + getNextUniqueId() };
+        if (oneUIControl.minDT !== undefined && oneUIControl.minDT !== null)
             theAttributes['min'] = oneUIControl.minDT;
 
-        if ( oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null )
+        if (oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null)
             theAttributes['max'] = oneUIControl.maxDT;
 
-        if ( oneUIControl.value !== undefined && oneUIControl.value !== null ) {
+        if (oneUIControl.value !== undefined && oneUIControl.value !== null) {
             // debugger;
             // Create a new Date object in the browser timezone
             const localDate = new Date(Number(oneUIControl.value)); // assume the value is specified as getMilliseconds
@@ -379,13 +425,13 @@ corticon.dynForm.UIControlsRenderer = function () {
             theAttributes['value'] = localDate.getFullYear() + '-' + month + '-' + day;
 
             // if needed add the time part
-            if ( tag === "datetimetag" ) {
+            if (tag === "datetimetag") {
                 let hours = localDate.getHours();
-                if ( hours < 10 )
+                if (hours < 10)
                     hours = "0" + hours;
 
                 let mn = localDate.getMinutes();
-                if ( mn < 10 )
+                if (mn < 10)
                     mn = "0" + mn;
 
                 theAttributes['value'] += " " + hours + ":" + mn;
@@ -393,16 +439,16 @@ corticon.dynForm.UIControlsRenderer = function () {
         }
 
         const textInputEl = $('<input/>').attr(theAttributes);
-        textInputEl.data("type", tag ); //tag it so that we can do proper convertion to UTC
+        textInputEl.data("type", tag); //tag it so that we can do proper convertion to UTC
 
         textInputEl.appendTo(inputContainerEl);
 
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-            textInputEl.data("fieldName", oneUIControl.fieldName );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+            textInputEl.data("fieldName", oneUIControl.fieldName);
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
 
-        if ( addBreak ) {
+        if (addBreak) {
             const breakEl = $('<div>');
             breakEl.append(textInputEl);
             inputContainerEl.append(breakEl);
@@ -411,47 +457,47 @@ corticon.dynForm.UIControlsRenderer = function () {
             inputContainerEl.append(textInputEl);
         }
 
-        if ( itsFlagRenderWithKui ) {
-            if ( oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime )
-                textInputEl.kendoDateTimePicker({...theAttributes, format: 'u'}); // u: Renders universal sortable UTC date/time pattern ("yyyy-MM-dd HH:mm:ssZ"
+        if (itsFlagRenderWithKui) {
+            if (oneUIControl.showTime !== undefined && oneUIControl.showTime !== null && oneUIControl.showTime)
+                textInputEl.kendoDateTimePicker({ ...theAttributes, format: 'u' }); // u: Renders universal sortable UTC date/time pattern ("yyyy-MM-dd HH:mm:ssZ"
             else
-                textInputEl.kendoDatePicker({...theAttributes, format: 'yyyy-MM-dd'});
+                textInputEl.kendoDatePicker({ ...theAttributes, format: 'yyyy-MM-dd' });
         }
 
-        if ( oneUIControl.minDT !== undefined && oneUIControl.minDT !== null && oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null ) {
-            const html3 = '<span  class="fieldValidationLabel">Enter a date between ' + oneUIControl.minDT.substr(0,10) + ' and ' + oneUIControl.maxDT.substr(0,10) +'</span>';
+        if (oneUIControl.minDT !== undefined && oneUIControl.minDT !== null && oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null) {
+            const html3 = '<span  class="fieldValidationLabel">Enter a date between ' + oneUIControl.minDT.substr(0, 10) + ' and ' + oneUIControl.maxDT.substr(0, 10) + '</span>';
             const validationEl = $(html3);
             inputContainerEl.append(validationEl);
         }
-        else if ( oneUIControl.minDT !== undefined && oneUIControl.minDT !== null ) {
-            const html3 = '<span  class="fieldValidationLabel">Enter a date greater than ' + oneUIControl.minDT.substr(0,10) +'</span>';
+        else if (oneUIControl.minDT !== undefined && oneUIControl.minDT !== null) {
+            const html3 = '<span  class="fieldValidationLabel">Enter a date greater than ' + oneUIControl.minDT.substr(0, 10) + '</span>';
             const validationEl = $(html3);
             inputContainerEl.append(validationEl);
         }
-        else if ( oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null ) {
-            const html3 = '<span  class="fieldValidationLabel">Enter a date less than ' + oneUIControl.maxDT.substr(0,10) +'</span>';
+        else if (oneUIControl.maxDT !== undefined && oneUIControl.maxDT !== null) {
+            const html3 = '<span  class="fieldValidationLabel">Enter a date less than ' + oneUIControl.maxDT.substr(0, 10) + '</span>';
             const validationEl = $(html3);
             inputContainerEl.append(validationEl);
         }
     }
 
-    function createAddTextInput( baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel ) {
+    function createAddTextInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel) {
         const addContainerEl = createPlusButton(baseEl);
-        addContainerEl.click(function() {
+        addContainerEl.click(function () {
             createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, true);
         });
     }
 
-    function createAddNumberInput( baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel ) {
+    function createAddNumberInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel) {
         const addContainerEl = createPlusButton(baseEl);
-        addContainerEl.click(function() {
+        addContainerEl.click(function () {
             createOneNumberInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, true);
         });
     }
 
-    function createAddDateTimeInput( baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel ) {
+    function createAddDateTimeInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel) {
         const addContainerEl = createPlusButton(baseEl);
-        addContainerEl.click(function() {
+        addContainerEl.click(function () {
             createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, true);
         });
     }
@@ -467,25 +513,25 @@ corticon.dynForm.UIControlsRenderer = function () {
         renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel);
     }
 
-    function renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel ) {
+    function renderInputThatSupportsArrayType(oneUIControl, baseEl, labelPositionAtContainerLevel) {
         const arrayTypeControl = isArrayType(oneUIControl);
         const inputContainerEl = createInputContainer(baseEl, arrayTypeControl, false);
-        inputContainerEl.data("uicontroltype", oneUIControl.type );  // save it for finding control type in ui controller - we use it to map the name of the field to use in the object literals we save in the array
+        inputContainerEl.data("uicontroltype", oneUIControl.type);  // save it for finding control type in ui controller - we use it to map the name of the field to use in the object literals we save in the array
         appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
 
-        if ( oneUIControl.type === 'Text' ) {
+        if (oneUIControl.type === 'Text') {
             createOneTextInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
-            if ( arrayTypeControl )
+            if (arrayTypeControl)
                 createAddTextInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel)
         }
-        else if ( oneUIControl.type === 'Number' ) {
-            createOneNumberInput(oneUIControl,labelPositionAtContainerLevel,inputContainerEl);
-            if ( arrayTypeControl )
+        else if (oneUIControl.type === 'Number') {
+            createOneNumberInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
+            if (arrayTypeControl)
                 createAddNumberInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel)
         }
-        else if ( oneUIControl.type === 'DateTime' ) {
+        else if (oneUIControl.type === 'DateTime') {
             createOneDateTimeInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
-            if ( arrayTypeControl )
+            if (arrayTypeControl)
                 createAddDateTimeInput(baseEl, oneUIControl, inputContainerEl, labelPositionAtContainerLevel)
         }
         else {
@@ -496,40 +542,40 @@ corticon.dynForm.UIControlsRenderer = function () {
         addValidationMsgFromDecisionService(oneUIControl, inputContainerEl);
     }
 
-    function createOneNumberInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak=false) {
-        const html3 = '<span style="display: none;" class="fieldValidationLabel">Enter a number between ' + oneUIControl.min + ' and ' + oneUIControl.max +'</span>';
+    function createOneNumberInput(oneUIControl, labelPositionAtContainerLevel, inputContainerEl, addBreak = false) {
+        const html3 = '<span style="display: none;" class="fieldValidationLabel">Enter a number between ' + oneUIControl.min + ' and ' + oneUIControl.max + '</span>';
         const validationEl = $(html3);
 
         const theAttributes = { "type": "text", "id": oneUIControl.id + getNextUniqueId() };
         const textInputEl = $('<input/>').attr(theAttributes);
         textInputEl.appendTo(inputContainerEl);
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null ) {
-            textInputEl.data("fieldName", oneUIControl.fieldName );
-            textInputEl.data("type", "decimal" ); //todo: should add an attrib for doing integer too
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null) {
+            textInputEl.data("fieldName", oneUIControl.fieldName);
+            textInputEl.data("type", "decimal"); //todo: should add an attrib for doing integer too
         }
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
 
         // there may be a value (default value or when validation fails we re-render with entered data)
-        if ( oneUIControl.value !== undefined && oneUIControl.value !== null ) {
+        if (oneUIControl.value !== undefined && oneUIControl.value !== null) {
             textInputEl.val(oneUIControl.value);
         }
 
-        textInputEl.on("input", function() {
+        textInputEl.on("input", function () {
             const input = $(this).val();
             const converted = Number(input);
-            if ( isNaN(converted) )
+            if (isNaN(converted))
                 alert("Please enter a number");
             else {
-                if ( converted < oneUIControl.min || converted > oneUIControl.max )
+                if (converted < oneUIControl.min || converted > oneUIControl.max)
                     validationEl.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
             }
         });
 
-        if( oneUIControl.min !== undefined )
+        if (oneUIControl.min !== undefined)
             validationEl.show();
 
-        if ( addBreak ) {
+        if (addBreak) {
             const breakEl = $('<div>');
             breakEl.append(textInputEl);
             inputContainerEl.append(breakEl);
@@ -538,7 +584,7 @@ corticon.dynForm.UIControlsRenderer = function () {
             inputContainerEl.append(textInputEl);
         }
 
-        if ( itsFlagRenderWithKui ) {
+        if (itsFlagRenderWithKui) {
             textInputEl.kendoNumericTextBox({
                 min: oneUIControl.min,
                 max: oneUIControl.max,
@@ -557,20 +603,20 @@ corticon.dynForm.UIControlsRenderer = function () {
 
         appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
 
-        if ( oneUIControl.value !== undefined && oneUIControl.value !== null && oneUIControl.value.length !== 0 ) {
+        if (oneUIControl.value !== undefined && oneUIControl.value !== null && oneUIControl.value.length !== 0) {
             const html3 = '<div class="readOnlyText">' + oneUIControl.value + '</div>';
             inputContainerEl.append($(html3));
         }
         else
-            alert("missing value attribute for renderReadOnlyText id: "+oneUIControl.id);
+            alert("missing value attribute for renderReadOnlyText id: " + oneUIControl.id);
     }
 
     function renderYesNoInput(oneUIControl, baseEl, labelPositionAtContainerLevel, language, type) {
         const inputContainerEl = createInputContainer(baseEl);
 
         let yes = 'Yes'; let no = 'No';
-        if ( language !== undefined && language !== null ) {
-            if ( language.toLowerCase() === 'italian' ) {
+        if (language !== undefined && language !== null) {
+            if (language.toLowerCase() === 'italian') {
                 yes = 'Si';
             }
         }
@@ -578,11 +624,11 @@ corticon.dynForm.UIControlsRenderer = function () {
         appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
 
         let yesValue; let noValue;
-        if ( type === 'YesNo' ) {
+        if (type === 'YesNo') {
             yesValue = 'yes';
             noValue = 'no';
         }
-        else if ( type === 'YesNoBoolean' ) {
+        else if (type === 'YesNoBoolean') {
             yesValue = 'T';
             noValue = 'F';
         }
@@ -593,14 +639,14 @@ corticon.dynForm.UIControlsRenderer = function () {
                 </select>`;
         const yesNoEl = $(html3);
 
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-            yesNoEl.data("fieldName", oneUIControl.fieldName );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+            yesNoEl.data("fieldName", oneUIControl.fieldName);
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
 
         inputContainerEl.append(yesNoEl);
 
-        if ( itsFlagRenderWithKui )
+        if (itsFlagRenderWithKui)
             yesNoEl.kendoDropDownList();
     }
 
@@ -610,31 +656,31 @@ corticon.dynForm.UIControlsRenderer = function () {
         appendLabel(oneUIControl, labelPositionAtContainerLevel, inputContainerEl);
 
         let html3 = `<select "id": ${oneUIControl.id}`;
-        if ( oneUIControl.type === 'MultipleChoicesMultiSelect' )
+        if (oneUIControl.type === 'MultipleChoicesMultiSelect')
             html3 += ' multiple';
 
         html3 += '></select>';
         const multipleChoicesEl = $(html3);
         inputContainerEl.append(multipleChoicesEl);
 
-        if ( oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null )
-            multipleChoicesEl.data("fieldName", oneUIControl.fieldName );
+        if (oneUIControl.fieldName !== undefined && oneUIControl.fieldName !== null)
+            multipleChoicesEl.data("fieldName", oneUIControl.fieldName);
         else
-            alert('Missing field name for '+oneUIControl.id);
+            alert('Missing field name for ' + oneUIControl.id);
 
         const theOptions = oneUIControl.option;
         const dataSource = oneUIControl.dataSource;
         const weDontHaveOptions = theOptions === undefined || theOptions === null;
         const weDontHaveDataSource = dataSource === undefined || dataSource === null;
-        if ( weDontHaveOptions && weDontHaveDataSource ) {
-            alert("Missing datasource or options for "+oneUIControl.id + " - you need to specify at least one of the 2");
+        if (weDontHaveOptions && weDontHaveDataSource) {
+            alert("Missing datasource or options for " + oneUIControl.id + " - you need to specify at least one of the 2");
         }
         else {
-            if ( itsFlagRenderWithKui ) {
+            if (itsFlagRenderWithKui) {
                 //todo: add support for multiple?
                 addOptions(theOptions, dataSource, multipleChoicesEl,
                     inputContainerEl, oneUIControl, () => { multipleChoicesEl.kendoDropDownList(); });
-                    // inputContainerEl, oneUIControl, () => { multipleChoicesEl.kendoDropDownList({filter: true}); });
+                // inputContainerEl, oneUIControl, () => { multipleChoicesEl.kendoDropDownList({filter: true}); });
             }
             else
                 addOptions(theOptions, dataSource, multipleChoicesEl, inputContainerEl, oneUIControl);
@@ -644,7 +690,7 @@ corticon.dynForm.UIControlsRenderer = function () {
     }
 
     function addOptions(theOptions, dataSource, multipleChoicesEl, inputContainerEl, oneUIControl, completionFct) {
-        if ( theOptions !== undefined && theOptions !== null ) {
+        if (theOptions !== undefined && theOptions !== null) {
             if (theOptions.length > 0) {
                 for (var i = 0; i < theOptions.length; i++) {
                     multipleChoicesEl.append($('<option>', {
@@ -652,25 +698,25 @@ corticon.dynForm.UIControlsRenderer = function () {
                         text: theOptions[i].displayName
                     }));
                 }
-                if ( itsFlagRenderWithKui && completionFct !== undefined )
+                if (itsFlagRenderWithKui && completionFct !== undefined)
                     completionFct();
             } else
                 alert('List of options is empty - are you sure you this is intentional? - for multiple choices control  ' + oneUIControl.id);
         }
 
         // https://api.jquery.com/jquery.get/
-        if ( dataSource !== undefined && dataSource !== null ) {
+        if (dataSource !== undefined && dataSource !== null) {
             inputContainerEl.hide();  // we hide it until we receive the data.  that way, if server is down or user does not have a server when trying the sample nothing is shown.
-            const jqxhr = $.get( dataSource, function(data) {
-                    addOptionsFromDataSource( multipleChoicesEl, data, oneUIControl );
-                    if ( itsFlagRenderWithKui && completionFct !== undefined )
-                        completionFct();
-                    inputContainerEl.show();
-                }, "json")
-                .done(function() {
-                    console.log( "success getting list of options on " + dataSource  );
+            const jqxhr = $.get(dataSource, function (data) {
+                addOptionsFromDataSource(multipleChoicesEl, data, oneUIControl);
+                if (itsFlagRenderWithKui && completionFct !== undefined)
+                    completionFct();
+                inputContainerEl.show();
+            }, "json")
+                .done(function () {
+                    console.log("success getting list of options on " + dataSource);
                 })
-                .fail(function( jqXHR, exception ) {
+                .fail(function (jqXHR, exception) {
                     let msg = '';
                     if (jqXHR.status === 0) {
                         msg = 'Not connected. Verify Network.';
@@ -687,16 +733,16 @@ corticon.dynForm.UIControlsRenderer = function () {
                     } else {
                         msg = 'Unknown Error.\n' + jqXHR.responseText;
                     }
-                    console.log( "Could not get error getting list of options from " + dataSource + " - " + msg );
-                    console.log( `Got Http Status: ${jqXHR.status} and exception: ${exception}` );
+                    console.log("Could not get error getting list of options from " + dataSource + " - " + msg);
+                    console.log(`Got Http Status: ${jqXHR.status} and exception: ${exception}`);
                 })
-                // .always(function() {
-                //     alert( "finished" );
-                // });
+            // .always(function() {
+            //     alert( "finished" );
+            // });
         }
     }
 
-    function addOptionsFromDataSource( multipleChoicesEl, data, oneUIControl ) {
+    function addOptionsFromDataSource(multipleChoicesEl, data, oneUIControl) {
         // set up the default field names
         let dataValueField = "value";
         let dataTextField = "displayName";
@@ -705,22 +751,22 @@ corticon.dynForm.UIControlsRenderer = function () {
         let sortDir = 'a';
 
         // check if we need to override field names as specified in decision service model
-        if ( oneUIControl.dataSourceOptions !== undefined && oneUIControl.dataSourceOptions !== null ) {
+        if (oneUIControl.dataSourceOptions !== undefined && oneUIControl.dataSourceOptions !== null) {
             const dsOptions = oneUIControl.dataSourceOptions[0];
-            if ( dsOptions.dataValueField  !== undefined && dsOptions.dataValueField !== null && dsOptions.dataValueField !== "" )
+            if (dsOptions.dataValueField !== undefined && dsOptions.dataValueField !== null && dsOptions.dataValueField !== "")
                 dataValueField = dsOptions.dataValueField;
 
-            if ( dsOptions.dataTextField  !== undefined && dsOptions.dataTextField !== null && dsOptions.dataTextField !== "" )
+            if (dsOptions.dataTextField !== undefined && dsOptions.dataTextField !== null && dsOptions.dataTextField !== "")
                 dataTextField = dsOptions.dataTextField;
 
             // check where we get the array of results - if not path is specified we assume the data is at the root level.
-            if ( dsOptions.pathToOptionsArray !== undefined && dsOptions.pathToOptionsArray !== null ) {
+            if (dsOptions.pathToOptionsArray !== undefined && dsOptions.pathToOptionsArray !== null) {
                 optionsArray = data[dsOptions.pathToOptionsArray];
             }
 
             // check where we get the array of results - if not path is specified we assume the data is at the root level, otherwise
             // we assume it is a json path specification.
-            if ( dsOptions.pathToOptionsArray !== undefined && dsOptions.pathToOptionsArray !== null ) {
+            if (dsOptions.pathToOptionsArray !== undefined && dsOptions.pathToOptionsArray !== null) {
                 // example queries:
                 // const  x = "$.Results.*"; -> get all
                 // const  x = "$.Results[:10]"; -> first 10
@@ -729,14 +775,14 @@ corticon.dynForm.UIControlsRenderer = function () {
                 // const r = JSONPath.JSONPath(x, data);
                 // optionsArray = r;
                 const result = JSONPath.JSONPath(dsOptions.pathToOptionsArray, data);
-                if ( result.length === 0 )
-                    alert("There are no results with the JSON Path expression "+dsOptions.pathToOptionsArray);
+                if (result.length === 0)
+                    alert("There are no results with the JSON Path expression " + dsOptions.pathToOptionsArray);
 
                 optionsArray = result;
             }
         }
 
-        if ( sortData ) {
+        if (sortData) {
             optionsArray = optionsArray.sort(function (e1, e2) {
                 const a = e1[dataTextField];
                 const b = e2[dataTextField];
@@ -747,7 +793,7 @@ corticon.dynForm.UIControlsRenderer = function () {
                 } else if (b === null || b === undefined) {
                     return -1;
                 } else {
-                    if ( sortDir === 'a' )
+                    if (sortDir === 'a')
                         return a < b ? -1 : 1; // as we are ascending, lowest sorts first
                     else
                         return a < b ? 1 : -1; // as we are descending, highest sorts first
@@ -756,7 +802,7 @@ corticon.dynForm.UIControlsRenderer = function () {
         }
 
         // Process the data from the array of value and display name
-        for ( let i=0 ; i<optionsArray.length; i++ ) {
+        for (let i = 0; i < optionsArray.length; i++) {
             multipleChoicesEl.append($('<option>', {
                 value: optionsArray[i][dataValueField],
                 text: optionsArray[i][dataTextField]
@@ -765,19 +811,19 @@ corticon.dynForm.UIControlsRenderer = function () {
     }
 
     function renderContainerValidationMessage(validationMessage, baseEl) {
-        if ( validationMessage !== undefined && validationMessage !== null ) {
+        if (validationMessage !== undefined && validationMessage !== null) {
             const html = `<div class="containerValidationMessage">${validationMessage}</div>`;
             const msgEl = $(html);
             baseEl.append(msgEl);
         }
     }
 
-    function createInputContainer(baseEl, arrayTypeControl=false, complexArrayType=false ) {
+    function createInputContainer(baseEl, arrayTypeControl = false, complexArrayType = false) {
         let html;
-        if ( arrayTypeControl ) {
+        if (arrayTypeControl) {
             //arrayTypeControl: this is needed as the marker for finding the inputs that have to be stored in an array as opposed to directly in a field.
             let markerClass;
-            if ( complexArrayType )
+            if (complexArrayType)
                 markerClass = 'complexArrayTypeControl';
             else
                 markerClass = 'simpleArrayTypeControl';
@@ -801,7 +847,7 @@ corticon.dynForm.UIControlsRenderer = function () {
 
     function getLabelPositionForControl(oneUIControl, labelPositionAtContainerLevel) {
         let labelPosition;
-        if ( oneUIControl.labelPosition !== undefined && oneUIControl.labelPosition !== null )
+        if (oneUIControl.labelPosition !== undefined && oneUIControl.labelPosition !== null)
             labelPosition = oneUIControl.labelPosition;
         else
             labelPosition = labelPositionAtContainerLevel;
@@ -813,15 +859,26 @@ corticon.dynForm.UIControlsRenderer = function () {
         if (oneUIControl.label !== undefined && oneUIControl.label !== null) {
             let html2;
             const labelPosition = getLabelPositionForControl(oneUIControl, labelPositionAtContainerLevel);
-            if (labelPosition === 'Above')
+            if (labelPosition === 'Above') {
                 html2 = '<div class="inputLabelAbove">' + oneUIControl.label + '</div>';
-            else
+            } else {
                 html2 = '<span class="inputLabelSide">' + oneUIControl.label + '</span>';
 
-            inputContainerEl.append($(html2));
+            }
+
+            // Apply emphasis styling if emphasize is true
+            if (oneUIControl.emphasize === true) {
+                html2 = $(html2).css({
+                    'font-weight': 'bold',
+                    'color': 'red'
+                });
+            } else {
+                html2 = $(html2); // Ensure html2 is a jQuery object
+            }
+
+            inputContainerEl.append(html2);
         }
     }
-
     function isArrayType(oneUIControl) {
         if (oneUIControl.multiple !== undefined && oneUIControl.multiple !== null && oneUIControl.multiple)
             return true;

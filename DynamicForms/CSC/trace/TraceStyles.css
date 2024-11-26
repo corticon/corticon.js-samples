@@ -1,19 +1,24 @@
 .tracePanelTitle {
     text-align: center;
     font-size: 1.4rem;
-    margin: 0.5rem;
+    margin: 0.2rem;
 }
 
 .allTracesContainer {
-    margin-top: 1.5rem;
-    border: cornflowerblue 3px solid;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    border: rgb(5, 5, 5) 3px solid;
     border-radius: 1rem;
     display: none;
 }
 
 .allTracesContainer textarea {
-    background-color: #535151;
+    background-color: MediumSeaGreen;
     color: white;
+    border-color: white;
+    border-width: 3px;
 }
 
 .allTracesContainer tr {
@@ -22,13 +27,11 @@
 
 .stageTraceHistory {
     font-size: 1.1rem;
-    color: lightskyblue;
+    color: rgb(5, 5, 5);
 }
 
 .stageInTrace {
-    color: lightskyblue;
-    border: #2be259 2px solid;
-    border-radius: 1rem;
+    color: rgb(5, 5, 5);
 }
 
 .activeStageInTrace {
@@ -37,13 +40,17 @@
     border-radius: 1.3rem;
 }
 
-a.stageInTrace:hover, a.stageInTrace:visited, a.stageInTrace:link, a.stageInTrace:active
-{
+a.stageInTrace:hover,
+a.stageInTrace:visited,
+a.stageInTrace:link,
+a.stageInTrace:active {
     text-decoration: none;
 }
 
-a.copyToClip:hover, a.copyToClip:visited, a.copyToClip:link, a.copyToClip:active {
+a.copyToClip:hover,
+a.copyToClip:visited,
+a.copyToClip:link,
+a.copyToClip:active {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
-

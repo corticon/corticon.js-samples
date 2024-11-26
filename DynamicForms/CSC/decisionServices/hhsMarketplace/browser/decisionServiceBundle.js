@@ -1,13 +1,10 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-module.exports={"ruleMessages": [{"js_Step8c0": {
-    "severity": "Info",
-    "text": "In Step8c - Step8SumAll: js_1 - Step8EurSum: js_2 - Step8USDSum: js_3 - Step8HotelUSDSum: js_4"
-}}]}
+module.exports={"ruleMessages": []}
 },{}],2:[function(require,module,exports){
 "use strict";var _jsEngine=require("@corticon/js-engine"),_decisionservicerules=require("./decisionservicerules"),metadata=_interopRequireWildcard(require("./vocab.json")),ruleMessages=_interopRequireWildcard(require("./_ruleMessages.json"));function _getRequireWildcardCache(e){if("function"!=typeof WeakMap)return null;var n=new WeakMap,i=new WeakMap;return(_getRequireWildcardCache=function(e){return e?i:n})(e)}function _interopRequireWildcard(e,n){if(!n&&e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var i=_getRequireWildcardCache(n);if(i&&i.has(e))return i.get(e);var t={__proto__:null},r=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var o in e)if("default"!==o&&{}.hasOwnProperty.call(e,o)){var c=r?Object.getOwnPropertyDescriptor(e,o):null;c&&(c.get||c.set)?Object.defineProperty(t,o,c):t[o]=e[o]}return t.default=e,i&&i.set(e,t),t}void 0!==window.corticonEngine&&null!==window.corticonEngine||(window.corticonEngine={}),void 0!==window.corticonEngines&&null!==window.corticonEngines||(window.corticonEngines=[]),void 0!==window.corticonEnginesMetadata&&null!==window.corticonEnginesMetadata||(window.corticonEnginesMetadata=[]);const decisionServiceFct=async function(e,n){const i=new _jsEngine.CorticonEngine(metadata,ruleMessages,new _decisionservicerules.DecisionServiceRules);return await i.executeDecisionService(e,n)},vocabMetadataFct=function(){return metadata};window.corticonEngine.execute=decisionServiceFct,window.corticonEngine.getVocabularyMetadata=vocabMetadataFct,window.corticonEngines.push({execute:decisionServiceFct}),window.corticonEnginesMetadata.push({getVocabularyMetadata:vocabMetadataFct});
 
 },{"./_ruleMessages.json":1,"./decisionservicerules":3,"./vocab.json":4,"@corticon/js-engine":5}],3:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,n){if(_jsEngine.Utilities.checksum())throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 2.1.0.0.13738");const t=new _jsEngine.RuleContainer("FeatureKitchenSink");e.addRule(t);const i=new _jsEngine.RuleContainer("Step11");t.addRule(i),this.addRulesheetContainer_js_Step11_Cc2(i,n);const a=new _jsEngine.RuleContainer("Step11b");t.addRule(a),this.addRulesheetContainer_js_Step11b_Cc3(a,n);const s=new _jsEngine.RuleContainer("Step9");t.addRule(s),this.addRulesheetContainer_js_Step9_Cc4(s,n);const l=new _jsEngine.RuleContainer("Step8b");t.addRule(l),this.addRulesheetContainer_js_Step8b_Cc5(l,n);const o=new _jsEngine.RuleContainer("Step8c");t.addRule(o),this.addRulesheetContainer_js_Step8c_Cc6(o,n);const d=new _jsEngine.RuleContainer("LastStep");t.addRule(d),this.addRulesheetContainer_js_LastStep_Cc7(d,n);const u=new _jsEngine.RuleContainer("Step8");t.addRule(u),this.addRulesheetContainer_js_Step8_Cc8(u,n);const r=new _jsEngine.RuleContainer("Step0");t.addRule(r),this.addRulesheetContainer_js_Step0_Cc9(r,n);const c=new _jsEngine.RuleContainer("Step3");t.addRule(c),this.addRulesheetContainer_js_Step3_Cc10(c,n);const g=new _jsEngine.RuleContainer("Step3b");t.addRule(g),this.addRulesheetContainer_js_Step3b_Cc11(g,n);const p=new _jsEngine.RuleContainer("Step2");t.addRule(p),this.addRulesheetContainer_js_Step2_Cc12(p,n);const _=new _jsEngine.RuleContainer("Step7");t.addRule(_),this.addRulesheetContainer_js_Step7_Cc13(_,n);const j=new _jsEngine.RuleContainer("Step6");t.addRule(j),this.addRulesheetContainer_js_Step6_Cc14(j,n);const E=new _jsEngine.RuleContainer("Step5");t.addRule(E),this.addRulesheetContainer_js_Step5_Cc15(E,n);const R=new _jsEngine.RuleContainer("Step5b");t.addRule(R),this.addRulesheetContainer_js_Step5b_Cc16(R,n);const U=new _jsEngine.RuleContainer("Step5c");t.addRule(U),this.addRulesheetContainer_js_Step5c_Cc17(U,n);const T=new _jsEngine.RuleContainer("Step4");t.addRule(T),this.addRulesheetContainer_js_Step4_Cc18(T,n);const S=new _jsEngine.RuleContainer("Step1");t.addRule(S),this.addRulesheetContainer_js_Step1_Cc19(S,n)}}addRulesheetContainer_js_LastStep_Cc7(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_LastStep_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=new _jsEngine.Filter("js_LastStep_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,12)]],!0),o=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="summaryContainerId",e.title="Summary Data Entered"}))]]),d=new _jsEngine.Rule("F0","T0",[],[[e=>a(e),e=>e.get("UI").done=!0]]),u=new _jsEngine.Rule("C0","T1",[],[[e=>a(e)&&s(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtlLast_1",e.type="ReadOnlyText"}))]]),r=new _jsEngine.Rule("D0","T2",[],[[e=>a(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")))(e),e=>e.get("UI.containers.uiControls").value="The data has been collected in JSON format and is ready for the next business process in the application.<br/><br/>The content is visible in the accrued form data panel below."]]);e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(d),e.addRule(u),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(r)}addRulesheetContainer_js_Step0_Cc9(e,n){const t=new _jsEngine.TupleOperator("js_Step0_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls").value),l=e=>_jsEngine.Utilities.isValid(e.get("UI")),o=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),d=new _jsEngine.Filter("js_Step0_filter_0","T0",[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,0)]],!0),u=new _jsEngine.Rule("A0","T0",[],[[e=>l(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="introContainerId",e.title="Canonical Sample Description"}))]]),r=new _jsEngine.Rule("M0","T0",[],[[e=>l(e),e=>e.get("UI").nextStageNumber=1]]),c=new _jsEngine.Rule("N0","T0",[],[[e=>l(e),e=>e.get("UI").currentStageDescription="This is implemented in Step0.ers"]]),g=new _jsEngine.Rule("C0","T1",[],[[e=>l(e)&&o(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl0_1",e.type="ReadOnlyText"}))]]),p=new _jsEngine.Rule("D0","T2",[],[[e=>l(e)&&o(e)&&a(e),e=>e.get("UI.containers.uiControls").value="This sample shows a multisteps form.<br/>"]]),_=new _jsEngine.Rule("E0","T2",[],[[e=>l(e)&&o(e)&&a(e)&&s(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"At each step we show various UI controls that can be specified in the UI rules.<br/> For example: <br/>")]]),j=new _jsEngine.Rule("F0","T2",[],[[e=>l(e)&&o(e)&&a(e)&&s(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<ul>")]]),E=new _jsEngine.Rule("G0","T2",[],[[e=>l(e)&&o(e)&&a(e)&&s(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<li>Single line Text Input</li>")]]),R=new _jsEngine.Rule("H0","T2",[],[[e=>l(e)&&o(e)&&a(e)&&s(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<li>Numeric Input</li>")]]),U=new _jsEngine.Rule("I0","T2",[],[[e=>l(e)&&o(e)&&a(e)&&s(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<li>Date Time Input</li>")]]),T=new _jsEngine.Rule("J0","T2",[],[[e=>l(e)&&o(e)&&a(e)&&s(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<li>Choice List Input</li>")]]),S=new _jsEngine.Rule("K0","T2",[],[[e=>l(e)&&o(e)&&a(e)&&s(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"</ul>")]]);e.addRule(i),e.addRule(d),e.addRule(t),e.addRule(u),e.addRule(i),e.addRule(d),e.addRule(t),e.addRule(r),e.addRule(c),e.addRule(g),e.addRule(i),e.addRule(d),e.addRule(t),e.addRule(p),e.addRule(_),e.addRule(j),e.addRule(E),e.addRule(R),e.addRule(U),e.addRule(T),e.addRule(S)}addRulesheetContainer_js_Step11_Cc2(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_Step11_precondition_0Func",[function(e){e.bind("T1","ProjectsData.CanonicalSample",e.datamanager.getEntitiesByType("ProjectsData.CanonicalSample")),e.crossproduct("T0","T1","T2")}]),a=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample").Step8SumAll),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample")),o=new _jsEngine.Filter("js_Step11_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,11)]],!0),d=new _jsEngine.Rule("D0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=12]]),u=new _jsEngine.Rule("E0","T0",[],[[e=>s(e),e=>e.get("UI").currentStageDescription="This is implemented in Step11.ers and Step11b.ers"]]),r=new _jsEngine.Rule("1","T2",[[e=>l(e)&&a(e),e=>_jsEngine.decimalOps.equal.func(e.get("ProjectsData.CanonicalSample").Step8SumAll,0)]],[[e=>s(e),(e,n)=>e.get("UI").noUiToRenderContinue=n,e=>!0]]),c=new _jsEngine.Rule("2","T2",[[e=>l(e)&&a(e),e=>_jsEngine.decimalOps.greaterThan.func(e.get("ProjectsData.CanonicalSample").Step8SumAll,0)]],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="expensesFileUploadContainerId",e.title="Document Upload (File upload control) - Reference: Step11.ers and Step11b.ers"}))]]);e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(d),e.addRule(u),e.addRule(r),e.addRule(c)}addRulesheetContainer_js_Step11b_Cc3(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_Step11b_precondition_0Func",[function(e){e.bind("T1","ProjectsData.Expense",e.datamanager.getEntitiesByType("ProjectsData.Expense")),e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.crossproduct("T1","T2","T3"),e.crossproduct("T0","T3","T4")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Expense")),l=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Expense").amount),o=new _jsEngine.Filter("js_Step11b_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,11)]],!0),d=new _jsEngine.Rule("1","T4",[[e=>s(e)&&l(e),e=>_jsEngine.decimalOps.greaterThan.func(e.get("ProjectsData.Expense").amount,100)]],[[e=>s(e)&&a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.decimalOps.toString.func(e.get("ProjectsData.Expense").amount)))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(n){n.fieldName="Step8Field1",n.id=e.get("ProjectsData.Expense").id,n.label=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("Enter justification document for expense ",e.get("ProjectsData.Expense").expenseCode)," amount: $ "),_jsEngine.decimalOps.toString.func(e.get("ProjectsData.Expense").amount)),n.type="FileUploadExpenses"}))]]);e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(d)}addRulesheetContainer_js_Step1_Cc19(e,n){const t=new _jsEngine.TupleOperator("js_Step1_precondition_3Func",[function(e){e.extend("T0","T4",["UI","UI.containers"],"UI","containers"),e.join("T3","T1",["Container"],"T5",["Container","question1","question2"]),e.projection("T5","T1",["Container","question2"]),e.join("T3","T1",["Container"],"T5",["Container","question1","question2"]),e.projection("T5","T1",["Container","question2"]),e.join("T1","T3",["Container"],"T5",["Container","question1","question2"]),e.projection("T5","T3",["Container","question1"])}]),i=new _jsEngine.TupleOperator("js_Step1_precondition_0Func",[function(e){e.bind("T2","Container",e.datamanager.getEntitiesByType("Container")),e.extend("T2","T1",["Container","question2"],"Container","uiControls")}]),a=new _jsEngine.TupleOperator("js_Step1_precondition_2Func",[function(e){e.extend("T2","T3",["Container","question1"],"Container","uiControls")}]),s=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),l=e=>_jsEngine.Utilities.isValid(e.get("Container")),o=e=>_jsEngine.Utilities.isValid(e.get("UI")),d=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),u=e=>_jsEngine.Utilities.isValid(e.get("question2")),r=e=>_jsEngine.Utilities.isValid(e.get("question1")),c=new _jsEngine.Filter("js_Step1_filter_0","T0",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]],!0),g=new _jsEngine.Filter("js_Step1_filter_2","T1",[[e=>l(e)&&u(e)&&(e=>_jsEngine.Utilities.isValid(e.get("question2").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("question2").id,"crtl1_2")]]),p=new _jsEngine.Filter("js_Step1_filter_3","T3",[[e=>l(e)&&r(e)&&(e=>_jsEngine.Utilities.isValid(e.get("question1").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("question1").id,"crtl1_1")]]),_=new _jsEngine.Rule("C0","T0",[],[[e=>o(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="firstContainerId",e.title="Questions with Free Text Fields - Reference: Step1.ers"}))]]),j=new _jsEngine.Rule("M0","T0",[],[[e=>o(e),e=>e.get("UI").nextStageNumber=2]]),E=new _jsEngine.Rule("P0","T0",[],[[e=>o(e),e=>e.get("UI").pathToData="canonicalSample"]]),R=new _jsEngine.Rule("S0","T0",[],[[e=>o(e),e=>e.get("UI").labelPosition="Above"]]),U=new _jsEngine.Rule("D0","T4",[],[[e=>o(e)&&d(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step1Field1",e.id="crtl1_1",e.label="Question 1",e.type="Text",e.value="Initial Value"}))]]),T=new _jsEngine.Rule("E0","T4",[],[[e=>o(e)&&d(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step1Field2",e.id="crtl1_2",e.label="Question 2",e.type="Text"}))]]),S=new _jsEngine.Rule("F0","T4",[],[[e=>o(e)&&d(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step1Field3",e.id="crtl1_3",e.label="Question 3",e.type="YesNo"}))]]),C=new _jsEngine.Rule("G0","T4",[],[[e=>o(e)&&d(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step1Field4",e.id="crtl1_4",e.label="Question 4",e.type="YesNoBoolean"}))]]),I=new _jsEngine.Rule("J0","T1",[],[[e=>l(e)&&u(e),e=>e.get("question2").tooltip="Question 2 tooltip "]]),m=new _jsEngine.Rule("K0","T3",[],[[e=>l(e)&&r(e),e=>e.get("question1").tooltip="Question 1 tooltip "]]);e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(_),e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(j),e.addRule(E),e.addRule(R),e.addRule(U),e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(T),e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(S),e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(C),e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(I),e.addRule(m)}addRulesheetContainer_js_Step2_Cc12(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_Step2_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_Step2_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,2)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="secondContainerId",e.title="Question with Number between 10 and 20 - Reference: Step2.ers"}))]]),o=new _jsEngine.Rule("E0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=3]]),d=new _jsEngine.Rule("F0","T0",[],[[e=>a(e),e=>e.get("UI").currentStageDescription="This is implemented in Step2.ers"]]),u=new _jsEngine.Rule("C0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step2Field1",e.id="crtl2_2",e.label="Question 3",e.max=20,e.min=10,e.type="Number",e.value="15"}))]]);e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(s),e.addRule(i),e.addRule(o),e.addRule(d),e.addRule(u)}addRulesheetContainer_js_Step3_Cc10(e,n){const t=new _jsEngine.TupleOperator("js_Step3_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.bind("T2","ProjectsData.Data",e.datamanager.getEntitiesByType("ProjectsData.Data")),e.extend("T2","T3",["ProjectsData.Data","ProjectsData.Data.canonicalSample"],"ProjectsData.Data","canonicalSample"),e.crossproduct("T3","T1","T4")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data")),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.canonicalSample").Step1Field3),d=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.canonicalSample")),u=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.canonicalSample").Step1Field4),r=e=>_jsEngine.Utilities.isValid(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3)),c=e=>_jsEngine.Utilities.isValid(e.get("UI.containers").title),g=(e,n)=>e.get("UI.containers").title=n,p=new _jsEngine.Filter("js_Step3_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,3)]],!0),_=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="thirdContainerId",e.title="Date and Time Examples + Questions Conditional to Previous Answers - Reference: Step3.ers"}))]]),j=new _jsEngine.Rule("T0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=4]]),E=new _jsEngine.Rule("U0","T0",[],[[e=>s(e),e=>e.get("UI").currentStageDescription="This is implemented in Step3.ers"]]),R=new _jsEngine.Rule("E0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step3Field5",e.id="crtl3_15",e.label="Enter meeting Date and Time",e.showTime=!0,e.type="DateTime"}))]]),U=new _jsEngine.Rule("K0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step3Field1",e.id="crtl3_11",e.label="Date with Minimum Value (no max)",e.minDT="2022-01-02",e.type="DateTime"}))]]),T=new _jsEngine.Rule("L0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step3Field2",e.id="crtl3_12",e.label="Date with Maximum Value (no min)",e.maxDT="2025-12-31",e.type="DateTime"}))]]),S=new _jsEngine.Rule("N0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step3Field3",e.id="crtl3_13",e.label="Date with No Min nor Max",e.type="DateTime"}))]]),C=new _jsEngine.Rule("O0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step3Field4",e.id="crtl3_14",e.label="Date with both Min and Max",e.maxDT="2025-12-31",e.minDT="2022-01-01",e.type="DateTime"}))]]),I=new _jsEngine.Rule("1","T4",[[e=>o(e)&&r(e),e=>_jsEngine.stringOps.equal.func(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3),"yes")],[e=>a(e)&&d(e)&&u(e),e=>e.get("ProjectsData.Data.canonicalSample").Step1Field4]],[[e=>s(e)&&l(e)&&c(e),g,e=>_jsEngine.stringOps.plus.func(e.get("UI.containers").title," - YES T -")],[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl3_1",e.type="ReadOnlyText",e.value="You answered yes and yes in step1"}))]]),m=new _jsEngine.Rule("2","T4",[[e=>o(e)&&r(e),e=>_jsEngine.stringOps.equal.func(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3),"no")],[e=>a(e)&&d(e)&&u(e),e=>!1===e.get("ProjectsData.Data.canonicalSample").Step1Field4]],[[e=>s(e)&&l(e)&&c(e),g,e=>_jsEngine.stringOps.plus.func(e.get("UI.containers").title," - NO F ")],[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl3_1",e.type="ReadOnlyText",e.value="You answered no and no in step1"}))]]),f=new _jsEngine.Rule("3","T4",[[e=>o(e)&&r(e),e=>_jsEngine.stringOps.equal.func(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3),"yes")],[e=>a(e)&&d(e)&&u(e),e=>!1===e.get("ProjectsData.Data.canonicalSample").Step1Field4]],[[e=>s(e)&&l(e)&&c(e),g,e=>_jsEngine.stringOps.plus.func(e.get("UI.containers").title," - YES F -")],[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl3_1",e.type="ReadOnlyText",e.value="You answered yes and no in step1"}))]]),D=new _jsEngine.Rule("4","T4",[[e=>o(e)&&r(e),e=>_jsEngine.stringOps.equal.func(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3),"no")],[e=>a(e)&&d(e)&&u(e),e=>e.get("ProjectsData.Data.canonicalSample").Step1Field4]],[[e=>s(e)&&l(e)&&c(e),g,e=>_jsEngine.stringOps.plus.func(e.get("UI.containers").title," - NO T ")],[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl3_1",e.type="ReadOnlyText",e.value="You answered no and yes in step1"}))]]);e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(_),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(j),e.addRule(E),e.addRule(R),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(U),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(T),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(S),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(C),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(I),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(m),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(f),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(D)}addRulesheetContainer_js_Step3b_Cc11(e,n){const t=new _jsEngine.TupleOperator("js_Step3b_precondition_1Func",[function(e){e.projection("T1","T0",["UI"]),e.bind("T3","ProjectsData.Data",e.datamanager.getEntitiesByType("ProjectsData.Data")),e.extend("T3","T4",["ProjectsData.Data","ProjectsData.Data.canonicalSample"],"ProjectsData.Data","canonicalSample")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_Step3b_precondition_0Func",[function(e){e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.extend("T2","T1",["UI","UI.containers","readOnlyText"],"UI.containers","uiControls")}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.Data.canonicalSample").Step1Field3),o=e=>_jsEngine.Utilities.isValid(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3)),d=new _jsEngine.Filter("js_Step3b_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,3)]]),u=new _jsEngine.Filter("js_Step3b_filter_1","T1",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("readOnlyText")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("readOnlyText").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("readOnlyText").id,"crtl3_1")]]),r=new _jsEngine.Rule("D0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=4]]),c=new _jsEngine.Rule("1","T4",[[e=>l(e)&&o(e),e=>_jsEngine.stringOps.equal.func(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3),"yes")]],[]),g=new _jsEngine.Rule("2","T4",[[e=>l(e)&&o(e),e=>_jsEngine.stringOps.equal.func(_jsEngine.stringOps.toLowerCase.func(e.get("ProjectsData.Data.canonicalSample").Step1Field3),"no")]],[]);e.addRule(i),e.addRule(d),e.addRule(a),e.addRule(u),e.addRule(t),e.addRule(r),e.addRule(c),e.addRule(g)}addRulesheetContainer_js_Step4_Cc18(e,n){const t=new _jsEngine.TupleOperator("js_Step4_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=new _jsEngine.Filter("js_Step4_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,4)]],!0),o=new _jsEngine.Rule("C0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="singleChoiceContainerId",e.title="Questions with checkboxes (SingleChoice input type) - Reference: Step4.ers"}))]]),d=new _jsEngine.Rule("I0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=5]]),u=new _jsEngine.Rule("J0","T0",[],[[e=>a(e),e=>e.get("UI").currentStageDescription="This is implemented in Step4.ers"]]),r=new _jsEngine.Rule("D0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step4Field1",e.id="crtl4_1",e.label="Question 1",e.type="SingleChoice"}))]]),c=new _jsEngine.Rule("E0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step4Field2",e.id="crtl4_2",e.label="Question 2",e.type="SingleChoice"}))]]),g=new _jsEngine.Rule("F0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step4Field3",e.id="crtl4_3",e.label="Question 3",e.type="SingleChoice"}))]]);e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(d),e.addRule(u),e.addRule(r),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(c),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(g)}addRulesheetContainer_js_Step5_Cc15(e,n){const t=new _jsEngine.TupleOperator("js_Step5_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step5_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,5)]],!0),d=new _jsEngine.Rule("C0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="multiChoiceContainerId",e.title="Questions with dropdown (MultipleChoices input type) - Reference: Step5.ers"}))]]),u=new _jsEngine.Rule("M0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=6]]),r=new _jsEngine.Rule("N0","T0",[],[[e=>s(e),e=>e.get("UI").currentStageDescription="This is implemented in Step5.ers"]]),c=new _jsEngine.Rule("D0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step5Field1",e.id="crtl5_1",e.label="Question 1",e.type="MultipleChoices"}))]]),g=new _jsEngine.Rule("E0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step5Field1Multiselect",e.id="crtl5_2",e.label="Question 2",e.type="MultipleChoicesMultiSelect"}))]]),p=new _jsEngine.Rule("F0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="choice 1",e.value="choice1"}))]]),_=new _jsEngine.Rule("G0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="choice 2",e.value="choice2"}))]]),j=new _jsEngine.Rule("H0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="choice 3",e.value="choice3"}))]]),E=new _jsEngine.Rule("I0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="choice 4",e.value="choice4"}))]]),R=new _jsEngine.Rule("J0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="choice 5",e.value="choice5"}))]]),U=new _jsEngine.Rule("K0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="choice 6",e.value="choice6"}))]]);e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(u),e.addRule(r),e.addRule(c),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(g),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(p),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(_),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(j),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(E),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(R),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(U)}addRulesheetContainer_js_Step5b_Cc16(e,n){const t=new _jsEngine.TupleOperator("js_Step5b_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=new _jsEngine.Filter("js_Step5b_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,5)]],!0),o=new _jsEngine.Rule("C0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.dataSource="http://localhost:3004/options",e.fieldName="Step5Field2",e.id="crtl5_2b",e.label='Question 2 - See Step5b.ers - Getting list of options from <a href="http://localhost:3004/options" target="_blank">REST server at path /options</a>',e.type="MultipleChoices"}))]]),d=new _jsEngine.Rule("F0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.dataSource="http://localhost:3004/options2",e.fieldName="Step5Field3",e.id="crtl5_3",e.label='Question 3 - See Step5c.ers - Getting list of options from <a href="http://localhost:3004/options2" target="_blank">REST server at path /options2</a>',e.type="MultipleChoices"}))]]),u=new _jsEngine.Rule("I0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.dataSource="http://localhost:3004/options3",e.fieldName="Step5Field4",e.id="crtl5_4",e.label='Question 4 - See Step5c.ers - Getting list of options from <a href="http://localhost:3004/options3" target="_blank">REST server at path /options3</a>',e.type="MultipleChoices"}))]]);e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(l),e.addRule(t),e.addRule(u)}addRulesheetContainer_js_Step5c_Cc17(e,n){const t=new _jsEngine.TupleOperator("js_Step5c_precondition_4Func",[function(e){e.join("T1","T3",["UI","UI.containers"],"T4",["UI","UI.containers","uiCrtl4","uiCtrl3"]),e.projection("T4","T3",["UI","UI.containers","uiCrtl4"]),e.join("T3","T1",["UI","UI.containers"],"T4",["UI","UI.containers","uiCrtl4","uiCtrl3"]),e.projection("T4","T1",["UI","UI.containers","uiCtrl3"])}]),i=new _jsEngine.TupleOperator("js_Step5c_precondition_2Func",[function(e){e.extend("T2","T3",["UI","UI.containers","uiCrtl4"],"UI.containers","uiControls")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=new _jsEngine.TupleOperator("js_Step5c_precondition_0Func",[function(e){e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.extend("T2","T1",["UI","UI.containers","uiCtrl3"],"UI.containers","uiControls")}]),l=e=>_jsEngine.Utilities.isValid(e.get("uiCrtl4")),o=e=>_jsEngine.Utilities.isValid(e.get("UI")),d=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),u=e=>_jsEngine.Utilities.isValid(e.get("uiCtrl3")),r=new _jsEngine.Filter("js_Step5c_filter_0","T0",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,5)]],!0),c=new _jsEngine.LimitedFilter("js_Step5c_filter_2","T1",[[e=>o(e)&&d(e)&&u(e)&&(e=>_jsEngine.Utilities.isValid(e.get("uiCtrl3").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("uiCtrl3").id,"crtl5_3")]],[[[],["UI"]],[["UI.containers"],["UI","UI.containers"]],[["UI.containers","uiCtrl3"],["UI","UI.containers","uiCtrl3"]]]),g=new _jsEngine.LimitedFilter("js_Step5c_filter_4","T3",[[e=>o(e)&&d(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("uiCrtl4").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("uiCrtl4").id,"crtl5_4")]],[[[],["UI"]],[["UI.containers"],["UI","UI.containers"]],[["UI.containers","uiCrtl4"],["UI","UI.containers","uiCrtl4"]]]),p=new _jsEngine.Rule("A0","T1",[],[[e=>o(e)&&d(e)&&u(e),e=>n.setAssociation(e.get("uiCtrl3"),"dataSourceOptions",n.createEntity("DataSourceOptions",function(e){e.dataTextField="name",e.dataValueField="code"}))]]),_=new _jsEngine.Rule("D0","T3",[],[[e=>o(e)&&d(e)&&l(e),e=>n.setAssociation(e.get("uiCrtl4"),"dataSourceOptions",n.createEntity("DataSourceOptions",function(e){e.dataTextField="Model_Name",e.dataValueField="Model_ID",e.pathToOptionsArray="$.Results.*"}))]]);e.addRule(a),e.addRule(r),e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(t),e.addRule(p),e.addRule(a),e.addRule(r),e.addRule(s),e.addRule(c),e.addRule(i),e.addRule(g),e.addRule(t),e.addRule(_)}addRulesheetContainer_js_Step6_Cc14(e,n){const t=new _jsEngine.TupleOperator("js_Step6_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_Step6_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,6)]],!0),l=new _jsEngine.Rule("C0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="fileUploadContainerId",e.title="Document Upload (File upload control) - Reference: Step6.ers"}))]]),o=new _jsEngine.Rule("H0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=7]]),d=new _jsEngine.Rule("I0","T0",[],[[e=>a(e),e=>e.get("UI").currentStageDescription="This is implemented in Step6.ers"]]),u=new _jsEngine.Rule("D0","T1",[],[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step6Field1",e.id="crtl6_1",e.label="Enter justification document",e.type="FileUpload"}))]]);e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(s),e.addRule(t),e.addRule(o),e.addRule(d),e.addRule(u)}addRulesheetContainer_js_Step7_Cc13(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_Step7_precondition_0Func",[function(e){e.bind("T2","Container",e.datamanager.getEntitiesByType("Container")),e.extend("T2","T1",["Container","textAreaCrtl"],"Container","uiControls")}]),a=new _jsEngine.TupleOperator("js_Step7_precondition_2Func",[function(e){e.extend("T0","T3",["UI","UI.containers"],"UI","containers")}]),s=e=>_jsEngine.Utilities.isValid(e.get("Container")),l=e=>_jsEngine.Utilities.isValid(e.get("UI")),o=e=>_jsEngine.Utilities.isValid(e.get("textAreaCrtl")),d=new _jsEngine.Filter("js_Step7_filter_0","T0",[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,7)]],!0),u=new _jsEngine.Filter("js_Step7_filter_2","T1",[[e=>s(e)&&o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("textAreaCrtl").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("textAreaCrtl").id,"crtl7_1")]]),r=new _jsEngine.Rule("C0","T0",[],[[e=>l(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="textAreaContainerId",e.title="Text Area - Reference: Step7.ers"}))]]),c=new _jsEngine.Rule("M0","T0",[],[[e=>l(e),e=>e.get("UI").nextStageNumber=8]]),g=new _jsEngine.Rule("N0","T0",[],[[e=>l(e),e=>e.get("UI").currentStageDescription="This is implemented in Step7.ers"]]),p=new _jsEngine.Rule("D0","T3",[],[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step7Field1",e.id="crtl7_1",e.type="TextArea"}))]]),_=new _jsEngine.Rule("F0","T1",[],[[e=>s(e)&&o(e),e=>e.get("textAreaCrtl").label="Enter your comments"]]),j=new _jsEngine.Rule("G0","T1",[],[[e=>s(e)&&o(e),e=>e.get("textAreaCrtl").labelPosition="Above"]]),E=new _jsEngine.Rule("H0","T1",[],[[e=>s(e)&&o(e),e=>e.get("textAreaCrtl").cols=80]]),R=new _jsEngine.Rule("I0","T1",[],[[e=>s(e)&&o(e),e=>e.get("textAreaCrtl").rows=3]]),U=new _jsEngine.Rule("J0","T1",[],[[e=>s(e)&&o(e),e=>e.get("textAreaCrtl").min=5]]),T=new _jsEngine.Rule("K0","T1",[],[[e=>s(e)&&o(e),e=>e.get("textAreaCrtl").max=20]]);e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(u),e.addRule(a),e.addRule(r),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(u),e.addRule(a),e.addRule(c),e.addRule(g),e.addRule(p),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(u),e.addRule(a),e.addRule(_),e.addRule(j),e.addRule(E),e.addRule(R),e.addRule(U),e.addRule(T)}addRulesheetContainer_js_Step8_Cc8(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_Step8_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.extend("T1","T2",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=new _jsEngine.Filter("js_Step8_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,8)]],!0),d=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="summaryContainerId",e.title="A Complex UI Control - Reference: Step8.ers"}))]]),u=new _jsEngine.Rule("K0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=9]]),r=new _jsEngine.Rule("L0","T0",[],[[e=>s(e),e=>e.get("UI").currentStageDescription="This is implemented in Step8.ers"]]),c=new _jsEngine.Rule("C0","T1",[],[[e=>s(e)&&l(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl8_1",e.type="ReadOnlyText"}))]]),g=new _jsEngine.Rule("F0","T1",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step8Field1",e.id="crtl8_1",e.label="Enter all the expenses",e.type="MultiExpenses"}))]]),p=new _jsEngine.Rule("D0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>e.get("UI.containers.uiControls").value="This UI Control is showing an expense multi-fields form.<br/><br/>As the number of expense line items can vary, the data is stored in an array.  Each element will be a object literal containing each of the expense items (expense type, amount)"]]),_=new _jsEngine.Rule("G0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="Hotel",e.value="hotelCode"}))]]),j=new _jsEngine.Rule("H0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="Car Rental",e.value="carRentalCode"}))]]),E=new _jsEngine.Rule("I0","T2",[],[[e=>s(e)&&l(e)&&a(e),e=>n.addAssociation(e.get("UI.containers.uiControls"),"option",n.createEntity("Option",function(e){e.displayName="Airfare",e.value="airfareCode"}))]]);e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(u),e.addRule(r),e.addRule(c),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(g),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(p),e.addRule(_),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(j),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(E)}addRulesheetContainer_js_Step8b_Cc5(e,n){const t=new _jsEngine.TupleOperator("js_Step8b_precondition_3Func",[function(e){e.extend("T2","T4",["ProjectsData.CanonicalSample","onlyUSDHotels"],"ProjectsData.CanonicalSample","Step8Field1")}]),i=new _jsEngine.TupleOperator("js_Step8b_precondition_2Func",[function(e){e.extend("T2","T3",["ProjectsData.CanonicalSample","allEURExpenses"],"ProjectsData.CanonicalSample","Step8Field1")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=new _jsEngine.TupleOperator("js_Step8b_precondition_0Func",[function(e){e.bind("T2","ProjectsData.CanonicalSample",e.datamanager.getEntitiesByType("ProjectsData.CanonicalSample")),e.extend("T2","T1",["ProjectsData.CanonicalSample","allUSDExpenses"],"ProjectsData.CanonicalSample","Step8Field1")}]),l=new _jsEngine.TupleOperator("js_Step8b_precondition_4Func",[function(e){e.join("T3","T4",["ProjectsData.CanonicalSample"],"T6",["ProjectsData.CanonicalSample","allEURExpenses","onlyUSDHotels"]),e.projection("T6","T4",["ProjectsData.CanonicalSample","onlyUSDHotels"]),e.join("T4","T1",["ProjectsData.CanonicalSample"],"T7",["ProjectsData.CanonicalSample","allUSDExpenses","onlyUSDHotels"]),e.projection("T7","T1",["ProjectsData.CanonicalSample","allUSDExpenses"]),e.extend("T2","T8",["ProjectsData.CanonicalSample","allExpenses"],"ProjectsData.CanonicalSample","Step8Field1"),e.accumulate("T8",["ProjectsData.CanonicalSample"],["allExpenses"],"T5"),e.join("T1","T5",["ProjectsData.CanonicalSample"],"T9",["ProjectsData.CanonicalSample","allUSDExpenses","allExpenses->"]),e.projection("T9","T5",["ProjectsData.CanonicalSample","allExpenses->"]),e.join("T3","T4",["ProjectsData.CanonicalSample"],"T6",["ProjectsData.CanonicalSample","allEURExpenses","onlyUSDHotels"]),e.projection("T6","T4",["ProjectsData.CanonicalSample","onlyUSDHotels"]),e.join("T4","T1",["ProjectsData.CanonicalSample"],"T7",["ProjectsData.CanonicalSample","allUSDExpenses","onlyUSDHotels"]),e.projection("T7","T1",["ProjectsData.CanonicalSample","allUSDExpenses"]),e.accumulate("T1",["ProjectsData.CanonicalSample"],["allUSDExpenses"],"T10"),e.join("T1","T10",["ProjectsData.CanonicalSample"],"T11",["ProjectsData.CanonicalSample","allUSDExpenses","allUSDExpenses->"]),e.projection("T11","T10",["ProjectsData.CanonicalSample","allUSDExpenses->"]),e.join("T3","T4",["ProjectsData.CanonicalSample"],"T6",["ProjectsData.CanonicalSample","allEURExpenses","onlyUSDHotels"]),e.projection("T6","T4",["ProjectsData.CanonicalSample","onlyUSDHotels"]),e.join("T4","T1",["ProjectsData.CanonicalSample"],"T7",["ProjectsData.CanonicalSample","allUSDExpenses","onlyUSDHotels"]),e.projection("T7","T1",["ProjectsData.CanonicalSample","allUSDExpenses"]),e.accumulate("T3",["ProjectsData.CanonicalSample"],["allEURExpenses"],"T12"),e.join("T1","T12",["ProjectsData.CanonicalSample"],"T13",["ProjectsData.CanonicalSample","allUSDExpenses","allEURExpenses->"]),e.projection("T13","T12",["ProjectsData.CanonicalSample","allEURExpenses->"]),e.join("T3","T4",["ProjectsData.CanonicalSample"],"T6",["ProjectsData.CanonicalSample","allEURExpenses","onlyUSDHotels"]),e.projection("T6","T4",["ProjectsData.CanonicalSample","onlyUSDHotels"]),e.join("T4","T1",["ProjectsData.CanonicalSample"],"T7",["ProjectsData.CanonicalSample","allUSDExpenses","onlyUSDHotels"]),e.projection("T7","T1",["ProjectsData.CanonicalSample","allUSDExpenses"]),e.accumulate("T4",["ProjectsData.CanonicalSample"],["onlyUSDHotels"],"T14"),e.join("T1","T14",["ProjectsData.CanonicalSample"],"T15",["ProjectsData.CanonicalSample","allUSDExpenses","onlyUSDHotels->"]),e.projection("T15","T14",["ProjectsData.CanonicalSample","onlyUSDHotels->"])}]),o=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample")),d=new _jsEngine.Filter("js_Step8b_filter_0","T0",[[e=>(e=>_jsEngine.Utilities.isValid(e.get("UI")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,9)]],!0),u=new _jsEngine.LimitedFilter("js_Step8b_filter_2","T1",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("allUSDExpenses")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("allUSDExpenses").currency))(e),e=>_jsEngine.stringOps.equal.func(e.get("allUSDExpenses").currency,"USD")]],[[[],["ProjectsData.CanonicalSample"]],[["allUSDExpenses"],["ProjectsData.CanonicalSample","allUSDExpenses"]]]),r=new _jsEngine.LimitedFilter("js_Step8b_filter_3","T3",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("allEURExpenses")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("allEURExpenses").currency))(e),e=>_jsEngine.stringOps.equal.func(e.get("allEURExpenses").currency,"EUR")]],[[[],["ProjectsData.CanonicalSample"]],[["allEURExpenses"],["ProjectsData.CanonicalSample","allEURExpenses"]]]),c=new _jsEngine.LimitedFilter("js_Step8b_filter_4","T4",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("onlyUSDHotels")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("onlyUSDHotels").currency))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("onlyUSDHotels").expenseCode))(e),e=>_jsEngine.stringOps.equal.func(e.get("onlyUSDHotels").currency,"USD")&&_jsEngine.stringOps.equal.func(e.get("onlyUSDHotels").expenseCode,"hotelCode")]],[[[],["ProjectsData.CanonicalSample"]],[["onlyUSDHotels"],["ProjectsData.CanonicalSample","onlyUSDHotels"]]]),g=new _jsEngine.Rule("A0","T5",[],[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.Utilities.checkCache(e,"C00000002",e=>_jsEngine.collectionOps.sumDec.func(e.get("allExpenses->"),"amount"))))(e),e=>e.get("ProjectsData.CanonicalSample").Step8SumAll=_jsEngine.Utilities.checkCache(e,"C00000002",e=>_jsEngine.collectionOps.sumDec.func(e.get("allExpenses->"),"amount"))]]),p=new _jsEngine.Rule("B0","T10",[],[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.Utilities.checkCache(e,"C00000004",e=>_jsEngine.collectionOps.sumDec.func(e.get("allUSDExpenses->"),"amount"))))(e),e=>e.get("ProjectsData.CanonicalSample").Step8USDSum=_jsEngine.Utilities.checkCache(e,"C00000004",e=>_jsEngine.collectionOps.sumDec.func(e.get("allUSDExpenses->"),"amount"))]]),_=new _jsEngine.Rule("C0","T12",[],[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.Utilities.checkCache(e,"C00000003",e=>_jsEngine.collectionOps.sumDec.func(e.get("allEURExpenses->"),"amount"))))(e),e=>e.get("ProjectsData.CanonicalSample").Step8EurSum=_jsEngine.Utilities.checkCache(e,"C00000003",e=>_jsEngine.collectionOps.sumDec.func(e.get("allEURExpenses->"),"amount"))]]),j=new _jsEngine.Rule("E0","T14",[],[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.Utilities.checkCache(e,"C00000001",e=>_jsEngine.collectionOps.sumDec.func(e.get("onlyUSDHotels->"),"amount"))))(e),e=>e.get("ProjectsData.CanonicalSample").Step8HotelUSDSum=_jsEngine.Utilities.checkCache(e,"C00000001",e=>_jsEngine.collectionOps.sumDec.func(e.get("onlyUSDHotels->"),"amount"))]]);e.addRule(a),e.addRule(d),e.addRule(s),e.addRule(u),e.addRule(i),e.addRule(r),e.addRule(t),e.addRule(c),e.addRule(l),e.addRule(g),e.addRule(p),e.addRule(_),e.addRule(j)}addRulesheetContainer_js_Step8c_Cc6(e,n){const t=new _jsEngine.TupleOperator("js_Step8c_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.bind("T3","ProjectsData.CanonicalSample",e.datamanager.getEntitiesByType("ProjectsData.CanonicalSample")),e.crossproduct("T3","T1","T4"),e.extend("T1","T5",["UI","UI.containers","UI.containers.uiControls"],"UI.containers","uiControls"),e.join("T4","T5",["UI","UI.containers"],"T2",["ProjectsData.CanonicalSample","UI","UI.containers","UI.containers.uiControls"]),e.crossproduct("T3","T1","T6"),e.crossproduct("T3","T1","T7"),e.crossproduct("T3","T1","T8")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls").value),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample")),o=e=>_jsEngine.Utilities.isValid(e.get("UI.containers.uiControls")),d=e=>_jsEngine.Utilities.isValid(e.get("UI")),u=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample").Step8HotelUSDSum),r=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample").Step8USDSum),c=e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample").Step8EurSum),g=(e,n)=>e.get("UI.containers.uiControls").value=n,p=new _jsEngine.Filter("js_Step8c_filter_0","T0",[[e=>d(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,9)]],!0),_=new _jsEngine.Rule("K0","T3",[],[[e=>l(e),e=>n.postRuleMessage("js_Step8c0",e.get("ProjectsData.CanonicalSample"),{0:e.get("ProjectsData.CanonicalSample").Step8SumAll,1:e.get("ProjectsData.CanonicalSample").Step8EurSum,2:e.get("ProjectsData.CanonicalSample").Step8USDSum,3:e.get("ProjectsData.CanonicalSample").Step8HotelUSDSum})]]),j=new _jsEngine.Rule("A0","T0",[],[[e=>d(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="summaryContainerId",e.title="Example Filtering and Computing Sums on the Collection"}))]]),E=new _jsEngine.Rule("I0","T0",[],[[e=>d(e),e=>e.get("UI").nextStageNumber=10]]),R=new _jsEngine.Rule("J0","T0",[],[[e=>d(e),e=>e.get("UI").currentStageDescription="This is implemented in Step8c.ers"]]),U=new _jsEngine.Rule("B0","T1",[],[[e=>d(e)&&s(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl8c_1",e.type="ReadOnlyText"}))]]),T=new _jsEngine.Rule("C0","T2",[],[[e=>l(e)&&d(e)&&s(e)&&o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("ProjectsData.CanonicalSample").Step8SumAll))(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8SumAll)))(e),e=>e.get("UI.containers.uiControls").value=_jsEngine.stringOps.plus.func("The grand total amount is ",_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8SumAll))]]),S=new _jsEngine.Rule("1","T2",[[e=>l(e)&&r(e),e=>_jsEngine.decimalOps.different.func(e.get("ProjectsData.CanonicalSample").Step8USDSum,0)]],[[e=>l(e)&&d(e)&&s(e)&&o(e)&&r(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8USDSum)))(e)&&a(e),g,e=>_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<br/><br/>The total expense USD amount is "),_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8USDSum))]]),C=new _jsEngine.Rule("2","T2",[[e=>l(e)&&c(e),e=>_jsEngine.decimalOps.different.func(e.get("ProjectsData.CanonicalSample").Step8EurSum,0)]],[[e=>l(e)&&d(e)&&s(e)&&o(e)&&c(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8EurSum)))(e)&&a(e),g,e=>_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<br/><br/>The total EUR amount is "),_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8EurSum))]]),I=new _jsEngine.Rule("3","T2",[[e=>l(e)&&u(e),e=>_jsEngine.decimalOps.different.func(e.get("ProjectsData.CanonicalSample").Step8HotelUSDSum,0)]],[[e=>l(e)&&d(e)&&s(e)&&o(e)&&u(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8HotelUSDSum)))(e)&&a(e),g,e=>_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(e.get("UI.containers.uiControls").value,"<br/><br/>The total Hotel USD amount is "),_jsEngine.decimalOps.toString.func(e.get("ProjectsData.CanonicalSample").Step8HotelUSDSum))]]);e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(_),e.addRule(j),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(E),e.addRule(R),e.addRule(U),e.addRule(i),e.addRule(p),e.addRule(t),e.addRule(T),e.addRule(S),e.addRule(C),e.addRule(I)}addRulesheetContainer_js_Step9_Cc4(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_Step9_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),a=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=new _jsEngine.Filter("js_Step9_filter_0","T0",[[e=>a(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,10)]],!0),o=new _jsEngine.Rule("C0","T0",[],[[e=>a(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="firstContainerId",e.title="Questions with Multiple Inputs Fields - Reference: Step9.ers"}))]]),d=new _jsEngine.Rule("I0","T0",[],[[e=>a(e),e=>e.get("UI").nextStageNumber=11]]),u=new _jsEngine.Rule("J0","T0",[],[[e=>a(e),e=>e.get("UI").currentStageDescription="This is implemented in Step9.ers"]]),r=new _jsEngine.Rule("D0","T1",[],[[e=>a(e)&&s(e),e=>n.setAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="crtl9_0",e.type="ReadOnlyText",e.value="Here we do not know in advance how many answers there are so we use the attribute multiple=true.  The answers are stored in an array pointed as specified by attribute fieldName"}))]]),c=new _jsEngine.Rule("E0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step9Field1",e.id="crtl9_1",e.label="Text Multiple Questions",e.multiple=!0,e.type="Text"}))]]),g=new _jsEngine.Rule("F0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step9Field2",e.id="crtl9_2",e.label="Number Multiple Questions",e.multiple=!0,e.type="Number"}))]]),p=new _jsEngine.Rule("G0","T1",[],[[e=>a(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="Step9Field3",e.id="crtl9_3",e.label="DateTime Multiple Questions",e.multiple=!0,e.type="DateTime"}))]]);e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(d),e.addRule(u),e.addRule(r),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(c),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(g),e.addRule(t),e.addRule(l),e.addRule(i),e.addRule(p)}}exports.DecisionServiceRules=DecisionServiceRules;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecisionServiceRules=void 0;var _jsEngine=require("@corticon/js-engine");class DecisionServiceRules{setUpDecisionService(e,n){if(_jsEngine.Utilities.checksum())throw new Error("Decision Service has expired evaluation license");{_jsEngine.Logger.logDebug("Javascript Studio Build: 2.1.0.0.13738");const t=new _jsEngine.RuleContainer("hhsMarketplace");e.addRule(t);const a=new _jsEngine.RuleContainer("19_check if remaining results");t.addRule(a),this.addRulesheetContainer_js_19_check32if32remaining32results_Cc2(a,n);const i=new _jsEngine.RuleContainer("18_Append Results");t.addRule(i),this.addRulesheetContainer_js_18_Append32Results_Cc3(i,n);const s=new _jsEngine.RuleContainer("17_createResults");t.addRule(s),this.addRulesheetContainer_js_17_createResults_Cc4(s,n);const l=new _jsEngine.RuleContainer("55_results");t.addRule(l),this.addRulesheetContainer_js_55_results_Cc5(l,n);const d=new _jsEngine.RuleContainer("998_no plans found");t.addRule(d),this.addRulesheetContainer_js_998_no32plans32found_Cc6(d,n);const o=new _jsEngine.RuleContainer("16_check quality");t.addRule(o),this.addRulesheetContainer_js_16_check32quality_Cc7(o,n);const u=new _jsEngine.RuleContainer("14_initialResults and filter by qual");t.addRule(u),this.addRulesheetContainer_js_14_initialResults32and32filter32by32qual_Cc8(u,n);const r=new _jsEngine.RuleContainer("13_get plan ids");t.addRule(r),this.addRulesheetContainer_js_13_get32plan32ids_Cc9(r,n);const g=new _jsEngine.RuleContainer("12_plan attributes");t.addRule(g),this.addRulesheetContainer_js_12_plan32attributes_Cc10(g,n);const c=new _jsEngine.RuleContainer("12_plan attributes dropdowns");t.addRule(c),this.addRulesheetContainer_js_12_plan32attributes32dropdowns_Cc11(c,n);const p=new _jsEngine.RuleContainer("10_parseDependentData");t.addRule(p),this.addRulesheetContainer_js_10_parseDependentData_Cc12(p,n);const _=new _jsEngine.RuleContainer("8_parseSpouseData");t.addRule(_),this.addRulesheetContainer_js_8_parseSpouseData_Cc13(_,n);const R=new _jsEngine.RuleContainer("1_get FIPS");t.addRule(R),this.addRulesheetContainer_js_1_get32FIPS_Cc14(R,n);const h=new _jsEngine.RuleContainer("5_parseApplicantData");t.addRule(h),this.addRulesheetContainer_js_5_parseApplicantData_Cc15(h,n);const E=new _jsEngine.RuleContainer("7_spouse detail");t.addRule(E),this.addRulesheetContainer_js_7_spouse32detail_Cc16(E,n);const j=new _jsEngine.RuleContainer("2_is state on marketplace");t.addRule(j),this.addRulesheetContainer_js_2_is32state32on32marketplace_Cc17(j,n);const T=new _jsEngine.RuleContainer("15_get plan quality ratings");t.addRule(T),this.addRulesheetContainer_js_15_get32plan32quality32ratings_Cc18(T,n);const f=new _jsEngine.RuleContainer("6 route to enrollee");t.addRule(f),this.addRulesheetContainer_js_632route32to32enrollee_Cc19(f,n);const D=new _jsEngine.RuleContainer("0_address");t.addRule(D),this.addRulesheetContainer_js_0_address_Cc20(D,n);const H=new _jsEngine.RuleContainer("9_dependent detail");t.addRule(H),this.addRulesheetContainer_js_9_dependent32detail_Cc21(H,n);const U=new _jsEngine.RuleContainer("9_dependent detail2");t.addRule(U),this.addRulesheetContainer_js_9_dependent32detail2_Cc22(U,n);const m=new _jsEngine.RuleContainer("4_applicantDetails");t.addRule(m),this.addRulesheetContainer_js_4_applicantDetails_Cc23(m,n);const y=new _jsEngine.RuleContainer("3_dependentQuery");t.addRule(y),this.addRulesheetContainer_js_3_dependentQuery_Cc24(y,n);const O=new _jsEngine.RuleContainer("11_APTC");t.addRule(O),this.addRulesheetContainer_js_11_APTC_Cc25(O,n);const I=new _jsEngine.RuleContainer("999_state marketplace");t.addRule(I),this.addRulesheetContainer_js_999_state32marketplace_Cc26(I,n)}}addRulesheetContainer_js_0_address_Cc20(e,n){const t=new _jsEngine.TupleOperator("js_0_address_rule_6Func",[function(e){e.crossproduct("rule1False","T2","rule1False")}]),a=new _jsEngine.TupleOperator("js_0_address_rule_5Func",[function(e){e.crossproduct("rule1False","T2","rule1False")}]),i=new _jsEngine.TupleOperator("js_0_address_rule_4Func",[function(e){e.crossproduct("rule1False","T2","rule1False")}]),s=new _jsEngine.TupleOperator("js_0_address_rule_3Func",[function(e){e.crossproduct("rule1False","T2","rule1False")}]),l=new _jsEngine.TupleOperator("js_0_address_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household"))}]),d=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),o=e=>_jsEngine.Utilities.isValid(e.get("UI").pathToData),u=e=>_jsEngine.Utilities.isValid(e.get("UI")),r=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").personDob),g=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),c=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").income),p=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").personName),_=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),R=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").zipcode),h=new _jsEngine.Filter("js_0_address_filter_0","T0",[[e=>u(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,0)]],!0),E=new _jsEngine.Rule("A0","T0",[],[[e=>u(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="Healthcare Marketplace",e.title="Healthcare Marketplace"}))]]),j=new _jsEngine.Rule("B0","T0",[],[[e=>u(e),e=>e.get("UI").nextStageNumber=1]]),T=new _jsEngine.Rule("2","T2",[[e=>R(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.stringOps.size.func(e.get("Data.Household").zipcode)))(e),e=>_jsEngine.integerOps.intEqual.func(_jsEngine.stringOps.size.func(e.get("Data.Household").zipcode),4)]],[[e=>_(e)&&R(e),(e,n)=>e.get("Data.Household").zipcode=n,e=>_jsEngine.stringOps.plus.func("0",e.get("Data.Household").zipcode)]]),f=new _jsEngine.Override("rule1Override","T1","rule1True","rule1False",[[e=>u(e),e=>!o(e)||!o(e)]]),D=new _jsEngine.Rule("1","rule1True",[],[[e=>u(e),e=>e.get("UI").pathToData="household"],[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="zipcode",e.id="zipcode",e.label="What is your household zip code?",e.type="Number",e.value="64030"}))],[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personName",e.id="0_0",e.id="name",e.label="What is your name?",e.type="Text",e.value="Clark Kent"}))],[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="citizen_or_legal_resident",e.id="0_4",e.id="citizenshipQuery",e.label="Are you a citizen or legal resident?",e.type="SingleChoice"}))],[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="has_married_couple",e.id="0_1",e.id="married",e.label="Are you married?",e.type="SingleChoice"}))],[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="filerHasDependents",e.id="0_2",e.id="dependentsQuery",e.label="Do you have dependents?",e.type="SingleChoice"}))],[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personDob",e.id="0_3",e.id="ageQuery",e.label="What is your date of birth?",e.type="DateTime"}))],[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="income",e.id="0_5",e.id="income",e.label="What is your household's net combined annual income?",e.type="Number",e.value="35000"}))]]),H=new _jsEngine.Rule("4","rule1False",[[e=>_(e),e=>!p(e)||!p(e)],[e=>u(e)&&o(e),e=>!!o(e)]],[[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.emphasize=!0,e.fieldName="personName",e.id="0_0",e.label="Please enter your name.",e.type="Text",e.value="Clark Kent"}))]]),U=new _jsEngine.Rule("5","rule1False",[[e=>_(e),e=>!r(e)||!r(e)],[e=>u(e)&&o(e),e=>!!o(e)]],[[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.emphasize=!0,e.fieldName="personDob",e.id="0_3",e.id="ageQuery",e.label="Please enter your date of birth.",e.type="DateTime"}))]]),m=new _jsEngine.Rule("6","rule1False",[[e=>_(e),e=>!c(e)||!c(e)],[e=>u(e)&&o(e),e=>!!o(e)]],[[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.emphasize=!0,e.fieldName="income",e.id="0_5",e.id="income",e.label="Please enter your household's net combined annual income.",e.type="Number",e.value="35000"}))]]),y=new _jsEngine.Rule("3","rule1False",[[e=>_(e),e=>!R(e)||!R(e)],[e=>u(e)&&o(e),e=>!!o(e)]],[[e=>u(e)&&g(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.emphasize=!0,e.fieldName="zipcode",e.id="zipcode",e.label="Please enter your household's  zip code?",e.type="Number",e.value="64030"}))]]);e.addRule(d),e.addRule(h),e.addRule(l),e.addRule(E),e.addRule(d),e.addRule(h),e.addRule(l),e.addRule(j),e.addRule(T),e.addRule(f),e.addRule(D),e.addRule(d),e.addRule(h),e.addRule(l),e.addRule(i),e.addRule(H),e.addRule(d),e.addRule(h),e.addRule(l),e.addRule(a),e.addRule(U),e.addRule(d),e.addRule(h),e.addRule(l),e.addRule(t),e.addRule(m),e.addRule(d),e.addRule(h),e.addRule(l),e.addRule(s),e.addRule(y)}addRulesheetContainer_js_10_parseDependentData_Cc12(e,n){const t=new _jsEngine.TupleOperator("js_10_parseDependentData_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household"))}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_10_parseDependentData_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,10)]],!0),l=new _jsEngine.Rule("B0","T1",[],[[e=>(e=>_jsEngine.Utilities.isValid(e.get("Data.Household")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Household").personDob))(e),e=>n.addAssociation(e.get("Data.Household"),"enrollee",n.createEntity("Data.Enrollee",function(n){n.age=_jsEngine.dateOps.yearsBetween.func(e.get("Data.Household").personDob,_jsEngine.dateOps.today.func()),n.citizen_or_legal_resident=e.get("Data.Household").personCitizen_or_legal_resident,n.eligibleOtherPrograms=e.get("Data.Household").personHasOtherCoverageOptions,n.is_pregnant=e.get("Data.Household").personPregnant,n.name=e.get("Data.Household").personName,n.relationship="Dependent",n.uses_tobacco=e.get("Data.Household").personTobacco}))]]),d=new _jsEngine.Rule("C0","T0",[],[[e=>i(e),e=>e.get("UI").nextStageNumber=6]]),o=new _jsEngine.Rule("D0","T0",[],[[e=>i(e),e=>e.get("UI").nextStageNumber=11]]),u=new _jsEngine.Rule("E0","T0",[],[[e=>i(e),e=>e.get("UI").noUiToRenderContinue=!0]]);e.addRule(a),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(s),e.addRule(t),e.addRule(d),e.addRule(o),e.addRule(u)}addRulesheetContainer_js_11_APTC_Cc25(e,n){const t=new _jsEngine.TupleOperator("js_11_APTC_precondition_0Func",[function(e){e.bind("T1","Data.Enrollee",e.datamanager.getEntitiesByType("Data.Enrollee")),e.extend("T1","T2",["Data.Enrollee","Data.Enrollee.household"],"Data.Enrollee","household")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee.household").income),s=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee").citizen_or_legal_resident),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee.household").fpl),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee.household").has_married_couple),o=e=>_jsEngine.Utilities.isValid(e.get("UI")),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee.household")),r=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee.household").fileJointly),g=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee").eligibleOtherPrograms),c=e=>_jsEngine.Utilities.isValid(e.get("Data.Enrollee")),p=(e,n)=>e.get("Data.Enrollee").aptc_eligible=n,_=new _jsEngine.Filter("js_11_APTC_filter_0","T0",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,11)]],!0),R=new _jsEngine.Rule("A0","T1",[],[[e=>c(e),e=>e.get("Data.Enrollee").aptc_eligible=!1]]),h=new _jsEngine.Rule("C0","T0",[],[[e=>o(e),e=>e.get("UI").noUiToRenderContinue=!0]]),E=new _jsEngine.Rule("D0","T0",[],[[e=>o(e),e=>e.get("UI").nextStageNumber=12]]),j=new _jsEngine.Rule("1","T2",[[e=>c(e)&&u(e)&&l(e)&&i(e),e=>_jsEngine.decimalOps.greaterThanOrEqual.func(_jsEngine.decimalOps.divide.func(e.get("Data.Enrollee.household").income,e.get("Data.Enrollee.household").fpl),100)],[e=>c(e)&&s(e),e=>e.get("Data.Enrollee").citizen_or_legal_resident],[e=>c(e)&&g(e),e=>!1===e.get("Data.Enrollee").eligibleOtherPrograms],[e=>c(e)&&u(e)&&d(e),e=>e.get("Data.Enrollee.household").has_married_couple],[e=>c(e)&&u(e)&&r(e),e=>e.get("Data.Enrollee.household").fileJointly]],[[e=>c(e),p,e=>!0]]),T=new _jsEngine.Rule("2","T2",[[e=>c(e)&&u(e)&&l(e)&&i(e),e=>_jsEngine.decimalOps.greaterThanOrEqual.func(_jsEngine.decimalOps.divide.func(e.get("Data.Enrollee.household").income,e.get("Data.Enrollee.household").fpl),100)],[e=>c(e)&&s(e),e=>e.get("Data.Enrollee").citizen_or_legal_resident],[e=>c(e)&&g(e),e=>!1===e.get("Data.Enrollee").eligibleOtherPrograms],[e=>c(e)&&u(e)&&d(e),e=>e.get("Data.Enrollee.household").has_married_couple],[e=>c(e)&&u(e)&&r(e),e=>!1===e.get("Data.Enrollee.household").fileJointly]],[[e=>c(e),p,e=>!1]]),f=new _jsEngine.Rule("3","T2",[[e=>c(e)&&u(e)&&l(e)&&i(e),e=>_jsEngine.decimalOps.greaterThanOrEqual.func(_jsEngine.decimalOps.divide.func(e.get("Data.Enrollee.household").income,e.get("Data.Enrollee.household").fpl),100)],[e=>c(e)&&s(e),e=>e.get("Data.Enrollee").citizen_or_legal_resident],[e=>c(e)&&g(e),e=>!1===e.get("Data.Enrollee").eligibleOtherPrograms],[e=>c(e)&&u(e)&&d(e),e=>!1===e.get("Data.Enrollee.household").has_married_couple]],[[e=>c(e),p,e=>!0]]);e.addRule(a),e.addRule(_),e.addRule(t),e.addRule(R),e.addRule(h),e.addRule(E),e.addRule(j),e.addRule(T),e.addRule(f)}addRulesheetContainer_js_12_plan32attributes32dropdowns_Cc11(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_12_plan32attributes32dropdowns_precondition_1Func",[function(e){e.extend("T2","T3",["UI","UI.containers","quality"],"UI.containers","uiControls")}]),i=new _jsEngine.TupleOperator("js_12_plan32attributes32dropdowns_precondition_0Func",[function(e){e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.extend("T2","T1",["UI","UI.containers","metalLevel"],"UI.containers","uiControls")}]),s=new _jsEngine.TupleOperator("js_12_plan32attributes32dropdowns_precondition_3Func",[function(e){e.join("T1","T3",["UI","UI.containers"],"T4",["UI","UI.containers","metalLevel","quality"]),e.projection("T4","T3",["UI","UI.containers","quality"]),e.join("T3","T1",["UI","UI.containers"],"T4",["UI","UI.containers","metalLevel","quality"]),e.projection("T4","T1",["UI","UI.containers","metalLevel"]),e.join("T1","T3",["UI","UI.containers"],"T4",["UI","UI.containers","metalLevel","quality"]),e.projection("T4","T3",["UI","UI.containers","quality"]),e.projection("T3","T0",["UI"])}]),l=e=>_jsEngine.Utilities.isValid(e.get("UI")),d=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),o=e=>_jsEngine.Utilities.isValid(e.get("metalLevel")),u=e=>_jsEngine.Utilities.isValid(e.get("quality")),r=new _jsEngine.Filter("js_12_plan32attributes32dropdowns_filter_0","T0",[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,12)]],!0),g=new _jsEngine.LimitedFilter("js_12_plan32attributes32dropdowns_filter_1","T1",[[e=>l(e)&&d(e)&&o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("metalLevel").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("metalLevel").id,"metal")]],[[[],["UI"]],[["UI.containers"],["UI","UI.containers"]],[["UI.containers","metalLevel"],["UI","UI.containers","metalLevel"]]]),c=new _jsEngine.LimitedFilter("js_12_plan32attributes32dropdowns_filter_3","T3",[[e=>l(e)&&d(e)&&u(e)&&(e=>_jsEngine.Utilities.isValid(e.get("quality").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("quality").id,"desiredQualityLevel")]],[[[],["UI"]],[["UI.containers"],["UI","UI.containers"]],[["UI.containers","quality"],["UI","UI.containers","quality"]]]),p=new _jsEngine.Rule("A0","T1",[],[[e=>l(e)&&d(e)&&o(e),e=>n.addAssociation(e.get("metalLevel"),"option",n.createEntity("Option",function(e){e.displayName="Any",e.value="Any"}))]]),_=new _jsEngine.Rule("B0","T1",[],[[e=>l(e)&&d(e)&&o(e),e=>n.addAssociation(e.get("metalLevel"),"option",n.createEntity("Option",function(e){e.displayName="Bronze",e.value="Bronze"}))]]),R=new _jsEngine.Rule("C0","T1",[],[[e=>l(e)&&d(e)&&o(e),e=>n.addAssociation(e.get("metalLevel"),"option",n.createEntity("Option",function(e){e.displayName="Silver",e.value="Silver"}))]]),h=new _jsEngine.Rule("D0","T1",[],[[e=>l(e)&&d(e)&&o(e),e=>n.addAssociation(e.get("metalLevel"),"option",n.createEntity("Option",function(e){e.displayName="Gold",e.value="Gold"}))]]),E=new _jsEngine.Rule("E0","T1",[],[[e=>l(e)&&d(e)&&o(e),e=>n.addAssociation(e.get("metalLevel"),"option",n.createEntity("Option",function(e){e.displayName="Platinum",e.value="Platinum"}))]]),j=new _jsEngine.Rule("G0","T3",[],[[e=>l(e)&&d(e)&&u(e),e=>n.addAssociation(e.get("quality"),"option",n.createEntity("Option",function(e){e.displayName="Any",e.value="Any"}))]]),T=new _jsEngine.Rule("H0","T3",[],[[e=>l(e)&&d(e)&&u(e),e=>n.addAssociation(e.get("quality"),"option",n.createEntity("Option",function(e){e.displayName="2",e.value="2"}))]]),f=new _jsEngine.Rule("I0","T3",[],[[e=>l(e)&&d(e)&&u(e),e=>n.addAssociation(e.get("quality"),"option",n.createEntity("Option",function(e){e.displayName="3",e.value="3"}))]]),D=new _jsEngine.Rule("J0","T3",[],[[e=>l(e)&&d(e)&&u(e),e=>n.addAssociation(e.get("quality"),"option",n.createEntity("Option",function(e){e.displayName="4",e.value="4"}))]]),H=new _jsEngine.Rule("K0","T3",[],[[e=>l(e)&&d(e)&&u(e),e=>n.addAssociation(e.get("quality"),"option",n.createEntity("Option",function(e){e.displayName="5",e.value="5"}))]]),U=new _jsEngine.Rule("M0","T0",[],[[e=>l(e),e=>e.get("UI").nextStageNumber=13]]);e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(p),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(_),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(R),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(h),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(E),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(j),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(T),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(f),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(D),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(H),e.addRule(t),e.addRule(r),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(s),e.addRule(U)}addRulesheetContainer_js_12_plan32attributes_Cc10(e,n){const t=new _jsEngine.TupleOperator("js_12_plan32attributes_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","mainEnrollee"],"Data.Household","enrollee")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_12_plan32attributes_precondition_1Func",[function(e){e.extend("T0","T3",["UI","UI.containers"],"UI","containers")}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),d=new _jsEngine.Filter("js_12_plan32attributes_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,12)]],!0),o=new _jsEngine.LimitedFilter("js_12_plan32attributes_filter_1","T1",[[e=>(e=>_jsEngine.Utilities.isValid(e.get("Data.Household")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("mainEnrollee")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("mainEnrollee").relationship))(e),e=>_jsEngine.stringOps.equal.func(e.get("mainEnrollee").relationship,"Self")]],[[[],["Data.Household"]],[["mainEnrollee"],["Data.Household","mainEnrollee"]]]),u=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="Plan Coverages and Preferences",e.title="Plan Coverages and Preferences"}))]]),r=new _jsEngine.Rule("B0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="Please check boxes next to preferred plan characteristics.",e.type="ReadOnlyText",e.value="Please check boxes next to preferred plan characteristics."}))]]),g=new _jsEngine.Rule("C0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="dentalOnly",e.id="Dental only (not medical)",e.label="Dental only (not medical)",e.type="SingleChoice"}))]]),c=new _jsEngine.Rule("D0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="planPreference_hsa",e.id="Provides option for an HSA",e.label="Provides option for an HSA",e.type="SingleChoice"}))]]),p=new _jsEngine.Rule("E0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="The Health Insurance Marketplace classifies different types of health insurance plans by“metal” levels. There are four different metal tiers: Bronze, Silver, Gold, and Platinum.",e.type="ReadOnlyText",e.value="The Health Insurance Marketplace classifies different types of health insurance plans by“metal” levels. There are four different metal tiers: Bronze, Silver, Gold, and Platinum."}))]]),_=new _jsEngine.Rule("F0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="Silver plans offer a balance between monthly premium and out-of-pocket costs for care. Silver plans are a popular choice for many individuals and families, because they provide a higher percentage of cost-sharing with the insurer, while providing the same essential health coverage as Bronze plans.",e.type="ReadOnlyText",e.value="Silver plans offer a balance between monthly premium and out-of-pocket costs for care. Silver plans are a popular choice for many individuals and families, because they provide a higher percentage of cost-sharing with the insurer, while providing the same essential health coverage as Bronze plans."}))]]),R=new _jsEngine.Rule("G0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="Gold plans have a higher monthly premium compared to Silver plans, but lower out-of-pocket costs for care. Gold plans are ideal for individuals and families needing frequent medical services and want their insurer to share more in the cost for care.",e.type="ReadOnlyText",e.value="Gold plans have a higher monthly premium compared to Silver plans, but lower out-of-pocket costs for care. Gold plans are ideal for individuals and families needing frequent medical services and want their insurer to share more in the cost for care."}))]]),h=new _jsEngine.Rule("H0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="Platinum plans have the highest monthly premium, but the lowest out-of-pocket costs. These plans are best for those individuals and families who require ongoing medical care and want more predictable out-of-pocket costs.",e.type="ReadOnlyText",e.value="Platinum plans have the highest monthly premium, but the lowest out-of-pocket costs. These plans are best for those individuals and families who require ongoing medical care and want more predictable out-of-pocket costs."}))]]),E=new _jsEngine.Rule("I0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="desiredMetalLevel",e.id="metal",e.label="Preferred Plan metal level",e.type="MultipleChoices"}))]]),j=new _jsEngine.Rule("J0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="Each rated health plan has an overall \"star rating\" from 1 - 5 stars (5 is the highest performing health plan). A health plan's overall rating is based on the quality of health care services and members' experiences with their health plan. ",e.type="ReadOnlyText",e.value="Each rated health plan has an overall \"star rating\" from 1 - 5 stars (5 is the highest performing health plan). A health plan's overall rating is based on the quality of health care services and members' experiences with their health plan. "}))]]),T=new _jsEngine.Rule("K0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="desiredQualityLevel",e.id="desiredQualityLevel",e.label="Minimum Quality Level",e.type="MultipleChoices"}))]]),f=new _jsEngine.Rule("L0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.emphasize=!0,e.id="<b>Note: when you hit next, plans matching these selections will be retrieved then presented back to you. You will notice a lag while the plan queries are executed, but can see how the form is handling the queries to the Healthcare.gov API in the trace panel.</b>",e.type="ReadOnlyText",e.value="<b>Note: when you hit next, plans matching these selections will be retrieved then presented back to you. You will notice a lag while the plan queries are executed, but can see how the form is handling the queries to the Healthcare.gov API in the trace panel.</b>"}))]]);e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(u),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(r),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(g),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(c),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(p),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(_),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(R),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(h),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(E),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(j),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(T),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(o),e.addRule(i),e.addRule(f)}addRulesheetContainer_js_13_get32plan32ids_Cc9(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_13_get32plan32ids_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.crossproduct("T0","T2","T1")}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),l=new _jsEngine.Filter("js_13_get32plan32ids_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,13)]],!0),d=new _jsEngine.Rule("A0","T1",[],[[e=>s(e)&&i(e),e=>n.setAssociation(e.get("UI"),"backgroundData",n.newUnique("BackgroundData",function(n){return!0===n.arrayToCollection&&_jsEngine.stringOps.equal.func(n.collectionName,"plan")&&_jsEngine.stringOps.equal.func(n.fieldName1,"id")&&_jsEngine.stringOps.equal.func(n.fieldName2,"rating")&&_jsEngine.stringOps.equal.func(n.labelName1,"PlanID")&&_jsEngine.stringOps.equal.func(n.labelName2,"OverallRatingValue")&&_jsEngine.stringOps.equal.func(n.url,_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func('https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 0e244e3b-c5a5-5f70-96d3-9f979d3fb7b9][WHERE State = "',e.get("Data.Household").state),'"'))},function(n){n.arrayToCollection=!0,n.collectionName="plan",n.fieldName1="id",n.fieldName2="rating",n.labelName1="PlanID",n.labelName2="OverallRatingValue",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func('https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 0e244e3b-c5a5-5f70-96d3-9f979d3fb7b9][WHERE State = "',e.get("Data.Household").state),'"')}))]]),o=new _jsEngine.Rule("B0","T0",[],[[e=>i(e),e=>e.get("UI").noUiToRenderContinue=!0]]),u=new _jsEngine.Rule("C0","T0",[],[[e=>i(e),e=>e.get("UI").nextStageNumber=14]]),r=new _jsEngine.Rule("D0","T2",[],[[e=>s(e),e=>e.get("Data.Household").tempInt=1]]);e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(o),e.addRule(u),e.addRule(r)}addRulesheetContainer_js_14_initialResults32and32filter32by32qual_Cc8(e,n){const t=new _jsEngine.TupleOperator("js_14_initialResults32and32filter32by32qual_precondition_2Func",[function(e){e.accumulate("T1",["Data.Household"],["planMatches"],"T3"),e.join("T1","T3",["Data.Household"],"T4",["Data.Household","planMatches","planMatches->"]),e.projection("T4","T3",["Data.Household","planMatches->"]),e.crossproduct("T0","T1","T6"),e.projection("T6","T1",["Data.Household","planMatches"]),e.crossproduct("T2","T0","T7"),e.join("T7","T3",["Data.Household"],"T5",["Data.Household","UI","planMatches->"]),e.join("T6","T5",["Data.Household","UI"],"T8",["Data.Household","planMatches","UI","planMatches->"]),e.projection("T8","T5",["Data.Household","UI","planMatches->"]),e.projection("T6","T1",["Data.Household","planMatches"]),e.crossproduct("T2","T0","T9"),e.extend("T2","T10",["Data.Household","allPlans"],"Data.Household","plan"),e.accumulate("T10",["Data.Household"],["allPlans"],"T11"),e.join("T9","T11",["Data.Household"],"T12",["Data.Household","UI","allPlans->"]),e.join("T6","T12",["Data.Household","UI"],"T13",["Data.Household","planMatches","UI","allPlans->"]),e.projection("T13","T12",["Data.Household","UI","allPlans->"])}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_14_initialResults32and32filter32by32qual_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","planMatches"],"Data.Household","plan")}]),s=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.sortString.func(e.get("planMatches->"),"id")),l=e=>_jsEngine.Utilities.isValid(e.get("UI")),d=e=>_jsEngine.Utilities.isValid(_jsEngine.Utilities.checkCache(e,"C00000009",e=>_jsEngine.collectionOps.first.func(_jsEngine.collectionOps.sortString.func(e.get("planMatches->"),"id")))),o=new _jsEngine.Filter("js_14_initialResults32and32filter32by32qual_filter_0","T0",[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,14)]],!0),u=new _jsEngine.LimitedFilter("js_14_initialResults32and32filter32by32qual_filter_2","T1",[[()=>!0,e=>!(e=>_jsEngine.Utilities.isValid(e.get("planMatches").name))(e)]],[[[],["Data.Household"]],[["planMatches"],["Data.Household","planMatches"]]]),r=new _jsEngine.Rule("B0","T3",[],[[e=>(e=>_jsEngine.Utilities.isValid(e.get("Data.Household")))(e)&&s(e)&&d(e),e=>_jsEngine.Utilities.checkCache(e,"C00000009",e=>_jsEngine.collectionOps.first.func(_jsEngine.collectionOps.sortString.func(e.get("planMatches->"),"id"))).name="obtained"]]),g=new _jsEngine.Rule("C0","T0",[],[[e=>l(e),e=>e.get("UI").noUiToRenderContinue=!0]]),c=new _jsEngine.Rule("D0","T0",[],[[e=>l(e),e=>e.get("UI").nextStageNumber=15]]),p=new _jsEngine.Rule("F0","T5",[],[[e=>l(e)&&s(e)&&d(e),e=>n.setAssociation(e.get("UI"),"backgroundData",n.newUnique("BackgroundData",function(n){return!0===n.arrayToCollection&&_jsEngine.stringOps.equal.func(n.collectionName,"matchingPlan")&&_jsEngine.stringOps.equal.func(n.fieldName1,"metalLevel")&&_jsEngine.stringOps.equal.func(n.fieldName2,"dentalOnly")&&_jsEngine.stringOps.equal.func(n.fieldName3,"isHSAEligible")&&_jsEngine.stringOps.equal.func(n.fieldName4,"name")&&_jsEngine.stringOps.equal.func(n.fieldName5,"id")&&_jsEngine.stringOps.equal.func(n.fieldName6,"url")&&_jsEngine.stringOps.equal.func(n.labelName1,"MetalLevel")&&_jsEngine.stringOps.equal.func(n.labelName2,"DentalOnlyPlan")&&_jsEngine.stringOps.equal.func(n.labelName3,"IsHSAEligible")&&_jsEngine.stringOps.equal.func(n.labelName4,"PlanMarketingName")&&_jsEngine.stringOps.equal.func(n.labelName5,"StandardComponentId")&&_jsEngine.stringOps.equal.func(n.labelName6,"PlanBrochure")&&_jsEngine.stringOps.equal.func(n.url,_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func('https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 35648b25-e666-5f35-82bb-75fd87d6d716][WHERE StandardComponentId = "',_jsEngine.Utilities.checkCache(e,"C00000009",e=>_jsEngine.collectionOps.first.func(_jsEngine.collectionOps.sortString.func(e.get("planMatches->"),"id"))).id),'"'))},function(n){n.arrayToCollection=!0,n.collectionName="matchingPlan",n.fieldName1="metalLevel",n.fieldName2="dentalOnly",n.fieldName3="isHSAEligible",n.fieldName4="name",n.fieldName5="id",n.fieldName6="url",n.labelName1="MetalLevel",n.labelName2="DentalOnlyPlan",n.labelName3="IsHSAEligible",n.labelName4="PlanMarketingName",n.labelName5="StandardComponentId",n.labelName6="PlanBrochure",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func('https://data.healthcare.gov/api/1/datastore/sql?query=[SELECT * FROM 35648b25-e666-5f35-82bb-75fd87d6d716][WHERE StandardComponentId = "',_jsEngine.Utilities.checkCache(e,"C00000009",e=>_jsEngine.collectionOps.first.func(_jsEngine.collectionOps.sortString.func(e.get("planMatches->"),"id"))).id),'"')}))]]),_=new _jsEngine.Rule("1","T12",[[e=>(e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.isEmpty.func(e.get("allPlans->"))))(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("allPlans->"))]],[[e=>l(e),(e,n)=>e.get("UI").nextStageNumber=n,e=>998]]);e.addRule(a),e.addRule(o),e.addRule(i),e.addRule(u),e.addRule(t),e.addRule(r),e.addRule(g),e.addRule(c),e.addRule(p),e.addRule(a),e.addRule(o),e.addRule(i),e.addRule(u),e.addRule(t),e.addRule(_)}addRulesheetContainer_js_15_get32plan32quality32ratings_Cc18(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_15_get32plan32quality32ratings_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","nullName"],"Data.Household","plan")}]),i=new _jsEngine.TupleOperator("js_15_get32plan32quality32ratings_precondition_1Func",[function(e){e.crossproduct("T1","T0","T3"),e.projection("T3","T0",["UI"]),e.crossproduct("T2","T0","T4"),e.accumulate("T1",["Data.Household"],["nullName"],"T5"),e.join("T4","T5",["Data.Household"],"T6",["Data.Household","UI","nullName->"]),e.join("T3","T6",["Data.Household","UI"],"T7",["Data.Household","nullName","UI","nullName->"]),e.projection("T7","T6",["Data.Household","UI","nullName->"]),e.extend("T2","T8",["Data.Household","tempPlanMatches"],"Data.Household","matchingPlan"),e.extend("T2","T9",["Data.Household","allPlans"],"Data.Household","plan"),e.join("T8","T9",["Data.Household"],"T10",["Data.Household","tempPlanMatches","allPlans"]),e.join("T1","T10",["Data.Household"],"T11",["Data.Household","tempPlanMatches","allPlans","nullName"]),e.projection("T11","T10",["Data.Household","tempPlanMatches","allPlans"])}]),s=e=>_jsEngine.Utilities.isValid(e.get("allPlans")),l=e=>_jsEngine.Utilities.isValid(e.get("UI")),d=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.notEmpty.func(e.get("nullName->"))),o=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),u=e=>_jsEngine.Utilities.isValid(e.get("tempPlanMatches")),r=(e,n)=>e.get("UI").nextStageNumber=n,g=new _jsEngine.Filter("js_15_get32plan32quality32ratings_filter_0","T0",[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,15)]],!0),c=new _jsEngine.LimitedFilter("js_15_get32plan32quality32ratings_filter_1","T1",[[()=>!0,e=>!(e=>_jsEngine.Utilities.isValid(e.get("nullName").name))(e)]],[[[],["Data.Household"]],[["nullName"],["Data.Household","nullName"]]]),p=new _jsEngine.Rule("B0","T0",[],[[e=>l(e),e=>e.get("UI").noUiToRenderContinue=!0]]),_=new _jsEngine.Rule("3","T10",[[e=>o(e)&&u(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("tempPlanMatches").id))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("allPlans").id))(e),e=>_jsEngine.stringOps.equal.func(e.get("allPlans").id,e.get("tempPlanMatches").id)]],[[e=>o(e)&&u(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("tempPlanMatches").name))(e),(e,n)=>e.get("allPlans").name=n,e=>e.get("tempPlanMatches").name],[e=>o(e)&&u(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("tempPlanMatches").dentalOnly))(e),(e,n)=>e.get("allPlans").dentalOnly=n,e=>e.get("tempPlanMatches").dentalOnly],[e=>o(e)&&u(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("tempPlanMatches").metalLevel))(e),(e,n)=>e.get("allPlans").metalLevel=n,e=>e.get("tempPlanMatches").metalLevel],[e=>o(e)&&u(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("tempPlanMatches").isHSAEligible))(e),(e,n)=>e.get("allPlans").isHSAEligible=n,e=>e.get("tempPlanMatches").isHSAEligible],[e=>o(e)&&u(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("tempPlanMatches").url))(e),(e,n)=>e.get("allPlans").url=n,e=>e.get("tempPlanMatches").url]]),R=new _jsEngine.Rule("1","T6",[[e=>d(e),e=>_jsEngine.collectionOps.notEmpty.func(e.get("nullName->"))]],[[e=>l(e),r,e=>14]]),h=new _jsEngine.Rule("2","T6",[[e=>d(e),e=>!1===_jsEngine.collectionOps.notEmpty.func(e.get("nullName->"))]],[[e=>l(e),r,e=>16]]);e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(i),e.addRule(p),e.addRule(_),e.addRule(R),e.addRule(h)}addRulesheetContainer_js_16_check32quality_Cc7(e,n){const t=new _jsEngine.TupleOperator("js_16_check32quality_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","dentalOnly"],"Data.Household","plan")}]),a=new _jsEngine.TupleOperator("js_16_check32quality_precondition_3Func",[function(e){e.extend("T2","T4",["Data.Household","notRating1"],"Data.Household","plan")}]),i=new _jsEngine.TupleOperator("js_16_check32quality_precondition_2Func",[function(e){e.extend("T2","T3",["Data.Household","noHsa"],"Data.Household","plan")}]),s=new _jsEngine.TupleOperator("js_16_check32quality_precondition_10Func",[function(e){e.extend("T2","T10",["Data.Household","notPlatinum"],"Data.Household","plan")}]),l=new _jsEngine.TupleOperator("js_16_check32quality_precondition_13Func",[function(e){e.join("T4","T3",["Data.Household"],"T14",["Data.Household","noHsa","notRating1"]),e.projection("T14","T3",["Data.Household","noHsa"]),e.join("T3","T5",["Data.Household"],"T15",["Data.Household","noHsa","notRating2"]),e.projection("T15","T5",["Data.Household","notRating2"]),e.join("T5","T9",["Data.Household"],"T16",["Data.Household","notRating2","notSilver"]),e.projection("T16","T9",["Data.Household","notSilver"]),e.join("T9","T6",["Data.Household"],"T17",["Data.Household","notRating3","notSilver"]),e.projection("T17","T6",["Data.Household","notRating3"]),e.join("T6","T10",["Data.Household"],"T18",["Data.Household","notPlatinum","notRating3"]),e.projection("T18","T10",["Data.Household","notPlatinum"]),e.join("T10","T11",["Data.Household"],"T19",["Data.Household","notGold","notPlatinum"]),e.projection("T19","T11",["Data.Household","notGold"]),e.join("T11","T7",["Data.Household"],"T20",["Data.Household","notGold","notRating4"]),e.projection("T20","T7",["Data.Household","notRating4"]),e.join("T7","T1",["Data.Household"],"T21",["Data.Household","dentalOnly","notRating4"]),e.projection("T21","T1",["Data.Household","dentalOnly"]),e.join("T1","T8",["Data.Household"],"T22",["Data.Household","dentalOnly","notRating5"]),e.projection("T22","T8",["Data.Household","notRating5"]),e.join("T8","T12",["Data.Household"],"T23",["Data.Household","notBronze","notRating5"]),e.projection("T23","T12",["Data.Household","notBronze"]),e.extend("T2","T13",["Data.Household","Data.Household.matchingPlan"],"Data.Household","matchingPlan"),e.join("T12","T13",["Data.Household"],"T24",["Data.Household","Data.Household.matchingPlan","notBronze"]),e.projection("T24","T13",["Data.Household","Data.Household.matchingPlan"]),e.join("T4","T3",["Data.Household"],"T14",["Data.Household","noHsa","notRating1"]),e.projection("T14","T3",["Data.Household","noHsa"]),e.join("T3","T5",["Data.Household"],"T15",["Data.Household","noHsa","notRating2"]),e.projection("T15","T5",["Data.Household","notRating2"]),e.join("T5","T9",["Data.Household"],"T16",["Data.Household","notRating2","notSilver"]),e.projection("T16","T9",["Data.Household","notSilver"]),e.join("T9","T6",["Data.Household"],"T17",["Data.Household","notRating3","notSilver"]),e.projection("T17","T6",["Data.Household","notRating3"]),e.join("T6","T10",["Data.Household"],"T18",["Data.Household","notPlatinum","notRating3"]),e.projection("T18","T10",["Data.Household","notPlatinum"]),e.join("T10","T11",["Data.Household"],"T19",["Data.Household","notGold","notPlatinum"]),e.projection("T19","T11",["Data.Household","notGold"]),e.join("T11","T7",["Data.Household"],"T20",["Data.Household","notGold","notRating4"]),e.projection("T20","T7",["Data.Household","notRating4"]),e.join("T7","T1",["Data.Household"],"T21",["Data.Household","dentalOnly","notRating4"]),e.projection("T21","T1",["Data.Household","dentalOnly"]),e.join("T1","T8",["Data.Household"],"T22",["Data.Household","dentalOnly","notRating5"]),e.projection("T22","T8",["Data.Household","notRating5"]),e.join("T8","T12",["Data.Household"],"T23",["Data.Household","notBronze","notRating5"]),e.projection("T23","T12",["Data.Household","notBronze"]),e.join("T12","T4",["Data.Household"],"T25",["Data.Household","notBronze","notRating1"]),e.projection("T25","T4",["Data.Household","notRating1"])}]),d=new _jsEngine.TupleOperator("js_16_check32quality_precondition_11Func",[function(e){e.extend("T2","T11",["Data.Household","notGold"],"Data.Household","plan")}]),o=new _jsEngine.TupleOperator("js_16_check32quality_precondition_12Func",[function(e){e.extend("T2","T12",["Data.Household","notBronze"],"Data.Household","plan")}]),u=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),r=new _jsEngine.TupleOperator("js_16_check32quality_precondition_9Func",[function(e){e.extend("T2","T9",["Data.Household","notSilver"],"Data.Household","plan")}]),g=new _jsEngine.TupleOperator("js_16_check32quality_precondition_8Func",[function(e){e.extend("T2","T8",["Data.Household","notRating5"],"Data.Household","plan")}]),c=new _jsEngine.TupleOperator("js_16_check32quality_precondition_5Func",[function(e){e.extend("T2","T5",["Data.Household","notRating2"],"Data.Household","plan")}]),p=new _jsEngine.TupleOperator("js_16_check32quality_precondition_7Func",[function(e){e.extend("T2","T7",["Data.Household","notRating4"],"Data.Household","plan")}]),_=new _jsEngine.TupleOperator("js_16_check32quality_precondition_6Func",[function(e){e.extend("T2","T6",["Data.Household","notRating3"],"Data.Household","plan")}]),R=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").desiredMetalLevel),h=e=>_jsEngine.Utilities.isValid(e.get("notGold")),E=e=>_jsEngine.Utilities.isValid(e.get("UI")),j=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),T=e=>_jsEngine.Utilities.isValid(e.get("dentalOnly")),f=e=>_jsEngine.Utilities.isValid(e.get("notPlatinum")),D=e=>_jsEngine.Utilities.isValid(e.get("noHsa")),H=e=>_jsEngine.Utilities.isValid(e.get("notRating4")),U=e=>_jsEngine.Utilities.isValid(e.get("notRating5")),m=e=>_jsEngine.Utilities.isValid(e.get("notSilver")),y=e=>_jsEngine.Utilities.isValid(e.get("notBronze")),O=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").desiredQualityLevel),I=e=>_jsEngine.Utilities.isValid(e.get("notRating1")),b=e=>_jsEngine.Utilities.isValid(e.get("notRating2")),w=e=>_jsEngine.Utilities.isValid(e.get("notRating3")),C=new _jsEngine.Filter("js_16_check32quality_filter_0","T0",[[e=>E(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,16)]],!0),q=new _jsEngine.LimitedFilter("js_16_check32quality_filter_2","T1",[[e=>j(e)&&T(e)&&(e=>_jsEngine.Utilities.isValid(e.get("dentalOnly").dentalOnly))(e),e=>_jsEngine.stringOps.equal.func(e.get("dentalOnly").dentalOnly,"Yes")]],[[[],["Data.Household"]],[["dentalOnly"],["Data.Household","dentalOnly"]]]),v=new _jsEngine.LimitedFilter("js_16_check32quality_filter_3","T3",[[e=>j(e)&&D(e)&&(e=>_jsEngine.Utilities.isValid(e.get("noHsa").isHSAEligible))(e),e=>_jsEngine.stringOps.equal.func(e.get("noHsa").isHSAEligible,"No")]],[[[],["Data.Household"]],[["noHsa"],["Data.Household","noHsa"]]]),N=new _jsEngine.LimitedFilter("js_16_check32quality_filter_5","T4",[[e=>j(e)&&I(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notRating1").rating))(e),e=>_jsEngine.stringOps.different.func(e.get("notRating1").rating,"1")]],[[[],["Data.Household"]],[["notRating1"],["Data.Household","notRating1"]]]),V=new _jsEngine.LimitedFilter("js_16_check32quality_filter_6","T5",[[e=>j(e)&&b(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notRating2").rating))(e),e=>_jsEngine.stringOps.different.func(e.get("notRating2").rating,"2")]],[[[],["Data.Household"]],[["notRating2"],["Data.Household","notRating2"]]]),A=new _jsEngine.LimitedFilter("js_16_check32quality_filter_7","T6",[[e=>j(e)&&w(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notRating3").rating))(e),e=>_jsEngine.stringOps.different.func(e.get("notRating3").rating,"3")]],[[[],["Data.Household"]],[["notRating3"],["Data.Household","notRating3"]]]),S=new _jsEngine.LimitedFilter("js_16_check32quality_filter_8","T7",[[e=>j(e)&&H(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notRating4").rating))(e),e=>_jsEngine.stringOps.different.func(e.get("notRating4").rating,"4")]],[[[],["Data.Household"]],[["notRating4"],["Data.Household","notRating4"]]]),P=new _jsEngine.LimitedFilter("js_16_check32quality_filter_9","T8",[[e=>j(e)&&U(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notRating5").rating))(e),e=>_jsEngine.stringOps.different.func(e.get("notRating5").rating,"5")]],[[[],["Data.Household"]],[["notRating5"],["Data.Household","notRating5"]]]),F=new _jsEngine.LimitedFilter("js_16_check32quality_filter_10","T9",[[e=>j(e)&&m(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notSilver").metalLevel))(e),e=>_jsEngine.collectionOps.inOp.func(e.get("notSilver").metalLevel,["Platinum","Gold","Bronze"],_jsEngine.stringOps.equal.func)]],[[[],["Data.Household"]],[["notSilver"],["Data.Household","notSilver"]]]),M=new _jsEngine.LimitedFilter("js_16_check32quality_filter_11","T10",[[e=>j(e)&&f(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notPlatinum").metalLevel))(e),e=>_jsEngine.collectionOps.inOp.func(e.get("notPlatinum").metalLevel,["Silver","Gold","Bronze"],_jsEngine.stringOps.equal.func)]],[[[],["Data.Household"]],[["notPlatinum"],["Data.Household","notPlatinum"]]]),k=new _jsEngine.LimitedFilter("js_16_check32quality_filter_12","T11",[[e=>j(e)&&h(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notGold").metalLevel))(e),e=>_jsEngine.collectionOps.inOp.func(e.get("notGold").metalLevel,["Platinum","Silver","Bronze"],_jsEngine.stringOps.equal.func)]],[[[],["Data.Household"]],[["notGold"],["Data.Household","notGold"]]]),x=new _jsEngine.LimitedFilter("js_16_check32quality_filter_13","T12",[[e=>j(e)&&y(e)&&(e=>_jsEngine.Utilities.isValid(e.get("notBronze").metalLevel))(e),e=>_jsEngine.collectionOps.inOp.func(e.get("notBronze").metalLevel,["Platinum","Gold","Silver"],_jsEngine.stringOps.equal.func)]],[[[],["Data.Household"]],[["notBronze"],["Data.Household","notBronze"]]]),B=new _jsEngine.Rule("L0","T13",[],[[e=>(e=>_jsEngine.Utilities.isValid(e.get("Data.Household.matchingPlan")))(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("Data.Household.matchingPlan"))))(e),e=>n.deleteEntity(e.get("Data.Household.matchingPlan"))]]),L=new _jsEngine.Rule("O0","T0",[],[[e=>E(e),e=>e.get("UI").noUiToRenderContinue=!0]]),z=new _jsEngine.Rule("P0","T0",[],[[e=>E(e),e=>e.get("UI").nextStageNumber=17]]),G=new _jsEngine.Rule("1","T12",[[e=>j(e)&&R(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredMetalLevel,"Bronze")]],[[e=>y(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notBronze"))))(e),e=>n.deleteEntity(e.get("notBronze"))]]),Y=new _jsEngine.Rule("2","T9",[[e=>j(e)&&R(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredMetalLevel,"Silver")]],[[e=>m(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notSilver"))))(e),e=>n.deleteEntity(e.get("notSilver"))]]),W=new _jsEngine.Rule("3","T11",[[e=>j(e)&&R(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredMetalLevel,"Gold")]],[[e=>h(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notGold"))))(e),e=>n.deleteEntity(e.get("notGold"))]]),Q=new _jsEngine.Rule("4","T10",[[e=>j(e)&&R(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredMetalLevel,"Platinum")]],[[e=>f(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notPlatinum"))))(e),e=>n.deleteEntity(e.get("notPlatinum"))]]),K=new _jsEngine.Rule("5","T3",[[e=>j(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Household").planPreference_hsa))(e),e=>e.get("Data.Household").planPreference_hsa]],[[e=>D(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("noHsa"))))(e),e=>n.deleteEntity(e.get("noHsa"))]]),J=new _jsEngine.Rule("6","T1",[[e=>j(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Household").dentalOnly))(e),e=>e.get("Data.Household").dentalOnly]],[[e=>T(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("dentalOnly"))))(e),e=>n.deleteEntity(e.get("dentalOnly"))]]),Z=new _jsEngine.Rule("7","T4",[[e=>j(e)&&O(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredQualityLevel,"1")]],[[e=>I(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notRating1"))))(e),e=>n.deleteEntity(e.get("notRating1"))]]),$=new _jsEngine.Rule("8","T5",[[e=>j(e)&&O(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredQualityLevel,"2")]],[[e=>b(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notRating2"))))(e),e=>n.deleteEntity(e.get("notRating2"))]]),X=new _jsEngine.Rule("9","T6",[[e=>j(e)&&O(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredQualityLevel,"3")]],[[e=>w(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notRating3"))))(e),e=>n.deleteEntity(e.get("notRating3"))]]),ee=new _jsEngine.Rule("10","T7",[[e=>j(e)&&O(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredQualityLevel,"4")]],[[e=>H(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notRating4"))))(e),e=>n.deleteEntity(e.get("notRating4"))]]),ne=new _jsEngine.Rule("11","T8",[[e=>j(e)&&O(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").desiredQualityLevel,"5")]],[[e=>U(e)&&(e=>_jsEngine.Utilities.isValid(n.deleteEntity(e.get("notRating5"))))(e),e=>n.deleteEntity(e.get("notRating5"))]]);e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(B),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(L),e.addRule(z),e.addRule(G),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(Y),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(W),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(Q),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(K),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(J),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(Z),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule($),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(X),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(ee),e.addRule(u),e.addRule(C),e.addRule(t),e.addRule(q),e.addRule(i),e.addRule(v),e.addRule(a),e.addRule(N),e.addRule(c),e.addRule(V),e.addRule(_),e.addRule(A),e.addRule(p),e.addRule(S),e.addRule(g),e.addRule(P),e.addRule(r),e.addRule(F),e.addRule(s),e.addRule(M),e.addRule(d),e.addRule(k),e.addRule(o),e.addRule(x),e.addRule(l),e.addRule(ne)}addRulesheetContainer_js_17_createResults_Cc4(e,n){const t=new _jsEngine.TupleOperator("js_17_createResults_precondition_0Func",[function(e){e.bind("T1","Data.Plan",e.datamanager.getEntitiesByType("Data.Plan")),e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T3",["Data.Household","Data.Household.plan"],"Data.Household","plan"),e.accumulate("T3",["Data.Household"],["Data.Household.plan"],"T4"),e.crossproduct("T0","T4","T5")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_17_createResults_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,17)]],!0),l=new _jsEngine.Rule("A0","T1",[],[[e=>(e=>_jsEngine.Utilities.isValid(e.get("Data.Plan")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Plan").dentalOnly))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Plan").id))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Plan").isHSAEligible))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Plan").metalLevel))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Plan").name))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Plan").rating))(e),e=>e.get("Data.Plan").desc=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("<p> Plan Name: ",e.get("Data.Plan").name),"</p><ul><li>ID: "),e.get("Data.Plan").id),"</li><li>Quality Rating: "),e.get("Data.Plan").rating),"</li><li>Metal level: "),e.get("Data.Plan").metalLevel),"</li><li>Dental only plan: "),e.get("Data.Plan").dentalOnly),"</li><li>HSA Eligible: "),e.get("Data.Plan").isHSAEligible),'<li><a href="'),"Plan.url"),'">Link to brochure</a></li></ul>')]]),d=new _jsEngine.Rule("B0","T0",[],[[e=>i(e),e=>e.get("UI").noUiToRenderContinue=!0]]),o=new _jsEngine.Rule("C0","T0",[],[[e=>i(e),e=>e.get("UI").nextStageNumber=18]]),u=new _jsEngine.Rule("1","T5",[[e=>(e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.isEmpty.func(e.get("Data.Household.plan->"))))(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("Data.Household.plan->"))]],[[e=>i(e),(e,n)=>e.get("UI").nextStageNumber=n,e=>998]]);e.addRule(a),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(d),e.addRule(o),e.addRule(u)}addRulesheetContainer_js_18_Append32Results_Cc3(e,n){const t=new _jsEngine.TupleOperator("js_18_Append32Results_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T1","T2",["Data.Household","allResults"],"Data.Household","plan"),e.accumulate("T2",["Data.Household"],["allResults"],"T3")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.at.func(_jsEngine.collectionOps.sortString.func(e.get("allResults->"),"id"),e.get("Data.Household").tempInt)),l=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.at.func(_jsEngine.collectionOps.sortString.func(e.get("allResults->"),"id"),e.get("Data.Household").tempInt).desc),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").plans),o=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").tempInt),r=new _jsEngine.Filter("js_18_Append32Results_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,18)]],!0),g=new _jsEngine.Rule("A0","T0",[],[[e=>i(e),e=>e.get("UI").noUiToRenderContinue=!0]]),c=new _jsEngine.Rule("B0","T0",[],[[e=>i(e),e=>e.get("UI").nextStageNumber=19]]),p=new _jsEngine.Rule("1","T3",[[e=>o(e),e=>!d(e)||!d(e)]],[[e=>o(e)&&s(e)&&l(e)&&u(e),e=>e.get("Data.Household").plans=_jsEngine.collectionOps.at.func(_jsEngine.collectionOps.sortString.func(e.get("allResults->"),"id"),e.get("Data.Household").tempInt).desc]]),_=new _jsEngine.Rule("2","T3",[[e=>o(e)&&d(e),e=>_jsEngine.stringOps.different.func(e.get("Data.Household").plans,null)]],[[e=>o(e)&&s(e)&&l(e)&&d(e)&&u(e),e=>e.get("Data.Household").plans=_jsEngine.stringOps.plus.func(e.get("Data.Household").plans,_jsEngine.collectionOps.at.func(_jsEngine.collectionOps.sortString.func(e.get("allResults->"),"id"),e.get("Data.Household").tempInt).desc)]]);e.addRule(a),e.addRule(r),e.addRule(t),e.addRule(g),e.addRule(c),e.addRule(p),e.addRule(_)}addRulesheetContainer_js_19_check32if32remaining32results_Cc2(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_19_check32if32remaining32results_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T1","T2",["Data.Household","allResults"],"Data.Household","plan"),e.accumulate("T2",["Data.Household"],["allResults"],"T3"),e.crossproduct("T0","T3","T4")}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.size.func(e.get("allResults->"))),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").tempInt),o=(e,n)=>e.get("UI").nextStageNumber=n,u=new _jsEngine.Filter("js_19_check32if32remaining32results_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,19)]],!0),r=new _jsEngine.Rule("A0","T0",[],[[e=>i(e),e=>e.get("UI").noUiToRenderContinue=!0]]),g=new _jsEngine.Rule("1","T4",[[e=>l(e)&&s(e)&&d(e),e=>!1===_jsEngine.integerOps.greaterOrEqual.func(e.get("Data.Household").tempInt,_jsEngine.collectionOps.size.func(e.get("allResults->")))]],[[e=>i(e),o,e=>18],[e=>l(e)&&d(e),(e,n)=>e.get("Data.Household").tempInt=n,e=>_jsEngine.integerOps.add.func(e.get("Data.Household").tempInt,1)]]),c=new _jsEngine.Rule("2","T4",[[e=>l(e)&&s(e)&&d(e),e=>_jsEngine.integerOps.greaterOrEqual.func(e.get("Data.Household").tempInt,_jsEngine.collectionOps.size.func(e.get("allResults->")))]],[[e=>i(e),o,e=>55]]);e.addRule(t),e.addRule(u),e.addRule(a),e.addRule(r),e.addRule(g),e.addRule(c)}addRulesheetContainer_js_1_get32FIPS_Cc14(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_1_get32FIPS_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.crossproduct("T0","T1","T2")}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").personDob),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").income),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").personName),o=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").zipcode),r=(e,n)=>e.get("UI").nextStageNumber=n,g=new _jsEngine.Filter("js_1_get32FIPS_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,1)]],!0),c=new _jsEngine.Rule("B0","T0",[],[[e=>i(e),e=>e.get("UI").noUiToRenderContinue=!0]]),p=new _jsEngine.Rule("4","T2",[[e=>o(e),e=>!d(e)||!d(e)]],[[e=>i(e),r,e=>0]]),_=new _jsEngine.Rule("5","T2",[[e=>o(e),e=>!s(e)||!s(e)]],[[e=>i(e),r,e=>0]]),R=new _jsEngine.Rule("6","T2",[[e=>o(e),e=>!l(e)||!l(e)]],[[e=>i(e),r,e=>0]]),h=new _jsEngine.Rule("1","T2",[[e=>o(e)&&u(e),e=>_jsEngine.integerOps.intEqual.func(_jsEngine.stringOps.size.func(e.get("Data.Household").zipcode),4)],[e=>o(e)&&s(e),e=>!!s(e)]],[[e=>i(e),r,e=>2],[e=>o(e)&&i(e),e=>n.setAssociation(e.get("UI"),"backgroundData",n.createEntity("BackgroundData",function(n){n.fieldName1="state",n.labelName1="state",n.pathToValue1="$.counties[0].state",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://marketplace.api.healthcare.gov/api/v1/counties/by/zip/0",e.get("Data.Household").zipcode),"?apikey=d687412e7b53146b2631dc01974ad0a4")}))],[e=>o(e)&&u(e),(e,n)=>e.get("Data.Household").zipcode=n,e=>_jsEngine.stringOps.plus.func("0",e.get("Data.Household").zipcode)]]),E=new _jsEngine.Rule("2","T2",[[e=>o(e)&&u(e),e=>!1===_jsEngine.integerOps.intEqual.func(_jsEngine.stringOps.size.func(e.get("Data.Household").zipcode),4)],[e=>o(e)&&s(e),e=>!!s(e)]],[[e=>i(e),r,e=>2],[e=>o(e)&&i(e),e=>n.setAssociation(e.get("UI"),"backgroundData",n.createEntity("BackgroundData",function(n){n.fieldName1="state",n.labelName1="state",n.pathToValue1="$.counties[0].state",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://marketplace.api.healthcare.gov/api/v1/counties/by/zip/",e.get("Data.Household").zipcode),"?apikey=d687412e7b53146b2631dc01974ad0a4")}))]]),j=new _jsEngine.Rule("3","T2",[[e=>o(e),e=>!u(e)||!u(e)]],[[e=>i(e),r,e=>0]]);e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(p),e.addRule(_),e.addRule(R),e.addRule(h),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(E),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(j)}addRulesheetContainer_js_2_is32state32on32marketplace_Cc17(e,n){const t=new _jsEngine.TupleOperator("js_2_is32state32on32marketplace_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.crossproduct("T0","T1","T2")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").state),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").filerHasDependents),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),o=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").has_married_couple),u=(e,n)=>e.get("Data.Household").marketplace=n,r=(e,n)=>e.get("UI").nextStageNumber=n,g=new _jsEngine.Filter("js_2_is32state32on32marketplace_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,2)]],!0),c=new _jsEngine.Rule("B0","T0",[],[[e=>s(e),e=>e.get("UI").noUiToRenderContinue=!0]]),p=new _jsEngine.Rule("D0","T1",[],[[e=>d(e),e=>e.get("Data.Household").size=1]]),_=new _jsEngine.Rule("1","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"DE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"FL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GU")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"HI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"KS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"LA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MO")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ND")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SD")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TX")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"UT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WV")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WY")],[e=>d(e)&&o(e),e=>e.get("Data.Household").has_married_couple],[e=>d(e)&&l(e),e=>e.get("Data.Household").filerHasDependents]],[[e=>d(e),u,e=>"Healthcare.gov"],[e=>s(e),r,e=>3]]),R=new _jsEngine.Rule("2","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"DE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"FL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GU")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"HI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"KS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"LA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MO")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ND")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SD")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TX")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"UT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WV")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WY")],[e=>d(e)&&o(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>d(e)&&l(e),e=>e.get("Data.Household").filerHasDependents]],[[e=>d(e),u,e=>"Healthcare.gov"],[e=>s(e),r,e=>3]]),h=new _jsEngine.Rule("3","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"DE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"FL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GU")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"HI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"KS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"LA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MO")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ND")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SD")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TX")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"UT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WV")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WY")],[e=>d(e)&&o(e),e=>e.get("Data.Household").has_married_couple],[e=>d(e)&&l(e),e=>!1===e.get("Data.Household").filerHasDependents]],[[e=>d(e),u,e=>"Healthcare.gov"],[e=>s(e),r,e=>3]]),E=new _jsEngine.Rule("4","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CZ")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"DE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"FL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"GU")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"HI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IL")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"IN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"KS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"LA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MO")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MS")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ND")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NE")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OH")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"OR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PA")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"PR")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SC")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"SD")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TN")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"TX")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"UT")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WI")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WV")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WY")],[e=>d(e)&&o(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>d(e)&&l(e),e=>!1===e.get("Data.Household").filerHasDependents]],[[e=>d(e),u,e=>"Healthcare.gov"],[e=>s(e),r,e=>4]]),j=new _jsEngine.Rule("5","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CA")]],[[e=>d(e),u,e=>"Covered California"],[e=>s(e),r,e=>999]]),T=new _jsEngine.Rule("6","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CO")]],[[e=>d(e),u,e=>"Connect for Health Colorado"],[e=>s(e),r,e=>999]]),f=new _jsEngine.Rule("7","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CT")]],[[e=>d(e),u,e=>"Access Health CT"],[e=>s(e),r,e=>999]]),D=new _jsEngine.Rule("8","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"DC")]],[[e=>d(e),u,e=>"DC Health Link"],[e=>s(e),r,e=>999]]),H=new _jsEngine.Rule("9","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ID")]],[[e=>d(e),u,e=>"Your Health Idaho"],[e=>s(e),r,e=>999]]),U=new _jsEngine.Rule("10","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"KY")]],[[e=>d(e),u,e=>"Kynect"],[e=>s(e),r,e=>999]]),m=new _jsEngine.Rule("11","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ME")]],[[e=>d(e),u,e=>"CoverMe"],[e=>s(e),r,e=>999]]),y=new _jsEngine.Rule("12","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MA")]],[[e=>d(e),u,e=>"Health Connector"],[e=>s(e),r,e=>999]]),O=new _jsEngine.Rule("13","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MD")]],[[e=>d(e),u,e=>"Maryland Health Connection"],[e=>s(e),r,e=>999]]),I=new _jsEngine.Rule("14","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MN")]],[[e=>d(e),u,e=>"MNsure"],[e=>s(e),r,e=>999]]),b=new _jsEngine.Rule("15","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NM")]],[[e=>d(e),u,e=>"beWellnm"],[e=>s(e),r,e=>999]]),w=new _jsEngine.Rule("16","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NV")]],[[e=>d(e),u,e=>"Nevada Health Link"],[e=>s(e),r,e=>999]]),C=new _jsEngine.Rule("17","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NY")]],[[e=>d(e),u,e=>"New York State of Health"],[e=>s(e),r,e=>999]]),q=new _jsEngine.Rule("18","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"RI")]],[[e=>d(e),u,e=>"HealthSource RI"],[e=>s(e),r,e=>999]]),v=new _jsEngine.Rule("19","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VT")]],[[e=>d(e),u,e=>"Vermont Health Connect"],[e=>s(e),r,e=>999]]),N=new _jsEngine.Rule("20","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WA")]],[[e=>d(e),u,e=>"Washington Healthplanfinder"],[e=>s(e),r,e=>999]]),V=new _jsEngine.Rule("21","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NJ")]],[[e=>d(e),u,e=>"Get Covered NJ"],[e=>s(e),r,e=>999]]),A=new _jsEngine.Rule("22","T2",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VA")]],[[e=>d(e),u,e=>"Virginia's Insurance Marketplace"],[e=>s(e),r,e=>999]]);e.addRule(a),e.addRule(g),e.addRule(t),e.addRule(c),e.addRule(p),e.addRule(_),e.addRule(R),e.addRule(h),e.addRule(E),e.addRule(j),e.addRule(T),e.addRule(f),e.addRule(D),e.addRule(H),e.addRule(U),e.addRule(m),e.addRule(y),e.addRule(O),e.addRule(I),e.addRule(b),e.addRule(w),e.addRule(C),e.addRule(q),e.addRule(v),e.addRule(N),e.addRule(V),e.addRule(A)}addRulesheetContainer_js_3_dependentQuery_Cc24(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_3_dependentQuery_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.crossproduct("T1","T2","T3"),e.crossproduct("T0","T3","T4")}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").filerHasDependents),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").size),o=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").has_married_couple),r=(e,n)=>e.get("Data.Household").size=n,g=new _jsEngine.Filter("js_3_dependentQuery_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,3)]],!0),c=new _jsEngine.Rule("B0","T0",[],[[e=>i(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="dependentcount",e.title="Household Members"}))]]),p=new _jsEngine.Rule("E0","T0",[],[[e=>i(e),e=>e.get("UI").nextStageNumber=4]]),_=new _jsEngine.Rule("1","T4",[[e=>o(e)&&u(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>o(e)&&l(e),e=>e.get("Data.Household").filerHasDependents]],[[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="dependentsCount",e.id="dependentsQueryNum",e.label="How many dependents do you have?",e.type="Number"}))]]),R=new _jsEngine.Rule("2","T4",[[e=>o(e)&&u(e),e=>e.get("Data.Household").has_married_couple],[e=>o(e)&&l(e),e=>!1===e.get("Data.Household").filerHasDependents]],[[e=>o(e)&&d(e),r,e=>_jsEngine.integerOps.add.func(e.get("Data.Household").size,1)],[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="fileJointly",e.id="filing",e.label="Do you and your spouse file taxes jointly?",e.type="YesNoBoolean"}))]]),h=new _jsEngine.Rule("3","T4",[[e=>o(e)&&u(e),e=>e.get("Data.Household").has_married_couple],[e=>o(e)&&l(e),e=>e.get("Data.Household").filerHasDependents]],[[e=>o(e)&&d(e),r,e=>_jsEngine.integerOps.add.func(e.get("Data.Household").size,1)],[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="dependentsCount",e.id="dependentsQueryNum",e.label="How many dependents do you have?",e.type="Number"}))],[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="fileJointly",e.id="filing",e.label="Do you and your spouse file taxes jointly?",e.type="YesNoBoolean"}))]]);e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(_),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(R),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(h)}addRulesheetContainer_js_4_applicantDetails_Cc23(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_4_applicantDetails_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers"),e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.crossproduct("T0","T2","T3")}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").dependentsCount),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").filerHasDependents),o=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").has_married_couple),r=(e,n)=>e.get("Data.Household").rate_group=n,g=new _jsEngine.Filter("js_4_applicantDetails_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,4)]],!0),c=new _jsEngine.Rule("B0","T0",[],[[e=>i(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="Tell us about you",e.title="Tell us about you"}))]]),p=new _jsEngine.Rule("I0","T0",[],[[e=>i(e),e=>e.get("UI").nextStageNumber=5]]),_=new _jsEngine.Rule("L0","T2",[],[[e=>o(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Household").size))(e),e=>e.get("Data.Household").size=_jsEngine.integerOps.add.func(e.get("Data.Household").size,e.get("Data.Household").dependentsCount)]]),R=new _jsEngine.Rule("O0","T3",[],[[e=>o(e)&&i(e),e=>n.setAssociation(e.get("UI"),"backgroundData",n.createEntity("BackgroundData",function(n){n.fieldName1="countyfips",n.labelName1="fips",n.pathToValue1="$.counties[0].fips",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://marketplace.api.healthcare.gov/api/v1/counties/by/zip/",e.get("Data.Household").zipcode),"?apikey=d687412e7b53146b2631dc01974ad0a4")}))]]),h=new _jsEngine.Rule("1","T2",[[e=>o(e)&&u(e),e=>e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>!1===e.get("Data.Household").filerHasDependents],[e=>o(e),e=>!l(e)||_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,0)]],[[e=>o(e),r,e=>"Couple"]]),E=new _jsEngine.Rule("2","T2",[[e=>o(e)&&u(e),e=>e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>e.get("Data.Household").filerHasDependents],[e=>o(e)&&l(e),e=>_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,1)]],[[e=>o(e),r,e=>"Couple and One Dependent"]]),j=new _jsEngine.Rule("3","T2",[[e=>o(e)&&u(e),e=>e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>e.get("Data.Household").filerHasDependents],[e=>o(e)&&l(e),e=>_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,2)]],[[e=>o(e),r,e=>"Couple and Two Dependents"]]),T=new _jsEngine.Rule("4","T2",[[e=>o(e)&&u(e),e=>e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>e.get("Data.Household").filerHasDependents],[e=>o(e)&&l(e),e=>_jsEngine.integerOps.greaterOrEqual.func(e.get("Data.Household").dependentsCount,3)]],[[e=>o(e),r,e=>"Couple and Three or More Dependents"]]),f=new _jsEngine.Rule("5","T2",[[e=>o(e)&&u(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>!1===e.get("Data.Household").filerHasDependents],[e=>o(e),e=>!l(e)||_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,0)]],[[e=>o(e),r,e=>"Individual"]]),D=new _jsEngine.Rule("6","T2",[[e=>o(e)&&u(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>e.get("Data.Household").filerHasDependents],[e=>o(e)&&l(e),e=>_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,1)]],[[e=>o(e),r,e=>"Individual and One Dependent"]]),H=new _jsEngine.Rule("7","T2",[[e=>o(e)&&u(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>e.get("Data.Household").filerHasDependents],[e=>o(e)&&l(e),e=>_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,2)]],[[e=>o(e),r,e=>"Individual and Two Dependents"]]),U=new _jsEngine.Rule("8","T2",[[e=>o(e)&&u(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>o(e)&&d(e),e=>e.get("Data.Household").filerHasDependents],[e=>o(e)&&l(e),e=>_jsEngine.integerOps.greaterOrEqual.func(e.get("Data.Household").dependentsCount,3)]],[[e=>o(e),r,e=>"Individual and Three or More Dependents"]]),m=new _jsEngine.Rule("E0","T1",[],[[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="text",e.type="ReadOnlyText",e.value="Select any of these that apply"}))]]),y=new _jsEngine.Rule("F0","T1",[],[[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personHasOtherCoverageOptions",e.id="eligible",e.label="Are you eligible for health coverage through a job, Medicare, Medicaid, or CHIP",e.type="YesNoBoolean"}))]]),O=new _jsEngine.Rule("G0","T1",[],[[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="is_pregnant",e.id="personPregnant",e.label="Are you pregnant (Don't include a baby as a dependent until it's born.)",e.type="YesNoBoolean"}))]]),I=new _jsEngine.Rule("H0","T1",[],[[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personTobacco",e.id="tobacco",e.label="Are you a tobacco user (Used tobacco products 4 or more times per week on average during the past 6 months (not including ceremonial uses)",e.type="YesNoBoolean"}))]]);e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(c),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(p),e.addRule(_),e.addRule(R),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(h),e.addRule(E),e.addRule(j),e.addRule(T),e.addRule(f),e.addRule(D),e.addRule(H),e.addRule(U),e.addRule(m),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(y),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(O),e.addRule(t),e.addRule(g),e.addRule(a),e.addRule(I)}addRulesheetContainer_js_55_results_Cc5(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_55_results_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T0","T3",["UI","UI.containers"],"UI","containers"),e.crossproduct("T2","T3","T4"),e.extend("T2","T5",["Data.Household","planMatches"],"Data.Household","plan"),e.accumulate("T5",["Data.Household"],["planMatches"],"T6"),e.join("T4","T6",["Data.Household"],"T1",["Data.Household","UI","UI.containers","planMatches->"]),e.crossproduct("T2","T3","T7"),e.extend("T2","T8",["Data.Household","hhMembers"],"Data.Household","enrollee"),e.accumulate("T8",["Data.Household"],["hhMembers"],"T9"),e.join("T7","T9",["Data.Household"],"T10",["Data.Household","UI","UI.containers","hhMembers->"]),e.crossproduct("T2","T3","T11"),e.join("T11","T9",["Data.Household"],"T10",["Data.Household","UI","UI.containers","hhMembers->"])}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),l=new _jsEngine.Filter("js_55_results_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,55)]],!0),d=new _jsEngine.Rule("A0","T0",[],[[e=>i(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="Options for your Household",e.title="Options for your Household"}))]]),o=new _jsEngine.Rule("B0","T1",[],[[e=>(e=>_jsEngine.Utilities.isValid(e.get("Data.Household")))(e)&&i(e)&&s(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.size.func(e.get("planMatches->"))))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(n){n.id="results",n.type="ReadOnlyText",n.value=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.integerOps.toStringOp.func(_jsEngine.collectionOps.size.func(e.get("planMatches->")))," plans found: "),e.get("Data.Household").plans)}))]]),u=new _jsEngine.Rule("1","T10",[[()=>!0,e=>_jsEngine.collectionOps.exists.func(e.get("hhMembers->"),(e,n)=>!0===e.eligibleOtherPrograms,e)]],[[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.emphasize=!0,e.id="results2",e.type="ReadOnlyText",e.value='<p><b>Note: If you have job-based insurance now or get an offer for job-based insurance, you won’t qualify for savings on a Marketplace plan if the job-based plan is considered affordable and meets minimum standards. <a href="https://www.healthcare.gov/have-job-based-coverage/">Learn More at this link.</a>.</b></p>'}))]]),r=new _jsEngine.Rule("2","T10",[[()=>!0,e=>_jsEngine.collectionOps.exists.func(e.get("hhMembers->"),(e,n)=>!0===e.aptc_eligible,e)]],[[e=>i(e)&&s(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="results3",e.type="ReadOnlyText",e.value='<p><b>Good news! There may be enrollees in your household eligible for the <a href="https://www.healthcare.gov/glossary/premium-tax-credit/">advance premium tax credit.</a></b></p>'}))]]);e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(d),e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(o),e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(u),e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(r)}addRulesheetContainer_js_5_parseApplicantData_Cc15(e,n){const t=new _jsEngine.TupleOperator("js_5_parseApplicantData_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.crossproduct("T0","T1","T2")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=e=>_jsEngine.Utilities.isValid(_jsEngine.integerOps.toStringOp.func(_jsEngine.dateTimeOps.year.func(_jsEngine.dateTimeOps.now.func()))),s=e=>_jsEngine.Utilities.isValid(_jsEngine.integerOps.toStringOp.func(e.get("Data.Household").size)),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").state),d=e=>_jsEngine.Utilities.isValid(_jsEngine.dateTimeOps.year.func(_jsEngine.dateTimeOps.now.func())),o=e=>_jsEngine.Utilities.isValid(e.get("UI")),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").size),r=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),g=new _jsEngine.Filter("js_5_parseApplicantData_filter_0","T0",[[e=>o(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,5)]],!0),c=new _jsEngine.Rule("A0","T0",[],[[e=>o(e),e=>e.get("UI").noUiToRenderContinue=!0]]),p=new _jsEngine.Rule("B0","T1",[],[[e=>r(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Household").personDob))(e),e=>n.addAssociation(e.get("Data.Household"),"enrollee",n.createEntity("Data.Enrollee",function(n){n.age=_jsEngine.dateOps.yearsBetween.func(e.get("Data.Household").personDob,_jsEngine.dateOps.today.func()),n.citizen_or_legal_resident=e.get("Data.Household").personCitizen_or_legal_resident,n.dependents=e.get("Data.Household").dependentsCount,n.eligibleOtherPrograms=e.get("Data.Household").personHasOtherCoverageOptions,n.hasDependents=e.get("Data.Household").filerHasDependents,n.is_pregnant=e.get("Data.Household").personPregnant,n.name=e.get("Data.Household").personName,n.relationship="Self",n.uses_tobacco=e.get("Data.Household").personTobacco}))]]),_=new _jsEngine.Rule("C0","T0",[],[[e=>o(e),e=>e.get("UI").nextStageNumber=6]]),R=new _jsEngine.Rule("1","T2",[[e=>r(e)&&l(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"HI")]],[[e=>r(e)&&o(e)&&u(e)&&s(e)&&d()&&i(),e=>n.setAssociation(e.get("UI"),"backgroundData",n.createEntity("BackgroundData",function(n){n.fieldName1="fpl",n.pathToValue1="$.data.income",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/api/",_jsEngine.integerOps.toStringOp.func(_jsEngine.dateTimeOps.year.func(_jsEngine.dateTimeOps.now.func()))),"/hi/"),_jsEngine.integerOps.toStringOp.func(e.get("Data.Household").size))}))]]),h=new _jsEngine.Rule("2","T2",[[e=>r(e)&&l(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AK")]],[[e=>r(e)&&o(e)&&u(e)&&s(e)&&d()&&i(),e=>n.setAssociation(e.get("UI"),"backgroundData",n.createEntity("BackgroundData",function(n){n.fieldName1="fpl",n.pathToValue1="$.data.income",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/api/",_jsEngine.integerOps.toStringOp.func(_jsEngine.dateTimeOps.year.func(_jsEngine.dateTimeOps.now.func()))),"/ak/"),_jsEngine.integerOps.toStringOp.func(e.get("Data.Household").size))}))]]),E=new _jsEngine.Rule("3","T2",[[e=>r(e)&&l(e),e=>!(_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"AK")||_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"HI"))]],[[e=>r(e)&&o(e)&&u(e)&&s(e)&&d()&&i(),e=>n.setAssociation(e.get("UI"),"backgroundData",n.createEntity("BackgroundData",function(n){n.fieldName1="fpl",n.pathToValue1="$.data.income",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/api/",_jsEngine.integerOps.toStringOp.func(_jsEngine.dateTimeOps.year.func(_jsEngine.dateTimeOps.now.func()))),"/us/"),_jsEngine.integerOps.toStringOp.func(e.get("Data.Household").size))}))]]);e.addRule(a),e.addRule(g),e.addRule(t),e.addRule(c),e.addRule(p),e.addRule(a),e.addRule(g),e.addRule(t),e.addRule(_),e.addRule(R),e.addRule(a),e.addRule(g),e.addRule(t),e.addRule(h),e.addRule(a),e.addRule(g),e.addRule(t),e.addRule(E)}addRulesheetContainer_js_632route32to32enrollee_Cc19(e,n){const t=new _jsEngine.TupleOperator("js_632route32to32enrollee_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","spouse"],"Data.Household","enrollee")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=new _jsEngine.TupleOperator("js_632route32to32enrollee_precondition_1Func",[function(e){e.crossproduct("T0","T1","T4"),e.projection("T4","T1",["Data.Household","spouse"]),e.projection("T4","T3",["Data.Household","UI"]),e.projection("T4","T1",["Data.Household","spouse"]),e.accumulate("T1",["Data.Household"],["spouse"],"T5"),e.join("T3","T5",["Data.Household"],"T6",["Data.Household","UI","spouse->"]),e.join("T4","T6",["Data.Household","UI"],"T7",["Data.Household","spouse","UI","spouse->"]),e.projection("T7","T6",["Data.Household","UI","spouse->"]),e.projection("T4","T1",["Data.Household","spouse"]),e.join("T3","T5",["Data.Household"],"T6",["Data.Household","UI","spouse->"]),e.extend("T2","T8",["Data.Household","allMembers"],"Data.Household","enrollee"),e.accumulate("T8",["Data.Household"],["allMembers"],"T9"),e.join("T6","T9",["Data.Household"],"T10",["Data.Household","UI","spouse->","allMembers->"]),e.join("T4","T10",["Data.Household","UI"],"T11",["Data.Household","spouse","UI","spouse->","allMembers->"]),e.projection("T11","T10",["Data.Household","UI","spouse->","allMembers->"]),e.projection("T4","T1",["Data.Household","spouse"]),e.join("T3","T9",["Data.Household"],"T12",["Data.Household","UI","allMembers->"]),e.join("T4","T12",["Data.Household","UI"],"T13",["Data.Household","spouse","UI","allMembers->"]),e.projection("T13","T12",["Data.Household","UI","allMembers->"])}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.size.func(e.get("allMembers->"))),d=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.isEmpty.func(e.get("spouse->"))),o=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").size),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),r=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").has_married_couple),g=(e,n)=>e.get("UI").nextStageNumber=n,c=new _jsEngine.Filter("js_632route32to32enrollee_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,6)]],!0),p=new _jsEngine.LimitedFilter("js_632route32to32enrollee_filter_1","T1",[[e=>u(e)&&(e=>_jsEngine.Utilities.isValid(e.get("spouse")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("spouse").relationship))(e),e=>_jsEngine.stringOps.equal.func(e.get("spouse").relationship,"Spouse")]],[[[],["Data.Household"]],[["spouse"],["Data.Household","spouse"]]]),_=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>e.get("UI").noUiToRenderContinue=!0]]),R=new _jsEngine.Rule("H0","T3",[],[[e=>u(e)&&s(e),e=>n.setAssociation(e.get("UI"),"backgroundData",n.createEntity("BackgroundData",function(n){n.fieldName1="rating_area",n.labelName1="area",n.pathToValue1="$.area",n.url=_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func(_jsEngine.stringOps.plus.func("https://marketplace.api.healthcare.gov/api/v1/rate-areas?apikey=d687412e7b53146b2631dc01974ad0a4&year=2025&state=",e.get("Data.Household").state),"&zipcode="),e.get("Data.Household").zipcode),"&fips="),e.get("Data.Household").countyfips)}))]]),h=new _jsEngine.Rule("1","T6",[[e=>u(e)&&r(e),e=>e.get("Data.Household").has_married_couple],[e=>d(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("spouse->"))]],[[e=>s(e),g,e=>7]]),E=new _jsEngine.Rule("2","T10",[[e=>u(e)&&r(e),e=>e.get("Data.Household").has_married_couple],[e=>d(e),e=>!1===_jsEngine.collectionOps.isEmpty.func(e.get("spouse->"))],[e=>u(e)&&l(e)&&o(e),e=>!1===_jsEngine.integerOps.intEqual.func(_jsEngine.collectionOps.size.func(e.get("allMembers->")),e.get("Data.Household").size)]],[[e=>s(e),g,e=>9]]),j=new _jsEngine.Rule("3","T10",[[e=>u(e)&&r(e),e=>!1===e.get("Data.Household").has_married_couple],[e=>d(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("spouse->"))],[e=>u(e)&&l(e)&&o(e),e=>!1===_jsEngine.integerOps.intEqual.func(_jsEngine.collectionOps.size.func(e.get("allMembers->")),e.get("Data.Household").size)]],[[e=>s(e),g,e=>9]]),T=new _jsEngine.Rule("4","T12",[[e=>u(e)&&l(e)&&o(e),e=>_jsEngine.integerOps.intEqual.func(_jsEngine.collectionOps.size.func(e.get("allMembers->")),e.get("Data.Household").size)]],[[e=>s(e),g,e=>11]]);e.addRule(a),e.addRule(c),e.addRule(t),e.addRule(p),e.addRule(i),e.addRule(_),e.addRule(R),e.addRule(a),e.addRule(c),e.addRule(t),e.addRule(p),e.addRule(i),e.addRule(h),e.addRule(E),e.addRule(j),e.addRule(T)}addRulesheetContainer_js_7_spouse32detail_Cc16(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_7_spouse32detail_precondition_2Func",[function(e){e.extend("T0","T3",["UI","UI.containers"],"UI","containers")}]),i=new _jsEngine.TupleOperator("js_7_spouse32detail_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","spouse"],"Data.Household","enrollee")}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),d=new _jsEngine.Filter("js_7_spouse32detail_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,7)]]),o=new _jsEngine.LimitedFilter("js_7_spouse32detail_filter_2","T1",[[e=>(e=>_jsEngine.Utilities.isValid(e.get("Data.Household")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("spouse")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("spouse").relationship))(e),e=>_jsEngine.stringOps.equal.func(e.get("spouse").relationship,"Spouse")]],[[[],["Data.Household"]],[["spouse"],["Data.Household","spouse"]]]),u=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="Tell us about your spouse",e.title="Tell us about your spouse"}))]]),r=new _jsEngine.Rule("J0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=8]]),g=new _jsEngine.Rule("B0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personName",e.id="0_0",e.id="name",e.label="What is their name?",e.type="Text",e.value="Lois Lane"}))]]),c=new _jsEngine.Rule("C0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="citizen_or_legal_resident",e.id="0_4",e.id="citizenshipQuery",e.label="Are they a citizen or legal resident?",e.type="YesNoBoolean"}))]]),p=new _jsEngine.Rule("D0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personDob",e.id="0_3",e.id="ageQuery",e.label="What is their date of birth?",e.type="DateTime"}))]]),_=new _jsEngine.Rule("E0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="text",e.type="ReadOnlyText",e.value="Select any of these that apply"}))]]),R=new _jsEngine.Rule("F0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personHasOtherCoverageOptions",e.id="eligible",e.label="Eligible for health coverage through a job, Medicare, Medicaid, or CHIP",e.type="YesNoBoolean"}))]]),h=new _jsEngine.Rule("G0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="is_pregnant",e.id="personPregnant",e.label="Is pregnant (Don't include a baby as a dependent until it's born.)",e.type="YesNoBoolean"}))]]),E=new _jsEngine.Rule("H0","T3",[],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personTobacco",e.id="tobacco",e.label="Is a tobacco user (Used tobacco products 4 or more times per week on average during the past 6 months (not including ceremonial uses)",e.type="YesNoBoolean"}))]]);e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(u),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(r),e.addRule(g),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(c),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(_),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(R),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(h),e.addRule(t),e.addRule(d),e.addRule(i),e.addRule(o),e.addRule(a),e.addRule(E)}addRulesheetContainer_js_8_parseSpouseData_Cc13(e,n){const t=new _jsEngine.TupleOperator("js_8_parseSpouseData_precondition_1Func",[function(e){e.projection("T1","T2",["Data.Household"])}]),a=new _jsEngine.TupleOperator("js_8_parseSpouseData_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","spouse"],"Data.Household","enrollee")}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),d=new _jsEngine.Filter("js_8_parseSpouseData_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,8)]],!0),o=new _jsEngine.LimitedFilter("js_8_parseSpouseData_filter_1","T1",[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("spouse")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("spouse").relationship))(e),e=>_jsEngine.stringOps.equal.func(e.get("spouse").relationship,"Spouse")]],[[[],["Data.Household"]],[["spouse"],["Data.Household","spouse"]]]),u=new _jsEngine.Rule("B0","T2",[],[[e=>l(e)&&(e=>_jsEngine.Utilities.isValid(e.get("Data.Household").personDob))(e),e=>n.addAssociation(e.get("Data.Household"),"enrollee",n.createEntity("Data.Enrollee",function(n){n.age=_jsEngine.dateOps.yearsBetween.func(e.get("Data.Household").personDob,_jsEngine.dateOps.today.func()),n.citizen_or_legal_resident=e.get("Data.Household").personCitizen_or_legal_resident,n.eligibleOtherPrograms=e.get("Data.Household").personHasOtherCoverageOptions,n.is_pregnant=e.get("Data.Household").personPregnant,n.name=e.get("Data.Household").personName,n.relationship="Spouse",n.uses_tobacco=e.get("Data.Household").personTobacco}))]]),r=new _jsEngine.Rule("C0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=6]]),g=new _jsEngine.Rule("E0","T0",[],[[e=>s(e),e=>e.get("UI").noUiToRenderContinue=!0]]);e.addRule(i),e.addRule(d),e.addRule(a),e.addRule(o),e.addRule(t),e.addRule(u),e.addRule(i),e.addRule(d),e.addRule(a),e.addRule(o),e.addRule(t),e.addRule(r),e.addRule(g)}addRulesheetContainer_js_998_no32plans32found_Cc6(e,n){const t=new _jsEngine.TupleOperator("js_998_no32plans32found_precondition_0Func",[function(e){e.extend("T0","T1",["UI","UI.containers"],"UI","containers")}]),a=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),i=e=>_jsEngine.Utilities.isValid(e.get("UI")),s=new _jsEngine.Filter("js_998_no32plans32found_filter_0","T0",[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,998)]],!0),l=new _jsEngine.Rule("A0","T0",[],[[e=>i(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="stateHX",e.title="No plans found"}))]]),d=new _jsEngine.Rule("C0","T0",[],[[e=>i(e),e=>e.get("UI").done=!0]]),o=new _jsEngine.Rule("B0","T1",[],[[e=>i(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI.containers")))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value="Unfortunately, no plans met the criteria you inputted. Try hitting the previous button and choosing fewer options."}))]]);e.addRule(a),e.addRule(s),e.addRule(t),e.addRule(l),e.addRule(a),e.addRule(s),e.addRule(t),e.addRule(d),e.addRule(o)}addRulesheetContainer_js_999_state32marketplace_Cc26(e,n){const t=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),a=new _jsEngine.TupleOperator("js_999_state32marketplace_precondition_0Func",[function(e){e.bind("T1","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T0","T2",["UI","UI.containers"],"UI","containers"),e.crossproduct("T1","T2","T3"),e.crossproduct("T0","T3","T4")}]),i=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").state),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),o=new _jsEngine.Filter("js_999_state32marketplace_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,999)]],!0),u=new _jsEngine.Rule("A0","T0",[],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="stateHX",e.title="Please use your state marketplace."}))]]),r=new _jsEngine.Rule("C0","T0",[],[[e=>s(e),e=>e.get("UI").done=!0]]),g=new _jsEngine.Rule("1","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CA")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<p>Covered California is your state\'s Marketplace.&nbsp;<a class="ds-c-external-link" href="http://www.coveredca.com/">Visit California\'s website.</a></p>'}))]]),c=new _jsEngine.Rule("2","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CO")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Connect for Health Colorado is your state\' Marketplace.&nbsp;<a class="ds-c-external-link" href="http://www.connectforhealthco.com/">Visit Colorado\' website.</a></div>'}))]]),p=new _jsEngine.Rule("3","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"CT")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Access Health CT is your state\' Marketplace.&nbsp;<a class="ds-c-external-link" href="http://www.accesshealthct.com/">Visit Connecticut\' website.</a></div>'}))]]),_=new _jsEngine.Rule("4","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"DC")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">DC Health Link is your state\' Marketplace.&nbsp;<a class="ds-c-external-link" href="https://dchealthlink.com/">Visit the District of Columbia\' website.</a></div>'}))]]),R=new _jsEngine.Rule("5","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ID")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Your Health Idaho is your state\' Marketplace.&nbsp;<a class="ds-c-external-link" href="http://www.yourhealthidaho.org/">Visit Idaho\' website.</a></div>'}))]]),h=new _jsEngine.Rule("6","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"KY")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Kynect is your state\'s Marketplace.&nbsp;<a href="https://kynect.ky.gov/s/?language=en_US" target="_blank" rel="external">Visit Kentucky\'s website.</a></div>'}))]]),E=new _jsEngine.Rule("7","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"ME")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">CoverMe is your state\'s Marketplace.&nbsp;<a href="https://coverme.gov/" target="_blank" rel="external">Visit Maine\'s website.</a></div>'}))]]),j=new _jsEngine.Rule("8","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MA")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Health Connector is your state\'s Marketplace.&nbsp;<a class="ds-c-external-link" href="https://www.mahealthconnector.org/">Visit Massachusetts\' website.</a></div>'}))]]),T=new _jsEngine.Rule("9","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MD")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Maryland Health Connection is your state\'s Marketplace.&nbsp;<a href="http://www.marylandhealthconnection.gov/" target="_blank" rel="external">Visit Maryland\' website.</a></div>'}))]]),f=new _jsEngine.Rule("10","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"MN")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">MNsure website is your state\'s Marketplace.&nbsp;<a href="http://mn.gov/hix/" target="_blank" rel="external">Visit Minnesota\' website.</a></div>'}))]]),D=new _jsEngine.Rule("11","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NM")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">beWellnm is your state\'s Marketplace.&nbsp;<a class="ds-c-external-link" href="http://www.bewellnm.com/">Visit New Mexico\'s website.</a></div>'}))]]),H=new _jsEngine.Rule("12","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NV")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Nevada Health Link is your state\'s Marketplace.&nbsp;<a class="ds-c-external-link" href="https://www.nevadahealthlink.com/">Visit Nevada\' website.</a></div>'}))]]),U=new _jsEngine.Rule("13","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NY")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">New York State of Health is your state\'s Marketplace.&nbsp;<a href="http://nystateofhealth.ny.gov/" target="_blank" rel="external">Visit New York\' website.</a></div>'}))]]),m=new _jsEngine.Rule("14","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"RI")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">HealthSource RI is your state\'s Marketplace.&nbsp;<a class="ds-c-external-link" href="http://www.healthsourceri.com/">Visit Rhode Island\'s website.</a></div>'}))]]),y=new _jsEngine.Rule("15","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VT")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Vermont Health Connect is your state\'s Marketplace.&nbsp;<a href="http://healthconnect.vermont.gov/" target="_blank" rel="external">Visit Vermont\' website.</a></div>'}))]]),O=new _jsEngine.Rule("16","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"WA")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Washington Healthplanfinder is your state\'s Marketplace.&nbsp;<a class="ds-c-external-link" href="http://www.wahealthplanfinder.org/">Visit Washington\' website.</a></div>'}))]]),I=new _jsEngine.Rule("17","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"NJ")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Get Covered NJ is your state\'s Marketplace.&nbsp;<a href="https://www.getcovered.nj.gov/" target="_blank" rel="external">Visit New Jersey\' website.</a></div>'}))]]),b=new _jsEngine.Rule("18","T4",[[e=>d(e)&&i(e),e=>_jsEngine.stringOps.equal.func(e.get("Data.Household").state,"VA")]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="1",e.type="ReadOnlyText",e.value='<div class="learnParagraph-module--paragraph--4a23b ">Virginia\'s Insurance Marketplace is your state\'s Marketplace.&nbsp;<a href="https://www.marketplace.virginia.gov" target="_blank" rel="external">Visit Virginia\'s website.</a></div>'}))]]);e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(u),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(r),e.addRule(g),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(c),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(p),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(_),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(R),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(h),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(E),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(j),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(T),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(f),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(D),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(H),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(U),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(m),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(y),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(O),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(I),e.addRule(t),e.addRule(o),e.addRule(a),e.addRule(b)}addRulesheetContainer_js_9_dependent32detail2_Cc22(e,n){const t=new _jsEngine.TupleOperator("js_9_dependent32detail2_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","dependents"],"Data.Household","enrollee")}]),a=new _jsEngine.TupleOperator("js_9_dependent32detail2_precondition_1Func",[function(e){e.crossproduct("T1","T0","T3"),e.projection("T3","T0",["UI"]),e.crossproduct("T2","T0","T4"),e.extend("T0","T5",["UI","UI.containers"],"UI","containers"),e.join("T4","T5",["UI"],"T6",["Data.Household","UI","UI.containers"]),e.extend("T0","T7",["UI","containers"],"UI","containers"),e.join("T6","T7",["UI"],"T8",["Data.Household","UI","UI.containers","containers"]),e.accumulate("T1",["Data.Household"],["dependents"],"T9"),e.join("T8","T9",["Data.Household"],"T10",["Data.Household","UI","UI.containers","containers","dependents->"]),e.join("T3","T10",["Data.Household","UI"],"T11",["Data.Household","dependents","UI","UI.containers","containers","dependents->"]),e.projection("T11","T10",["Data.Household","UI","UI.containers","containers","dependents->"])}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("UI.containers")),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").dependentsCount),o=e=>_jsEngine.Utilities.isValid(e.get("containers")),u=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),r=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))),g=new _jsEngine.Filter("js_9_dependent32detail2_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,9)]],!0),c=new _jsEngine.LimitedFilter("js_9_dependent32detail2_filter_1","T1",[[e=>u(e)&&(e=>_jsEngine.Utilities.isValid(e.get("dependents")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("dependents").relationship))(e),e=>_jsEngine.stringOps.equal.func(e.get("dependents").relationship,"Dependent")]],[[[],["Data.Household"]],[["dependents"],["Data.Household","dependents"]]]),p=new _jsEngine.Rule("I0","T0",[],[[e=>s(e),e=>e.get("UI").nextStageNumber=10]]),_=new _jsEngine.Rule("1","T10",[[e=>u(e)&&d(e),e=>_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,1)],[e=>r(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personName",e.id="0_0",e.id="name",e.label="What is their name?",e.type="Text",e.value="Superman Jr."}))],[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="citizen_or_legal_resident",e.id="0_4",e.id="citizenshipQuery",e.label="Are they a citizen or legal resident?",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personDob",e.id="0_3",e.id="ageQuery",e.label="What is their date of birth?",e.type="DateTime"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="text",e.type="ReadOnlyText",e.value="Select any of these that apply"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personHasOtherCoverageOptions",e.id="eligible",e.label="Eligible for health coverage through a job, Medicare, Medicaid, or CHIP",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="is_pregnant",e.id="personPregnant",e.label="Is pregnant (Don't include a baby as a dependent until it's born.)",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personTobacco",e.id="tobacco",e.label="Is a tobacco user (Used tobacco products 4 or more times per week on average during the past 6 months (not including ceremonial uses)",e.type="YesNoBoolean"}))]]),R=new _jsEngine.Rule("2","T10",[[e=>u(e)&&d(e),e=>_jsEngine.integerOps.greater.func(e.get("Data.Household").dependentsCount,1)],[e=>r(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))]],[[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personName",e.id="0_0",e.id="name",e.label="What is their name?",e.type="Text",e.value="Superman Jr."}))],[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="citizen_or_legal_resident",e.id="0_4",e.id="citizenshipQuery",e.label="Are they a citizen or legal resident?",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personDob",e.id="0_3",e.id="ageQuery",e.label="What is their date of birth?",e.type="DateTime"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="text",e.type="ReadOnlyText",e.value="Select any of these that apply"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personHasOtherCoverageOptions",e.id="eligible",e.label="Eligible for health coverage through a job, Medicare, Medicaid, or CHIP",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="is_pregnant",e.id="personPregnant",e.label="Is pregnant (Don't include a baby as a dependent until it's born.)",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personTobacco",e.id="tobacco",e.label="Is a tobacco user (Used tobacco products 4 or more times per week on average during the past 6 months (not including ceremonial uses)",e.type="YesNoBoolean"}))]]),h=new _jsEngine.Rule("3","T10",[[e=>u(e)&&d(e),e=>_jsEngine.integerOps.greater.func(e.get("Data.Household").dependentsCount,1)],[e=>r(e),e=>!1===_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))]],[[e=>s(e)&&l(e)&&(e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.size.func(e.get("dependents->"))))(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(n){n.fieldName="personName",n.id="0_0",n.id="name",n.label="What is their name?",n.type="Text",n.value=_jsEngine.stringOps.plus.func("Superman Jr., part",_jsEngine.integerOps.toStringOp.func(_jsEngine.collectionOps.size.func(e.get("dependents->"))))}))],[e=>s(e)&&l(e),e=>n.addAssociation(e.get("UI.containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="citizen_or_legal_resident",e.id="0_4",e.id="citizenshipQuery",e.label="Are they a citizen or legal resident?",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personDob",e.id="0_3",e.id="ageQuery",e.label="What is their date of birth?",e.type="DateTime"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.id="text",e.type="ReadOnlyText",e.value="Select any of these that apply"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personHasOtherCoverageOptions",e.id="eligible",e.label="Eligible for health coverage through a job, Medicare, Medicaid, or CHIP",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="is_pregnant",e.id="personPregnant",e.label="Is pregnant (Don't include a baby as a dependent until it's born.)",e.type="YesNoBoolean"}))],[e=>s(e)&&o(e),e=>n.addAssociation(e.get("containers"),"uiControls",n.createEntity("UIControl",function(e){e.fieldName="personTobacco",e.id="tobacco",e.label="Is a tobacco user (Used tobacco products 4 or more times per week on average during the past 6 months (not including ceremonial uses)",e.type="YesNoBoolean"}))]]);e.addRule(i),e.addRule(g),e.addRule(t),e.addRule(c),e.addRule(a),e.addRule(p),e.addRule(_),e.addRule(i),e.addRule(g),e.addRule(t),e.addRule(c),e.addRule(a),e.addRule(R),e.addRule(i),e.addRule(g),e.addRule(t),e.addRule(c),e.addRule(a),e.addRule(h)}addRulesheetContainer_js_9_dependent32detail_Cc21(e,n){const t=new _jsEngine.TupleOperator("js_9_dependent32detail_precondition_0Func",[function(e){e.bind("T2","Data.Household",e.datamanager.getEntitiesByType("Data.Household")),e.extend("T2","T1",["Data.Household","dependents"],"Data.Household","enrollee")}]),a=new _jsEngine.TupleOperator("js_9_dependent32detail_precondition_1Func",[function(e){e.crossproduct("T1","T0","T3"),e.projection("T3","T0",["UI"]),e.crossproduct("T2","T0","T4"),e.accumulate("T1",["Data.Household"],["dependents"],"T5"),e.join("T4","T5",["Data.Household"],"T6",["Data.Household","UI","dependents->"]),e.join("T3","T6",["Data.Household","UI"],"T7",["Data.Household","dependents","UI","dependents->"]),e.projection("T7","T6",["Data.Household","UI","dependents->"])}]),i=new _jsEngine.TupleOperator("PREFILTERFunc",[function(e){e.bind("T0","UI",e.datamanager.getEntitiesByType("UI"))}]),s=e=>_jsEngine.Utilities.isValid(e.get("UI")),l=e=>_jsEngine.Utilities.isValid(e.get("Data.Household").dependentsCount),d=e=>_jsEngine.Utilities.isValid(e.get("Data.Household")),o=e=>_jsEngine.Utilities.isValid(_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))),u=new _jsEngine.Filter("js_9_dependent32detail_filter_0","T0",[[e=>s(e)&&(e=>_jsEngine.Utilities.isValid(e.get("UI").currentStageNumber))(e),e=>_jsEngine.integerOps.intEqual.func(e.get("UI").currentStageNumber,9)]],!0),r=new _jsEngine.LimitedFilter("js_9_dependent32detail_filter_1","T1",[[e=>d(e)&&(e=>_jsEngine.Utilities.isValid(e.get("dependents")))(e)&&(e=>_jsEngine.Utilities.isValid(e.get("dependents").relationship))(e),e=>_jsEngine.stringOps.equal.func(e.get("dependents").relationship,"Dependent")]],[[[],["Data.Household"]],[["dependents"],["Data.Household","dependents"]]]),g=new _jsEngine.Rule("1","T6",[[e=>d(e)&&l(e),e=>_jsEngine.integerOps.intEqual.func(e.get("Data.Household").dependentsCount,1)],[e=>o(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))]],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="dependent",e.title=_jsEngine.stringOps.plus.func(" Tell us about your ","dependent")}))]]),c=new _jsEngine.Rule("2","T6",[[e=>d(e)&&l(e),e=>_jsEngine.integerOps.greater.func(e.get("Data.Household").dependentsCount,1)],[e=>o(e),e=>_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))]],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="first dependent",e.title=_jsEngine.stringOps.plus.func(" Tell us about your ","first dependent")}))]]),p=new _jsEngine.Rule("3","T6",[[e=>d(e)&&l(e),e=>_jsEngine.integerOps.greater.func(e.get("Data.Household").dependentsCount,1)],[e=>o(e),e=>!1===_jsEngine.collectionOps.isEmpty.func(e.get("dependents->"))]],[[e=>s(e),e=>n.setAssociation(e.get("UI"),"containers",n.createEntity("Container",function(e){e.id="next dependent",e.title=_jsEngine.stringOps.plus.func(" Tell us about your ","next dependent")}))]]);e.addRule(i),e.addRule(u),e.addRule(t),e.addRule(r),e.addRule(a),e.addRule(g),e.addRule(i),e.addRule(u),e.addRule(t),e.addRule(r),e.addRule(a),e.addRule(c),e.addRule(i),e.addRule(u),e.addRule(t),e.addRule(r),e.addRule(a),e.addRule(p)}}exports.DecisionServiceRules=DecisionServiceRules;
 
 },{"@corticon/js-engine":5}],4:[function(require,module,exports){
 module.exports={
@@ -16,30 +13,196 @@ module.exports={
         {
             "associations": [
                 {
-                    "targetEntity": "ProjectsData.Expense",
-                    "roleName": "Step8Field1",
-                    "navigability": "CanonicalSample->Step8Field1",
+                    "targetEntity": "Data.Household",
+                    "roleName": "household",
+                    "navigability": "ApplicantData->household",
+                    "mandatory": false,
+                    "cardinality": "1"
+                },
+                {
+                    "targetEntity": "Data.Enrollee",
+                    "roleName": "person",
+                    "navigability": "ApplicantData->person",
+                    "mandatory": false,
+                    "cardinality": "1"
+                }
+            ],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": [
+                "household",
+                "person"
+            ],
+            "name": "Data.ApplicantData",
+            "attributesDefinition": [],
+            "attributes": [],
+            "id": "Data.ApplicantData"
+        },
+        {
+            "associations": [{
+                "targetEntity": "Data.Household",
+                "roleName": "household",
+                "reverseRoleName": "enrollee",
+                "navigability": "Bidirectional",
+                "mandatory": true,
+                "cardinality": "1"
+            }],
+            "transientAttributesDefinition": [],
+            "associationsDefinition": ["household"],
+            "name": "Data.Enrollee",
+            "attributesDefinition": [
+                "age",
+                "aptc_eligible",
+                "citizen_or_legal_resident",
+                "dataGathered",
+                "dependents",
+                "dob",
+                "does_not_cohabitate",
+                "eligibleOtherPrograms",
+                "has_hardship",
+                "hasDependents",
+                "is_parent",
+                "is_pregnant",
+                "isDependent",
+                "last_tobacco_use_date",
+                "name",
+                "numKids",
+                "relationship",
+                "uses_tobacco"
+            ],
+            "attributes": [
+                {
+                    "dataType": "Integer",
+                    "name": "age",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "aptc_eligible",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "citizen_or_legal_resident",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "dataGathered",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "dependents",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Date",
+                    "name": "dob",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "does_not_cohabitate",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "eligibleOtherPrograms",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "has_hardship",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "hasDependents",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "is_parent",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "is_pregnant",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "isDependent",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Date",
+                    "name": "last_tobacco_use_date",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "name",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "numKids",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "relationship",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "uses_tobacco",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Data.Enrollee"
+        },
+        {
+            "associations": [
+                {
+                    "targetEntity": "Data.Enrollee",
+                    "roleName": "enrollee",
+                    "reverseRoleName": "household",
+                    "navigability": "Bidirectional",
                     "mandatory": false,
                     "cardinality": "*"
                 },
                 {
-                    "targetEntity": "MultipleText",
-                    "roleName": "Step9Field1",
-                    "navigability": "CanonicalSample->Step9Field1",
+                    "targetEntity": "Data.MatchingPlan",
+                    "roleName": "matchingPlan",
+                    "reverseRoleName": "household",
+                    "navigability": "Bidirectional",
                     "mandatory": false,
                     "cardinality": "*"
                 },
                 {
-                    "targetEntity": "MultipleNumber",
-                    "roleName": "Step9Field2",
-                    "navigability": "CanonicalSample->Step9Field2",
-                    "mandatory": false,
-                    "cardinality": "*"
-                },
-                {
-                    "targetEntity": "MultipleDateTime",
-                    "roleName": "Step9Field3",
-                    "reverseRoleName": "canonicalSample",
+                    "targetEntity": "Data.Plan",
+                    "roleName": "plan",
+                    "reverseRoleName": "household",
                     "navigability": "Bidirectional",
                     "mandatory": false,
                     "cardinality": "*"
@@ -47,569 +210,273 @@ module.exports={
             ],
             "transientAttributesDefinition": [],
             "associationsDefinition": [
-                "Step8Field1",
-                "Step9Field1",
-                "Step9Field2",
-                "Step9Field3"
+                "enrollee",
+                "matchingPlan",
+                "plan"
             ],
-            "name": "ProjectsData.CanonicalSample",
+            "name": "Data.Household",
             "attributesDefinition": [
-                "Step1Field1",
-                "Step1Field2",
-                "Step1Field3",
-                "Step1Field4",
-                "Step2Field1",
-                "Step3Field1",
-                "Step3Field3",
-                "Step4Field1",
-                "Step4Field2",
-                "Step5Field1",
-                "Step6Field1",
-                "Step7Field1",
-                "Step8EurSum",
-                "Step8HotelUSDSum",
-                "Step8SumAll",
-                "Step8USDSum"
+                "countyfips",
+                "dentalOnly",
+                "dependentsCount",
+                "desiredMetalLevel",
+                "desiredQualityLevel",
+                "fileJointly",
+                "filerHasDependents",
+                "fpl",
+                "has_married_couple",
+                "income",
+                "marketplace",
+                "personAge",
+                "personCitizen_or_legal_resident",
+                "personDob",
+                "personHasOtherCoverageOptions",
+                "personName",
+                "personPregnant",
+                "personTobacco",
+                "planPreference_hsa",
+                "plans",
+                "potentialMatchCount",
+                "rate_group",
+                "rating_area",
+                "results",
+                "size",
+                "state",
+                "tempInt",
+                "tempMetal",
+                "tempName",
+                "tempRating",
+                "tempUrl",
+                "unemployment_received",
+                "zipcode"
             ],
             "attributes": [
                 {
                     "dataType": "String",
-                    "name": "Step1Field1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step1Field2",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step1Field3",
+                    "name": "countyfips",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "Boolean",
-                    "name": "Step1Field4",
+                    "name": "dentalOnly",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "dependentsCount",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "Step2Field1",
+                    "name": "desiredMetalLevel",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "Step3Field1",
+                    "name": "desiredQualityLevel",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "DateTime",
-                    "name": "Step3Field3",
+                    "dataType": "Boolean",
+                    "name": "fileJointly",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "String",
-                    "name": "Step4Field1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step4Field2",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step5Field1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step6Field1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step7Field1",
+                    "dataType": "Boolean",
+                    "name": "filerHasDependents",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "Decimal",
-                    "name": "Step8EurSum",
+                    "name": "fpl",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "Step8HotelUSDSum",
+                    "dataType": "Boolean",
+                    "name": "has_married_couple",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "Step8SumAll",
+                    "dataType": "Integer",
+                    "name": "income",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "Step8USDSum",
+                    "dataType": "String",
+                    "name": "marketplace",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "personAge",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "personCitizen_or_legal_resident",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Date",
+                    "name": "personDob",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "personHasOtherCoverageOptions",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "personName",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "personPregnant",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "personTobacco",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "planPreference_hsa",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "plans",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "potentialMatchCount",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "rate_group",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "rating_area",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "results",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "size",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "state",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "tempInt",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "tempMetal",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "tempName",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "tempRating",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "tempUrl",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "unemployment_received",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "zipcode",
                     "type": "Base",
                     "mandatory": false
                 }
             ],
-            "id": "ProjectsData.CanonicalSample"
+            "id": "Data.Household"
         },
         {
             "associations": [{
-                "targetEntity": "ProjectsData.Expense",
-                "roleName": "expense",
-                "navigability": "Claim->expense",
-                "mandatory": false,
-                "cardinality": "*"
+                "targetEntity": "Data.Household",
+                "roleName": "household",
+                "reverseRoleName": "matchingPlan",
+                "navigability": "Bidirectional",
+                "mandatory": true,
+                "cardinality": "1"
             }],
             "transientAttributesDefinition": [],
-            "associationsDefinition": ["expense"],
-            "name": "ProjectsData.Claim",
+            "associationsDefinition": ["household"],
+            "name": "Data.MatchingPlan",
             "attributesDefinition": [
-                "ACH_accountNo",
-                "ACH_bankName",
-                "ACH_nameOnAccount",
-                "ACH_routing",
-                "addressOnFile",
-                "addressOnFileIsUSA",
-                "addressOnFileNotPObox",
-                "authorizationChecked",
-                "checkSendToAddress",
-                "claimPath",
-                "contactDelayReason",
-                "duringTripIssue",
-                "eSignature",
-                "EurSum",
-                "hasDoctorAdvised",
-                "hasOtherInsurance",
-                "hasSeenDoctor",
-                "haveContactedUs",
-                "HotelUSDSum",
-                "howContactUs",
-                "incidentExplanation",
-                "isCFAR",
-                "jobRelatedIssue",
-                "otherInsuranceClaimNo",
-                "otherInsuranceCompanyName",
-                "otherInsuranceCompanyWebsite",
-                "otherInsurancePolicyNo",
-                "otherPersonName",
-                "policyType",
-                "reason",
-                "reasonCancel",
-                "reimbursementMethod",
-                "someoneElseIncidentSpecific",
-                "someoneElseRelation",
-                "SumAllExp",
-                "USDSum",
-                "whenCancel",
-                "whenContactUs",
-                "whenFirstIll",
-                "whenPassAway",
-                "whoHasMilitaryDuty",
-                "whoHasRevokedLeave",
-                "whoInjured",
-                "whoSick",
-                "whoTerminatedJob",
-                "wire_IBAN",
-                "wire_SWIFT_code"
+                "dentalOnly",
+                "id",
+                "isHSAEligible",
+                "metalLevel",
+                "name",
+                "rating",
+                "url"
             ],
             "attributes": [
                 {
-                    "dataType": "Integer",
-                    "name": "ACH_accountNo",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
                     "dataType": "String",
-                    "name": "ACH_bankName",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "ACH_nameOnAccount",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "ACH_routing",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "addressOnFile",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "addressOnFileIsUSA",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "addressOnFileNotPObox",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "authorizationChecked",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "checkSendToAddress",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "claimPath",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "contactDelayReason",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "duringTripIssue",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "eSignature",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "EurSum",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "hasDoctorAdvised",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "hasOtherInsurance",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "hasSeenDoctor",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "haveContactedUs",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "HotelUSDSum",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "howContactUs",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "incidentExplanation",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
-                    "name": "isCFAR",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "jobRelatedIssue",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "otherInsuranceClaimNo",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "otherInsuranceCompanyName",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "otherInsuranceCompanyWebsite",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "otherInsurancePolicyNo",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "otherPersonName",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "policyType",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "reason",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "reasonCancel",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "reimbursementMethod",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "someoneElseIncidentSpecific",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "someoneElseRelation",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "SumAllExp",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "USDSum",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "whenCancel",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "whenContactUs",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "whenFirstIll",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "whenPassAway",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "whoHasMilitaryDuty",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "whoHasRevokedLeave",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "whoInjured",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "whoSick",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "whoTerminatedJob",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "wire_IBAN",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "wire_SWIFT_code",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "ProjectsData.Claim"
-        },
-        {
-            "associations": [
-                {
-                    "targetEntity": "ProjectsData.CanonicalSample",
-                    "roleName": "canonicalSample",
-                    "navigability": "Data->canonicalSample",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "ProjectsData.Claim",
-                    "roleName": "claim",
-                    "navigability": "Data->claim",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "ProjectsData.IncomeTaxSample",
-                    "roleName": "incomeTaxSample",
-                    "navigability": "Data->incomeTaxSample",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "ProjectsData.JobApplication",
-                    "roleName": "jobApplication",
-                    "navigability": "Data->jobApplication",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "ProjectsData.KendoUI",
-                    "roleName": "kendoUI",
-                    "navigability": "Data->kendoUI",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "ProjectsData.ReusingSubflows",
-                    "roleName": "reusingSubflows",
-                    "navigability": "Data->reusingSubflows",
-                    "mandatory": false,
-                    "cardinality": "1"
-                },
-                {
-                    "targetEntity": "ProjectsData.ValidationSample",
-                    "roleName": "validationSample",
-                    "navigability": "Data->validationSample",
-                    "mandatory": false,
-                    "cardinality": "1"
-                }
-            ],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": [
-                "canonicalSample",
-                "claim",
-                "incomeTaxSample",
-                "jobApplication",
-                "kendoUI",
-                "reusingSubflows",
-                "validationSample"
-            ],
-            "name": "ProjectsData.Data",
-            "attributesDefinition": [],
-            "attributes": [],
-            "id": "ProjectsData.Data"
-        },
-        {
-            "associations": [],
-            "transientAttributesDefinition": [],
-            "name": "ProjectsData.Expense",
-            "attributesDefinition": [
-                "amount",
-                "currency",
-                "expenseCode",
-                "id"
-            ],
-            "attributes": [
-                {
-                    "dataType": "Decimal",
-                    "name": "amount",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "currency",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "expenseCode",
+                    "name": "dentalOnly",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -618,240 +485,368 @@ module.exports={
                     "name": "id",
                     "type": "Base",
                     "mandatory": false
-                }
-            ],
-            "id": "ProjectsData.Expense"
-        },
-        {
-            "associations": [],
-            "transientAttributesDefinition": [],
-            "name": "ProjectsData.IncomeTaxSample",
-            "attributesDefinition": [
-                "dividends",
-                "hadInvestmentIncome",
-                "longStockGains",
-                "salaryIncome",
-                "shortStockGains",
-                "taxRate",
-                "totalIncome",
-                "totalTaxes"
-            ],
-            "attributes": [
+                },
                 {
-                    "dataType": "Decimal",
-                    "name": "dividends",
+                    "dataType": "String",
+                    "name": "isHSAEligible",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
                     "dataType": "String",
-                    "name": "hadInvestmentIncome",
+                    "name": "metalLevel",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "longStockGains",
+                    "dataType": "String",
+                    "name": "name",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "salaryIncome",
+                    "dataType": "String",
+                    "name": "rating",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "shortStockGains",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "taxRate",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "totalIncome",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Decimal",
-                    "name": "totalTaxes",
+                    "dataType": "String",
+                    "name": "url",
                     "type": "Base",
                     "mandatory": false
                 }
             ],
-            "id": "ProjectsData.IncomeTaxSample"
+            "id": "Data.MatchingPlan"
         },
         {
-            "associations": [],
-            "transientAttributesDefinition": [],
-            "name": "ProjectsData.JobApplication",
-            "attributesDefinition": ["italianCitizen"],
-            "attributes": [{
-                "dataType": "String",
-                "name": "italianCitizen",
-                "type": "Base",
-                "mandatory": false
+            "associations": [{
+                "targetEntity": "Data.Household",
+                "roleName": "household",
+                "reverseRoleName": "plan",
+                "navigability": "Bidirectional",
+                "mandatory": true,
+                "cardinality": "1"
             }],
-            "id": "ProjectsData.JobApplication"
+            "transientAttributesDefinition": [],
+            "associationsDefinition": ["household"],
+            "name": "Data.Plan",
+            "attributesDefinition": [
+                "dentalOnly",
+                "desc",
+                "id",
+                "isHSAEligible",
+                "metalLevel",
+                "name",
+                "planCounter",
+                "rating",
+                "url"
+            ],
+            "attributes": [
+                {
+                    "dataType": "String",
+                    "name": "dentalOnly",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "desc",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "id",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "isHSAEligible",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "metalLevel",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "name",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Integer",
+                    "name": "planCounter",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "rating",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "url",
+                    "type": "Base",
+                    "mandatory": false
+                }
+            ],
+            "id": "Data.Plan"
         },
         {
             "associations": [],
             "transientAttributesDefinition": [],
-            "name": "ProjectsData.KendoUI",
+            "name": "BackgroundData",
             "attributesDefinition": [
-                "kuiStep2Field1",
-                "ratingValue",
-                "ratingValue2",
-                "ratingValue3",
-                "ratingValue4"
+                "arrayToCollection",
+                "arrayToSet",
+                "collectionName",
+                "fieldNam9",
+                "fieldName1",
+                "fieldName10",
+                "fieldName2",
+                "fieldName3",
+                "fieldName4",
+                "fieldName5",
+                "fieldName6",
+                "fieldName7",
+                "fieldName8",
+                "labelName1",
+                "labelName10",
+                "labelName2",
+                "labelName3",
+                "labelName4",
+                "labelName5",
+                "labelName6",
+                "labelName7",
+                "labelName8",
+                "labelName9",
+                "pathToValue1",
+                "pathToValue10",
+                "pathToValue2",
+                "pathToValue3",
+                "pathToValue4",
+                "pathToValue5",
+                "pathToValue6",
+                "pathToValue7",
+                "pathToValue8",
+                "pathToValue9",
+                "url"
             ],
             "attributes": [
                 {
+                    "dataType": "Boolean",
+                    "name": "arrayToCollection",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "Boolean",
+                    "name": "arrayToSet",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
                     "dataType": "String",
-                    "name": "kuiStep2Field1",
+                    "name": "collectionName",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "ratingValue",
+                    "dataType": "String",
+                    "name": "fieldNam9",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "ratingValue2",
+                    "dataType": "String",
+                    "name": "fieldName1",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "ratingValue3",
+                    "dataType": "String",
+                    "name": "fieldName10",
                     "type": "Base",
                     "mandatory": false
                 },
                 {
-                    "dataType": "Decimal",
-                    "name": "ratingValue4",
+                    "dataType": "String",
+                    "name": "fieldName2",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "fieldName3",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "fieldName4",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "fieldName5",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "fieldName6",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "fieldName7",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "fieldName8",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName1",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName10",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName2",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName3",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName4",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName5",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName6",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName7",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName8",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "labelName9",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue1",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue10",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue2",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue3",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue4",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue5",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue6",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue7",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue8",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "pathToValue9",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "url",
                     "type": "Base",
                     "mandatory": false
                 }
             ],
-            "id": "ProjectsData.KendoUI"
-        },
-        {
-            "associations": [],
-            "transientAttributesDefinition": [],
-            "name": "ProjectsData.ReusingSubflows",
-            "attributesDefinition": [
-                "Step1Field1",
-                "Step2Field1",
-                "Step3Field1",
-                "SubflowField1",
-                "SubflowField2"
-            ],
-            "attributes": [
-                {
-                    "dataType": "String",
-                    "name": "Step1Field1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step2Field1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "Step3Field1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "SubflowField1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "SubflowField2",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "ProjectsData.ReusingSubflows"
-        },
-        {
-            "associations": [],
-            "transientAttributesDefinition": [
-                "endDateMS",
-                "startDateMS"
-            ],
-            "name": "ProjectsData.ValidationSample",
-            "attributesDefinition": [
-                "endDate",
-                "endDateMS",
-                "number1",
-                "number2",
-                "startDate",
-                "startDateMS",
-                "sumStep1"
-            ],
-            "attributes": [
-                {
-                    "dataType": "DateTime",
-                    "name": "endDate",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "endDateMS",
-                    "type": "ExtendedTransient",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "number1",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "number2",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "DateTime",
-                    "name": "startDate",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "startDateMS",
-                    "type": "ExtendedTransient",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Integer",
-                    "name": "sumStep1",
-                    "type": "Base",
-                    "mandatory": false
-                }
-            ],
-            "id": "ProjectsData.ValidationSample"
+            "id": "BackgroundData"
         },
         {
             "associations": [{
@@ -868,7 +863,6 @@ module.exports={
                 "description",
                 "id",
                 "title",
-                "titleKey",
                 "validationMsg"
             ],
             "attributes": [
@@ -887,12 +881,6 @@ module.exports={
                 {
                     "dataType": "String",
                     "name": "title",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "titleKey",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -937,53 +925,6 @@ module.exports={
             "id": "DataSourceOptions"
         },
         {
-            "associations": [{
-                "targetEntity": "ProjectsData.CanonicalSample",
-                "roleName": "canonicalSample",
-                "reverseRoleName": "Step9Field3",
-                "navigability": "Bidirectional",
-                "mandatory": true,
-                "cardinality": "1"
-            }],
-            "transientAttributesDefinition": [],
-            "associationsDefinition": ["canonicalSample"],
-            "name": "MultipleDateTime",
-            "attributesDefinition": ["itemDateTime"],
-            "attributes": [{
-                "dataType": "Date",
-                "name": "itemDateTime",
-                "type": "Base",
-                "mandatory": false
-            }],
-            "id": "MultipleDateTime"
-        },
-        {
-            "associations": [],
-            "transientAttributesDefinition": [],
-            "name": "MultipleNumber",
-            "attributesDefinition": ["itemNumber"],
-            "attributes": [{
-                "dataType": "Integer",
-                "name": "itemNumber",
-                "type": "Base",
-                "mandatory": false
-            }],
-            "id": "MultipleNumber"
-        },
-        {
-            "associations": [],
-            "transientAttributesDefinition": [],
-            "name": "MultipleText",
-            "attributesDefinition": ["itemText"],
-            "attributes": [{
-                "dataType": "String",
-                "name": "itemText",
-                "type": "Base",
-                "mandatory": false
-            }],
-            "id": "MultipleText"
-        },
-        {
             "associations": [],
             "transientAttributesDefinition": [],
             "name": "Option",
@@ -1008,20 +949,32 @@ module.exports={
             "id": "Option"
         },
         {
-            "associations": [{
-                "targetEntity": "Container",
-                "roleName": "containers",
-                "navigability": "UI->containers",
-                "mandatory": true,
-                "cardinality": "*"
-            }],
+            "associations": [
+                {
+                    "targetEntity": "BackgroundData",
+                    "roleName": "backgroundData",
+                    "navigability": "UI->backgroundData",
+                    "mandatory": false,
+                    "cardinality": "1"
+                },
+                {
+                    "targetEntity": "Container",
+                    "roleName": "containers",
+                    "navigability": "UI->containers",
+                    "mandatory": false,
+                    "cardinality": "*"
+                }
+            ],
             "transientAttributesDefinition": [
                 "comments",
                 "dt1",
                 "str1",
                 "str2"
             ],
-            "associationsDefinition": ["containers"],
+            "associationsDefinition": [
+                "backgroundData",
+                "containers"
+            ],
             "name": "UI",
             "attributesDefinition": [
                 "comments",
@@ -1147,10 +1100,10 @@ module.exports={
                 "cols",
                 "dataSource",
                 "defaultValue",
+                "emphasize",
                 "fieldName",
                 "id",
                 "label",
-                "labelKey",
                 "labelPosition",
                 "max",
                 "maxDT",
@@ -1159,15 +1112,14 @@ module.exports={
                 "multiple",
                 "required",
                 "rows",
-                "showHalf",
                 "showTime",
                 "sortOptions",
                 "tooltip",
-                "tooltipKey",
+                "triggerField",
+                "triggerValue",
                 "type",
                 "validationErrorMsg",
-                "value",
-                "valueKey"
+                "value"
             ],
             "attributes": [
                 {
@@ -1189,6 +1141,12 @@ module.exports={
                     "mandatory": false
                 },
                 {
+                    "dataType": "Boolean",
+                    "name": "emphasize",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
                     "dataType": "String",
                     "name": "fieldName",
                     "type": "Base",
@@ -1203,12 +1161,6 @@ module.exports={
                 {
                     "dataType": "String",
                     "name": "label",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "labelKey",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -1262,12 +1214,6 @@ module.exports={
                 },
                 {
                     "dataType": "Boolean",
-                    "name": "showHalf",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "Boolean",
                     "name": "showTime",
                     "type": "Base",
                     "mandatory": false
@@ -1286,7 +1232,13 @@ module.exports={
                 },
                 {
                     "dataType": "String",
-                    "name": "tooltipKey",
+                    "name": "triggerField",
+                    "type": "Base",
+                    "mandatory": false
+                },
+                {
+                    "dataType": "String",
+                    "name": "triggerValue",
                     "type": "Base",
                     "mandatory": false
                 },
@@ -1305,12 +1257,6 @@ module.exports={
                 {
                     "dataType": "String",
                     "name": "value",
-                    "type": "Base",
-                    "mandatory": false
-                },
-                {
-                    "dataType": "String",
-                    "name": "valueKey",
                     "type": "Base",
                     "mandatory": false
                 }
