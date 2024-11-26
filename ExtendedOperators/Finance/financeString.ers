@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" minorVersionNumber="1" buildNumber="8021" updateStamp="_7eSQ0snkEe6fbZCFoWqynQ" externalChecksum="2722078124:507989954:2049017379" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_DD_v4cnjEe6fbZCFoWqynQ" vocabulary="vocab.ecore#/">
+    <rule>
+      <action disabled="true">
+        <opaqueExpression expression="Finance.presentValue =getDecimal ('PresentValue',Finance.inputValue1AsString, '10', '1' )">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Finance.presentValue = getDecimal ( 'PresentValue' , Finance.inputValue1AsString , '10' , '1' )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="presentValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Finance.presentValue">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="inputValue1AsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.inputValue1AsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Finance.presentValue =getDecimal ( 'PresentValue', Finance.inputValue1AsString, Finance.interestRateAsString,Finance.yearsAsString )">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Finance.presentValue = getDecimal ( 'PresentValue' , Finance.inputValue1AsString , Finance.interestRateAsString , Finance.yearsAsString )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="presentValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Finance.presentValue">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="inputValue1AsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.inputValue1AsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="interestRateAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.interestRateAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="yearsAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.yearsAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Finance.futureValue  = getDecimal ( 'FutureValue',Finance.inputValue2AsString, Finance.interestRateAsString,Finance.yearsAsString )">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Finance.futureValue = getDecimal ( 'FutureValue' , Finance.inputValue2AsString , Finance.interestRateAsString , Finance.yearsAsString )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="futureValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Finance.futureValue">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="interestRateAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.interestRateAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="inputValue2AsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.inputValue2AsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="yearsAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.yearsAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="vocab.ecore#//Finance">
+      <referencedAttributes attribute="vocab.ecore#//Finance/interestRate"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/inputValue1"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/years"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/presentValue"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/inputValue2"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/futureValue"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/inputValue1AsString"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/interestRateAsString"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/yearsAsString"/>
+      <referencedAttributes attribute="vocab.ecore#//Finance/inputValue2AsString"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightConditionsIf="68">
+    <actionSection rowCount="51" columnWidthFactor="0.5">
+      <actionItemList disabled="true">
+        <valueSetCell/>
+        <expressionCell external="Finance.presentValue =getDecimal ('PresentValue',Finance.inputValue1AsString, '10', '1' )">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Finance.presentValue = getDecimal ( 'PresentValue' , Finance.inputValue1AsString , '10' , '1' )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="presentValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Finance.presentValue">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="inputValue1AsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.inputValue1AsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Finance.presentValue =getDecimal ( 'PresentValue', Finance.inputValue1AsString, Finance.interestRateAsString,Finance.yearsAsString )">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Finance.presentValue = getDecimal ( 'PresentValue' , Finance.inputValue1AsString , Finance.interestRateAsString , Finance.yearsAsString )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="presentValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Finance.presentValue">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="inputValue1AsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.inputValue1AsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="interestRateAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.interestRateAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="yearsAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.yearsAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Finance.futureValue  = getDecimal ( 'FutureValue',Finance.inputValue2AsString, Finance.interestRateAsString,Finance.yearsAsString )">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Finance.futureValue = getDecimal ( 'FutureValue' , Finance.inputValue2AsString , Finance.interestRateAsString , Finance.yearsAsString )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="futureValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Finance.futureValue">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="interestRateAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.interestRateAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="inputValue2AsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.inputValue2AsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="yearsAsString" datatype="String" termtype="ATTRIBUTE" fulltext="Finance.yearsAsString">
+                <parentTerm text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Finance" datatype="Finance" termtype="ENTITY" fulltext="Finance" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.9"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
