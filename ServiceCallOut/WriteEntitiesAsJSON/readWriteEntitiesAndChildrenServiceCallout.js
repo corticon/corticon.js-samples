@@ -81,7 +81,7 @@ async function getShoppingCartForCustomerFct(corticonDataManager) {
 	try {
 		const entities = corticonDataManager.getEntitiesByType('Customer');
 		entities.forEach(customerEntity => {
-			const shoppingCartAsJson = getShoppingCartAndAssociatedItemsForCustomer (corticonDataManager);
+			const shoppingCartAsJson = getShoppingCartAndAssociatedItemsForCustomer (corticonDataManager, customerEntity);
 			saveShoppingCartToBackend(shoppingCartAsJson, customerEntity);
 		});
 	}
@@ -96,7 +96,7 @@ function saveShoppingCartToBackend(shoppingCartAsJson, customerEntity) {
 	customerEntity['shoppingCartAsJson'] = JSON.stringify(shoppingCartAsJson);
 }
 
-function getShoppingCartAndAssociatedItemsForCustomer (corticonDataManager) {
+function getShoppingCartAndAssociatedItemsForCustomer (corticonDataManager, customerEntity) {
 	//Get the shopping and the items association for the specific customer
 	const shoppingCartAsJson = corticonDataManager.getAssociationsForEntity(customerEntity, "ShoppingCart");
 
