@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" minorVersionNumber="2" buildNumber="8022" updateStamp="_H-_EYa0KEe-p56EG8VinZw" externalChecksum="2722078124:507989954:3296820899" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_rnWI8qzTEe-p56EG8VinZw" vocabulary="../vocab.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="Query.name = 'Create Patient'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Query.name = 'Create Patient'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="Query.name">
+                <parentTerm text="Query" datatype="Query" termtype="ENTITY" fulltext="Query" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Query" datatype="Query" termtype="ENTITY" fulltext="Query" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Query.parameter1 = '99'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Query.parameter1 = '99'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="parameter1" datatype="String" termtype="ATTRIBUTE" fulltext="Query.parameter1">
+                <parentTerm text="Query" datatype="Query" termtype="ENTITY" fulltext="Query" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Query" datatype="Query" termtype="ENTITY" fulltext="Query" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="../vocab.ecore#//Query">
+      <referencedAttributes attribute="../vocab.ecore#//Query/name"/>
+      <referencedAttributes attribute="../vocab.ecore#//Query/parameter1"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightConditionsIf="21">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Query.name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Query.name" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="Query.name">
+                <parentTerm text="Query" datatype="Query" termtype="ENTITY" fulltext="Query" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Query.parameter1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Query.parameter1" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="parameter1" datatype="String" termtype="ATTRIBUTE" fulltext="Query.parameter1">
+                <parentTerm text="Query" datatype="Query" termtype="ENTITY" fulltext="Query" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="237" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="'Create Patient'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Query.name = 'Create Patient'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="Query.name">
+                <parentTerm text="Query" datatype="Query" termtype="ENTITY" fulltext="Query"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Query" datatype="Query" termtype="ENTITY" fulltext="Query"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'99'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Query.parameter1 = '99'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="parameter1" datatype="String" termtype="ATTRIBUTE" fulltext="Query.parameter1">
+                <parentTerm text="Query" datatype="Query" termtype="ENTITY" fulltext="Query"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Query" datatype="Query" termtype="ENTITY" fulltext="Query"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
