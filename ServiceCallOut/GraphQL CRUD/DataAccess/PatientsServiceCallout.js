@@ -19,7 +19,7 @@
 		o  Where to find the data of interest in the GraphQL result (pathToData)
 		o  If adding results to root, the data type of entity to add (entityType)
 		o  If adding results to a relationship, the external name of the relationship to which we will be adding the sub-payload (roleName)
-		o  When creating or updating the data is passed in with an entity resolver.
+		o  When creating or updating, the data is passed as JSON with an entity resolver.
 	
 	So, in brief: the user friendly query name maps to metadata in Queries.js.
 	From that metadata, the GraphQL connector can process the query generically.

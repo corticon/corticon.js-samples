@@ -55,7 +55,7 @@ against the server. It accepts the fully formed graphQLQuery object and sends a 
 using fetch. It parses the JSON response and returns the data portion of the GraphQL response to the caller.
 
 The critical point is that GraphQLConnector.js does not differentiate between a query and a mutation; it simply sends 
-the string it is given. The logic in Queries.js determines if it’s a query or a mutation.
+the string it is given. The logic in Queries.js determines if it's a query or a mutation.
 
 How does the query gets populated with data when creating or updating a record?
 This is another critical point: GraphQLConnector.js is generic and does not know how to get at the data needed for
