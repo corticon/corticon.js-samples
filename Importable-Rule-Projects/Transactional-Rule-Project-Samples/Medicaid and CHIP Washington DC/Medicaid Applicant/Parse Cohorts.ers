@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="1" buildNumber="8021" updateStamp="_u_F_0-3UEe6HzOrlxvK2Gg" externalChecksum="2722078124:507989954:2146616488" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_3VZ9AexsEe6ej_0DUsWhxg" vocabulary="../Vocabulary/Rule%20Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligible = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligible = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligible" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligible">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="cohorts->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="cohorts->size" rhs="1"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup1=cohorts->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup1 = cohorts->sortedBy ( cohorts.type )->first.type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage1=cohorts->sortedBy(type)->first.output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage1 = cohorts->sortedBy ( cohorts.type )->first.output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="cohorts->size = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="cohorts->size" rhs="2"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup1=cohorts->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup1 = cohorts->sortedBy ( cohorts.type )->first.type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup2=cohorts->sortedBy(type)->at(2).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage1=cohorts->sortedBy(type)->first.output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage1 = cohorts->sortedBy ( cohorts.type )->first.output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage2=cohorts->sortedBy(type)->at(2).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="cohorts->size = 3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="cohorts->size" rhs="3"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup1=cohorts->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup1 = cohorts->sortedBy ( cohorts.type )->first.type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup2=cohorts->sortedBy(type)->at(2).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup3=cohorts->sortedBy(type)->at(3).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage1=cohorts->sortedBy(type)->first.output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage1 = cohorts->sortedBy ( cohorts.type )->first.output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage2=cohorts->sortedBy(type)->at(2).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage3=cohorts->sortedBy(type)->at(3).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="cohorts->size = 4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="cohorts->size" rhs="4"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup1=cohorts->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup1 = cohorts->sortedBy ( cohorts.type )->first.type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup2=cohorts->sortedBy(type)->at(2).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup3=cohorts->sortedBy(type)->at(3).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup4=cohorts->sortedBy(type)->at(4).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup4 = cohorts->sortedBy ( cohorts.type )->at ( 4 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup4" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup4">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage1=cohorts->sortedBy(type)->first.output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage1 = cohorts->sortedBy ( cohorts.type )->first.output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage2=cohorts->sortedBy(type)->at(2).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage3=cohorts->sortedBy(type)->at(3).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage4=cohorts->sortedBy(type)->at(4).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage4 = cohorts->sortedBy ( cohorts.type )->at ( 4 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage4" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage4">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="cohorts->size = 5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="cohorts->size" rhs="5"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup1=cohorts->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup1 = cohorts->sortedBy ( cohorts.type )->first.type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup2=cohorts->sortedBy(type)->at(2).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup3=cohorts->sortedBy(type)->at(3).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup4=cohorts->sortedBy(type)->at(4).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup4 = cohorts->sortedBy ( cohorts.type )->at ( 4 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup4" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup4">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.MedicaidEligibilityGroup5=cohorts->sortedBy(type)->at(5).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup5 = cohorts->sortedBy ( cohorts.type )->at ( 5 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup5" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup5">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage1=cohorts->sortedBy(type)->first.output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage1 = cohorts->sortedBy ( cohorts.type )->first.output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage2=cohorts->sortedBy(type)->at(2).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage3=cohorts->sortedBy(type)->at(3).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage4=cohorts->sortedBy(type)->at(4).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage4 = cohorts->sortedBy ( cohorts.type )->at ( 4 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage4" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage4">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Person.outputCoverage5=cohorts->sortedBy(type)->at(5).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage5 = cohorts->sortedBy ( cohorts.type )->at ( 5 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage5" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage5">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0">
+      <opaqueExpression expression="cohorts->notEmpty">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->notEmpty" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="cohorts" datatype="Boolean" termtype="COLLECTION" fulltext="cohorts->notEmpty">
+              <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//Person" filters="#//@ruleset/@filters.0">
+      <extension explicit="true" association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//Cohort" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//Person/cohort" filters="#//@ruleset/@filters.0">
+        <alias value="cohorts"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Cohort/type"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Cohort/fpl"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Cohort/eligible"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Cohort/output"/>
+      </extension>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup1"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup2"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup3"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup4"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup5"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup1_FPL"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup2_FPL"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup3_FPL"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup4_FPL"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligibilityGroup5_FPL"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/MedicaidEligible"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/outputCoverage1"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/outputCoverage2"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/outputCoverage3"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/outputCoverage4"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/outputCoverage5"/>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Person/fullName"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="18" sashWeightConditionsActions="17" sashWeightConditionsIf="38">
+    <actionSection rowCount="45" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.MedicaidEligibilityGroup1=cohorts->sortedBy(type)->first.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup1 = cohorts->sortedBy ( cohorts.type )->first.type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.MedicaidEligibilityGroup2=cohorts->sortedBy(type)->at(2).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.MedicaidEligibilityGroup3=cohorts->sortedBy(type)->at(3).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.MedicaidEligibilityGroup4=cohorts->sortedBy(type)->at(4).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup4 = cohorts->sortedBy ( cohorts.type )->at ( 4 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup4" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup4">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.MedicaidEligibilityGroup5=cohorts->sortedBy(type)->at(5).type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligibilityGroup5 = cohorts->sortedBy ( cohorts.type )->at ( 5 ).type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligibilityGroup5" datatype="String" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligibilityGroup5">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.type">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Person.MedicaidEligible">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligible" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="MedicaidEligible" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligible">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.outputCoverage1=cohorts->sortedBy(type)->first.output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage1 = cohorts->sortedBy ( cohorts.type )->first.output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage1" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage1">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->first">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.outputCoverage2=cohorts->sortedBy(type)->at(2).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage2 = cohorts->sortedBy ( cohorts.type )->at ( 2 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage2" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage2">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.outputCoverage3=cohorts->sortedBy(type)->at(3).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage3 = cohorts->sortedBy ( cohorts.type )->at ( 3 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage3" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage3">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.outputCoverage4=cohorts->sortedBy(type)->at(4).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage4 = cohorts->sortedBy ( cohorts.type )->at ( 4 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage4" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage4">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Person.outputCoverage5=cohorts->sortedBy(type)->at(5).output">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.outputCoverage5 = cohorts->sortedBy ( cohorts.type )->at ( 5 ).output" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="outputCoverage5" datatype="String" termtype="ATTRIBUTE" fulltext="Person.outputCoverage5">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cohorts->asSequence->sortedBy(type)" datatype="Object" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy->at">
+                <parentTerm text="cohorts" datatype="Sequence" termtype="COLLECTION" fulltext="cohorts->asSequence->sortedBy">
+                  <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="output" datatype="String" termtype="ATTRIBUTE" fulltext="cohorts.output">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="cohorts->notEmpty" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="cohorts->notEmpty" filter="#//@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.3"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.9"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.10"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.11"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.12"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.13"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.14"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.15"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.16"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="cohorts->notEmpty">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->notEmpty" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Boolean" termtype="COLLECTION" fulltext="cohorts->notEmpty">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="cohorts->size">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="21">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Person.MedicaidEligible = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="MedicaidEligible" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Person.MedicaidEligible">
+                <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Person" datatype="Person" termtype="ENTITY" fulltext="Person"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="133" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 3" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="4">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 4" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="cohorts->size = 5" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cohorts" datatype="Integer" termtype="COLLECTION" fulltext="cohorts->size">
+                <parentTerm text="cohorts" datatype="Cohort" termtype="ENTITY" fulltext="cohorts" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Person" datatype="Person" termtype="ENTITY" fulltext="Person" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
