@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="2" buildNumber="8022" updateStamp="_gplFE-iCEe-yOfwXQG4Qew" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_k1OUMeiEEe-yOfwXQG4Qew" vocabulary="../Vocabulary/Rule%20Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="residents.age &lt;18">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents.age &lt; 18" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="residents.age">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="residents.age" rhs="&lt;18"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(residents->exists(age>=15, record_of_criminal_conduct=T))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.age >= 15 , residents.record_of_criminal_conduct = T ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="residents->exists(age>=15, record_of_criminal_conduct=T)" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Department Review'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Department Review'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(residents->exists(previous_dcf_case_end_date.monthsBetween(today)&lt;=12))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.previous_dcf_case_end_date.monthsBetween ( today ) &lt;= 12 ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="residents->exists(previous_dcf_case_end_date.monthsBetween(today)&lt;=12)" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Department Review'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Department Review'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(residents->exists(previously_alleged_abuse_or_neglect=T))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.previously_alleged_abuse_or_neglect = T ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="residents->exists(previously_alleged_abuse_or_neglect=T)" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.4">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(residents->exists(previous_adverse_involvement_with_dept=T))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.previous_adverse_involvement_with_dept = T ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="residents->exists(previous_adverse_involvement_with_dept=T)" rhs="T"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.5">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Application.household.has_stable_income)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Application.household.has_stable_income ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="has_stable_income" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Application.household.has_stable_income">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Application.household.has_stable_income" rhs="F"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.6">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(Application.household.has_stable_housing_history)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Application.household.has_stable_housing_history ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="has_stable_housing_history" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Application.household.has_stable_housing_history">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Application.household.has_stable_housing_history" rhs="F"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.7">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="(residents->exists(basic_literacy=T))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.basic_literacy = T ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="residents->exists(basic_literacy=T)" rhs="F"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.8">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Application.household.hours_per_week_childcare_needed >=25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.household.hours_per_week_childcare_needed >= 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="hours_per_week_childcare_needed" datatype="Integer" termtype="ATTRIBUTE" fulltext="Application.household.hours_per_week_childcare_needed">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Application.household.hours_per_week_childcare_needed" rhs=">=25"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Approved with Restrictions'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Approved with Restrictions'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.9">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="Application.household.hours_per_week_childcare_needed >=50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.household.hours_per_week_childcare_needed >= 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="hours_per_week_childcare_needed" datatype="Integer" termtype="ATTRIBUTE" fulltext="Application.household.hours_per_week_childcare_needed">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Application.household.hours_per_week_childcare_needed" rhs=">=50"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Application.eligibility = 'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Violation" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Any individual providing foster/ pre-adoptive care must have reached her/his 18th birthday.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Any individual providing foster/ pre-adoptive care must have reached her/his 18th birthday." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Warning" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="All household members, age 15 years and older, must have a record which is free of criminal conduct which, in the judgment of the Department, bears upon the foster/pre-responsibilities of a foster/pre-adoptive parent.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="All household members, age 15 years and older, must have a record which is free of criminal conduct which, in the judgment of the Department, bears upon the foster/pre-responsibilities of a foster/pre-adoptive parent." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Warning" ruleModelElements="#//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="No member of the household has currently, or during the 12 months prior to completion of Initial Eligibility Screening, may have a DCF open case.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No member of the household has currently, or during the 12 months prior to completion of Initial Eligibility Screening, may have a DCF open case." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Violation" ruleModelElements="#//@ruleset/@rules.4" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="No member of the household has been identified as the person alleged to be responsible for abuse or neglect of a child in a supported 51B investigation and the report which identified her/him is referred to the District Attorney.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No member of the household has been identified as the person alleged to be responsible for abuse or neglect of a child in a supported 51B investigation and the report which identified her/him is referred to the District Attorney." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Violation" ruleModelElements="#//@ruleset/@rules.5" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="No member of the household has a history of involvement with the Department which would bear adversely on the prospective foster/pre-adoptive parent’s ability to assume and carry out foster/adoption responsibilities.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No member of the household has a history of involvement with the Department which would bear adversely on the prospective foster/pre-adoptive parent’s ability to assume and carry out foster/adoption responsibilities." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Violation" ruleModelElements="#//@ruleset/@rules.6" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The family must have a stable source of income for support of current household members.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The family must have a stable source of income for support of current household members." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Violation" ruleModelElements="#//@ruleset/@rules.7" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The family has a stable housing history and current housing which meets the Department’s physical requirements and currently has sufficient space.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The family has a stable housing history and current housing which meets the Department’s physical requirements and currently has sufficient space." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Violation" ruleModelElements="#//@ruleset/@rules.8" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="At least one prospective applicant in the household has a basic ability to read and write in English or in the family’s primary language.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="At least one prospective applicant in the household has a basic ability to read and write in English or in the family’s primary language." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Warning" ruleModelElements="#//@ruleset/@rules.9" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more 25 hours per week for a child in grade 1 or up.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more 25 hours per week for a child in grade 1 or up." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Violation" ruleModelElements="#//@ruleset/@rules.10" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more than 50 hours per week for a pre-school age child or 25 hours per week for a child in grade 1 or up.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more than 50 hours per week for a pre-school age child or 25 hours per week for a child in grade 1 or up." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//Application" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.2 #//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.4 #//@ruleset/@ruleStatements.5 #//@ruleset/@ruleStatements.6 #//@ruleset/@ruleStatements.7 #//@ruleset/@ruleStatements.8 #//@ruleset/@ruleStatements.9">
+      <extension association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//Household" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//Application/household">
+        <extension explicit="true" association="true" entity="../Vocabulary/Rule%20Vocabulary.ecore#//Resident" traversedAssocRole="../Vocabulary/Rule%20Vocabulary.ecore#//Household/resident">
+          <alias value="residents"/>
+          <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Resident/age"/>
+          <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Resident/record_of_criminal_conduct"/>
+          <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Resident/previous_dcf_case_end_date"/>
+          <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Resident/previously_alleged_abuse_or_neglect"/>
+          <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Resident/previous_adverse_involvement_with_dept"/>
+          <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Resident/basic_literacy"/>
+        </extension>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Household/has_stable_income"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Household/has_stable_housing_history"/>
+        <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Household/hours_per_week_childcare_needed"/>
+      </extension>
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Application/eligibility"/>
+    </logicalVariable>
+    <logicalVariable entity="../Vocabulary/Rule%20Vocabulary.ecore#//Household">
+      <referencedAttributes attribute="../Vocabulary/Rule%20Vocabulary.ecore#//Household/hours_per_week_childcare_needed"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightScope="67" sashWeightConditionsActions="61" sashWeightConditionsIf="38">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="74">
+        <valueSetCell/>
+        <expressionCell external="Application.eligibility">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.2"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.3"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.4"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.5"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="Any individual providing foster/ pre-adoptive care must have reached her/his 18th birthday.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Any individual providing foster/ pre-adoptive care must have reached her/his 18th birthday." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="21" ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="2"/>
+        <text external="All household members, age 15 years and older, must have a record which is free of criminal conduct which, in the judgment of the Department, bears upon the foster/pre-responsibilities of a foster/pre-adoptive parent.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="All household members, age 15 years and older, must have a record which is free of criminal conduct which, in the judgment of the Department, bears upon the foster/pre-responsibilities of a foster/pre-adoptive parent." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="3"/>
+        <text external="No member of the household has currently, or during the 12 months prior to completion of Initial Eligibility Screening, may have a DCF open case.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No member of the household has currently, or during the 12 months prior to completion of Initial Eligibility Screening, may have a DCF open case." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="21" ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="4"/>
+        <text external="No member of the household has been identified as the person alleged to be responsible for abuse or neglect of a child in a supported 51B investigation and the report which identified her/him is referred to the District Attorney.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No member of the household has been identified as the person alleged to be responsible for abuse or neglect of a child in a supported 51B investigation and the report which identified her/him is referred to the District Attorney." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.4">
+        <reference external="5"/>
+        <text external="No member of the household has a history of involvement with the Department which would bear adversely on the prospective foster/pre-adoptive parent’s ability to assume and carry out foster/adoption responsibilities.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="No member of the household has a history of involvement with the Department which would bear adversely on the prospective foster/pre-adoptive parent’s ability to assume and carry out foster/adoption responsibilities." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.5">
+        <reference external="6"/>
+        <text external="The family must have a stable source of income for support of current household members.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The family must have a stable source of income for support of current household members." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.6">
+        <reference external="7"/>
+        <text external="The family has a stable housing history and current housing which meets the Department’s physical requirements and currently has sufficient space.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The family has a stable housing history and current housing which meets the Department’s physical requirements and currently has sufficient space." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.7">
+        <reference external="8"/>
+        <text external="At least one prospective applicant in the household has a basic ability to read and write in English or in the family’s primary language.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="At least one prospective applicant in the household has a basic ability to read and write in English or in the family’s primary language." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="21" ruleStatement="#//@ruleset/@ruleStatements.8">
+        <reference external="9"/>
+        <text external="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more 25 hours per week for a child in grade 1 or up.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more 25 hours per week for a child in grade 1 or up." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="21" ruleStatement="#//@ruleset/@ruleStatements.9">
+        <reference external="10"/>
+        <text external="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more than 50 hours per week for a pre-school age child or 25 hours per week for a child in grade 1 or up.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="The prospective applicant(s) has sufficient time and availability to be a foster/pre-adoptive parent(s). A foster/pre-adoptive parent may place a foster/pre-adoptive child in work-related child care for no more than 50 hours per week for a pre-school age child or 25 hours per week for a child in grade 1 or up." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="residents.age">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents.age" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="residents.age">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="residents->exists(age>=15, record_of_criminal_conduct=T)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents->exists ( residents.age >= 15 , residents.record_of_criminal_conduct = T )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="residents->exists(previous_dcf_case_end_date.monthsBetween(today)&lt;=12)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents->exists ( residents.previous_dcf_case_end_date.monthsBetween ( today ) &lt;= 12 )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="residents->exists(previously_alleged_abuse_or_neglect=T)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents->exists ( residents.previously_alleged_abuse_or_neglect = T )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="residents->exists(previous_adverse_involvement_with_dept=T)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents->exists ( residents.previous_adverse_involvement_with_dept = T )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Application.household.has_stable_income">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.household.has_stable_income" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="has_stable_income" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Application.household.has_stable_income">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Application.household.has_stable_housing_history">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.household.has_stable_housing_history" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="has_stable_housing_history" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Application.household.has_stable_housing_history">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="residents->exists(basic_literacy=T)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents->exists ( residents.basic_literacy = T )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Application.household.hours_per_week_childcare_needed">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.household.hours_per_week_childcare_needed" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="hours_per_week_childcare_needed" datatype="Integer" termtype="ATTRIBUTE" fulltext="Application.household.hours_per_week_childcare_needed">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20" scrollColumnLeft="2">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="75" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="&lt;18">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="residents.age &lt; 18" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="age" datatype="Integer" termtype="ATTRIBUTE" fulltext="residents.age">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="105" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.age >= 15 , residents.record_of_criminal_conduct = T ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Department Review'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Department Review'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="93" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.previous_dcf_case_end_date.monthsBetween ( today ) &lt;= 12 ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Department Review'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Department Review'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="78" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.previously_alleged_abuse_or_neglect = T ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="73" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.previous_adverse_involvement_with_dept = T ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="76" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Application.household.has_stable_income ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="has_stable_income" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Application.household.has_stable_income">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="61" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Application.household.has_stable_housing_history ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="has_stable_housing_history" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Application.household.has_stable_housing_history">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="8" columnWidth="75" pRule="#//@ruleset/@rules.8">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( residents->exists ( residents.basic_literacy = T ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="residents" datatype="Boolean" termtype="COLLECTION" fulltext="residents->exists">
+                <parentTerm text="residents" datatype="Resident" termtype="ENTITY" fulltext="residents" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="9" columnWidth="100" pRule="#//@ruleset/@rules.9">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet=">=25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.household.hours_per_week_childcare_needed >= 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="hours_per_week_childcare_needed" datatype="Integer" termtype="ATTRIBUTE" fulltext="Application.household.hours_per_week_childcare_needed">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'Approved with Restrictions'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Approved with Restrictions'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="10" columnWidth="100" pRule="#//@ruleset/@rules.10">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet=">=50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.household.hours_per_week_childcare_needed >= 50" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="hours_per_week_childcare_needed" datatype="Integer" termtype="ATTRIBUTE" fulltext="Application.household.hours_per_week_childcare_needed">
+                <parentTerm text="household" datatype="Household" termtype="ENTITY" fulltext="Application.household" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'Denied'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Application.eligibility = 'Denied'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="eligibility" datatype="String" termtype="ATTRIBUTE" fulltext="Application.eligibility">
+                <parentTerm text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Application" datatype="Application" termtype="ENTITY" fulltext="Application"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
