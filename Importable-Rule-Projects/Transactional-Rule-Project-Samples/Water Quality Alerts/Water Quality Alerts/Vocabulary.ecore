@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.canonicalvocabularymodel="http:///com/corticon/rulesemf/canonicalvocabularymodel.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="root" nsURI="http://root/1.0" nsPrefix="root">
+  <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+    <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:RootExtension" majorVersionNumber="2" minorVersionNumber="2" buildNumber="8022" updateStamp="_Fvaq0QQEEfCwN501XCPfYw" externalChecksum="2722078124:507989954" studioType="Javascript" customDataTypeDisplayCount="50">
+      <languageCode>en_US</languageCode>
+      <databaseAccess databasePropertyDisplayCount="50"/>
+      <vocabularyMappings name="JSON" ID="JSON" mappingType="JSON">
+        <entityMappings element="#//Reading">
+          <mappingProperties key="jsonPath">
+            <value manuallyCreated="true" value="$"/>
+          </mappingProperties>
+        </entityMappings>
+      </vocabularyMappings>
+    </contents>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Alert">
+    <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+      <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:EntityExtension">
+        <name manuallyCreated="true" value="Alert"/>
+        <datastorePersistent manuallyCreated="true" value="false"/>
+        <datastoreCaching manuallyCreated="true" value="false"/>
+      </contents>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="description"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="category"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" lowerBound="1" eType="#//Reading" eOpposite="#//Reading/alert">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
+          <name manuallyCreated="true" value="root"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="summary"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reading">
+    <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+      <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:EntityExtension">
+        <name manuallyCreated="true" value="Reading"/>
+        <datastorePersistent manuallyCreated="true" value="false"/>
+        <datastoreCaching manuallyCreated="true" value="false"/>
+      </contents>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fluorescent_dissolved_organic_matter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="fluorescent_dissolved_organic_matter"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sea_water_turbidity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="sea_water_turbidity"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sea_water_temperature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="sea_water_temperature"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth_reading" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="depth_reading"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fractional_saturation_of_oxygen_in_sea_water" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="fractional_saturation_of_oxygen_in_sea_water"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specific_conductance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="specific_conductance"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sea_water_practical_salinity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="sea_water_practical_salinity"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phycoerythrin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="phycoerythrin"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sea_water_ph_reported_on_total_scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="sea_water_ph_reported_on_total_scale"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sea_water_electrical_conductivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="sea_water_electrical_conductivity"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mass_concentration_of_oxygen_in_sea_water" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="mass_concentration_of_oxygen_in_sea_water"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mass_concentration_of_chlorophyll_in_sea_water" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="mass_concentration_of_chlorophyll_in_sea_water"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="time"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alert" upperBound="-1" eType="#//Alert" eOpposite="#//Alert/root">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
+          <name manuallyCreated="true" value="alert"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="z"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="site" lowerBound="1" eType="#//Site" eOpposite="#//Site/reading">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
+          <name manuallyCreated="true" value="site"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="recency"/>
+          <mode manuallyCreated="true" value="ExtendedTransient"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kBrevis_abundance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="kBrevis_abundance"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Site">
+    <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+      <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:EntityExtension">
+        <name manuallyCreated="true" value="Site"/>
+        <datastorePersistent manuallyCreated="true" value="false"/>
+        <datastoreCaching manuallyCreated="true" value="false"/>
+      </contents>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reading" upperBound="-1" eType="#//Reading" eOpposite="#//Reading/site">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AssociationEndExtension">
+          <name manuallyCreated="true" value="reading"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noAlerts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="noAlerts"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///com/corticon/rulesemf/canonicalvocabularymodel/VocabularyExtension">
+        <contents xsi:type="com.corticon.rulesemf.canonicalvocabularymodel:AttributeExtension">
+          <name manuallyCreated="true" value="name"/>
+          <mode manuallyCreated="true" value="Base"/>
+        </contents>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

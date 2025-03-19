@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="2" buildNumber="8022" updateStamp="_MCDGwAD0EfCZvtN_c6YMFQ" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_Fvaq0QQEEfCwN501XCPfYw" vocabulary="../Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="latest.mass_concentration_of_oxygen_in_sea_water &lt;2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.mass_concentration_of_oxygen_in_sea_water &lt; 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="latest.mass_concentration_of_oxygen_in_sea_water" rhs="&lt;2"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="latest.alert+=Alert.new [category = 'Disolved Oxygen', description='Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.', summary ='Hypoxia (Low Dissolved Oxygen)']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Hypoxia (Low Dissolved Oxygen)' , Alert.description = 'Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.' , Alert.category = 'Disolved Oxygen' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="latest.fractional_saturation_of_oxygen_in_sea_water &lt;30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.fractional_saturation_of_oxygen_in_sea_water &lt; 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fractional_saturation_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.fractional_saturation_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="latest.fractional_saturation_of_oxygen_in_sea_water" rhs="&lt;30"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="latest.alert+=Alert.new [category = 'Disolved Oxygen', description='Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.', summary ='Hypoxia (Low Dissolved Oxygen)']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Hypoxia (Low Dissolved Oxygen)' , Alert.description = 'Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.' , Alert.category = 'Disolved Oxygen' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition/>
+      <condition/>
+      <condition>
+        <opaqueExpression expression="prev.mass_concentration_of_oxygen_in_sea_water-latest.mass_concentration_of_oxygen_in_sea_water >2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="prev.mass_concentration_of_oxygen_in_sea_water - latest.mass_concentration_of_oxygen_in_sea_water > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="prev.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="prev" datatype="Reading" termtype="ENTITY" fulltext="prev" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="prev.mass_concentration_of_oxygen_in_sea_water-latest.mass_concentration_of_oxygen_in_sea_water" rhs=">2"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="latest.alert+=Alert.new [category = 'Disolved Oxygen', description='Oxygen Depletion Event (Rapid Decline). A rapid decline in dissolved oxygen can indicate a sudden pollution event or a bloom collapse. Trigger immediate investigation and sampling, notify relevant authorities.', summary = 'Oxygen Depletion Event (Rapid Decline)']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Oxygen Depletion Event (Rapid Decline)' , Alert.description = 'Oxygen Depletion Event (Rapid Decline). A rapid decline in dissolved oxygen can indicate a sudden pollution event or a bloom collapse. Trigger immediate investigation and sampling, notify relevant authorities.' , Alert.category = 'Disolved Oxygen' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter/>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0">
+      <opaqueExpression expression="latest.recency=1">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.recency = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="recency" datatype="Integer" termtype="ATTRIBUTE" fulltext="latest.recency">
+              <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.1">
+      <opaqueExpression expression="prev.recency=2">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="prev.recency = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="recency" datatype="Integer" termtype="ATTRIBUTE" fulltext="prev.recency">
+              <parentTerm text="prev" datatype="Reading" termtype="ENTITY" fulltext="prev" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <logicalVariable entity="../Vocabulary.ecore#//Site" filters="#//@ruleset/@filters.1 #//@ruleset/@filters.2">
+      <extension explicit="true" association="true" entity="../Vocabulary.ecore#//Reading" traversedAssocRole="../Vocabulary.ecore#//Site/reading" filters="#//@ruleset/@filters.1">
+        <alias value="latest"/>
+        <extension association="true" entity="../Vocabulary.ecore#//Alert" traversedAssocRole="../Vocabulary.ecore#//Reading/alert"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/recency"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/mass_concentration_of_chlorophyll_in_sea_water"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/mass_concentration_of_oxygen_in_sea_water"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/fractional_saturation_of_oxygen_in_sea_water"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../Vocabulary.ecore#//Reading" traversedAssocRole="../Vocabulary.ecore#//Site/reading" filters="#//@ruleset/@filters.2">
+        <alias value="prev"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/recency"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/mass_concentration_of_oxygen_in_sea_water"/>
+      </extension>
+    </logicalVariable>
+    <logicalVariable entity="../Vocabulary.ecore#//Alert">
+      <referencedAttributes attribute="../Vocabulary.ecore#//Alert/description"/>
+      <referencedAttributes attribute="../Vocabulary.ecore#//Alert/category"/>
+      <referencedAttributes attribute="../Vocabulary.ecore#//Alert/summary"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="25">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="98">
+        <valueSetCell/>
+        <expressionCell external="latest.alert+=Alert.new [category = 'Disolved Oxygen', description=cellValue, summary ='Hypoxia (Low Dissolved Oxygen)']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Hypoxia (Low Dissolved Oxygen)' , Alert.description = cellValue , Alert.category = 'Disolved Oxygen' ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="207">
+        <valueSetCell/>
+        <expressionCell external="latest.alert+=Alert.new [category = 'Disolved Oxygen', description=cellValue, summary = 'Oxygen Depletion Event (Rapid Decline)']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Oxygen Depletion Event (Rapid Decline)' , Alert.description = cellValue , Alert.category = 'Disolved Oxygen' ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="latest.recency=1" filter="#//@ruleset/@filters.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="prev.recency=2" filter="#//@ruleset/@filters.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="latest.recency=1" filter="#//@ruleset/@filters.1"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.3"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="prev.recency=2" filter="#//@ruleset/@filters.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.1"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell/>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="latest.recency=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.recency = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="recency" datatype="Integer" termtype="ATTRIBUTE" fulltext="latest.recency">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell external="prev.recency=2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="prev.recency = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="recency" datatype="Integer" termtype="ATTRIBUTE" fulltext="prev.recency">
+                <parentTerm text="prev" datatype="Reading" termtype="ENTITY" fulltext="prev" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1541" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="latest.mass_concentration_of_oxygen_in_sea_water">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="latest.fractional_saturation_of_oxygen_in_sea_water">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.fractional_saturation_of_oxygen_in_sea_water" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fractional_saturation_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.fractional_saturation_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList rowHeight="70">
+        <valueSetCell/>
+        <expressionCell external="prev.mass_concentration_of_oxygen_in_sea_water-latest.mass_concentration_of_oxygen_in_sea_water">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="prev.mass_concentration_of_oxygen_in_sea_water - latest.mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="prev.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="prev" datatype="Reading" termtype="ENTITY" fulltext="prev" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="&lt;2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.mass_concentration_of_oxygen_in_sea_water &lt; 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Hypoxia (Low Dissolved Oxygen)' , Alert.description = 'Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.' , Alert.category = 'Disolved Oxygen' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="&lt;30">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.fractional_saturation_of_oxygen_in_sea_water &lt; 30" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fractional_saturation_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.fractional_saturation_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="'Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Hypoxia (Low Dissolved Oxygen)' , Alert.description = 'Low dissolved oxygen (hypoxia) can suffocate aquatic life and create dead zones. Send an alert to environmental agencies, investigate potential sources of pollution (e.g., nutrient runoff), increase monitoring efforts.' , Alert.category = 'Disolved Oxygen' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="244" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet=">2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="prev.mass_concentration_of_oxygen_in_sea_water - latest.mass_concentration_of_oxygen_in_sea_water > 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="latest.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="mass_concentration_of_oxygen_in_sea_water" datatype="Decimal" termtype="ATTRIBUTE" fulltext="prev.mass_concentration_of_oxygen_in_sea_water">
+                <parentTerm text="prev" datatype="Reading" termtype="ENTITY" fulltext="prev" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList valueSet="'Oxygen Depletion Event (Rapid Decline). A rapid decline in dissolved oxygen can indicate a sudden pollution event or a bloom collapse. Trigger immediate investigation and sampling, notify relevant authorities.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="latest.alert += Alert.new [ Alert.summary = 'Oxygen Depletion Event (Rapid Decline)' , Alert.description = 'Oxygen Depletion Event (Rapid Decline). A rapid decline in dissolved oxygen can indicate a sudden pollution event or a bloom collapse. Trigger immediate investigation and sampling, notify relevant authorities.' , Alert.category = 'Disolved Oxygen' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="latest.alert">
+                <parentTerm text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="latest" datatype="Reading" termtype="ENTITY" fulltext="latest">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="2" buildNumber="8022" updateStamp="_YwJxFgD0EfCZvtN_c6YMFQ" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_p0D60QDwEfCZvtN_c6YMFQ" vocabulary="../Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Site.reading.fluorescent_dissolved_organic_matter >25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.reading.fluorescent_dissolved_organic_matter > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fluorescent_dissolved_organic_matter" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Site.reading.fluorescent_dissolved_organic_matter">
+                <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Site.reading.fluorescent_dissolved_organic_matter" rhs=">25"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Site.reading.alert+=Alert.new [category = 'Fluorescent Dissolved Organic Matter', description='High FDOM can indicate pollution from sewage or agricultural runoff. Investigate potential pollution sources, monitor water quality, assess the impact on aquatic life.', summary ='High FDOM (Pollution)']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.reading.alert += Alert.new [ Alert.summary = 'High FDOM (Pollution)' , Alert.description = 'High FDOM can indicate pollution from sewage or agricultural runoff. Investigate potential pollution sources, monitor water quality, assess the impact on aquatic life.' , Alert.category = 'Fluorescent Dissolved Organic Matter' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="Site.reading.alert" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="../Vocabulary.ecore#//Alert">
+      <referencedAttributes attribute="../Vocabulary.ecore#//Alert/description"/>
+      <referencedAttributes attribute="../Vocabulary.ecore#//Alert/category"/>
+      <referencedAttributes attribute="../Vocabulary.ecore#//Alert/summary"/>
+    </logicalVariable>
+    <logicalVariable entity="../Vocabulary.ecore#//Site">
+      <extension association="true" entity="../Vocabulary.ecore#//Reading" traversedAssocRole="../Vocabulary.ecore#//Site/reading">
+        <extension association="true" entity="../Vocabulary.ecore#//Alert" traversedAssocRole="../Vocabulary.ecore#//Reading/alert"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/recency"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/mass_concentration_of_chlorophyll_in_sea_water"/>
+        <referencedAttributes attribute="../Vocabulary.ecore#//Reading/fluorescent_dissolved_organic_matter"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="108">
+        <valueSetCell/>
+        <expressionCell external="Site.reading.alert+=Alert.new [category = 'Fluorescent Dissolved Organic Matter', description=cellValue, summary ='High FDOM (Pollution)']">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.reading.alert += Alert.new [ Alert.summary = 'High FDOM (Pollution)' , Alert.description = cellValue , Alert.category = 'Fluorescent Dissolved Organic Matter' ]" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="Site.reading.alert" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.2"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Site.reading.fluorescent_dissolved_organic_matter">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.reading.fluorescent_dissolved_organic_matter" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fluorescent_dissolved_organic_matter" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Site.reading.fluorescent_dissolved_organic_matter">
+                <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="401" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet=">25">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.reading.fluorescent_dissolved_organic_matter > 25" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="fluorescent_dissolved_organic_matter" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Site.reading.fluorescent_dissolved_organic_matter">
+                <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'High FDOM can indicate pollution from sewage or agricultural runoff. Investigate potential pollution sources, monitor water quality, assess the impact on aquatic life.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.reading.alert += Alert.new [ Alert.summary = 'High FDOM (Pollution)' , Alert.description = 'High FDOM can indicate pollution from sewage or agricultural runoff. Investigate potential pollution sources, monitor water quality, assess the impact on aquatic life.' , Alert.category = 'Fluorescent Dissolved Organic Matter' ]" datatype="Alert" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="alert" datatype="Alert" termtype="ENTITY" fulltext="Site.reading.alert">
+                <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading">
+                  <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="summary" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.summary">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="description" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.description">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="new" datatype="Alert" termtype="NEW" fulltext="Alert.new">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              <terms text="category" datatype="String" termtype="ATTRIBUTE" fulltext="Alert.category">
+                <parentTerm text="Alert" datatype="Alert" termtype="ENTITY" fulltext="Alert"/>
+              </terms>
+              <terms text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

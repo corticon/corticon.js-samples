@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="2" buildNumber="8022" updateStamp="_cJpLUAM3EfCDhPI-sWPjUw" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_cGxdgAM3EfCDhPI-sWPjUw" vocabulary="Vocabulary.ecore#/">
+    <rule/>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(Site.reading.alert->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Site.reading.alert->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Site_reading_alert" datatype="Boolean" termtype="COLLECTION" fulltext="Site.reading.alert->isEmpty">
+                <parentTerm text="alert" datatype="Alert" termtype="ENTITY" fulltext="Site.reading.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Site.reading.alert->isEmpty" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Site.noAlerts = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.noAlerts = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noAlerts" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Site.noAlerts">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="Vocabulary.ecore#//Site">
+      <extension association="true" entity="Vocabulary.ecore#//Reading" traversedAssocRole="Vocabulary.ecore#//Site/reading">
+        <extension association="true" entity="Vocabulary.ecore#//Alert" traversedAssocRole="Vocabulary.ecore#//Reading/alert"/>
+      </extension>
+      <referencedAttributes attribute="Vocabulary.ecore#//Site/noAlerts"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Site.noAlerts">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.noAlerts" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="noAlerts" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Site.noAlerts">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Site.reading.alert->isEmpty">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.reading.alert->isEmpty" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Site_reading_alert" datatype="Boolean" termtype="COLLECTION" fulltext="Site.reading.alert->isEmpty">
+                <parentTerm text="alert" datatype="Alert" termtype="ENTITY" fulltext="Site.reading.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Site.reading.alert->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Site_reading_alert" datatype="Boolean" termtype="COLLECTION" fulltext="Site.reading.alert->isEmpty">
+                <parentTerm text="alert" datatype="Alert" termtype="ENTITY" fulltext="Site.reading.alert" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="reading" datatype="Reading" termtype="ENTITY" fulltext="Site.reading" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Site.noAlerts = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="noAlerts" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Site.noAlerts">
+                <parentTerm text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Site" datatype="Site" termtype="ENTITY" fulltext="Site"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
