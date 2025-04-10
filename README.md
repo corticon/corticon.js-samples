@@ -29,9 +29,6 @@ Samples for integrating Corticon.js with various frameworks and runtimes:
 - **Browser**: Examples for Angular, jQuery, and plain JavaScript/TypeScript.
 - **Deno**: Minimal example for the Deno runtime.
 - **Node**: Node.js examples using Express and Koa frameworks.
-- **ReactNative**: A React Native app demonstrating offline and cloud-based decision services.
-- **Serverless**: Integration with AWS Step Functions, Azure Functions, and other serverless platforms.
-- **Xamarin**: Mobile app integration using Xamarin.
 
 ### **Importable-Rule-Projects**
 Prebuilt rule projects that can be imported into Corticon.js Studio:
