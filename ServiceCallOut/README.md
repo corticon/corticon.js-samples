@@ -81,6 +81,9 @@ Service Callouts enable Corticon.js decision services to interact with external 
 - **Error Handling**: Always include error handling in your service callouts to manage unexpected issues gracefully.
 - **Browser-Specific Features**: Be cautious when using browser-specific features like `localStorage`, as they may not work in non-browser environments.
 
-## Learn More
+## Further Resources 
 
-For more information about Service Callouts in Corticon.js, refer to the [official documentation](https://docs.progress.com/bundle/corticon-js-extensions/page/About-Corticon.js-extensions-for-service-callouts.html). 
+- [Corticon.js Service Callout documentation](https://docs.progress.com/bundle/corticon-js-extensions/page/About-Corticon.js-extensions-for-service-callouts.html). 
+- [Blog: Business Rules with GraphQL](https://www.progress.com/blogs/business-rules-with-graphql)
+- [Blog: Two Design Choices for Your MarkLogic Decision Services](https://www.progress.com/blogs/two-design-choices-for-your-marklogic-decision-services)
+- [Blog: No-Code Business Logic Development for MarkLogic Database](https://www.progress.com/blogs/no-code-business-logic-development-for-marklogic-database)
