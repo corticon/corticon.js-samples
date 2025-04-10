@@ -2,7 +2,7 @@
 
 This directory contains sample projects demonstrating how Corticon.js can be integrated into various JavaScript frameworks and runtimes. These examples showcase the flexibility of Corticon.js in supporting diverse environments, from browser-based applications to serverless platforms and mobile frameworks.
 
-## Corticon.js Across Frameworks & Runtimes
+## Why Use Corticon.js Across Frameworks & Runtimes?
 
 Corticon.js is a powerful rules engine that allows you to define, deploy, and execute business rules in JavaScript. Its cross-platform compatibility makes it an ideal choice for applications that require consistent decision-making logic across different environments. Whether you're building a web app, a mobile app, or a serverless function, Corticon.js provides a seamless way to integrate business rules into your application.
 
@@ -42,3 +42,16 @@ Examples for integrating Corticon.js with serverless platforms:
 ### **Xamarin**
 A sample project showcasing how to call Corticon.js decision services from a Xamarin mobile application.
 
+## How to Use These Samples
+
+1. Navigate to the folder corresponding to your preferred framework or runtime.
+2. Follow the instructions in the respective `README.md` file to set up and run the sample.
+3. Explore the code to understand how Corticon.js is integrated and how decision services are executed.
+
+## Contributing
+
+If you have additional examples or improvements, feel free to submit a pull request to this repository.
+
+## Learn More
+
+For more information about Corticon.js, visit the [official website](https://www.progress.com/corticon-js).
