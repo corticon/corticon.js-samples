@@ -1,3 +1,5 @@
+# **Please see the [Dynamic Forms specific directory](https://github.com/corticon/dynamic-forms) for the latest documentation**
+---
 # Dynamic Forms with Corticon.js
 
 Creating a dynamic form can be a slog even when you know what you're doing. But with Corticon.js, dynamic forms can be created in a fraction of the time, with substantial contributions from non-developers, and through a framework-agnostic design pattern that maximizes the reusability of form logic.
