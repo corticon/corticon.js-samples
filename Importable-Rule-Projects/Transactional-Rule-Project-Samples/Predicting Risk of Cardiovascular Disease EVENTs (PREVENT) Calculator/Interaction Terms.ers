@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="7" minorVersionNumber="2" buildNumber="8022" updateStamp="_T_Y4wTZSEfCQ64ZIAokGkA" externalChecksum="2722078124:507989954:3680615299" studioType="Java">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_tDzf0TZPEfCQ64ZIAokGkA" vocabulary="Rule%20Vocabulary.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="Individual.sbpAntiHTNInteraction = Individual.csbp2*Individual.antiHTNDrugsNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sbpAntiHTNInteraction = Individual.csbp2 * Individual.antiHTNDrugsNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="sbpAntiHTNInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sbpAntiHTNInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="antiHTNDrugsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.antiHTNDrugsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Individual.cholesterolStatinInteraction = Individual.cnhdl * Individual.statinsNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.cholesterolStatinInteraction = Individual.cnhdl * Individual.statinsNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cholesterolStatinInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cholesterolStatinInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="statinsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.statinsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Individual.ageCholesterolInteraction_cnhdl = Individual.cage * Individual.cnhdl">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageCholesterolInteraction_cnhdl = Individual.cage * Individual.cnhdl" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageCholesterolInteraction_cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Individual.ageCholesterolInteraction_chdl = Individual.cage * Individual.chdl">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageCholesterolInteraction_chdl = Individual.cage * Individual.chdl" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageCholesterolInteraction_chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Individual.ageSBPInteraction = Individual.cage * Individual.csbp2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageSBPInteraction = Individual.cage * Individual.csbp2" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageSBPInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSBPInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Individual.ageDiabetesInteraction = Individual.cage * Individual.diabetesNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageDiabetesInteraction = Individual.cage * Individual.diabetesNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageDiabetesInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageDiabetesInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="diabetesNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.diabetesNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Individual.ageSmokingInteraction = Individual.cage * Individual.smokerNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageSmokingInteraction = Individual.cage * Individual.smokerNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageSmokingInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSmokingInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="smokerNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.smokerNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Individual.ageEGFRInteraction = Individual.cage * Individual.cegfr">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageEGFRInteraction = Individual.cage * Individual.cegfr" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageEGFRInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageEGFRInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cegfr" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//Individual">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/sbpAntiHTNInteraction"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/cholesterolStatinInteraction"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/ageCholesterolInteraction_cnhdl"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/ageCholesterolInteraction_chdl"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/csbp2"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/antiHTNDrugsNumeric"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/ageSBPInteraction"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/ageDiabetesInteraction"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/ageSmokingInteraction"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/ageEGFRInteraction"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/diabetesNumeric"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/smokerNumeric"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/cegfr"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightConditionsIf="53">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="43">
+        <naturalLanguageText value="Calculate the sbpAntiHTNInteraction (systolic blood pressure and antihypertensive drug interaction) by multiplying the individual's csbp2 value by their antiHTNDrugsNumeric value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.sbpAntiHTNInteraction">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sbpAntiHTNInteraction" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="sbpAntiHTNInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sbpAntiHTNInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Calculate the cholesterolStatinInteraction by multiplying the individual's cnhdl value by their statinsNumeric value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.cholesterolStatinInteraction">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.cholesterolStatinInteraction" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cholesterolStatinInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cholesterolStatinInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Calculate the ageCholesterolInteraction_cnhdl (age and cnhdl cholesterol interaction) by multiplying the individual's cage value by their cnhdl value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.ageCholesterolInteraction_cnhdl">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageCholesterolInteraction_cnhdl" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ageCholesterolInteraction_cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Calculate the ageCholesterolInteraction_chdl (age and chdl cholesterol interaction) by multiplying the individual's cage value by their chdl value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.ageCholesterolInteraction_chdl">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageCholesterolInteraction_chdl" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ageCholesterolInteraction_chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Calculate the ageSBPInteraction (age and systolic blood pressure interaction) by multiplying the individual's cage value by their csbp2 value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.ageSBPInteraction">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageSBPInteraction" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ageSBPInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSBPInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Calculate the ageDiabetesInteraction by multiplying the individual's cage value by their diabetesNumeric value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.ageDiabetesInteraction">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageDiabetesInteraction" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ageDiabetesInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageDiabetesInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Calculate the ageSmokingInteraction by multiplying the individual's cage value by their smokerNumeric value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.ageSmokingInteraction">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageSmokingInteraction" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ageSmokingInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSmokingInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <naturalLanguageText value="Calculate the ageEGFRInteraction by multiplying the individual's cage value by their cegfr value."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.ageEGFRInteraction">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageEGFRInteraction" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ageEGFRInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageEGFRInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.9"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.10"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.11"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.12"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="396" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="Individual.csbp2*Individual.antiHTNDrugsNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sbpAntiHTNInteraction = Individual.csbp2 * Individual.antiHTNDrugsNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="sbpAntiHTNInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sbpAntiHTNInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="antiHTNDrugsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.antiHTNDrugsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="Individual.cnhdl * Individual.statinsNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.cholesterolStatinInteraction = Individual.cnhdl * Individual.statinsNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cholesterolStatinInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cholesterolStatinInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="statinsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.statinsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="Individual.cage * Individual.cnhdl">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageCholesterolInteraction_cnhdl = Individual.cage * Individual.cnhdl" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageCholesterolInteraction_cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="Individual.cage * Individual.chdl">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageCholesterolInteraction_chdl = Individual.cage * Individual.chdl" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageCholesterolInteraction_chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="Individual.cage * Individual.csbp2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageSBPInteraction = Individual.cage * Individual.csbp2" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageSBPInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSBPInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="Individual.cage * Individual.diabetesNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageDiabetesInteraction = Individual.cage * Individual.diabetesNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageDiabetesInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageDiabetesInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="diabetesNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.diabetesNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="Individual.cage * Individual.smokerNumeric">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageSmokingInteraction = Individual.cage * Individual.smokerNumeric" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageSmokingInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSmokingInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="smokerNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.smokerNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="Individual.cage * Individual.cegfr">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.ageEGFRInteraction = Individual.cage * Individual.cegfr" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="ageEGFRInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageEGFRInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cegfr" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

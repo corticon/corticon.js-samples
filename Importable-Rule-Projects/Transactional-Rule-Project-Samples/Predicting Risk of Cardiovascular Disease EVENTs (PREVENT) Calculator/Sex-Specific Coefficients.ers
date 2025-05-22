@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="3" buildNumber="8022" updateStamp="_iX8SsTZSEfCQ64ZIAokGkA" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_P02c1DcUEfCRNsFw_CjCzA" vocabulary="Rule%20Vocabulary.ecore#/">
+    <rule/>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Individual.sex = 'Female'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sex = 'Female'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="sex" datatype="String" termtype="ATTRIBUTE" fulltext="Individual.sex">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Individual.sex" rhs="'Female'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Individual.sumOfBetaTransformedVariables_X = (0.7939 * Individual.cage) + (0.0305 * Individual.cnhdl) + (-0.1607 * Individual.chdl) + (-0.2394 * Individual.csbp) + (0.36 * Individual.csbp2) + (0.8668 * Individual.diabetesNumeric) + (0.5361 * Individual.smokerNumeric) + (0.6046 * Individual.cegfr) + (0.0434 * Individual.cegfr2) + (0.3152 * Individual.antiHTNDrugsNumeric) + (-0.1478 * Individual.statinsNumeric) + (-0.0664 * Individual.sbpAntiHTNInteraction) + (0.1198 * Individual.cholesterolStatinInteraction) + (-0.082 * Individual.ageCholesterolInteraction_cnhdl) + (0.0307 * Individual.ageCholesterolInteraction_chdl) + (-0.0946 * Individual.ageSBPInteraction) + (-0.2706 * Individual.ageDiabetesInteraction) + (-0.0787 * Individual.ageSmokingInteraction) + (-0.1638 * Individual.ageEGFRInteraction) + (-3.3077)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sumOfBetaTransformedVariables_X = ( 0.7939 * Individual.cage ) + ( 0.0305 * Individual.cnhdl ) + ( -0.1607 * Individual.chdl ) + ( -0.2394 * Individual.csbp ) + ( 0.36 * Individual.csbp2 ) + ( 0.8668 * Individual.diabetesNumeric ) + ( 0.5361 * Individual.smokerNumeric ) + ( 0.6046 * Individual.cegfr ) + ( 0.0434 * Individual.cegfr2 ) + ( 0.3152 * Individual.antiHTNDrugsNumeric ) + ( -0.1478 * Individual.statinsNumeric ) + ( -0.0664 * Individual.sbpAntiHTNInteraction ) + ( 0.1198 * Individual.cholesterolStatinInteraction ) + ( -0.082 * Individual.ageCholesterolInteraction_cnhdl ) + ( 0.0307 * Individual.ageCholesterolInteraction_chdl ) + ( -0.0946 * Individual.ageSBPInteraction ) + ( -0.2706 * Individual.ageDiabetesInteraction ) + ( -0.0787 * Individual.ageSmokingInteraction ) + ( -0.1638 * Individual.ageEGFRInteraction ) + ( -3.3077 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="sumOfBetaTransformedVariables_X" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sumOfBetaTransformedVariables_X">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="csbp" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cegfr" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageDiabetesInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageDiabetesInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="diabetesNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.diabetesNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageSBPInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSBPInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cholesterolStatinInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cholesterolStatinInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="smokerNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.smokerNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cegfr2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="sbpAntiHTNInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sbpAntiHTNInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="antiHTNDrugsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.antiHTNDrugsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageEGFRInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageEGFRInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageSmokingInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSmokingInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="statinsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.statinsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Individual.sex = 'Male'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sex = 'Male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="sex" datatype="String" termtype="ATTRIBUTE" fulltext="Individual.sex">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Individual.sex" rhs="'Male'"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Individual.sumOfBetaTransformedVariables_X = (0.7689 * Individual.cage) + (0.0736 * Individual.cnhdl) + (-0.0954 * Individual.chdl) + (-0.4347 * Individual.csbp) + (0.3363 * Individual.csbp2) + (0.7693 * Individual.diabetesNumeric) + (0.4387 * Individual.smokerNumeric) + (0.5379 * Individual.cegfr) + (0.0165 * Individual.cegfr2) + (0.2889 * Individual.antiHTNDrugsNumeric) + (-0.1337 * Individual.statinsNumeric) + (-0.0476 * Individual.sbpAntiHTNInteraction) + (0.1503 * Individual.cholesterolStatinInteraction) + (-0.0518 * Individual.ageCholesterolInteraction_cnhdl) + (0.0191 * Individual.ageCholesterolInteraction_chdl) + (-0.1049 * Individual.ageSBPInteraction) + (-0.2252 * Individual.ageDiabetesInteraction) + (-0.0895 * Individual.ageSmokingInteraction) + (-0.1543 * Individual.ageEGFRInteraction) + (-3.0312)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sumOfBetaTransformedVariables_X = ( 0.7689 * Individual.cage ) + ( 0.0736 * Individual.cnhdl ) + ( -0.0954 * Individual.chdl ) + ( -0.4347 * Individual.csbp ) + ( 0.3363 * Individual.csbp2 ) + ( 0.7693 * Individual.diabetesNumeric ) + ( 0.4387 * Individual.smokerNumeric ) + ( 0.5379 * Individual.cegfr ) + ( 0.0165 * Individual.cegfr2 ) + ( 0.2889 * Individual.antiHTNDrugsNumeric ) + ( -0.1337 * Individual.statinsNumeric ) + ( -0.0476 * Individual.sbpAntiHTNInteraction ) + ( 0.1503 * Individual.cholesterolStatinInteraction ) + ( -0.0518 * Individual.ageCholesterolInteraction_cnhdl ) + ( 0.0191 * Individual.ageCholesterolInteraction_chdl ) + ( -0.1049 * Individual.ageSBPInteraction ) + ( -0.2252 * Individual.ageDiabetesInteraction ) + ( -0.0895 * Individual.ageSmokingInteraction ) + ( -0.1543 * Individual.ageEGFRInteraction ) + ( -3.0312 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="sumOfBetaTransformedVariables_X" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sumOfBetaTransformedVariables_X">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="csbp" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cegfr" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageDiabetesInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageDiabetesInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="diabetesNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.diabetesNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageSBPInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSBPInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cholesterolStatinInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cholesterolStatinInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="smokerNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.smokerNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="cegfr2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="sbpAntiHTNInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sbpAntiHTNInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="antiHTNDrugsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.antiHTNDrugsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageEGFRInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageEGFRInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ageSmokingInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSmokingInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="statinsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.statinsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="Rule%20Vocabulary.ecore#//Individual">
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/sex"/>
+      <referencedAttributes attribute="Rule%20Vocabulary.ecore#//Individual/sumOfBetaTransformedVariables_X"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="229">
+        <naturalLanguageText value="Multiply sex-specific coefficients for each ofthe fields:  cage, cnhdl, chdl, csbp, csbp2, diabetesNumeric, smokerNumeric, cegfr, cegfr2, antiHTNDrugsNumeric, statinsNumeric, sbpAntiHTNInteraction, cholesterolStatinInteraction, ageCholesterolInteraction_cnhdl, ageCholesterolInteraction_chdl, ageSBPInteraction, ageDiabetesInteraction, ageSmokingInteraction, ageEGFRInteraction, then, add sex-specific constant."/>
+        <valueSetCell/>
+        <expressionCell external="Individual.sumOfBetaTransformedVariables_X">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sumOfBetaTransformedVariables_X" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="sumOfBetaTransformedVariables_X" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sumOfBetaTransformedVariables_X">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <naturalLanguageText value="If the individual's sex is ----->"/>
+        <valueSetCell/>
+        <expressionCell external="Individual.sex">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sex" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="sex" datatype="String" termtype="ATTRIBUTE" fulltext="Individual.sex">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'Female'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sex = 'Female'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="sex" datatype="String" termtype="ATTRIBUTE" fulltext="Individual.sex">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="(0.7939 * Individual.cage) + (0.0305 * Individual.cnhdl) + (-0.1607 * Individual.chdl) + (-0.2394 * Individual.csbp) + (0.36 * Individual.csbp2) + (0.8668 * Individual.diabetesNumeric) + (0.5361 * Individual.smokerNumeric) + (0.6046 * Individual.cegfr) + (0.0434 * Individual.cegfr2) + (0.3152 * Individual.antiHTNDrugsNumeric) + (-0.1478 * Individual.statinsNumeric) + (-0.0664 * Individual.sbpAntiHTNInteraction) + (0.1198 * Individual.cholesterolStatinInteraction) + (-0.082 * Individual.ageCholesterolInteraction_cnhdl) + (0.0307 * Individual.ageCholesterolInteraction_chdl) + (-0.0946 * Individual.ageSBPInteraction) + (-0.2706 * Individual.ageDiabetesInteraction) + (-0.0787 * Individual.ageSmokingInteraction) + (-0.1638 * Individual.ageEGFRInteraction) + (-3.3077)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sumOfBetaTransformedVariables_X = ( 0.7939 * Individual.cage ) + ( 0.0305 * Individual.cnhdl ) + ( -0.1607 * Individual.chdl ) + ( -0.2394 * Individual.csbp ) + ( 0.36 * Individual.csbp2 ) + ( 0.8668 * Individual.diabetesNumeric ) + ( 0.5361 * Individual.smokerNumeric ) + ( 0.6046 * Individual.cegfr ) + ( 0.0434 * Individual.cegfr2 ) + ( 0.3152 * Individual.antiHTNDrugsNumeric ) + ( -0.1478 * Individual.statinsNumeric ) + ( -0.0664 * Individual.sbpAntiHTNInteraction ) + ( 0.1198 * Individual.cholesterolStatinInteraction ) + ( -0.082 * Individual.ageCholesterolInteraction_cnhdl ) + ( 0.0307 * Individual.ageCholesterolInteraction_chdl ) + ( -0.0946 * Individual.ageSBPInteraction ) + ( -0.2706 * Individual.ageDiabetesInteraction ) + ( -0.0787 * Individual.ageSmokingInteraction ) + ( -0.1638 * Individual.ageEGFRInteraction ) + ( -3.3077 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="sumOfBetaTransformedVariables_X" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sumOfBetaTransformedVariables_X">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="csbp" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cegfr" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageDiabetesInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageDiabetesInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="diabetesNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.diabetesNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageSBPInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSBPInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cholesterolStatinInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cholesterolStatinInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="smokerNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.smokerNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cegfr2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="sbpAntiHTNInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sbpAntiHTNInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="antiHTNDrugsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.antiHTNDrugsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageEGFRInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageEGFRInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageSmokingInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSmokingInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="statinsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.statinsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'Male'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sex = 'Male'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="sex" datatype="String" termtype="ATTRIBUTE" fulltext="Individual.sex">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="(0.7689 * Individual.cage) + (0.0736 * Individual.cnhdl) + (-0.0954 * Individual.chdl) + (-0.4347 * Individual.csbp) + (0.3363 * Individual.csbp2) + (0.7693 * Individual.diabetesNumeric) + (0.4387 * Individual.smokerNumeric) + (0.5379 * Individual.cegfr) + (0.0165 * Individual.cegfr2) + (0.2889 * Individual.antiHTNDrugsNumeric) + (-0.1337 * Individual.statinsNumeric) + (-0.0476 * Individual.sbpAntiHTNInteraction) + (0.1503 * Individual.cholesterolStatinInteraction) + (-0.0518 * Individual.ageCholesterolInteraction_cnhdl) + (0.0191 * Individual.ageCholesterolInteraction_chdl) + (-0.1049 * Individual.ageSBPInteraction) + (-0.2252 * Individual.ageDiabetesInteraction) + (-0.0895 * Individual.ageSmokingInteraction) + (-0.1543 * Individual.ageEGFRInteraction) + (-3.0312)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.sumOfBetaTransformedVariables_X = ( 0.7689 * Individual.cage ) + ( 0.0736 * Individual.cnhdl ) + ( -0.0954 * Individual.chdl ) + ( -0.4347 * Individual.csbp ) + ( 0.3363 * Individual.csbp2 ) + ( 0.7693 * Individual.diabetesNumeric ) + ( 0.4387 * Individual.smokerNumeric ) + ( 0.5379 * Individual.cegfr ) + ( 0.0165 * Individual.cegfr2 ) + ( 0.2889 * Individual.antiHTNDrugsNumeric ) + ( -0.1337 * Individual.statinsNumeric ) + ( -0.0476 * Individual.sbpAntiHTNInteraction ) + ( 0.1503 * Individual.cholesterolStatinInteraction ) + ( -0.0518 * Individual.ageCholesterolInteraction_cnhdl ) + ( 0.0191 * Individual.ageCholesterolInteraction_chdl ) + ( -0.1049 * Individual.ageSBPInteraction ) + ( -0.2252 * Individual.ageDiabetesInteraction ) + ( -0.0895 * Individual.ageSmokingInteraction ) + ( -0.1543 * Individual.ageEGFRInteraction ) + ( -3.0312 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="sumOfBetaTransformedVariables_X" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sumOfBetaTransformedVariables_X">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="csbp" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cage" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cage">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cegfr" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageCholesterolInteraction_cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageCholesterolInteraction_cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageDiabetesInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageDiabetesInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cnhdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cnhdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="diabetesNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.diabetesNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageSBPInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSBPInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="chdl" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.chdl">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cholesterolStatinInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cholesterolStatinInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="smokerNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.smokerNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="cegfr2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.cegfr2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="sbpAntiHTNInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.sbpAntiHTNInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="antiHTNDrugsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.antiHTNDrugsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageEGFRInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageEGFRInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="csbp2" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.csbp2">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="ageSmokingInteraction" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.ageSmokingInteraction">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="statinsNumeric" datatype="Integer" termtype="ATTRIBUTE" fulltext="Individual.statinsNumeric">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
