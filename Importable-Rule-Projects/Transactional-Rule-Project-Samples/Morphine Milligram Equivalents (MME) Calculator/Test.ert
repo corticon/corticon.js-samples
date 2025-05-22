@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicaltestmodel.testsheet="http:///com/corticon/rulesemf/canonicaltestmodel/testsheet.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="2" minorVersionNumber="3" buildNumber="8022" updateStamp="_4kfBwDcgEfCHDsPSptqhxg" externalChecksum="2722078124:507989954" studioType="Javascript">
+  <testsheetAssets majorVersionNumber="2" minorVersionNumber="3" buildNumber="8022" updateStamp="_-dzTojciEfCHDsPSptqhxg" externalChecksum="2722078124:507989954">
+    <testsheet ruleActivityUpdateStamp="_P7SF4jcdEfCHDsPSptqhxg" ruleActivity="Comparative%20risk.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Conversion factor for FentaNYL patch (Duragesic) is 2.4."/>
+        <PostedMessage severity="Info" text="Conversion factor for Tapentadol is 0.4."/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="1" rulesheet="Comparative risk" rule="3" entityname="Drug" entityidentity="" entityid="Drug_id_2" name="conversionFactor" oldvalue="" newvalue="2.4"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="2" rulesheet="Comparative risk" rule="3" entityname="Drug" entityidentity="" entityid="Drug_id_2" name="mmeDaily" oldvalue="" newvalue="30"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="3" rulesheet="Comparative risk" rule="10" entityname="Drug" entityidentity="" entityid="Drug_id_1" name="conversionFactor" oldvalue="" newvalue="0.4"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="4" rulesheet="Comparative risk" rule="10" entityname="Drug" entityidentity="" entityid="Drug_id_1" name="mmeDaily" oldvalue="" newvalue="9.6"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="5" rulesheet="Comparative risk" rule="C0" entityname="Individual" entityidentity="" entityid="Individual_id_1" name="mmeDaily" oldvalue="" newvalue="39.6"/>
+        <RuleTraceData xsi:type="com.corticon.rulesemf.canonicaltestmodel.testsheet:RuleTraceAttributeData" sequence="6" rulesheet="Comparative risk" rule="14" entityname="Individual" entityidentity="" entityid="Individual_id_1" name="mmeRisk" oldvalue="" newvalue="2x higher risk of overdose- There is no completely safe opioid dose; use caution when prescribing opioids at any dose and always prescribe the lowest effective dose"/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="Rule%20Vocabulary.ecore#//Individual">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Rule%20Vocabulary.ecore#//Individual/drug" eClass="Rule%20Vocabulary.ecore#//Drug">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Tapentadol" eAttribute="Rule%20Vocabulary.ecore#//Drug/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="Rule%20Vocabulary.ecore#//Drug/dosage" eClass="Rule%20Vocabulary.ecore#//Dosage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1" eAttribute="Rule%20Vocabulary.ecore#//Dosage/perDay"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="mg" eAttribute="Rule%20Vocabulary.ecore#//Dosage/unit"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="24.000000" eAttribute="Rule%20Vocabulary.ecore#//Dosage/value"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="Rule%20Vocabulary.ecore#//Individual/drug" eClass="Rule%20Vocabulary.ecore#//Drug">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="FentaNYL patch (Duragesic)" eAttribute="Rule%20Vocabulary.ecore#//Drug/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="Rule%20Vocabulary.ecore#//Drug/dosage" eClass="Rule%20Vocabulary.ecore#//Dosage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="mcg/hr" eAttribute="Rule%20Vocabulary.ecore#//Dosage/unit"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="12.500000" eAttribute="Rule%20Vocabulary.ecore#//Dosage/value"/>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="Rule%20Vocabulary.ecore#//Individual">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.4" value="39.600000" eAttribute="Rule%20Vocabulary.ecore#//Individual/mmeDaily"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.5" value="2x higher risk of overdose- There is no completely safe opioid dose; use caution when prescribing opioids at any dose and always prescribe the lowest effective dose" eAttribute="Rule%20Vocabulary.ecore#//Individual/mmeRisk"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eReference="Rule%20Vocabulary.ecore#//Individual/drug" eClass="Rule%20Vocabulary.ecore#//Drug">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="Rule%20Vocabulary.ecore#//Drug/dosage" eClass="Rule%20Vocabulary.ecore#//Dosage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="mg" eAttribute="Rule%20Vocabulary.ecore#//Dosage/unit"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1" eAttribute="Rule%20Vocabulary.ecore#//Dosage/perDay"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="24.000000" eAttribute="Rule%20Vocabulary.ecore#//Dosage/value"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.2" value="0.400000" eAttribute="Rule%20Vocabulary.ecore#//Drug/conversionFactor"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Tapentadol" eAttribute="Rule%20Vocabulary.ecore#//Drug/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.3" value="9.600000" eAttribute="Rule%20Vocabulary.ecore#//Drug/mmeDaily"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="Rule%20Vocabulary.ecore#//Individual/drug" eClass="Rule%20Vocabulary.ecore#//Drug">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="Rule%20Vocabulary.ecore#//Drug/dosage" eClass="Rule%20Vocabulary.ecore#//Dosage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="mcg/hr" eAttribute="Rule%20Vocabulary.ecore#//Dosage/unit"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="12.500000" eAttribute="Rule%20Vocabulary.ecore#//Dosage/value"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.0" value="2.400000" eAttribute="Rule%20Vocabulary.ecore#//Drug/conversionFactor"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="FentaNYL patch (Duragesic)" eAttribute="Rule%20Vocabulary.ecore#//Drug/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" ruleTraceItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputRuleTraceSection/@ruleTraceItemList.1" value="30.000000" eAttribute="Rule%20Vocabulary.ecore#//Drug/mmeDaily"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.3"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.2"/>
+      </outputMessageSection>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+      <outputRuleTraceSection>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.1"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.3/@children.3"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.2" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.1"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.3" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.2/@children.3"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.4" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.0"/>
+        <ruleTraceItemList ruleTraceData="#//@testsheetAssets.0/@testsheet/@output/@RuleTraceData.5" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.1"/>
+      </outputRuleTraceSection>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_GqAAYjcgEfCHDsPSptqhxg" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="Rule%20Vocabulary.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>
