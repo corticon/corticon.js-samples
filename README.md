@@ -13,32 +13,21 @@ Corticon.js is a powerful rules engine that allows you to define, deploy, and ex
 - **Mobile and Web Applications**: Bundle rules into mobile apps (e.g., React Native, Xamarin) or web applications.
 - **Cloud Workflows**: Integrate rules into workflows like AWS Step Functions or Microsoft Logic Apps.
 - **In-Browser Execution**: Execute rules directly in the browser for real-time decision-making.
-
+- 
 ## Repository Structure
 
 This repository is organized into subdirectories, each showcasing specific use cases or integrations of Corticon.js:
 
+### [Extended Operators](ExtendedOperators/README.md)
+Examples of custom operators and advanced rule modeling
 
-### **Extended Operators**
-Examples of custom operators and advanced rule modeling:
-- **BasicSampleGetSetOperators**: Demonstrates custom operators for getting and setting data.
-- **Finance**: Financial rule modeling examples.
-
-### **Frameworks & Runtimes**
-Samples for integrating Corticon.js with various frameworks and runtimes:
-- **Browser**: Examples for Angular, jQuery, and plain JavaScript/TypeScript.
-- **Deno**: Minimal example for the Deno runtime.
-- **Node**: Node.js examples using Express and Koa frameworks.
-
-### **Importable-Rule-Projects**
+### [Importable Rule Projects](Importable-Rule-Projects/README.md)
 Prebuilt rule projects that can be imported into Corticon.js Studio:
-- **DailyInsurance**: Insurance-related decision services.
-- **Dynamic-Form-Samples**: Rule projects for dynamic forms.
-- **Transactional-Rule-Project-Samples**: Examples of transactional rule modeling.
 
-### **ServiceCallOut**
-Examples of service callouts for extending Corticon.js functionality:
-- **AccessConfigurationProperties**: Accessing configuration properties in decision services.
-- **Weather REST API**: Calling external REST APIs for weather data.
-- **I18N**: Localization examples for dynamic forms.
 
+### [Service Call Outs](ServiceCallOut/README.md)
+
+Examples of service callouts for extending Corticon.js functionality
+
+### [Dynamic Forms](DynamicForms/README.md)
+Rule-driven, offline dynamic form rendering. 
