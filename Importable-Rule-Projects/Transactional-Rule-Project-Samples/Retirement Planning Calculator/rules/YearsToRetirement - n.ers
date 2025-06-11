@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="3" buildNumber="8022" updateStamp="_fj5fQ0YgEfC-Xt8nKcYFZg" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_WxNuMEYLEfC-Xt8nKcYFZg" vocabulary="Vocabulary.ecore#/">
+    <rule>
+      <condition/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(contributions->size &lt; Individual.yearsToRetirement)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( contributions->size &lt; Individual.yearsToRetirement ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="contributions" datatype="Integer" termtype="COLLECTION" fulltext="contributions->size">
+                <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearsToRetirement" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.yearsToRetirement">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="contributions->size &lt; Individual.yearsToRetirement" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="newContribution+=AnnualContribution.new[&#xD;&#xA;yearsFromNow = contributions->size+1, &#xD;&#xA; income = contributions->sortedBy(yearsFromNow)->last.income* (1+Individual.annualIncomeIncrease), &#xD;&#xA;totalAccumulatedValue =contributions->sortedBy(yearsFromNow)->last.totalAccumulatedValue* (1+Individual.preRetirementRateOfReturn) + contributions->sortedBy(yearsFromNow)->last.contribution* (1+Individual.annualIncomeIncrease), &#xD;&#xA;contribution =contributions->sortedBy(yearsFromNow)->last.contribution* (1+Individual.annualIncomeIncrease)]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="newContribution += AnnualContribution.new [ AnnualContribution.yearsFromNow = contributions->size + 1 , AnnualContribution.totalAccumulatedValue = contributions->sortedBy ( contributions.yearsFromNow )->last.totalAccumulatedValue * ( 1 + Individual.preRetirementRateOfReturn ) + contributions->sortedBy ( contributions.yearsFromNow )->last.contribution * ( 1 + Individual.annualIncomeIncrease ) , AnnualContribution.income = contributions->sortedBy ( contributions.yearsFromNow )->last.income * ( 1 + Individual.annualIncomeIncrease ) , AnnualContribution.contribution = contributions->sortedBy ( contributions.yearsFromNow )->last.contribution * ( 1 + Individual.annualIncomeIncrease ) ]" datatype="AnnualContribution" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="newContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="newContribution" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="preRetirementRateOfReturn" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.preRetirementRateOfReturn">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="totalAccumulatedValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.totalAccumulatedValue">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="income" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.income">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="annualIncomeIncrease" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.annualIncomeIncrease">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="contributions" datatype="Integer" termtype="COLLECTION" fulltext="contributions->size">
+                <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearsFromNow" datatype="Integer" termtype="ATTRIBUTE" fulltext="AnnualContribution.yearsFromNow">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="AnnualContribution" termtype="NEW" fulltext="AnnualContribution.new">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="contributions->asSequence->sortedBy(yearsFromNow)" datatype="Object" termtype="COLLECTION" fulltext="contributions->asSequence->sortedBy->last">
+                <parentTerm text="contributions" datatype="Sequence" termtype="COLLECTION" fulltext="contributions->asSequence->sortedBy">
+                  <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="contribution" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.contribution">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="Vocabulary.ecore#//Individual">
+      <extension explicit="true" association="true" entity="Vocabulary.ecore#//AnnualContribution" traversedAssocRole="Vocabulary.ecore#//Individual/annualContribution">
+        <alias value="contributions"/>
+        <referencedAttributes attribute="Vocabulary.ecore#//AnnualContribution/contribution"/>
+        <referencedAttributes attribute="Vocabulary.ecore#//AnnualContribution/income"/>
+      </extension>
+      <extension explicit="true" association="true" entity="Vocabulary.ecore#//AnnualContribution" traversedAssocRole="Vocabulary.ecore#//Individual/annualContribution">
+        <alias value="newContribution"/>
+        <referencedAttributes attribute="Vocabulary.ecore#//AnnualContribution/income"/>
+      </extension>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/monthlyContributions"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/yearsToRetirement"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/annualIncomeIncrease"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/inflationRate"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/preRetirementRateOfReturn"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/estimatedSavingsAtRetirement"/>
+    </logicalVariable>
+    <logicalVariable entity="Vocabulary.ecore#//AnnualContribution">
+      <referencedAttributes attribute="Vocabulary.ecore#//AnnualContribution/yearsFromNow"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//AnnualContribution/contribution"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//AnnualContribution/totalAccumulatedValue"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//AnnualContribution/income"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" sashWeightAdvancedView="27" sashWeightConditionsIf="59">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="204">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="newContribution+=AnnualContribution.new[&#xD;&#xA;yearsFromNow = contributions->size+1, &#xD;&#xA; income = contributions->sortedBy(yearsFromNow)->last.income* (1+Individual.annualIncomeIncrease), &#xD;&#xA;totalAccumulatedValue =contributions->sortedBy(yearsFromNow)->last.totalAccumulatedValue* (1+Individual.preRetirementRateOfReturn) + cellValue, &#xD;&#xA;contribution =cellValue]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="newContribution += AnnualContribution.new [ AnnualContribution.yearsFromNow = contributions->size + 1 , AnnualContribution.totalAccumulatedValue = contributions->sortedBy ( contributions.yearsFromNow )->last.totalAccumulatedValue * ( 1 + Individual.preRetirementRateOfReturn ) + cellValue , AnnualContribution.income = contributions->sortedBy ( contributions.yearsFromNow )->last.income * ( 1 + Individual.annualIncomeIncrease ) , AnnualContribution.contribution = cellValue ]" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="newContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="newContribution" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="preRetirementRateOfReturn" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.preRetirementRateOfReturn">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="totalAccumulatedValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.totalAccumulatedValue">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="income" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.income">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="annualIncomeIncrease" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.annualIncomeIncrease">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="contributions" datatype="Integer" termtype="COLLECTION" fulltext="contributions->size">
+                <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearsFromNow" datatype="Integer" termtype="ATTRIBUTE" fulltext="AnnualContribution.yearsFromNow">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="AnnualContribution" termtype="NEW" fulltext="AnnualContribution.new">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              <terms text="contributions->asSequence->sortedBy(yearsFromNow)" datatype="Object" termtype="COLLECTION" fulltext="contributions->asSequence->sortedBy->last">
+                <parentTerm text="contributions" datatype="Sequence" termtype="COLLECTION" fulltext="contributions->asSequence->sortedBy">
+                  <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="contribution" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.contribution">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" scrollRowTop="3" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList rowHeight="55">
+        <valueSetCell/>
+        <expressionCell external="contributions->size &lt; Individual.yearsToRetirement">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="contributions->size &lt; Individual.yearsToRetirement" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="contributions" datatype="Integer" termtype="COLLECTION" fulltext="contributions->size">
+                <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearsToRetirement" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.yearsToRetirement">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="74" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="250" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( contributions->size &lt; Individual.yearsToRetirement ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="contributions" datatype="Integer" termtype="COLLECTION" fulltext="contributions->size">
+                <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearsToRetirement" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.yearsToRetirement">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="contributions->sortedBy(yearsFromNow)->last.contribution* (1+Individual.annualIncomeIncrease)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="newContribution += AnnualContribution.new [ AnnualContribution.yearsFromNow = contributions->size + 1 , AnnualContribution.totalAccumulatedValue = contributions->sortedBy ( contributions.yearsFromNow )->last.totalAccumulatedValue * ( 1 + Individual.preRetirementRateOfReturn ) + contributions->sortedBy ( contributions.yearsFromNow )->last.contribution * ( 1 + Individual.annualIncomeIncrease ) , AnnualContribution.income = contributions->sortedBy ( contributions.yearsFromNow )->last.income * ( 1 + Individual.annualIncomeIncrease ) , AnnualContribution.contribution = contributions->sortedBy ( contributions.yearsFromNow )->last.contribution * ( 1 + Individual.annualIncomeIncrease ) ]" datatype="AnnualContribution" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="newContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="newContribution">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="preRetirementRateOfReturn" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.preRetirementRateOfReturn">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="totalAccumulatedValue" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.totalAccumulatedValue">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution"/>
+              </terms>
+              <terms text="income" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.income">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution"/>
+              </terms>
+              <terms text="annualIncomeIncrease" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.annualIncomeIncrease">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              </terms>
+              <terms text="contributions" datatype="Integer" termtype="COLLECTION" fulltext="contributions->size">
+                <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions">
+                  <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearsFromNow" datatype="Integer" termtype="ATTRIBUTE" fulltext="AnnualContribution.yearsFromNow">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution"/>
+              </terms>
+              <terms text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution"/>
+              <terms text="new" datatype="AnnualContribution" termtype="NEW" fulltext="AnnualContribution.new">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+              <terms text="contributions->asSequence->sortedBy(yearsFromNow)" datatype="Object" termtype="COLLECTION" fulltext="contributions->asSequence->sortedBy->last">
+                <parentTerm text="contributions" datatype="Sequence" termtype="COLLECTION" fulltext="contributions->asSequence->sortedBy">
+                  <parentTerm text="contributions" datatype="AnnualContribution" termtype="ENTITY" fulltext="contributions">
+                    <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="contribution" datatype="Decimal" termtype="ATTRIBUTE" fulltext="AnnualContribution.contribution">
+                <parentTerm text="AnnualContribution" datatype="AnnualContribution" termtype="ENTITY" fulltext="AnnualContribution"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

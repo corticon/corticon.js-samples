@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="2" minorVersionNumber="3" buildNumber="8022" updateStamp="_izUyAUYHEfC-Xt8nKcYFZg" externalChecksum="2722078124:507989954:0" studioType="Javascript">
+  <languageCode>en_US</languageCode>
+  <ruleset vocabularyUpdateStamp="_iyVTgEYHEfC-Xt8nKcYFZg" vocabulary="Vocabulary.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="Individual.futureValueOfCurrentSavings = Individual.currentRetirementSavings * ((1 + Individual.preRetirementRateOfReturn)**Individual.yearsToRetirement)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.futureValueOfCurrentSavings = Individual.currentRetirementSavings * ( ( 1 + Individual.preRetirementRateOfReturn ) ** Individual.yearsToRetirement )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="futureValueOfCurrentSavings" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.futureValueOfCurrentSavings">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="currentRetirementSavings" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.currentRetirementSavings">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="preRetirementRateOfReturn" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.preRetirementRateOfReturn">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="yearsToRetirement" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.yearsToRetirement">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="Vocabulary.ecore#//Individual">
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/futureValueOfCurrentSavings"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/currentRetirementSavings"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/preRetirementRateOfReturn"/>
+      <referencedAttributes attribute="Vocabulary.ecore#//Individual/yearsToRetirement"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Individual.futureValueOfCurrentSavings = Individual.currentRetirementSavings * ((1 + Individual.preRetirementRateOfReturn)**Individual.yearsToRetirement)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Individual.futureValueOfCurrentSavings = Individual.currentRetirementSavings * ( ( 1 + Individual.preRetirementRateOfReturn ) ** Individual.yearsToRetirement )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="futureValueOfCurrentSavings" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.futureValueOfCurrentSavings">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="currentRetirementSavings" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.currentRetirementSavings">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="preRetirementRateOfReturn" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.preRetirementRateOfReturn">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="yearsToRetirement" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Individual.yearsToRetirement">
+                <parentTerm text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Individual" datatype="Individual" termtype="ENTITY" fulltext="Individual" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1000" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
