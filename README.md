@@ -13,7 +13,7 @@ Corticon.js is a powerful rules engine that allows you to define, deploy, and ex
 - **Mobile and Web Applications**: Bundle rules into mobile apps (e.g., React, Vue.js, Angular) or web applications.
 - **Cloud Workflows**: Integrate rules into workflows like AWS Step Functions or Microsoft Logic Apps.
 - **In-Browser Execution**: Execute rules directly in the browser for real-time decision-making.
-- 
+
 ## Repository Structure
 
 This repository is organized into subdirectories, each showcasing specific use cases or integrations of Corticon.js:
