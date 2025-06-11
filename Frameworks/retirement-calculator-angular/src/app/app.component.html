@@ -1,0 +1,76 @@
+<!-- File: src/app/app.component.html -->
+
+<main class="container">
+  <h1>Retirement Calculator (Angular)</h1>
+  <!-- The (ngSubmit) event calls our calculate() function. -->
+  <!-- We use [(ngModel)] for two-way data binding between the form inputs and our 'inputs' object. -->
+  <form (ngSubmit)="calculate()">
+    <div class="grid">
+      <label>Date of Birth:<input type="date" [(ngModel)]="inputs.dateOfBirth" name="dateOfBirth"></label>
+      <label>Annual Pre-Tax Income:<input type="number" [(ngModel)]="inputs.annualPreTaxIncome"
+          name="annualPreTaxIncome" step="1000"></label>
+    </div>
+    <div class="grid">
+      <label>Current Retirement Savings:<input type="number" [(ngModel)]="inputs.currentRetirementSavings"
+          name="currentRetirementSavings" step="1000"></label>
+      <label>Monthly Contributions ($):<input type="number" [(ngModel)]="inputs.monthlyContributions"
+          name="monthlyContributions" step="50"></label>
+    </div>
+    <div class="grid">
+      <label>Other Monthly Retirement Income ($):<input type="number" [(ngModel)]="inputs.otherMonthlyRetirementIncome"
+          name="otherMonthlyRetirementIncome" step="50"></label>
+    </div>
+
+    <details>
+      <summary>Advanced Details</summary>
+      <div class="grid grid-3">
+        <label>Retirement Age:<input type="number" [(ngModel)]="inputs.ageOfRetirement" name="ageOfRetirement"></label>
+        <label>Life Expectancy:<input type="number" [(ngModel)]="inputs.lifeExpectancy" name="lifeExpectancy"></label>
+      </div>
+      <div class="grid grid-3">
+        <label>Pre-Retirement Return (%):<input type="number" [(ngModel)]="inputs.preRetirementRateOfReturn"
+            name="preRetirementRateOfReturn" step="0.1"></label>
+        <label>Post-Retirement Return (%):<input type="number" [(ngModel)]="inputs.postRetirementRateOfReturn"
+            name="postRetirementRateOfReturn" step="0.1"></label>
+        <label>Inflation Rate (%):<input type="number" [(ngModel)]="inputs.inflationRate" name="inflationRate"
+            step="0.1"></label>
+      </div>
+      <div class="grid grid-3">
+        <label>Annual Income Increase (%):<input type="number" [(ngModel)]="inputs.annualIncomeIncrease"
+            name="annualIncomeIncrease" step="0.1"></label>
+        <label>Retirement Budget (% of Income):<input type="number" [(ngModel)]="inputs.monthlyBudgetInRetirement"
+            name="monthlyBudgetInRetirement" step="1"></label>
+      </div>
+    </details>
+
+    <!-- The button is disabled and shows a loading state while 'isLoading' is true. -->
+    <button type="submit" [attr.aria-busy]="isLoading" [disabled]="isLoading"
+      style="margin-top: 1rem;">Calculate</button>
+  </form>
+
+  <!-- This section conditionally displays the results, loading state, or error messages. -->
+  <div style="margin-top: 2rem;">
+    <article *ngIf="isLoading" aria-busy="true"></article>
+    <article *ngIf="error" style="background-color: var(--pico-form-element-invalid-background-color)">
+      <strong>Error:</strong> {{ error }}</article>
+    <section *ngIf="results">
+      <h2>Results</h2>
+      <!-- We use Angular's built-in 'currency' pipe for easy formatting. -->
+      <p><strong>What you'll have:</strong> {{ formatNumber(results.estimatedSavingsAtRetirement) |
+        currency:'USD':'symbol':'1.0-0' }}</p>
+      <p><strong>What you'll need:</strong> {{ formatNumber(results.targetRetirementSavings) |
+        currency:'USD':'symbol':'1.0-0' }}</p>
+      <div *ngIf="results.guidance && results.guidance.length > 0">
+        <h3>Guidance:</h3>
+        <ul>
+          <li *ngFor="let g of results.guidance">{{ g.content }}</li>
+        </ul>
+      </div>
+      <details>
+        <summary>Show Calculation Details</summary>
+        <!-- The 'json' pipe is a handy way to display the raw data for debugging. -->
+        <pre><code>{{ results | json }}</code></pre>
+      </details>
+    </section>
+  </div>
+</main>

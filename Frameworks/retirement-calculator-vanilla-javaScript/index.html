@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corticon.js Retirement Calculator (Vanilla JS)</title>
+    <!-- Using Pico.css for clean styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+        /* Small style adjustments for clarity */
+        details {
+            border: 1px solid var(--pico-muted-border-color);
+            padding: 1rem;
+            border-radius: var(--pico-border-radius);
+            margin-top: 1rem;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Retirement Calculator</h1>
+        <form id="retirementForm">
+            <div class="grid">
+                <label>
+                    Date of Birth:
+                    <input type="date" id="dateOfBirth" value="1993-11-05">
+                </label>
+                <label>
+                    Annual Pre-Tax Income:
+                    <input type="number" id="annualPreTaxIncome" value="60000" step="1000">
+                </label>
+            </div>
+             <div class="grid">
+                 <label>
+                    Current Retirement Savings:
+                    <input type="number" id="currentRetirementSavings" value="30000" step="1000">
+                </label>
+                <label>
+                    Monthly Contributions ($):
+                    <input type="number" id="monthlyContributions" value="500" step="50">
+                </label>
+            </div>
+             <div class="grid">
+                 <label>
+                    Other Monthly Retirement Income ($):
+                    <input type="number" id="otherMonthlyRetirementIncome" value="0" step="50">
+                </label>
+            </div>
+
+            <details>
+                <summary>Advanced Details</summary>
+                <div class="grid grid-3">
+                    <label>Retirement Age:<input type="number" id="ageOfRetirement" value="67"></label>
+                    <label>Life Expectancy:<input type="number" id="lifeExpectancy" value="95"></label>
+                </div>
+                <div class="grid grid-3">
+                    <label>Pre-Retirement Return (%):<input type="number" id="preRetirementRateOfReturn" value="6" step="0.1"></label>
+                    <label>Post-Retirement Return (%):<input type="number" id="postRetirementRateOfReturn" value="5" step="0.1"></label>
+                    <label>Inflation Rate (%):<input type="number" id="inflationRate" value="3" step="0.1"></label>
+                </div>
+                <div class="grid grid-3">
+                    <label>Annual Income Increase (%):<input type="number" id="annualIncomeIncrease" value="2" step="0.1"></label>
+                    <label>Retirement Budget (% of Income):<input type="number" id="monthlyBudgetInRetirement" value="70" step="1"></label>
+                </div>
+            </details>
+
+            <button type="submit" style="margin-top: 1rem;">Calculate</button>
+        </form>
+
+        <!-- This container will be dynamically filled with the results -->
+        <div id="results-container" style="margin-top: 2rem;"></div>
+    </main>
+
+    <!-- ** CORRECTION: Updated path to load the script from the same folder ** -->
+    <script src="decisionServiceBundle.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,1 +1,0 @@
-Minimal CorticonJS 2.0 JavaScript example 
