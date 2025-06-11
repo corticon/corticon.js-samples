@@ -10,7 +10,7 @@ Corticon.js is a powerful rules engine that allows you to define, deploy, and ex
 - **Cross-Platform Compatibility**: Deploy rules to any platform that supports JavaScript.
 - **Serverless Integration**: Use Corticon.js with AWS Lambda, Google Cloud Functions, or Microsoft Azure Functions.
 - **Dynamic Forms**: Create dynamic, rule-driven forms that adapt based on user input.
-- **Mobile and Web Applications**: Bundle rules into mobile apps (e.g., React Native, Xamarin) or web applications.
+- **Mobile and Web Applications**: Bundle rules into mobile apps (e.g., React, Vue.js, Angular) or web applications.
 - **Cloud Workflows**: Integrate rules into workflows like AWS Step Functions or Microsoft Logic Apps.
 - **In-Browser Execution**: Execute rules directly in the browser for real-time decision-making.
 - 
