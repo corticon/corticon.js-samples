@@ -21,9 +21,11 @@ This repository is organized into subdirectories, each showcasing specific use c
 ### [Extended Operators](ExtendedOperators/README.md)
 Examples of custom operators and advanced rule modeling
 
+### [Frameworks](Frameworks/README.md)
+Showcases Corticon.js decision service running in various different JavaScript frameworks. 
+
 ### [Importable Rule Projects](Importable-Rule-Projects/README.md)
 Prebuilt rule projects that can be imported into Corticon.js Studio:
-
 
 ### [Service Call Outs](ServiceCallOut/README.md)
 
