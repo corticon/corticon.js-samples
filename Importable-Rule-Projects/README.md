@@ -3,17 +3,21 @@ _(versus Corticon Server Deployments)_
 
 ## Transactional Rule Project Samples
 - [Airplane Scheduled Maintenance](Transactional-Rule-Project-Samples/Airplane%20maintenance/README.md)
-- [Baseball's Infield Fly Rule](Transactional-Rule-Project-Samples/Infield%20Fly/README.md)
-- [Calculate sales commission payments](Transactional-Rule-Project-Samples/Commission%20Calculations/README.md)
-- [First Order of Decay Calculations](Transactional-Rule-Project-Samples/Hazardous%20Gas%20First%20Order%20Decay/README.md)
+- [Automated Red Tide Monitoring](Transactional-Rule-Project-Samples/Automated%20Red%20Tide%20Monitoring/README.md)
+- [Car Insurance Requirements for State of Massachusetts](Transactional-Rule-Project-Samples/Car%20Insurance%20Requirements%20for%20State%20of%20Massachusetts/README.md)
+- [Challenge - Employee Classification](Transactional-Rule-Project-Samples/Challenge%20-%20Employee%20Classification/README.md)
+- [Commission Calculations](Transactional-Rule-Project-Samples/Commission%20Calculations/README.md)
+- [Foster Parent Eligibility](Transactional-Rule-Project-Samples/Foster%20Parent%20Eligibility/README.md)
+- [Greenhouse Gas Protocol](Transactional-Rule-Project-Samples/Greenhouse%20Gas%20Protocol/README.md)
+- [Hazardous Gas First Order Decay](Transactional-Rule-Project-Samples/Hazardous%20Gas%20First%20Order%20Decay/README.md)
+- [HR Employee Data Analysis Service](Transactional-Rule-Project-Samples/HR%20Employee%20Data%20Analysis%20Service/README.md)
+- [Infield Fly](Transactional-Rule-Project-Samples/Infield%20Fly/README.md)
 - [IPv4 Validation](Transactional-Rule-Project-Samples/IPv4%20Validation/README.md)
-- [Online Dating Matchmaker](Transactional-Rule-Project-Samples/Matchmaking/README.md)
-- [Residential Mortgage Eligibility and Scoring](<Transactional-Rule-Project-Samples/Mortgage Eligibility and Underwriting (MISMO-Compliant)/README.md>ty and Underwriting (MISMO-Compliant)/README.md)
+- [Matchmaking](Transactional-Rule-Project-Samples/Matchmaking/README.md)
+- [Morphine Milligram Equivalents (MME) Calculator](Transactional-Rule-Project-Samples/Morphine%20Milligram%20Equivalents%20(MME)%20Calculator/README.md)
+- [Mortgage Eligibility and Underwriting (MISMO-Compliant)](Transactional-Rule-Project-Samples/Mortgage%20Eligibility%20and%20Underwriting%20(MISMO-Compliant)/README.md)
+- [Pre-Settlement Funding Eligibility](Transactional-Rule-Project-Samples/Pre-Settlement%20Funding%20Eligibility/README.md)
 - [Target investment price forecast](Transactional-Rule-Project-Samples/Target%20investment%20price%20forecast/README.md)
-- [Challenge - Employee Classification](<Transactional-Rule-Project-Samples/HR Employee Data Analysis Service/README.md>)
-
-## Daily Insurance Sample
-- [Daily Insurance](DailyInsurance/README.md)
 
 ## Dynamic Form Samples
 
