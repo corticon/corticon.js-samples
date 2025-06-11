@@ -19,17 +19,17 @@ Corticon.js is a powerful rules engine that allows you to define, deploy, and ex
 This repository is organized into subdirectories, each showcasing specific use cases or integrations of Corticon.js:
 
 ### [Extended Operators](ExtendedOperators/README.md)
-Examples of custom operators and advanced rule modeling
+Examples rule projects extended with custom rule operators written in JavaScript.
 
 ### [Frameworks](Frameworks/README.md)
 Showcases Corticon.js decision service running in various different JavaScript frameworks. 
 
 ### [Importable Rule Projects](Importable-Rule-Projects/README.md)
-Prebuilt rule projects that can be imported into Corticon.js Studio:
+Prebuilt rule projects that can be imported into Corticon.js Studio.
 
 ### [Service Call Outs](ServiceCallOut/README.md)
 
-Examples of service callouts for extending Corticon.js functionality
+Examples rule projects extended with service callouts operators written in JavaScript.
 
 ### [Dynamic Forms](DynamicForms/README.md)
 Rule-driven, offline dynamic form rendering. 
