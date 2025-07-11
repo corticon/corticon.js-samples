@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Integrating Corticon Decision Services - Async Patterns</title>
+    <script src="dailyInsuranceDecisionServiceBundle.js"></script>
+    <script>
+        // Simple EventEmitter implementation for signaling async completion
+        class EventEmitter {
+            constructor() {
+                this.events = {};
+            }
+            on(event, listener) {
+                if (!this.events[event]) this.events[event] = [];
+                this.events[event].push(listener);
+                return this;
+            }
+            emit(event, ...args) {
+                if (!this.events[event]) return false;
+                this.events[event].forEach(listener => listener(...args));
+                return true;
+            }
+        }
+
+        const eventEmitter = new EventEmitter();
+
+        // Listen for decision service completion events
+        eventEmitter.on('dsDone', (result) => {
+            console.log("Event: Decision Service Completed");
+            // Additional UI updates or processing could be done here
+        });
+
+        // Use a pre-defined payload for daily insurance decision service
+        window.onload = () => {
+            const savedPayload = "[\n" +
+                "    {\n" +
+                "        \"distanceDrivenToday\": 45,\n" +
+                "        \"vehicleCost\": 22900.22,\n" +
+                "        \"dateOfBirth\": \"2000-12-23\",\n" +
+                "        \"insuranceCostToday\": 0\n" +
+                "    }\n" +
+                "]";
+
+            document.getElementById("payloadId").value = savedPayload;
+        };
+
+        /**
+         * Option 1: Async/Await Propagation
+         * Mark all functions async and await calls for clean, linear async code
+         */
+        async function f1() {
+            console.log("In f1 (async)");
+            await f2();
+        }
+
+        async function f2() {
+            console.log("In f2 (async)");
+            await runDecisionService();
+        }
+
+        /**
+         * Option 2: Synchronous Facade using an Immediately Invoked Async Function Expression (IIAFE)
+         * Keep call stack synchronous but wrap async calls inside an immediately invoked async function
+         */
+        function f1Sync() {
+            console.log("In f1Sync (sync)");
+            f2Sync();
+            console.log("Exiting f1Sync before decision service completes");
+        }
+
+        function f2Sync() {
+            console.log("In f2Sync (sync)");
+            (async () => {
+                console.log("Invoking decision service inside IIAFE");
+                const result = await runDecisionService();
+                console.log("Decision service completed inside IIAFE");
+                eventEmitter.emit('dsDone', result);
+            })();
+        }
+
+        /**
+         * Option 3: Using .then() for Promise handling
+         * Keep synchronous calls and use .then() for async results
+         */
+        function f1SyncWithThen() {
+            console.log("In f1SyncWithThen (sync)");
+            f2SyncWithThen();
+            console.log("Exiting f1SyncWithThen before decision service completes");
+        }
+
+        function f2SyncWithThen() {
+            console.log("In f2SyncWithThen (sync)");
+            console.log("Invoking decision service with .then()");
+            runDecisionService()
+                .then(result => {
+                    console.log("Decision service completed with .then()");
+                    eventEmitter.emit('dsDone', result);
+                })
+                .catch(error => {
+                    console.error("Error in decision service (with .then()):", error);
+                    alert("Error executing the decision service: " + error);
+                });
+            console.log("Proceeding after invoking decision service with .then()");
+        }
+
+        /**
+         * Core async function invoking the Corticon decision service
+         */
+        async function runDecisionService() {
+            try {
+                const payloadString = document.getElementById("payloadId").value;
+                const payload = JSON.parse(payloadString);
+
+                // Save payload for persistence (ignore errors in private mode)
+                try {
+                    window.localStorage.setItem('CorticonJSPayload', payloadString);
+                } catch { /* ignore */ }
+
+                const configuration = { logLevel: 0 };
+                console.log("Executing Corticon decision service...");
+
+                const result = await window.corticonEngine.execute(payload, configuration);
+
+                // Display formatted result in the UI
+                document.getElementById("resultId").value = JSON.stringify(result, null, 2);
+                console.log("Decision service execution completed");
+
+                // Basic error checks from Corticon result
+                if (result.corticon !== undefined) {
+                    if (result.corticon.status !== 'success') {
+                        alert('Error executing the rules:\n' + JSON.stringify(result, null, 2));
+                    }
+                } else {
+                    alert('Unknown error executing the rules:\n' + JSON.stringify(result, null, 2));
+                }
+
+                return result;  // Return result for caller if needed
+            } catch (e) {
+                alert('Unexpected exception executing the rules: ' + e);
+                throw e; // rethrow to allow further error handling if needed
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Integrating Corticon Decision Services - Async Patterns</h2>
+
+<table width="100%">
+    <tr>
+        <td width="50%">
+            Input payload for daily insurance decision service:
+        </td>
+        <td width="50%">
+            Results from daily insurance decision service execution
+        </td>
+    </tr>
+    <tr>
+        <td width="50%">
+            <textarea id="payloadId" style="width: 100%; height: 300px;"></textarea>
+        </td>
+        <td width="50%">
+            <textarea id="resultId" style="width: 100%; height: 300px;"></textarea>
+        </td>
+    </tr>
+</table>
+
+<p>Use the links below to run the decision service using different async invocation patterns:</p>
+
+<a href="#" onclick="f1(); return false;">Run Decision Service using async/await all the way.</a><br/>
+<a href="#" onclick="f1Sync(); return false;">Run Decision Service using Immediately Invoked Async Function Expression (sync call using IIAFE)</a><br/>
+<a href="#" onclick="f1SyncWithThen(); return false;">Run Decision Service using Promise Chaining with .then()</a>
+</body>
+</html>
