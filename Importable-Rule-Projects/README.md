@@ -1,6 +1,9 @@
 # :rocket: Rule Project Accelerators for Serverless flavor of Corticon, Corticon.js 
 _(versus Corticon Server Deployments)_
 
+To download all samples into the Samples Folder in Corticon.js Studio, simply save and run [this](Import-CorticonSamples.ps1) PowerShell script. 
+
+
 ## Transactional Rule Project Samples
 - [Airplane Scheduled Maintenance](Transactional-Rule-Project-Samples/Airplane%20maintenance/README.md)
 - [Automated Red Tide Monitoring](Transactional-Rule-Project-Samples/Automated%20Red%20Tide%20Monitoring/README.md)
