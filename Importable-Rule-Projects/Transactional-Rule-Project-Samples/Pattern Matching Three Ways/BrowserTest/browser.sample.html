@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Course Classification</title>
+    <script type="text/javascript" src="decisionServiceBundle.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+            background-color: #f4f7f6;
+        }
+
+        h2,
+        h3 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.3em;
+        }
+
+        .top-container {
+            display: flex;
+            gap: 2em;
+            margin-bottom: 2em;
+        }
+
+        .form-section,
+        .parsed-result-section {
+            flex: 1;
+            background-color: #fff;
+            padding: 1.5em;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+        }
+
+        .result-section {
+            clear: both;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 0.8em 1.5em;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button.remove-btn {
+            background-color: #dc3545;
+        }
+
+        button.remove-btn:hover {
+            background-color: #c82333;
+        }
+
+        #courses-container .course-entry {
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin-bottom: 1em;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+
+        .parsed-result-section .course-result {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+        }
+
+        .explanation-list {
+            margin-top: 0.5em;
+            padding-left: 1em;
+            border-left: 3px solid #007bff;
+        }
+
+        .explanation-list p {
+            margin: 0.3em 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            word-wrap: break-word;
+        }
+
+        textarea {
+            height: 300px;
+            background-color: #e9ecef;
+            color: #495057;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Course Classification</h2>
+
+    <div class="top-container">
+        <div class="form-section">
+            <h3>Enter Course Details:</h3>
+            <div id="courses-container">
+            </div>
+            <button type="button" onclick="addCourseEntry()">Add Course</button>
+            <button type="button" onclick="runDecisionService()">Run Decision Service</button>
+        </div>
+
+        <div class="parsed-result-section">
+            <h3>Parsed Results:</h3>
+            <div id="parsedResultId"></div>
+        </div>
+    </div>
+
+    <div class="result-section">
+        <h3>Raw JSON Result:</h3>
+        <textarea id="resultId" readonly></textarea>
+    </div>
+
+    <script>
+        let courseCounter = 0;
+
+        function addCourseEntry(course = { degreeCode: 'MA Single', courseCode: 'MA52A', rule_type: 'Regular Expressions' }) {
+            courseCounter++;
+            const container = document.getElementById('courses-container');
+            const entryDiv = document.createElement('div');
+            entryDiv.className = 'course-entry';
+            entryDiv.id = `course-entry-${courseCounter}`;
+            entryDiv.innerHTML = `
+                <h4>Course ${courseCounter}</h4>
+                <div>
+                    <label for="degreeCode-${courseCounter}">Degree Code:</label>
+                    <input type="text" id="degreeCode-${courseCounter}" value="${course.degreeCode}">
+                </div>
+                <div>
+                    <label for="courseCode-${courseCounter}">Course Code:</label>
+                    <input type="text" id="courseCode-${courseCounter}" value="${course.courseCode}">
+                </div>
+                <div>
+                    <label for="rule_type-${courseCounter}">Rule Type:</label>
+                    <select id="rule_type-${courseCounter}">
+                        <option value="Regular Expressions" ${course.rule_type === 'Regular Expressions' ? 'selected' : ''}>Regular Expressions</option>
+                        <option value="Aliases" ${course.rule_type === 'Aliases' ? 'selected' : ''}>Aliases</option>
+                        <option value="Substring" ${course.rule_type === 'Substring' ? 'selected' : ''}>Substring</option>
+                    </select>
+                </div>
+                 <button type="button" class="remove-btn" onclick="removeCourseEntry('course-entry-${courseCounter}')">Remove</button>
+            `;
+            container.appendChild(entryDiv);
+        }
+
+        function removeCourseEntry(entryId) {
+            const entry = document.getElementById(entryId);
+            if (entry) {
+                entry.remove();
+            }
+        }
+
+        async function runDecisionService() {
+            try {
+                const payload = [];
+                const courseEntries = document.querySelectorAll('.course-entry');
+
+                courseEntries.forEach(entry => {
+                    const id = entry.id.split('-')[2];
+                    const course = {
+                        "degreeCode": document.getElementById(`degreeCode-${id}`).value,
+                        "courseCode": document.getElementById(`courseCode-${id}`).value,
+                        "rule_type": document.getElementById(`rule_type-${id}`).value
+                    };
+                    payload.push(course);
+                });
+
+                // Configuration to tell the engine how to interpret the simple JSON array
+                const configuration = {
+                    logLevel: 0,
+                    topLevelEntities: {
+                        "$": ["Course"]
+                    }
+                };
+
+                const result = await window.corticonEngine.execute(payload, configuration);
+
+                // Assuming the engine now returns a simple array in the 'payload' property
+                const finalResult = result.payload || result;
+
+                document.getElementById("resultId").value = JSON.stringify(finalResult, null, 2);
+                parseAndDisplayResults(finalResult);
+
+            } catch (e) {
+                alert('Unexpected exception executing the rules: ' + e);
+                document.getElementById("resultId").value = e;
+            }
+        }
+
+        function parseAndDisplayResults(resultArray) {
+            const parsedContainer = document.getElementById('parsedResultId');
+            parsedContainer.innerHTML = '';
+
+            if (Array.isArray(resultArray)) {
+                resultArray.forEach(course => {
+                    const courseResultDiv = document.createElement('div');
+                    courseResultDiv.className = 'course-result';
+
+                    let resultHtml = `<h4>Course: ${course.courseCode}</h4>`;
+                    resultHtml += `<p><strong>Degree Code:</strong> ${course.degreeCode}</p>`;
+                    resultHtml += `<p><strong>Rule Type:</strong> ${course.rule_type}</p>`;
+                    resultHtml += `<p><strong>Allowed:</strong> <span style="font-weight: bold; color: ${course.allowed ? 'green' : 'red'};">${course.allowed !== undefined ? course.allowed : 'Not Determined'}</span></p>`;
+
+                    // Check for the new 'explanation' array and display its content
+                    if (course.explanation && Array.isArray(course.explanation)) {
+                        resultHtml += '<div class="explanation-list">';
+                        course.explanation.forEach(exp => {
+                            resultHtml += `<p>&#10148; ${exp.content}</p>`;
+                        });
+                        resultHtml += '</div>';
+                    }
+
+                    courseResultDiv.innerHTML = resultHtml;
+                    parsedContainer.appendChild(courseResultDiv);
+                });
+            }
+        }
+
+        window.onload = () => {
+            const sampleCourses = [
+                { "degreeCode": "MA Single", "rule_type": "Regular Expressions", "courseCode": "MA521" },
+                { "degreeCode": "BIOLOGY", "rule_type": "Regular Expressions", "courseCode": "CS-Intro-288-Final" },
+                { "degreeCode": "History", "rule_type": "Substring", "courseCode": "CS_Advanced_289_Project" }
+            ];
+            sampleCourses.forEach(course => addCourseEntry(course));
+        };
+    </script>
+
+</body>
+
+</html>
