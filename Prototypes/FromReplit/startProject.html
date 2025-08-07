@@ -156,6 +156,7 @@
         
         <div class="nav-links">
             <a href="#prerequisites">Prerequisites</a>
+            <a href="#postgresql-install">PostgreSQL Install</a>
             <a href="#setup">Setup Steps</a>
             <a href="#running">Running Project</a>
             <a href="#troubleshooting">Troubleshooting</a>
@@ -171,6 +172,101 @@
                 <li><strong>PostgreSQL</strong> database - <a href="https://www.postgresql.org/download/" target="_blank">Download here</a></li>
                 <li><strong>Git</strong> (if cloning repository)</li>
             </ul>
+            
+            <div class="warning">
+                <strong>⚠️ PostgreSQL Not Detected:</strong> Our system check shows PostgreSQL is not currently installed on your machine. Please follow the PostgreSQL installation guide below.
+            </div>
+        </section>
+
+        <section id="postgresql-install">
+            <h2><span class="emoji">🐘</span>PostgreSQL Installation Guide</h2>
+            
+            <h3><span class="step-number">A</span>Download PostgreSQL</h3>
+            <p>Choose one of these installation methods:</p>
+            
+            <h4>Option 1: Official Installer (Recommended)</h4>
+            <div style="background-color: #e3f2fd; padding: 15px; border-radius: 6px; margin: 15px 0;">
+                <ol>
+                    <li>Go to <a href="https://www.postgresql.org/download/windows/" target="_blank"><strong>PostgreSQL Windows Download</strong></a></li>
+                    <li>Download the installer for your Windows version</li>
+                    <li>Run the installer as Administrator</li>
+                    <li><strong>Important:</strong> Remember the password you set for the <code>postgres</code> user!</li>
+                    <li>Keep the default port <code>5432</code></li>
+                    <li>Install pgAdmin 4 (recommended for database management)</li>
+                </ol>
+            </div>
+
+            <h4>Option 2: Using Package Managers</h4>
+            <div class="code-block bash">
+# Using Chocolatey (if installed)
+choco install postgresql
+
+# Using Winget (Windows Package Manager)
+winget install PostgreSQL.PostgreSQL
+            </div>
+
+            <h4>Option 3: Docker (Alternative)</h4>
+            <p>If you prefer not to install PostgreSQL directly:</p>
+            <div class="code-block bash">
+# Pull and run PostgreSQL in Docker
+docker run --name corticon-postgres -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=corticon_db -p 5432:5432 -d postgres:15
+            </div>
+
+            <h3><span class="step-number">B</span>Verify Installation</h3>
+            <p>After installation, verify PostgreSQL is working:</p>
+            <div class="code-block bash">
+# Check if PostgreSQL service is running
+Get-Service -Name "*postgres*"
+
+# Test connection (you'll be prompted for password)
+psql -U postgres -h localhost
+            </div>
+
+            <h3><span class="step-number">C</span>Create Project Database</h3>
+            <div class="code-block bash">
+# Create the database for this project (ONLY corticon_db is needed)
+createdb -U postgres corticon_db
+
+# Or using psql (PostgreSQL interactive terminal from the start menu)
+psql -U postgres -c "CREATE DATABASE corticon_db;"
+            
+<br/>
+Note on how i created the DB:
+<br/>
+<br/>
+
+I went to C:\Program Files\PostgreSQL\17\bin
+and typed: psql.exe -U postgres -c "CREATE DATABASE corticon_db;"
+<br/>
+<br/>
+
+Got success message
+<br/>
+
+Verified with: psql.exe -U postgres -l
+<br/>
+that my db is showing up
+<br/>
+
+</div>
+            
+            <div class="warning">
+                <strong>⚠️ Important:</strong> Only create <code>corticon_db</code> - this is what the project expects. Do NOT create <code>corticon_studio</code> as it will cause confusion.
+            </div>
+
+            <div class="success">
+                <strong>✅ Ready!</strong> Once PostgreSQL is installed and the database is created, continue with the setup steps below.
+                <br/>
+                Started the SQL Shell from the start menu
+                Discovered the username by default is postgres.
+                <br/>
+                npm install made the drizzle-kit tool available for use
+Does NOT run any database operations
+                <br/>
+                See step 3 below for creating the tables
+
+            </div>
+
         </section>
 
         <section id="setup">
@@ -197,33 +293,69 @@ cd ..
             <h3><span class="step-number">2</span>Database Setup</h3>
             <p>Create a <code>.env</code> file in the <strong>server</strong> directory with your database configuration:</p>
             <div class="code-block env">
-DATABASE_URL="postgresql://username:password@localhost:5432/corticon_db"
+DATABASE_URL="postgresql://postgres:your_password@localhost:5432/corticon_db"
 SESSION_SECRET="your-session-secret-here"
 REPLIT_CLIENT_ID="your-replit-client-id"
 REPLIT_CLIENT_SECRET="your-replit-client-secret"
             </div>
             
             <div class="warning">
-                <strong>⚠️ Important:</strong> Replace the placeholder values with your actual database credentials and API keys.
+                <strong>⚠️ Important:</strong> Replace <code>your_password</code> with the actual password you set during PostgreSQL installation. Replace other placeholder values with your actual API keys.
             </div>
 
             <h3><span class="step-number">3</span>Database Migration</h3>
             <p>Set up the database schema using Drizzle ORM:</p>
+            <div class="warning">
+                <strong>⚠️ Note:</strong> The old commands don't work with this version of Drizzle Kit. Use the correct command below.
+            </div>
             <div class="code-block bash">
-cd server
-npx drizzle-kit generate:pg
-npx drizzle-kit push:pg
+# Correct command to create database tables
+npm run db:push
+
+<br/>
+was finally successful in creating the needed tables
+<br/>
+<code>
+C:\dev3\corticon.js-samples\Prototypes\FromReplit>npm run db:push
+
+> rest-express@1.0.0 db:push
+> drizzle-kit push
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file 'C:\dev3\corticon.js-samples\Prototypes\FromReplit\drizzle.config.ts'
+Using 'pg' driver for database querying
+[✓] Pulling schema from database...
+[✓] Changes applied
+</code>
+# This runs: drizzle-kit push
+# Which reads shared/schema.ts and creates tables in your database
+            </div>
+            
+            <div style="background-color: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0;">
+                <strong>What this does:</strong>
+                <ul>
+                    <li>Reads your schema from <code>shared/schema.ts</code></li>
+                    <li>Connects to your PostgreSQL database using the <code>DATABASE_URL</code></li>
+                    <li>Creates/updates tables to match your TypeScript schema</li>
+                    <li>This is a separate step you need to run manually after installing dependencies</li>
+                </ul>
             </div>
 
             <h3><span class="step-number">4</span>Start Development Servers</h3>
             <p>You need to run both client and server in <strong>separate terminals</strong>:</p>
-            
+            <br/>
+            Go to C:\dev3\corticon.js-samples\Prototypes\FromReplit\server>
+            <br/>
+            and to C:\dev3\corticon.js-samples\Prototypes\FromReplit\client>
             <div style="margin: 20px 0;">
                 <div class="terminal-tab">Terminal 1 - Server</div>
                 <div class="code-block bash">
 cd server
+            <br/>
 npm run dev
+            <br/>
 # or
+            <br/>
 npm start
                 </div>
             </div>
@@ -232,8 +364,11 @@ npm start
                 <div class="terminal-tab">Terminal 2 - Client</div>
                 <div class="code-block bash">
 cd client
+            <br/>
 npm run dev
+            <br/>
 # or
+            <br/>
 npm start
                 </div>
             </div>
