@@ -8,12 +8,8 @@ import memoize from "memoizee";
 import connectPg from "connect-pg-simple";
 import { storage } from "./storage";
 
-// Make Replit auth optional
-const REPLIT_AUTH_ENABLED = false;
-
-if (REPLIT_AUTH_ENABLED && !process.env.REPLIT_DOMAINS) {
-  throw new Error("Environment variable REPLIT_DOMAINS not provided");
-}
+// Make Replit auth optional - useful for development
+const REPLIT_AUTH_ENABLED = false
 
 const getOidcConfig = memoize(
   async () => {
@@ -27,6 +23,22 @@ const getOidcConfig = memoize(
 
 export function getSession() {
   const sessionTtl = 7 * 24 * 60 * 60 * 1000; // 1 week
+  
+  // Use memory store if no database auth is configured
+  if (!REPLIT_AUTH_ENABLED) {
+    return session({
+      secret: process.env.SESSION_SECRET || 'dev-secret-key-change-in-production',
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        httpOnly: true,
+        secure: false, // Allow HTTP in development
+        maxAge: sessionTtl,
+      },
+    });
+  }
+
+  // Use PostgreSQL store for Replit auth
   const pgStore = connectPg(session);
   const sessionStore = new pgStore({
     conString: process.env.DATABASE_URL,
@@ -74,6 +86,7 @@ export async function setupAuth(app: Express) {
   app.use(getSession());
   app.use(passport.initialize());
   app.use(passport.session());
+
   // Only setup Replit OAuth if enabled
   if (!REPLIT_AUTH_ENABLED) {
     console.log("[auth] Replit authentication disabled - running in development mode");
@@ -140,6 +153,7 @@ export const isAuthenticated: RequestHandler = async (req, res, next) => {
   if (!REPLIT_AUTH_ENABLED) {
     return next();
   }
+
   const user = req.user as any;
 
   if (!req.isAuthenticated() || !user.expires_at) {
