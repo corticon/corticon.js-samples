@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corticon.js Project Setup Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .bash { border-left: 4px solid #4ade80; }
+        .env { border-left: 4px solid #fbbf24; }
+        .warning {
+            background-color: #fef3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .success {
+            background-color: #d1edff;
+            border: 1px solid #74c0fc;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .checklist {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 5px 0;
+            font-weight: 500;
+        }
+        .checklist li:before {
+            content: "☐ ";
+            color: #6c757d;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .step-number {
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .ports {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .port-box {
+            background-color: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 6px;
+            padding: 15px;
+            flex: 1;
+            text-align: center;
+        }
+        .troubleshoot {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .nav-links {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .nav-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        .terminal-tab {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 8px 15px;
+            border-radius: 6px 6px 0 0;
+            display: inline-block;
+            margin-right: 5px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji">🚀</span>Corticon.js Project Setup Guide</h1>
+        
+        <div class="nav-links">
+            <a href="#prerequisites">Prerequisites</a>
+            <a href="#setup">Setup Steps</a>
+            <a href="#running">Running Project</a>
+            <a href="#troubleshooting">Troubleshooting</a>
+            <a href="#checklist">Checklist</a>
+        </div>
+
+        <section id="prerequisites">
+            <h2><span class="emoji">📋</span>Prerequisites</h2>
+            <p>Ensure you have these installed before starting:</p>
+            <ul>
+                <li><strong>Node.js</strong> (v16 or higher) - <a href="https://nodejs.org/" target="_blank">Download here</a></li>
+                <li><strong>npm</strong> or <strong>yarn</strong> (comes with Node.js)</li>
+                <li><strong>PostgreSQL</strong> database - <a href="https://www.postgresql.org/download/" target="_blank">Download here</a></li>
+                <li><strong>Git</strong> (if cloning repository)</li>
+            </ul>
+        </section>
+
+        <section id="setup">
+            <h2><span class="emoji">⚙️</span>Setup Steps</h2>
+
+            <h3><span class="step-number">1</span>Install Dependencies</h3>
+            <p>Install dependencies for the root project and both client and server:</p>
+            <div class="code-block bash">
+# Install root dependencies
+npm install
+
+# Install client dependencies
+cd client
+npm install
+
+# Install server dependencies
+cd ../server
+npm install
+
+# Return to root directory
+cd ..
+            </div>
+
+            <h3><span class="step-number">2</span>Database Setup</h3>
+            <p>Create a <code>.env</code> file in the <strong>server</strong> directory with your database configuration:</p>
+            <div class="code-block env">
+DATABASE_URL="postgresql://username:password@localhost:5432/corticon_db"
+SESSION_SECRET="your-session-secret-here"
+REPLIT_CLIENT_ID="your-replit-client-id"
+REPLIT_CLIENT_SECRET="your-replit-client-secret"
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Important:</strong> Replace the placeholder values with your actual database credentials and API keys.
+            </div>
+
+            <h3><span class="step-number">3</span>Database Migration</h3>
+            <p>Set up the database schema using Drizzle ORM:</p>
+            <div class="code-block bash">
+cd server
+npx drizzle-kit generate:pg
+npx drizzle-kit push:pg
+            </div>
+
+            <h3><span class="step-number">4</span>Start Development Servers</h3>
+            <p>You need to run both client and server in <strong>separate terminals</strong>:</p>
+            
+            <div style="margin: 20px 0;">
+                <div class="terminal-tab">Terminal 1 - Server</div>
+                <div class="code-block bash">
+cd server
+npm run dev
+# or
+npm start
+                </div>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <div class="terminal-tab">Terminal 2 - Client</div>
+                <div class="code-block bash">
+cd client
+npm run dev
+# or
+npm start
+                </div>
+            </div>
+        </section>
+
+        <section id="running">
+            <h2><span class="emoji">🌐</span>Expected Ports & Access</h2>
+            <div class="ports">
+                <div class="port-box">
+                    <h4>Client (React)</h4>
+                    <p><strong>http://localhost:3000</strong></p>
+                    <small>Frontend application</small>
+                </div>
+                <div class="port-box">
+                    <h4>Server (Express API)</h4>
+                    <p><strong>http://localhost:5000</strong></p>
+                    <small>Backend API</small>
+                </div>
+            </div>
+
+            <div class="success">
+                <strong>✅ Success!</strong> When both servers are running, you can access the application at <code>http://localhost:3000</code>
+            </div>
+
+            <h3><span class="emoji">💻</span>Development Workflow</h3>
+            <ul>
+                <li><strong>Hot reload</strong> is enabled for both client and server</li>
+                <li><strong>Database changes</strong> require running Drizzle migrations</li>
+                <li><strong>Shared schema changes</strong> affect both client and server</li>
+                <li><strong>API changes</strong> are automatically reflected in the client</li>
+            </ul>
+        </section>
+
+        <section id="troubleshooting">
+            <h2><span class="emoji">🔧</span>Troubleshooting</h2>
+
+            <h3>Database Connection Errors</h3>
+            <div class="troubleshoot">
+                <ol>
+                    <li>Ensure PostgreSQL service is running</li>
+                    <li>Check your <code>DATABASE_URL</code> in the <code>.env</code> file</li>
+                    <li>Verify the database exists and credentials are correct</li>
+                    <li>Test connection: <code>psql -h localhost -U username -d corticon_db</code></li>
+                </ol>
+            </div>
+
+            <h3>Port Already in Use</h3>
+            <div class="code-block bash">
+# Find what's using the port (Windows)
+netstat -ano | findstr :3000
+netstat -ano | findstr :5000
+
+# Kill the process if needed
+taskkill /PID &lt;PID_NUMBER&gt; /F
+            </div>
+
+            <h3>Dependencies Installation Issues</h3>
+            <div class="code-block bash">
+# Clear npm cache
+npm cache clean --force
+
+# Delete node_modules and reinstall
+rmdir /s node_modules
+del package-lock.json
+npm install
+            </div>
+
+            <h3>Environment Variables Not Loading</h3>
+            <div class="troubleshoot">
+                <ul>
+                    <li>Ensure <code>.env</code> file is in the <strong>server</strong> directory</li>
+                    <li>Check for typos in variable names</li>
+                    <li>Restart the server after changing environment variables</li>
+                    <li>Make sure there are no spaces around the <code>=</code> sign</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="production">
+            <h2><span class="emoji">🏗️</span>Production Build</h2>
+            <p>When ready to build for production:</p>
+            <div class="code-block bash">
+# Build client for production
+cd client
+npm run build
+
+# Start production server
+cd ../server
+npm run build  # if there's a build script
+npm start
+            </div>
+        </section>
+
+        <section id="checklist">
+            <h2><span class="emoji">✅</span>First Time Setup Checklist</h2>
+            <div class="checklist">
+                <ul>
+                    <li>Node.js installed (v16+)</li>
+                    <li>PostgreSQL installed and running</li>
+                    <li>Environment variables configured in server/.env</li>
+                    <li>Dependencies installed for root, client, and server</li>
+                    <li>Database migrations run successfully</li>
+                    <li>Both dev servers started in separate terminals</li>
+                    <li>Can access the application at http://localhost:3000</li>
+                    <li>API endpoints responding at http://localhost:5000</li>
+                    <li>Database connection working</li>
+                    <li>Authentication flow working (if applicable)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="architecture">
+            <h2><span class="emoji">🏗️</span>Project Architecture</h2>
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin: 15px 0;">
+                <h4>Project Structure:</h4>
+                <ul>
+                    <li><strong>client/</strong> - React TypeScript frontend</li>
+                    <li><strong>server/</strong> - Express TypeScript backend</li>
+                    <li><strong>shared/</strong> - Shared TypeScript schemas and types</li>
+                    <li><strong>Database:</strong> PostgreSQL with Drizzle ORM</li>
+                    <li><strong>Authentication:</strong> Replit OAuth integration</li>
+                    <li><strong>State Management:</strong> TanStack Query for server state</li>
+                    <li><strong>UI Library:</strong> shadcn/ui components</li>
+                    <li><strong>Styling:</strong> Tailwind CSS</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="next-steps">
+            <h2><span class="emoji">🎯</span>Next Steps</h2>
+            <p>After getting the project running:</p>
+            <ol>
+                <li><strong>Explore the codebase</strong> - Check out the main components in <code>client/src/</code></li>
+                <li><strong>Review the API</strong> - Look at the routes in <code>server/routes.ts</code></li>
+                <li><strong>Understand the data models</strong> - Check <code>shared/schema.ts</code></li>
+                <li><strong>Test the features</strong> - Try creating and editing ruleflows</li>
+                <li><strong>Set up your development environment</strong> - Configure your IDE for TypeScript</li>
+            </ol>
+        </section>
+
+        <div style="margin-top: 40px; padding: 20px; background-color: #e8f5e8; border-radius: 6px; text-align: center;">
+            <h3><span class="emoji">🎉</span>You're Ready to Go!</h3>
+            <p>The Corticon.js project should now be running successfully. Happy coding!</p>
+            <p><em>Last updated: August 6, 2025</em></p>
+        </div>
+    </div>
+</body>
+</html>
