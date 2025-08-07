@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corticon Studio Web IDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace']
+                    },
+                    colors: {
+                        'github-blue': '#0366D6',
+                        'slate-grey': '#586069',
+                        'github-dark': '#0D1117',
+                        'github-light': '#F6F8FA',
+                        'text-light': '#24292E',
+                        'text-dark': '#F0F6FC',
+                        'success': '#28A745',
+                        'warning': '#FFC107',
+                        'border-light': '#E1E4E8',
+                        'border-dark': '#21262D'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .syntax-keyword { color: #D73A49; }
+        .syntax-string { color: #032F62; }
+        .syntax-comment { color: #6A737D; font-style: italic; }
+        .syntax-function { color: #6F42C1; }
+        .syntax-variable { color: #E36209; }
+    </style>
+</head>
+<body class="bg-white text-text-light font-sans overflow-hidden">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-github-dark text-text-dark px-4 py-2 flex items-center justify-between border-b border-border-dark">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-cube text-github-blue text-xl"></i>
+                <span class="font-semibold text-lg">Corticon Studio</span>
+            </div>
+            <!-- Menu Items -->
+            <div class="hidden md:flex items-center space-x-6 ml-8">
+                <a href="#" class="hover:text-github-blue transition-colors">File</a>
+                <a href="#" class="hover:text-github-blue transition-colors">Edit</a>
+                <a href="#" class="hover:text-github-blue transition-colors">View</a>
+                <a href="#" class="hover:text-github-blue transition-colors">Git</a>
+                <a href="#" class="hover:text-github-blue transition-colors">Help</a>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="flex-1 max-w-lg mx-4">
+            <div class="relative">
+                <input type="text" placeholder="Search files, functions, symbols..." 
+                       class="w-full bg-gray-800 text-text-dark px-4 py-1.5 rounded-md border border-border-dark focus:border-github-blue focus:outline-none focus:ring-1 focus:ring-github-blue">
+                <i class="fas fa-search absolute right-3 top-2 text-gray-400"></i>
+            </div>
+        </div>
+        
+        <!-- User Section -->
+        <div class="flex items-center space-x-4">
+            <!-- Collaboration Users -->
+            <div class="flex items-center space-x-1" data-mock="true">
+                <div class="flex -space-x-1">
+                    <!-- Active user avatars showing real-time collaboration -->
+                    <div class="w-6 h-6 rounded-full bg-success border-2 border-github-dark flex items-center justify-center text-xs font-medium text-white">A</div>
+                    <div class="w-6 h-6 rounded-full bg-warning border-2 border-github-dark flex items-center justify-center text-xs font-medium text-white">B</div>
+                    <div class="w-6 h-6 rounded-full bg-purple-500 border-2 border-github-dark flex items-center justify-center text-xs font-medium text-white">C</div>
+                </div>
+                <span class="text-sm text-gray-400">3 online</span>
+            </div>
+            
+            <div class="w-px h-6 bg-border-dark"></div>
+            
+            <!-- User Profile -->
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-full bg-github-blue flex items-center justify-center">
+                    <span class="text-white font-medium">JD</span>
+                </div>
+                <span class="hidden md:inline">John Developer</span>
+                <i class="fas fa-chevron-down text-sm"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="flex h-screen pt-12">
+        <!-- @COMPONENT: Sidebar [project explorer and navigation] -->
+        <!-- Left Sidebar - Project Explorer -->
+        <div class="w-80 bg-github-light border-r border-border-light flex flex-col">
+            <!-- Project Selector -->
+            <div class="p-4 border-b border-border-light">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="font-semibold text-lg">Projects</h2>
+                    <button class="text-github-blue hover:text-blue-700 transition-colors">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <select class="w-full p-2 border border-border-light rounded-md bg-white focus:border-github-blue focus:outline-none focus:ring-1 focus:ring-github-blue" data-bind="selectedProject">
+                    <option>Insurance Rules Engine</option>
+                    <option>Loan Processing System</option>
+                    <option>Risk Assessment Framework</option>
+                </select>
+            </div>
+
+            <!-- File Explorer -->
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-2">
+                    <div class="flex items-center justify-between mb-2 px-2">
+                        <span class="text-sm font-medium text-slate-grey">EXPLORER</span>
+                        <div class="flex space-x-1">
+                            <button class="text-slate-grey hover:text-text-light p-1">
+                                <i class="fas fa-file-plus text-xs"></i>
+                            </button>
+                            <button class="text-slate-grey hover:text-text-light p-1">
+                                <i class="fas fa-folder-plus text-xs"></i>
+                            </button>
+                            <button class="text-slate-grey hover:text-text-light p-1">
+                                <i class="fas fa-refresh text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- File Tree -->
+                    <div class="space-y-1" data-mock="true">
+                        <!-- @MAP: project.files.map(file => ( -->
+                        <div class="file-tree">
+                            <!-- Root Project Folder -->
+                            <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                <i class="fas fa-chevron-down text-xs mr-2 text-slate-grey"></i>
+                                <i class="fas fa-folder text-github-blue mr-2"></i>
+                                <span class="text-sm font-medium">insurance-rules</span>
+                            </div>
+                            
+                            <!-- Vocabulary Folder -->
+                            <div class="ml-4">
+                                <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                    <i class="fas fa-chevron-down text-xs mr-2 text-slate-grey"></i>
+                                    <i class="fas fa-folder text-warning mr-2"></i>
+                                    <span class="text-sm">vocabulary</span>
+                                </div>
+                                <div class="ml-4 space-y-1">
+                                    <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer bg-blue-50 border-l-2 border-github-blue">
+                                        <i class="fas fa-file-code text-purple-500 mr-2 text-sm"></i>
+                                        <span class="text-sm">Policy.ecore</span>
+                                        <div class="ml-auto flex items-center space-x-1">
+                                            <div class="w-2 h-2 rounded-full bg-success" title="Sarah editing"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                        <i class="fas fa-file-code text-purple-500 mr-2 text-sm"></i>
+                                        <span class="text-sm">Customer.ecore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Rulesheets Folder -->
+                            <div class="ml-4">
+                                <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                    <i class="fas fa-chevron-down text-xs mr-2 text-slate-grey"></i>
+                                    <i class="fas fa-folder text-success mr-2"></i>
+                                    <span class="text-sm">rulesheets</span>
+                                </div>
+                                <div class="ml-4 space-y-1">
+                                    <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                        <i class="fas fa-file-alt text-success mr-2 text-sm"></i>
+                                        <span class="text-sm">PolicyValidation.ers</span>
+                                        <div class="ml-auto flex items-center space-x-1">
+                                            <div class="w-2 h-2 rounded-full bg-warning" title="Mike editing"></div>
+                                            <span class="text-xs text-orange-600">•</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                        <i class="fas fa-file-alt text-success mr-2 text-sm"></i>
+                                        <span class="text-sm">PremiumCalculation.ers</span>
+                                    </div>
+                                    <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                        <i class="fas fa-file-alt text-success mr-2 text-sm"></i>
+                                        <span class="text-sm">RiskAssessment.ers</span>
+                                        <span class="ml-auto text-xs bg-red-100 text-red-600 px-1 rounded">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ruleflow Folder -->
+                            <div class="ml-4">
+                                <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-slate-grey"></i>
+                                    <i class="fas fa-folder text-blue-500 mr-2"></i>
+                                    <span class="text-sm">ruleflow</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Tests Folder -->
+                            <div class="ml-4">
+                                <div class="flex items-center px-2 py-1 hover:bg-gray-200 rounded cursor-pointer">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-slate-grey"></i>
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span class="text-sm">tests</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- @END_MAP )) -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Git Panel -->
+            <div class="border-t border-border-light p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-medium text-slate-grey">SOURCE CONTROL</span>
+                    <div class="flex space-x-1">
+                        <button class="text-slate-grey hover:text-text-light p-1">
+                            <i class="fas fa-refresh text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-2" data-mock="true">
+                    <div class="flex items-center justify-between text-sm">
+                        <span>main</span>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-success">↑2</span>
+                            <span class="text-warning">↓1</span>
+                        </div>
+                    </div>
+                    <div class="text-xs text-slate-grey">
+                        <div class="flex items-center space-x-2 mb-1">
+                            <span class="text-warning">M</span>
+                            <span>PolicyValidation.ers</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-success">A</span>
+                            <span>RiskAssessment.ers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: Sidebar -->
+
+        <!-- @COMPONENT: MainEditor [tabbed editor interface] -->
+        <!-- Main Editor Area -->
+        <div class="flex-1 flex flex-col">
+            <!-- Tab Bar -->
+            <div class="bg-github-light border-b border-border-light">
+                <div class="flex items-center overflow-x-auto">
+                    <!-- Active Tab -->
+                    <div class="flex items-center px-4 py-2 bg-white border-r border-border-light">
+                        <i class="fas fa-file-code text-purple-500 mr-2 text-sm"></i>
+                        <span class="text-sm font-medium">Policy.ecore</span>
+                        <button class="ml-2 text-slate-grey hover:text-text-light">
+                            <i class="fas fa-times text-xs"></i>
+                        </button>
+                        <div class="absolute top-0 right-0 w-2 h-2 bg-success rounded-full" title="Sarah is editing"></div>
+                    </div>
+                    
+                    <!-- Other Tabs -->
+                    <div class="flex items-center px-4 py-2 bg-github-light border-r border-border-light hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-file-alt text-success mr-2 text-sm"></i>
+                        <span class="text-sm">PolicyValidation.ers</span>
+                        <span class="ml-2 text-xs text-orange-600">•</span>
+                        <button class="ml-2 text-slate-grey hover:text-text-light">
+                            <i class="fas fa-times text-xs"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center px-4 py-2 bg-github-light border-r border-border-light hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-file-alt text-success mr-2 text-sm"></i>
+                        <span class="text-sm">RiskAssessment.ers</span>
+                        <span class="ml-2 text-xs bg-red-100 text-red-600 px-1 rounded">3</span>
+                        <button class="ml-2 text-slate-grey hover:text-text-light">
+                            <i class="fas fa-times text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor Content -->
+            <div class="flex-1 flex">
+                <!-- Code Editor -->
+                <div class="flex-1 relative">
+                    <!-- Editor Toolbar -->
+                    <div class="bg-gray-50 border-b border-border-light px-4 py-2 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-sm text-slate-grey">Policy.ecore</span>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded">Vocabulary</span>
+                                <span class="text-xs text-slate-grey">UTF-8</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-slate-grey hover:text-text-light p-1" title="Format Document">
+                                <i class="fas fa-code text-sm"></i>
+                            </button>
+                            <button class="text-slate-grey hover:text-text-light p-1" title="Find">
+                                <i class="fas fa-search text-sm"></i>
+                            </button>
+                            <button class="text-slate-grey hover:text-text-light p-1" title="Settings">
+                                <i class="fas fa-cog text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Line Numbers and Code -->
+                    <div class="flex h-full">
+                        <!-- Line Numbers -->
+                        <div class="bg-gray-50 border-r border-border-light px-3 py-4 text-right">
+                            <div class="font-mono text-xs text-slate-grey leading-6 select-none">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                                <div>7</div>
+                                <div>8</div>
+                                <div>9</div>
+                                <div>10</div>
+                                <div>11</div>
+                                <div>12</div>
+                                <div>13</div>
+                                <div>14</div>
+                                <div>15</div>
+                                <div>16</div>
+                                <div>17</div>
+                                <div>18</div>
+                                <div>19</div>
+                                <div>20</div>
+                            </div>
+                        </div>
+
+                        <!-- Code Content -->
+                        <div class="flex-1 p-4 overflow-auto bg-white">
+                            <!-- Real-time collaboration cursor -->
+                            <div class="absolute top-20 left-32 w-0.5 h-5 bg-success animate-pulse" data-mock="true"></div>
+                            <div class="absolute top-16 left-32 bg-success text-white text-xs px-1 rounded" data-mock="true">Sarah</div>
+                            
+                            <pre class="font-mono text-sm leading-6" data-mock="true"><code><span class="syntax-comment">// Corticon Vocabulary Definition - Policy Domain Model</span>
+<span class="syntax-keyword">package</span> <span class="syntax-variable">com.insurance.policy</span>
+
+<span class="syntax-keyword">class</span> <span class="syntax-function">Policy</span> {
+    <span class="syntax-variable">policyNumber</span>: <span class="syntax-keyword">String</span>
+    <span class="syntax-variable">effectiveDate</span>: <span class="syntax-keyword">Date</span>
+    <span class="syntax-variable">expirationDate</span>: <span class="syntax-keyword">Date</span>
+    <span class="syntax-variable">premium</span>: <span class="syntax-keyword">Decimal</span>
+    <span class="syntax-variable">status</span>: <span class="syntax-keyword">PolicyStatus</span>
+    <span class="syntax-variable">customer</span>: <span class="syntax-function">Customer</span>
+    <span class="syntax-variable">coverages</span>: <span class="syntax-function">Coverage</span>[]
+}
+
+<span class="syntax-keyword">class</span> <span class="syntax-function">Customer</span> {
+    <span class="syntax-variable">customerId</span>: <span class="syntax-keyword">String</span>
+    <span class="syntax-variable">firstName</span>: <span class="syntax-keyword">String</span>
+    <span class="syntax-variable">lastName</span>: <span class="syntax-keyword">String</span>
+    <span class="syntax-variable">dateOfBirth</span>: <span class="syntax-keyword">Date</span>
+    <span class="syntax-variable">riskScore</span>: <span class="syntax-keyword">Integer</span>
+    <span class="syntax-variable">address</span>: <span class="syntax-function">Address</span>
+}
+
+<span class="syntax-keyword">enum</span> <span class="syntax-function">PolicyStatus</span> {
+    <span class="syntax-variable">ACTIVE</span>, <span class="syntax-variable">INACTIVE</span>, <span class="syntax-variable">PENDING</span>, <span class="syntax-variable">CANCELLED</span>
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel - Properties/Validation -->
+                <div class="w-80 bg-gray-50 border-l border-border-light flex flex-col">
+                    <!-- Panel Tabs -->
+                    <div class="flex border-b border-border-light">
+                        <button class="flex-1 px-4 py-2 text-sm font-medium bg-white border-r border-border-light text-github-blue">
+                            Properties
+                        </button>
+                        <button class="flex-1 px-4 py-2 text-sm font-medium text-slate-grey hover:text-text-light">
+                            Validation
+                        </button>
+                        <button class="flex-1 px-4 py-2 text-sm font-medium text-slate-grey hover:text-text-light">
+                            History
+                        </button>
+                    </div>
+
+                    <!-- Properties Content -->
+                    <div class="flex-1 p-4 overflow-y-auto">
+                        <div class="space-y-4" data-mock="true">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-grey mb-1">Element Type</label>
+                                <div class="text-sm bg-purple-100 text-purple-600 px-2 py-1 rounded inline-block">EClass</div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-grey mb-1">Name</label>
+                                <input type="text" value="Policy" class="w-full p-2 border border-border-light rounded-md focus:border-github-blue focus:outline-none focus:ring-1 focus:ring-github-blue">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-grey mb-1">Package</label>
+                                <input type="text" value="com.insurance.policy" class="w-full p-2 border border-border-light rounded-md focus:border-github-blue focus:outline-none focus:ring-1 focus:ring-github-blue">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-grey mb-1">Attributes</label>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between p-2 bg-white rounded border">
+                                        <span class="text-sm">policyNumber</span>
+                                        <span class="text-xs text-slate-grey">String</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-2 bg-white rounded border">
+                                        <span class="text-sm">effectiveDate</span>
+                                        <span class="text-xs text-slate-grey">Date</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-2 bg-blue-50 rounded border border-github-blue">
+                                        <span class="text-sm font-medium">premium</span>
+                                        <span class="text-xs text-github-blue">Decimal</span>
+                                    </div>
+                                </div>
+                                <button class="mt-2 text-sm text-github-blue hover:text-blue-700 flex items-center">
+                                    <i class="fas fa-plus mr-1"></i>
+                                    Add Attribute
+                                </button>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-grey mb-1">Associations</label>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between p-2 bg-white rounded border">
+                                        <span class="text-sm">customer</span>
+                                        <span class="text-xs text-slate-grey">Customer [1]</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-2 bg-white rounded border">
+                                        <span class="text-sm">coverages</span>
+                                        <span class="text-xs text-slate-grey">Coverage [*]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: MainEditor -->
+    </div>
+
+    <!-- @COMPONENT: StatusBar [bottom status information] -->
+    <!-- Bottom Status Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-github-blue text-white px-4 py-1 flex items-center justify-between text-xs">
+        <div class="flex items-center space-x-4">
+            <span>Line 15, Column 24</span>
+            <span>UTF-8</span>
+            <span>Vocabulary</span>
+            <div class="flex items-center space-x-2">
+                <span>Git:</span>
+                <span class="text-yellow-200">main ↑2↓1</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span>Corticon Studio v2024.1</span>
+            <div class="flex items-center space-x-1">
+                <div class="w-2 h-2 rounded-full bg-success"></div>
+                <span>Connected</span>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: StatusBar -->
+
+    <!-- @FUNCTIONALITY: Real-time collaboration system with WebSocket connections -->
+    <!-- @FUNCTIONALITY: Git integration with commit, push, pull operations -->
+    <!-- @FUNCTIONALITY: Syntax highlighting engine for Corticon file types -->
+    <!-- @FUNCTIONALITY: File validation and error detection system -->
+
+    <script>
+        // TODO: Implement real-time collaboration using WebSocket connections
+        // TODO: Implement Git operations (commit, push, pull, merge)
+        // TODO: Implement syntax highlighting for Corticon-specific file types
+        // TODO: Implement file validation and error detection
+        // TODO: Implement auto-save functionality
+        // TODO: Implement keyboard shortcuts for common operations
+        
+        (function() {
+            // Basic UI interactions for demo purposes
+            
+            // Mock collaboration presence updates
+            function updateCollaborationStatus() {
+                // Simulate real-time user presence updates
+                console.log('Updating collaboration status...');
+            }
+            
+            // Mock file tree interactions
+            document.addEventListener('click', function(e) {
+                const fileItem = e.target.closest('.file-tree .flex');
+                if (fileItem && fileItem.querySelector('i.fa-chevron-right, i.fa-chevron-down')) {
+                    const chevron = fileItem.querySelector('i.fa-chevron-right, i.fa-chevron-down');
+                    if (chevron.classList.contains('fa-chevron-right')) {
+                        chevron.classList.remove('fa-chevron-right');
+                        chevron.classList.add('fa-chevron-down');
+                    } else {
+                        chevron.classList.remove('fa-chevron-down');
+                        chevron.classList.add('fa-chevron-right');
+                    }
+                }
+            });
+            
+            // Mock tab switching
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.flex.items-center.px-4.py-2')) {
+                    const allTabs = document.querySelectorAll('.flex.items-center.px-4.py-2');
+                    allTabs.forEach(tab => {
+                        tab.classList.remove('bg-white');
+                        tab.classList.add('bg-github-light');
+                    });
+                    e.target.closest('.flex.items-center.px-4.py-2').classList.add('bg-white');
+                    e.target.closest('.flex.items-center.px-4.py-2').classList.remove('bg-github-light');
+                }
+            });
+            
+            setInterval(updateCollaborationStatus, 5000);
+        })();
+    </script>
+</body>
+</html>

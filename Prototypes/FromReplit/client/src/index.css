@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 20%, 20%);
+  --muted: hsl(210, 15%, 90%);
+  --muted-foreground: hsl(215, 10%, 40%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 20%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 20%, 20%);
+  --border: hsl(214, 12%, 88%);
+  --input: hsl(214, 12%, 88%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 15%, 90%);
+  --secondary-foreground: hsl(222, 20%, 20%);
+  --accent: hsl(210, 15%, 90%);
+  --accent-foreground: hsl(222, 20%, 20%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(207, 90%, 54%);
+  --radius: 0.5rem;
+  
+  /* Custom Corticon Studio colors - Light Mode */
+  --github-blue: hsl(207, 90%, 54%);
+  --slate-grey: hsl(215, 14%, 34%);
+  --dark-bg: hsl(0, 0%, 100%);
+  --dark-text: hsl(222, 20%, 20%);
+  --light-text: hsl(222, 20%, 20%);
+  --success-green: hsl(134, 61%, 41%);
+  --warning-amber: hsl(45, 100%, 51%);
+  --editor-bg: hsl(0, 0%, 98%);
+  --sidebar-bg: hsl(210, 15%, 95%);
+  --tab-bg: hsl(210, 15%, 92%);
+}
+
+.dark {
+  --background: hsl(220, 13%, 7%);
+  --foreground: hsl(213, 31%, 91%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 3%, 15%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --card: hsl(220, 13%, 7%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(207, 90%, 54%);
+  
+  /* Custom Corticon Studio colors - Dark Mode */
+  --github-blue: hsl(207, 90%, 54%);
+  --slate-grey: hsl(215, 14%, 34%);
+  --dark-bg: hsl(220, 13%, 7%);
+  --dark-text: hsl(213, 31%, 91%);
+  --light-text: hsl(213, 31%, 91%);
+  --success-green: hsl(134, 61%, 41%);
+  --warning-amber: hsl(45, 100%, 51%);
+  --editor-bg: hsl(0, 0%, 12%);
+  --sidebar-bg: hsl(240, 3%, 15%);
+  --tab-bg: hsl(240, 4%, 18%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Ensure dialog text is visible in both themes */
+  [data-radix-dialog-content] {
+    color: var(--popover-foreground) !important;
+    background-color: var(--popover) !important;
+  }
+
+  [data-radix-select-content] {
+    background-color: var(--popover) !important;
+    color: var(--popover-foreground) !important;
+  }
+
+  [data-radix-select-item] {
+    color: var(--popover-foreground) !important;
+  }
+
+  [data-radix-select-item]:hover,
+  [data-radix-select-item]:focus {
+    background-color: var(--accent) !important;
+    color: var(--accent-foreground) !important;
+  }
+
+  /* Fix dropdown menu items visibility */
+  [data-radix-dropdown-menu-content] {
+    background-color: var(--popover) !important;
+    color: var(--popover-foreground) !important;
+  }
+
+  [data-radix-dropdown-menu-item] {
+    color: var(--popover-foreground) !important;
+  }
+
+  [data-radix-dropdown-menu-item]:hover,
+  [data-radix-dropdown-menu-item]:focus {
+    background-color: var(--accent) !important;
+    color: var(--accent-foreground) !important;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--slate-grey);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(215, 14%, 42%);
+  }
+
+  .bg-github-blue {
+    background-color: var(--github-blue);
+  }
+
+  .bg-slate-grey {
+    background-color: var(--slate-grey);
+  }
+
+  .bg-dark-bg {
+    background-color: var(--dark-bg);
+  }
+
+  .bg-dark-text {
+    background-color: var(--dark-text);
+  }
+
+  .bg-light-text {
+    background-color: var(--light-text);
+  }
+
+  .bg-success-green {
+    background-color: var(--success-green);
+  }
+
+  .bg-warning-amber {
+    background-color: var(--warning-amber);
+  }
+
+  .bg-editor-bg {
+    background-color: var(--editor-bg);
+  }
+
+  .bg-sidebar-bg {
+    background-color: var(--sidebar-bg);
+  }
+
+  .bg-tab-bg {
+    background-color: var(--tab-bg);
+  }
+
+  .text-github-blue {
+    color: var(--github-blue);
+  }
+
+  .text-slate-grey {
+    color: var(--slate-grey);
+  }
+
+  .text-dark-bg {
+    color: var(--dark-bg);
+  }
+
+  .text-dark-text {
+    color: var(--dark-text);
+  }
+
+  .text-light-text {
+    color: var(--light-text);
+  }
+
+  .text-success-green {
+    color: var(--success-green);
+  }
+
+  .text-warning-amber {
+    color: var(--warning-amber);
+  }
+
+  .border-github-blue {
+    border-color: var(--github-blue);
+  }
+
+  .border-slate-grey {
+    border-color: var(--slate-grey);
+  }
+
+  .border-success-green {
+    border-color: var(--success-green);
+  }
+
+  .border-warning-amber {
+    border-color: var(--warning-amber);
+  }
+
+  .hover\:bg-github-blue:hover {
+    background-color: var(--github-blue);
+  }
+
+  .hover\:bg-slate-grey:hover {
+    background-color: var(--slate-grey);
+  }
+
+  .hover\:bg-success-green:hover {
+    background-color: var(--success-green);
+  }
+}
+
+/* Prevent text selection during drag operations */
+[draggable="true"] {
+  -webkit-user-drag: element;
+  -khtml-user-drag: element;
+  -moz-user-drag: element;
+  -o-user-drag: element;
+  user-drag: element;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: grab !important;
+  transition: all 0.2s ease;
+}
+
+[draggable="true"]:hover {
+  cursor: grab !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+[draggable="true"]:active {
+  cursor: grabbing !important;
+}
+
+/* Ensure proper cursor states during drag */
+.dragging {
+  cursor: grabbing !important;
+  opacity: 0.7 !important;
+  transform: scale(0.95);
+  background-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+.drag-target {
+  border-color: hsl(var(--primary)) !important;
+  background-color: hsl(var(--primary) / 0.1) !important;
+}
+
+/* Firefox specific drag fixes */
+@-moz-document url-prefix() {
+  [draggable="true"] {
+    -moz-user-select: none;
+    cursor: grab !important;
+    /* Force hardware acceleration for better drag performance in Firefox */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  [draggable="true"]:hover {
+    cursor: grab !important;
+  }
+  
+  [draggable="true"]:active {
+    cursor: grabbing !important;
+  }
+  
+  /* Ensure drag events can fire properly in Firefox */
+  [draggable="true"]:not(:disabled) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}

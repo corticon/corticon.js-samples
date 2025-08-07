@@ -1,0 +1,618 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corticon Studio Web - Professional Rule Management IDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'github-blue': '#0366D6',
+                        'slate-grey': '#586069',
+                        'dark-bg': '#0D1117',
+                        'dark-text': '#F0F6FC',
+                        'light-text': '#24292E',
+                        'success-green': '#28A745',
+                        'warning-amber': '#FFC107',
+                        'editor-bg': '#1E1E1E',
+                        'sidebar-bg': '#252526',
+                        'tab-bg': '#2D2D30'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'jetbrains': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .monaco-editor {
+            background-color: #1E1E1E !important;
+        }
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background: #586069;
+            border-radius: 3px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+            background: #6e7881;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-light-text overflow-hidden">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-sidebar-bg text-dark-text border-b border-gray-700 h-10 flex items-center px-4 justify-between text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-cube text-github-blue"></i>
+                <span class="font-semibold">Corticon Studio Web</span>
+            </div>
+            <div class="flex items-center space-x-1">
+                <button class="px-2 py-1 hover:bg-gray-600 rounded text-xs">File</button>
+                <button class="px-2 py-1 hover:bg-gray-600 rounded text-xs">Edit</button>
+                <button class="px-2 py-1 hover:bg-gray-600 rounded text-xs">View</button>
+                <button class="px-2 py-1 hover:bg-gray-600 rounded text-xs">Project</button>
+                <button class="px-2 py-1 hover:bg-gray-600 rounded text-xs">Git</button>
+                <button class="px-2 py-1 hover:bg-gray-600 rounded text-xs">Help</button>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3">
+            <!-- Collaboration Indicators -->
+            <div class="flex items-center space-x-1">
+                <div class="w-6 h-6 rounded-full bg-success-green flex items-center justify-center text-xs text-white font-medium" title="Sarah Chen - Online">SC</div>
+                <div class="w-6 h-6 rounded-full bg-github-blue flex items-center justify-center text-xs text-white font-medium" title="Mike Johnson - Editing">MJ</div>
+                <span class="text-xs text-gray-400">2 users online</span>
+            </div>
+            <button class="px-3 py-1 bg-github-blue hover:bg-blue-700 rounded text-xs text-white">
+                <i class="fas fa-cloud-upload-alt mr-1"></i>Save & Sync
+            </button>
+        </div>
+    </nav>
+
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 bg-sidebar-bg text-dark-text border-r border-gray-700 flex flex-col">
+            <!-- Project Explorer Header -->
+            <div class="p-3 border-b border-gray-700">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-sm font-medium uppercase tracking-wide text-gray-400">Projects</h3>
+                    <div class="flex space-x-1">
+                        <button class="p-1 hover:bg-gray-600 rounded" title="New Project">
+                            <i class="fas fa-plus text-xs"></i>
+                        </button>
+                        <button class="p-1 hover:bg-gray-600 rounded" title="Refresh">
+                            <i class="fas fa-sync text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Active Project Selector -->
+                <div class="bg-tab-bg rounded border border-gray-600 p-2">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-folder-open text-warning-amber text-sm"></i>
+                            <span class="text-sm font-medium">Insurance Rules Engine</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </div>
+                    <div class="text-xs text-gray-400 mt-1">
+                        <i class="fas fa-git-alt mr-1"></i>main • 3 uncommitted changes
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Explorer -->
+            <div class="flex-1 overflow-y-auto scrollbar-thin">
+                <div class="p-2">
+                    <!-- Project Tree Structure -->
+                    <div class="space-y-1">
+                        <!-- Vocabulary Folder -->
+                        <div class="text-xs">
+                            <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                <i class="fas fa-chevron-down text-gray-400 w-3"></i>
+                                <i class="fas fa-folder text-warning-amber ml-1 mr-2"></i>
+                                <span>vocabulary</span>
+                            </div>
+                            <div class="ml-6 space-y-1">
+                                <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                    <i class="fas fa-file-code text-github-blue mr-2"></i>
+                                    <span>Policy.vocabulary</span>
+                                    <i class="fas fa-circle text-warning-amber text-xs ml-auto" title="Unsaved changes"></i>
+                                </div>
+                                <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                    <i class="fas fa-file-code text-gray-400 mr-2"></i>
+                                    <span>Customer.vocabulary</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rulesheets Folder -->
+                        <div class="text-xs">
+                            <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                <i class="fas fa-chevron-down text-gray-400 w-3"></i>
+                                <i class="fas fa-folder text-warning-amber ml-1 mr-2"></i>
+                                <span>rulesheets</span>
+                            </div>
+                            <div class="ml-6 space-y-1">
+                                <div class="flex items-center py-1 px-2 bg-github-blue bg-opacity-20 rounded cursor-pointer">
+                                    <i class="fas fa-file-alt text-success-green mr-2"></i>
+                                    <span>PremiumCalculation.rules</span>
+                                    <div class="ml-auto flex items-center space-x-1">
+                                        <div class="w-2 h-2 rounded-full bg-success-green" title="Sarah Chen editing"></div>
+                                        <i class="fas fa-circle text-warning-amber text-xs" title="Unsaved changes"></i>
+                                    </div>
+                                </div>
+                                <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                    <i class="fas fa-file-alt text-gray-400 mr-2"></i>
+                                    <span>Eligibility.rules</span>
+                                </div>
+                                <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                    <i class="fas fa-file-alt text-gray-400 mr-2"></i>
+                                    <span>Coverage.rules</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ruleflow Folder -->
+                        <div class="text-xs">
+                            <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                <i class="fas fa-chevron-right text-gray-400 w-3"></i>
+                                <i class="fas fa-folder text-gray-500 ml-1 mr-2"></i>
+                                <span>ruleflow</span>
+                            </div>
+                        </div>
+
+                        <!-- Rulestest Folder -->
+                        <div class="text-xs">
+                            <div class="flex items-center py-1 px-2 hover:bg-gray-600 rounded cursor-pointer">
+                                <i class="fas fa-chevron-right text-gray-400 w-3"></i>
+                                <i class="fas fa-folder text-gray-500 ml-1 mr-2"></i>
+                                <span>rulestest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Git Status Panel -->
+            <div class="border-t border-gray-700 p-3">
+                <div class="flex items-center justify-between mb-2">
+                    <h4 class="text-xs font-medium uppercase tracking-wide text-gray-400">Source Control</h4>
+                    <span class="bg-github-blue text-white text-xs px-2 py-1 rounded">3</span>
+                </div>
+                <div class="space-y-1 text-xs">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-warning-amber">M</span>
+                        <span class="truncate">Policy.vocabulary</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-success-green">A</span>
+                        <span class="truncate">PremiumCalculation.rules</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-red-400">D</span>
+                        <span class="truncate">OldRules.rules</span>
+                    </div>
+                </div>
+                <div class="flex space-x-2 mt-3">
+                    <button class="flex-1 bg-success-green hover:bg-green-600 text-white text-xs py-2 rounded">
+                        <i class="fas fa-check mr-1"></i>Commit
+                    </button>
+                    <button class="px-3 bg-gray-600 hover:bg-gray-500 text-white text-xs py-2 rounded">
+                        <i class="fas fa-sync"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col">
+            <!-- Tab Bar -->
+            <div class="bg-tab-bg border-b border-gray-700 flex items-center text-sm overflow-x-auto">
+                <div class="flex">
+                    <!-- Active Tab -->
+                    <div class="flex items-center px-4 py-2 bg-editor-bg text-dark-text border-r border-gray-700 min-w-0">
+                        <i class="fas fa-file-alt text-success-green mr-2 text-xs"></i>
+                        <span class="truncate">PremiumCalculation.rules</span>
+                        <div class="flex items-center ml-2 space-x-1">
+                            <div class="w-2 h-2 rounded-full bg-warning-amber" title="Unsaved changes"></div>
+                            <button class="ml-2 hover:bg-gray-600 rounded p-1">
+                                <i class="fas fa-times text-xs text-gray-400"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Inactive Tabs -->
+                    <div class="flex items-center px-4 py-2 text-gray-400 border-r border-gray-700 hover:bg-gray-600 cursor-pointer min-w-0">
+                        <i class="fas fa-file-code text-github-blue mr-2 text-xs"></i>
+                        <span class="truncate">Policy.vocabulary</span>
+                        <button class="ml-2 hover:bg-gray-500 rounded p-1">
+                            <i class="fas fa-times text-xs"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center px-4 py-2 text-gray-400 border-r border-gray-700 hover:bg-gray-600 cursor-pointer min-w-0">
+                        <i class="fas fa-file-alt text-gray-400 mr-2 text-xs"></i>
+                        <span class="truncate">Eligibility.rules</span>
+                        <button class="ml-2 hover:bg-gray-500 rounded p-1">
+                            <i class="fas fa-times text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Actions -->
+                <div class="ml-auto flex items-center px-2">
+                    <button class="p-2 hover:bg-gray-600 rounded" title="Split Editor">
+                        <i class="fas fa-columns text-xs text-gray-400"></i>
+                    </button>
+                    <button class="p-2 hover:bg-gray-600 rounded" title="Close All">
+                        <i class="fas fa-times-circle text-xs text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Editor Area -->
+            <div class="flex-1 flex">
+                <!-- Main Editor -->
+                <div class="flex-1 bg-editor-bg relative">
+                    <!-- Editor Header -->
+                    <div class="flex items-center justify-between px-4 py-2 bg-tab-bg border-b border-gray-700 text-xs text-gray-400">
+                        <div class="flex items-center space-x-4">
+                            <span>Line 45, Column 12</span>
+                            <span>JSON</span>
+                            <span>UTF-8</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 rounded-full bg-success-green"></div>
+                                <span>Sarah Chen editing line 52</span>
+                            </div>
+                            <button class="px-2 py-1 hover:bg-gray-600 rounded">
+                                <i class="fas fa-search mr-1"></i>Find
+                            </button>
+                            <button class="px-2 py-1 hover:bg-gray-600 rounded">
+                                <i class="fas fa-check mr-1"></i>Validate
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Monaco Editor Mock -->
+                    <div class="h-full font-jetbrains text-sm text-dark-text p-4 overflow-auto scrollbar-thin">
+                        <div class="space-y-1">
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">1</span>
+                                <span class="text-gray-400">{</span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">2</span>
+                                <span class="ml-4">
+                                    <span class="text-blue-400">"rulesheet"</span>
+                                    <span class="text-gray-400">: {</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">3</span>
+                                <span class="ml-8">
+                                    <span class="text-blue-400">"name"</span>
+                                    <span class="text-gray-400">: </span>
+                                    <span class="text-green-400">"PremiumCalculation"</span>
+                                    <span class="text-gray-400">,</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">4</span>
+                                <span class="ml-8">
+                                    <span class="text-blue-400">"version"</span>
+                                    <span class="text-gray-400">: </span>
+                                    <span class="text-green-400">"2.1"</span>
+                                    <span class="text-gray-400">,</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">5</span>
+                                <span class="ml-8">
+                                    <span class="text-blue-400">"rules"</span>
+                                    <span class="text-gray-400">: [</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">6</span>
+                                <span class="ml-12">
+                                    <span class="text-gray-400">{</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">7</span>
+                                <span class="ml-16">
+                                    <span class="text-blue-400">"conditions"</span>
+                                    <span class="text-gray-400">: [</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">8</span>
+                                <span class="ml-20">
+                                    <span class="text-green-400">"Policy.policyType = 'AUTO'"</span>
+                                    <span class="text-gray-400">,</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">9</span>
+                                <span class="ml-20">
+                                    <span class="text-green-400">"Policy.driverAge >= 25"</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">10</span>
+                                <span class="ml-16">
+                                    <span class="text-gray-400">],</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">11</span>
+                                <span class="ml-16">
+                                    <span class="text-blue-400">"actions"</span>
+                                    <span class="text-gray-400">: [</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">12</span>
+                                <span class="ml-20">
+                                    <span class="text-green-400">"Policy.basePremium = 500"</span>
+                                    <span class="text-gray-400">,</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">13</span>
+                                <span class="ml-20">
+                                    <span class="text-green-400">"Policy.discountRate = 0.15"</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">14</span>
+                                <span class="ml-16">
+                                    <span class="text-gray-400">]</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">15</span>
+                                <span class="ml-12">
+                                    <span class="text-gray-400">},</span>
+                                </span>
+                            </div>
+                            <!-- Real-time collaboration indicator -->
+                            <div class="flex relative">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">16</span>
+                                <span class="ml-12">
+                                    <span class="text-gray-400">{</span>
+                                </span>
+                                <!-- Sarah's cursor -->
+                                <div class="absolute left-20 top-0 w-0.5 h-5 bg-success-green animate-pulse"></div>
+                                <div class="absolute left-20 -top-6 bg-success-green text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                                    Sarah Chen
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">17</span>
+                                <span class="ml-16">
+                                    <span class="text-blue-400">"conditions"</span>
+                                    <span class="text-gray-400">: [</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">18</span>
+                                <span class="ml-20">
+                                    <span class="text-green-400">"Policy.policyType = 'AUTO'"</span>
+                                    <span class="text-gray-400">,</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">19</span>
+                                <span class="ml-20">
+                                    <span class="text-green-400">"Policy.driverAge < 25"</span>
+                                </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-gray-500 w-12 text-right mr-4 select-none">20</span>
+                                <span class="ml-16">
+                                    <span class="text-gray-400">],</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel (Properties/Validation) -->
+                <div class="w-80 bg-sidebar-bg border-l border-gray-700 flex flex-col">
+                    <!-- Panel Tabs -->
+                    <div class="flex border-b border-gray-700">
+                        <button class="flex-1 px-4 py-2 text-xs text-dark-text bg-tab-bg border-r border-gray-700">
+                            <i class="fas fa-cog mr-1"></i>Properties
+                        </button>
+                        <button class="flex-1 px-4 py-2 text-xs text-gray-400 hover:bg-gray-600">
+                            <i class="fas fa-exclamation-triangle mr-1"></i>Validation
+                        </button>
+                    </div>
+
+                    <!-- Properties Panel -->
+                    <div class="flex-1 p-4 text-sm text-dark-text overflow-y-auto scrollbar-thin">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Rule Name</label>
+                                <input type="text" value="PremiumCalculation" class="w-full bg-tab-bg border border-gray-600 rounded px-3 py-2 text-sm focus:border-github-blue focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Version</label>
+                                <input type="text" value="2.1" class="w-full bg-tab-bg border border-gray-600 rounded px-3 py-2 text-sm focus:border-github-blue focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Description</label>
+                                <textarea rows="3" class="w-full bg-tab-bg border border-gray-600 rounded px-3 py-2 text-sm focus:border-github-blue focus:outline-none resize-none" placeholder="Rule description..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-2">Vocabulary References</label>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between p-2 bg-tab-bg rounded border border-gray-600">
+                                        <span class="text-sm">Policy</span>
+                                        <button class="text-red-400 hover:text-red-300">
+                                            <i class="fas fa-times text-xs"></i>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center justify-between p-2 bg-tab-bg rounded border border-gray-600">
+                                        <span class="text-sm">Customer</span>
+                                        <button class="text-red-400 hover:text-red-300">
+                                            <i class="fas fa-times text-xs"></i>
+                                        </button>
+                                    </div>
+                                    <button class="w-full p-2 border border-dashed border-gray-600 rounded text-gray-400 hover:border-github-blue hover:text-github-blue text-sm">
+                                        <i class="fas fa-plus mr-1"></i>Add Reference
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-2">Execution Priority</label>
+                                <div class="flex items-center space-x-2">
+                                    <input type="range" min="1" max="10" value="5" class="flex-1">
+                                    <span class="text-sm bg-tab-bg px-2 py-1 rounded border border-gray-600">5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collaboration Panel -->
+                    <div class="border-t border-gray-700 p-4">
+                        <h4 class="text-xs font-medium uppercase tracking-wide text-gray-400 mb-3">Active Collaborators</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-success-green flex items-center justify-center text-sm text-white font-medium">SC</div>
+                                <div class="flex-1">
+                                    <div class="text-sm text-dark-text">Sarah Chen</div>
+                                    <div class="text-xs text-gray-400">Editing line 16</div>
+                                </div>
+                                <div class="w-2 h-2 rounded-full bg-success-green"></div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-github-blue flex items-center justify-center text-sm text-white font-medium">MJ</div>
+                                <div class="flex-1">
+                                    <div class="text-sm text-dark-text">Mike Johnson</div>
+                                    <div class="text-xs text-gray-400">Viewing file</div>
+                                </div>
+                                <div class="w-2 h-2 rounded-full bg-github-blue"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="bg-github-blue text-white text-xs flex items-center justify-between px-4 py-1">
+                <div class="flex items-center space-x-4">
+                    <span><i class="fas fa-git-alt mr-1"></i>main</span>
+                    <span><i class="fas fa-sync mr-1"></i>Sync: 2 min ago</span>
+                    <span><i class="fas fa-exclamation-triangle mr-1"></i>0 problems</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span>Corticon Studio Web v1.0.0</span>
+                    <span>JSON Schema Valid</span>
+                    <span>Ln 45, Col 12</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu (Hidden by default) -->
+    <div id="contextMenu" class="fixed hidden bg-sidebar-bg border border-gray-600 rounded shadow-lg py-1 z-50 text-sm text-dark-text">
+        <button class="w-full px-4 py-2 hover:bg-gray-600 text-left">
+            <i class="fas fa-edit mr-2"></i>Rename
+        </button>
+        <button class="w-full px-4 py-2 hover:bg-gray-600 text-left">
+            <i class="fas fa-copy mr-2"></i>Duplicate
+        </button>
+        <hr class="border-gray-600 my-1">
+        <button class="w-full px-4 py-2 hover:bg-gray-600 text-left">
+            <i class="fas fa-download mr-2"></i>Export
+        </button>
+        <button class="w-full px-4 py-2 hover:bg-gray-600 text-left text-red-400">
+            <i class="fas fa-trash mr-2"></i>Delete
+        </button>
+    </div>
+
+    <script>
+        // TODO: Implement real-time collaboration WebSocket connection
+        // TODO: Implement Monaco Editor integration for JSON editing
+        // TODO: Implement Git operations (commit, push, pull, diff)
+        // TODO: Implement file system operations (CRUD)
+        // TODO: Implement JSON schema validation
+        // TODO: Implement keyboard shortcuts
+        
+        (function() {
+            // Mock real-time collaboration simulation
+            function simulateCollaboration() {
+                // Simulate user presence updates
+                setInterval(() => {
+                    // This would normally be handled by WebSocket events
+                    console.log('Simulating real-time collaboration updates');
+                }, 5000);
+            }
+
+            // Mock file tree interactions
+            function initializeFileTree() {
+                const fileItems = document.querySelectorAll('.cursor-pointer');
+                fileItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Remove previous selection
+                        document.querySelectorAll('.bg-github-blue').forEach(el => {
+                            if (el.classList.contains('bg-opacity-20')) {
+                                el.classList.remove('bg-github-blue', 'bg-opacity-20');
+                            }
+                        });
+                        
+                        // Add selection to clicked item
+                        if (this.querySelector('.fas.fa-file-alt, .fas.fa-file-code')) {
+                            this.classList.add('bg-github-blue', 'bg-opacity-20');
+                        }
+                    });
+                });
+            }
+
+            // Mock context menu
+            function initializeContextMenu() {
+                const contextMenu = document.getElementById('contextMenu');
+                
+                document.addEventListener('contextmenu', function(e) {
+                    if (e.target.closest('.cursor-pointer')) {
+                        e.preventDefault();
+                        contextMenu.style.left = e.pageX + 'px';
+                        contextMenu.style.top = e.pageY + 'px';
+                        contextMenu.classList.remove('hidden');
+                    }
+                });
+
+                document.addEventListener('click', function() {
+                    contextMenu.classList.add('hidden');
+                });
+            }
+
+            // Initialize mock interactions
+            document.addEventListener('DOMContentLoaded', function() {
+                simulateCollaboration();
+                initializeFileTree();
+                initializeContextMenu();
+            });
+        })();
+    </script>
+</body>
+</html>
