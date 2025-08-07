@@ -153,7 +153,7 @@
 <body>
     <div class="container">
         <h1><span class="emoji">🚀</span>Corticon.js Project Setup Guide</h1>
-        
+
         <div class="nav-links">
             <a href="#prerequisites">Prerequisites</a>
             <a href="#postgresql-install">PostgreSQL Install</a>
@@ -172,7 +172,8 @@
                 <li><strong>PostgreSQL</strong> database - <a href="https://www.postgresql.org/download/" target="_blank">Download here</a></li>
                 <li><strong>Git</strong> (if cloning repository)</li>
             </ul>
-            
+
+
             <div class="warning">
                 <strong>⚠️ PostgreSQL Not Detected:</strong> Our system check shows PostgreSQL is not currently installed on your machine. Please follow the PostgreSQL installation guide below.
             </div>
@@ -180,10 +181,10 @@
 
         <section id="postgresql-install">
             <h2><span class="emoji">🐘</span>PostgreSQL Installation Guide</h2>
-            
+
             <h3><span class="step-number">A</span>Download PostgreSQL</h3>
             <p>Choose one of these installation methods:</p>
-            
+
             <h4>Option 1: Official Installer (Recommended)</h4>
             <div style="background-color: #e3f2fd; padding: 15px; border-radius: 6px; margin: 15px 0;">
                 <ol>
@@ -229,7 +230,7 @@ createdb -U postgres corticon_db
 
 # Or using psql (PostgreSQL interactive terminal from the start menu)
 psql -U postgres -c "CREATE DATABASE corticon_db;"
-            
+
 <br/>
 Note on how i created the DB:
 <br/>
@@ -249,7 +250,7 @@ that my db is showing up
 <br/>
 
 </div>
-            
+
             <div class="warning">
                 <strong>⚠️ Important:</strong> Only create <code>corticon_db</code> - this is what the project expects. Do NOT create <code>corticon_studio</code> as it will cause confusion.
             </div>
@@ -298,7 +299,7 @@ SESSION_SECRET="your-session-secret-here"
 REPLIT_CLIENT_ID="your-replit-client-id"
 REPLIT_CLIENT_SECRET="your-replit-client-secret"
             </div>
-            
+
             <div class="warning">
                 <strong>⚠️ Important:</strong> Replace <code>your_password</code> with the actual password you set during PostgreSQL installation. Replace other placeholder values with your actual API keys.
             </div>
@@ -330,7 +331,7 @@ Using 'pg' driver for database querying
 # This runs: drizzle-kit push
 # Which reads shared/schema.ts and creates tables in your database
             </div>
-            
+
             <div style="background-color: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0;">
                 <strong>What this does:</strong>
                 <ul>
@@ -343,20 +344,33 @@ Using 'pg' driver for database querying
 
             <h3><span class="step-number">4</span>Start Development Servers</h3>
             <p>You need to run both client and server in <strong>separate terminals</strong>:</p>
-            <br/>
-            Go to C:\dev3\corticon.js-samples\Prototypes\FromReplit\server>
-            <br/>
-            and to C:\dev3\corticon.js-samples\Prototypes\FromReplit\client>
+
+            <div class="warning">
+                <strong>⚠️ Windows Note:</strong> The npm scripts use Unix-style environment variable setting. NODE_ENV is now set in your .env file, or you can set it manually as shown below.
+            </div>
+
+            <p>Navigate to these directories in separate terminals:</p>
+            <ul>
+                <li><strong>Terminal 1:</strong> <code>C:\dev3\corticon.js-samples\Prototypes\FromReplit\server</code></li>
+                <li><strong>Terminal 2:</strong> <code>C:\dev3\corticon.js-samples\Prototypes\FromReplit\client</code></li>
+            </ul>
+
             <div style="margin: 20px 0;">
-                <div class="terminal-tab">Terminal 1 - Server</div>
+                <div class="terminal-tab">Terminal 1 - Server (Windows PowerShell)</div>
                 <div class="code-block bash">
 cd server
-            <br/>
 npm run dev
-            <br/>
-# or
-            <br/>
-npm start
+<br/>
+# Alternative if above doesn't work:
+<br/>
+cd C:\dev3\corticon.js-samples\Prototypes\FromReplit\server>
+<br/>
+set DATABASE_URL=postgresql://postgres:[ReplaceWithPWD]@localhost:5432/corticon_db
+<br/>
+set REPLIT_DOMAINS=localhost:5000
+<br/>
+npx tsx index.ts
+<br/>
                 </div>
             </div>
 
@@ -364,10 +378,9 @@ npm start
                 <div class="terminal-tab">Terminal 2 - Client</div>
                 <div class="code-block bash">
 cd client
-            <br/>
 npm run dev
-            <br/>
 # or
+npm start
             <br/>
 npm start
                 </div>
