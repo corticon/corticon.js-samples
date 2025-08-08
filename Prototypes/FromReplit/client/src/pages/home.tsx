@@ -22,25 +22,29 @@ export default function Home() {
   const [openTabs, setOpenTabs] = useState<Asset[]>([]);
   const [activeTab, setActiveTab] = useState<Asset | null>(null);
 
+  // This is commented out to simplify things - we disable authentication
   // Redirect to login if not authenticated
-  useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
-      toast({
-        title: "Unauthorized",
-        description: "You are logged out. Logging in again...",
-        variant: "destructive",
-      });
-      setTimeout(() => {
-        window.location.href = "/api/login";
-      }, 500);
-      return;
-    }
-  }, [isAuthenticated, isLoading, toast]);
+  // useEffect(() => {
+  //   if (!isLoading && !isAuthenticated) {
+  //     toast({
+  //       title: "Unauthorized",
+  //       description: "You are logged out. Logging in again...",
+  //       variant: "destructive",
+  //     });
+  //     setTimeout(() => {
+  //       window.location.href = "/api/login";
+  //     }, 500);
+  //     return;
+  //   }
+  // }, [isAuthenticated, isLoading, toast]);
+
+  // Authentication disabled for development mode
+  // No redirect needed - useAuth() always returns authenticated user
 
   // Fetch projects
   const { data: projects, isLoading: projectsLoading } = useQuery({
     queryKey: ["/api/projects"],
-    enabled: isAuthenticated,
+    enabled: true, // Always enabled since auth is disabled
     retry: false,
   });
 
@@ -121,14 +125,14 @@ export default function Home() {
 
   // Update ruleflow workflow mutation
   const updateWorkflowMutation = useMutation({
-    mutationFn: async ({ 
-      assetId, 
-      structuralData, 
-      uiData 
-    }: { 
-      assetId: number; 
-      structuralData?: RuleflowStructuralData; 
-      uiData?: RuleflowUIData; 
+    mutationFn: async ({
+      assetId,
+      structuralData,
+      uiData
+    }: {
+      assetId: number;
+      structuralData?: RuleflowStructuralData;
+      uiData?: RuleflowUIData;
     }) => {
       return await apiRequest("PATCH", `/api/assets/${assetId}/workflow`, { structuralData, uiData });
     },
@@ -236,7 +240,7 @@ export default function Home() {
     onError: (error) => {
       if (isUnauthorizedError(error)) {
         toast({
-          title: "Unauthorized", 
+          title: "Unauthorized",
           description: "You are logged out. Logging in again...",
           variant: "destructive",
         });
@@ -265,9 +269,9 @@ export default function Home() {
       // Fetch complete asset data with structuralData and uiData
       const response = await apiRequest("GET", `/api/assets/${asset.id}`);
       const fullAsset = await response.json() as Asset;
-      
 
-      
+
+
       // Add the complete asset data to tabs
       setOpenTabs([...openTabs, fullAsset]);
       setActiveTab(fullAsset);
@@ -284,7 +288,7 @@ export default function Home() {
   const handleCloseTab = (asset: Asset) => {
     const newTabs = openTabs.filter(tab => tab.id !== asset.id);
     setOpenTabs(newTabs);
-    
+
     if (activeTab?.id === asset.id) {
       setActiveTab(newTabs.length > 0 ? newTabs[newTabs.length - 1] : null);
     }
@@ -316,7 +320,7 @@ export default function Home() {
   const handleDeleteAssetFromMenu = (asset: Asset) => {
     if (confirm(`Are you sure you want to delete "${asset.name}"?`)) {
       deleteAssetMutation.mutate(asset.id);
-      
+
       // Close the tab if it's open
       if (openTabs.find(tab => tab.id === asset.id)) {
         handleCloseTab(asset);
@@ -330,7 +334,7 @@ export default function Home() {
 
   const handleDeleteProject = (project: Project) => {
     deleteProjectMutation.mutate(project.id);
-    
+
     // If the deleted project was selected, clear selection
     if (selectedProject?.id === project.id) {
       setSelectedProject(null);
@@ -383,7 +387,9 @@ export default function Home() {
     }
   };
 
-  if (isLoading || !isAuthenticated) {
+  // auth is disabled
+  // if (isLoading || !isAuthenticated) {
+  if (isLoading) {
     return (
       <div className="h-screen flex items-center justify-center bg-background">
         <div className="text-foreground">Loading...</div>
@@ -394,7 +400,7 @@ export default function Home() {
   return (
     <div className="h-screen flex flex-col bg-background text-foreground overflow-hidden">
       {/* Top Navigation */}
-      <TopNavigation 
+      <TopNavigation
         user={user as any}
         selectedProject={selectedProject}
         onProjectChange={setSelectedProject}
@@ -428,8 +434,8 @@ export default function Home() {
             isLoading={projectsLoading || assetsLoading}
             currentAssetId={activeTab?.type === 'ruleflow' ? activeTab.id : undefined}
           />
-          
-          <GitStatus 
+
+          <GitStatus
             selectedProject={selectedProject}
             assets={Array.isArray(assets) ? assets : []}
           />
@@ -462,29 +468,29 @@ export default function Home() {
                     onStructuralChange={(structuralData) => {
                       // Update the active tab's structural data immediately
                       setActiveTab(prev => prev ? { ...prev, structuralData } : null);
-                      
+
                       // Update tabs list as well
-                      setOpenTabs(prev => prev.map(tab => 
+                      setOpenTabs(prev => prev.map(tab =>
                         tab.id === activeTab.id ? { ...tab, structuralData } : tab
                       ));
-                      
-                      updateWorkflowMutation.mutate({ 
-                        assetId: activeTab.id, 
-                        structuralData 
+
+                      updateWorkflowMutation.mutate({
+                        assetId: activeTab.id,
+                        structuralData
                       });
                     }}
                     onUIChange={(uiData) => {
                       // Update the active tab's UI data immediately
                       setActiveTab(prev => prev ? { ...prev, uiData } : null);
-                      
+
                       // Update tabs list as well
-                      setOpenTabs(prev => prev.map(tab => 
+                      setOpenTabs(prev => prev.map(tab =>
                         tab.id === activeTab.id ? { ...tab, uiData } : tab
                       ));
-                      
-                      updateWorkflowMutation.mutate({ 
-                        assetId: activeTab.id, 
-                        uiData 
+
+                      updateWorkflowMutation.mutate({
+                        assetId: activeTab.id,
+                        uiData
                       });
                     }}
                   />
