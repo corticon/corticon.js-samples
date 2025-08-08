@@ -18,10 +18,12 @@ const server = await createServer({
     root: path.resolve(__dirname, "client"),
     server: {
         port: 3000,
+        host: '127.0.0.1', // Force IPv4
         proxy: {
             '/api': {
-                target: 'http://localhost:5000',
-                changeOrigin: true
+                target: 'http://127.0.0.1:5000', // Use IPv4 explicitly
+                changeOrigin: true,
+                secure: false
             }
         }
     }

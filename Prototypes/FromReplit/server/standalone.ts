@@ -123,10 +123,11 @@ app.use((req, res, next) => {
     const port = parseInt(process.env.PORT || '5000', 10);
     server.listen({
         port,
-        host: "0.0.0.0",
+        host: "127.0.0.1", // Use IPv4 explicitly instead of 0.0.0.0
     }, () => {
-        console.log(`[standalone] Server running on http://localhost:${port}`);
-        console.log(`[standalone] API available at http://localhost:${port}/api/`);
-        console.log(`[standalone] Test with: curl http://localhost:${port}/api/auth/user`);
+        console.log(`[standalone] Server running on http://127.0.0.1:${port}`);
+        console.log(`[standalone] API available at http://127.0.0.1:${port}/api/`);
+        console.log(`[standalone] Test with: curl http://127.0.0.1:${port}/api/auth/user`);
+        console.log(`[standalone] Frontend proxy should connect to IPv4 localhost`);
     });
 })();

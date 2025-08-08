@@ -20,6 +20,54 @@ export async function registerRoutes(app: Express): Promise<Server> {
         lastName: 'User',
       });
       console.log('[routes] Created test user for development');
+
+      // Create a test project and asset
+      // try {
+      //   const testProject = await storage.createProject({
+      //     name: 'Sample Project',
+      //     description: 'A sample project for testing',
+      //     ownerId: 'test-user-123' // Use ownerId instead of createdBy
+      //   });
+      //   console.log('[routes] Created test project:', testProject.id);
+      //
+      //   const testAsset = await storage.createAsset({
+      //     name: 'Sample Ruleflow',
+      //     type: 'ruleflow',
+      //     content: {}, // Required field
+      //     projectId: testProject.id,
+      //     createdBy: 'test-user-123',
+      //     structuralData: {
+      //       nodes: [
+      //         {
+      //           id: 'start',
+      //           type: 'start',
+      //           position: { x: 100, y: 100 },
+      //           data: { label: 'Start' }
+      //         },
+      //         {
+      //           id: 'rule1',
+      //           type: 'rule',
+      //           position: { x: 300, y: 100 },
+      //           data: { label: 'Sample Rule' }
+      //         }
+      //       ],
+      //       edges: [
+      //         {
+      //           id: 'e1',
+      //           source: 'start',
+      //           target: 'rule1'
+      //         }
+      //       ]
+      //     },
+      //     uiData: {
+      //       zoom: 1,
+      //       viewport: { x: 0, y: 0 }
+      //     }
+      //   });
+      //   console.log('[routes] Created test asset:', testAsset.id);
+      // } catch (projError) {
+      //   console.log('[routes] Test project/asset creation failed:', projError);
+      // }
     }
   } catch (error) {
     console.log('[routes] Test user creation/check failed:', error);
