@@ -7,7 +7,7 @@
 -- DELETE FROM projects;
 -- DELETE FROM users;
 
--- Insert test user
+-- Insert test user with proper defaults
 INSERT INTO users (id, email, first_name, last_name, profile_image_url, created_at, updated_at, theme, language)
 VALUES (
            'test-user-123',
@@ -15,8 +15,8 @@ VALUES (
            'Demo',
            'User',
            'https://avatars.githubusercontent.com/u/1?v=4',
-           '2025-07-21 18:10:35.468097',
-           '2025-08-08 00:42:08.745',
+           NOW(),
+           NOW(),
            'dark',
            'en'
        ) ON CONFLICT (id) DO UPDATE SET
@@ -26,7 +26,7 @@ VALUES (
     profile_image_url = EXCLUDED.profile_image_url,
     theme = EXCLUDED.theme,
     language = EXCLUDED.language,
-    updated_at = EXCLUDED.updated_at;
+    updated_at = NOW();
 
 -- Insert demo projects
 INSERT INTO projects (id, name, description, owner_id, created_at, updated_at) VALUES

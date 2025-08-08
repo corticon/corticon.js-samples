@@ -10,6 +10,7 @@ import { storage } from "./storage";
 
 // Make Replit auth optional - useful for development
 const REPLIT_AUTH_ENABLED = false
+console.log(`[replitAuth.ts] Replit authentication is ${REPLIT_AUTH_ENABLED ? "enabled" : "disabled"}`);
 
 const getOidcConfig = memoize(
   async () => {
@@ -23,7 +24,7 @@ const getOidcConfig = memoize(
 
 export function getSession() {
   const sessionTtl = 7 * 24 * 60 * 60 * 1000; // 1 week
-  
+
   // Use memory store if no database auth is configured
   if (!REPLIT_AUTH_ENABLED) {
     return session({
