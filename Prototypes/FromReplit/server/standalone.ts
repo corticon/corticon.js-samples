@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Logging middleware
 app.use((req, res, next) => {
+    console.log('[standalone] Request received:', req.method, req.path);
     const start = Date.now();
     const path = req.path;
     let capturedJsonResponse: Record<string, any> | undefined = undefined;
@@ -43,14 +44,21 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+    console.log('[standalone] Registering routes');
+
     const server = await registerRoutes(app);
 
     app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+        console.log('[standalone] Request received');
+
         const status = err.status || err.statusCode || 500;
-        const message = err.message || "Internal Server Error";
+        const message = err.message || "Internal Server Error - no error message";
+
+        console.error(`[standalone] Error ${status}:`, message);
+        console.error(`[standalone] Stack:`, err.stack);
 
         res.status(status).json({ message });
-        throw err;
+        // Don't throw the error again - just log it
     });
 
     // Serve static files from client directory (for development without Vite)
