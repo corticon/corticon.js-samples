@@ -388,7 +388,7 @@ npm start
         </section>
 
         <div>
-            How Replit suggested to run things locally after several attemps at fixing things:
+            How Replit suggested to run things locally after several attempts at fixing things:
             <br>
             It simply created two other servers and suggested running them in separate terminals like this:
             <ul>
@@ -397,6 +397,9 @@ npm start
             </ul>
             The terminal commands are issued at the top level of the project, not in the client or server directories.
             <br>
+            But I found I needed to define the following env var:
+            <br/>
+            set DATABASE_URL=postgresql://postgres:[REPLACE with PWD]@localhost:5432/corticon_db
         </div>
         <section id="running">
             <h2><span class="emoji">🌐</span>Expected Ports & Access</h2>
