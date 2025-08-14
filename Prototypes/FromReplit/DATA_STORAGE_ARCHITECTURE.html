@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Data Storage & Schema Architecture</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+ body { font-family: system-ui, Arial, sans-serif; line-height:1.5; margin:2rem; max-width:1200px; }
+ code, pre { background:#1118270d; padding:2px 4px; border-radius:4px; font-size:0.9em; }
+ pre { padding:1rem; overflow:auto; }
+ h1, h2, h3 { line-height:1.25; }
+ table { border-collapse:collapse; width:100%; margin:1rem 0; }
+ th, td { border:1px solid #ddd; padding:6px 8px; font-size:0.9em; vertical-align:top; }
+ th { background:#f3f4f6; text-align:left; }
+ .tag { display:inline-block; padding:2px 6px; background:#2563eb; color:white; font-size:0.7rem; border-radius:3px; letter-spacing:.5px; }
+ .muted { color:#555; }
+ .pill { background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:12px; font-size:0.7rem; font-weight:600; }
+ hr { margin:3rem 0; }
+ .warn { background:#fef9c3; border-left:4px solid #facc15; padding:.75rem 1rem; }
+</style>
+</head>
+<body>
+<h1>Data Storage & Schema Architecture</h1>
+<p>This document describes how the project stores, validates, and manages data using <strong>PostgreSQL</strong> plus <strong>Drizzle ORM</strong> (with Zod schemas for runtime validation). It covers physical tables, JSONB payload structures, relationships, lifecycle, and extension guidelines.</p>
+
+<nav>
+ <strong>Contents</strong>
+ <ol>
+  <li><a href="#stack">Technology Stack</a></li>
+  <li><a href="#connection">Connection & Configuration</a></li>
+  <li><a href="#tables">Relational Tables</a></li>
+  <li><a href="#relationships">Entity Relationships (ER)</a></li>
+  <li><a href="#jsonb">JSONB Columns & Embedded Models</a></li>
+  <li><a href="#jsonb-limitations">JSONB Limitations & Trade-offs</a></li>
+  <li><a href="#ruleflow">Ruleflow Data Model (Structural vs UI)</a></li>
+  <li><a href="#validation">Validation & Type Safety</a></li>
+  <li><a href="#lifecycle">Data Lifecycle & Mutations</a></li>
+  <li><a href="#queries">Typical Query Patterns</a></li>
+  <li><a href="#performance">Indexes & Performance Considerations</a></li>
+  <li><a href="#security">Security & Integrity</a></li>
+  <li><a href="#extensibility">Extensibility Guidelines</a></li>
+  <li><a href="#improvements">Potential Improvements / Roadmap</a></li>
+ </ol>
+</nav>
+
+<hr />
+<h2 id="stack">1. Technology Stack</h2>
+<ul>
+ <li><strong>Database:</strong> PostgreSQL (supports advanced types, JSONB, indexing).</li>
+ <li><strong>ORM:</strong> Drizzle ORM with <code>pg-core</code> DSL for strongly-typed schema definitions.</li>
+ <li><strong>Validation:</strong> Zod via <code>createInsertSchema</code> and custom schemas (<code>ruleflowStructuralSchema</code>, <code>ruleflowUISchema</code>).</li>
+ <li><strong>Pooling:</strong> Node <code>pg.Pool</code> (configured in <code>server/db.ts</code>).</li>
+</ul>
+
+<hr />
+<h2 id="connection">2. Connection & Configuration</h2>
+<p>The database connection is established in <code>server/db.ts</code>:</p>
+<pre><code>import { drizzle } from 'drizzle-orm/node-postgres';
+import { Pool } from 'pg';
+import * as schema from '@shared/schema';
+
+if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL must be set");
+export const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: false });
+export const db = drizzle(pool, { schema });</code></pre>
+<p><strong>Key points:</strong></p>
+<ul>
+ <li><code>ssl: false</code> for local dev (adjust for production).</li>
+ <li>All tables imported for type-safe query building.</li>
+ <li>Environment-driven configuration enables separation of dev/stage/prod.</li>
+</ul>
+
+<hr />
+<h2 id="tables">3. Relational Tables</h2>
+<p>Defined in <code>shared/schema.ts</code>.</p>
+
+<h3>3.1 sessions</h3>
+<table>
+ <tr><th>Column</th><th>Type</th><th>Purpose</th><th>Notes</th></tr>
+ <tr><td>sid</td><td>varchar (PK)</td><td>Session identifier</td><td>Primary key</td></tr>
+ <tr><td>sess</td><td>jsonb</td><td>Serialized session payload</td><td>Opaque to DB</td></tr>
+ <tr><td>expire</td><td>timestamp</td><td>Expiration time</td><td>Indexed (<code>IDX_session_expire</code>)</td></tr>
+</table>
+
+<h3>3.2 users</h3>
+<table>
+ <tr><th>Column</th><th>Type</th><th>Purpose</th><th>Notes</th></tr>
+ <tr><td>id</td><td>varchar (PK)</td><td>External/auth user id</td><td>Referenced by projects/assets</td></tr>
+ <tr><td>email</td><td>varchar UNIQUE</td><td>Contact / identity</td><td>Optional</td></tr>
+ <tr><td>firstName / lastName</td><td>varchar</td><td>Profile metadata</td><td>Nullable</td></tr>
+ <tr><td>profileImageUrl</td><td>varchar</td><td>Avatar link</td><td>Nullable</td></tr>
+ <tr><td>theme</td><td>varchar(10)</td><td>User theme preference</td><td>Default: dark</td></tr>
+ <tr><td>language</td><td>varchar(5)</td><td>UI language code</td><td>Default: en</td></tr>
+ <tr><td>createdAt / updatedAt</td><td>timestamp</td><td>Audit stamps</td><td><code>defaultNow()</code></td></tr>
+</table>
+
+<h3>3.3 projects</h3>
+<table>
+ <tr><th>Column</th><th>Type</th><th>Purpose</th><th>Notes</th></tr>
+ <tr><td>id</td><td>serial PK</td><td>Project surrogate key</td><td>Sequence-backed</td></tr>
+ <tr><td>name</td><td>varchar(255)</td><td>Project display name</td><td>NOT NULL</td></tr>
+ <tr><td>description</td><td>text</td><td>Optional narrative</td><td>Nullable</td></tr>
+ <tr><td>ownerId</td><td>varchar FK</td><td>References users.id</td><td>Ownership control</td></tr>
+ <tr><td>createdAt / updatedAt</td><td>timestamp</td><td>Audit</td><td><code>defaultNow()</code></td></tr>
+</table>
+
+<h3>3.4 assets</h3>
+<p>Polymorphic table storing all domain asset types: <code>vocabulary</code>, <code>rulesheets</code>, <code>ruleflow</code>, <code>rulestest</code>.</p>
+<table>
+ <tr><th>Column</th><th>Type</th><th>Purpose</th><th>Notes</th></tr>
+ <tr><td>id</td><td>serial PK</td><td>Asset id</td><td></td></tr>
+ <tr><td>name</td><td>varchar(255)</td><td>Display / logical name</td><td>NOT NULL</td></tr>
+ <tr><td>type</td><td>varchar(50)</td><td>Asset discriminator</td><td>Domain enum (string)</td></tr>
+ <tr><td>content</td><td>jsonb</td><td>Primary structured content</td><td>Always present</td></tr>
+ <tr><td>structuralData</td><td>jsonb</td><td>Business-logic graph (ruleflow) or model expansion</td><td>Nullable</td></tr>
+ <tr><td>uiData</td><td>jsonb</td><td>Presentation / layout state</td><td>Nullable</td></tr>
+ <tr><td>projectId</td><td>integer FK</td><td>Links to project</td><td>NOT NULL</td></tr>
+ <tr><td>createdBy</td><td>varchar FK</td><td>Author</td><td>NOT NULL</td></tr>
+ <tr><td>createdAt / updatedAt</td><td>timestamp</td><td>Audit</td><td></td></tr>
+ <tr><td>isDeleted</td><td>boolean</td><td>Soft delete flag</td><td>Default false</td></tr>
+</table>
+
+<h3>3.5 collaboration_sessions</h3>
+<table>
+ <tr><th>Column</th><th>Type</th><th>Purpose</th><th>Notes</th></tr>
+ <tr><td>id</td><td>serial PK</td><td>Session id</td><td></td></tr>
+ <tr><td>assetId</td><td>integer FK</td><td>Edited asset reference</td><td></td></tr>
+ <tr><td>userId</td><td>varchar FK</td><td>Participant</td><td></td></tr>
+ <tr><td>isActive</td><td>boolean</td><td>Session open state</td><td>Default true</td></tr>
+ <tr><td>lastActivity</td><td>timestamp</td><td>Heartbeat / presence</td><td><code>defaultNow()</code></td></tr>
+ <tr><td>cursor</td><td>jsonb</td><td>Cursor/selection data</td><td>Optional</td></tr>
+</table>
+
+<hr />
+<h2 id="relationships">4. Entity Relationships</h2>
+<pre><code>(users) 1 -- * (projects) 1 -- * (assets) 1 -- * (collaboration_sessions)
+   |                      \-- * (assets) createdBy
+(sessions) standalone (auth/session layer)
+</code></pre>
+<ul>
+ <li><strong>User → Projects:</strong> One user owns many projects.</li>
+ <li><strong>Project → Assets:</strong> Assets partitioned by project.</li>
+ <li><strong>User → Assets (createdBy):</strong> Author attribution.</li>
+ <li><strong>Asset → Collaboration Sessions:</strong> Multiple concurrent editors.</li>
+</ul>
+<p>Relation helpers (<code>relations()</code>) provide join inference for type-safe eager loading.</p>
+
+<hr />
+<h2 id="jsonb">5. JSONB Columns & Embedded Models</h2>
+<p>We deliberately store flexible structures in JSONB to allow rapid iteration without blocking migrations:</p>
+<ul>
+ <li><code>assets.content</code> – Canonical domain body per asset type (rules, vocabulary, etc.).</li>
+ <li><code>assets.structuralData</code> – Graph / logical structure (nodes & connections) for ruleflows or advanced constructs.</li>
+ <li><code>assets.uiData</code> – Transient but persistable layout/visual state (positions, sizes, scroll, zoom).</li>
+ <li><code>collaboration_sessions.cursor</code> – Fine‑grained collaborative positioning.</li>
+ <li><code>sessions.sess</code> – Framework session serialization.</li>
+</ul>
+<p><strong>Pros:</strong> Flexibility, fewer schema migrations, ability to version nested models. <strong>Cons:</strong> Harder to query relationally (must avoid overusing JSONB for relational facts).</p>
+
+<hr />
+<h2 id="jsonb-limitations">5a. JSONB Limitations & Trade-offs</h2>
+<p>This section details practical constraints, performance considerations, and mitigation strategies when using <code>jsonb</code> in PostgreSQL.</p>
+<h3>Core Limitations</h3>
+<ol>
+ <li><strong>Lack of enforced schema:</strong> The DB doesn't validate shape; drift can accumulate unless application validation (Zod) is consistently applied.</li>
+ <li><strong>No foreign keys inside JSON:</strong> Embedded IDs cannot be FK constrained; referential integrity for nested references must be manual.</li>
+ <li><strong>Complex CHECK constraints are brittle:</strong> Using JSON path expressions in constraints increases maintenance cost as shape evolves.</li>
+ <li><strong>Planner statistics are coarse:</strong> PostgreSQL has limited statistics for values inside JSONB paths; selectivity estimates may be poor leading to suboptimal plans.</li>
+ <li><strong>Index bloat risk:</strong> Wide GIN indexes over heterogeneous documents grow quickly; write amplification and vacuum overhead increase.</li>
+ <li><strong>Update rewrite cost:</strong> Small field changes typically rewrite the whole JSONB value (TOAST churn) causing bloated tables under high mutation rates.</li>
+ <li><strong>Ambiguous null semantics:</strong> Distinguishing between a missing key and a key explicitly set to null requires explicit checks (e.g. <code>? 'key'</code> vs <code>->> 'key'</code>).</li>
+ <li><strong>Type ambiguity:</strong> Numbers stored without enforced type can later be interpreted inconsistently (integer vs float) unless normalized on write.</li>
+ <li><strong>Concurrency overwrite:</strong> Read-modify-write cycles risk lost updates when multiple writers change different subpaths simultaneously.</li>
+ <li><strong>Increased WAL volume:</strong> Large JSONB rewrites produce heavy write-ahead log output impacting replication lag.</li>
+ <li><strong>Limited analytical efficiency:</strong> Repeated path extraction & casting for aggregation is slower than using typed columns or columnar stores.</li>
+ <li><strong>Access control granularity:</strong> GRANTs apply to the whole column; cannot grant per-field privileges inside JSONB.</li>
+ <li><strong>ORM opacity:</strong> Some tooling cannot introspect nested paths for migrations or generate partial update helpers automatically.</li>
+</ol>
+
+<h3>Size Limits</h3>
+<p><strong>Maximum size per JSONB value:</strong> ~1 GB (general PostgreSQL varlena limit). This is a hard theoretical cap; practical performance degradation appears much earlier.</p>
+<ul>
+ <li><strong>Recommended working upper bound:</strong> Keep most documents &lt; 1–5 MB; reconsider design past ~10 MB.</li>
+ <li><strong>Above ~50–100 MB:</strong> Expect slower writes, larger WAL, vacuum pressure, and poor query latency.</li>
+ <li><strong>Index impact:</strong> GIN indexes on very large heterogeneous documents scale poorly; prefer extracted columns.</li>
+ <li><strong>Heuristic:</strong> If a document grows due to accumulating historical snapshots, move history to a revision table instead.</li>
+ <li><strong>Externalization option:</strong> Store giant mostly-immutable blobs in object storage and keep only metadata + pointer in the row.</li>
+</ul>
+
+<h3>Indexing Considerations</h3>
+<ul>
+ <li>Prefer targeted functional or expression indexes (<code>( (content->>'status') )</code>) over broad GIN when only a few keys are queried.</li>
+ <li>Use <code>jsonb_path_ops</code> GIN variant for containment-heavy workloads to reduce index size.</li>
+ <li>Avoid indexing volatile / highly unique keys to prevent low-value large indexes.</li>
+</ul>
+
+<h3>Performance Patterns</h3>
+<ul>
+ <li>Project only needed top-level columns in list APIs; avoid returning entire large documents.</li>
+ <li>For frequently filtered attributes, promote them to first-class columns or generated columns.</li>
+ <li>Batch updates & use JSON patch semantics in application logic to reduce full rewrites.</li>
+</ul>
+
+<h3>Mitigation Strategies</h3>
+<table>
+ <tr><th>Issue</th><th>Mitigation</th></tr>
+ <tr><td>Schema drift</td><td>Enforce Zod validation + document version field; migrate on load.</td></tr>
+ <tr><td>Slow filters</td><td>Add generated column extracting path + B-tree index.</td></tr>
+ <tr><td>Write amplification</td><td>Split hot mutable substructure into a separate table.</td></tr>
+ <tr><td>Integrity across IDs</td><td>Store FK in column, mirror in JSON, or resolve via service layer join.</td></tr>
+ <tr><td>Lost concurrent updates</td><td>Optimistic locking (updated_at check) or JSON patch with per-field merge.</td></tr>
+ <tr><td>Index bloat</td><td>Periodic <code>REINDEX</code>, narrow expression indexes, monitor <code>pg_stat_user_indexes</code>.</td></tr>
+ <tr><td>Heavy WAL</td><td>Group writes; avoid unnecessary churn; consider TOAST compression (PG14+ improvements).</td></tr>
+</table>
+
+<h3>Decision Heuristics</h3>
+<ul>
+ <li><strong>Normalize</strong> when an attribute is: heavily filtered, joined, aggregated, or must be FK constrained.</li>
+ <li><strong>Use JSONB</strong> for: rapidly evolving optional fields, heterogeneous payloads, nested configuration blobs.</li>
+ <li><strong>Hybrid</strong>: Core attributes as columns + auxiliary detail JSONB.</li>
+</ul>
+
+<p><em>Rule of thumb:</em> If a JSON key appears in more than ~3 different query predicates or requires an index, consider promoting it.</p>
+
+
+<hr />
+<h2 id="ruleflow">6. Ruleflow Data Model</h2>
+<p>Ruleflows split data into <em>structural</em> and <em>UI</em> layers for clean separation of concerns.</p>
+<h3>Structural (Business Logic)</h3>
+<pre><code>{
+  "nodes": [
+    { "id": "testRS1", "name": "testRS 1", "type": "rulesheets", "fontSize": 12, "metadata": {} },
+    { "id": "node-subflow", "name": "Sub Flow", "type": "ruleflow", "metadata": {} },
+    { "id": "text-1", "name": "Intro", "type": "text", "text": "Start", "fontSize": 18 }
+  ],
+  "connections": [
+    { "id": "conn1", "fromNodeId": "testRS1", "toNodeId": "node-subflow" }
+  ],
+  "version": "1.0",
+  "metadata": {}
+}</code></pre>
+<ul>
+ <li><strong>Nodes:</strong> Abstract tasks or references (rulesheets, nested ruleflows, text notes).</li>
+ <li><strong>Connections:</strong> Directed edges with optional <code>condition</code>/<code>priority</code>.</li>
+ <li><strong>Version:</strong> Enables future migrations.</li>
+</ul>
+<h3>UI (Presentation)</h3>
+<pre><code>{
+  "nodes": [
+    { "id": "testRS1", "position": {"x":129,"y":39}, "size": {"width":150,"height":50}, "isVisible": true },
+    { "id": "node-subflow", "position": {"x":400,"y":200}, "size": {"width":180,"height":60} }
+  ],
+  "connections": [
+    { "id": "conn1", "fromPoint": {"x":219.89,"y":89}, "toPoint": {"x":400,"y":230} }
+  ],
+  "canvas": { "zoom": 0.82, "panX": 0, "panY": 0, "gridSize": 20, "size": {"width":1200,"height":600}, "viewport": {"scrollX":0,"scrollY":0} },
+  "version": "1.0"
+}</code></pre>
+<p><strong>Decoupling Rationale:</strong> Avoid polluting business graph with ephemeral layout and allow independent evolution (e.g., new styling attributes) without invalidating structural logic.</p>
+
+<hr />
+<h2 id="validation">7. Validation & Type Safety</h2>
+<ul>
+ <li><strong>Static types:</strong> Drizzle infers TypeScript types (e.g., <code>typeof assets.$inferSelect</code>).</li>
+ <li><strong>Runtime validation:</strong> Zod schemas ensure incoming JSON for ruleflows matches expectations before persistence.</li>
+ <li><strong>Insert schemas:</strong> <code>createInsertSchema()</code> used to generate safe DTO shapes (<code>insertAssetSchema</code>, <code>insertProjectSchema</code>).</li>
+</ul>
+
+<hr />
+<h2 id="lifecycle">8. Data Lifecycle & Mutations</h2>
+<table>
+ <tr><th>Phase</th><th>Description</th><th>Notes</th></tr>
+ <tr><td>Create</td><td>Insert row with base JSON payloads</td><td>Defaults fill audit stamps</td></tr>
+ <tr><td>Read</td><td>Type-safe select with Drizzle</td><td>Relations can be manually joined</td></tr>
+ <tr><td>Update</td><td>Full or partial JSON replacement</td><td>Consider patch semantics for large blobs</td></tr>
+ <tr><td>Soft Delete</td><td><code>isDeleted=true</code></td><td>Assets only; preserves history</td></tr>
+ <tr><td>Purge</td><td>Hard delete (future)</td><td>Admin / retention policy</td></tr>
+</table>
+<p class="warn"><strong>Note:</strong> Currently no automated trigger updates <code>updatedAt</code> on JSON mutation unless set in application logic; ensure service layer updates it.</p>
+
+<hr />
+<h2 id="queries">9. Typical Query Patterns</h2>
+<pre><code>// Fetch all active assets in a project
+await db.select().from(assets)
+  .where(and(eq(assets.projectId, projectId), eq(assets.isDeleted, false)));
+
+// Load a ruleflow and parse its structured layers
+const flow = await db.select().from(assets)
+  .where(eq(assets.id, id));
+const structural = flow[0].structuralData; // already JSON object (jsonb)
+</code></pre>
+<p><strong>Performance Tips:</strong> Minimize transferring oversized <code>content</code>/graph blobs when listing; project only required columns.</p>
+
+<hr />
+<h2 id="performance">10. Indexes & Performance Considerations</h2>
+<ul>
+ <li><strong>sessions(expire)</strong> index accelerates session cleanup queries.</li>
+ <li><strong>Missing indexes opportunity:</strong> Add multi-column or conditional indexes for frequent filters: <code>(project_id, type, is_deleted)</code>.</li>
+ <li><strong>JSONB indexing:</strong> Not yet used. If querying inside JSON (e.g., node names) becomes common, add <code>GIN</code> indexes.</li>
+ <li><strong>Large ruleflows:</strong> Consider splitting node/connection sets into separate normalized tables for analytics if they grow large.</li>
+</ul>
+
+<hr />
+<h2 id="security">11. Security & Integrity</h2>
+<ul>
+ <li><strong>Foreign keys:</strong> Enforce referential integrity (ownerId, projectId, createdBy, assetId, userId).</li>
+ <li><strong>Soft delete pattern:</strong> Prevents accidental data loss; ensure filters exclude <code>isDeleted=true</code>.</li>
+ <li><strong>Input validation:</strong> Zod ensures shape prior to persistence; still sanitize user-provided textual content if exposed.</li>
+ <li><strong>Secrets:</strong> Only <code>DATABASE_URL</code> required; rotate credentials for prod.</li>
+ <li><strong>Concurrency:</strong> Collaboration sessions store presence; no row-level locking strategy yet for conflicting edits— optimistic overwrite assumed.</li>
+</ul>
+
+<hr />
+<h2 id="extensibility">12. Extensibility Guidelines</h2>
+<ol>
+ <li><strong>New Asset Types:</strong> Reuse <code>assets</code> row; add type discriminator value; extend front-end type unions; adjust validation.</li>
+ <li><strong>Versioning Strategy:</strong> Use <code>structuralData.version</code>; bump and implement migration code reading old versions.</li>
+ <li><strong>Partial Updates:</strong> For large JSONB, implement PATCH endpoints that merge server-side to reduce race conditions.</li>
+ <li><strong>Auditing:</strong> Introduce history table (<code>asset_revisions</code>) capturing diff or full snapshot with <code>(asset_id, revision, author_id, created_at)</code>.</li>
+ <li><strong>Collaboration:</strong> Add ephemeral in-memory channel (WebSocket) + eventual persistence for accepted operations.</li>
+</ol>
+
+<hr />
+<h2 id="improvements">13. Potential Improvements / Roadmap</h2>
+<ul>
+ <li>Add composite index: <code>CREATE INDEX ON assets(project_id, type) WHERE is_deleted = false;</code></li>
+ <li>Introduce triggers to auto-update <code>updated_at</code> on JSONB changes.</li>
+ <li>Implement revision history & rollback.</li>
+ <li>Enforce enum at DB layer (<code>type</code> as PostgreSQL ENUM) for stricter integrity.</li>
+ <li>Optional: extract large <code>uiData</code> into separate table if write frequency diverges from structural changes.</li>
+ <li>Background job to prune expired collaboration sessions and old soft-deleted assets.</li>
+ <li>JSON schema / Zod alignment test suite to catch drift.</li>
+</ul>
+
+<hr />
+<h2>14. Quick Reference Cheat Sheet</h2>
+<table>
+ <tr><th>Concept</th><th>Where Stored</th><th>Format</th><th>Notes</th></tr>
+ <tr><td>User preference</td><td>users.theme/language</td><td>Scalar</td><td>Simple attributes</td></tr>
+ <tr><td>Rulesheet logic</td><td>assets.content</td><td>JSONB</td><td>Rules arrays</td></tr>
+ <tr><td>Ruleflow graph</td><td>assets.structuralData</td><td>JSONB</td><td>Nodes + connections</td></tr>
+ <tr><td>Ruleflow layout</td><td>assets.uiData</td><td>JSONB</td><td>Positions, sizes, zoom</td></tr>
+ <tr><td>Collab cursor</td><td>collaboration_sessions.cursor</td><td>JSONB</td><td>Ephemeral UI state</td></tr>
+ <tr><td>Session auth</td><td>sessions.sess</td><td>JSONB</td><td>Opaque payload</td></tr>
+</table>
+
+</body>
+</html>
