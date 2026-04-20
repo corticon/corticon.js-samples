@@ -1,0 +1,14 @@
+{
+    "queryName": "Retrieve Process Class details by Product Class Name",
+    "steps": [
+        {
+            "sequenceNo": 1,
+            "statement": "SELECT * FROM ProcessClasses WHERE classname IN ({Product.className})",
+            "enable": true,
+            "addAsTopLevelEntity": null,
+            "addToExistingEntity": "ProcessClasses",
+            "roleName": "processClasses",
+            "maxRows": 5000
+        }
+    ]
+}

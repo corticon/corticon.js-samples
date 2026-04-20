@@ -1,0 +1,23 @@
+{
+    "queryName": "product-with-details",
+    "steps": [
+        {
+            "sequenceNo": 1,
+            "statement": "SELECT ProductId, ProductName, Price, Category FROM Products WHERE ProductId = {Product.Id}",
+            "enable": true,
+            "addAsTopLevelEntity": "Product",
+            "addToExistingEntity": null,
+            "roleName": null,
+            "maxRows": 1
+        },
+        {
+            "sequenceNo": 2,
+            "statement": "SELECT * FROM ProductDetails WHERE ProductId IN ({product.ProductId})",
+            "enable": true,
+            "addAsTopLevelEntity": null,
+            "addToExistingEntity": "Product",
+            "roleName": "productDetails",
+            "maxRows": 100
+        }
+    ]
+}
