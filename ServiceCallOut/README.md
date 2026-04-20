@@ -16,6 +16,11 @@ Service Callouts enable Corticon.js decision services to interact with external 
 - Demonstrates how to access configuration properties defined in the decision service.
 - Example: Retrieve and log configuration properties, then update entity attributes with the configuration values.
 
+### **AdvancedDataConnectorML**
+- A full read/write data connector for MarkLogic, bringing an ADC-like (Advanced Data Connector) pattern from Corticon for Java to Corticon.js.
+- **Read**: Executes dynamic, parameterized SQL queries against MarkLogic TDE views. Query definitions are stored as JSON documents in MarkLogic and resolved at runtime, with placeholder substitution from the decision service payload — no code changes needed to modify queries.
+- **Write**: Persists Corticon working-memory entities back to MarkLogic as JSON documents, supporting full round-trip data flows within a single decision service invocation.
+
 ### **BasicAsyncOperation**
 - Shows how to perform asynchronous operations using the `async/await` pattern.
 - Example: Fetch data asynchronously and update entity attributes with the retrieved data.
