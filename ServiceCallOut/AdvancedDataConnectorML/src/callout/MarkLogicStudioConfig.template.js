@@ -28,10 +28,10 @@ module.exports = {
     port: 8004,
 
     // MarkLogic user with rest-reader (and rest-writer for write steps) privileges
-    user: 'corticonml-admin',
+    user: 'user-name',
 
     // MarkLogic password
-    password: 'corticonml-admin',
+    password: 'user-password',
 
     // Authentication type: 'digest' (MarkLogic default) or 'basic'
     authType: 'digest',
