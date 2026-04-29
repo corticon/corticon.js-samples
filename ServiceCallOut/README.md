@@ -54,6 +54,9 @@ Service Callouts enable Corticon.js decision services to interact with external 
 ### **MultipleSCO**
 - Demonstrates the use of multiple service callouts within a single decision service.
 
+### **RandomStringGenerator**
+- Shows how to generate a random string in a service callout and write it to a target string attribute chosen in the input payload.
+
 ### **RESTCall**
 - Examples for making REST API calls from a service callout.
 - Example: Fetch data from an external REST API and update entity attributes with the response.
