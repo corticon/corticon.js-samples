@@ -1,0 +1,14 @@
+{
+    "queryName": "parts-by-status",
+    "steps": [
+        {
+            "sequenceNo": 1,
+            "statement": "SELECT PartNumber, Description, Status, FamilyName FROM Parts WHERE PartNumber IN ({Part.Number}) AND Status = {Part.Status}",
+            "enable": true,
+            "addAsTopLevelEntity": null,
+            "addToExistingEntity": "Root",
+            "roleName": "envelope",
+            "maxRows": 1000
+        }
+    ]
+}

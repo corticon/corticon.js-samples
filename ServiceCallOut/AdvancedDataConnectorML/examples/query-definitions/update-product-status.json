@@ -1,0 +1,22 @@
+{
+  "queryName": "routing-output-write",
+  "_comment": "Mixed-operation example: Step 1 reads a routing requirement from MarkLogic via TDE, Step 2 writes the routing output back as a document.",
+  "steps": [
+    {
+      "sequenceNo": 1,
+      "statement": "SELECT routingCode FROM Paris.BeltRoutingRequirements WHERE plant = {Product.plant}",
+      "addAsTopLevelEntity": "BeltRoutingRequirements",
+      "_comment": "SELECT step — loads routing requirement into working memory."
+    },
+    {
+      "sequenceNo": 2,
+      "enable": true,
+      "statementType": "upsert",
+      "addToExistingEntity": "Product",
+      "roleName": "routingOutput",
+      "documentUriTemplate": "/data/Paris/RoutingOutput/{matNr}.json",
+      "collections": ["RoutingOutput", "Paris"],
+      "_comment": "WRITE step — upserts each routingOutput entity from the Product WM entity as a MarkLogic document. URI placeholder {matNr} resolves from the routingOutput entity attribute."
+    }
+  ]
+}

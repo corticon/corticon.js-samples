@@ -1,0 +1,57 @@
+{
+    "__comment": "Example Corticon payload AFTER the query callout runs (with debug=true)",
+    "Product": [
+        { "Id": "P1", "Name": "Widget A" },
+        { "Id": "P2", "Name": "Widget B" }
+    ],
+    "Order": {
+        "OrderId": "ORD-001",
+        "Status": "Open"
+    },
+    "Enrichment": {
+        "Products": [
+            {
+                "Products.ID": "P1",
+                "Products.ProductName": "Widget A - Premium",
+                "Products.Price": 29.99,
+                "Products.Category": "Hardware",
+                "Products.InStock": true
+            },
+            {
+                "Products.ID": "P2",
+                "Products.ProductName": "Widget B - Standard",
+                "Products.Price": 19.99,
+                "Products.Category": "Hardware",
+                "Products.InStock": false
+            }
+        ]
+    },
+    "Debug": {
+        "QueryCallout": {
+            "traceId": "adc-1708775400000-x7k2m1",
+            "queryName": "product-lookup",
+            "queryDocUri": "/queries/product-lookup.json",
+            "preparedSQL": "SELECT * FROM Products WHERE ID IN (@productIds)",
+            "bindingSummary": [
+                {
+                    "param": "productIds",
+                    "placeholder": "Product.Id",
+                    "cardinality": "many",
+                    "type": "xs:string",
+                    "valueCount": 2
+                }
+            ],
+            "timings": {
+                "total": 45,
+                "loadQuery": 3,
+                "resolvePlaceholders": 1,
+                "rewriteSQL": 0,
+                "execute": 38,
+                "writePayload": 1
+            },
+            "step_1_seq": 1,
+            "step_1_rows": 2,
+            "rowCount": 2
+        }
+    }
+}
