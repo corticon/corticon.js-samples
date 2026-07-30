@@ -2,6 +2,12 @@
 
 This repository contains sample decision services and examples for using Corticon.js across a variety of JavaScript environments.
 
+## Quick Start
+
+1. Choose a track from the sample index below.
+2. Open that folder's README for setup and run instructions.
+3. For import-ready Studio assets, start with [Importable Rule Projects](Importable-Rule-Projects/README.md).
+
 ## What is Corticon.js?
 
 Corticon.js is a powerful rules engine that allows you to define, deploy, and execute business rules as JavaScript. With Corticon.js, you can automate decision-making processes by embedding rules directly into your applications, whether they run in the browser, on mobile devices, or in serverless/cloud environments.
@@ -14,7 +20,7 @@ Corticon.js is a powerful rules engine that allows you to define, deploy, and ex
 - **Cloud Workflows**: Integrate rules into workflows like AWS Step Functions or Microsoft Logic Apps.
 - **In-Browser Execution**: Execute rules directly in the browser for real-time decision-making.
 
-## Repository Structure
+## Sample Index
 
 This repository is organized into subdirectories, each showcasing specific use cases or integrations of Corticon.js:
 
@@ -33,3 +39,14 @@ Examples rule projects extended with service callouts operators written in JavaS
 
 ### [Dynamic Forms](DynamicForms/README.md)
 Rule-driven, offline dynamic form rendering. 
+
+## Naming and Discoverability
+
+- README labels use normalized product-facing names to improve scanability.
+- Existing folder names and URL slugs are preserved.
+
+## Related Corticon Repositories
+
+- [corticon/corticon-classic-samples](https://github.com/corticon/corticon-classic-samples)
+- [corticon/corticon-dynamic-forms](https://github.com/corticon/corticon-dynamic-forms)
+- [corticon/corticon-on-marklogic](https://github.com/corticon/corticon-on-marklogic)

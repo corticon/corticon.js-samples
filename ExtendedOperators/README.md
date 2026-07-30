@@ -82,4 +82,4 @@ Custom functions are implemented in JavaScript and exported for use in Corticon.
 ## Further Resources 
 -  [Corticon.js documentation on using data access operators](https://docs.progress.com/bundle/corticon-js-integration/page/About-Corticon.js-integration.html).
 
-- [Blog: Mastering Custom Corticon.js Operators: Flexibility Beyond Standard Implementations]((https://www.progress.com/blogs/mastering-custom-corticon-operators-flexibility-beyond-standard-implementations))
+- [Blog: Mastering Custom Corticon.js Operators: Flexibility Beyond Standard Implementations](https://www.progress.com/blogs/mastering-custom-corticon-operators-flexibility-beyond-standard-implementations)
