@@ -1,52 +1,73 @@
 # Corticon.js Samples
 
-This repository contains sample decision services and examples for using Corticon.js across a variety of JavaScript environments.
+This repository contains sample Decision Services and integration examples for Corticon.js across a range of JavaScript environments, from importable Studio rule projects to full browser, framework, and service-integration applications.
+
+## Prerequisites
+
+- **Corticon.js Studio** to open, author, and package the rule projects.
+- **Node.js** (LTS) for the framework, service-callout, and application samples.
+- Individual samples may require additional software, databases, or API credentials. Check each sample's own README before running it.
 
 ## Quick Start
 
-1. Choose a track from the sample index below.
+1. Choose a track from the #sample-index below.
 2. Open that folder's README for setup and run instructions.
-3. For import-ready Studio assets, start with [Importable Rule Projects](Importable-Rule-Projects/README.md).
+3. For import-ready Studio assets, start with Importable-Rule-Projects/README.md.
 
-## What is Corticon.js?
+## About Corticon.js
 
-Corticon.js is a powerful rules engine that allows you to define, deploy, and execute business rules as JavaScript. With Corticon.js, you can automate decision-making processes by embedding rules directly into your applications, whether they run in the browser, on mobile devices, or in serverless/cloud environments.
+Corticon.js executes business rules as self-contained JavaScript. Rules authored in Corticon.js Studio are packaged into portable bundles that run in the browser, on mobile devices, in Node.js services, or in serverless and cloud environments, allowing decision logic to execute close to the application, user, or data.
 
-### Key Features:
-- **Cross-Platform Compatibility**: Deploy rules to any platform that supports JavaScript.
-- **Serverless Integration**: Use Corticon.js with AWS Lambda, Google Cloud Functions, or Microsoft Azure Functions.
-- **Dynamic Forms**: Create dynamic, rule-driven forms that adapt based on user input.
-- **Mobile and Web Applications**: Bundle rules into mobile apps (e.g., React, Vue.js, Angular) or web applications.
-- **Cloud Workflows**: Integrate rules into workflows like AWS Step Functions or Microsoft Logic Apps.
-- **In-Browser Execution**: Execute rules directly in the browser for real-time decision-making.
+Common uses demonstrated in this repository include:
+
+- Importable rule projects for learning and reuse in Corticon.js Studio
+- Custom rule operators written in JavaScript
+- Service callouts that integrate rules with REST APIs, databases, and GraphQL sources
+- Rule-driven dynamic forms
+- Decision Services embedded in Angular, React, Vue, and vanilla JavaScript applications
+- Serverless and cloud-workflow integrations
 
 ## Sample Index
 
-This repository is organized into subdirectories, each showcasing specific use cases or integrations of Corticon.js:
+The repository is organized into the tracks below, grouped by purpose.
 
-### [Extended Operators](ExtendedOperators/README.md)
-Examples rule projects extended with custom rule operators written in JavaScript.
+### Rule Projects and Studio Assets
 
-### [Frameworks](Frameworks/README.md)
-Showcases Corticon.js decision service running in various different JavaScript frameworks. 
+#### Importable-Rule-Projects/README.md
+Prebuilt rule projects that can be imported directly into Corticon.js Studio, including transactional rule projects, dynamic-form samples, and the DailyInsurance example. This is the recommended starting point.
 
-### [Importable Rule Projects](Importable-Rule-Projects/README.md)
-Prebuilt rule projects that can be imported into Corticon.js Studio.
+#### ExtendedOperators/README.md
+Rule projects extended with custom rule operators written in JavaScript, covering session-data operators and financial calculations.
 
-### [Service Call Outs](ServiceCallOut/README.md)
+#### ServiceCallOut/README.md
+Rule projects extended with service callouts that integrate decision logic with external systems, including REST APIs, PostgreSQL, MarkLogic, GraphQL, and asynchronous data access.
 
-Examples rule projects extended with service callouts operators written in JavaScript.
+### Applications and Integrations
 
-### [Dynamic Forms](DynamicForms/README.md)
-Rule-driven, offline dynamic form rendering. 
+#### DynamicForms/README.md
+A rule-driven client-side component for rendering dynamic, multi-step forms whose flow, visibility, and validation are controlled by Corticon.js rules rather than front-end code.
 
-## Naming and Discoverability
+#### Frameworks/README.md
+The same Corticon.js Decision Service running in Angular, React, Vue, and vanilla JavaScript, using a retirement-calculator example to compare framework integration patterns.
 
-- README labels use normalized product-facing names to improve scanability.
-- Existing folder names and URL slugs are preserved.
+#### Auto-Insurance/README.md
+An auto-insurance decisioning example, including supporting vehicle-fact data and tooling.
+
+### Guides and Prototypes
+
+#### HowTo/AsynchronousInvocation
+A focused example demonstrating asynchronous invocation of a Corticon.js Decision Service.
+
+#### Prototypes
+Experimental and exploratory samples. These are provided for reference and are not intended as production patterns.
 
 ## Related Corticon Repositories
 
 - [corticon/corticon-classic-samples](https://github.com/corticon/corticon-classic-samples)
 - [corticon/corticon-dynamic-forms](https://github.com/corticon/corticon-dynamic-forms)
 - [corticon/corticon-on-marklogic](https://github.com/corticon/corticon-on-marklogic)
+
+## Documentation
+
+- [Corticon.js Studio guide](https://docs.progress.com/bundle/corticon-js-quick-reference/page/A-guide-to-Progress-Corticon.js-Studio.html)
+- [Corticon documentation](https://docs.progress.com/category/corticon-information-hub)
