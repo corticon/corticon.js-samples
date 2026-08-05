@@ -4,7 +4,9 @@
 
 This directory demonstrates building rules-driven dynamic forms with Corticon.js. Form logic is authored in Corticon.js Studio and executed as a Decision Service, allowing much of the form to be defined and maintained by non-developers through a framework-agnostic design pattern that maximizes reuse of form logic.
 
-Try a Corticon.js rules-driven dynamic form with the [test driver on CodePen](https://codepen.io/S# What We Mean by Dynamic Forms
+Try a Corticon.js rules-driven dynamic form with the [test driver on CodePen](https://codepen.io/SethMeldon/pen/wvOGvra).
+
+## What We Mean by Dynamic Forms
 
 Most frameworks handle simple forms easily, but dynamic forms are harder to build and maintain — especially for use cases with hundreds of fields and questions, or rule sets that change frequently. Complex forms produce many possible paths for the end user, such as completing an insurance claim.
 
