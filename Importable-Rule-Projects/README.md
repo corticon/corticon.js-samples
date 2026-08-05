@@ -1,10 +1,11 @@
-# :rocket: Rule Project Accelerators for Serverless flavor of Corticon, Corticon.js 
-_(versus Corticon Server Deployments)_
+# Importable Rule Projects
 
-To download all samples into the Samples Folder in Corticon.js Studio, simply save and run [this](Import-CorticonSamples.ps1) PowerShell script. 
+Prebuilt Corticon.js rule projects that can be imported directly into Corticon.js Studio. These accelerators cover transactional decision services and rules-driven dynamic forms.
 
+To download all samples into the Samples folder in Corticon.js Studio, save and run [this PowerShell script](Import-CorticonSamples.ps1).
 
 ## Transactional Rule Project Samples
+
 - [Airplane Scheduled Maintenance](Transactional-Rule-Project-Samples/Airplane%20maintenance/README.md)
 - [Automated Red Tide Monitoring](Transactional-Rule-Project-Samples/Automated%20Red%20Tide%20Monitoring/README.md)
 - [Car Insurance Requirements for State of Massachusetts](Transactional-Rule-Project-Samples/Car%20Insurance%20Requirements%20for%20State%20of%20Massachusetts/README.md)
@@ -26,9 +27,10 @@ To download all samples into the Samples Folder in Corticon.js Studio, simply sa
 
 ### Dynamic Form Test Driver
 
-Use the dynamic form template on [**Codepen**](https://codepen.io/SethMeldon/pen/wvOGvra) to try out the lightning quick, plug and play front end to a Corticon.js decision service-driven dynamic form.
+Use the dynamic form template on [CodePen](https://codepen.io/SethMeldon/pen/wvOGvra) to try a plug-and-play front end to a Corticon.js Decision Service-driven dynamic form.
 
-### Rule Assets 
+### Rule Assets
+
 - [Conference Registration](Dynamic-Form-Samples/Conference-Registration/README.md)
 - [Country State City Selector](Dynamic-Form-Samples/Country-State-City-Selector/)
 - [Diabetes Risk Score (Type 2)](Dynamic-Form-Samples/Diabetes-Risk-Score-%28Type-2%29/)
