@@ -16,19 +16,15 @@ The example is a **Retirement Calculator** whose business logic (calculating sav
 
 Each implementation calls the same Decision Service to perform its calculations.
 
-### Vanilla JavaScript
+### [Vanilla JavaScript](retirement-calculator-vanilla-javaScript/)
 
 Plain HTML, CSS, and JavaScript with no framework. The most direct example of using the bundle in a browser.
 
-Folder: [retirement-calculator-vanilla-javaSccript/
-
 To run, open `index.html` in a web browser.
 
-### React
+### [React](retirement-calculator-react/)
 
 A component-based implementation.
-
-Folder: ./retirement-calculator-react/
 
 ```bash
 cd retirement-calculator-react
@@ -36,11 +32,9 @@ npm install
 npm start
 ```
 
-### Vue.js
+### [Vue.js](retirement-calculator-vue/)
 
 A reactive single-file-component implementation.
-
-Folder: ./retirement-calculator-vue/
 
 ```bash
 cd retirement-calculator-vue
@@ -48,15 +42,12 @@ npm install
 npm run dev
 ```
 
-### Angular
+### [Angular](retirement-calculator-angular/)
 
 An Angular CLI implementation demonstrating two-way data binding.
-
-Folder: ./retirement-calculator-angular/
 
 ```bash
 cd retirement-calculator-angular
 npm install
 ng serve
 ```
-``
