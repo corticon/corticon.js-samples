@@ -11,7 +11,7 @@ This directory contains examples of **Extended Operators** in Corticon.js. Exten
 
 ## Directory Structure
 
-### BasicSampleGetSetOperators
+### [BasicSampleGetSetOperators](BasicSampleGetSetOperators/)
 Demonstrates custom `get` and `set` operators for managing session data.
 
 - Retrieve and store session data using `getSessionData` and `setSessionData`.
@@ -24,7 +24,7 @@ Files:
 - `getSetDataTest.ert` — test cases for validating the operators.
 - `getSetDataVocab.ecore` — Rule Vocabulary for the rules.
 
-### Finance
+### [Finance](Finance/)
 Demonstrates financial calculations such as Present Value and Future Value using custom operators.
 
 - Perform calculations across multiple data types (`Decimal`, `Date`, `DateTime`).
@@ -59,5 +59,5 @@ Files:
 
 ## Further Resources
 
-- [Corticon.js dataress.com/bundle/corticon-js-integration/page/About-Corticon.js-integration.html
-- [Blog: Mastering Custom Corticon.js Operators](https://www.progress.com/blogs/mastering-custom-corticon-operators-flexibility-beyond-standard-implementations))
+- [Corticon.js documentation on using data access operators](https://docs.progress.com/bundle/corticon-js-integration/page/About-Corticon.js-integration.html)
+- [Blog: Mastering Custom Corticon.js Operators: Flexibility Beyond Standard Implementations](https://www.progress.com/blogs/mastering-custom-corticon-operators-flexibility-beyond-standard-implementations)
